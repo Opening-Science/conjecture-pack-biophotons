@@ -1,0 +1,427 @@
+{
+ "hof_version": "1.0",
+ "run": {
+  "engine": "baseline-claude",
+  "seed_id": "Q7",
+  "backend": "claude-subagent",
+  "config_hash": "ef8ace3f8162",
+  "corpus_calls": 25
+ },
+ "hypotheses": [
+  {
+   "id": "Q7-1",
+   "statement": "The between-preparation differences in reported UPE spectra - including the claimed species-ordered redshift of glutamate-evoked brain-slice emission toward ~865 nm in humans - are dominated by wavelength-dependent reabsorption and scattering along the exit path inside the specimen, such that the measured spectral centroid shifts with specimen optical thickness by at least as much as the reported between-species shift.",
+   "scope": {
+    "population": "Acute brain slices from at least three species (mouse, pig, and human resected cortex or monkey), plus Arabidopsis thaliana leaves and human hand skin, i.e. the exact preparations from which the published spectral claims come.",
+    "condition": "Emitter chemistry held fixed while the internal optical path is varied (slice thickness 200 / 400 / 800 um; leaf intact vs abraded vs homogenate; skin vs skin with optical-clearing agent), with diffuse transmittance and mu_eff(lambda) measured on the same specimen immediately after the emission measurement.",
+    "comparator": "The implicit fixed-emitter model used in the literature, in which the detected spectrum is treated as the emitter spectrum with no transport correction.",
+    "outcome": "Spectral centroid lambda_bar of the detected UPE spectrum over 400-900 nm and the (700-850 nm)/(450-600 nm) band ratio, before and after dividing by the specimen's own measured T(lambda)."
+   },
+   "null_hypothesis": "d(lambda_bar)/dL is smaller than 20% of the reported between-species centroid shift per equivalent change in optical path, and transport correction leaves the species ordering and the in-planta red-only spectrum intact - i.e. the spectral differences really are emitter differences.",
+   "estimand": "d(lambda_bar)/dL in nm per mm of specimen optical path, and the fraction of the reported between-preparation delta(lambda_bar) reproduced by the measured transmittance T(lambda) = exp(-mu_eff(lambda)L) alone.",
+   "causal_level": "L3",
+   "rationale": [
+    {
+     "step": "The field reports that glutamate-evoked brain-slice biophotonic emission redshifts in a species order up to ~865 nm in humans, measured with an EMCCD-based ultraweak biophoton imaging system plus a spectral device, and reads this as an emitter/mechanism property tied to intelligence; the same instrument line reports a spectral blueshift in dementia models.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2483916403",
+      "W1977345460",
+      "W4386377286"
+     ]
+    },
+    {
+     "step": "The same lipid-peroxidation chemistry emits across 450-850 nm in vitro but is detected only above 640 nm (peaking 700-750 nm) in planta; bandpass-filter work on injured Arabidopsis finds the injury-driven increase dominated by 700-750 nm; yet human hand skin measured through a liquid-crystal tunable filter and EMCCD peaks near 500 nm. These three results are mutually inconsistent as emitter spectra but are consistent as emitter-spectrum x exit-path-transmittance products.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W4283824773",
+      "W4414929333",
+      "W2797018767"
+     ]
+    },
+    {
+     "step": "Tissue absorption and reduced scattering, and hence penetration depth, differ by roughly an order of magnitude between the 450-600 nm region and the 700-850 nm first near-infrared window, and attenuation lengths lengthen further in the second and third NIR windows.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2888240508",
+      "W2090063882"
+     ]
+    },
+    {
+     "step": "For T(lambda) = exp(-mu_eff(lambda) L), a difference of only 1 mm^-1 in mu_eff between 500 nm and 800 nm converts a 0.4 mm change in effective internal path into a factor exp(0.4) = 1.49 change in the 800/500 band ratio. Applied to a broad 400-900 nm emitter this moves the spectral centroid by tens of nm. The effect is multiplicative in L, so it is fully confounded with any between-preparation difference in slice thickness, tissue opacity or pigment load.",
+     "justification_type": "computation"
+    },
+    {
+     "step": "Therefore the decisive control is internal to one species: vary L on the same tissue. If d(lambda_bar)/dL over the 200-800 um range is comparable to the published between-species shift, the transport account suffices and the emitter-chemistry account is unsupported.",
+     "justification_type": "computation"
+    }
+   ],
+   "cited_work_ids": [
+    "W2483916403",
+    "W1977345460",
+    "W4386377286",
+    "W4283824773",
+    "W4414929333",
+    "W2797018767",
+    "W2888240508",
+    "W2090063882"
+   ],
+   "proposed_experiment": "Acquire UPE spectra with a 50 nm-step bandpass filter set over 400-900 nm from paired specimens differing only in optical path (slice thickness series; intact leaf vs homogenate; skin with and without an optical clearing agent). Immediately measure mu_eff(lambda) of each specimen with an integrating sphere. Divide the detected spectrum by the specimen's own T(lambda) and test whether the transport-corrected emitter spectra collapse across species and preparations, and whether d(lambda_bar)/dL within one species reproduces the reported between-species shift.",
+   "required_instrument": "Deep-cooled EMCCD or ORCA-Quest-class qCMOS in photon-counting mode with a motorised bandpass filter wheel, 400-900 nm; plus an integrating-sphere spectrophotometer for mu_a, mu_s' and mu_eff(lambda) on the identical specimen.",
+   "engine_native_score": 0.72,
+   "novelty_self_claim": "Register claim H11 treats the measured spectrum as the emitted spectrum. This exposes that hidden assumption, names the confound (specimen-internal reabsorption), gives it a single estimand d(lambda_bar)/dL, and specifies a same-species thickness-series control that decides between transport and chemistry - including for the well-known species-redshift result, which the register does not address."
+  },
+  {
+   "id": "Q7-2",
+   "statement": "In perfused mammalian tissue the depth from which a surface UPE image retains resolvable spatial contrast is at most ~1 mm in the 450-600 nm band and at most ~3 mm in the 700-850 nm band at the exposure times the field actually uses (<= 1800 s), so no published in vivo whole-body UPE image contains organ-level spatial information originating below those depths.",
+   "scope": {
+    "population": "Tissue phantoms with independently measured mu_a and mu_s', plus ex vivo perfused mammalian tissue slabs (mouse whole-body phantom, porcine skin, rodent scalp+skull).",
+    "condition": "A flux-calibrated ultraweak source (point and 5 mm bar target) emitting 10-10^3 photons s^-1 cm^-2, i.e. matched to biological UPE, placed at depths of 0.5, 1, 2, 3, 5 and 10 mm.",
+    "comparator": "The identical source imaged at the tissue surface (depth 0), and a source-absent dark run, with the same camera, binning, cosmic-ray filter and 1800 s exposure used for in vivo UPE imaging.",
+    "outcome": "Contrast-to-noise ratio of the 5 mm test feature in the surface image, per spectral band, as a function of depth."
+   },
+   "null_hypothesis": "CNR >= 1 is still achieved for sources at 5 mm or deeper in the 450-600 nm band, i.e. surface UPE images do carry deep-tissue spatial contrast, which would falsify the shallow-ceiling claim and legitimise anatomical reading of whole-body UPE images.",
+   "estimand": "d_max(band): the source depth at which CNR falls to 1 in an 1800 s exposure, with 95% CI, reported separately for 450-600 nm and 700-850 nm.",
+   "causal_level": "L3",
+   "rationale": [
+    {
+     "step": "The seed brief states the field's own diagnosis: in vivo imaging attempts are hampered by tissue scattering and absorption, producing low signal-to-noise ratios.",
+     "justification_type": "given"
+    },
+    {
+     "step": "Published in vivo UPE imaging uses 15-60 min accumulations with 2x2 to 4x4 binning and cosmic-ray filtering, and then reads the resulting maps anatomically - diurnal whole-body patterns, upper-body emotional-state maps, tumour maps correlated with tumour size - while the rat work explicitly asserts that photons crossing the skull are the chief contributors to the brain image.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W1995699286",
+      "W2039224325",
+      "W4409735377",
+      "W4406075774",
+      "W2165767379",
+      "W3174216096",
+      "W2009372666",
+      "W2086348119",
+      "W2160984073"
+     ]
+    },
+    {
+     "step": "The corpus contains detector-side metrology (EM-CCD detectivity, Ulbricht-cavity concentration of a 3D photon gas onto a 2D detector) but no traceable ultraweak calibration source and no measured tissue transfer function for UPE-level fluxes; the only quantitative propagation treatment models the human body as a homogeneous sphere with an extrapolated zero-boundary photon-diffusion solution, with no experimental depth calibration.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W3126489816",
+      "W3161989600",
+      "W3170639556"
+     ]
+    },
+    {
+     "step": "Image blur alone cannot certify source depth. For a point source at depth d in a non-absorbing scattering half-space the surface exitance scales as d/(d^2+rho^2)^{3/2}; setting this to half its on-axis value gives rho = d*sqrt(2^{2/3}-1) = 0.766 d, i.e. FWHM = 1.53 d, and adding absorption narrows the profile further rather than widening it. Hence a narrow hotspot is not evidence of a shallow source, and the decisive quantity is the escape fraction, which falls approximately as exp(-mu_eff d), one e-fold per 1/mu_eff of depth.",
+     "justification_type": "computation"
+    },
+    {
+     "step": "Because mu_eff differs several-fold between the 450-600 nm region and the 700-850 nm window, the depth ceiling is band-specific and must be quoted per band; a single 'penetration depth' number for UPE imaging is not well defined.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2888240508",
+      "W2090063882"
+     ]
+    }
+   ],
+   "cited_work_ids": [
+    "W1995699286",
+    "W2039224325",
+    "W4409735377",
+    "W4406075774",
+    "W2165767379",
+    "W3174216096",
+    "W2009372666",
+    "W2086348119",
+    "W2160984073",
+    "W3126489816",
+    "W3161989600",
+    "W3170639556",
+    "W2888240508",
+    "W2090063882"
+   ],
+   "proposed_experiment": "Build a flux-calibrated ultraweak emitter (heavily attenuated LED behind calibrated neutral filters, or a tritium-phosphor plaque) cross-calibrated against a photon-counting PMT to 10-10^3 photons s^-1 cm^-2. Embed point and 5 mm bar targets at graded depths in phantoms of measured mu_a/mu_s' and in ex vivo tissue. Image with the same camera, binning, filtering and 1800 s protocol used for in vivo UPE, in 450-600 nm and 700-850 nm bands. Fit CNR versus depth, extract d_max per band, and then re-examine published whole-body images against that ceiling.",
+   "required_instrument": "Back-illuminated CCD/EMCCD cooled to -90 to -100 C in photon-counting mode, 400-900 nm, with bandpass filters; integrating sphere plus spatially-resolved reflectance for mu_a and mu_s'; photon-counting PMT for source cross-calibration.",
+   "engine_native_score": 0.8,
+   "novelty_self_claim": "Converts the field's qualitative 'scattering hampers imaging' into a measured, per-band depth ceiling anchored to a traceable ultraweak calibration source, and supplies the derivation showing that hotspot width cannot certify depth while escape fraction can. The register contains no propagation-metrology claim of this form; H7 concerns guided transport, not the unguided imaging ceiling."
+  },
+  {
+   "id": "Q7-3",
+   "statement": "After normalising out total flux and the anatomical silhouette, whole-body and whole-organ UPE images acquired under the field's standard protocol contain reproducible spatial structure at 5 mm scale, with split-half intraclass correlation exceeding 0.3 and exceeding the shot-noise-matched simulated null.",
+   "scope": {
+    "population": "Human hand and upper body (>= 20 imaging sessions across >= 20 subjects) and mice (>= 10 animals), imaged under the standard protocol: light-tight box, >= 60 min dark adaptation, 15-30 min accumulation, 2x2 to 4x4 binning, cosmic-ray filtering.",
+    "condition": "Each acquisition stored as individual frames and split into two interleaved half-datasets, each flux-normalised and masked to the silhouette.",
+    "comparator": "1000 synthetic image pairs drawn from a Poisson process with the same total counts, the same silhouette, and the measured flat-field, dark-current and EM excess-noise statistics of the same camera.",
+    "outcome": "Split-half intraclass correlation of the flux-normalised residual map at 5, 10 and 20 mm smoothing scales, and its excess over the simulated null distribution."
+   },
+   "null_hypothesis": "Split-half ICC lies at or below the 95th percentile of the shot-noise-matched simulated null at every scale, i.e. published UPE images carry no reproducible spatial information beyond total intensity and body outline - the pictures are display artefacts of a counting measurement.",
+   "estimand": "Split-half ICC of the residual spatial map at 5 mm scale, minus the 95th percentile of the matched simulated null, with CI.",
+   "causal_level": "L5",
+   "rationale": [
+    {
+     "step": "The field publishes two-dimensional UPE maps of human skin, human upper body, whole mice, tumours and plants and reads regional structure off them, but none of the retrieved imaging works reports any reproducibility statistic for the spatial pattern itself - only total or regional intensity comparisons.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2165767379",
+      "W3174216096",
+      "W2132454423",
+      "W2039224325",
+      "W4409735377",
+      "W2009372666",
+      "W4406075774"
+     ]
+    },
+    {
+     "step": "Detector-side sensitivity is quantified: an EM-CCD run as a binary photon counter reaches SNR 3 at fluxes below 30 photons s^-1 cm^-2, with detectivity D = 0.015 photon^-1 s^{1/2} cm; human skin emits of order 85 photons s^-1 cm^-2 in the visible.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W3126489816",
+      "W1583143288",
+      "W1899483214"
+     ]
+    },
+    {
+     "step": "From SNR = D * Phi * sqrt(A t) we get t = [SNR/(D*Phi)]^2 / A. For Phi = 85 photons s^-1 cm^-2 and SNR = 3 the numerator is (3/1.275)^2 = 5.54 cm^2 s, so t = 5.5 s for a 1 cm^2 element, 554 s (9.2 min) for a 1 mm^2 element, and 5.5e4 s (15.4 h) for a (100 um)^2 element. Exposure time scales as the inverse of the resolution-element area, so a tenfold finer linear resolution costs a hundredfold longer exposure; realistic lens collection efficiency eta_c << 1 multiplies all of these by 1/eta_c. At the field's 15-30 min exposures the SNR-3 resolution element is therefore of order 1 mm at best even in the idealised eta_c = 1 limit, and any finer claimed structure must be tested against the shot-noise null rather than asserted over it.",
+     "justification_type": "computation"
+    },
+    {
+     "step": "Consistency check on the same formula against the source: at Phi = 30 photons s^-1 cm^-2 and SNR = 3 it requires A*t = 44.4 cm^2 s, reproducing the reported regime for extended sources.",
+     "justification_type": "computation"
+    },
+    {
+     "step": "Residual light-induced emission takes about 60 min of darkness to decay to the spontaneous level, and dark adaptation of 30 min is used elsewhere to eliminate delayed-luminescence interference; an inadequate dark-adaptation period would imprint a reproducible but non-spontaneous spatial pattern, so the test must be repeated at two dark-adaptation delays to separate genuine spontaneous structure from persistence of prior illumination.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W4408461558",
+      "W2737370177"
+     ]
+    }
+   ],
+   "cited_work_ids": [
+    "W2165767379",
+    "W3174216096",
+    "W2132454423",
+    "W2039224325",
+    "W4409735377",
+    "W2009372666",
+    "W4406075774",
+    "W3126489816",
+    "W1583143288",
+    "W1899483214",
+    "W4408461558",
+    "W2737370177",
+    "W1995699286"
+   ],
+   "proposed_experiment": "Re-analyse archived raw frame stacks plus a prospective cohort. Interleave frames into two half-datasets, flux-normalise, mask to the silhouette, smooth at 5/10/20 mm, and compute the ICC between halves. Compare against 1000 Poisson surrogate image pairs matched on total counts, silhouette and measured detector noise. Repeat the whole procedure at 30 and 90 min dark adaptation and with the subject replaced by a matched inert phantom.",
+   "required_instrument": "Any deep-cooled CCD, EMCCD or qCMOS photon-counting camera over 400-900 nm that stores individual frames rather than a single accumulated exposure; no new hardware required.",
+   "engine_native_score": 0.6,
+   "novelty_self_claim": "Turns 'is a UPE picture a picture?' - the literal content of Q7 - into a decidable statistic with a matched shot-noise null, and supplies the resolution-versus-time law (t scales as 1/A) that fixes what resolution the field's own exposure times can support. The register has no image-level reproducibility claim at any causal level."
+  },
+  {
+   "id": "Q7-4",
+   "statement": "Evoked UPE imaged in mammalian white matter spreads anisotropically no more than anisotropic scattering alone predicts: the ratio of the 1/e spatial decay length along fibre tracts to that across them is 1.50 +/- 0.15, not the >= 2 that a myelin-waveguide contribution would require.",
+   "scope": {
+    "population": "Acute mouse brain slices containing corpus callosum (ordered white matter) with cortex or striatal grey matter in the same slice as an isotropic internal control, plus excised rodent spinal-cord white matter.",
+    "condition": "Focal pipette application of glutamate at a defined point, imaged with the established EMCCD-based ultraweak biophoton imaging protocol, in 450-900 nm and repeated in a 700-850 nm band.",
+    "comparator": "(i) grey matter in the same slice, (ii) demyelinated slices (cuprizone-fed or lysolecithin-treated), (iii) heat- or detergent-disrupted slices, and (iv) the scattering-only reference computed from the same tissue's directional reduced scattering coefficients measured by transmittance.",
+    "outcome": "Two-dimensional anisotropy ratio A = L_along / L_across of the elliptical exponential fit to the evoked emission profile."
+   },
+   "null_hypothesis": "A <= 1.65 at the upper 95% bound in intact white matter, A = 1 in grey matter, and A unchanged by demyelination - i.e. no guided component is detectable at the spatial scale that imaging can resolve, and H7's claimed transport advantage does not exist at imaging scale.",
+   "estimand": "A = L_along / L_across, compared against the scattering-only reference A_0 computed from the specimen's own directional mu_s'.",
+   "causal_level": "L3",
+   "rationale": [
+    {
+     "step": "Myelinated axons have been modelled in detail as photonic waveguides with modest loss, approximately multiplicative loss across Ranvier nodes and preserved polarisation, and dedicated in vivo/in vitro tests have been proposed but not performed at imaging scale.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2499288807",
+      "W2751268700",
+      "W4361863949",
+      "W4402626864",
+      "W4308920644"
+     ]
+    },
+    {
+     "step": "The imaging literature already asserts the anatomical corollary - that biophotonic activity detected in corpus callosum and thalamus originates from axons or axonal terminals of cortical projection neurons - using exactly the EMCCD-based imaging system this test would use.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W1977345460",
+      "W4386377286",
+      "W2956127065"
+     ]
+    },
+    {
+     "step": "Directional reduced scattering coefficients in mammalian spinal-cord white matter are measured as mu_s' = 1.57 +/- 0.03 mm^-1 for propagation along the myelinated axons and 3.52 +/- 0.1 mm^-1 perpendicular to them, a ~50% reduction along the fibres, with no comparable anisotropy in grey matter where myelin orientation is near-random.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W3012315177"
+     ]
+    },
+    {
+     "step": "In the diffusion limit the direction-dependent diffusion coefficient is D_i = 1/(3 mu_s'_i) and the attenuation length L_i = sqrt(D_i/mu_a) scales as 1/sqrt(mu_s'_i). The scattering-only anisotropy is therefore A_0 = sqrt(mu_s'_perp / mu_s'_along) = sqrt(3.52/1.57) = sqrt(2.242) = 1.50. Anything at or below ~1.6 is fully accounted for by ordinary anisotropic scattering and requires no waveguide.",
+     "justification_type": "computation"
+    },
+    {
+     "step": "A guided fraction would not decay diffusively: its along-tract decay length is set by waveguide loss rather than by sqrt(D/mu_a), so even a 10% guided fraction persisting over 1 mm adds a slowly decaying along-tract component that lifts the fitted A above 2. The grey-matter region of the same slice fixes A_0 = 1 empirically, so the test is internally calibrated and does not depend on absolute optical-property values.",
+     "justification_type": "computation"
+    }
+   ],
+   "cited_work_ids": [
+    "W2499288807",
+    "W2751268700",
+    "W4361863949",
+    "W4402626864",
+    "W4308920644",
+    "W1977345460",
+    "W4386377286",
+    "W2956127065",
+    "W3012315177"
+   ],
+   "proposed_experiment": "Apply glutamate focally through a pipette at a defined point in corpus callosum of an acute slice; image evoked UPE with an EMCCD (iXon Ultra 897 class, as already used in this literature) at 2x2 binning; fit an elliptical exponential to the spatial decay to obtain L_along and L_across; repeat the identical procedure in grey matter, in demyelinated slices and in disrupted slices; measure the same slice's directional mu_s' by transmittance to compute A_0 for that specimen; repeat in a 700-850 nm band where a guided mode should be relatively favoured.",
+   "required_instrument": "EMCCD photon-counting camera on a light-tight brain-slice perfusion chamber, 450-900 nm, with a 700-850 nm bandpass repeat; plus transmittance measurement of directional mu_s' on the same tissue.",
+   "engine_native_score": 0.68,
+   "novelty_self_claim": "Register claim H7 asserts guided transport 'materially above unguided propagation' without a number. This supplies the number (A_0 = 1.50) from an independent measurement of directional scattering in the same tissue class, an internal grey-matter control that removes dependence on absolute optical properties, and a demyelination manipulation - making H7 decidable in a single imaging session rather than a mechanism assertion."
+  },
+  {
+   "id": "Q7-5",
+   "statement": "Spontaneous UPE from a defined high-flux preparation contains no detectable population of correlated photon pairs: spatially resolved two-arm coincidence detection returns g2(0) = 1 within +/- 10^-3 and bounds the correlated-pair fraction below 10^-3, which forecloses coincidence-gated background rejection as a route to UPE imaging.",
+   "scope": {
+    "population": "A stable high-emitting preparation - linoleic-acid-stimulated Chlamydomonas reinhardtii culture or freshly wounded Arabidopsis leaf - plus a luminol/H2O2 chemiluminescence standard matched in photon flux as a classical control.",
+    "condition": "Emission split by a 50:50 non-polarising beamsplitter onto two optically isolated SPAD channels, or onto two halves of a SPAD array for spatially resolved pair mapping; coincidence windows 1 ns to 1 us; 8 h integration; one arm shutter-blocked in a control run.",
+    "comparator": "The measured accidental coincidence rate R1*R2*tau, the shutter-blocked crosstalk run, and the flux-matched classical chemiluminescence standard.",
+    "outcome": "Normalised coincidence excess g2(0) - 1 and the derived upper bound on the correlated-pair fraction f."
+   },
+   "null_hypothesis": "g2(0) - 1 is consistent with zero at the 10^-3 level and no spatial pair correlation exceeds accidentals, i.e. spontaneous UPE supplies no herald photon, so entanglement- and coincidence-based imaging methods cannot be transferred to it and the 'quantum imaging' route to solving Q7 is closed.",
+   "estimand": "g2(0) - 1 with its CI, and the 95% upper bound on the correlated-pair fraction f.",
+   "causal_level": "L2",
+   "rationale": [
+    {
+     "step": "Coincidence imaging from entanglement achieves roughly 25-fold stray-light suppression and works with SPAD-array cameras, and large-scale photon-level correlation imaging maps correlations onto position with single-photon-sensitive cameras - but both require photon pairs supplied by an external source, not by the specimen. Transferring either to spontaneous UPE presupposes that UPE itself emits pairs.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W4392581751",
+      "W2811014638"
+     ]
+    },
+    {
+     "step": "The hardware already exists in this field: a dual-channel coincidence-counting system with two low-noise SPAD modules and 1 us time resolution has been built for human delayed luminescence, and SiPM/SPAD photon counters are now cheap, compact and field-deployable.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W3114612921",
+      "W4303614346"
+     ]
+    },
+    {
+     "step": "A specific artefact must be controlled: SPADs emit light during detection events, so an unshielded two-detector geometry can manufacture spurious coincidences. The two arms must be optically isolated and the crosstalk rate measured directly with one arm shutter-blocked.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W4391831883"
+     ]
+    },
+    {
+     "step": "Classical null. For a broadband chemiluminescent source the coherence time is tau_c = lambda^2/(c*delta_lambda) = (550e-9)^2 / (3e8 * 200e-9) = 5.0e-15 s, about 5 fs. With a 1 ns resolving time the thermal bunching excess is g2(0) - 1 ~ tau_c/tau_res = 5e-6, indistinguishable from 1. Ordinary chemiluminescence therefore predicts g2(0) = 1 to within 10^-5, and any excess above 10^-3 is not classical chemiluminescence.",
+     "justification_type": "computation"
+    },
+    {
+     "step": "Sensitivity. With two channels each at R = 100 s^-1 and tau = 1 ns, accidentals are R1*R2*tau = 1e-5 s^-1, i.e. 0.29 counts in 8 h (28800 s). If a fraction f of emitted photons leave as pairs, detected coincidences are approximately (f*R_emit/2) * eta^2 * 1/2, the last factor accounting for the two photons taking different beamsplitter ports. With R_emit = 200 s^-1 and total efficiency eta = 0.05, f = 1e-3 gives 3.6 counts in 8 h against 0.29 expected - a decisive Poisson discrimination. Sensitivity scales as eta^-2, so raising eta to 0.25 pushes the bound to f = 4e-5.",
+     "justification_type": "computation"
+    },
+    {
+     "step": "Collection efficiency eta is the binding parameter, and a high-albedo Ulbricht cavity with a small exit orifice transforms a 3D photon gas into a much smaller Lambertian emitting surface at ~50% number efficiency, which is the practical route to raising eta and hence tightening the bound quadratically.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W3161989600"
+     ]
+    }
+   ],
+   "cited_work_ids": [
+    "W4392581751",
+    "W2811014638",
+    "W3114612921",
+    "W4303614346",
+    "W4391831883",
+    "W3161989600",
+    "W2034044028",
+    "W3037707140"
+   ],
+   "proposed_experiment": "Mount the stimulated Chlamydomonas culture or wounded Arabidopsis leaf at the input of a high-albedo Ulbricht concentrator; split the output 50:50 onto two optically isolated SPAD modules with TCSPC timestamping; accumulate 8 h; compute g2(tau) over 1 ns to 1 us windows; repeat with one arm shuttered (crosstalk control) and with flux-matched luminol chemiluminescence (classical control). For the spatial version, replace the two SPADs with a per-pixel-timestamping SPAD array and test for pixel-pair coincidence excess above accidentals.",
+   "required_instrument": "Two optically isolated SPAD modules, or a SPAD-array camera with per-pixel timestamping, 400-800 nm, with TCSPC electronics at <= 1 ns resolution; high-albedo integrating (Ulbricht) cavity light concentrator to raise collection efficiency.",
+   "engine_native_score": 0.55,
+   "novelty_self_claim": "Register claims H2 and H2.g2 assert a g2(0) deviation without stating the classical null, the achievable bound, or the artefact that would fake it. This supplies all three - the classical prediction g2(0) = 1 + 5e-6, the accidentals-derived 8-hour bound f < 1e-3 scaling as eta^-2, and the SPAD breakdown-flash control - and ties the answer to a Q7 consequence the register does not contain: whether coincidence-gated imaging is even applicable to spontaneous emission. It thereby discriminates H2/H2.g2 from the ordinary-chemiluminescence account H4a."
+  },
+  {
+   "id": "Q7-6",
+   "statement": "The reported state-dependent contrasts in human surface UPE images - relaxed versus anger, diurnal variation, post-illumination change - are predicted out of sample, pixel by pixel, by a co-registered infrared thermal image plus a perfusion map of the same skin area, with a thermal model trained on one cohort explaining at least 50% of the between-state variance of the UPE difference map in a held-out cohort.",
+   "scope": {
+    "population": "Healthy adults, n >= 40, split into disjoint training and test cohorts; imaging field = upper body or dorsal hand.",
+    "condition": "Paired acquisitions in two physiological states (rest versus an emotional, exercise or mild thermal challenge), with a long-wave infrared camera imaging the identical field of view via a dichroic or interleaved capture, plus laser speckle contrast perfusion imaging, all registered to a common pixel frame.",
+    "comparator": "A UPE-only model and a state-label-shuffled model, both evaluated on the same held-out cohort.",
+    "outcome": "Out-of-sample pixelwise R^2 of the thermal+perfusion model on the UPE difference map, and the incremental out-of-sample AUC that UPE adds to thermal+perfusion for state classification."
+   },
+   "null_hypothesis": "Out-of-sample pixelwise R^2 < 0.2 while UPE retains at least 0.05 incremental AUC over thermal+perfusion - i.e. surface UPE imaging carries genuinely non-thermal, non-perfusion state information, which would support H12 and strengthen H8.",
+   "estimand": "Out-of-sample pixelwise R^2 of the co-registered thermal+perfusion model on the UPE difference map, together with the incremental out-of-sample AUC of UPE beyond those covariates.",
+   "causal_level": "L6",
+   "rationale": [
+    {
+     "step": "Human surface UPE imaging reports state-dependent contrasts read as physiological signals: higher emission during anger than relaxation in nine subjects imaged with a sensitive CCD, whole-body diurnal variation, light-exposure-dependent changes proposed as a cosmetics control tool, and hand-location and day-night asymmetries.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W3174216096",
+      "W2165767379",
+      "W4401282046",
+      "W2182257766"
+     ]
+    },
+    {
+     "step": "UPE intensity is strongly and non-linearly temperature dependent: ultraweak luminescence varies exponentially with temperature over 4-38 C with a hysteresis loop, heat shock induces emission scaling with the rate of temperature rise, and the plant arm of the recent mouse/plant imaging study found that raising temperature increases UPE.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W1981011748",
+      "W2002499683",
+      "W4404240787",
+      "W4409735377"
+     ]
+    },
+    {
+     "step": "A Q10 of 2 for the underlying oxidative chemistry implies 2^{0.1} = 1.072, i.e. about a 7% change in emission per 1 C of tissue temperature. Emotional arousal, exercise and posture routinely shift regional facial and hand skin temperature by 1-3 C, predicting 7-23% UPE changes - the same order of magnitude as the published state effects, and spatially patterned in exactly the regions where the state effects are reported.",
+     "justification_type": "computation"
+    },
+    {
+     "step": "The detector itself is not thermally neutral: an EM-CCD characterised as a binary photon counter has non-negligible sensitivity to blackbody radiation above ~50 C, so the thermal covariate acts through both the emission chemistry and the detector response and must be measured on the same field of view rather than assumed away.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W3126489816"
+     ]
+    },
+    {
+     "step": "None of the retrieved human or plant imaging studies reports pixel-registered thermography alongside the UPE map; temperature enters the literature only as a whole-sample condition or a narrative caveat, while the claims being defended are spatial.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2132454423",
+      "W2906242287",
+      "W4406075774"
+     ]
+    }
+   ],
+   "cited_work_ids": [
+    "W3174216096",
+    "W2165767379",
+    "W4401282046",
+    "W2182257766",
+    "W1981011748",
+    "W2002499683",
+    "W4404240787",
+    "W4409735377",
+    "W3126489816",
+    "W2132454423",
+    "W2906242287",
+    "W4406075774"
+   ],
+   "proposed_experiment": "Interleave a 30 min UPE accumulation with 8-14 um LWIR frames of the identical field of view (dichroic beamsplitter or motorised mirror) and laser speckle contrast perfusion frames; register all three modalities to a common pixel grid; in the training cohort fit a pixelwise model predicting the UPE difference map from the thermal and perfusion difference maps; evaluate R^2 and incremental UPE AUC on the held-out cohort with the analysis pre-registered.",
+   "required_instrument": "Deep-cooled CCD/EMCCD, 400-900 nm, for UPE; calibrated LWIR microbolometer (8-14 um, NETD <= 30 mK) for skin temperature; laser speckle contrast imager for perfusion; common-aperture registration optics.",
+   "engine_native_score": 0.65,
+   "novelty_self_claim": "Register claim H8 lists skin temperature and perfusion as whole-sample covariates and H12 concerns mental-state modulation of total emission. This makes the covariate spatial and pixel-registered, sets the quantitative expectation (~7% emission change per 1 C from a Q10 of 2, matching the size of the published anger effect), and requires out-of-sample validation - so it can retire or vindicate the imaging-based state claims rather than restating them."
+  }
+ ]
+}

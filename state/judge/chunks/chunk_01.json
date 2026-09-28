@@ -1,0 +1,1016 @@
+[
+ {
+  "candidate_id": "C001",
+  "seed_id": "Q1",
+  "statement": "In a graded lipid-peroxidation series, the sub-350 nm photon flux scales as the square of the 400-500 nm triplet-carbonyl photon flux (log-log slope 2.0 +/- 0.3), because sub-350 nm quanta require pairwise pooling of two carbonyl excitations rather than any single catalogued chemiexcitation step.",
+  "scope": {
+   "population": "Cell-free aqueous linoleic-acid / phosphatidylcholine liposome suspension undergoing Fe(II)/H2O2-initiated peroxidation, and in parallel Chlamydomonas reinhardtii suspensions dosed with exogenous linoleic acid, both in 1 cm quartz cuvettes at 25 C, air-saturated",
+   "condition": "At least six initiator doses spanning a 100-fold range of total emission intensity, each measured simultaneously in two calibrated bands: 260-340 nm and 400-500 nm",
+   "comparator": "The same preparation at the lowest initiator dose; and the alternative model in which sub-350 nm emission is the short-wave tail of the same single-step chemiexcitation (predicting slope 1.0)",
+   "outcome": "beta = d(log absolute photon flux 260-340 nm)/d(log absolute photon flux 400-500 nm), fitted across the dose series with band-specific absolute calibration"
+  },
+  "null_hypothesis": "beta is statistically indistinguishable from 1.0 (95% CI containing 1.0 and excluding 2.0), i.e. the UV band tracks the visible band proportionally and therefore shares its single-quantum origin (or is filter leakage); equivalently, the sub-340 nm band is undetectable at every dose so beta is undefined.",
+  "estimand": "beta, the log-log slope of absolute 260-340 nm flux on absolute 400-500 nm flux; decision thresholds beta<1.3 refutes, beta>1.7 supports.",
+  "proposed_experiment": "Build a two-channel photon counter: a quartz/MgF2 collection train from a 1 cm quartz cuvette, split by a 380 nm dichroic into (a) a cooled UV-extended bialkali or CsTe PMT behind a 260-340 nm interference filter and (b) a cooled bialkali PMT behind a 400-500 nm interference filter, both absolutely calibrated per band against a traceable low-flux standard so that counts convert to photons/s/cm2. Run a six-to-eight point Fe(II)/H2O2 dose series on linoleic-acid liposomes and, separately, an exogenous-linoleic-acid dose series on Chlamydomonas, spanning 100-fold in 400-500 nm flux. At each dose acquire both bands simultaneously for >=600 s. Interleave blanked controls (heat-killed sample, buffer only, filter-swapped) at every dose to bound leakage. Fit log(UV flux) against log(visible flux) by orthogonal-distance regression and report beta with its 95% CI. Repeat with the UV filter replaced by a matched blocked filter to quantify out-of-band leakage as an explicit additive term in the fit.",
+  "rationale": [
+   {
+    "step": "The field states its own UPE band as ~350-1300 nm and locates the unexplained region at wavelengths shorter than 350 nm, i.e. the mechanistic gap opens exactly at the short-wave edge of the band the field can account for.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2752165143",
+     "W4404871602",
+     "W3037707140"
+    ]
+   },
+   {
+    "step": "The catalogued ROS chemiexcitation scheme terminates in triplet excited carbonyls from cyclic (1,2-dioxetane) and linear (tetroxide) high-energy intermediates, and the emission window assigned to excited carbonyl species is 350-550 nm; homogenate chemiluminescence spectra resolve five bands whose shortest is 420-450 nm, with nothing catalogued below 420 nm.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2954526477",
+     "W4391831883",
+     "W2258231078",
+     "W2790280419",
+     "W1981792019"
+    ]
+   },
+   {
+    "step": "Photon energy in kcal/mol equals 28591 divided by wavelength in nm. The short-wave edge of the carbonyl band, 350 nm, is therefore 81.7 kcal/mol; this is the maximum single-quantum energy the catalogued chemistry delivers. 300 nm needs 95.3, 280 nm needs 102.1, 250 nm needs 114.4 and 190 nm needs 150.5 kcal/mol - all above that ceiling. Two pooled carbonyl quanta cap at 163.4 kcal/mol, i.e. a shortest accessible wavelength of 28591/163.4 = 175 nm, which brackets the entire historically claimed 190-250 nm band. Pairwise pooling is thus the minimal mechanism that reaches the unexplained region, and the only one that reaches it without new chemistry.",
+    "justification_type": "computation"
+   },
+   {
+    "step": "A pooling channel is second order in the excited-state population [T] while direct carbonyl emission is first order, so R_UV / R_vis is proportional to [T] and R_UV is proportional to R_vis squared; the log-log slope of UV on visible flux is therefore 2, independent of the reaction order of the primary chemistry that sets [T].",
+    "justification_type": "computation"
+   },
+   {
+    "step": "The estimand is deliberately UV flux against visible flux, not against substrate, because the primary chemistry is itself already known to be non-linear: low-level chemiluminescence in Fe-induced peroxidation of mitochondrial and microsomal membranes goes as the square of accumulated lipid hydroperoxide. Regressing band on band cancels that primary order out.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W4229886885",
+     "W2895088970"
+    ]
+   },
+   {
+    "step": "Linoleic-acid dosing of a living cell suspension is an established, graded UPE-generating perturbation in this corpus, and rat-tissue hydroperoxide dosing produces graded chemiluminescence with quantified lipid-peroxidation endpoints, so the dose series is a known-good preparation rather than a new one.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2034044028",
+     "W2039060183",
+     "W2326730546",
+     "W4307038714"
+    ]
+   },
+   {
+    "step": "The prediction has an immediate corollary that discriminates it from the register's H4a: the UV percentage of total UPE is not a constant but rises with total intensity, which reconciles the historical report that a definite UV component of 20-40% appeared specifically during periods of active growth.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2979283984",
+     "W1920668343"
+    ]
+   }
+  ],
+  "cited_works": [
+   {
+    "work_id": "W2752165143",
+    "title": "Oscillations of ultra-weak photon emission from cancer and non-cancer cells stressed by culture medium change and TNF-α",
+    "year": 2017,
+    "type": "article",
+    "abstract": "Cells spontaneously emit photons in the UV to visible/near-infrared range (ultra-weak photon emission, UPE). Perturbations of the cells' state cause changes in UPE (evoked UPE). The aim of the present study was to analyze the evoked UPE dynamics of cells caused by two types of cell perturbations (stressors): (i) a cell culture medium change, and (ii) application of the pro-inflammatory cytokine tumor necrosis factor alpha (TNF-α). Four types of human cell lines were used (squamous cell carcinoma cells, A431; adenocarcinomic alveolar basal epithelial cells, A549; p53-deficient keratinocytes, HaCaT, and cervical cancer cells, HeLa). In addition to the medium change, TNF-α was applied at different concentrations (5, 10, 20, and 40 ng/mL) and UPE measurements were performed after incubation times of 0, 30, 60, 90 min, 2, 5, 12, 24, 48 h. It was observed that (i) the change of cell culture medium (without added TNF-α) induces a cell type-specific transient increase in UPE with the largest UPE increase observed in A549 cells, (ii) the addition of TNF-α induces a cell type-specific and dose-dependent change in UPE, and (iii) stressed cell cultures in general exhibit oscillatory UPE changes."
+   },
+   {
+    "work_id": "W4404871602",
+    "title": "Open quantum systems theory of ultraweak ultraviolet photon emissions: Revisiting Gurwitsch's onion experiment as a prototype for quantum biology",
+    "year": 2024,
+    "type": "article",
+    "abstract": "A century ago it was discovered that metabolic processes in living cells emit a spectrum of very low intensity radiation. This was based on observations that radiant energy from proliferating cells can amplify the rate of cell division in other nearby cellular life. Although metabolic radiation is now thoroughly documented in research on ultraweak photon emissions (UPE), the original finding that UPE can enhance mitogenesis remains controversial. This controversy is addressed by establishing a physical basis for phenomenological observations that biological UPE can amplify mitogenesis in living cells. Enhanced mitosis is rationalized as a resonance effect based on open quantum systems theory using Fano and Feshbach's methods. This application of quantum theory to biology has important consequences for understanding health, medicine, and principles of living matter."
+   },
+   {
+    "work_id": "W3037707140",
+    "title": "Spectral Distribution of Ultra-Weak Photon Emission as a Response to Wounding in Plants: An In Vivo Study",
+    "year": 2020,
+    "type": "article",
+    "abstract": "It is well established that every living organism spontaneously emits photons referred to as ultra-weak photon emission (synonym biophotons or low-level chemiluminescence) which inherently embodies information about the wellbeing of the source. In recent years, efforts have been made to use this feature as a non-invasive diagnostic tool related to the detection of food quality, agriculture and biomedicine. The current study deals with stress resulting from wounding (mechanical injury) on Arabidopsis thaliana and how it modifies the spontaneous ultra-weak photon emission. The ultra-weak photon emission from control (non-wounded) and stressed (wounded) plants was monitored using different modes of ultra-weak photon emission measurement sensors like charge-coupled device (CCD) cameras and photomultiplier tubes (PMT) and the collected data were analyzed to determine the level of stress generated, photon emission patterns, and underlying biochemical process. It is generally considered that electronically excited species formed during the oxidative metabolic processes are responsible for the ultra-weak photon emission. In the current study, a high-performance cryogenic full-frame CCD camera was employed for two-dimensional in-vivo imaging of ultra-weak photon emission (up to several counts/s) and the spectral analysis was done by using spectral system connected to a PMT. The results show that Arabidopsis subjected to mechanical injury enhances the photon emission and also leads to changes in the spectral pattern of ultra-weak photon emission. Thus, ultra-weak photon emission can "
+   },
+   {
+    "work_id": "W2954526477",
+    "title": "Mechanism of the Formation of Electronically Excited Species by Oxidative Metabolic Processes: Role of Reactive Oxygen Species",
+    "year": 2019,
+    "type": "article",
+    "abstract": "It is well known that biological systems, such as microorganisms, plants, and animals, including human beings, form spontaneous electronically excited species through oxidative metabolic processes. Though the mechanism responsible for the formation of electronically excited species is still not clearly understood, several lines of evidence suggest that reactive oxygen species (ROS) are involved in the formation of electronically excited species. This review attempts to describe the role of ROS in the formation of electronically excited species during oxidative metabolic processes. Briefly, the oxidation of biomolecules, such as lipids, proteins, and nucleic acids by ROS initiates a cascade of reactions that leads to the formation of triplet excited carbonyls formed by the decomposition of cyclic (1,2-dioxetane) and linear (tetroxide) high-energy intermediates. When chromophores are in proximity to triplet excited carbonyls, the triplet-singlet and triplet-triplet energy transfers from triplet excited carbonyls to chromophores result in the formation of singlet and triplet excited chromophores, respectively. Alternatively, when molecular oxygen is present, the triplet-singlet energy transfer from triplet excited carbonyls to molecular oxygen initiates the formation of singlet oxygen. Understanding the mechanism of the formation of electronically excited species allows us to use electronically excited species as a marker for oxidative metabolic processes in cells."
+   },
+   {
+    "work_id": "W4391831883",
+    "title": "Ultra weak photon emission—a brief review",
+    "year": 2024,
+    "type": "article",
+    "abstract": "Cells emit light at ultra-low intensities: photons which are produced as by-products of cellular metabolism, distinct from other light emission processes such as delayed luminescence, bioluminescence, and chemiluminescence. The phenomenon is known by a large range of names, including, but not limited to, biophotons, biological autoluminescence, metabolic photon emission and ultraweak photon emission (UPE), the latter of which shall be used for the purposes of this review. It is worth noting that the photons when produced are neither 'weak' nor specifically biological in characteristics. Research of UPE has a long yet tattered past, historically hamstrung by a lack of technology sensitive enough to detect it. Today, as technology progresses rapidly, it is becoming easier to detect and image these photons, as well as to describe their function. In this brief review we will examine the history of UPE research, their proposed mechanism, possible biological role, the detection of the phenomenon, and the potential medical applications."
+   },
+   {
+    "work_id": "W2258231078",
+    "title": "Oxygen- or organic hydroperoxide-induced chemiluminescence of brain and liver homogenates",
+    "year": 1981,
+    "type": "article",
+    "abstract": "Oxygenation of anaerobically isolated brain and liver homogenates is associated with chemiluminescence and formation of lipid hydroperoxides, the latter determined by the thiobarbituric acid assay. Light emission and formation of malonaldehyde are 20-fold higher in the brain than in liver; chemiluminescence of both decays when accumulation of malonaldehyde ceases. Exogenous organic peroxides, such as t-butyl hydroperoxide, inhibit the light-emission response to oxygenation by brain homogenate, whereas they enhance that of liver homogenate. t-Butyl hydroperoxide-induced photoemission of liver homogenate shows a polyphasic kinetic pattern that is O2-dependent. The spectral analysis of chemiluminescence arising from brain and liver homogenates on oxygenation shows a spectrum with five emission bands at 420-450, 475-485, 510-540, 560-580 and 625-640 nm. These bands are subjected to intensity changes or shifts of the wavelength whenever t-butyl hydroperoxide is present, either inhibiting or stimulating light emission. The blue-band chemiluminescence, around 435 nm, is possibly due to the weak light emission arising from excited carbonyl compounds [Lloyd (1965) J. Chem. Soc. Faraday Trans. 61, 2182-2193; Vassil'ev (1965) Opt. Spectrosc. (USSR) 18, 131-135], whereas the presence of other bands suggests generation of singlet molecular oxygen either in the process triggered on oxygenation (lipid oxygenation) or after supplementation with organic hydroperoxides. We offer several explanations for the spectral analysis presented here."
+   },
+   {
+    "work_id": "W2790280419",
+    "title": "Chemi- and Bioluminescence of Cyclic Peroxides",
+    "year": 2018,
+    "type": "article",
+    "abstract": "Bioluminescence is a phenomenon that has fascinated mankind for centuries. Today the phenomenon and its sibling, chemiluminescence, have impacted society with a number of useful applications in fields like analytical chemistry and medicine, just to mention two. In this review, a molecular-orbital perspective is adopted to explain the chemistry behind chemiexcitation in both chemi- and bioluminescence. First, the uncatalyzed thermal dissociation of 1,2-dioxetane is presented and analyzed to explain, for example, the preference for triplet excited product states and increased yield with larger nonreactive substituents. The catalyzed fragmentation reaction and related details are then exemplified with substituted 1,2-dioxetanone species. In particular, the preference for singlet excited product states in that case is explained. The review also examines the diversity of specific solutions both in Nature and in artificial systems and the difficulties in identifying the emitting species and unraveling the color modulation process. The related subject of excited-state chemistry without light absorption is finally discussed. The content of this review should be an inspiration to human design of new molecular systems expressing unique light-emitting properties. An appendix describing the state-of-the-art experimental and theoretical methods used to study the phenomena serves as a complement."
+   },
+   {
+    "work_id": "W1981792019",
+    "title": "Thermal and photochemical generation of electronically excited organic molecules. Tetramethyl-1,2-dioxetane and naphthvalene",
+    "year": 1973,
+    "type": "article",
+    "abstract": "Abstract [NOTE: the corpus holds no usable abstract for this work. Judge its citation step on the title alone and mark the step unverifiable rather than false.]"
+   },
+   {
+    "work_id": "W4229886885",
+    "title": "BIOLOGICAL CHEMILUMINESCENCE",
+    "year": 1984,
+    "type": "article",
+    "abstract": " [NOTE: the corpus holds no usable abstract for this work. Judge its citation step on the title alone and mark the step unverifiable rather than false.]"
+   },
+   {
+    "work_id": "W2895088970",
+    "title": "Low-Level Chemiluminescence of Biological Systems",
+    "year": 1984,
+    "type": "book-chapter",
+    "abstract": " [NOTE: the corpus holds no usable abstract for this work. Judge its citation step on the title alone and mark the step unverifiable rather than false.]"
+   },
+   {
+    "work_id": "W2034044028",
+    "title": "Linoleic Acid-Induced Ultra-Weak Photon Emission from Chlamydomonas reinhardtii as a Tool for Monitoring of Lipid Peroxidation in the Cell Membranes",
+    "year": 2011,
+    "type": "article",
+    "abstract": "Reactive oxygen species formed as a response to various abiotic and biotic stresses cause an oxidative damage of cellular component such are lipids, proteins and nucleic acids. Lipid peroxidation is considered as one of the major processes responsible for the oxidative damage of the polyunsaturated fatty acid in the cell membranes. Various methods such as a loss of polyunsaturated fatty acids, amount of the primary and the secondary products are used to monitor the level of lipid peroxidation. To investigate the use of ultra-weak photon emission as a non-invasive tool for monitoring of lipid peroxidation, the involvement of lipid peroxidation in ultra-weak photon emission was studied in the unicellular green alga Chlamydomonas reinhardtii. Lipid peroxidation initiated by addition of exogenous linoleic acid to the cells was monitored by ultra-weak photon emission measured with the employment of highly sensitive charged couple device camera and photomultiplier tube. It was found that the addition of linoleic acid to the cells significantly increased the ultra-weak photon emission that correlates with the accumulation of lipid peroxidation product as measured using thiobarbituric acid assay. Scavenging of hydroxyl radical by mannitol, inhibition of intrinsic lipoxygenase by catechol and removal of molecular oxygen considerably suppressed ultra-weak photon emission measured after the addition of linoleic acid. The photon emission dominated at the red region of the spectrum with emission maximum at 680 nm. These observations reveal that the oxidation of linoleic acid by hydroxyl"
+   },
+   {
+    "work_id": "W2039060183",
+    "title": "Tissue lipid peroxidation and ultraweak chemiluminescence in rats dosed with methyl linoleate hydroperoxide.",
+    "year": 1983,
+    "type": "article",
+    "abstract": "This study was undertaken to elucidate the toxic nature of dietary hydroperoxides in rats by the measurement of tissue chemiluminescence (CL). By the oral administration of methyl linoleate hydroperoxide (HPO) for two days, the tissue CL intensities and thiobarbituric acid (TBA) reactants were significantly increased in the liver, kidney, heart and lung, and the increases of both indices were inhibited by the supplemental administration of antioxidants, i.e. d-α-tocopherol (TOC) and riboflavin-tetrabutyrate (RTB). TOC was especially effective on the liver and kidney and RTB was effective on the liver, lung and heart. Hepatic glutathione peroxidase activity was evidently elevated at the seventh day of HPO-feeding, and this activation resulted in the decay of CL intensities and TBA reactants in rat organs. The spectrum of CL from liver homogenates of rats dosed with HPO for two days revealed five emission bands in the visible region and was similar to that for a singlet oxygen. The results indicate that TOC and RTB act as protective agents against the tissue lipoperoxidation caused by dietary HPO in rats, and that liver glutathione peroxidase is effectively induced as one of the bio-antioxidative functions in rats against the toxic effect at an early stage of the HPO dosage."
+   },
+   {
+    "work_id": "W2326730546",
+    "title": "Characteristics of tissue ultraweak chemiluminescence in rats fed with autoxidized linseed oil.",
+    "year": 1983,
+    "type": "article",
+    "abstract": "After 2 days of oral administration of autoxidized linseed oil (AOLO; peroxide value 1, 000meq/kg, 0.3ml/rat/day), ultraweak chemiluminescence (CL) spontaneously emitted from rat liver homogenate increased up to about three times accompanying the accumulation of thiobarbituric acid (TBA) reactive products. This liver CL was quenched effectively by the in vitro addition of free radical scavengers, e.g. butyl hydroxytoluene, d-α-tocopherol and 2, 5-diphenylfuran, while superoxide dismutase, catalase and D-mannitol gave only negligible inhibitions on AOLO-induced liver CL. The luminescence spectrum recorded by a filter spectral analyzing method gave definitive two emission peaks at 585 and 635 nm and broad emission band around 500-560 nm. The spectrum was similar to that reported for a singlet molecular oxygen. In the experiment of successive AOLO administration (0.3ml/rat/day) for 10 days, a large increase in CL intensities and TBA reactants in various tissues was observed, especially on the 2nd day to the 6th day of feeding. Among them, the enhancement of CL and the accumulation of TBA reactants in liver and kidney were inhibited significantly by the oral administration of supplemental d-α-tocopherol (5mg/rat/day). These results suggest that AOLO-induced tissue spontaneous CL originated in the occurrence of free radical species which are possibly derived from chain reactions of tissue lipid peroxidation caused by the AOLO administration to rats."
+   },
+   {
+    "work_id": "W4307038714",
+    "title": "Blue light-induced lipid oxidation and the antioxidant property of hypotaurine: evaluation via measuring ultraweak photon emission",
+    "year": 2022,
+    "type": "article",
+    "abstract": "The effects of blue light on human body have attracted attention. The human skin in contact with the outside environment is often exposed to blue light, and the effects of this exposure remain to be fully determined. Therefore, in this study, we investigated the effect of blue light, at the intensity typically found in sunlight, on lipids in the skin from an oxidation perspective. Peroxide value (POV) and ultraweak photon emission (UPE) measurements were conducted to evaluate lipid oxidation. Our results confirmed that blue light irradiation induced lipid oxidation, similar to ultraviolet A (UVA) irradiation. Also, the effects of various reagents on the blue light-induced UPE were evaluated; however, the results differed from those of the DPPH radical-scavenging ability. We speculated that this is due to the difference in the evaluation principle; nevertheless, among reagents, hypotaurine not only showed a high antioxidant effect but was also more effective against blue light-induced oxidation than UVA. Based on the difference in the antioxidant effect of the lipid sample in this study, the oxidation reaction induced by blue light may be different from the UVA-induced reaction. Our study provides new insights into the effects of blue light on lipids in the human skin, thereby promoting research regarding photooxidation."
+   },
+   {
+    "work_id": "W2979283984",
+    "title": "Historical review of early researches on mitogenetic radiation: from discovery to cancer diagnostics",
+    "year": 2018,
+    "type": "article",
+    "abstract": "The review is devoted to the experimental studies of mitogenetic radiation (weak UV-chemiluminescence of biological objects) conducted between 1923 and 1948 years. In this period UV-radiation of various biological objects (so called inductors) and its influence on mitotic rate of other biological objects (detectors) were investigated very actively. Very promising results were obtained including the finding of the peptide tumor marker in blood, which was called cancer quencher due to its ability to quench UV-chemiluminescence of blood. Later these researches were interrupted and almost abandoned. The relevance of the scientific problems addressed in these works to this day is stated, the key experiments and the most valuable results obtained between 1923 and 1948 are described in details and subsequent researches are briefly traced up to the present. The prospects of future development are discussed."
+   },
+   {
+    "work_id": "W1920668343",
+    "title": "Revisiting the mitogenetic effect of ultra-weak photon emission",
+    "year": 2015,
+    "type": "article",
+    "abstract": "This paper reviews the 90 years long controversial history of the so-called \"mitogenetic radiation,\" the first case of non-chemical distant interactions, reported by Gurwitsch (1923). It was soon described as ultraweak UV, emitted by a number of biological systems, and stimulating mitosis in \"competent\" (in this sense) cells. In the following 20 years this phenomenon attracted enormous interest of the scientific community, and gave rise to more than 700 publications around the world. Yet, this wave of research vanished after several ostensibly disproving works in late 1930-s, and was not resumed later, regardless of quite serious grounds for that. The authors discuss separately two aspects of the problem: (1) do living organisms emit ultraweak radiation in the UV range (irrespective of whether it has any biological role), and (2) are there any real effects of this ultraweak photon emission (UPE) upon cell division and/or other biological functions? Analysis of the available data permits to conclude, that UV fraction of UPE should be regarded real, while its biological effects are difficult to reproduce. This causes a paradox. A number of presently known qualities of UPE were initially discovered (predicted?) by the \"early workers\" on the basis of biological effects. Yet the qualities they discovered were proved later (the UV component of UPE, the sources of UPE among biological systems, etc…), while the biological effect they used for UPE \"detection\" remains questionable. Importance of this area for basic biology and medicine, and potential usefulness of UPE as a non-invasi"
+   }
+  ]
+ },
+ {
+  "candidate_id": "C002",
+  "seed_id": "Q1",
+  "statement": "Measured with a solar-blind photocathode and a fully quartz optical train, the absolute spontaneous photon flux below 320 nm from a proliferating cell culture is less than 1% of its 350-700 nm flux, i.e. more than an order of magnitude below the 20-40% UV fraction and the 10-1000 photons/cm2/s mitogenetic level claimed in the historical record.",
+  "scope": {
+   "population": "Exponentially growing Saccharomyces cerevisiae and a proliferating mammalian line (HeLa or A549) in quartz vessels, dark-adapted >2 h, 25-37 C; onion-root or yeast preparations of the classic mitogenetic type included as a positive-control arm",
+   "condition": "Spontaneous (unstimulated) emission recorded through a CsTe or CsI solar-blind photocathode with out-of-band rejection >1e5 above 350 nm, quartz windows throughout, against a paired 350-700 nm bialkali channel",
+   "comparator": "Identical acquisition on heat-killed cells, on cell-free medium, and on the same live culture behind a UV-blocking borosilicate window; plus the historically asserted values (20-40% UV fraction; 10-1000 photons/cm2/s at 190-250 nm)",
+   "outcome": "Absolute background-subtracted photon flux in photons/cm2/s in the <320 nm band, and its ratio to the simultaneously measured 350-700 nm flux"
+  },
+  "null_hypothesis": "The <320 nm flux is >=5% of the 350-700 nm flux, or exceeds 10 photons/cm2/s in absolute terms, in live cultures and not in heat-killed or medium controls - which would confirm a large genuine UV component and force a new generating chemistry.",
+  "estimand": "f_UV = (absolute photons/cm2/s in 190-320 nm) / (absolute photons/cm2/s in 350-700 nm), with a two-sided 95% CI; and the absolute <320 nm flux itself with its detection limit stated.",
+  "proposed_experiment": "Assemble a solar-blind channel: sample in a fused-silica vessel inside a light-tight, temperature-controlled dark chamber; all-quartz collection; a cooled CsTe (or CsI) PMT in photon counting, with a solar-blind bandpass defining 190-320 nm; and a simultaneous bialkali channel at 350-700 nm through a beam splitter. Calibrate both channels absolutely against a traceable attenuated deuterium/tungsten source so that counts map to photons/cm2/s at the sample surface. Optionally couple the sample into a high-albedo quartz-powder Ulbricht cavity to convert the 3D emitting volume into a small high-radiance orifice and gain roughly two orders of magnitude in effective sensitivity. Acquire >=4 h per condition on: exponential yeast, exponential mammalian culture, onion-root positive control, heat-killed cells, sterile medium, empty vessel, and live culture behind borosilicate. Report f_UV with CIs and state the detection limit explicitly. Pre-register the decision rule: f_UV < 0.01 refutes the 20-40% claim; f_UV >= 0.05 with live-versus-killed separation confirms it.",
+  "rationale": [
+   {
+    "step": "The historical mitogenetic literature specifies both an intensity (~10-1000 photons/cm2/s) and a band (~190-250 nm), giving a directly testable absolute target rather than a relative one.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W4389669809",
+     "W2979283984"
+    ]
+   },
+   {
+    "step": "A critical review of the same literature concludes there is little modern evidence even for the longer UV interval 280-390 nm, while a separate review concludes the UV fraction should be regarded as real - the two reviews disagree on the same object, which is the definition of an unaudited measurement.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2095038636",
+     "W1920668343"
+    ]
+   },
+   {
+    "step": "Modern instruments that report UPE over a 200-1000 nm range in fact use EMCCD and CCD cameras described as capturing single visible-wavelength photons, so the sub-350 nm end of the quoted range is asserted by the stated band rather than measured by the stated detector; a hand-UPE spectrometer built on an EMCCD plus tunable filter likewise sampled only 400-700 nm.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W4404240787",
+     "W4409735377",
+     "W2797018767",
+     "W2906242287"
+    ]
+   },
+   {
+    "step": "The absolute-calibration audit is a proven design in this corpus: photon emission from isolated frog and fish retinas was quantified against a calibrated source and found >=100x too weak to sustain the biophoton hypothesis of photoreceptor dark noise, retiring that claim decisively.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2939950252"
+    ]
+   },
+   {
+    "step": "The required sensitivity exists. EMCCD binary photon counting reaches SNR 3 at fluxes below 30 photons/s/cm2, and a high-albedo Ulbricht-cavity concentrator pushes lower still, having detected the luminescence of non-catalytic H2O2 disproportionation in pure water. If the historical 20-40% fraction were real, given total UPE of 10-1000 photons/cm2/s the UV band would carry 2-400 photons/cm2/s, comfortably above these floors; a null at that sensitivity is therefore informative rather than merely underpowered.",
+    "justification_type": "computation"
+   },
+   {
+    "step": "Solar-blind photocathodes are the correct instrument class precisely because the failure mode being tested is red leakage: a bialkali cathode peaks near 350-420 nm, so any coloured-glass or interference filter with finite out-of-band transmission converts abundant blue-green carbonyl photons into apparent UV counts. A CsTe cathode with >1e5 rejection above 350 nm removes that pathway physically rather than by subtraction.",
+    "justification_type": "computation"
+   },
+   {
+    "step": "Borosilicate optics are common in this literature (a luminometer arm using borosilicate test tubes is used to report 300-400 nm band intensities), so a paired borosilicate-versus-quartz arm is a necessary control on whether reported UV is transmitted at all.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W4416736719",
+     "W7117718612"
+    ]
+   }
+  ],
+  "cited_works": [
+   {
+    "work_id": "W4389669809",
+    "title": "Ultra-Weak Photon Emission from Biological Systems",
+    "year": 2023,
+    "type": "book",
+    "abstract": "This book covers the key aspects of ultra-weak photon emission, from mechanisms to applications. This book provides an excellent summary of the UPE field."
+   },
+   {
+    "work_id": "W2979283984",
+    "title": "Historical review of early researches on mitogenetic radiation: from discovery to cancer diagnostics",
+    "year": 2018,
+    "type": "article",
+    "abstract": "The review is devoted to the experimental studies of mitogenetic radiation (weak UV-chemiluminescence of biological objects) conducted between 1923 and 1948 years. In this period UV-radiation of various biological objects (so called inductors) and its influence on mitotic rate of other biological objects (detectors) were investigated very actively. Very promising results were obtained including the finding of the peptide tumor marker in blood, which was called cancer quencher due to its ability to quench UV-chemiluminescence of blood. Later these researches were interrupted and almost abandoned. The relevance of the scientific problems addressed in these works to this day is stated, the key experiments and the most valuable results obtained between 1923 and 1948 are described in details and subsequent researches are briefly traced up to the present. The prospects of future development are discussed."
+   },
+   {
+    "work_id": "W2095038636",
+    "title": "Cell-to-cell signaling through light: just a ghost of chance?",
+    "year": 2013,
+    "type": "article",
+    "abstract": "Despite the large number of reports attributing the signaling between detached cell cultures to the electromagnetic phenomena, almost no report so far included a rigorous analysis of the possibility of such signaling.In this paper, we examine the physical feasibility of the electromagnetic communication between cells, especially through light, with regard to the ambient noise illumination. We compare theoretically attainable parameters of communication with experimentally obtained data of the photon emission from cells without a specially pronounced ability of bioluminescence.We show that the weak intensity of the emission together with an unfavorable signal-to-noise ratio, which is typical for natural conditions, represent an important obstacle to the signal detection by cells."
+   },
+   {
+    "work_id": "W1920668343",
+    "title": "Revisiting the mitogenetic effect of ultra-weak photon emission",
+    "year": 2015,
+    "type": "article",
+    "abstract": "This paper reviews the 90 years long controversial history of the so-called \"mitogenetic radiation,\" the first case of non-chemical distant interactions, reported by Gurwitsch (1923). It was soon described as ultraweak UV, emitted by a number of biological systems, and stimulating mitosis in \"competent\" (in this sense) cells. In the following 20 years this phenomenon attracted enormous interest of the scientific community, and gave rise to more than 700 publications around the world. Yet, this wave of research vanished after several ostensibly disproving works in late 1930-s, and was not resumed later, regardless of quite serious grounds for that. The authors discuss separately two aspects of the problem: (1) do living organisms emit ultraweak radiation in the UV range (irrespective of whether it has any biological role), and (2) are there any real effects of this ultraweak photon emission (UPE) upon cell division and/or other biological functions? Analysis of the available data permits to conclude, that UV fraction of UPE should be regarded real, while its biological effects are difficult to reproduce. This causes a paradox. A number of presently known qualities of UPE were initially discovered (predicted?) by the \"early workers\" on the basis of biological effects. Yet the qualities they discovered were proved later (the UV component of UPE, the sources of UPE among biological systems, etc…), while the biological effect they used for UPE \"detection\" remains questionable. Importance of this area for basic biology and medicine, and potential usefulness of UPE as a non-invasi"
+   },
+   {
+    "work_id": "W4404240787",
+    "title": "Imaging Ultraweak Photon Emission from Living and Dead Mice and from Plants under Stress",
+    "year": 2024,
+    "type": "preprint",
+    "abstract": "The phenomenon of biological ultraweak photon emission (UPE), that is, extremely low-intensity emission (10 − 10 3 photons/cm 2 /sec) in the spectral range of 200 − 1000 nm, has been observed in all living systems that have been examined. Here we report experiments that exemplify the ability of novel imaging systems to detect variations in UPE for a set of physiologically important scenarios. We use EMCCD and CCD cameras to capture single visible-wavelength photons with low noise and quantum efficiencies higher than 90%. Our investigation reveals significant contrast between the UPE from live vs. dead mice. In plants we observed that an increase in temperature and injuries both caused an increase in UPE intensity. Moreover, chemical treatments modified the UPE emission characteristics of plants, particularly the application of an anesthetic (benzocaine) to injury, which showed the highest emission among the compounds tested. As a result, UPE imaging provides the possibility of non-invasive label-free imaging of vitality in animals and the responses of plants to stress."
+   },
+   {
+    "work_id": "W4409735377",
+    "title": "Imaging Ultraweak Photon Emission from Living and Dead Mice and from Plants under Stress",
+    "year": 2025,
+    "type": "article",
+    "abstract": ") in the spectral range of 200-1000 nm, has been observed in all living systems that have been examined. Here, we report experiments that exemplify the ability of novel imaging systems to detect variations in UPE for a set of physiologically important scenarios. We use electron-multiplying charge-coupled device (EMCCD) and charge-coupled device (CCD) cameras to capture single visible-wavelength photons with low noise and quantum efficiencies higher than 90%. Our investigation reveals significant contrast between the UPE from live vs dead mice. In plants, we observed that an increase in the temperature and injuries both caused an increase in UPE intensity. Moreover, chemical treatments modified the UPE emission characteristics of plants, particularly the application of a local anesthetic (benzocaine) to injury, which showed the highest emission among the compounds tested. As a result, UPE imaging provides the possibility of non-invasive label-free imaging of vitality in animals and the responses of plants to stress."
+   },
+   {
+    "work_id": "W2797018767",
+    "title": "Measuring the Human Ultra-Weak Photon Emission Distribution Using an Electron-Multiplying, Charge-Coupled Device as a Sensor",
+    "year": 2018,
+    "type": "article",
+    "abstract": "Ultra-weak photon emission (UPE) is the spontaneous emission from living systems mainly attributed to oxidation reactions, in which reactive oxygen species (ROS) may play a major role. Given the capability of the next-generation electron-multiplying CCD (EMCCD) sensors and the easy use of liquid crystal tunable filters (LCTF), the aim of this work was to explore the potential of a simple UPE spectrometer to measure the UPE from a human hand. Thus, an easy setup was configured based on a dark box for inserting the subject’s hand prior to LCTF as a monochromator and an EMCCD sensor working in the full vertical binning mode (FVB) as a spectra detector. Under controlled conditions, both dark signals and left hand UPE were acquired by registering the UPE intensity at different selected wavelengths (400, 450, 500, 550, 600, 650, and 700 nm) during a period of 10 min each. Then, spurious signals were filtered out by ignoring the pixels whose values were clearly outside of the Gaussian distribution, and the dark signal was subtracted from the subject hand signal. The stepped spectrum with a peak of approximately 880 photons at 500 nm had a shape that agreed somewhat with previous reports, and agrees with previous UPE research that reported UPE from 420 to 570 nm, or 260 to 800 nm, with a range from 1 to 1000 photons s−1 cm−2. Obtaining the spectral distribution instead of the total intensity of the UPE represents a step forward in this field, as it may provide extra information about a subject’s personal states and relationship with ROS. A new generation of CCD sensors with lower d"
+   },
+   {
+    "work_id": "W2906242287",
+    "title": "Human Ultraweak Photon Emission: Key Analytical Aspects, Results and Future Trends – A Review",
+    "year": 2018,
+    "type": "article",
+    "abstract": "Living systems emit what is called ultraweak photon emission (UPE). This visually undetectable phenomenon has only been studied in humans for the last 30 years, finding that UPE is a complex process depending on multitude factors. Considering previous literature, this review discusses the current trends in the analysis of in vivo UPE from human beings. To this aim, Analytical Approaches Employed for UPE Measurement section focuses on the analytical techniques employed (photomultipliers and charged coupled device cameras), summarizing analytical conditions and reporting figures of merit reached to date. Then, Human UPE Depending on External Factors and Human UPE Depending on Internal Factors sections address external and internal factors, which have proved to affect UPE, pointing out the important influence on oxidative processes outside and inside the body, and also highlighting some personal states of the individuals affecting UPE. Last section is devoted to give a general view on the goals and achieved up to date regarding UPE measurement, emphasizing some potential applications as well as recommendations which include: use of UPE spectra information together with UPE intensity, larger populations (≈50-100 subjects), further studies on internal states of individuals, and use of statistical tools."
+   },
+   {
+    "work_id": "W2939950252",
+    "title": "Rejection of the biophoton hypothesis on the origin of photoreceptor dark noise",
+    "year": 2019,
+    "type": "article",
+    "abstract": "Rod photoreceptors of the vertebrate retina produce, in darkness, spontaneous discrete current waves virtually identical to responses to single photons. The waves comprise an irreducible source of noise (discrete dark noise) that may limit the threshold sensitivity of vision. The waves obviously originate from acts of random activation of single rhodopsin molecules. Until recently, it was generally accepted that the activation occurs due to the rhodopsin thermal motion. Yet, a few years ago it was proposed that rhodopsin molecules are activated not by heat but rather by real photons generated within the retina by chemiluminescence. Using a high-sensitive photomultiplier, we measured intensities of biophoton emission from isolated retinas and eyecups of frogs (Rana ridibunda) and fish (sterlet, Acipenser ruthenus). Retinal samples were placed in a perfusion chamber and emitted photons collected by a high-aperture quartz lens. The collected light was sent to the photomultiplier cathode through a rotating chopper so that a long-lasting synchronous accumulation of the light signal was possible. The absolute intensity of bio-emission was estimated by the response of the measuring system to a calibrated light source. The intensity of the source, in turn, was quantified by measuring rhodopsin bleaching with single-rod microspectrophotometry. We also measured the frequency of discrete dark waves in rods of the two species with suction pipette recordings. Expressed as the rate constant of rhodopsin activation, it was 1.2 × 10−11/s in frogs and 7.6 × 10−11/s in sterlets. Approximatel"
+   },
+   {
+    "work_id": "W3126489816",
+    "title": "Detectivity optimization to measure ultraweak light fluxes using an EM-CCD as binary photon counter array",
+    "year": 2021,
+    "type": "article",
+    "abstract": "Abstract For a wide range of purposes, one faces the challenge to detect light from extremely faint and spatially extended sources. In such cases, detector noises dominate over the photon noise of the source, and quantum detectors in photon counting mode are generally the best option. Here, we combine a statistical model with an in-depth analysis of detector noises and calibration experiments, and we show that visible light can be detected with an electron-multiplying charge-coupled devices (EM-CCD) with a signal-to-noise ratio (SNR) of 3 for fluxes less than $$30\\,{\\text{photon}}\\,{\\text{s}}^{ - 1} \\,{\\text{cm}}^{ - 2}$$ <mml:math xmlns:mml=\"http://www.w3.org/1998/Math/MathML\"> <mml:mrow> <mml:mn>30</mml:mn> <mml:mspace/> <mml:mtext>photon</mml:mtext> <mml:mspace/> <mml:msup> <mml:mrow> <mml:mtext>s</mml:mtext> </mml:mrow> <mml:mrow> <mml:mo>-</mml:mo> <mml:mn>1</mml:mn> </mml:mrow> </mml:msup> <mml:mspace/> <mml:msup> <mml:mrow> <mml:mtext>cm</mml:mtext> </mml:mrow> <mml:mrow> <mml:mo>-</mml:mo> <mml:mn>2</mml:mn> </mml:mrow> </mml:msup> </mml:mrow> </mml:math> . For green photons, this corresponds to 12 aW $${\\text{cm}}^{ - 2}$$ <mml:math xmlns:mml=\"http://www.w3.org/1998/Math/MathML\"> <mml:msup> <mml:mrow> <mml:mtext>cm</mml:mtext> </mml:mrow> <mml:mrow> <mml:mo>-</mml:mo> <mml:mn>2</mml:mn> </mml:mrow> </mml:msup> </mml:math> ≈ $$9{ } \\times 10^{ - 11}$$ <mml:math xmlns:mml=\"http://www.w3.org/1998/Math/MathML\"> <mml:mrow> <mml:mn>9</mml:mn> <mml:mrow/> <mml:mo>×</mml:mo> <mml:msup> <mml:mn>10</mml:mn> <mml:mrow> <mml:mo>-</mml:mo> <mml:mn>11</mml:mn> </mml:mrow> </mml:"
+   },
+   {
+    "work_id": "W3161989600",
+    "title": "Stochastic light concentration from 3D to 2D reveals ultraweak chemi- and bioluminescence",
+    "year": 2021,
+    "type": "article",
+    "abstract": "For countless applications in science and technology, light must be concentrated, and concentration is classically achieved with reflective and refractive elements. However, there is so far no efficient way, with a 2D detector, to detect photons produced inside an extended volume with a broad or isotropic angular distribution. Here, with theory and experiment, we propose to stochastically transform and concentrate a volume into a smaller surface, using a high-albedo Ulbricht cavity and a small exit orifice through cavity walls. A 3D gas of photons produced inside the cavity is transformed with a 50% number efficiency into a 2D Lambertian emitting orifice with maximal radiance and a much smaller size. With high-albedo quartz-powder cavity walls ([Formula: see text]), the orifice area is [Formula: see text] times smaller than the walls' area. When coupled to a detectivity-optimized photon-counter ([Formula: see text]) the detection limit is [Formula: see text]. Thanks to this unprecedented sensitivity, we could detect the luminescence produced by the non-catalytic disproportionation of hydrogen peroxide in pure water, which has not been observed so far. We could also detect the ultraweak bioluminescence produced by yeast cells at the onset of their growth. Our work opens new perspectives for studying ultraweak luminescence, and the concept of stochastic 3D/2D conjugation should help design novel light detection methods for large samples or diluted emitters."
+   },
+   {
+    "work_id": "W4416736719",
+    "title": "Biophotonic evaluation of water treated by biodynamization: comparison of ultra-low emission levels in the 380–630 nm and 435–500 nm bands on different types of water and on germinated seeds",
+    "year": 2025,
+    "type": "article",
+    "abstract": "This study investigates the ultra-weak photon emission (UPE) arising from spontaneous photonic reactions in different water types — tap water, bottled mineral water, reverse-osmosis water, and water treated by the Biodynamizer dynamization system (SA Dynamized Technologies). The objective was to evaluate potential differences in their photon emission characteristics and their influence on the germination and early development of seeds. Measurements were conducted using a Berthold Lumat LB 9508 luminometer, equipped with borosilicate glass test tubes and an optical bandpass filter (435–500 nm), covering the spectral range 380–630 nm and the subrange 435–500 nm. All experiments were performed under controlled laboratory conditions at Enerlab (Nice, France) on November 4–6, 2025. Photon emission intensities are expressed in Relative Light Units (RLU). The results show no emissions (0 RLU) for mains water, bottled mineral water, and reverse osmosis water, while biodynamically treated mains water shows 519 RLU (380–630 nm) and 272 RLU (435–500 nm) immediately after dynamization treatment. After 24 hours, the values remain significant (184 and 168 RLU, respectively) for biodynamically treated mains water, indicating a partial decrease but persistence of the biophotonic emission phenomenon. Measurements of ultra-weak photons in the blue-green spectral range (≈435–500 nm) highlight a better persistence of the biophotonic emission phenomenon (-38% instead of -65% in the 380-630 nm spectral range) over 24 hours after biodynamized treatment of water. This spectral range is known to co"
+   },
+   {
+    "work_id": "W7117718612",
+    "title": "Biophotonic evaluation of water treated by biodynamization: comparison of ultra-low emission levels in the 300–400 nm, 400–500 nm and 500–600 nm bands on different types of water",
+    "year": 2025,
+    "type": "article",
+    "abstract": "This study examines the spontaneous ultraweak photon (UWP) emission observed in water treated by the Biodynamizer dynamization system (SA Dynamized Technologies) in the 300–400 nm, 400–500 nm, and 500–600 nm spectra. This study follows up on biophotonic results observed in the 435–500 nm band and more broadly in the 380–630 nm spectrum, which were obtained and published in a scientific journal in November 2025. The objective of this new study was to evaluate more precisely new biophotonic emission spectra, to study the links between wavelength and human physiology and to look at the correlations between our study and the results of analyses and expert assessments carried out according to the electrophotonic analysis method (EPA: Electrophotonic Analysis) whose reproducibility of the method has allowed to be validated from a scientific point of view after peer review on the occasion of the publication by the journal Substantia of the article “ ElectroPhotonic Analysis (EPA) of tap water droplets versus hydroalcoholic solutions ”. The measurements were performed using a Berthold Lumat LB 9508 luminometer, equipped with borosilicate glass tubes and bandpass optical filters (300–400 nm, 400–500 nm, and 500–600 nm). All experiments were conducted under controlled conditions at the Enerlab laboratory (Nice, France) on December 1 and 2, 2025. Photon emission intensities are expressed in relative light units (RLU). The new biophotonic measurements carried out on December 1st and 2nd, 2025 confirm and reinforce the initial observations from November concerning biodynamic water. Thes"
+   }
+  ]
+ },
+ {
+  "candidate_id": "C003",
+  "seed_id": "Q1",
+  "statement": "The externally measured sub-350 nm fraction of UPE is set by aromatic-amino-acid self-absorption inside the sample, so it declines with optical depth according to Beer-Lambert with the tryptophan extinction coefficient, and the same preparation measured at 0.1 mm path emits a UV/visible ratio at least fivefold higher than at 10 mm path, at matched total oxidative flux.",
+  "scope": {
+   "population": "One cell suspension (yeast or HeLa) and one cell-free protein-plus-lipid oxidation mixture, each measured at four optical depths (0.1, 1, 3, 10 mm quartz path) and three volume fractions spanning 100-fold, with total oxidative turnover held constant per unit emitting volume",
+   "condition": "Constant chemical trigger (fixed Fe(II)/H2O2 or fixed linoleic-acid dose per unit volume), varying only geometry and packing",
+   "comparator": "The same series measured in the 450-500 nm band, where aromatic-residue absorption is negligible, which must show no comparable geometry dependence",
+   "outcome": "Ratio R(d) = flux(280-340 nm)/flux(450-500 nm) as a function of effective optical depth d = (volume fraction x path length)"
+  },
+  "null_hypothesis": "R(d) is flat within 20% across a 100-fold change in effective optical depth, i.e. the escaping UV fraction is geometry-independent, which would mean the measured spectrum is the generated spectrum and self-absorption cannot explain the apparent UV deficit.",
+  "estimand": "The fitted decay constant of ln R(d) against d, compared with the Beer-Lambert prediction 2.303 x epsilon_Trp x c_Trp; agreement within a factor of 2 supports, a fitted constant consistent with zero refutes.",
+  "proposed_experiment": "Use demountable fused-silica cells at 0.1, 1, 3 and 10 mm path with identical face area, so emitting area is constant and only depth varies. For each of three volume fractions, trigger a fixed per-volume oxidative dose and record simultaneously through 280-340 nm and 450-500 nm interference filters, either by dual PMT or by an EMCCD in binary photon-counting mode behind a tunable filter, absolutely calibrated per band. Independently measure the sample's own absorbance spectrum at each condition on a standard spectrophotometer so epsilon x c is measured, not assumed, and quantify total tryptophan by amino-acid analysis. Fit ln R(d) against measured absorbance-derived d. Run the whole matrix a second time after exhaustive proteolysis plus dialysis to strip aromatic residues at constant lipid load: the predicted result is that R becomes flat with depth in the stripped arm. A flat R(d) in the intact arm refutes the hypothesis outright.",
+  "rationale": [
+   {
+    "step": "The field's own reference text states that the reabsorption effect increases with the sample optical density in the luminescing system and is governed by the absorption spectra of substances present - so the mechanism is acknowledged in principle but is not used as a quantitative correction on reported UV fractions.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W4389669809"
+    ]
+   },
+   {
+    "step": "Tryptophan is not a bystander in this system: on oxidation of amino acids it both emits and acts as an energy acceptor, and mixing histidine with tryptophan yields a spectrum congruent with pure tryptophan, demonstrating that the aromatic pool dominates the sub-350 nm optical behaviour of an oxidising protein sample.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2159034785"
+    ]
+   },
+   {
+    "step": "Aromatic residues are also the designated absorbers in this corpus's transport models, with microtubule reorientation to exogenous photons peaking near 280 nm in the tryptophan/tyrosine absorption range - the same band whose emission is reported missing.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2748679677"
+    ]
+   },
+   {
+    "step": "Beer-Lambert arithmetic makes the geometry dependence extreme rather than marginal. With epsilon_Trp near 5.5e3 M^-1 cm^-1 at 280 nm and intracellular protein-bound tryptophan of order 3 mM: a single 10 um cell has A = 5.5e3 x 3e-3 x 1e-3 = 0.017, transmission 96%, effectively transparent; a 1 cm path of packed cells has A = 16.5, transmission ~3e-17, effectively opaque; a 1 cm path of a 0.2% v/v suspension has A = 0.033, transmission 93%. The escaping UV fraction therefore varies over sixteen orders of magnitude across preparations that the literature reports side by side, while the 450-500 nm band, where epsilon is near zero, varies not at all.",
+    "justification_type": "computation"
+   },
+   {
+    "step": "The corpus supplies direct evidence that the in-vivo spectrum is not the in-vitro spectrum: in-vitro lipid oxidation luminesces across 450-850 nm, whereas the in-planta signal from leaves and roots occurs only above 640 nm, peaking at 700-750 nm. Something in the tissue removes the short-wave half of the generated spectrum.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W4283824773",
+     "W2808116502"
+    ]
+   },
+   {
+    "step": "A scattering/geometry treatment of stress-induced emission and a photon-diffusion treatment of human surface emission both already exist in this corpus, so the modelling machinery for converting surface flux to source flux is available and can be fitted rather than assumed.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W3082196445",
+     "W3170639556"
+    ]
+   }
+  ],
+  "cited_works": [
+   {
+    "work_id": "W4389669809",
+    "title": "Ultra-Weak Photon Emission from Biological Systems",
+    "year": 2023,
+    "type": "book",
+    "abstract": "This book covers the key aspects of ultra-weak photon emission, from mechanisms to applications. This book provides an excellent summary of the UPE field."
+   },
+   {
+    "work_id": "W2159034785",
+    "title": "Non‐invasive monitoring of oxidative skin stress by ultraweak photon emission (UPE)‐measurement. I: mechanisms of UPE of biological materials",
+    "year": 2007,
+    "type": "article",
+    "abstract": "BACKGROUND/PURPOSE: Oxidation of proteins and amino acids is associated with generation of ultraweak photon emission (UPE), which may be used to assess oxidative processes in the skin in a non-invasive way. This first part of a series of reports addresses the physicochemical basis of oxidation-induced UPE in the skin, with a special focus on the contribution of amino acid oxidation. METHODS: UPE of biological samples and protein/amino acid solutions following oxidation with H(2)O(2) in the presence of Fe(2+) was recorded using a sensitive photomultiplier system. Signals were analyzed with regard to overall signal intensity and spectral distribution. RESULTS: Increasing concentrations of H(2)O(2) in aqueous bovine serum albumin solutions induced linearly correlated UPE and protein carbonyl compounds, with a substantially higher sensitivity for the measurement of UPE. In single amino acid solutions, strong UPE signals were generated by oxidation from Phe, Trp, His, and Cys, and weak signals from Lys and Thr. Analysis of reaction products by MS revealed high oxidative material turnover for Cys and His, whereas barely detectable oxidative material turnover seems to be sufficient to generate a UPE signal of similar strength from Trp and Phe. Combination of different amino acids did not result in a simple addition of individual oxidation-induced UPE signals, but in interactions ranging from antagonism to clear synergism. Synergism was evident between Trp- and UPE-generating amino acids such as Thr, Cys, and His, with the strongest synergism by far observed between Trp and His. Th"
+   },
+   {
+    "work_id": "W2748679677",
+    "title": "Oxidative species-induced excitonic transport in tubulin aromatic networks: Potential implications for neurodegenerative disease",
+    "year": 2017,
+    "type": "preprint",
+    "abstract": "Oxidative stress is a pathological hallmark of neurodegenerative tauopathic disorders such as Alzheimer's disease and Parkinson's disease-related dementia, which are characterized by altered forms of the microtubule-associated protein (MAP) tau. MAP tau is a key protein in stabilizing the microtubule architecture that regulates neuron morphology and synaptic strength. The precise role of reactive oxygen species (ROS) in the tauopathic disease process, however, is poorly understood. It is known that the production of ROS by mitochondria can result in ultraweak photon emission (UPE) within cells. One likely absorber of these photons is the microtubule cytoskeleton, as it forms a vast network spanning neurons, is highly co-localized with mitochondria, and shows a high density of aromatic amino acids. Functional microtubule networks may traffic this ROS-generated endogenous photon energy for cellular signaling, or they may serve as dissipaters/conduits of such energy. Experimentally, after in vitro exposure to exogenous photons, microtubules have been shown to reorient and reorganize in a dose-dependent manner with the greatest effect being observed around 280 nm, in the tryptophan and tyrosine absorption range. In this paper, recent modeling efforts based on ambient temperature experiment are presented, showing that tubulin polymers can feasibly absorb and channel these photoexcitations via resonance energy transfer, on the order of dendritic length scales. Since microtubule networks are compromised in tauopathic diseases, patients with these illnesses would be unable to suppo"
+   },
+   {
+    "work_id": "W4283824773",
+    "title": "Imaging of Lipid Peroxidation-Associated Chemiluminescence in Plants: Spectral Features, Regulation and Origin of the Signal in Leaves and Roots",
+    "year": 2022,
+    "type": "article",
+    "abstract": "Plants, like most living organisms, spontaneously emit photons of visible light. This ultraweak endogenous chemiluminescence is linked to the oxidative metabolism, with lipid peroxidation constituting a major source of photons in plants. We imaged this signal using a very sensitive cooled CCD camera and analysed its spectral characteristics using bandpass interference filters. In vitro oxidation of lipids induced luminescence throughout the visible spectrum (450−850 nm). However, luminescence in the red spectral domain (>640 nm) occurred first, then declined in parallel with the appearance of the emission in the blue-green (<600 nm). This temporal separation suggests that the chemical species emitting in the blue-green are secondary products, possibly deriving from the red light-emitting species. This conversion did not seem to occur in planta because spontaneous chemiluminescence from plant tissues (leaves, roots) occurred only in the red/far-red light domain (>640 nm), peaking at 700−750 nm. The spectrum of plant chemiluminescence was independent of chlorophyll. The in vivo signal was modulated by cellular detoxification mechanisms and by changes in the concentration of singlet oxygen in the tissues, although the singlet oxygen luminescence bands did not appear as major bands in the spectra. Our results indicate that the intensity of endogenous chemiluminescence from plant tissues is determined by the balance between the formation of luminescent species through secondary reactions involving lipid peroxide-derived intermediates, including singlet oxygen, and their eliminat"
+   },
+   {
+    "work_id": "W2808116502",
+    "title": "Leaf wound induced ultraweak photon emission is suppressed under anoxic stress: Observations of Spathiphyllum under aerobic and anaerobic conditions using novel in vivo methodology",
+    "year": 2018,
+    "type": "article",
+    "abstract": "Plants have evolved a variety of means to energetically sense and respond to abiotic and biotic environmental stress. Two typical photochemical signaling responses involve the emission of volatile organic compounds and light. The emission of certain leaf wound volatiles and light are mutually dependent upon oxygen which is subsequently required for the wound-induced lipoxygenase reactions that trigger the formation of fatty acids and hydroperoxides; ultimately leading to photon emission by chlorophyll molecules. A low noise photomultiplier with sensitivity in the visible spectrum (300-720 nm) is used to continuously measure long duration ultraweak photon emission of dark-adapting whole Spathiphyllum leaves (in vivo). Leaves were mechanically wounded after two hours of dark adaptation in aerobic and anaerobic conditions. It was found that (1) nitrogen incubation did not affect the pre-wound basal photocounts; (2) wound induced leaf biophoton emission was significantly suppressed when under anoxic stress; and (3) the aerobic wound induced emission spectra observed was > 650 nm, implicating chlorophyll as the likely emitter. Limitations of the PMT photocathode's radiant sensitivity, however, prevented accurate analysis from 700-720 nm. Further examination of leaf wounding profile photon counts revealed that the pre-wounding basal state (aerobic and anoxic), the anoxic wounding state, and the post-wounding aerobic state statistics all approximate a Poisson distribution. It is additionally observed that aerobic wounding induces two distinct exponential decay events. These observ"
+   },
+   {
+    "work_id": "W3082196445",
+    "title": "On the stress-induced photon emission from organism: I, will the scattering-limited delay affect the temporal course?",
+    "year": 2020,
+    "type": "article",
+    "abstract": " [NOTE: the corpus holds no usable abstract for this work. Judge its citation step on the title alone and mark the step unverifiable rather than false.]"
+   },
+   {
+    "work_id": "W3170639556",
+    "title": "Phenomenological Interpretations of Some Somatic Temporal and Spatial Patterns of Biophoton Emission in Humans",
+    "year": 2021,
+    "type": "article",
+    "abstract": "Biophoton emission remains controversial. The photo-genic origin of biophoton has been attributed to the oxidative stress or free radical production. However, there are considerable gaps in quantitative understanding of biophoton emission. I propose an analytical hypothesis for interpreting a few patterns of steady-state biophoton emission of human, including the dependency on age, the diurnal variation, and the geometric asymmetry associated with serious asymmetrical pathological conditions. The hypothesis is based on an alternative form of energy state, termed vivo-nergy, which is associated with only metabolically active organisms that are also under neuronal control. The hypothesis projects a decrease of the vivo-nergy in human during growth beyond puberty. The hypothesis also proposes a modification of the vivo-nergy by the phases of systematic or homeostatic physiology. The hypothesis further postulates that the deviation of the physiology-modified vivo-nergy from the pre-puberty level is deteriorated by acquired organ-specific pathological conditions. A temporal differential change of vivo-nergy is hypothesized to proportionally modulate oxidative stress that functions as the physical source of biophoton emission. The resulted steady-state diffusion of the photon emitted from a photo-genic source in a human geometry simplified as a homogeneous spherical domain is modeled by photon diffusion principles incorporating an extrapolated zero-boundary condition. The age and systematic physiology combined determines the intensity of the centered physiological steady-state ph"
+   },
+   {
+    "work_id": "W2797018767",
+    "title": "Measuring the Human Ultra-Weak Photon Emission Distribution Using an Electron-Multiplying, Charge-Coupled Device as a Sensor",
+    "year": 2018,
+    "type": "article",
+    "abstract": "Ultra-weak photon emission (UPE) is the spontaneous emission from living systems mainly attributed to oxidation reactions, in which reactive oxygen species (ROS) may play a major role. Given the capability of the next-generation electron-multiplying CCD (EMCCD) sensors and the easy use of liquid crystal tunable filters (LCTF), the aim of this work was to explore the potential of a simple UPE spectrometer to measure the UPE from a human hand. Thus, an easy setup was configured based on a dark box for inserting the subject’s hand prior to LCTF as a monochromator and an EMCCD sensor working in the full vertical binning mode (FVB) as a spectra detector. Under controlled conditions, both dark signals and left hand UPE were acquired by registering the UPE intensity at different selected wavelengths (400, 450, 500, 550, 600, 650, and 700 nm) during a period of 10 min each. Then, spurious signals were filtered out by ignoring the pixels whose values were clearly outside of the Gaussian distribution, and the dark signal was subtracted from the subject hand signal. The stepped spectrum with a peak of approximately 880 photons at 500 nm had a shape that agreed somewhat with previous reports, and agrees with previous UPE research that reported UPE from 420 to 570 nm, or 260 to 800 nm, with a range from 1 to 1000 photons s−1 cm−2. Obtaining the spectral distribution instead of the total intensity of the UPE represents a step forward in this field, as it may provide extra information about a subject’s personal states and relationship with ROS. A new generation of CCD sensors with lower d"
+   },
+   {
+    "work_id": "W3126489816",
+    "title": "Detectivity optimization to measure ultraweak light fluxes using an EM-CCD as binary photon counter array",
+    "year": 2021,
+    "type": "article",
+    "abstract": "Abstract For a wide range of purposes, one faces the challenge to detect light from extremely faint and spatially extended sources. In such cases, detector noises dominate over the photon noise of the source, and quantum detectors in photon counting mode are generally the best option. Here, we combine a statistical model with an in-depth analysis of detector noises and calibration experiments, and we show that visible light can be detected with an electron-multiplying charge-coupled devices (EM-CCD) with a signal-to-noise ratio (SNR) of 3 for fluxes less than $$30\\,{\\text{photon}}\\,{\\text{s}}^{ - 1} \\,{\\text{cm}}^{ - 2}$$ <mml:math xmlns:mml=\"http://www.w3.org/1998/Math/MathML\"> <mml:mrow> <mml:mn>30</mml:mn> <mml:mspace/> <mml:mtext>photon</mml:mtext> <mml:mspace/> <mml:msup> <mml:mrow> <mml:mtext>s</mml:mtext> </mml:mrow> <mml:mrow> <mml:mo>-</mml:mo> <mml:mn>1</mml:mn> </mml:mrow> </mml:msup> <mml:mspace/> <mml:msup> <mml:mrow> <mml:mtext>cm</mml:mtext> </mml:mrow> <mml:mrow> <mml:mo>-</mml:mo> <mml:mn>2</mml:mn> </mml:mrow> </mml:msup> </mml:mrow> </mml:math> . For green photons, this corresponds to 12 aW $${\\text{cm}}^{ - 2}$$ <mml:math xmlns:mml=\"http://www.w3.org/1998/Math/MathML\"> <mml:msup> <mml:mrow> <mml:mtext>cm</mml:mtext> </mml:mrow> <mml:mrow> <mml:mo>-</mml:mo> <mml:mn>2</mml:mn> </mml:mrow> </mml:msup> </mml:math> ≈ $$9{ } \\times 10^{ - 11}$$ <mml:math xmlns:mml=\"http://www.w3.org/1998/Math/MathML\"> <mml:mrow> <mml:mn>9</mml:mn> <mml:mrow/> <mml:mo>×</mml:mo> <mml:msup> <mml:mn>10</mml:mn> <mml:mrow> <mml:mo>-</mml:mo> <mml:mn>11</mml:mn> </mml:mrow> </mml:"
+   }
+  ]
+ },
+ {
+  "candidate_id": "C004",
+  "seed_id": "Q1",
+  "statement": "Under strict anoxia (<10 ppm O2) the sub-350 nm and the 450-550 nm bands of wound-induced and chemically induced UPE are suppressed by the same factor within 25%, i.e. the UV band has no oxygen-independent component and therefore no source outside the catalogued ROS chemistry.",
+  "scope": {
+   "population": "Detached Spathiphyllum or Arabidopsis leaves subjected to standardised mechanical wounding, plus a yeast culture subjected to a fixed H2O2 challenge, in a sealed quartz chamber with an in-line O2 sensor",
+   "condition": "Three atmospheres: air (21% O2), 2% O2, and strict anoxia (<10 ppm O2, N2-purged with getter), wound or challenge applied inside the chamber after 2 h dark adaptation",
+   "comparator": "The air arm of the same preparation, and the paired 450-550 nm band measured simultaneously",
+   "outcome": "Suppression ratio S_band = flux(anoxia)/flux(air) computed separately for 260-340 nm and 450-550 nm; the contrast of interest is S_UV / S_vis"
+  },
+  "null_hypothesis": "S_UV / S_vis exceeds 1.25 with a 95% CI excluding 1.0 - i.e. a residual UV emission survives anoxia that the visible band does not - which would demonstrate an oxygen-independent UV source and falsify the claim that the catalogued ROS chemistry exhausts the UV band.",
+  "estimand": "S_UV / S_vis with a 95% CI; equivalence within [0.8, 1.25] supports, exclusion of 1.0 refutes.",
+  "proposed_experiment": "Mount the leaf or culture in a sealed fused-silica chamber with feedthroughs for a remote-actuated wounding blade and an in-line trace-O2 sensor reading to <10 ppm; purge with N2 through an oxygen getter. Collect through a quartz train split by a 380 nm dichroic onto two cooled photon counters, 260-340 nm (UV-extended or CsTe cathode) and 450-550 nm (bialkali), both absolutely calibrated. Protocol per replicate: 2 h dark adapt, 30 min baseline, wound (or inject H2O2), record 60 min, in each of the three atmospheres, with the atmosphere order randomised across replicates and >=8 biological replicates per arm. Confirm the ROS titration independently by fluorescent superoxide and singlet-oxygen imaging on sibling samples. Compute S_UV and S_vis from time-integrated absolute fluxes and test S_UV/S_vis for equivalence in [0.8, 1.25]. Include a leakage control in which the UV filter is replaced by a blocked equivalent at every atmosphere, so any anoxia-surviving UV must exceed leakage.",
+  "rationale": [
+   {
+    "step": "Oxygen dependence is already an established, reproducible handle on this system: wound-induced leaf UPE is significantly suppressed under anoxic stress while pre-wound basal photocounts are unaffected by nitrogen incubation, so the experimental arm and its own internal control both exist.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2808116502"
+    ]
+   },
+   {
+    "step": "The catalogued mechanism makes oxygen dependence obligatory for every product: ROS oxidation of lipids, proteins and nucleic acids forms dioxetane and tetroxide intermediates whose decomposition yields triplet carbonyls, and singlet oxygen arises by triplet-singlet transfer from those carbonyls to ground-state O2 - so both the primary and the secondary emitters vanish together when O2 is removed.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2954526477",
+     "W2048493057"
+    ]
+   },
+   {
+    "step": "Anoxia is therefore a single knob that acts on the whole catalogued pathway at once, which makes band-resolved anoxia a clean discriminator: a shared suppression factor localises the UV inside the pathway, whereas any surviving UV localises a source outside it.",
+    "justification_type": "computation"
+   },
+   {
+    "step": "Candidate oxygen-independent UV sources are present in the corpus and would be the beneficiaries of a positive result: mechanically induced long-lived luminescence in shaken aqueous solutions, triboluminescence as a biological phenomenon, and free-radical recombination reactions in water systems tabulated with their enthalpies.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W3095923286",
+     "W4389669809",
+     "W7140171627"
+    ]
+   },
+   {
+    "step": "The wounding preparation additionally has independent ROS readouts - superoxide and singlet oxygen imaged directly in wounded Arabidopsis leaves - so the O2 titration can be verified chemically rather than inferred from the light alone.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2991640993",
+     "W3037707140"
+    ]
+   },
+   {
+    "step": "The measurement must be band-resolved and simultaneous, because the wound response is kinetically structured: aerobic wounding induces two distinct exponential decay events, so sequential single-band acquisition would confound band with time.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2808116502"
+    ]
+   }
+  ],
+  "cited_works": [
+   {
+    "work_id": "W2808116502",
+    "title": "Leaf wound induced ultraweak photon emission is suppressed under anoxic stress: Observations of Spathiphyllum under aerobic and anaerobic conditions using novel in vivo methodology",
+    "year": 2018,
+    "type": "article",
+    "abstract": "Plants have evolved a variety of means to energetically sense and respond to abiotic and biotic environmental stress. Two typical photochemical signaling responses involve the emission of volatile organic compounds and light. The emission of certain leaf wound volatiles and light are mutually dependent upon oxygen which is subsequently required for the wound-induced lipoxygenase reactions that trigger the formation of fatty acids and hydroperoxides; ultimately leading to photon emission by chlorophyll molecules. A low noise photomultiplier with sensitivity in the visible spectrum (300-720 nm) is used to continuously measure long duration ultraweak photon emission of dark-adapting whole Spathiphyllum leaves (in vivo). Leaves were mechanically wounded after two hours of dark adaptation in aerobic and anaerobic conditions. It was found that (1) nitrogen incubation did not affect the pre-wound basal photocounts; (2) wound induced leaf biophoton emission was significantly suppressed when under anoxic stress; and (3) the aerobic wound induced emission spectra observed was > 650 nm, implicating chlorophyll as the likely emitter. Limitations of the PMT photocathode's radiant sensitivity, however, prevented accurate analysis from 700-720 nm. Further examination of leaf wounding profile photon counts revealed that the pre-wounding basal state (aerobic and anoxic), the anoxic wounding state, and the post-wounding aerobic state statistics all approximate a Poisson distribution. It is additionally observed that aerobic wounding induces two distinct exponential decay events. These observ"
+   },
+   {
+    "work_id": "W2954526477",
+    "title": "Mechanism of the Formation of Electronically Excited Species by Oxidative Metabolic Processes: Role of Reactive Oxygen Species",
+    "year": 2019,
+    "type": "article",
+    "abstract": "It is well known that biological systems, such as microorganisms, plants, and animals, including human beings, form spontaneous electronically excited species through oxidative metabolic processes. Though the mechanism responsible for the formation of electronically excited species is still not clearly understood, several lines of evidence suggest that reactive oxygen species (ROS) are involved in the formation of electronically excited species. This review attempts to describe the role of ROS in the formation of electronically excited species during oxidative metabolic processes. Briefly, the oxidation of biomolecules, such as lipids, proteins, and nucleic acids by ROS initiates a cascade of reactions that leads to the formation of triplet excited carbonyls formed by the decomposition of cyclic (1,2-dioxetane) and linear (tetroxide) high-energy intermediates. When chromophores are in proximity to triplet excited carbonyls, the triplet-singlet and triplet-triplet energy transfers from triplet excited carbonyls to chromophores result in the formation of singlet and triplet excited chromophores, respectively. Alternatively, when molecular oxygen is present, the triplet-singlet energy transfer from triplet excited carbonyls to molecular oxygen initiates the formation of singlet oxygen. Understanding the mechanism of the formation of electronically excited species allows us to use electronically excited species as a marker for oxidative metabolic processes in cells."
+   },
+   {
+    "work_id": "W2048493057",
+    "title": "Excited singlet molecular O2 (1Δg) is generated enzymatically from excited carbonyls in the dark",
+    "year": 2014,
+    "type": "article",
+    "abstract": "In mammalian tissues, ultraweak chemiluminescence arising from biomolecule oxidation has been attributed to the radiative deactivation of singlet molecular oxygen [O2 ((1)Δg)] and electronically excited triplet carbonyl products involving dioxetane intermediates. Herein, we describe evidence of the generation of O2 ((1)Δg) in aqueous solution via energy transfer from excited triplet acetone. This involves thermolysis of 3,3,4,4-tetramethyl-1,2-dioxetane, a chemical source, and horseradish peroxidase-catalyzed oxidation of 2-methylpropanal, as an enzymatic source. Both sources of excited carbonyls showed characteristic light emission at 1,270 nm, directly indicative of the monomolecular decay of O2 ((1)Δg). Indirect analysis of O2 ((1)Δg) by electron paramagnetic resonance using the chemical trap 2,2,6,6-tetramethylpiperidine showed the formation of 2,2,6,6-tetramethylpiperidine-1-oxyl. Using [(18)O]-labeled triplet, ground state molecular oxygen [(18)O2 ((3)Σg(-))], chemical trapping of (18)O2 ((1)Δg) with disodium salt of anthracene-9,10-diyldiethane-2,1-diyl disulfate yielding the corresponding double-[(18)O]-labeled 9,10-endoperoxide, was detected through mass spectrometry. This corroborates formation of O2 ((1)Δg). Altogether, photoemission and chemical trapping studies clearly demonstrate that chemically and enzymatically nascent excited carbonyl generates (18)O2 ((1)Δg) by triplet-triplet energy transfer to ground state oxygen O2 ((3)Σg(-)), and supports the long formulated hypothesis of O2 ((1)Δg) involvement in physiological and pathophysiological events that might "
+   },
+   {
+    "work_id": "W3095923286",
+    "title": "Effect of Mechanical Shaking on the Physicochemical Properties of Aqueous Solutions",
+    "year": 2020,
+    "type": "article",
+    "abstract": "Long-lived luminescence in the blue region was found to occur in deionized water saturated with atmospheric gases following mechanical shaking. Luminescence intensity decreased exponentially after the cessation of stress. During vigorous mechanical shaking, we observed gas bubbles in solution, and the liquid–gas interface area increased noticeably. At the same time, the concentration of molecular oxygen decreased, which could not be attributed to the water warming up with exposure to mechanical stress. However, deaerated water rapidly became saturated with gases following mechanical stress. The recommendation that cell culture media should be mixed after they are removed from the fridge in order to allow saturation with oxygen is probably misleading. It was shown that gases existed in water both in the form of individual molecules and nanobubbles. Mechanical stress did not influence the number or size of nanobubbles. While gas nanobubbles were absent in freshly prepared deaerated water, they appeared following exposure to mechanical stress. In addition, in mechanically treated gas-saturated water, there was seemingly an equilibrium shift towards the decomposition of carbonic acid to water and carbon dioxide. At the same time, the pH of water tended to increase immediately after mechanical stress. It was demonstrated that reactive oxygen species (ROS) form in gas-saturated water under mechanical stress (30 Hz, amplitude of 5 mm). The relative generation rate of hydrogen peroxide and of the hydroxyl radical was 1 nM/min and 0.5 nM/min, respectively. It was found that with an "
+   },
+   {
+    "work_id": "W4389669809",
+    "title": "Ultra-Weak Photon Emission from Biological Systems",
+    "year": 2023,
+    "type": "book",
+    "abstract": "This book covers the key aspects of ultra-weak photon emission, from mechanisms to applications. This book provides an excellent summary of the UPE field."
+   },
+   {
+    "work_id": "W7140171627",
+    "title": "The effect of gold nanoparticles on the physical and chemical properties of water after drops fall from a height of several meters and hit from a hard surface",
+    "year": 2026,
+    "type": "article",
+    "abstract": "Introduction Nanofluids are known to be highly effective in droplet coolers. It is also known that the presence of nanoparticles in a water droplet significantly alters the nature of the droplet’s spreading after impact with a solid surface. The physics of this phenomenon is unclear, although it is known that the droplet viscosity, as well as the temperature and properties of the substrates on which the droplets impact, have an effect. It has been hypothesized that the observed phenomenon may be based on changes in the physicochemical properties of the liquid (pH, temperature, gas phase distribution, concentration of molecular oxygen and reactive oxygen species) in the presence of nanoparticles. Therefore, the aim of this work was to study the effect of gold nanoparticles on the physicochemical properties of water after droplets impact with a solid surface. Methods Laser ablation in liquid, spectroscopy in the visible and ultraviolet range, DLS, TEM, luminescence, thermal oximetry, measurement of the concentration of hydrogen peroxide and hydroxyl radical, inhibitory analysis. Results Luminescence of water droplets and aqueous colloids of gold nanoparticles, arising when the drops fall from a height onto a solid surface, has been detected. It has been shown that the luminescence intensity increases with an increase in the impact force; an increase in the concentration of gold nanoparticles; an increase in the concentration of molecular oxygen dissolved in the liquid. After water droplets fall from height of several meters onto solid surface, the concentration of dissolved m"
+   },
+   {
+    "work_id": "W2991640993",
+    "title": "Reactive Oxygen Species as a Response to Wounding: In Vivo Imaging in Arabidopsis thaliana",
+    "year": 2020,
+    "type": "article",
+    "abstract": "Mechanical injury or wounding in plants can be attributed to abiotic or/and biotic causes. Subsequent defence responses are either local, i. e. within or in the close vicinity of affected tissue, or systemic, i. e. at distant plant organs. Stress stimuli activate a plethora of early and late reactions, from electric signals induced within seconds upon injury, oxidative burst within minutes, and slightly slower changes in hormone levels or expression of defence-related genes, to later cell wall reinforcement by polysaccharides deposition, or accumulation of proteinase inhibitors and hydrolytic enzymes. In the current study, we focused on the production of reactive oxygen species (ROS) in wounded Arabidopsis leaves. Based on fluorescence imaging, we provide experimental evidence that ROS [superoxide anion radical (O2•-) and singlet oxygen (1O2)] are produced following wounding. As a consequence, oxidation of biomolecules is induced, predominantly of polyunsaturated fatty acid, which leads to the formation of reactive intermediate, products and electronically excited species."
+   },
+   {
+    "work_id": "W3037707140",
+    "title": "Spectral Distribution of Ultra-Weak Photon Emission as a Response to Wounding in Plants: An In Vivo Study",
+    "year": 2020,
+    "type": "article",
+    "abstract": "It is well established that every living organism spontaneously emits photons referred to as ultra-weak photon emission (synonym biophotons or low-level chemiluminescence) which inherently embodies information about the wellbeing of the source. In recent years, efforts have been made to use this feature as a non-invasive diagnostic tool related to the detection of food quality, agriculture and biomedicine. The current study deals with stress resulting from wounding (mechanical injury) on Arabidopsis thaliana and how it modifies the spontaneous ultra-weak photon emission. The ultra-weak photon emission from control (non-wounded) and stressed (wounded) plants was monitored using different modes of ultra-weak photon emission measurement sensors like charge-coupled device (CCD) cameras and photomultiplier tubes (PMT) and the collected data were analyzed to determine the level of stress generated, photon emission patterns, and underlying biochemical process. It is generally considered that electronically excited species formed during the oxidative metabolic processes are responsible for the ultra-weak photon emission. In the current study, a high-performance cryogenic full-frame CCD camera was employed for two-dimensional in-vivo imaging of ultra-weak photon emission (up to several counts/s) and the spectral analysis was done by using spectral system connected to a PMT. The results show that Arabidopsis subjected to mechanical injury enhances the photon emission and also leads to changes in the spectral pattern of ultra-weak photon emission. Thus, ultra-weak photon emission can "
+   }
+  ]
+ },
+ {
+  "candidate_id": "C005",
+  "seed_id": "Q1",
+  "statement": "Deuteration of the solvent enhances the sub-350 nm UPE band by the same factor as it enhances the 620-720 nm singlet-oxygen dimol band, establishing that the sub-350 nm emission lies downstream of singlet oxygen rather than arising directly from triplet carbonyls, whose lifetime is deuteration-insensitive.",
+  "scope": {
+   "population": "Rat or porcine skin homogenate and a defined lipid-plus-tryptophan cell-free oxidation mixture, each prepared in matched H2O and D2O buffers of identical ionic strength and pH/pD",
+   "condition": "Fixed oxidative trigger (UV irradiation of the homogenate, or Fe(II)/H2O2 of the defined mixture), measured in four bands simultaneously or in rapid rotation: 260-340 nm, 400-500 nm, 620-720 nm, and 1270 nm",
+   "comparator": "The matched H2O preparation; and the DABCO-quenched and azide-quenched arms of both solvents",
+   "outcome": "Per-band deuteration enhancement E_band = flux(D2O)/flux(H2O), and the contrast rho = E_UV / E_dimol"
+  },
+  "null_hypothesis": "rho is significantly below 1 (e.g. E_dimol near 3 while E_UV is near 1), i.e. the UV band is deuteration-insensitive while the red dimol band is strongly enhanced - which excludes singlet oxygen as the UV precursor and points instead to a direct carbonyl-pooling or aromatic-residue route.",
+  "estimand": "rho = E_UV / E_dimol with a 95% CI; rho within [0.7, 1.4] supports a singlet-oxygen-downstream UV, rho < 0.5 refutes it.",
+  "proposed_experiment": "Prepare matched H2O and D2O buffers (>=99% D, pD corrected) and split each homogenate or defined mixture between them. Apply the fixed trigger and acquire four bands: 260-340 nm and 400-500 nm on cooled UV-capable and bialkali PMTs through quartz, 620-720 nm on a red-sensitive PMT with the 634/668/703 nm three-point sampling that identifies dimol emission, and 1270 nm on a cooled Ge or InGaAs detector for monomol confirmation. Absolutely calibrate each band. Compute E_band for each of the four bands and form rho. Run azide and DABCO quench arms in both solvents at matched concentration to confirm that the red band responds as singlet oxygen and to test whether the UV band inherits the same quench sensitivity. Pre-register: rho in [0.7, 1.4] with E_dimol significantly >1 supports; rho < 0.5 refutes and reassigns the UV upstream of singlet oxygen.",
+  "rationale": [
+   {
+    "step": "Solvent deuteration is an established, quantified perturbation for this exact class of signal in this corpus: substituting D2O for H2O enhanced ultraweak chemiluminescence of rat epidermal homogenate to 300%, while the singlet-oxygen quencher DABCO reduced it to 50%.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W1976025008"
+    ]
+   },
+   {
+    "step": "The red band it should act on is spectrally identified: singlet oxygen dimol emission has bands at 634 and 703 nm with a characteristic low point near 668 nm, and DABCO's action on monomol (1270 nm) versus dimol emission has been characterised - though its enhancement is not universal, so azide quenching must be run as an independent check rather than relying on DABCO alone.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2083432698",
+     "W2003146645",
+     "W2315000366",
+     "W1996052019"
+    ]
+   },
+   {
+    "step": "The mechanistic asymmetry that makes this a discriminator: deuteration lengthens the singlet-oxygen lifetime and therefore raises the yield of every channel fed by singlet oxygen, while triplet carbonyl lifetimes are not governed by solvent O-H/O-D coupling. Bands sharing a factor therefore share a precursor; bands whose factors diverge do not.",
+    "justification_type": "computation"
+   },
+   {
+    "step": "A concrete singlet-oxygen-to-UV route exists in the corpus: singlet oxygen oxidises tryptophan to isomeric hydroperoxides whose decomposition to N-formylkynurenine is chemiluminescent, and tryptophan is the dominant energy acceptor in oxidised protein samples - giving singlet oxygen a specific chemical path into the aromatic emitter that occupies the sub-350 nm region.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W1535453108",
+     "W2159034785",
+     "W2288679619",
+     "W4318819757"
+    ]
+   },
+   {
+    "step": "The counter-route is equally concrete: excited carbonyls generate singlet oxygen by triplet-triplet energy transfer to ground-state O2, so causality runs carbonyl-to-singlet-oxygen in the established scheme. If the UV instead tracked the carbonyl band and not the dimol band, the UV would sit upstream of singlet oxygen, inverting the assumed order.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2048493057",
+     "W2954526477"
+    ]
+   },
+   {
+    "step": "Skin homogenate is the right matrix because a minimal chemical model of skin built from lipid, melanin and water already reproduces essential features of real skin's autoluminescence response, so a cell-free arm and a tissue arm can be compared without changing the chemistry.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W4387077320",
+     "W2886211841",
+     "W2132454423"
+    ]
+   }
+  ],
+  "cited_works": [
+   {
+    "work_id": "W1976025008",
+    "title": "Singlet oxygen and ultraweak chemiluminescence in rat skin.",
+    "year": 1981,
+    "type": "article",
+    "abstract": "TORINUKI, W. and MIURA, T. Singlet Oxygen and Ultraweak Chemiluminemence in Rat Skin. Tohoku J. exp. Med., 1981, 135 (4), 387-393-The intensity of ultraweak chemiluminescence (CL) was estimated in rat epidermal homogenate with a technique utilizing UV irradiation (in vitro and in vivo). CL markedly increased in the homogenate after irradiation. The CL intensity was enhanced to 300% by the substitution of deuterium oxide for H2O, and it was reduced to 50% when diazabicyclo-octane, a scavenger for singlet oxygen, was added. It was con-cluded that the weak CL would be attributable to singlet oxygen, and the deter- mination of the lipoperoxide in skin tissue by the method of the CL counting system was discussed. singlet oxygen; ultraweak chemiluminescence; rat skin"
+   },
+   {
+    "work_id": "W2083432698",
+    "title": "INHIBITION AND ENHANCEMENT OF SINGLET OXYGEN (‘A<sub>g</sub>) DIMOL CHEMILUMINESCENCE",
+    "year": 1977,
+    "type": "article",
+    "abstract": "Abstract— Various nitrogen containing compounds have previously been shown to quench singlet oxygen (10z). When measuring the dimol 1 O 2 light emission arising from the H 2 O 2 /OCI‐ reaction, we found that certain cyclic diamines increase the emission of light, while other amines were inhibitory. This increase of light emission was seen with both 1, 4diazabicyclo[2.2.2]octane and N, N'‐dimethylpi‐perazine but not with acyclic analogues. Sodium azide inhibited both the normal and enhanced light emission. The enhanced light emission shows spectral properties characteristic of l O 2 dimol emission."
+   },
+   {
+    "work_id": "W2003146645",
+    "title": "Effect of DABCO (1,4‐diazabicyclo[2,2,2]‐octane) on singlet oxygen monomol (1270 nm) and dimol (634 and 703 nm) emission",
+    "year": 1983,
+    "type": "article",
+    "abstract": "Monomol (1270 nm) and dimol (634 and 703 nm) emissions of singlet oxygen arising from the H 2 O 2 —OCl − reaction are compared by using a germanium detector and a red‐sensitive photomultiplier, respectively. The detection limits in both cases are compared and the possibility of their application to biological systems in order to detect singlet molecular oxygen is discussed. 1,4‐Diazabicyclo[2,2,2]‐octane (DABCO) enhances both dimol and monomol emission of singlet oxygen from the above reaction; however, the tentative ratio ‘monomol/dimol emission’ is lowered in the presence of the tertiary amine."
+   },
+   {
+    "work_id": "W2315000366",
+    "title": "Singlet Oxygen Formation Detected by Low-Level Chemiluminescence during Enzymatic Reduction of Prostaglandin G<sub><b>2</b></sub>to H<sub><b>2</b></sub>",
+    "year": 1983,
+    "type": "article",
+    "abstract": "Addition of arachidonic acid to a suspension of ram vesicular gland microsomes or purified prostaglandin synthase, causes a rapid burst of light emission in the range 600-750 nm, as detected by single-photon counting. Maximal light emission intensity is obtained within 15-30 s after the addition of arachidonic acid and is followed by a rapid decay to the background level. The intensity of chemiluminescence is dependent on the amount of ram vesicular gland microsomes or isolated prostaglandin synthase and arachidonic acid concentration (Km about 6 microM). Spectral analysis of arachidonic acid-induced photoemission of isolated prostaglandin synthase in the range 600-750 nm showed two distinctive peaks at about 634 and 703 nm. The similar relative intensities of these peaks, along with the lower intensity at about 668 nm is indicative of singlet oxygen dimol emission. Chemiluminescence with arachidonate is enhanced by 1,4-diazabicyclo[2,2,2]octane and inhibited by azide, indomethacin, acetylsalicylic acid and beta-carotene. Cooxygenation substrates such as phenol, hydroquinone and reduced glutathione, inhibited the arachidonic acid-induced chemiluminescence. Dioxygen is a requirement for the observation of singlet oxygen dimol emission with arachidonic acid as a substrate for ram vesicular gland microsomes or purified prostaglandin synthase. However, when prostaglandin G2 is substituted for arachidonic acid, light emission is not dependent on oxygen. Thus, singlet oxygen can be formed in the dismutation reaction, 2 PGG2 leads to 2 PGH2 + 1O2, catalysed by prostaglandin hydrop"
+   },
+   {
+    "work_id": "W1996052019",
+    "title": "On the Effect of 1,4-Diazabicyclo[2.2.2]octane on the Singlet-Oxygen Dimol Emission:  Chemical Generation of (<sup>1</sup>O<sub>2</sub>)<sub>2</sub> in Peroxide Reactions",
+    "year": 2007,
+    "type": "article",
+    "abstract": "The acetone-catalyzed decomposition of monoperoxysulfate ions, the molybdate ion-induced decay of hydrogen peroxide, and the reactions of N-chlorosuccinimide or N-bromosuccinimide with hydrogen peroxide and of dimethyldioxirane with tertiary amines as well as the thermal decomposition of 1,4-dimethylnaphthalene endoperoxide lead to the chemiluminescence of singlet-oxygen dimol species (1O2)2 emitting at 634 and 703 nm. In contrast to the expected enhancement of (1O2)2 chemiluminescence upon addition of 1,4-diazabicyclo[2.2.2]octane (DABCO) [Deneke, C.F.; Krinsky, N. I. J. Am. Chem. Soc. 1976, 98, 3041. Di Mascio, P.; Sies, H. J. Am. Chem. Soc. 1989, 111, 2909.], quenching has been observed. Our data show that enhancement of singlet-oxygen dimol chemiluminescence is not a general phenomenon and, consequently, DABCO is not a reliable chemiluminescent probe for the presence of (1O2)2 in chemical and biochemical systems."
+   },
+   {
+    "work_id": "W1535453108",
+    "title": "Oxidação do triptofano pelo oxigênio molecular no estado singlete [O2 (1Δg)]: estudos mecanísticos envolvendo marcação isotópica, espectrometria de massa e quimiluminescência",
+    "year": 2008,
+    "type": "dissertation",
+    "abstract": "As protenas so consideradas importantes alvos para os oxidantes, devido abundncia em sistemas biolgicos e s altas constantes de reaes com estas espcies. Adicionalmente, tmse demonstrado que o triptofano (W) um aminocido extremamente susceptvel a oxidao, inclusive pelo oxignio singlete ( 1 O 2 ). A reao do W com o 1 O 2 tem despertado o interesse de diversos pesquisadores. Recentemente, esta reao tem atrado mais ateno, uma vez que produtos de oxidao do W tais como N-formilquinurenina (FMK) e quinurenina (kn) tm sido associados com algumas condies patolgicas, tais como o desenvolvimento de catarata e a formao de agregados covalentes da superxido dismutase envolvidos na esclerose lateral amiotrfica. Entretanto, h poucos trabalhos enfocando detalhadamente as reaes, com estudos de estabilidade, identificao de subprodutos e propostas mecansticas. Desta forma, pretendemos com este trabalho contribuir no esclarecimento do mecanismo de oxidao do triptofano pelo 1 O 2 , atravs da anlise e caracterizao de produtos de oxidao gerados. Com este intuito, dois hidroperxidos de triptofano ismeros (WOOH cis e trans, em relao ao grupamento carboxila) foram completamente caracterizados por anlises de HPLC/espectrometria de massa e RMN como os principais produtos de oxidao do W pelo 1 O 2 . Estes hidroperxidos demonstraram ser relativamente estveis s temperaturas ambiente e fisiolgica, decompondo lentamente para os alcois correspondentes. O aumento do pH e/ou o aquecimento das solues contendo os WOOH leva a decomposio quimiluminescente dos WOOH FMK. Utilizando hidroperxidos isotopicamente marca"
+   },
+   {
+    "work_id": "W2159034785",
+    "title": "Non‐invasive monitoring of oxidative skin stress by ultraweak photon emission (UPE)‐measurement. I: mechanisms of UPE of biological materials",
+    "year": 2007,
+    "type": "article",
+    "abstract": "BACKGROUND/PURPOSE: Oxidation of proteins and amino acids is associated with generation of ultraweak photon emission (UPE), which may be used to assess oxidative processes in the skin in a non-invasive way. This first part of a series of reports addresses the physicochemical basis of oxidation-induced UPE in the skin, with a special focus on the contribution of amino acid oxidation. METHODS: UPE of biological samples and protein/amino acid solutions following oxidation with H(2)O(2) in the presence of Fe(2+) was recorded using a sensitive photomultiplier system. Signals were analyzed with regard to overall signal intensity and spectral distribution. RESULTS: Increasing concentrations of H(2)O(2) in aqueous bovine serum albumin solutions induced linearly correlated UPE and protein carbonyl compounds, with a substantially higher sensitivity for the measurement of UPE. In single amino acid solutions, strong UPE signals were generated by oxidation from Phe, Trp, His, and Cys, and weak signals from Lys and Thr. Analysis of reaction products by MS revealed high oxidative material turnover for Cys and His, whereas barely detectable oxidative material turnover seems to be sufficient to generate a UPE signal of similar strength from Trp and Phe. Combination of different amino acids did not result in a simple addition of individual oxidation-induced UPE signals, but in interactions ranging from antagonism to clear synergism. Synergism was evident between Trp- and UPE-generating amino acids such as Thr, Cys, and His, with the strongest synergism by far observed between Trp and His. Th"
+   },
+   {
+    "work_id": "W2288679619",
+    "title": "Endogenous Generation of Singlet Oxygen and Ozone in Human and Animal Tissues: Mechanisms, Biological Significance, and Influence of Dietary Components",
+    "year": 2016,
+    "type": "article",
+    "abstract": "Recent studies have shown that exposing antibodies or amino acids to singlet oxygen results in the formation of ozone (or an ozone-like oxidant) and hydrogen peroxide and that human neutrophils produce both singlet oxygen and ozone during bacterial killing. There is also mounting evidence that endogenous singlet oxygen production may be a common occurrence in cells through various mechanisms. Thus, the ozone-producing combination of singlet oxygen and amino acids might be a common cellular occurrence. This paper reviews the potential pathways of formation of singlet oxygen and ozone in vivo and also proposes some new pathways for singlet oxygen formation. Physiological consequences of the endogenous formation of these oxidants in human tissues are discussed, as well as examples of how dietary factors may promote or inhibit their generation and activity."
+   },
+   {
+    "work_id": "W4318819757",
+    "title": "Significance of Singlet Oxygen Molecule in Pathologies",
+    "year": 2023,
+    "type": "article",
+    "abstract": "Reactive oxygen species, including singlet oxygen, play an important role in the onset and progression of disease, as well as in aging. Singlet oxygen can be formed non-enzymatically by chemical, photochemical, and electron transfer reactions, or as a byproduct of endogenous enzymatic reactions in phagocytosis during inflammation. The imbalance of antioxidant enzymes and antioxidant networks with the generation of singlet oxygen increases oxidative stress, resulting in the undesirable oxidation and modification of biomolecules, such as proteins, DNA, and lipids. This review describes the molecular mechanisms of singlet oxygen production in vivo and methods for the evaluation of damage induced by singlet oxygen. The involvement of singlet oxygen in the pathogenesis of skin and eye diseases is also discussed from the biomolecular perspective. We also present our findings on lipid oxidation products derived from singlet oxygen-mediated oxidation in glaucoma, early diabetes patients, and a mouse model of bronchial asthma. Even in these diseases, oxidation products due to singlet oxygen have not been measured clinically. This review discusses their potential as biomarkers for diagnosis. Recent developments in singlet oxygen scavengers such as carotenoids, which can be utilized to prevent the onset and progression of disease, are also described."
+   },
+   {
+    "work_id": "W2048493057",
+    "title": "Excited singlet molecular O2 (1Δg) is generated enzymatically from excited carbonyls in the dark",
+    "year": 2014,
+    "type": "article",
+    "abstract": "In mammalian tissues, ultraweak chemiluminescence arising from biomolecule oxidation has been attributed to the radiative deactivation of singlet molecular oxygen [O2 ((1)Δg)] and electronically excited triplet carbonyl products involving dioxetane intermediates. Herein, we describe evidence of the generation of O2 ((1)Δg) in aqueous solution via energy transfer from excited triplet acetone. This involves thermolysis of 3,3,4,4-tetramethyl-1,2-dioxetane, a chemical source, and horseradish peroxidase-catalyzed oxidation of 2-methylpropanal, as an enzymatic source. Both sources of excited carbonyls showed characteristic light emission at 1,270 nm, directly indicative of the monomolecular decay of O2 ((1)Δg). Indirect analysis of O2 ((1)Δg) by electron paramagnetic resonance using the chemical trap 2,2,6,6-tetramethylpiperidine showed the formation of 2,2,6,6-tetramethylpiperidine-1-oxyl. Using [(18)O]-labeled triplet, ground state molecular oxygen [(18)O2 ((3)Σg(-))], chemical trapping of (18)O2 ((1)Δg) with disodium salt of anthracene-9,10-diyldiethane-2,1-diyl disulfate yielding the corresponding double-[(18)O]-labeled 9,10-endoperoxide, was detected through mass spectrometry. This corroborates formation of O2 ((1)Δg). Altogether, photoemission and chemical trapping studies clearly demonstrate that chemically and enzymatically nascent excited carbonyl generates (18)O2 ((1)Δg) by triplet-triplet energy transfer to ground state oxygen O2 ((3)Σg(-)), and supports the long formulated hypothesis of O2 ((1)Δg) involvement in physiological and pathophysiological events that might "
+   },
+   {
+    "work_id": "W2954526477",
+    "title": "Mechanism of the Formation of Electronically Excited Species by Oxidative Metabolic Processes: Role of Reactive Oxygen Species",
+    "year": 2019,
+    "type": "article",
+    "abstract": "It is well known that biological systems, such as microorganisms, plants, and animals, including human beings, form spontaneous electronically excited species through oxidative metabolic processes. Though the mechanism responsible for the formation of electronically excited species is still not clearly understood, several lines of evidence suggest that reactive oxygen species (ROS) are involved in the formation of electronically excited species. This review attempts to describe the role of ROS in the formation of electronically excited species during oxidative metabolic processes. Briefly, the oxidation of biomolecules, such as lipids, proteins, and nucleic acids by ROS initiates a cascade of reactions that leads to the formation of triplet excited carbonyls formed by the decomposition of cyclic (1,2-dioxetane) and linear (tetroxide) high-energy intermediates. When chromophores are in proximity to triplet excited carbonyls, the triplet-singlet and triplet-triplet energy transfers from triplet excited carbonyls to chromophores result in the formation of singlet and triplet excited chromophores, respectively. Alternatively, when molecular oxygen is present, the triplet-singlet energy transfer from triplet excited carbonyls to molecular oxygen initiates the formation of singlet oxygen. Understanding the mechanism of the formation of electronically excited species allows us to use electronically excited species as a marker for oxidative metabolic processes in cells."
+   },
+   {
+    "work_id": "W4387077320",
+    "title": "Biological Auto(chemi)luminescence Imaging of Oxidative Processes in Human Skin",
+    "year": 2023,
+    "type": "article",
+    "abstract": "Oxidative processes in all types of organisms cause the chemical formation of electronically excited species, with subsequent ultraweak photon emission termed biological auto(chemi)luminescence (BAL). Imaging this luminescence phenomenon using ultrasensitive devices could potentially enable monitoring of oxidative stress in optically accessible areas of the human body, such as skin. Although oxidative stress induced by UV light has been explored, for chemically induced stress, there is no in vivo-quantified imaging of oxidative processes in human skin using BAL under the controlled extent of oxidative stress conditions. Furthermore, the mechanisms and dynamics of BAL from the skin have not been fully explored. Here, we demonstrate that different degrees of chemically induced oxidative stress on the skin can be spatially resolved quantitatively through noninvasive label-free BAL imaging. Additionally, to gain insight into the underlying mechanisms, a minimal chemical model of skin based on a mixture of lipid, melanin, and water was developed and used to show that it can be used to reproduce essential features of the response of real skin to oxidative stress. Our results contribute to novel, noninvasive photonic label-free methods for quantitative sensing of oxidative processes and oxidative stress."
+   },
+   {
+    "work_id": "W2886211841",
+    "title": "Triplet Excited Carbonyls and Singlet Oxygen Formation During Oxidative Radical Reaction in Skin",
+    "year": 2018,
+    "type": "article",
+    "abstract": "The skin is the largest organ in the body and is consistently exposed to aggressive environmental attack (biological/physical/chemical etc.). Reactive oxygen species (ROS) are formed during the normal oxidative metabolism which enhances to a lethal level under stress condition referred to as oxidative stress. While, under normal conditions, cells are capable of dealing with ROS using non-enzymatic and enzymatic defense system, it can lead to a critical damage to cell system via the oxidation of cellular components under stress condition. Lipid peroxidation is a well-established mechanism of cellular injury in all kinds of organisms and it is often used as an indicator of oxidative stress in cells and tissues. In the presence of metal ions, ROS such as hydrogen peroxide (H2O2) produces highly reactive hydroxyl radical (HO•) via Fenton's reaction. In the current study, we have used the porcine skin (intact pig ear/skin biopsies) as an ex-vivo/in-vitro model system to represent human skin. Experimental results have been presented on the participation of HO• in the initiation of lipid peroxidation and thereby leading to the formation of reactive intermediates and the formation of electronically excited species eventually leading to ultra-weak photon emission. To understand the participation of different electronically excited species in the overall ultra-weak photon emission, the effect of a scavenger of singlet oxygen (1O2) on photon emission in the visible and near-infrared region of the spectrum was measured which showed its contribution. In addition, measurement with interf"
+   },
+   {
+    "work_id": "W2132454423",
+    "title": "Spontaneous ultraweak photon emission imaging of oxidative metabolic processes in human skin: effect of molecular oxygen and antioxidant defense system",
+    "year": 2011,
+    "type": "article",
+    "abstract": "All living organisms emit spontaneous ultraweak photon emission as a result of cellular metabolic processes. In this study, the involvement of reactive oxygen species (ROS) formed as the byproduct of oxidative metabolic processes in spontaneous ultraweak photon emission was studied in human hand skin. The effect of molecular oxygen and ROS scavengers on spontaneous ultraweak photon emission from human skin was monitored using a highly sensitive photomultiplier tube and charged coupled device camera. When spontaneous ultraweak photon emission was measured under anaerobic conditions, the photon emission was decreased, whereas under hyperaerobic condition the enhancement in photon emission was observed. Spontaneous ultraweak photon emission measured after topical application of glutathione, α-tocopherol, ascorbate, and coenzyme Q10 was observed to be decreased. These results reveal that ROS formed during the cellular metabolic processes in the epidermal cells play a significant role in the spontaneous ultraweak photon emission. It is proposed that spontaneous ultraweak photon emission can be used as a noninvasive tool for the temporal and spatial monitoring of the oxidative metabolic processes and intrinsic antioxidant system in human skin."
+   }
+  ]
+ },
+ {
+  "candidate_id": "C006",
+  "seed_id": "Q1",
+  "statement": "The spectral shape of UPE, including the size of its sub-350 nm fraction, is set by the acceptor-chromophore inventory of the preparation rather than by the primary chemiexcitation step, such that adding melanin or chlorophyll at fixed oxidative chemistry suppresses the sub-350 nm fraction by more than half while leaving total emitted photon number changed by less than 30%.",
+  "scope": {
+   "population": "A minimal cell-free skin-model oxidation system (lipid + water) run at fixed Fe(II)/H2O2 or fixed UVA dose, with a titrated acceptor added: synthetic melanin, chlorophyll a, or bovine serum albumin as a tryptophan-bearing acceptor, at four concentrations spanning 100-fold",
+   "condition": "Identical primary chemistry across all arms, verified by matched malondialdehyde/peroxide-value assay, with only the added acceptor varying",
+   "comparator": "The acceptor-free arm of the same chemistry; and, as a cross-check, the same chemistry run in a matrix that already contains a dominant acceptor (leaf tissue, pigmented skin)",
+   "outcome": "Fraction of total emitted photons in 260-340 nm, and total emitted photons integrated 260-900 nm, as functions of acceptor concentration"
+  },
+  "null_hypothesis": "The sub-350 nm fraction is invariant to acceptor concentration (change <20% across a 100-fold acceptor titration) at matched oxidative turnover, i.e. the emitted spectrum is a property of the primary chemistry and acceptors merely attenuate everything proportionally.",
+  "estimand": "The ratio (sub-350 nm fraction at highest acceptor)/(sub-350 nm fraction at zero acceptor), with total-photon conservation reported alongside; <0.5 with total photons within 30% supports, >0.8 refutes.",
+  "proposed_experiment": "Run the lipid-plus-water minimal skin model at a single fixed oxidative trigger, in fused-silica cuvettes, with four titrated levels each of synthetic melanin, chlorophyll a, and BSA, plus an acceptor-free arm. At every arm, acquire the full 260-900 nm emission with an imaging spectrograph coupled to a cooled EMCCD in binary photon-counting mode, absolutely calibrated for spectral response so photon numbers, not counts, are compared; supplement below 350 nm with a solar-blind PMT channel where spectrograph throughput is marginal. Hold the primary chemistry constant and prove it: measure peroxide value and HPLC malondialdehyde in every arm and reject any arm whose turnover deviates by more than 15%. Measure each acceptor's own absorbance spectrum in situ so that a pure inner-filter prediction can be computed and subtracted, isolating genuine transfer-driven redistribution. Cross-check in tissue by comparing amelanotic and pigmented skin, and chlorophyll-containing versus etiolated plant tissue, at matched wounding. Decision: sub-350 nm fraction falling by >50% while total 260-900 nm photons stay within 30% supports; either invariance of the fraction, or proportional loss of total photons, refutes.",
+  "rationale": [
+   {
+    "step": "Energy transfer from the primary excited species to a secondary chromophore is the corpus's own stated mechanism: when chromophores are proximate to triplet excited carbonyls, triplet-singlet and triplet-triplet transfer produce excited chromophores, so the emitting species need not be the excited species.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2954526477"
+    ]
+   },
+   {
+    "step": "The acceptor is demonstrably able to overwrite the spectrum. Histidine and tryptophan give strikingly different individual UPE spectra of comparable strength, yet their mixture yields a spectrum congruent with pure tryptophan - the acceptor's spectrum, not a sum of the generators'.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2159034785"
+    ]
+   },
+   {
+    "step": "The same overwrite is documented across matrices. In vitro lipid oxidation luminesces across 450-850 nm, but the in-planta signal appears only above 640 nm, peaking at 700-750 nm; wound emission from two plant species is reported above 650 nm with chlorophyll named as the likely emitter; and in skin, triplet carbonyls transfer their excitation to melanin by either radiative or electron-exchange routes, forming melanin-based secondary excited states.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W4283824773",
+     "W2808116502",
+     "W3037707140",
+     "W4415217027"
+    ]
+   },
+   {
+    "step": "Melanin chemiexcitation is established beyond UPE work: chemically generated triplet states on melanin fragments carry the energy of a UV photon and transfer it to DNA to produce cyclobutane pyrimidine dimers hours after irradiation ends, and the same mechanism is invoked for retinal melanin. So melanin is a competent, well-characterised acceptor operating at exactly the energies in dispute.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2093971029",
+     "W4401751348",
+     "W4406917498"
+    ]
+   },
+   {
+    "step": "The energy bookkeeping predicts the asymmetry that makes this testable. Acceptor capture is a downhill transfer, so it moves quanta from short to long wavelength while approximately conserving photon number; a pure inner-filter loss would instead destroy photons. Measuring the sub-350 nm fraction and the total integrated photon count together therefore separates spectral redistribution from attenuation, and only redistribution supports the claim.",
+    "justification_type": "computation"
+   },
+   {
+    "step": "The minimal chemical model needed already exists in this corpus: a lipid-melanin-water mixture reproduces essential features of real skin's autoluminescence response to oxidative stress, so acceptor titration can be done at genuinely fixed chemistry.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W4387077320",
+     "W2062177539"
+    ]
+   },
+   {
+    "step": "If confirmed, the corollary is that the sub-350 nm band is not weak because it is rarely generated but because almost every biological matrix is acceptor-rich - which reframes the seed question and predicts the largest UV fractions in the most acceptor-poor preparations (aliphatic lipid systems, albino or amelanotic tissue) rather than in the most metabolically active ones.",
+    "justification_type": "computation"
+   }
+  ],
+  "cited_works": [
+   {
+    "work_id": "W2954526477",
+    "title": "Mechanism of the Formation of Electronically Excited Species by Oxidative Metabolic Processes: Role of Reactive Oxygen Species",
+    "year": 2019,
+    "type": "article",
+    "abstract": "It is well known that biological systems, such as microorganisms, plants, and animals, including human beings, form spontaneous electronically excited species through oxidative metabolic processes. Though the mechanism responsible for the formation of electronically excited species is still not clearly understood, several lines of evidence suggest that reactive oxygen species (ROS) are involved in the formation of electronically excited species. This review attempts to describe the role of ROS in the formation of electronically excited species during oxidative metabolic processes. Briefly, the oxidation of biomolecules, such as lipids, proteins, and nucleic acids by ROS initiates a cascade of reactions that leads to the formation of triplet excited carbonyls formed by the decomposition of cyclic (1,2-dioxetane) and linear (tetroxide) high-energy intermediates. When chromophores are in proximity to triplet excited carbonyls, the triplet-singlet and triplet-triplet energy transfers from triplet excited carbonyls to chromophores result in the formation of singlet and triplet excited chromophores, respectively. Alternatively, when molecular oxygen is present, the triplet-singlet energy transfer from triplet excited carbonyls to molecular oxygen initiates the formation of singlet oxygen. Understanding the mechanism of the formation of electronically excited species allows us to use electronically excited species as a marker for oxidative metabolic processes in cells."
+   },
+   {
+    "work_id": "W2159034785",
+    "title": "Non‐invasive monitoring of oxidative skin stress by ultraweak photon emission (UPE)‐measurement. I: mechanisms of UPE of biological materials",
+    "year": 2007,
+    "type": "article",
+    "abstract": "BACKGROUND/PURPOSE: Oxidation of proteins and amino acids is associated with generation of ultraweak photon emission (UPE), which may be used to assess oxidative processes in the skin in a non-invasive way. This first part of a series of reports addresses the physicochemical basis of oxidation-induced UPE in the skin, with a special focus on the contribution of amino acid oxidation. METHODS: UPE of biological samples and protein/amino acid solutions following oxidation with H(2)O(2) in the presence of Fe(2+) was recorded using a sensitive photomultiplier system. Signals were analyzed with regard to overall signal intensity and spectral distribution. RESULTS: Increasing concentrations of H(2)O(2) in aqueous bovine serum albumin solutions induced linearly correlated UPE and protein carbonyl compounds, with a substantially higher sensitivity for the measurement of UPE. In single amino acid solutions, strong UPE signals were generated by oxidation from Phe, Trp, His, and Cys, and weak signals from Lys and Thr. Analysis of reaction products by MS revealed high oxidative material turnover for Cys and His, whereas barely detectable oxidative material turnover seems to be sufficient to generate a UPE signal of similar strength from Trp and Phe. Combination of different amino acids did not result in a simple addition of individual oxidation-induced UPE signals, but in interactions ranging from antagonism to clear synergism. Synergism was evident between Trp- and UPE-generating amino acids such as Thr, Cys, and His, with the strongest synergism by far observed between Trp and His. Th"
+   },
+   {
+    "work_id": "W4283824773",
+    "title": "Imaging of Lipid Peroxidation-Associated Chemiluminescence in Plants: Spectral Features, Regulation and Origin of the Signal in Leaves and Roots",
+    "year": 2022,
+    "type": "article",
+    "abstract": "Plants, like most living organisms, spontaneously emit photons of visible light. This ultraweak endogenous chemiluminescence is linked to the oxidative metabolism, with lipid peroxidation constituting a major source of photons in plants. We imaged this signal using a very sensitive cooled CCD camera and analysed its spectral characteristics using bandpass interference filters. In vitro oxidation of lipids induced luminescence throughout the visible spectrum (450−850 nm). However, luminescence in the red spectral domain (>640 nm) occurred first, then declined in parallel with the appearance of the emission in the blue-green (<600 nm). This temporal separation suggests that the chemical species emitting in the blue-green are secondary products, possibly deriving from the red light-emitting species. This conversion did not seem to occur in planta because spontaneous chemiluminescence from plant tissues (leaves, roots) occurred only in the red/far-red light domain (>640 nm), peaking at 700−750 nm. The spectrum of plant chemiluminescence was independent of chlorophyll. The in vivo signal was modulated by cellular detoxification mechanisms and by changes in the concentration of singlet oxygen in the tissues, although the singlet oxygen luminescence bands did not appear as major bands in the spectra. Our results indicate that the intensity of endogenous chemiluminescence from plant tissues is determined by the balance between the formation of luminescent species through secondary reactions involving lipid peroxide-derived intermediates, including singlet oxygen, and their eliminat"
+   },
+   {
+    "work_id": "W2808116502",
+    "title": "Leaf wound induced ultraweak photon emission is suppressed under anoxic stress: Observations of Spathiphyllum under aerobic and anaerobic conditions using novel in vivo methodology",
+    "year": 2018,
+    "type": "article",
+    "abstract": "Plants have evolved a variety of means to energetically sense and respond to abiotic and biotic environmental stress. Two typical photochemical signaling responses involve the emission of volatile organic compounds and light. The emission of certain leaf wound volatiles and light are mutually dependent upon oxygen which is subsequently required for the wound-induced lipoxygenase reactions that trigger the formation of fatty acids and hydroperoxides; ultimately leading to photon emission by chlorophyll molecules. A low noise photomultiplier with sensitivity in the visible spectrum (300-720 nm) is used to continuously measure long duration ultraweak photon emission of dark-adapting whole Spathiphyllum leaves (in vivo). Leaves were mechanically wounded after two hours of dark adaptation in aerobic and anaerobic conditions. It was found that (1) nitrogen incubation did not affect the pre-wound basal photocounts; (2) wound induced leaf biophoton emission was significantly suppressed when under anoxic stress; and (3) the aerobic wound induced emission spectra observed was > 650 nm, implicating chlorophyll as the likely emitter. Limitations of the PMT photocathode's radiant sensitivity, however, prevented accurate analysis from 700-720 nm. Further examination of leaf wounding profile photon counts revealed that the pre-wounding basal state (aerobic and anoxic), the anoxic wounding state, and the post-wounding aerobic state statistics all approximate a Poisson distribution. It is additionally observed that aerobic wounding induces two distinct exponential decay events. These observ"
+   },
+   {
+    "work_id": "W3037707140",
+    "title": "Spectral Distribution of Ultra-Weak Photon Emission as a Response to Wounding in Plants: An In Vivo Study",
+    "year": 2020,
+    "type": "article",
+    "abstract": "It is well established that every living organism spontaneously emits photons referred to as ultra-weak photon emission (synonym biophotons or low-level chemiluminescence) which inherently embodies information about the wellbeing of the source. In recent years, efforts have been made to use this feature as a non-invasive diagnostic tool related to the detection of food quality, agriculture and biomedicine. The current study deals with stress resulting from wounding (mechanical injury) on Arabidopsis thaliana and how it modifies the spontaneous ultra-weak photon emission. The ultra-weak photon emission from control (non-wounded) and stressed (wounded) plants was monitored using different modes of ultra-weak photon emission measurement sensors like charge-coupled device (CCD) cameras and photomultiplier tubes (PMT) and the collected data were analyzed to determine the level of stress generated, photon emission patterns, and underlying biochemical process. It is generally considered that electronically excited species formed during the oxidative metabolic processes are responsible for the ultra-weak photon emission. In the current study, a high-performance cryogenic full-frame CCD camera was employed for two-dimensional in-vivo imaging of ultra-weak photon emission (up to several counts/s) and the spectral analysis was done by using spectral system connected to a PMT. The results show that Arabidopsis subjected to mechanical injury enhances the photon emission and also leads to changes in the spectral pattern of ultra-weak photon emission. Thus, ultra-weak photon emission can "
+   },
+   {
+    "work_id": "W4415217027",
+    "title": "Chemiexcitation in Ex Vivo Porcine Skin Model",
+    "year": 2025,
+    "type": "article",
+    "abstract": "Chemiexcitation, the formation of electronically excited states via oxidative chemical reactions, has emerged as a potentially important contributor to skin photobiology beyond direct damage caused by ultraviolet (UV) radiation. This study investigates the hypothesis that UV radiation induces chemiexcitation in skin through the formation of triplet excited carbonyls, which may transfer energy to melanin and contribute to oxidative stress even after the termination of UV exposure. Using porcine skin as a model, we demonstrate that UV exposure leads to lipid peroxidation and the subsequent formation of organic radicals, including carbon-centered (alkyl) and oxygen-centered (peroxyl and alkoxyl) species, as detected by EPR spin-trapping spectroscopy. HPLC-MS analysis revealed that short-chain carbonyl compounds, such as formaldehyde and acetaldehyde, are the predominant electronically excited species in direct chemiexcitation. These triplet carbonyls can transfer their excitation energy to melanin through photon emission (radiative transfer) or direct electron exchange (non-radiative transfer), forming melanin-based secondary excited states via indirect chemiexcitation. These findings highlight a novel, light-independent mechanism of post-UV exposure oxidative damage in the skin and suggest a possible role for chemiexcitation in processes such as photoaging and photocarcinogenesis."
+   },
+   {
+    "work_id": "W2093971029",
+    "title": "Chemiexcitation of melanin derivatives induces DNA photoproducts long after UV exposure",
+    "year": 2015,
+    "type": "article",
+    "abstract": "Mutations in sunlight-induced melanoma arise from cyclobutane pyrimidine dimers (CPDs), DNA photoproducts that are typically created picoseconds after an ultraviolet (UV) photon is absorbed at thymine or cytosine. We found that in melanocytes, CPDs are generated for >3 hours after exposure to UVA, a major component of the radiation in sunlight and in tanning beds. These \"dark CPDs\" constitute the majority of CPDs and include the cytosine-containing CPDs that initiate UV-signature C→T mutations. Dark CPDs arise when UV-induced reactive oxygen and nitrogen species combine to excite an electron in fragments of the pigment melanin. This creates a quantum triplet state that has the energy of a UV photon but induces CPDs by energy transfer to DNA in a radiation-independent manner. Melanin may thus be carcinogenic as well as protective against cancer. These findings also validate the long-standing suggestion that chemically generated excited electronic states are relevant to mammalian biology."
+   },
+   {
+    "work_id": "W4401751348",
+    "title": "Chemiexcitation in preventing macular degeneration",
+    "year": 2024,
+    "type": "article",
+    "abstract": "Quantum biology typically involves light exciting an electron to a higher energy state, or a magnetic field splitting a single state into several having different energies, or tunneling to flout the energy barrier between states. In chemiexcitation, electrons reach an excited state without light. A ground-state chemical reaction creates a reaction product born in the excited state, due to transient mixing between ground- and excited-state wavefunctions when the reaction intermediate molecule is twisted. We outline the chemiexcitation process and its biological triggers, describe the distinctive molecules susceptible to chemiexcitation, and review recent evidence that melanin in the human retina is chemiexcited as a strategy to prevent age-related macular degeneration."
+   },
+   {
+    "work_id": "W4406917498",
+    "title": "Impact of ecological UV radiation on the photochemistry of nuclear DNA",
+    "year": 2025,
+    "type": "article",
+    "abstract": " [NOTE: the corpus holds no usable abstract for this work. Judge its citation step on the title alone and mark the step unverifiable rather than false.]"
+   },
+   {
+    "work_id": "W4387077320",
+    "title": "Biological Auto(chemi)luminescence Imaging of Oxidative Processes in Human Skin",
+    "year": 2023,
+    "type": "article",
+    "abstract": "Oxidative processes in all types of organisms cause the chemical formation of electronically excited species, with subsequent ultraweak photon emission termed biological auto(chemi)luminescence (BAL). Imaging this luminescence phenomenon using ultrasensitive devices could potentially enable monitoring of oxidative stress in optically accessible areas of the human body, such as skin. Although oxidative stress induced by UV light has been explored, for chemically induced stress, there is no in vivo-quantified imaging of oxidative processes in human skin using BAL under the controlled extent of oxidative stress conditions. Furthermore, the mechanisms and dynamics of BAL from the skin have not been fully explored. Here, we demonstrate that different degrees of chemically induced oxidative stress on the skin can be spatially resolved quantitatively through noninvasive label-free BAL imaging. Additionally, to gain insight into the underlying mechanisms, a minimal chemical model of skin based on a mixture of lipid, melanin, and water was developed and used to show that it can be used to reproduce essential features of the response of real skin to oxidative stress. Our results contribute to novel, noninvasive photonic label-free methods for quantitative sensing of oxidative processes and oxidative stress."
+   },
+   {
+    "work_id": "W2062177539",
+    "title": "Ultraweak photon emission induced by visible light and ultraviolet A radiation via photoactivated skin chromophores: &lt;italic&gt;in vivo&lt;/italic&gt; charge coupled device imaging",
+    "year": 2012,
+    "type": "article",
+    "abstract": "Solar radiation that reaches Earth's surface can have severe negative consequences for organisms. Both visible light and ultraviolet A (UVA) radiation are known to initiate the formation of reactive oxygen species (ROS) in human skin by photosensitization reactions (types I and II). In the present study, we investigated the role of visible light and UVA radiation in the generation of ROS on the dorsal and the palmar side of a hand. The ROS are known to oxidize biomolecules such as lipids, proteins, and nucleic acids to form electronically excited species, finally leading to ultraweak photon emission. We have employed a highly sensitive charge coupled device camera and a low-noise photomultiplier tube for detection of two-dimensional and one-dimensional ultraweak photon emission, respectively. Our experimental results show that oxidative stress is generated by the exposure of human skin to visible light and UVA radiation. The oxidative stress generated by UVA radiation is claimed to be significantly higher than that by visible light. Two-dimensional photon imaging can serve as a potential tool for monitoring the oxidative stress in the human skin induced by various stress factors irrespective of its physical or chemical nature."
+   },
+   {
+    "work_id": "W2886211841",
+    "title": "Triplet Excited Carbonyls and Singlet Oxygen Formation During Oxidative Radical Reaction in Skin",
+    "year": 2018,
+    "type": "article",
+    "abstract": "The skin is the largest organ in the body and is consistently exposed to aggressive environmental attack (biological/physical/chemical etc.). Reactive oxygen species (ROS) are formed during the normal oxidative metabolism which enhances to a lethal level under stress condition referred to as oxidative stress. While, under normal conditions, cells are capable of dealing with ROS using non-enzymatic and enzymatic defense system, it can lead to a critical damage to cell system via the oxidation of cellular components under stress condition. Lipid peroxidation is a well-established mechanism of cellular injury in all kinds of organisms and it is often used as an indicator of oxidative stress in cells and tissues. In the presence of metal ions, ROS such as hydrogen peroxide (H2O2) produces highly reactive hydroxyl radical (HO•) via Fenton's reaction. In the current study, we have used the porcine skin (intact pig ear/skin biopsies) as an ex-vivo/in-vitro model system to represent human skin. Experimental results have been presented on the participation of HO• in the initiation of lipid peroxidation and thereby leading to the formation of reactive intermediates and the formation of electronically excited species eventually leading to ultra-weak photon emission. To understand the participation of different electronically excited species in the overall ultra-weak photon emission, the effect of a scavenger of singlet oxygen (1O2) on photon emission in the visible and near-infrared region of the spectrum was measured which showed its contribution. In addition, measurement with interf"
+   }
+  ]
+ },
+ {
+  "candidate_id": "C007",
+  "seed_id": "Q1",
+  "statement": "In Fe2+/H2O2-oxidized recombinant human serum albumin, replacing its tryptophan with phenylalanine will selectively reduce calibrated 250–349 nm emission relative to 350–550 nm emission at matched protein-carbonyl burden, identifying tryptophan as a final UV emitter receiving chemiexcitation energy.",
+  "scope": {
+   "population": "Purified recombinant wild-type human serum albumin and an otherwise matched Trp-to-Phe variant in quartz cuvettes.",
+   "condition": "Dark Fe2+/H2O2 oxidation at matched temperature, dissolved oxygen, protein concentration and measured carbonyl burden.",
+   "comparator": "Wild-type versus Trp-to-Phe albumin, with unoxidized and fluorophore-free reaction blanks.",
+   "outcome": "Absolute photon flux in 250–299, 300–349 and 350–550 nm bands, plus protein-carbonyl concentration."
+  },
+  "null_hypothesis": "The Trp-to-Phe substitution does not lower the 250–349/350–550 nm photon-flux ratio; a 95% confidence interval for the contrast includes or lies below zero.",
+  "estimand": "θ=ln[(F250–349/F350–550)WT/(F250–349/F350–550)Trp→Phe] at equal carbonyl burden; the claim requires θ>0.",
+  "proposed_experiment": "Oxidize wild-type and Trp-to-Phe albumin in randomized replicate quartz cuvettes, continuously measure calibrated band-resolved photons, and quantify carbonyls by an orthogonal assay; fit photon flux against carbonyl burden and test the genotype-by-band interaction.",
+  "rationale": [
+   {
+    "step": "The origin of biological UPE below 350 nm is explicitly unresolved.",
+    "justification_type": "given"
+   },
+   {
+    "step": "Oxidized protein and amino-acid systems emit UPE, and tryptophan can receive excitation energy from other oxidized amino acids and act as the final emitter.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2159034785"
+    ]
+   },
+   {
+    "step": "ROS oxidation can form triplet carbonyls whose energy is transferred to nearby chromophores.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2954526477"
+    ]
+   },
+   {
+    "step": "Taking the ratio of UV to visible flux before comparing genotypes separates a band-specific emitter effect from a uniform change in reaction yield.",
+    "justification_type": "computation"
+   }
+  ],
+  "cited_works": [
+   {
+    "work_id": "W2752165143",
+    "title": "Oscillations of ultra-weak photon emission from cancer and non-cancer cells stressed by culture medium change and TNF-α",
+    "year": 2017,
+    "type": "article",
+    "abstract": "Cells spontaneously emit photons in the UV to visible/near-infrared range (ultra-weak photon emission, UPE). Perturbations of the cells' state cause changes in UPE (evoked UPE). The aim of the present study was to analyze the evoked UPE dynamics of cells caused by two types of cell perturbations (stressors): (i) a cell culture medium change, and (ii) application of the pro-inflammatory cytokine tumor necrosis factor alpha (TNF-α). Four types of human cell lines were used (squamous cell carcinoma cells, A431; adenocarcinomic alveolar basal epithelial cells, A549; p53-deficient keratinocytes, HaCaT, and cervical cancer cells, HeLa). In addition to the medium change, TNF-α was applied at different concentrations (5, 10, 20, and 40 ng/mL) and UPE measurements were performed after incubation times of 0, 30, 60, 90 min, 2, 5, 12, 24, 48 h. It was observed that (i) the change of cell culture medium (without added TNF-α) induces a cell type-specific transient increase in UPE with the largest UPE increase observed in A549 cells, (ii) the addition of TNF-α induces a cell type-specific and dose-dependent change in UPE, and (iii) stressed cell cultures in general exhibit oscillatory UPE changes."
+   },
+   {
+    "work_id": "W2159034785",
+    "title": "Non‐invasive monitoring of oxidative skin stress by ultraweak photon emission (UPE)‐measurement. I: mechanisms of UPE of biological materials",
+    "year": 2007,
+    "type": "article",
+    "abstract": "BACKGROUND/PURPOSE: Oxidation of proteins and amino acids is associated with generation of ultraweak photon emission (UPE), which may be used to assess oxidative processes in the skin in a non-invasive way. This first part of a series of reports addresses the physicochemical basis of oxidation-induced UPE in the skin, with a special focus on the contribution of amino acid oxidation. METHODS: UPE of biological samples and protein/amino acid solutions following oxidation with H(2)O(2) in the presence of Fe(2+) was recorded using a sensitive photomultiplier system. Signals were analyzed with regard to overall signal intensity and spectral distribution. RESULTS: Increasing concentrations of H(2)O(2) in aqueous bovine serum albumin solutions induced linearly correlated UPE and protein carbonyl compounds, with a substantially higher sensitivity for the measurement of UPE. In single amino acid solutions, strong UPE signals were generated by oxidation from Phe, Trp, His, and Cys, and weak signals from Lys and Thr. Analysis of reaction products by MS revealed high oxidative material turnover for Cys and His, whereas barely detectable oxidative material turnover seems to be sufficient to generate a UPE signal of similar strength from Trp and Phe. Combination of different amino acids did not result in a simple addition of individual oxidation-induced UPE signals, but in interactions ranging from antagonism to clear synergism. Synergism was evident between Trp- and UPE-generating amino acids such as Thr, Cys, and His, with the strongest synergism by far observed between Trp and His. Th"
+   },
+   {
+    "work_id": "W2954526477",
+    "title": "Mechanism of the Formation of Electronically Excited Species by Oxidative Metabolic Processes: Role of Reactive Oxygen Species",
+    "year": 2019,
+    "type": "article",
+    "abstract": "It is well known that biological systems, such as microorganisms, plants, and animals, including human beings, form spontaneous electronically excited species through oxidative metabolic processes. Though the mechanism responsible for the formation of electronically excited species is still not clearly understood, several lines of evidence suggest that reactive oxygen species (ROS) are involved in the formation of electronically excited species. This review attempts to describe the role of ROS in the formation of electronically excited species during oxidative metabolic processes. Briefly, the oxidation of biomolecules, such as lipids, proteins, and nucleic acids by ROS initiates a cascade of reactions that leads to the formation of triplet excited carbonyls formed by the decomposition of cyclic (1,2-dioxetane) and linear (tetroxide) high-energy intermediates. When chromophores are in proximity to triplet excited carbonyls, the triplet-singlet and triplet-triplet energy transfers from triplet excited carbonyls to chromophores result in the formation of singlet and triplet excited chromophores, respectively. Alternatively, when molecular oxygen is present, the triplet-singlet energy transfer from triplet excited carbonyls to molecular oxygen initiates the formation of singlet oxygen. Understanding the mechanism of the formation of electronically excited species allows us to use electronically excited species as a marker for oxidative metabolic processes in cells."
+   }
+  ]
+ },
+ {
+  "candidate_id": "C008",
+  "seed_id": "Q1",
+  "statement": "In genetically plasmalogen-deficient human keratinocytes, restoring plasmalogens will increase dark post-oxidation 300–349 nm flux at a fixed singlet-oxygen dose and lipid-peroxide burden, with the increase scaling with hydroperoxyacetal and dioxetane products.",
+  "scope": {
+   "population": "Isogenic plasmalogen-deficient and genetically rescued human keratinocyte cultures, with lipidomics-confirmed plasmalogen abundance.",
+   "condition": "A matched pulse from a dark singlet-oxygen donor followed by photon recording after donor-only background subtraction.",
+   "comparator": "Deficient versus rescued cells, plus untreated cells and donor-only medium.",
+   "outcome": "Absolute 300–349, 350–550 and 1,270 nm photon fluxes and LC-HRMS abundances of plasmalogen hydroperoxyacetals, dioxetanes and lipid peroxides."
+  },
+  "null_hypothesis": "Plasmalogen rescue does not increase 300–349 nm flux after adjustment for delivered singlet oxygen, cell number and total lipid-peroxide burden, and UV flux does not covary with the specified plasmalogen products.",
+  "estimand": "θ=ln(F300–349,rescued/F300–349,deficient) standardized to equal singlet-oxygen exposure and total lipid peroxide; the claim requires θ>0 and a positive product–flux slope.",
+  "proposed_experiment": "Verify plasmalogen depletion and rescue by lipidomics, expose equal cell numbers to a calibrated dark singlet-oxygen pulse, record emission continuously in three bands, and use LC-HRMS time points to test whether plasmalogen intermediates mediate the rescued UV signal.",
+  "rationale": [
+   {
+    "step": "Plasmalogen oxidation forms hydroperoxyacetal and dioxetane intermediates that subsequently generate triplet carbonyls and singlet oxygen, demonstrated by visible and 1,270 nm emission and LC-HRMS.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W4399353285"
+    ]
+   },
+   {
+    "step": "Dioxetane and tetroxide decomposition are candidate sources of triplet carbonyls, which can emit or transfer energy to cellular chromophores.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2954526477"
+    ]
+   },
+   {
+    "step": "Normalizing the rescue contrast to singlet-oxygen dose and total lipid-peroxide burden isolates the plasmalogen branch from a nonspecific increase in oxidation.",
+    "justification_type": "computation"
+   }
+  ],
+  "cited_works": [
+   {
+    "work_id": "W4399353285",
+    "title": "Plasmalogen oxidation induces the generation of excited molecules and electrophilic lipid species",
+    "year": 2024,
+    "type": "article",
+    "abstract": "Abstract Plasmalogens are glycerophospholipids with a vinyl ether linkage at the sn-1 position of the glycerol backbone. Despite being suggested as antioxidants due to the high reactivity of their vinyl ether groups with reactive oxygen species, our study reveals the generation of subsequent reactive oxygen and electrophilic lipid species from oxidized plasmalogen intermediates. By conducting a comprehensive analysis of the oxidation products by liquid chromatography coupled to high-resolution mass spectrometry (LC–HRMS), we demonstrate that singlet molecular oxygen [O2 (1Δg)] reacts with the vinyl ether bond, producing hydroperoxyacetal as a major primary product (97%) together with minor quantities of dioxetane (3%). Furthermore, we show that these primary oxidized intermediates are capable of further generating reactive species including excited triplet carbonyls and O2 (1Δg) as well as electrophilic phospholipid and fatty aldehyde species as secondary reaction products. The generation of excited triplet carbonyls from dioxetane thermal decomposition was confirmed by light emission measurements in the visible region using dibromoanthracene as a triplet enhancer. Moreover, O2 (1Δg) generation from dioxetane and hydroperoxyacetal was evidenced by detection of near-infrared light emission at 1,270 nm and chemical trapping experiments. Additionally, we have thoroughly characterized alpha–beta unsaturated phospholipid and fatty aldehydes by LC–HRMS analysis using two probes that specifically react with aldehydes and alpha–beta unsaturated carbonyls. Overall, our findings demo"
+   },
+   {
+    "work_id": "W2954526477",
+    "title": "Mechanism of the Formation of Electronically Excited Species by Oxidative Metabolic Processes: Role of Reactive Oxygen Species",
+    "year": 2019,
+    "type": "article",
+    "abstract": "It is well known that biological systems, such as microorganisms, plants, and animals, including human beings, form spontaneous electronically excited species through oxidative metabolic processes. Though the mechanism responsible for the formation of electronically excited species is still not clearly understood, several lines of evidence suggest that reactive oxygen species (ROS) are involved in the formation of electronically excited species. This review attempts to describe the role of ROS in the formation of electronically excited species during oxidative metabolic processes. Briefly, the oxidation of biomolecules, such as lipids, proteins, and nucleic acids by ROS initiates a cascade of reactions that leads to the formation of triplet excited carbonyls formed by the decomposition of cyclic (1,2-dioxetane) and linear (tetroxide) high-energy intermediates. When chromophores are in proximity to triplet excited carbonyls, the triplet-singlet and triplet-triplet energy transfers from triplet excited carbonyls to chromophores result in the formation of singlet and triplet excited chromophores, respectively. Alternatively, when molecular oxygen is present, the triplet-singlet energy transfer from triplet excited carbonyls to molecular oxygen initiates the formation of singlet oxygen. Understanding the mechanism of the formation of electronically excited species allows us to use electronically excited species as a marker for oxidative metabolic processes in cells."
+   },
+   {
+    "work_id": "W2752165143",
+    "title": "Oscillations of ultra-weak photon emission from cancer and non-cancer cells stressed by culture medium change and TNF-α",
+    "year": 2017,
+    "type": "article",
+    "abstract": "Cells spontaneously emit photons in the UV to visible/near-infrared range (ultra-weak photon emission, UPE). Perturbations of the cells' state cause changes in UPE (evoked UPE). The aim of the present study was to analyze the evoked UPE dynamics of cells caused by two types of cell perturbations (stressors): (i) a cell culture medium change, and (ii) application of the pro-inflammatory cytokine tumor necrosis factor alpha (TNF-α). Four types of human cell lines were used (squamous cell carcinoma cells, A431; adenocarcinomic alveolar basal epithelial cells, A549; p53-deficient keratinocytes, HaCaT, and cervical cancer cells, HeLa). In addition to the medium change, TNF-α was applied at different concentrations (5, 10, 20, and 40 ng/mL) and UPE measurements were performed after incubation times of 0, 30, 60, 90 min, 2, 5, 12, 24, 48 h. It was observed that (i) the change of cell culture medium (without added TNF-α) induces a cell type-specific transient increase in UPE with the largest UPE increase observed in A549 cells, (ii) the addition of TNF-α induces a cell type-specific and dose-dependent change in UPE, and (iii) stressed cell cultures in general exhibit oscillatory UPE changes."
+   }
+  ]
+ }
+]

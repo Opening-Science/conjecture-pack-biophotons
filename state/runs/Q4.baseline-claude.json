@@ -1,0 +1,438 @@
+{
+ "hof_version": "1.0",
+ "run": {
+  "engine": "baseline-claude",
+  "seed_id": "Q4",
+  "backend": "claude-subagent",
+  "config_hash": "ab419661046a",
+  "corpus_calls": 34
+ },
+ "hypotheses": [
+  {
+   "id": "Q4-1",
+   "statement": "Under properly background-free dark conditions, the transmission- and detector-weighted fraction of extracranially detected photons that originate below the skull is below 5% for any photomultiplier-based head measurement, so head UPE recorded with bialkali/multialkali PMTs is scalp-dominated rather than brain-dominated.",
+   "scope": {
+    "population": "Healthy adults, n>=20, stratified by Fitzpatrick skin type and including a shaved-scalp/bald stratum; plus a tissue-equivalent head phantom containing a calibrated sub-skull emitter of known spectrum and rate.",
+    "condition": ">=4 h continuous dark adaptation in a light-tight, temperature-controlled chamber; simultaneous two-band photon counting through one shared collection optic over occipital and temporal scalp; per-subject scalp+skull transmission T(lambda) measured 450-900 nm on the same head.",
+    "comparator": "Matched non-cranial skin site (volar forearm) on the same subject at matched skin temperature and cutaneous perfusion, measured in the same session with the same optic; plus the phantom arm in which the sub-skull source rate is known.",
+    "outcome": "Two-band count ratio R = N(700-900 nm)/N(400-600 nm) at head vs skin site, and the inferred sub-skull-origin fraction beta obtained by fitting head counts with measured T(lambda) and detector response Q(lambda)."
+   },
+   "null_hypothesis": "beta has a 95% CI whose lower bound exceeds 0.05, i.e. the head shows a long-wavelength excess over matched skin that a scalp-only emission model with the measured T(lambda) and Q(lambda) cannot reproduce; the hypothesis is then dead and extracranial brain detection is real at PMT sensitivity.",
+   "estimand": "beta = inferred sub-skull-origin fraction of the head count rate, with 95% CI; pre-registered decision threshold beta < 0.05. Secondary estimand: R_head - R_forearm after temperature and perfusion adjustment.",
+   "causal_level": "L3",
+   "rationale": [
+    {
+     "step": "Salari et al. measured head UPE under properly dark conditions at 40 counts/s against a 22 counts/s dark rate (net 18 counts/s, flux approx. 41 photons cm^-2 s^-1) and argue that the far larger signals in the extracranial 'brain UPE' literature are explained by background light contamination; they further argue that <600 nm is strongly attenuated by scalp and skull while longer wavelengths fall largely outside effective PMT sensitivity.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W7168813583"
+     ]
+    },
+    {
+     "step": "The extracranial brain-UPE program is being standardised into a measurement modality (photoencephalography), with a published measurement/analysis protocol and a methodological-and-ethical framing paper, so the provenance question is load-bearing for a whole emerging readout rather than for one disputed dataset.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W4407397928",
+      "W4417010158",
+      "W4417459026"
+     ]
+    },
+    {
+     "step": "Direct measurements on brain tissue place the emission mostly below 700 nm: hypoxic rat brain chemiluminescence spectra show peaks at 480, 520-530, 570, 620-640 and 680-700 nm; rat hippocampal slices emit at the order of 1e-19 W/mm2 detected with a silicon avalanche photodiode; and in vivo rat brain imaging detects emission in the visible band.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2018469635",
+      "W2016452924",
+      "W2160984073",
+      "W2086348119"
+     ]
+    },
+    {
+     "step": "Human skin is itself a strong and spectrally resolvable UPE source across roughly 400-700 nm, measurable with EMCCD plus liquid-crystal tunable filter, with the 500-600 nm region attributed in part to melanin; this is the competing scalp source that any head measurement must exclude.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2797018767",
+      "W4389669809"
+     ]
+    },
+    {
+     "step": "Define the detection-efficiency integral eta = INT E(lambda) T(lambda) Q(lambda) d(lambda) / INT E(lambda) d(lambda), where E is the source emission spectrum, T the scalp+skull transmission and Q the detector spectral response. From the cited spectra, E for brain tissue is concentrated at 480-700 nm; T is smallest exactly over that interval and rises toward the near infrared; Q for bialkali/multialkali photocathodes falls steeply beyond about 650 nm. The product is therefore suppressed in both halves of the spectrum, so eta for a sub-skull source is smaller than eta for a scalp source (where T is approximately 1 for the outermost emitting layer) by orders of magnitude. Total head intensity therefore cannot discriminate the two sources, whereas the two-band ratio R can, because a sub-skull source is filtered by T(lambda) and a scalp source is not. This is the photon-budget calculation the field says must precede data collection.",
+     "justification_type": "computation"
+    },
+    {
+     "step": "The seed brief states that the field's own settlement criteria for this question are tissue-optics-informed detection in bands that actually transmit, photon-budget modelling before data collection, and Salari-style artifact controls; eta and beta are those criteria written as numbers.",
+     "justification_type": "given"
+    }
+   ],
+   "cited_work_ids": [
+    "W7168813583",
+    "W4407397928",
+    "W4417010158",
+    "W4417459026",
+    "W2018469635",
+    "W2016452924",
+    "W2160984073",
+    "W2086348119",
+    "W2797018767",
+    "W4389669809"
+   ],
+   "proposed_experiment": "Build a two-channel head photon counter sharing one collection optic and one aperture, one channel filtered 400-600 nm and one 700-900 nm, inside a light-tight chamber with continuously logged dark rate. For each subject: (1) log ambient light dose for 24 h before the session; (2) dark-adapt >=4 h; (3) record head and volar-forearm sites in counterbalanced order with skin thermography and laser-Doppler perfusion recorded at the detector footprint; (4) measure that subject's scalp+skull transmission 450-900 nm in situ with a calibrated low-power source and a reference detector. Fit the head two-band counts with a two-compartment model (scalp layer, sub-skull layer) using the measured T(lambda) and the manufacturer-plus-calibration Q(lambda) to recover beta. Validate the whole inference chain on the phantom, where the sub-skull emitter rate is known and beta has a ground truth. Report eta for the instrument as a mandatory instrument specification.",
+   "required_instrument": "Two matched photon-counting channels on one collection optic in a light-tight, temperature-stabilised chamber: (a) cooled bialkali/multialkali PMT with 400-600 nm bandpass; (b) cooled GaAs- or InGaAsP-photocathode PMT, or cooled Si single-photon avalanche diode, with 700-900 nm bandpass. Plus: NIST-traceable radiance standard for absolute calibration; in-situ transmission rig (calibrated source + reference detector) covering 450-900 nm; skin thermography and laser-Doppler perfusion monitoring; 24 h wearable ambient-light dosimeter.",
+   "engine_native_score": 0.72,
+   "novelty_self_claim": "The register carries H6 (intracranial UPE vs neural activity, invasive) and H12 (mental states vs surface UPE) but contains no provenance claim and no estimand for where extracranially detected photons come from. This converts the field's qualitative worry into two pre-registerable numbers, eta (an instrument specification any future head study must state) and beta (a per-subject source-attribution fraction), and it makes a two-band ratio against a matched non-cranial skin site, not total intensity, the discriminating observable."
+  },
+  {
+   "id": "Q4-2",
+   "statement": "In acute mouse coronal brain slices, at least half of the glutamate-evoked ultraweak photon emission increment survives complete action-potential blockade with tetrodotoxin while mitochondrial electron-transport inhibition abolishes it, establishing that evoked 'brain biophotonic activity' is a redox/metabolic readout rather than a spike-borne signalling event.",
+   "scope": {
+    "population": "Acute 400 um coronal brain slices from adult C57BL/6 mice, n>=12 slices per arm from >=6 animals, slices randomised across arms and imaged one per chamber run.",
+    "condition": "50 mM glutamate perfusion for >=90 min under four arms: (i) control aCSF; (ii) 1 uM TTX with spike blockade verified by a paired field-potential electrode; (iii) sodium azide plus oxygen-glucose deprivation; (iv) TTX plus azide/OGD.",
+    "comparator": "Vehicle-perfused slices from the same animals, and each slice's own 30 min pre-glutamate baseline.",
+    "outcome": "Integrated photon counts over 400-900 nm across the 90-200 min plateau, normalised to that slice's pre-glutamate baseline; paired per-slice TBARS/malondialdehyde and total thiol assays on the same tissue."
+   },
+   "null_hypothesis": "TTX removes more than half of the glutamate-evoked increment (upper 95% bound of the preserved fraction f falls below 0.5) while metabolic substrate is held constant, which would make the evoked emission spike-dependent and would license reading brain UPE as an activity/communication signal rather than an oxidation readout.",
+   "estimand": "f = (evoked increment under 1 uM TTX) / (evoked increment under control aCSF), with 95% CI; claim: lower CI bound of f >= 0.5, with the azide/OGD arm increment CI including 0. Secondary: partial R2 of a spike-rate regressor after per-slice lipid-peroxidation markers are entered first.",
+   "causal_level": "L1",
+   "rationale": [
+    {
+     "step": "Tang and Dai report that the glutamate-evoked biophotonic increase in mouse brain slices is significantly blocked by oxygen-glucose deprivation together with a cytochrome c oxidase inhibitor (sodium azide), but only partly by an action-potential inhibitor (TTX), by an anaesthetic (procaine), or by removal of intracellular and extracellular Ca2+.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W1977345460"
+     ]
+    },
+    {
+     "step": "The competing result the estimand must adjudicate: in rat hippocampal slices, potassium depolarisation increased and TTX decreased ultraweak biochemiluminescence, which is the strongest existing case for spike-linked brain emission.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2016452924"
+     ]
+    },
+    {
+     "step": "Activity-dependent neural tissue oxidation has been reported to emit intrinsic ultraweak photons, which ties evoked brain emission to oxidation rather than to spiking as such; in vivo rat brain UPE likewise correlates with cerebral energy metabolism and oxidative stress.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W1977844234",
+      "W2160984073"
+     ]
+    },
+    {
+     "step": "In isolated rat brains, ketamine increased UPE together with lipid peroxidation and antioxidant enzyme activity while reducing thiols, whereas thiopental decreased UPE, oxidative markers and enzyme activity while increasing thiols; UPE correlated negatively with thiol level and positively with oxidative markers.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W4408688794",
+      "W4401804275"
+     ]
+    },
+    {
+     "step": "Both anaesthetics abolish responsiveness, yet they move UPE in opposite directions, so any model in which whole-brain UPE intensity is a monotone function of neural activity or of consciousness is already falsified at the whole-organ level; the surviving candidate is that UPE tracks oxidative load. The slice design above tests that candidate directly by removing spikes at constant oxygen and glucose supply (arm ii) and by removing oxidative turnover at preserved anatomy (arm iii). If f >= 0.5 while arm iii is null, the emission is generated downstream of metabolism and upstream of spiking; if f < 0.5, it is not.",
+     "justification_type": "computation"
+    },
+    {
+     "step": "The register's H6 asserts that intracranial UPE co-varies with neural activity beyond global metabolic rate, but names no manipulation that separates spikes from oxidation, and H4a asserts ROS dominance without a brain-specific test; this hypothesis is the arm that discriminates them.",
+     "justification_type": "given"
+    }
+   ],
+   "cited_work_ids": [
+    "W1977345460",
+    "W2016452924",
+    "W1977844234",
+    "W2160984073",
+    "W4408688794",
+    "W4401804275",
+    "W2956127065"
+   ],
+   "proposed_experiment": "Run the four-arm slice protocol on an ultraweak biophoton imaging system, integrating 400-900 nm with no filter (plus three bandpass channels for a spectral secondary), with a paired extracellular field-potential electrode in every slice to certify that TTX has abolished evoked field potentials and that azide/OGD has not silenced the slice through a different route. Immediately after imaging, assay the same slice for TBARS/MDA and total thiol. Fit normalised photon increment on (lipid-peroxidation marker, thiol, spike-rate proxy) and report both f and the partial R2 of the spike-rate term entered last. Pre-register f >= 0.5 and the ordering of regressors.",
+   "required_instrument": "Ultraweak biophoton imaging system class: back-illuminated, deep-cooled (about -100 C) EMCCD or photon-counting CCD viewing a light-tight perfused slice chamber, unfiltered 400-900 nm integration plus 3 interference bandpass channels; paired extracellular field-potential amplifier and electrode; oxygen and glucose control on the perfusion line; bench TBARS and thiol assays on the imaged tissue.",
+   "engine_native_score": 0.6,
+   "novelty_self_claim": "The register's H6 and H4a are stated as rival intensity claims but no experiment on the register can separate them inside brain tissue. This supplies the separating manipulation and one number, f, computed on a preparation whose partial TTX-insensitivity is already reported but never quantified as a decision statistic; it also converts the ketamine-vs-thiopental dissociation from an anecdote into the reason the separating test is needed."
+  },
+  {
+   "id": "Q4-3",
+   "statement": "The species-ordered spectral redshift of glutamate-evoked brain biophoton emission (bullfrog to mouse to chicken to pig to monkey to human, reported to reach about 865 nm in human) disappears once each slice's own optical transmission function and the detector's spectral response are divided out, leaving a corrected human-minus-mouse peak-wavelength difference below 30 nm.",
+   "scope": {
+    "population": "Identically prepared 400 um coronal brain slices from mouse, pig and human (surgical resection tissue or <6 h post-mortem), >=8 slices per species, matched for thickness, region and time-from-harvest.",
+    "condition": "50 mM glutamate-evoked plateau emission recorded through a calibrated imaging spectrograph or LCTF over 400-900 nm, with each slice's transmission T(lambda) measured over 450-900 nm on the same slice in the same mount immediately before and after the emission recording, and with a calibrated known-spectrum microsphere emitter embedded at mid-depth as an in-situ transfer standard.",
+    "comparator": "The uncorrected (as-published) spectral estimate computed from the identical raw recordings, so that correction is the only thing that differs between the two estimates.",
+    "outcome": "Corrected peak wavelength lambda_peak per slice and the human-minus-mouse contrast, with the same contrast reported uncorrected."
+   },
+   "null_hypothesis": "The transmission- and response-corrected human-minus-mouse lambda_peak difference remains >=50 nm with a 95% CI excluding 30 nm, i.e. the redshift is a property of the emitting chemistry and not of the tissue's optical window; the in-situ transfer standard is recovered at its true peak in every species, ruling out a correction failure.",
+   "estimand": "Delta lambda_peak(human - mouse) after transmission and detector-response correction, with 95% CI; claim Delta lambda_peak < 30 nm. Secondary: the same corrected contrast applied to the reported Alzheimer/vascular-dementia blueshift.",
+   "causal_level": "L2",
+   "rationale": [
+    {
+     "step": "The source claim: combining an ultraweak biophoton imaging system with a biophoton spectral analysis device, glutamate-induced biophotonic activities in brain slices are reported to redshift across species up to about 865 nm in human, and this is offered as a biophysical basis for human intelligence.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2483916403"
+     ]
+    },
+    {
+     "step": "The claim was contested and defended in the same journal without the discriminating measurement being made, so the spectral estimate has never been separated from the optics of the preparation.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2520297174"
+     ]
+    },
+    {
+     "step": "The same imaging platform now reports reduced biophotonic activity and a spectral blueshift in Alzheimer's disease and vascular dementia models, partially reversed by a GluN2B antagonist, so the platform's spectral outputs are already being used as disease markers and their calibration is load-bearing beyond the intelligence claim.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W4386377286"
+     ]
+    },
+    {
+     "step": "Wavelength-dependent attenuation by intervening tissue is exactly the mechanism used to argue that measured head spectra are shaped by tissue rather than by the source, with transmission through human skin, skull and brain rising across 450-900 nm; the same physics applies inside a slice.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W7168813583"
+     ]
+    },
+    {
+     "step": "The confound has a worked precedent in another kingdom: in vitro lipid oxidation luminesces across roughly 450-850 nm, but the in planta signal from leaves and roots appears only above about 640 nm, peaking at 700-750 nm, and is independent of chlorophyll. Identical chemistry therefore reads as red-shifted once it is measured through tissue.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W4283824773"
+     ]
+    },
+    {
+     "step": "The measured spectrum is M(lambda) = E(lambda) x T(lambda) x Q(lambda). Species differ systematically in the absorbers and scatterers of a slice (myelin fraction, residual haemoglobin, lipid content), so T(lambda) differs between species; because T rises monotonically toward the near infrared over 450-900 nm, any species with larger short-wavelength attenuation yields a red-shifted M(lambda) at fixed intrinsic E(lambda). Recovering E(lambda) therefore requires measuring T(lambda) on the same slice. The published protocol reports M(lambda) and interprets it as E(lambda), which is precisely the uncorrected quantity. The embedded known-spectrum emitter makes the correction itself auditable: if correction cannot recover a known spectrum through human slice tissue, no conclusion about E(lambda) is licensed in either direction.",
+     "justification_type": "computation"
+    },
+    {
+     "step": "Spectrally resolved UPE measurement with a liquid-crystal tunable filter in front of a cooled EMCCD, reporting per-band photon counts against a subtracted dark signal, is already demonstrated on human tissue, so the corrected measurement is within current instrument reach rather than aspirational.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2797018767"
+     ]
+    }
+   ],
+   "cited_work_ids": [
+    "W2483916403",
+    "W2520297174",
+    "W4386377286",
+    "W7168813583",
+    "W4283824773",
+    "W2797018767",
+    "W1977345460",
+    "W2956127065"
+   ],
+   "proposed_experiment": "For every slice, in one mount and one session: (1) measure T(lambda) 450-900 nm with a broadband calibrated source and the same spectrograph; (2) record the glutamate-evoked plateau emission spectrum M(lambda); (3) re-measure T(lambda); (4) record the embedded transfer-standard emitter through the same slice. Compute E(lambda) = M(lambda) / (T(lambda) Q(lambda)), with Q(lambda) from a NIST-traceable lamp. Report lambda_peak per slice both corrected and uncorrected, and report the transfer standard's recovered peak as the correction's own error bar. Apply the identical pipeline to the Alzheimer/vascular-dementia blueshift preparation.",
+   "required_instrument": "Deep-cooled EMCCD or photon-counting CCD behind an imaging spectrograph or liquid-crystal tunable filter spanning 400-900 nm; NIST-traceable calibration lamp for Q(lambda); broadband transmission source and reference detector on the same optical path for per-slice T(lambda); calibrated narrow-spectrum phosphor or quantum-dot microspheres of known emission embedded at slice mid-depth as an in-situ transfer standard.",
+   "engine_native_score": 0.55,
+   "novelty_self_claim": "The register's H11 asserts that UPE spectral distribution carries state-specific information beyond intensity, but takes the flagship brain spectral datasets at face value. This strikes at the hidden assumption those datasets rest on - that a measured spectrum is an emitted spectrum - and supplies the per-slice transfer function plus an embedded transfer standard that makes the correction itself falsifiable. It discriminates 'spectral information about the emitter' from 'spectral information about the tissue path' with one pre-registered number."
+  },
+  {
+   "id": "Q4-4",
+   "statement": "Light transmitted along fresh mammalian white matter retains a degree of linear polarization above 0.3 over a 5 mm longitudinal path, far above the diffusive prediction from that tract's own measured reduced-scattering coefficient, and this excess collapses to the diffusive value after chemical demyelination with axons preserved.",
+   "scope": {
+    "population": "Freshly excised white-matter tracts (corpus callosum, optic nerve, spinal cord dorsal column) from >=6 adult rodents and >=3 pigs, measured within 2 h of harvest at 37 C in oxygenated buffer.",
+    "condition": "Polarization-resolved transmission at 660 nm and 800 nm along the fibre axis at path lengths of 1, 2, 5 and 10 mm.",
+    "comparator": "Three controls measured on the same bench: (i) the same specimen transverse to the fibre axis; (ii) an index-matched non-guiding scattering phantom with reduced-scattering coefficient matched to the tissue by integrating-sphere measurement; (iii) lysolecithin-demyelinated tract with axon preservation confirmed by neurofilament immunostaining.",
+    "outcome": "Degree of linear polarization DOP(L, lambda) and transmitted photon flux as a function of path length L."
+   },
+   "null_hypothesis": "DOP at 5 mm longitudinal is <=0.1 and statistically indistinguishable from the index-matched phantom, and transmitted flux decays with the same exponent longitudinally and transversely; the reported white-matter anisotropy is then anisotropic scattering rather than guidance, and the myelin-waveguide leg of the brain-optics argument fails.",
+   "estimand": "DOP(5 mm, 800 nm) along the fibre axis, and the ratio DOP_intact / DOP_demyelinated, each with 95% CI; claim DOP(5 mm) > 0.3 and DOP_intact/DOP_demyelinated > 2.",
+   "causal_level": "L3",
+   "rationale": [
+    {
+     "step": "Detailed theoretical modelling with realistic optical imperfections proposes myelinated axons as photonic waveguides in the brain, and the authors explicitly propose in vivo and in vitro experiments to test the hypothesis, which have not been performed as direct transport measurements.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2499288807",
+      "W2751268700"
+     ]
+    },
+    {
+     "step": "Simulation of guided modes through a multi-Ranvier-node myelinated axon predicts that polarization is well preserved through multiple nodes and that transmission losses through successive nodes are approximately multiplicative - a quantitative, falsifiable transport signature rather than a qualitative claim.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W4361863949"
+     ]
+    },
+    {
+     "step": "The myelinated axon has a depressed-core refractive-index profile and is modelled as an anti-resonant reflecting optical waveguide, so guidance is expected to be leaky and wavelength-dependent; that is why the design uses two wavelengths rather than one.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W4308920644"
+     ]
+    },
+    {
+     "step": "Measured reduced scattering in mammalian spinal cord white matter is 1.57 +/- 0.03 mm^-1 along the myelinated axons versus 3.52 +/- 0.1 mm^-1 across them, a roughly 50% reduction confirmed by three independent measurement strategies, with no comparable anisotropy in grey matter where myelin organisation is nearly random. This is simultaneously the strongest indirect evidence for guidance and the quantitative null model against which guidance must be shown.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W3012315177"
+     ]
+    },
+    {
+     "step": "In the diffusive regime the linear-depolarization length scales as roughly one transport mean free path, i.e. 1/mu_s'. With mu_s' = 1.57 mm^-1 longitudinally, a 5 mm path is about 8 transport mean free paths, for which an unguided medium predicts DOP well below 0.1. Guided modes are predicted to preserve polarization through many nodes. DOP at 5 mm therefore separates the two mechanisms by roughly an order of magnitude, and it does so using a quantity that anisotropic-scattering models and waveguide models answer differently, unlike total transmission, which both can fit. Demyelination with axons preserved supplies the within-tissue control that removes the guiding structure while leaving the geometry.",
+     "justification_type": "computation"
+    },
+    {
+     "step": "Node-of-Ranvier emission modelling places the wavelengths most likely to propagate through myelinated segments below about 1600 nm, which is why 660 nm and 800 nm are the operative test wavelengths rather than shorter or longer ones.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2782145246"
+     ]
+    }
+   ],
+   "cited_work_ids": [
+    "W2499288807",
+    "W2751268700",
+    "W4361863949",
+    "W4308920644",
+    "W3012315177",
+    "W2782145246"
+   ],
+   "proposed_experiment": "Assemble a polarization-resolved single-photon transmission bench: fibre-coupled 660 nm and 800 nm CW diodes, linear polarizer, a specimen stage with sub-millimetre translation for the path-length series, an analyser and Wollaston prism, and two cooled Si SPADs. For each specimen measure DOP and transmitted flux at 1, 2, 5, 10 mm both longitudinally and transversely; independently determine mu_s' and mu_a on the same specimen with an integrating sphere so the diffusive prediction is specimen-specific rather than literature-borrowed. Repeat after lysolecithin demyelination on the contralateral tract from the same animal, with neurofilament staining to confirm axon survival. Fit DOP(L) to a diffusive depolarization model and report the residual excess.",
+   "required_instrument": "Polarization-resolved single-photon transmission bench with fibre-coupled 660 nm and 800 nm CW sources, polarizer/analyser and Wollaston prism, two cooled Si single-photon avalanche diodes (or a polarization-resolved sCMOS), sub-millimetre translation stage, and an integrating-sphere rig for independent mu_s'/mu_a determination on the same specimens.",
+   "engine_native_score": 0.45,
+   "novelty_self_claim": "The register's H7 asserts guidance with transport efficiency materially above unguided propagation but names no observable that distinguishes guidance from the anisotropic scattering that has actually been measured in white matter. This turns the one published quantitative tissue-optics measurement into the explicit null model, and adopts polarization preservation over a stated path length - the signature the waveguide simulations themselves predict - as the estimand, with demyelination as the within-tissue control."
+  },
+  {
+   "id": "Q4-5",
+   "statement": "In a pre-registered, subject-held-out cross-validated test, extracranial UPE features add no more than 0.02 AUC over a nuisance-only model (scalp temperature, cutaneous perfusion, prior ambient-light dose, detector dark-rate drift, session order and time-in-chamber) for classifying eyes-open versus eyes-closed and rest versus task in healthy adults.",
+   "scope": {
+    "population": "Healthy adults, n>=40, two sessions each, with subject-wise 5-fold cross-validation so no subject appears in both training and test folds.",
+    "condition": ">=4 h dark adaptation in a light-tight chamber, simultaneous 64-channel EEG and dual-band head photon counting, with a fixed randomised block design of eyes-open/eyes-closed and rest/task epochs.",
+    "comparator": "A nuisance-only logistic model on the identical epochs; a label-permutation null; and a phantom-head arm run through the identical pipeline and analysis.",
+    "outcome": "Delta AUC = AUC(UPE features + nuisance) - AUC(nuisance only) on held-out subjects."
+   },
+   "null_hypothesis": "Delta AUC exceeds 0.02 with a 95% CI excluding 0.02 on subject-held-out folds while the phantom arm stays at chance, i.e. brain state is genuinely readable from extracranial UPE beyond nuisance physiology and photoencephalography has out-of-sample validity.",
+   "estimand": "Delta AUC with 95% CI over subject-held-out folds, pre-registered threshold 0.02; reported separately for the 400-600 nm channel, the 700-900 nm channel and their ratio.",
+   "causal_level": "L6",
+   "rationale": [
+    {
+     "step": "The source claim: brain UPEs are reported to differ from background light in spectral and entropic properties, to respond dynamically to tasks and stimulation, and to correlate moderately with qEEG spectral power, motivating a photoencephalography platform; the authors themselves list larger samples, distinct tasks and higher-density sensor arrays as required future work.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W4407397928"
+     ]
+    },
+    {
+     "step": "A measurement-and-analysis protocol and a methodological/ethical framing paper have followed, so the readout is being standardised before its incremental out-of-sample validity has been established.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W4417010158",
+      "W4417459026"
+     ]
+    },
+    {
+     "step": "The same class of signals is argued to be explicable by background light contamination and, even when genuinely dark, to be dominated by scalp rather than brain emission; a nuisance-controlled out-of-sample test is the arbiter that neither side of that exchange has run.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W7168813583"
+     ]
+    },
+    {
+     "step": "The prior head-photon/EEG correlations were obtained in very small samples with within-session designs and no held-out prediction: increased head photon emission while imagining light correlated with EEG power changes, and concurrent photon/qEEG correlations of about r = 0.5 were reported in three subjects.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2138303176",
+      "W2134613477",
+      "W2346999499"
+     ]
+    },
+    {
+     "step": "Human surface UPE is modulated by emotional state - upper-body UPE was higher during induced anger than during relaxation in every one of nine volunteers - and emotional and cognitive load also drive skin temperature and cutaneous perfusion, which is why those must enter as nuisance regressors rather than be assumed away.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W3174216096"
+     ]
+    },
+    {
+     "step": "A within-session correlation between two nonstationary count series can be produced by shared slow drift (skin temperature, detector dark-rate drift, the dark-adaptation transient, time-in-chamber) with no brain-to-detector photon path at all. Subject-wise held-out cross-validation removes exactly that class of explanation, because a nuisance-driven association does not transfer to unseen subjects once the nuisance channels are in the baseline model. Delta AUC is therefore the decision-relevant quantity rather than a within-session correlation coefficient, and a pre-registered threshold of 0.02 makes 'correlates moderately' decidable one way or the other.",
+     "justification_type": "computation"
+    }
+   ],
+   "cited_work_ids": [
+    "W4407397928",
+    "W4417010158",
+    "W4417459026",
+    "W7168813583",
+    "W2138303176",
+    "W2134613477",
+    "W2346999499",
+    "W3174216096"
+   ],
+   "proposed_experiment": "Pre-register model families, feature sets, nuisance regressors, fold structure and the 0.02 threshold before collection. Record 40+ subjects twice each under >=4 h dark adaptation with simultaneous 64-channel EEG, dual-band head photon counting, skin thermography and laser-Doppler perfusion at the detector footprint, and a logged detector dark rate. Fit nuisance-only and nuisance-plus-UPE classifiers for eyes-open/eyes-closed and rest/task, evaluate on held-out subjects, and report Delta AUC with its CI alongside the permutation null and the phantom arm. Publish the negative result at the same weight as a positive one; the phantom arm is the falsifier for the pipeline itself.",
+   "required_instrument": "Dual-band head photon counting (cooled bialkali/multialkali PMT 400-600 nm plus cooled NIR-sensitive PMT or Si SPAD 700-900 nm) sharing one collection optic in a light-tight chamber with continuously logged dark rate and an in-chamber calibrated attenuated LED for gain checks; 64-channel EEG; skin thermography and laser-Doppler perfusion at the detector footprint; 24 h wearable ambient-light dosimeter.",
+   "engine_native_score": 0.62,
+   "novelty_self_claim": "The register has no L6 claim about brain state at all - H8 concerns an oxidative-stress criterion at the skin and H9 concerns plants. This is the first out-of-sample, nuisance-controlled prediction claim for the head, and it is stated in the direction the field does not want (a bounded null with a pre-registered increment), which is what makes it decisive rather than promotional."
+  },
+  {
+   "id": "Q4-6",
+   "statement": "A substantial part of the photon flux reported from the human head under conventional tens-of-minutes dark adaptation is light-history-dependent delayed luminescence of hair, scalp and instrument surfaces, so the head count rate falls by more than 30% between 30 min and 24 h of continuous darkness and the task-related modulation shrinks in proportion.",
+   "scope": {
+    "population": "Healthy adults, n>=20, plus two non-physiological arms measured identically: a harvested hair-and-scalp-analogue swatch, and the unoccupied chamber with the headrest in place.",
+    "condition": "Continuous photon counting over 24 h of uninterrupted darkness following a standardised, spectrally characterised pre-exposure light dose (spectrum and J/cm2 logged), with the same cognitive task (imagine-light block plus a control block) repeated at 0.5, 4, 12 and 24 h of adaptation.",
+    "comparator": "The same subjects after 72 h of low-light pre-conditioning (dosimeter-verified), and the two non-physiological arms, which have no metabolism and therefore should show the decay if and only if the decay is light-history-driven.",
+    "outcome": "Head count rate as a function of adaptation time, and the task effect size at each adaptation time."
+   },
+   "null_hypothesis": "The head count rate is flat from 0.5 h to 24 h (decline <10%, CI excluding 30%), the pre-exposure dose does not shift it, and the task effect size at 24 h equals that at 30 min - i.e. there is no light-history component and the reported head signal is endogenous and stationary under constant physiology.",
+   "estimand": "The decay ratio N(24 h)/N(0.5 h) and the task effect-size ratio d(24 h)/d(0.5 h), each with 95% CI; claim N(24 h)/N(0.5 h) < 0.7, plus a significant task x adaptation-time interaction.",
+   "causal_level": "L5",
+   "rationale": [
+    {
+     "step": "Fixed human brains measured in a hyperdark setting after removal from ordinary laboratory lighting emitted more photons than those kept in hyperdark for one week, and the authors themselves conclude that part of the measured emission may be residual from ambient light - in tissue with no metabolism whatsoever.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2403197937"
+     ]
+    },
+    {
+     "step": "The flux densities measured from fixed (metabolically dead) human brain, about 2 x 10^-12 W m^-2, are of the same order as the flux densities the same group reports from living human heads during cognition, so a metabolism-free residual is quantitatively sufficient to account for the live signal rather than being a small correction.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2401427660",
+      "W2548878051"
+     ]
+    },
+    {
+     "step": "Visible light induces ultraweak photon emission in rat eyes over and above the spontaneous level, establishing that a light-induced, decaying emission component exists in vivo in tissue and is not an artefact peculiar to fixed specimens.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W1969097600"
+     ]
+    },
+    {
+     "step": "Background light contamination is the explicit alternative explanation offered for the large head signals in the extracranial literature, and much smaller rates were observed under properly dark conditions (40 counts/s against a 22 counts/s dark rate).",
+     "justification_type": "citation",
+     "work_ids": [
+      "W7168813583"
+     ]
+    },
+    {
+     "step": "The flagship head result - increased photon emission while imagining light in the dark, correlated with changes in EEG power, and its qEEG replication - was obtained under short dark adaptation, so in the existing record the confound and the effect are not separated by any measurement.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2138303176",
+      "W2134613477"
+     ]
+    },
+    {
+     "step": "Delayed luminescence is a decaying, dose-dependent process, whereas metabolic emission under constant physiology is stationary and independent of prior light dose. The two accounts therefore make opposite predictions about two manipulations that cost nothing but time: adaptation duration, and pre-exposure dose. Repeating the identical task at four adaptation times converts the confound into a measurable task x adaptation-time interaction, which no purely metabolic account predicts, and the non-physiological arms bound how much of any observed decay is instrument-surface rather than tissue. If the task effect survives undiminished at 24 h, this hypothesis is dead and the effect is not a light-history artefact - which is the outcome that would most strengthen the field's position.",
+     "justification_type": "computation"
+    },
+    {
+     "step": "The seed brief asks the field to show critical rigour inside the field rather than against it; a protocol change measured in hours of adaptation, applied to the field's own flagship paradigm, is that rigour at its cheapest.",
+     "justification_type": "given"
+    }
+   ],
+   "cited_work_ids": [
+    "W2403197937",
+    "W2401427660",
+    "W2548878051",
+    "W1969097600",
+    "W7168813583",
+    "W2138303176",
+    "W2134613477",
+    "W4417010158"
+   ],
+   "proposed_experiment": "Standardise a pre-exposure light dose (measured spectrum, measured J/cm2) delivered immediately before the subject enters the chamber. Count photons continuously for 24 h in uninterrupted darkness with the detector dark rate logged throughout and an in-chamber calibrated attenuated LED fired hourly for gain stability. Run the imagine-light task and its control block at 0.5, 4, 12 and 24 h, order counterbalanced. Repeat the whole session after 72 h dosimeter-verified low-light pre-conditioning. Run the hair/scalp swatch and the empty-chamber arms through the identical 24 h protocol. Fit count rate on adaptation time, pre-exposure dose and their interaction, and test the task x adaptation-time interaction on effect size.",
+   "required_instrument": "Cooled bialkali PMT photon counter (300-650 nm) plus a cooled NIR channel (700-900 nm) on a shared optic; light-tight chamber with continuously logged dark rate and an in-chamber calibrated attenuated LED for hourly gain checks; a calibrated broadband source delivering and logging the pre-exposure dose in J/cm2 with measured spectrum; 24 h wearable ambient-light dosimeter; skin thermography to exclude a thermal explanation of the decay.",
+   "engine_native_score": 0.5,
+   "novelty_self_claim": "Neither H12 nor any other register entry treats prior light exposure as a candidate generator of head UPE, yet the field's own data on fixed human brain show a week-scale, metabolism-free, light-history-dependent residual at the same flux density as the live cognitive signal. This is the hidden assumption behind every head measurement in the record - that tens of minutes of darkness is enough - stated as a two-number test that costs only chamber time and that would strengthen the field if it fails."
+  }
+ ]
+}

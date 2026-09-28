@@ -1,0 +1,288 @@
+{
+ "seed_id": "Q1",
+ "title": "What actually generates the photons — and why is the UV part still unexplained?",
+ "quotes": [
+  {
+   "quote": "the origin of UPE in the UV region (especially < 350 nm) is not completely understood yet",
+   "source": "Madl 2017, p.3, `W2752165143`"
+  },
+  {
+   "quote": "Although the exact mechanism of biophoton production is still unclear [...] there is increasing evidence that cells emit these photons",
+   "source": "Pietruszka 2024, `W4404582469`"
+  },
+  {
+   "quote": "Although mechanisms of cellular UPE generation remain unclear [9], it is now established that all living cells emit minuscule numbers of photons",
+   "source": "Babcock 2024, p.1, `W4404871602`"
+  }
+ ],
+ "what_would_settle_it": "spectrally resolved emission with calibrated, per-band absolute photon fluxes across biological models, tied to targeted chemical perturbation of candidate ROS pathways (the Pospíšil–Prasad program, extended below 350 nm).",
+ "claims_mentioned": [
+  "H1",
+  "H11",
+  "H4a",
+  "H4b",
+  "H5"
+ ],
+ "entry_queries": [
+  "ultraweak photon emission mechanism reactive oxygen species",
+  "triplet carbonyl singlet oxygen emission spectrum",
+  "ultraviolet biophoton emission origin"
+ ],
+ "entry_points": [
+  {
+   "work_id": "W2048493057",
+   "title": "Excited singlet molecular O2 (1Δg) is generated enzymatically from excited carbonyls in the dark",
+   "year": 2014,
+   "type": "article",
+   "text": " … T\nhe generation of excited triplet carbonyls and of singlet molecular oxygen, O2 (1Dg), has long been reported\nto occur in various biological processes … "
+  },
+  {
+   "work_id": "W2954526477",
+   "title": "Mechanism of the Formation of Electronically Excited Species by Oxidative Metabolic Processes: Role of Reactive Oxygen Species",
+   "year": 2019,
+   "type": "article",
+   "text": " … Alternatively, when molecular oxygen is present, the triplet-singlet energy transfer from\ntriplet excited carbonyls to molecular oxygen initiates the formation of singlet oxygen … "
+  },
+  {
+   "work_id": "W4415217027",
+   "title": "Chemiexcitation in Ex Vivo Porcine Skin Model",
+   "year": 2025,
+   "type": "article",
+   "text": " … In direct excitation, triplet carbonyls relax to the singlet ground state. In indirect excitation, the triplet excitation energy can be transferred to \nnearby melanin … "
+  },
+  {
+   "work_id": "W4399353285",
+   "title": "Plasmalogen oxidation induces the generation of excited molecules and electrophilic lipid species",
+   "year": 2024,
+   "type": "article",
+   "text": " … Detection of excited triplet carbonyls and singlet \noxygen from oxidized plasmalogen species\nDioxetane decomposition generates excited triplet carbonyls and \nO2 (1Δg) (40, 41). Excited … "
+  },
+  {
+   "work_id": "W4392201483",
+   "title": "Plasmalogen oxidation induces the generation of excited molecules and electrophilic lipid species",
+   "year": 2024,
+   "type": "preprint",
+   "text": " … Detection of excited triplet carbonyls and singlet oxygen from oxidized plasmalogen \nspecies \nDioxetane decomposition generates excited triplet carbonyls and O2 (1∆g) (39, 40 … "
+  },
+  {
+   "work_id": "W2085110797",
+   "title": "The formation of electronically excited species in the human multiple myeloma cell suspension",
+   "year": 2015,
+   "type": "article",
+   "text": " … triplet excited carbonyls and singlet oxygen\nformation. In order to quantify 3(R 5 O)* and 1O2, two-dimensional\nultra-weak photon emission, one … "
+  },
+  {
+   "work_id": "W2034044028",
+   "title": "Linoleic Acid-Induced Ultra-Weak Photon Emission from Chlamydomonas reinhardtii as a Tool for Monitoring of Lipid Peroxidation in the Cell Membranes",
+   "year": 2011,
+   "type": "article",
+   "text": " … Triplet excited carbonyl and singlet oxygen formation\nThe attack of LOON on the adjacent polyunsaturated fatty acid\nresults in the formation of another LN … "
+  },
+  {
+   "work_id": "W2886211841",
+   "title": "Triplet Excited Carbonyls and Singlet Oxygen Formation During Oxidative Radical Reaction in Skin",
+   "year": 2018,
+   "type": "article",
+   "text": " … singlet oxygen, triplet excited carbonyl, ultra-weak photon emission, two-dimensional photon\nimaging, skin\nINTRODUCTION\nThe skin plays diverse essential functions such as protection … "
+  },
+  {
+   "work_id": "W2950724616",
+   "title": "Estimation of the number of biophotons involved in the visual perception of a single-object image: Biophoton intensity can be considerably higher inside cells than outside",
+   "year": 2010,
+   "type": "preprint",
+   "text": " … of reactive and excited species. Biophotons originate from excited \nspecies. Major biophoton emission is due to the excited electrons of singlet oxygen 1O2 and … "
+  },
+  {
+   "work_id": "W2062177539",
+   "title": "Ultraweak photon emission induced by visible light and ultraviolet A radiation via photoactivated skin chromophores: &lt;italic&gt;in vivo&lt;/italic&gt; charge coupled device imaging",
+   "year": 2012,
+   "type": "article",
+   "text": " … role of reactive oxygen\nspecies,” J. Biophotonics 4(11–12), 840–849 (2011).\n44. A. Rastogi and P. Pospíšil, “Spontaneous ultraweak photon emission\nimaging … "
+  },
+  {
+   "work_id": "W2132454423",
+   "title": "Spontaneous ultraweak photon emission imaging of oxidative metabolic processes in human skin: effect of molecular oxygen and antioxidant defense system",
+   "year": 2011,
+   "type": "article",
+   "text": " … 3.4\nEffect of Reactive Oxygen Species Scavengers\non One-Dimensional Spontaneous Ultraweak\nPhoton Emission\nTo study the involvement of ROS in ultraweak photon … "
+  },
+  {
+   "work_id": "W2002499683",
+   "title": "Biophoton Emission Induced by Heat Shock",
+   "year": 2014,
+   "type": "article",
+   "text": " … Ankush P, Pavel P (2011) Two-dimensional imaging of spontaneous ultra-weak\nphoton emission from the human skin: role of reactive oxygen species. J … "
+  },
+  {
+   "work_id": "W4404240787",
+   "title": "Imaging Ultraweak Photon Emission from Living and Dead Mice and from Plants under Stress",
+   "year": 2024,
+   "type": "preprint",
+   "text": " … Effect of\nmethamphetamine on ultraweak photon emission and level of\nreactive oxygen species in male rat brain. Neuroscience Letters,\n801, 137136, 2023.\n[26] Boveris … "
+  },
+  {
+   "work_id": "W3041755811",
+   "title": "Integrating Ultra-Weak Photon Emission Analysis in Mitochondrial Research",
+   "year": 2020,
+   "type": "article",
+   "text": " … mitochondria, reactive oxygen species, ultra-weak photon emission, stress, aging, diagnosis\nINTRODUCTION\nThe mitochondrion is a multifunctional life sustaining organelle that is generally known … "
+  },
+  {
+   "work_id": "W3100108983",
+   "title": "Ultra-weak photon emission: a nondestructive detection tool for food quality and safety assessment",
+   "year": 2020,
+   "type": "article",
+   "text": " … defense mechanisms; food quality assessment; oxidative stress; reactive oxygen species; ultra-weak photon \nemission\nIntroduction\nAll known biological systems possess an active oxidative \nmetabolism … "
+  },
+  {
+   "work_id": "W3126963047",
+   "title": "Human ultra-weak photon emission as non-invasive spectroscopic tool for diagnosis of internal states – A review",
+   "year": 2021,
+   "type": "article",
+   "text": " … Rác, Role of reactive oxygen species in ultra-weak photon emission \nin biological systems. Journal of Photochemistry and Photobiology B: Biology 139 (2014) \n11 … "
+  },
+  {
+   "work_id": "W2308866",
+   "title": "Laser-ultraviolet-A induced ultra weak photon emission in human skin cells: A biophotonic comparison between keratinocytes and fibroblasts.",
+   "year": 2008,
+   "type": "article",
+   "text": " … 358-363 \n \n \n \n \n \n \nLaser-Ultraviolet-A induced ultra weak photon emission in human skin cells: \nA biophotonic comparison between keratinocytes and fibroblasts \nHugo J Niggli1 … "
+  },
+  {
+   "work_id": "W4288074524",
+   "title": "Indian Journal of Experimental Biology",
+   "year": 2022,
+   "type": "paratext",
+   "text": " … 358-363 \n \n \n \n \n \n \nLaser-Ultraviolet-A induced ultra weak photon emission in human skin cells: \nA biophotonic comparison between keratinocytes and fibroblasts \nHugo J Niggli1 … "
+  },
+  {
+   "work_id": "W4399870880",
+   "title": "Biophoton signaling in mediation of cell-to-cell communication and radiation-induced bystander effects",
+   "year": 2024,
+   "type": "article",
+   "text": " … the ultraweak\nlight emission of biological systems, whether of plant or animal origin,\nexhibited remarkable coherence across the entire detection range,\nspanning from ultraviolet … "
+  },
+  {
+   "work_id": "W2183981096",
+   "title": "Ultraweak Electromagnetic Wavelength Radiation as Biophotonic Signals to Regulate Life Processes",
+   "year": 2014,
+   "type": "article",
+   "text": "In recent years the low level analysis of ultra-weak photon emission in human cells is achieved using sophisticated Photomultiplier Technique (PMT). The basis of photonic measurements goes back to the theoretical finding of Einstein that a photon, which hits a metal plate, causes an electrical impulse. This current can be detected by single photon detection device as mentioned before. As shown in a variety of analytical laboratories worldwide using this sensitive workhorse it is evident that all cells from plants over animals up to humans emit a low level biophotonic emission. The measured electromagnetic wavelengths of this miniscule 0.01 Femto Watt (10-17 W) radiation are ranging from ultraviolet light over the visible up to the infrared region. In order to visualize the size of this very weak light source: the   luminous power of a candle in a Lunar Distance (LD) (1 LD equal to 384’40"
+  }
+ ],
+ "registry_claims_at_stake": [
+  {
+   "id": "H4a",
+   "level": "L1",
+   "claim": "Known oxidative pathways (ROS-driven lipid/protein oxidation producing triplet carbonyls and singlet oxygen) account for the dominant fraction of spontaneous UPE intensity in aerobic, non-photosynthetic cells (380–700 nm)",
+   "null": null,
+   "estimand": "Fraction of band-integrated emission removed by targeted pathway perturbation, with spectral consistency check"
+  },
+  {
+   "id": "H4b",
+   "level": "L4",
+   "claim": "(Null family) Under optical-only coupling, emitted UPE produces no receiver-side biological response above chance in any validated preparation",
+   "null": null,
+   "estimand": "Receiver-response effect size under optical-only coupling vs sham, blinded, with measured transmitted flux"
+  },
+  {
+   "id": "H1",
+   "level": "L4",
+   "claim": "UV-band emission from dividing cells increases mitosis rate in optically coupled detector cell populations (mitogenetic radiation), in at least one reproducible preparation",
+   "null": null,
+   "estimand": "Difference in division/budding rate, detector vs sham, with window transmission spectrum reported"
+  },
+  {
+   "id": "H5",
+   "level": "L4",
+   "claim": "At least one non-chemical, non-electrical cell-to-cell influence is mediated by emitted photons, demonstrable under optical-only coupling in a defined preparation",
+   "null": null,
+   "estimand": "Pre-registered replication of the strongest candidate (Musumeci 1999 yeast protocol) with transmitted-flux measurement; window material must be specified"
+  },
+  {
+   "id": "H11",
+   "level": "L2",
+   "claim": "UPE spectral distribution carries state-specific information beyond total intensity (measurement-feature claim feeding H3/H8/H9)",
+   "null": null,
+   "estimand": "State discrimination from band ratios vs intensity-only, same instrument; requires <50 nm resolution capability that currently does not exist"
+  }
+ ],
+ "registry_all_claim_statements": [
+  {
+   "id": "H4a",
+   "level": "L1",
+   "claim": "Known oxidative pathways (ROS-driven lipid/protein oxidation producing triplet carbonyls and singlet oxygen) account for the dominant fraction of spontaneous UPE intensity in aerobic, non-photosynthetic cells (380–700 nm)"
+  },
+  {
+   "id": "H4b",
+   "level": "L4",
+   "claim": "(Null family) Under optical-only coupling, emitted UPE produces no receiver-side biological response above chance in any validated preparation"
+  },
+  {
+   "id": "H1",
+   "level": "L4",
+   "claim": "UV-band emission from dividing cells increases mitosis rate in optically coupled detector cell populations (mitogenetic radiation), in at least one reproducible preparation"
+  },
+  {
+   "id": "H5",
+   "level": "L4",
+   "claim": "At least one non-chemical, non-electrical cell-to-cell influence is mediated by emitted photons, demonstrable under optical-only coupling in a defined preparation"
+  },
+  {
+   "id": "H2",
+   "level": "L2",
+   "claim": "UPE from at least one biological system carries a non-classical or partially coherent optical signature (umbrella claim; see operational sub-claims H2.g2, H2.sq)"
+  },
+  {
+   "id": "H2.g2",
+   "level": "L2",
+   "claim": "Second-order coherence g2(0) of UPE from a defined preparation deviates from 1 beyond detector artifacts"
+  },
+  {
+   "id": "H2.sq",
+   "level": "L2",
+   "claim": "UPE photocount distributions from defined preparations are better fit by squeezed-state models than by classical mixtures, with model-comparison statistics"
+  },
+  {
+   "id": "H3",
+   "level": "L6",
+   "claim": "Delayed-luminescence decay parameters predict an external quality/physiology criterion out-of-sample in at least one matrix (defined instrument + excitation protocol)"
+  },
+  {
+   "id": "H6",
+   "level": "L5",
+   "claim": "Intracranial UPE intensity co-varies with neural activity beyond global metabolic rate in at least one preparation (slice or in vivo, invasive measurement)"
+  },
+  {
+   "id": "H7",
+   "level": "L3",
+   "claim": "Cytoskeletal or myelinated structures guide biological photons with transport efficiency materially above unguided tissue propagation (mechanism claim serving H5/H6, not their rival)"
+  },
+  {
+   "id": "H8",
+   "level": "L6",
+   "claim": "Surface UPE adds incremental predictive power for a defined systemic state (oxidative-stress criterion) beyond skin temperature, perfusion and environment, in humans"
+  },
+  {
+   "id": "H9",
+   "level": "L6",
+   "claim": "Seed/plant autoluminescence predicts vigour, stress state or product quality out-of-sample beyond standard assays in at least one crop/matrix"
+  },
+  {
+   "id": "H10",
+   "level": "L1",
+   "claim": "Interfacial/structured water in cells materially alters UPE generation or storage relative to bulk-water chemistry (scoped to UPE-relevant observables)"
+  },
+  {
+   "id": "H11",
+   "level": "L2",
+   "claim": "UPE spectral distribution carries state-specific information beyond total intensity (measurement-feature claim feeding H3/H8/H9)"
+  },
+  {
+   "id": "H12",
+   "level": "L5",
+   "claim": "Mental states or directed intention modulate human surface UPE beyond the physiological covariates they engage (overlaps H6 conceptually; kept for the anomalous-claims record)"
+  }
+ ],
+ "instructions_to_engine": "Propose falsifiable hypotheses that ADVANCE this question. A hypothesis that merely restates a registry claim scores zero for novelty; a hypothesis that cannot be measured with a named instrument scores zero for usefulness. Ground every claim in works retrieved through the corpus API, cite them by work_id, and state the measurement that would settle it."
+}

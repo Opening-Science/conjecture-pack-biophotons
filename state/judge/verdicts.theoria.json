@@ -1,0 +1,11 @@
+[
+ {
+  "candidate_id": "C001",
+  "judge": "theoria",
+  "verdict": "declined",
+  "theoria_answer": "ANSWER = INCORRECT",
+  "theoria_proof_verified": true,
+  "run_json": "vendor/theoria/runs/custom_hyp_C001_20260827_003302.json",
+  "reason": "theoria: proof verified, answer ANSWER = INCORRECT (2 computation steps)"
+ }
+]

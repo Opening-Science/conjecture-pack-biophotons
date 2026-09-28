@@ -1,0 +1,329 @@
+{
+ "hof_version": "1.0",
+ "run": {
+  "engine": "codex-solo",
+  "seed_id": "Q6",
+  "backend": "codex-cli",
+  "config_hash": "aa850e93efb1",
+  "corpus_calls": 30,
+  "elapsed_s": 285.0
+ },
+ "hypotheses": [
+  {
+   "id": "Q6-1",
+   "statement": "In adults spanning the full range of skin pigmentation, calibrated 350–650 nm UPE emitted 1–3 minutes after a standardized suberythemal UVA exposure will add at least 0.10 to out-of-sample R² for predicting 24-hour erythema beyond UVA dose, baseline erythema, skin lightness, skin temperature and perfusion.",
+   "scope": {
+    "population": "Adults with prospectively balanced skin-lightness strata",
+    "condition": "Standardized suberythemal solar-simulated UVA exposure after controlled acclimation and dark adaptation",
+    "comparator": "Prediction model containing UVA dose, baseline colorimetry, skin lightness L*, temperature and perfusion but no UPE",
+    "outcome": "Change in colorimeter-measured erythema a* at 24 hours"
+   },
+   "null_hypothesis": "The cross-validated incremental R² from adding 1–3-minute UPE is less than 0.10, or its bootstrap 95% confidence interval includes zero.",
+   "estimand": "ΔR² = R²clinical+UPE − R²clinical in a locked external-validation cohort.",
+   "causal_level": "L6",
+   "rationale": [
+    {
+     "step": "UV-induced UPE averaged over 1–3 minutes increased with dose and was highly correlated with cutaneous redness 24 hours later; accompanying cell experiments linked the signal to lipid peroxidation.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W3092282708"
+     ]
+    },
+    {
+     "step": "UVA-induced UPE depends on skin lightness and persists for up to two hours, making pigmentation a load-bearing covariate rather than a demographic nuisance variable.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W4306729560"
+     ]
+    },
+    {
+     "step": "Clinical UPE measurement is vulnerable to thermal and optical confounds and lacks standardized protocols.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W7165757820"
+     ]
+    },
+    {
+     "step": "For each held-out participant, compute predictions from nested models and calculate ΔR²; the hypothesis survives only if ΔR²≥0.10 and the participant-bootstrap 95% confidence interval excludes zero.",
+     "justification_type": "computation"
+    }
+   ],
+   "cited_work_ids": [
+    "W3092282708",
+    "W4306729560",
+    "W7165757820"
+   ],
+   "proposed_experiment": "Pre-register a multicentre dose-response study with a locked acquisition window, sham-exposed neighboring skin, photon-reference calibration, blinded 24-hour colorimetry and a completely held-out validation centre; fit the clinical model first and add only the pre-specified background-subtracted 1–3-minute photon radiance.",
+   "required_instrument": "Calibrated photon-counting photomultiplier or cooled EMCCD covering 350–650 nm in a light-tight chamber, plus a skin colorimeter, thermometer and perfusion monitor.",
+   "engine_native_score": 0.84,
+   "novelty_self_claim": "This advances beyond H8 by testing a provoked, temporally fixed UPE measurement against a future clinical photodamage endpoint across pigmentation strata rather than associating baseline surface UPE with generic systemic oxidative status."
+  },
+  {
+   "id": "Q6-2",
+   "statement": "In adults with type 2 diabetes starting a glucose-lowering regimen, the week-2 change in the hand-UPE photon-count ratio 495–550 nm/550–610 nm will add at least 0.10 to out-of-sample R² for predicting 12-week HbA1c reduction beyond baseline HbA1c, medication class, BMI and total UPE intensity.",
+   "scope": {
+    "population": "Adults with type 2 diabetes initiating or intensifying a stable glucose-lowering regimen",
+    "condition": "Bilateral hand UPE measured before treatment and at week 2 under identical circadian, dark-adaptation and environmental conditions",
+    "comparator": "Clinical prediction model using baseline HbA1c, medication class, BMI and broadband UPE intensity without the spectral ratio",
+    "outcome": "Laboratory-measured change in HbA1c from baseline to week 12"
+   },
+   "null_hypothesis": "Adding the week-2 spectral-ratio change produces incremental cross-validated R² below 0.10 or a 95% confidence interval including zero.",
+   "estimand": "Incremental external-validation R² attributable to Δlog[(495–550 nm counts)/(550–610 nm counts)].",
+   "causal_level": "L6",
+   "rationale": [
+    {
+     "step": "In treated type 2 diabetes patients, UPE intensity changed over two weeks and the 495–550 nm/550–610 nm ratio was negatively correlated with contemporaneous syndrome scores.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W4384029814"
+     ]
+    },
+    {
+     "step": "Separate human studies report UPE differences between people with type 2 diabetes and healthy controls and propose UPE for early-stage diabetes detection.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2594646273",
+      "W2554446151"
+     ]
+    },
+    {
+     "step": "Plasma metabolomics work in pre-diabetes linked UPE-based subtyping to lipid-profile differences, providing a biochemical candidate source of diabetes-related optical variation.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2950162936"
+     ]
+    },
+    {
+     "step": "An analytical review specifically recommends combining spectral information with intensity, using larger populations and applying statistical validation.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2906242287"
+     ]
+    },
+    {
+     "step": "Calculate the log spectral ratio at both visits, subtract baseline from week 2, and compare locked nested models in held-out patients; ΔR²≥0.10 with a positive lower confidence bound is the decision rule.",
+     "justification_type": "computation"
+    }
+   ],
+   "cited_work_ids": [
+    "W4384029814",
+    "W2594646273",
+    "W2554446151",
+    "W2950162936",
+    "W2906242287"
+   ],
+   "proposed_experiment": "Run a pre-registered prospective cohort alongside routine diabetes treatment, with fixed hand sites and blinded HbA1c assays; train the model in two clinics and test it without refitting in a third clinic.",
+   "required_instrument": "Calibrated cooled photon-counting PMT with 495–550 nm and 550–610 nm bandpass channels plus a 400–650 nm broadband channel.",
+   "engine_native_score": 0.76,
+   "novelty_self_claim": "The registered claims do not test whether an early UPE spectral change forecasts a later objective biochemical treatment response; this replaces contemporaneous subjective syndrome correlation with prospective HbA1c prediction."
+  },
+  {
+   "id": "Q6-3",
+   "statement": "In patients with erythropoietic protoporphyria, the calibrated initial 350–650 nm UPE burst following a standardized low-dose solar-simulated exposure will improve prediction of the 24-hour phototoxic skin reaction by at least 0.10 AUC beyond erythrocyte protoporphyrin IX, plasma iron, exposure dose and skin lightness.",
+   "scope": {
+    "population": "Adolescents and adults with biochemically or genetically confirmed erythropoietic protoporphyria",
+    "condition": "Dermatologist-supervised low-dose solar-simulated exposure of a fixed skin site, measured before and during routine treatment",
+    "comparator": "Clinical model containing erythrocyte PPIX, plasma iron, exposure dose and L* but no UPE",
+    "outcome": "Pre-specified 24-hour phototoxic reaction defined by blinded erythema colorimetry and a standardized pain threshold"
+   },
+   "null_hypothesis": "The UPE-augmented model improves externally validated AUC by less than 0.10 or has a non-positive lower 95% confidence bound.",
+   "estimand": "ΔAUC = AUCclinical+initial-burst-UPE − AUCclinical for the pre-specified 24-hour phototoxic-reaction endpoint.",
+   "causal_level": "L6",
+   "rationale": [
+    {
+     "step": "EPP involves PPIX accumulation and acute photosensitivity; in 14 patients, the post-exposure initial UPE burst correlated with plasma iron and erythrocyte PPIX and varied inversely with plasma zinc during treatment.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W1977870833"
+     ]
+    },
+    {
+     "step": "In human skin generally, early post-UV UPE predicted 24-hour erythema and tracked lipid-peroxidation-related photodamage.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W3092282708"
+     ]
+    },
+    {
+     "step": "Skin lightness materially affects UVA-induced UPE and therefore must be included in the comparator model.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W4306729560"
+     ]
+    },
+    {
+     "step": "Compute each model's patient-level ROC curve in a held-out centre; subtract AUCs and bootstrap by patient, declaring support only for ΔAUC≥0.10 with a positive lower confidence bound.",
+     "justification_type": "computation"
+    }
+   ],
+   "cited_work_ids": [
+    "W1977870833",
+    "W3092282708",
+    "W4306729560"
+   ],
+   "proposed_experiment": "Pre-register a repeated-measures dermatology study using a safe dose ladder, fixed anatomical site, sham-exposed control site and blinded 24-hour assessment; lock the initial-burst integration window before enrollment and validate the model at a second EPP centre.",
+   "required_instrument": "Calibrated photon-counting PMT covering 350–650 nm with second-scale acquisition in a light-tight skin chamber, plus colorimetry and a calibrated solar simulator.",
+   "engine_native_score": 0.72,
+   "novelty_self_claim": "This tests whether UPE adds clinically actionable prediction beyond the established PPIX and iron measurements, rather than merely correlating UPE with those laboratory variables or with generic oxidative status."
+  },
+  {
+   "id": "Q6-4",
+   "statement": "In first-ever unilateral ischemic stroke with upper-limb paresis, the simultaneous affected/unaffected hand UPE ratio measured within 14 days will add at least 0.10 to out-of-sample R² for 90-day upper-limb motor recovery beyond baseline motor score, lesion burden, skin temperature and perfusion.",
+   "scope": {
+    "population": "Adults with first-ever unilateral ischemic stroke and measurable upper-limb paresis, plus age-matched neurologically healthy controls",
+    "condition": "Simultaneous bilateral palmar measurement within 14 days of stroke after environmental acclimation and dark adaptation",
+    "comparator": "Prognostic model containing baseline Fugl–Meyer Upper Extremity score, imaging-derived lesion burden, skin temperature and perfusion but no UPE ratio",
+    "outcome": "Change in Fugl–Meyer Upper Extremity score from baseline to day 90"
+   },
+   "null_hypothesis": "The affected/unaffected UPE ratio contributes less than 0.10 incremental external-validation R² or its coefficient is unstable in sign across validation sites.",
+   "estimand": "Incremental R² for 90-day Fugl–Meyer improvement plus the cross-site sign consistency of the log affected/unaffected photon-radiance ratio.",
+   "causal_level": "L6",
+   "rationale": [
+    {
+     "step": "Year-long bilateral measurements found relatively preserved left-right balance in healthy people but reported severe imbalance in some stroke patients using two PMTs spanning 300–650 nm.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W130479031"
+     ]
+    },
+    {
+     "step": "Human UPE displays a diurnal rhythm, so sequential left-right measurements could convert time drift into apparent pathological asymmetry.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2165767379"
+     ]
+    },
+    {
+     "step": "Human hand UPE varies by surface and individual, with palmar measurements reported as less variable in an analytical review, supporting a simultaneous within-person palmar ratio.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2906242287"
+     ]
+    },
+    {
+     "step": "Calculate log(UPEaffected/UPEunaffected), add it to the locked clinical model and evaluate ΔR² in a held-out hospital; support requires ΔR²≥0.10 and the same coefficient direction at every site.",
+     "justification_type": "computation"
+    }
+   ],
+   "cited_work_ids": [
+    "W130479031",
+    "W2165767379",
+    "W2906242287"
+   ],
+   "proposed_experiment": "Use paired detectors to measure both palms concurrently at baseline, repeat at discharge for reliability, and obtain blinded day-90 motor scores; train across two stroke units and validate without recalibration at a third.",
+   "required_instrument": "Two spectrally matched, calibrated photon-counting PMTs covering 300–650 nm with identical apertures and simultaneous acquisition, plus skin temperature and laser-Doppler perfusion sensors.",
+   "engine_native_score": 0.61,
+   "novelty_self_claim": "This converts an old cross-sectional asymmetry observation into a prospective, within-person prognostic endpoint and explicitly tests the hidden assumption that asymmetry is not sequential-measurement or perfusion artifact."
+  },
+  {
+   "id": "Q6-5",
+   "statement": "In fresh colorectal cancer resections, a pre-specified spontaneous UPE radiance-map classifier will identify histopathology-positive tissue regions in held-out patients with AUC at least 0.85 and sensitivity at least 0.90 at specificity at least 0.80.",
+   "scope": {
+    "population": "Adults undergoing primary colorectal cancer resection",
+    "condition": "Unfixed fresh resection slices imaged within 30 minutes in darkness without optical excitation",
+    "comparator": "Adjacent pathology-negative tissue from the same specimen and a gross-inspection-only baseline classifier",
+    "outcome": "Region-level malignant versus non-malignant status on co-registered blinded histopathology"
+   },
+   "null_hypothesis": "Patient-held-out AUC is below 0.85, or sensitivity is below 0.90 when specificity is fixed at 0.80.",
+   "estimand": "Patient-clustered external-validation AUC and sensitivity at the pre-specified 0.80-specificity operating point.",
+   "causal_level": "L6",
+   "rationale": [
+    {
+     "step": "A small human-tissue study reported mean spontaneous emission of 982±513 counts/min/cm² in tumor tissue versus 625±419 in normal tissue, but used frozen samples and unequal small groups.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2055110733"
+     ]
+    },
+    {
+     "step": "Cell-line and mouse experiments reported increased tumor UPE and 90% discrimination from temporal spectral-power-density configurations, but did not establish performance on fresh human surgical specimens.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W3016463384"
+     ]
+    },
+    {
+     "step": "Calibrated EMCCD photon counting has demonstrated visible-light detection below 30 photons/s/cm², placing spatial imaging of reported biological fluxes within current detector capability.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W3126489816"
+     ]
+    },
+    {
+     "step": "Partition data strictly by patient, lock preprocessing and thresholds in the training set, then compute clustered ROC statistics against co-registered histology; failure of either operating threshold kills the claim.",
+     "justification_type": "computation"
+    }
+   ],
+   "cited_work_ids": [
+    "W2055110733",
+    "W3016463384",
+    "W3126489816"
+   ],
+   "proposed_experiment": "Prospectively collect consecutive resections, image dark-adapted fresh slices for a fixed duration, co-register the radiance map with whole-mount histology, and validate a locked spatial-temporal classifier in specimens from a second hospital.",
+   "required_instrument": "Cryogenically cooled photon-counting EMCCD covering approximately 350–800 nm with calibrated collection optics and a light-tight specimen chamber.",
+   "engine_native_score": 0.67,
+   "novelty_self_claim": "Unlike H3, this uses spontaneous rather than excitation-induced delayed luminescence; unlike H11, it demands patient-held-out clinical margin classification rather than merely showing state-related spectral information."
+  },
+  {
+   "id": "Q6-6",
+   "statement": "For a locked type-2-diabetes UPE model, wavelength- and area-calibrated radiance measurements will achieve cross-instrument ICC of at least 0.80 and limit the loss of external predictive R² to at most 0.05 when the model is transferred between PMT and EMCCD systems, whereas raw detector counts will not.",
+   "scope": {
+    "population": "Adults with type 2 diabetes starting treatment, sampled across at least three clinical centres",
+    "condition": "Duplicate same-site hand measurements on calibrated PMT and EMCCD systems after identical acclimation and dark adaptation",
+    "comparator": "Raw-count harmonization without wavelength-dependent quantum-efficiency, aperture-area and dark-noise correction",
+    "outcome": "Agreement of UPE features and transfer performance for predicting 12-week HbA1c change"
+   },
+   "null_hypothesis": "Calibrated cross-instrument ICC is below 0.80, calibrated cross-device predictive R² loss exceeds 0.05, or calibration does not outperform raw-count harmonization.",
+   "estimand": "ICC for calibrated radiance features and ΔR²transfer = R²same-device − R²cross-device, compared between calibrated and raw-count pipelines.",
+   "causal_level": "L6",
+   "rationale": [
+    {
+     "step": "The clinical literature identifies extremely low intensity, thermal and optical confounds, and absence of standardized protocols as central barriers to UPE biomarker validation.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W7165757820"
+     ]
+    },
+    {
+     "step": "Human UPE studies use both PMTs and CCD cameras under differing analytical conditions, making detector portability a hidden requirement for clinical deployment.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2906242287"
+     ]
+    },
+    {
+     "step": "EMCCD work shows that detector noise, sampling time and wavelength-dependent quantum efficiency govern detectivity and can be addressed through calibration experiments.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W3126489816"
+     ]
+    },
+    {
+     "step": "A defined two-band diabetes UPE feature and a later HbA1c endpoint provide a concrete model on which to test portability.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W4384029814"
+     ]
+    },
+    {
+     "step": "For each feature, compute cross-instrument ICC after calibration; train the outcome model on one detector class and evaluate it unchanged on the other, with support requiring ICC≥0.80, R² loss≤0.05 and improvement over the raw-count pipeline.",
+     "justification_type": "computation"
+    },
+    {
+     "step": "Clinical biomarker validation presupposes calibrated instruments and standardized protocols.",
+     "justification_type": "given"
+    }
+   ],
+   "cited_work_ids": [
+    "W7165757820",
+    "W2906242287",
+    "W3126489816",
+    "W4384029814"
+   ],
+   "proposed_experiment": "Circulate the same traceable reference source among centres, measure each participant consecutively on both detector classes, convert counts to photons/s/cm² within fixed spectral bands, freeze the diabetes-response model, and perform bidirectional PMT-to-EMCCD and EMCCD-to-PMT transfer tests.",
+   "required_instrument": "A calibrated photon-counting PMT and a cooled photon-counting EMCCD covering 400–650 nm, each characterized with the same traceable reference light source and wavelength-dependent quantum-efficiency curve.",
+   "engine_native_score": 0.86,
+   "novelty_self_claim": "This directly tests the unregistered hidden assumption behind every clinical UPE claim: that a biomarker expressed as calibrated radiance is transportable across detector classes and sites rather than being an instrument-specific count signature."
+  }
+ ]
+}

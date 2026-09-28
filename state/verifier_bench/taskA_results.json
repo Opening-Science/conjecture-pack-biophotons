@@ -1,0 +1,68 @@
+{
+ "claude": {
+  "n": 60,
+  "accuracy": 0.883,
+  "evidential_accuracy": 0.95,
+  "refute_recall": 1.0,
+  "support_rate": 0.35,
+  "confusion": {
+   "support": {
+    "support": 18,
+    "refute": 0,
+    "discuss": 2,
+    "not_about_claim": 0
+   },
+   "refute": {
+    "support": 0,
+    "refute": 20,
+    "discuss": 0,
+    "not_about_claim": 0
+   },
+   "discuss": {
+    "support": 3,
+    "refute": 1,
+    "discuss": 6,
+    "not_about_claim": 0
+   },
+   "not_about_claim": {
+    "support": 0,
+    "refute": 0,
+    "discuss": 1,
+    "not_about_claim": 9
+   }
+  }
+ },
+ "codex": {
+  "n": 60,
+  "accuracy": 0.85,
+  "evidential_accuracy": 0.975,
+  "refute_recall": 0.95,
+  "support_rate": 0.4,
+  "confusion": {
+   "support": {
+    "support": 20,
+    "refute": 0,
+    "discuss": 0,
+    "not_about_claim": 0
+   },
+   "refute": {
+    "support": 0,
+    "refute": 19,
+    "discuss": 1,
+    "not_about_claim": 0
+   },
+   "discuss": {
+    "support": 4,
+    "refute": 1,
+    "discuss": 3,
+    "not_about_claim": 2
+   },
+   "not_about_claim": {
+    "support": 0,
+    "refute": 0,
+    "discuss": 1,
+    "not_about_claim": 9
+   }
+  }
+ }
+}

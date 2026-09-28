@@ -1,0 +1,276 @@
+{
+ "seed_id": "Q3",
+ "title": "Byproduct or signal? The functional-role question",
+ "quotes": [
+  {
+   "quote": "Whether UPE is a byproduct of biological metabolism or has some informational or functional role [...] remain[s] unclear",
+   "source": "Berke 2023/2024, `W4386752905`, `W4400260683`"
+  },
+  {
+   "quote": "The question about a functional role for weak intrinsic UPE has a rather long tradition [...] still very speculative and a matter of debate",
+   "source": "Zamani 2017, `W2618829643`"
+  },
+  {
+   "quote": "Although cellular signaling via UPE is well-documented, critics have argued that if it exists as a general physiological effect, then it must employ mechanisms that are not yet understood to exist in living cells",
+   "source": "Babcock 2024, p.10, `W4404871602`"
+  },
+  {
+   "quote": "The biological significance of such displays are still not understood",
+   "source": "Srivastava 2021, `W3161171972`"
+  }
+ ],
+ "what_would_settle_it": "blinded, multi-lab replication of one best-case cell-to-cell effect (mitogenetic or otherwise) with optical-only coupling, pre-registered protocols, and — again — absolutely calibrated photon budgets to show the receiver plausibly gets enough photons.",
+ "claims_mentioned": [
+  "H1",
+  "H4b",
+  "H5"
+ ],
+ "entry_queries": [
+  "cell to cell optical communication ultraweak photon",
+  "mitogenetic radiation replication experiment",
+  "non chemical distant cellular interaction"
+ ],
+ "entry_points": [
+  {
+   "work_id": "W7142519026",
+   "title": "Biological Effects of Concave Reflective Geometries: A Critical Review of Focused Reflective Chamber Research and Its Implications for Clinical Medicine",
+   "year": 2026,
+   "type": "article",
+   "text": " … Emerging research further suggests that neural cells may possess \nwaveguiding capabilities enabling optical communication pathways [21], lending additional theoretical context to biophoton-\nbased interactions … "
+  },
+  {
+   "work_id": "W3217353367",
+   "title": "Are Brain–Computer Interfaces Feasible With Integrated Photonic Chips?",
+   "year": 2022,
+   "type": "article",
+   "text": " … Scholkmann (2015, 2016) hypothesized that UPE may be\nis used by neurosystems as an additional signal enabling cell-\nto-cell communication and coupling. Indeed … "
+  },
+  {
+   "work_id": "W7142220220",
+   "title": "Biophotonic and Electromagnetic Modulation of Stem Cell Behavior: Emerging Evidence for Environmental Optimization in Regenerative Medicine",
+   "year": 2026,
+   "type": "article",
+   "text": " … Unexposed cell \npopulations close to activated cells respond to photonic signals, demonstrating cell-to-\ncell biophotonic communication. \nConclusion: The present study clearly demonstrates that … "
+  },
+  {
+   "work_id": "W2105934620",
+   "title": "Bio-photons and Bio-communication 1",
+   "year": 2001,
+   "type": "article",
+   "text": " … Consequently, the model of a coherent bio-\nphoton field, providing the basic communication of the cells in an organism,\nmight help to understand cancer … "
+  },
+  {
+   "work_id": "W4415948863",
+   "title": "Ultra-Weak Photon Emission: From Oxidative Metabolism to DNA -Based Communication Towards the New Quantum Biology?",
+   "year": 2025,
+   "type": "preprint",
+   "text": " … According to this idea, \ncells may be capable of photon-based communication, either at the intracellular or intercellular level. \nThis phenomenon raises the possibility … "
+  },
+  {
+   "work_id": "W2056591841",
+   "title": "Biophotons as neural communication signals demonstrated by in situ biophoton autography",
+   "year": 2010,
+   "type": "article",
+   "text": " … 10.1039/b9pp00125e\nCell to cell communication by biophotons has been demonstrated in plants, bacteria, animal neutrophil\ngranulocytes and kidney cells. Whether such signal … "
+  },
+  {
+   "work_id": "W4391831883",
+   "title": "Ultra weak photon emission—a brief review",
+   "year": 2024,
+   "type": "article",
+   "text": " … History of ultraweak photon emission (UPE) research\nThe prevailing consensus in modern biochemistry has been that cells and their\norganelles communicate via a plethora … "
+  },
+  {
+   "work_id": "W1587710847",
+   "title": "Emission of Biophotons and Neural Activity of the Brain",
+   "year": 2010,
+   "type": "article",
+   "text": " … to two orders of magnitude higher (Chwirot 1992, Slawinski 1988). \n\n\f\n \n3\nBiophoton communication (optical communication) can be performed by natural \nphotosensitive biomolecules of cells … "
+  },
+  {
+   "work_id": "W4404871602",
+   "title": "Open quantum systems theory of ultraweak ultraviolet photon emissions: Revisiting Gurwitsch's onion experiment as a prototype for quantum biology",
+   "year": 2024,
+   "type": "article",
+   "text": " … Essential diﬃculties associated with carrying out mitogenetic radiation \nexperiments pertain to the ultra-low intensity of the radiation itself. Al-\nthough a signiﬁcant fraction … "
+  },
+  {
+   "work_id": "W1973595116",
+   "title": "Non-Chemical Distant Cellular Interactions as a potential confounder of cell biology experiments",
+   "year": 2014,
+   "type": "article",
+   "text": " … Moreover, non-chemical,\ndistant cellular interactions may explain some cases of confounding effects in Cell\nBiology experiments. In this article, we review non-chemical … "
+  },
+  {
+   "work_id": "W2258592615",
+   "title": "Experimental Investigation of Distant Cellular Interaction among Adipose Derived Stem-Cells",
+   "year": 2014,
+   "type": "preprint",
+   "text": " … chemical\t\r   distant\t\r  \ncellular\t\r  interaction\t\r  (CDCI).\t\r  \n\t\r  \nKeywords:\t\r   Non-­‐chemical\t\r  distant\t\r  cellular\t\r  interaction\t\r  (NCDCI),\t\r  Adipose-­‐derived\t\r  \nstem\t\r   cells\t\r   (ADSCs),\t\r   Distant\t\r   cellular\t\r   interaction\t\r   (DCI),\t\r   chemical\t\r   distant\t\r   cellular … "
+  },
+  {
+   "work_id": "W66681095",
+   "title": "Non-chemical and non-contact cell-to-cell communication: a short review.",
+   "year": 2013,
+   "type": "article",
+   "text": " … Distant interactions in bacteria. \nMicrobiology 2000; 69: 497-503.\n[29]\t Trushin MV. Distant non-chemical communica­\ntion in various biological systems. Riv Biol \n2004 … "
+  },
+  {
+   "work_id": "W2043432757",
+   "title": "Electromagnetic cellular interactions",
+   "year": 2010,
+   "type": "article",
+   "text": " … Is the distant (non-chemical) interaction in biosystems limited\nto interactions at the cellular level? It seems that biosystem inter-\naction has been reported … "
+  },
+  {
+   "work_id": "W2218121269",
+   "title": "Demystifying the Biophoton-Induced Cellular Growth: A Simple Model",
+   "year": 2015,
+   "type": "article",
+   "text": " … None-Chemical Distant Cellular Interactions (NCDCI) are among the \nunexplained issues in cell biology. One example of such interactions is the biophoton-\ninduced growth … "
+  },
+  {
+   "work_id": "W1523504261",
+   "title": "Light based cellular interactions: hypotheses and perspectives",
+   "year": 2015,
+   "type": "article",
+   "text": " … Proposed Model for Non-chemical Distant\nCellular Interactions\nWe will attempt to explain cellular interactions via light. Roughly\nspeaking, our model can be described … "
+  },
+  {
+   "work_id": "W2290818697",
+   "title": "Physical Non-Contact Communication between Microscopic Aquatic Species: Novel Experimental Evidences for an Interspecies Information Exchange",
+   "year": 2016,
+   "type": "article",
+   "text": " … The experimental\nblock consisted in five replicates of each of the three treatment\ngroups and was repeated four times.\n2.2. Experiment 2: Interspecies … "
+  },
+  {
+   "work_id": "W2097429982",
+   "title": "Quantum: May be a new-found messenger in biological systems",
+   "year": 2011,
+   "type": "article",
+   "text": " … Quantum, electromagnetic radiation, non-chemical, non-electrical, messenger, \nhuman body\nDOI: 10.5582/bst.2011.v5.3.89\n\n\f\nwww.biosciencetrends.com\nBioScience Trends. 2011 … "
+  },
+  {
+   "work_id": "W2089541427",
+   "title": "Electromagnetic Biostimulation of Living Cultures for Biotechnology, Biofuel and Bioenergy Applications",
+   "year": 2009,
+   "type": "article",
+   "text": " … Non-chemical distant interactions between cell in a culture. \nParapsychol. USSR 1982, 5, 25–29. \n117. Kaznacheyev, V.P. Sverkhslabye Izlucheniia v Mezhkletochnykh Vzaimodeistviiakh … "
+  },
+  {
+   "work_id": "W4389669809",
+   "title": "Ultra-Weak Photon Emission from Biological Systems",
+   "year": 2023,
+   "type": "book",
+   "text": " … Gurwitsch to formulate the hypothesis of the \nso-called mitogenetic radiation (MGR) and set up a number \nof various experiments, which resulted in long … "
+  },
+  {
+   "work_id": "W2092319343",
+   "title": "Cellular Communication through Light",
+   "year": 2009,
+   "type": "article",
+   "text": " … Experiment 3\nPooling the two experiments and taking the subset of the first\ntwo replicates (i.e., those taken first out of the black … "
+  }
+ ],
+ "registry_claims_at_stake": [
+  {
+   "id": "H4b",
+   "level": "L4",
+   "claim": "(Null family) Under optical-only coupling, emitted UPE produces no receiver-side biological response above chance in any validated preparation",
+   "null": null,
+   "estimand": "Receiver-response effect size under optical-only coupling vs sham, blinded, with measured transmitted flux"
+  },
+  {
+   "id": "H1",
+   "level": "L4",
+   "claim": "UV-band emission from dividing cells increases mitosis rate in optically coupled detector cell populations (mitogenetic radiation), in at least one reproducible preparation",
+   "null": null,
+   "estimand": "Difference in division/budding rate, detector vs sham, with window transmission spectrum reported"
+  },
+  {
+   "id": "H5",
+   "level": "L4",
+   "claim": "At least one non-chemical, non-electrical cell-to-cell influence is mediated by emitted photons, demonstrable under optical-only coupling in a defined preparation",
+   "null": null,
+   "estimand": "Pre-registered replication of the strongest candidate (Musumeci 1999 yeast protocol) with transmitted-flux measurement; window material must be specified"
+  }
+ ],
+ "registry_all_claim_statements": [
+  {
+   "id": "H4a",
+   "level": "L1",
+   "claim": "Known oxidative pathways (ROS-driven lipid/protein oxidation producing triplet carbonyls and singlet oxygen) account for the dominant fraction of spontaneous UPE intensity in aerobic, non-photosynthetic cells (380–700 nm)"
+  },
+  {
+   "id": "H4b",
+   "level": "L4",
+   "claim": "(Null family) Under optical-only coupling, emitted UPE produces no receiver-side biological response above chance in any validated preparation"
+  },
+  {
+   "id": "H1",
+   "level": "L4",
+   "claim": "UV-band emission from dividing cells increases mitosis rate in optically coupled detector cell populations (mitogenetic radiation), in at least one reproducible preparation"
+  },
+  {
+   "id": "H5",
+   "level": "L4",
+   "claim": "At least one non-chemical, non-electrical cell-to-cell influence is mediated by emitted photons, demonstrable under optical-only coupling in a defined preparation"
+  },
+  {
+   "id": "H2",
+   "level": "L2",
+   "claim": "UPE from at least one biological system carries a non-classical or partially coherent optical signature (umbrella claim; see operational sub-claims H2.g2, H2.sq)"
+  },
+  {
+   "id": "H2.g2",
+   "level": "L2",
+   "claim": "Second-order coherence g2(0) of UPE from a defined preparation deviates from 1 beyond detector artifacts"
+  },
+  {
+   "id": "H2.sq",
+   "level": "L2",
+   "claim": "UPE photocount distributions from defined preparations are better fit by squeezed-state models than by classical mixtures, with model-comparison statistics"
+  },
+  {
+   "id": "H3",
+   "level": "L6",
+   "claim": "Delayed-luminescence decay parameters predict an external quality/physiology criterion out-of-sample in at least one matrix (defined instrument + excitation protocol)"
+  },
+  {
+   "id": "H6",
+   "level": "L5",
+   "claim": "Intracranial UPE intensity co-varies with neural activity beyond global metabolic rate in at least one preparation (slice or in vivo, invasive measurement)"
+  },
+  {
+   "id": "H7",
+   "level": "L3",
+   "claim": "Cytoskeletal or myelinated structures guide biological photons with transport efficiency materially above unguided tissue propagation (mechanism claim serving H5/H6, not their rival)"
+  },
+  {
+   "id": "H8",
+   "level": "L6",
+   "claim": "Surface UPE adds incremental predictive power for a defined systemic state (oxidative-stress criterion) beyond skin temperature, perfusion and environment, in humans"
+  },
+  {
+   "id": "H9",
+   "level": "L6",
+   "claim": "Seed/plant autoluminescence predicts vigour, stress state or product quality out-of-sample beyond standard assays in at least one crop/matrix"
+  },
+  {
+   "id": "H10",
+   "level": "L1",
+   "claim": "Interfacial/structured water in cells materially alters UPE generation or storage relative to bulk-water chemistry (scoped to UPE-relevant observables)"
+  },
+  {
+   "id": "H11",
+   "level": "L2",
+   "claim": "UPE spectral distribution carries state-specific information beyond total intensity (measurement-feature claim feeding H3/H8/H9)"
+  },
+  {
+   "id": "H12",
+   "level": "L5",
+   "claim": "Mental states or directed intention modulate human surface UPE beyond the physiological covariates they engage (overlaps H6 conceptually; kept for the anomalous-claims record)"
+  }
+ ],
+ "instructions_to_engine": "Propose falsifiable hypotheses that ADVANCE this question. A hypothesis that merely restates a registry claim scores zero for novelty; a hypothesis that cannot be measured with a named instrument scores zero for usefulness. Ground every claim in works retrieved through the corpus API, cite them by work_id, and state the measurement that would settle it."
+}

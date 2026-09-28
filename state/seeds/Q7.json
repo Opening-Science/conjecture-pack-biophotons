@@ -1,0 +1,256 @@
+{
+ "seed_id": "Q7",
+ "title": "Imaging: from counting to pictures",
+ "quotes": [
+  {
+   "quote": "attempts at in vivo [imaging] have often been hampered by tissue scattering or absorption of light, leading to low signal-to-noise ratios",
+   "source": "Endo 2020, `W3083575255`"
+  }
+ ],
+ "what_would_settle_it": "",
+ "claims_mentioned": [
+  "H11",
+  "H8"
+ ],
+ "entry_queries": [
+  "biophoton imaging EMCCD camera",
+  "photon counting imaging spatial distribution tissue",
+  "single photon avalanche diode array imaging"
+ ],
+ "entry_points": [
+  {
+   "work_id": "W4303614346",
+   "title": "A SiPM-Enabled Portable Delayed Fluorescence Photon Counting Device: Climatic Plant Stress Biosensing",
+   "year": 2022,
+   "type": "article",
+   "text": " … A SiPM consists of an array of light-sensing elements called\nSPADs (single-photon avalanche diode). A SPAD is a special kind of diode … "
+  },
+  {
+   "work_id": "W2797018767",
+   "title": "Measuring the Human Ultra-Weak Photon Emission Distribution Using an Electron-Multiplying, Charge-Coupled Device as a Sensor",
+   "year": 2018,
+   "type": "article",
+   "text": " … The other EMCCD parameters, except for the exposure time (see below),\nwere the same as for the imaging trials.\nThe camera and monochromator were … "
+  },
+  {
+   "work_id": "W4404240787",
+   "title": "Imaging Ultraweak Photon Emission from Living and Dead Mice and from Plants under Stress",
+   "year": 2024,
+   "type": "preprint",
+   "text": " … Cameras\nIn this research, we have used two cameras for imaging,\none EMCCD camera Andor iXon ultra 888 at the Quantum\nCloud Lab at … "
+  },
+  {
+   "work_id": "W4409735377",
+   "title": "Imaging Ultraweak Photon Emission from Living and Dead Mice and from Plants under Stress",
+   "year": 2025,
+   "type": "article",
+   "text": " … This makes EMCCD cameras\nideal for applications requiring high sensitivity and low-light\nimaging, such as astronomy and bioluminescence imaging.36,37\nThe EMCCD … "
+  },
+  {
+   "work_id": "W3114612921",
+   "title": "Quantum correlating measurements of human-body delayed luminescence and preliminary experimental results",
+   "year": 2020,
+   "type": "article",
+   "text": " … The system employs two low-noise SPAD\n(single photon avalanche diode) modules to achieve not only a time resolution as low as 1 µs … "
+  },
+  {
+   "work_id": "W4391831883",
+   "title": "Ultra weak photon emission—a brief review",
+   "year": 2024,
+   "type": "article",
+   "text": " … 3.1.4 Single-photon avalanche diodes (SPADs)\nA promising new technology for UPE detection is the\ndevelopment of single-photon avalanche diodes. These … "
+  },
+  {
+   "work_id": "W4392581751",
+   "title": "Quantum imaging of biological organisms through spatial and polarization entanglement",
+   "year": 2024,
+   "type": "article",
+   "text": " … Single-­photon avalanche diode (SPAD) array \ncameras are capable of facilitating direct coincidence measurements \nand have low dark count rates; however, they typically exhibit … "
+  },
+  {
+   "work_id": "W2906242287",
+   "title": "Human Ultraweak Photon Emission: Key Analytical Aspects, Results and Future Trends – A Review",
+   "year": 2018,
+   "type": "article",
+   "text": " … demonstrated that thermal images\ndid not correspond with UPE images taken with a CCD\ncamera. Figure 3(I) shows the thermographic image of the … "
+  },
+  {
+   "work_id": "W2956127065",
+   "title": "The Characteristics of Biophotonic Activity Induced by Aspartate May Be Related to the Evolution of Species",
+   "year": 2019,
+   "type": "article",
+   "text": " … 2019.116020 \n199 \nNatural Science \n \nBiophotonic activities were detected and imaged with the UBIS using an EMCCD camera (C9100-13, \nHamamatsu Photonics K. K … "
+  },
+  {
+   "work_id": "W2312266631",
+   "title": "Biophotons Contribute to Retinal Dark Noise",
+   "year": 2016,
+   "type": "article",
+   "text": " … 5 cm); EMCCD, electron-multiplying CCD camera; the\ndetection quantum efﬁciency of the EMCCD was 75%.\nZ. Li, J. Dai: Biophotons Contribute to Retinal … "
+  },
+  {
+   "work_id": "W3174216096",
+   "title": "Increment of spontaneous human biophoton emission caused by anger emotional states. Proof of concept",
+   "year": 2021,
+   "type": "article",
+   "text": " … Nowadays, the improvement in the development of CCD cameras opens \nthe possibilities to other information as UPE imaging as 2D images. In \nthis case … "
+  },
+  {
+   "work_id": "W2037276225",
+   "title": "Multiphoton fluorescence lifetime contrast in deep tissue imaging: prospects in redox imaging and disease diagnosis",
+   "year": 2005,
+   "type": "article",
+   "text": " … image segmentation developed by Pelet et al.33 takes into ac-\ncount the correlation of ﬂuorophore distribution with the mor-\nphology of cells/tissues … "
+  },
+  {
+   "work_id": "W2086348119",
+   "title": "Two-dimensional photon counting imaging and spatiotemporal characterization of ultraweak photon emission from a rat’s brain in vivo",
+   "year": 1999,
+   "type": "article",
+   "text": " … The images were processed as follows: (1) reduction\nof image format to 128×128; (2) data correction for\nthe spatial distribution of dark counts … "
+  },
+  {
+   "work_id": "W2160984073",
+   "title": "In vivo imaging of spontaneous ultraweak photon emission from a rat’s brain correlated with cerebral energy metabolism and oxidative stress",
+   "year": 1999,
+   "type": "article",
+   "text": " … The images were processed as follows: (1) reduction\nof image format to 128×128; (2) data correction for\nthe spatial distribution of dark counts … "
+  },
+  {
+   "work_id": "W4411628859",
+   "title": "Application of quantum imaging in biology",
+   "year": 2025,
+   "type": "article",
+   "text": " … demonstrated that using spatially entangled photons and\ntheir coincidence can improve SNRs and resolvable pixel counts to facilitate high-quality imaging\nof biological organisms … "
+  },
+  {
+   "work_id": "W3170639556",
+   "title": "Phenomenological Interpretations of Some Somatic Temporal and Spatial Patterns of Biophoton Emission in Humans",
+   "year": 2021,
+   "type": "article",
+   "text": " … around the \nspherical tissue domain. \n,\n\n\f\nTemporal and Spatial Patterns of Biophoton Emission in Humans       361\ncounts of 500 nm photons per second per cm2 … "
+  },
+  {
+   "work_id": "W4390844681",
+   "title": "Exploring Intercellular Dynamics: Ultra-Weak Biophoton Emission as a Novel Indicator of Altered Cell Functions and Disease in Oligospermia Mice",
+   "year": 2023,
+   "type": "article",
+   "text": " … Volume 14, 2023\n5\nUltraweak photon emission and disrupt the normal pattern of testicular cells\nThe Spatial Distribution of the Testicular Cells\nVoronoi tessellations … "
+  },
+  {
+   "work_id": "W4387077320",
+   "title": "Biological Auto(chemi)luminescence Imaging of Oxidative Processes in Human Skin",
+   "year": 2023,
+   "type": "article",
+   "text": " … of the dark count (approximately 8\ncounts/pixel). These results demonstrate that BAL imaging\ncan discern different levels and spatial distributions of oxidative\ntreatments … "
+  },
+  {
+   "work_id": "W1967242810",
+   "title": "Studies on the mechanism for low-light effects utilizing color filters in the human ultra-weak photon emission field",
+   "year": 2007,
+   "type": "conference-paper",
+   "text": " … Color filter, Human body, Photon counting, spatial emission pattern, ultra-weak photon emission. \n \n \n1. INTRODUCTION \n \nNovel biophotonics, including macroscopic photonic imaging technologies combined with … "
+  },
+  {
+   "work_id": "W2074495294",
+   "title": "Quantum Optical Technologies for Metrology, Sensing, and Imaging",
+   "year": 2014,
+   "type": "article",
+   "text": " … to collect the photons, which were then\ndetected with coincidence detection using four single-photon\navalanche photo-diodes. The photons were detected with a … "
+  }
+ ],
+ "registry_claims_at_stake": [
+  {
+   "id": "H8",
+   "level": "L6",
+   "claim": "Surface UPE adds incremental predictive power for a defined systemic state (oxidative-stress criterion) beyond skin temperature, perfusion and environment, in humans",
+   "null": null,
+   "estimand": "ΔAUC / partial R² over covariate-only model, blinded, test-retest reliability reported"
+  },
+  {
+   "id": "H11",
+   "level": "L2",
+   "claim": "UPE spectral distribution carries state-specific information beyond total intensity (measurement-feature claim feeding H3/H8/H9)",
+   "null": null,
+   "estimand": "State discrimination from band ratios vs intensity-only, same instrument; requires <50 nm resolution capability that currently does not exist"
+  }
+ ],
+ "registry_all_claim_statements": [
+  {
+   "id": "H4a",
+   "level": "L1",
+   "claim": "Known oxidative pathways (ROS-driven lipid/protein oxidation producing triplet carbonyls and singlet oxygen) account for the dominant fraction of spontaneous UPE intensity in aerobic, non-photosynthetic cells (380–700 nm)"
+  },
+  {
+   "id": "H4b",
+   "level": "L4",
+   "claim": "(Null family) Under optical-only coupling, emitted UPE produces no receiver-side biological response above chance in any validated preparation"
+  },
+  {
+   "id": "H1",
+   "level": "L4",
+   "claim": "UV-band emission from dividing cells increases mitosis rate in optically coupled detector cell populations (mitogenetic radiation), in at least one reproducible preparation"
+  },
+  {
+   "id": "H5",
+   "level": "L4",
+   "claim": "At least one non-chemical, non-electrical cell-to-cell influence is mediated by emitted photons, demonstrable under optical-only coupling in a defined preparation"
+  },
+  {
+   "id": "H2",
+   "level": "L2",
+   "claim": "UPE from at least one biological system carries a non-classical or partially coherent optical signature (umbrella claim; see operational sub-claims H2.g2, H2.sq)"
+  },
+  {
+   "id": "H2.g2",
+   "level": "L2",
+   "claim": "Second-order coherence g2(0) of UPE from a defined preparation deviates from 1 beyond detector artifacts"
+  },
+  {
+   "id": "H2.sq",
+   "level": "L2",
+   "claim": "UPE photocount distributions from defined preparations are better fit by squeezed-state models than by classical mixtures, with model-comparison statistics"
+  },
+  {
+   "id": "H3",
+   "level": "L6",
+   "claim": "Delayed-luminescence decay parameters predict an external quality/physiology criterion out-of-sample in at least one matrix (defined instrument + excitation protocol)"
+  },
+  {
+   "id": "H6",
+   "level": "L5",
+   "claim": "Intracranial UPE intensity co-varies with neural activity beyond global metabolic rate in at least one preparation (slice or in vivo, invasive measurement)"
+  },
+  {
+   "id": "H7",
+   "level": "L3",
+   "claim": "Cytoskeletal or myelinated structures guide biological photons with transport efficiency materially above unguided tissue propagation (mechanism claim serving H5/H6, not their rival)"
+  },
+  {
+   "id": "H8",
+   "level": "L6",
+   "claim": "Surface UPE adds incremental predictive power for a defined systemic state (oxidative-stress criterion) beyond skin temperature, perfusion and environment, in humans"
+  },
+  {
+   "id": "H9",
+   "level": "L6",
+   "claim": "Seed/plant autoluminescence predicts vigour, stress state or product quality out-of-sample beyond standard assays in at least one crop/matrix"
+  },
+  {
+   "id": "H10",
+   "level": "L1",
+   "claim": "Interfacial/structured water in cells materially alters UPE generation or storage relative to bulk-water chemistry (scoped to UPE-relevant observables)"
+  },
+  {
+   "id": "H11",
+   "level": "L2",
+   "claim": "UPE spectral distribution carries state-specific information beyond total intensity (measurement-feature claim feeding H3/H8/H9)"
+  },
+  {
+   "id": "H12",
+   "level": "L5",
+   "claim": "Mental states or directed intention modulate human surface UPE beyond the physiological covariates they engage (overlaps H6 conceptually; kept for the anomalous-claims record)"
+  }
+ ],
+ "instructions_to_engine": "Propose falsifiable hypotheses that ADVANCE this question. A hypothesis that merely restates a registry claim scores zero for novelty; a hypothesis that cannot be measured with a named instrument scores zero for usefulness. Ground every claim in works retrieved through the corpus API, cite them by work_id, and state the measurement that would settle it."
+}

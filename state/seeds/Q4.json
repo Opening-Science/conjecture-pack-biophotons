@@ -1,0 +1,223 @@
+{
+ "seed_id": "Q4",
+ "title": "Does the brain's UPE mean anything — and can it even be measured from outside the head?",
+ "quotes": [
+  {
+   "quote": "Biophotons have been experimentally shown to be produced in the brain, yet their purpose is not understood",
+   "source": "Zarkeshian 2022, `W4310701752`"
+  },
+  {
+   "quote": "a recent controversial experiment [...] is the relevance of intelligence and UPE in the brain",
+   "source": "Esmaeilpour 2020, `W2999575750`"
+  },
+  {
+   "quote": "Future studies should be directed toward addressing specific roles for biophotons in the brain",
+   "source": "Tonello 2018, `W2755140939`"
+  }
+ ],
+ "what_would_settle_it": "tissue-optics-informed detection (wavelength bands that actually transmit), photon-budget modelling before data collection, and artifact controls of the kind Salari 2026 enumerates. This is where critical rigour can be shown *inside* the field, not against it.",
+ "claims_mentioned": [
+  "H12",
+  "H6",
+  "H7"
+ ],
+ "entry_queries": [
+  "brain biophoton neural activity emission",
+  "extracranial photon detection skull transmission",
+  "neuronal ultraweak photon emission slice"
+ ],
+ "entry_points": [
+  {
+   "work_id": "W7168813583",
+   "title": "Revisiting Claims of Extracranial Biophoton Detection from the Human Brain",
+   "year": 2026,
+   "type": "article",
+   "text": " … The wavelength best suited for extracranial\ndetection of “brain UPE” is 700 nm, corresponding to a\nquantum efficiency of 0.015, skull transmission of … "
+  },
+  {
+   "work_id": "W2483916403",
+   "title": "Human high intelligence is involved in spectral redshift of biophotonic activities in the brain",
+   "year": 2016,
+   "type": "article",
+   "text": " … intelligence | ultraweak photon emissions | biophoton imaging |\nglutamate | brain slices\nD\nespite remarkable advances in our understanding of brain\nfunctions, it is still unclear why … "
+  },
+  {
+   "work_id": "W2086348119",
+   "title": "Two-dimensional photon counting imaging and spatiotemporal characterization of ultraweak photon emission from a rat’s brain in vivo",
+   "year": 1999,
+   "type": "article",
+   "text": " … Ultraweak photon emission from brain slices\nTo investigate the mechanism of photon emission, in\nvitro experiments were continued by using brain slices\nand\nvarying … "
+  },
+  {
+   "work_id": "W2160984073",
+   "title": "In vivo imaging of spontaneous ultraweak photon emission from a rat’s brain correlated with cerebral energy metabolism and oxidative stress",
+   "year": 1999,
+   "type": "article",
+   "text": " … Ultraweak photon emission from brain slices\nTo investigate the mechanism of photon emission, in\nvitro experiments were continued by using brain slices\nand\nvarying … "
+  },
+  {
+   "work_id": "W2056591841",
+   "title": "Biophotons as neural communication signals demonstrated by in situ biophoton autography",
+   "year": 2010,
+   "type": "article",
+   "text": " … Wierzuchowska, Stress-induced photon emission from\nperturbed organisms, Experientia, 1992, 48, 1041–1058.\n9 H. J. Niggli, Artiﬁcial sunlight irradiation induces ultraweak photon\nemission … "
+  },
+  {
+   "work_id": "W4386377286",
+   "title": "Reduced biophotonic activities and spectral blueshift in Alzheimer’s disease and vascular dementia models with cognitive impairment",
+   "year": 2023,
+   "type": "article",
+   "text": " … detected the ultraweak photon emission \n(UPE) of rat hippocampus after injection of streptozotocin (STZ) and \ndonepezil via a photomultiplier tubes (PMT) device, suggesting that … "
+  },
+  {
+   "work_id": "W1977345460",
+   "title": "Spatiotemporal Imaging of Glutamate-Induced Biophotonic Activities and Transmission in Neural Circuits",
+   "year": 2014,
+   "type": "article",
+   "text": " … Wang C, Dai J, Bo´kkon I, Antal I (2011) Spontaneous and visible light-induced\nultraweak photon emission from rat eyes. Brain Res 1369 … "
+  },
+  {
+   "work_id": "W2950724616",
+   "title": "Estimation of the number of biophotons involved in the visual perception of a single-object image: Biophoton intensity can be considerably higher inside cells than outside",
+   "year": 2010,
+   "type": "preprint",
+   "text": " … that neuronal biophoton emission \nis in direct relationship with neural activity and neurobiochemical processes. Moreover, it was \ndemonstrated that biophotons (ultraweak bioluminescent photons) can … "
+  },
+  {
+   "work_id": "W2956127065",
+   "title": "The Characteristics of Biophotonic Activity Induced by Aspartate May Be Related to the Evolution of Species",
+   "year": 2019,
+   "type": "article",
+   "text": " … Biophoton, also called ultra-weak photon emission (UPE), is present in all organisms including ani-\nmals, plants, microbe and human beings [14-16]. Organisms … "
+  },
+  {
+   "work_id": "W3200731706",
+   "title": "&amp;lt;i&amp;gt;In Vivo &amp;lt;/i&amp;gt; Imaging of Biophoton Emission in the Whole Brain of Mice",
+   "year": 2021,
+   "type": "article",
+   "text": " … and Dai, J. (2020) Spectral Blueshift of Biophotonic Activity and Transmission in the Ageing \nMouse Brain. Brain Research, 1749, Article ID: 147133. https://doi … "
+  },
+  {
+   "work_id": "W2520297174",
+   "title": "Reply to Salari et al.: Toward understanding the deep mechanisms regarding the biophotons related to human intelligence",
+   "year": 2016,
+   "type": "letter",
+   "text": " … 2 Salari V, B ´okkon I, Ghobadi R, Scholkmann F, Tuszynski JA (2016) Relationship between intelligence and spectral characteristics of brain biophoton emission:\nCorrelation … "
+  },
+  {
+   "work_id": "W2065332094",
+   "title": "Near death experiences: a multidisciplinary hypothesis",
+   "year": 2013,
+   "type": "article",
+   "text": " … Moreover, Isojima et al.\n(1995) reported neural activity-dependent biophoton emission\nfrom hippocampal slices of rat brain. Thus, the biophoton emis-\nsion of neurons … "
+  },
+  {
+   "work_id": "W4220684768",
+   "title": "Photons guided by axons may enable backpropagation-based learning in the brain",
+   "year": 2022,
+   "type": "preprint",
+   "text": " … intensity and neuronal activities of the brain with electroencephalographic techniques and suggested that biophoton emission\nfrom the brain originates from mitochondrial activities through the … "
+  }
+ ],
+ "registry_claims_at_stake": [
+  {
+   "id": "H6",
+   "level": "L5",
+   "claim": "Intracranial UPE intensity co-varies with neural activity beyond global metabolic rate in at least one preparation (slice or in vivo, invasive measurement)",
+   "null": null,
+   "estimand": "Partial correlation of UPE with electrophysiological activity controlling oxygen consumption, same preparation"
+  },
+  {
+   "id": "H7",
+   "level": "L3",
+   "claim": "Cytoskeletal or myelinated structures guide biological photons with transport efficiency materially above unguided tissue propagation (mechanism claim serving H5/H6, not their rival)",
+   "null": null,
+   "estimand": "Direct transport measurement with external light injection in the candidate structure"
+  },
+  {
+   "id": "H12",
+   "level": "L5",
+   "claim": "Mental states or directed intention modulate human surface UPE beyond the physiological covariates they engage (overlaps H6 conceptually; kept for the anomalous-claims record)",
+   "null": null,
+   "estimand": "Mediation analysis with covariate recording; pre-registered; artifact-first design"
+  }
+ ],
+ "registry_all_claim_statements": [
+  {
+   "id": "H4a",
+   "level": "L1",
+   "claim": "Known oxidative pathways (ROS-driven lipid/protein oxidation producing triplet carbonyls and singlet oxygen) account for the dominant fraction of spontaneous UPE intensity in aerobic, non-photosynthetic cells (380–700 nm)"
+  },
+  {
+   "id": "H4b",
+   "level": "L4",
+   "claim": "(Null family) Under optical-only coupling, emitted UPE produces no receiver-side biological response above chance in any validated preparation"
+  },
+  {
+   "id": "H1",
+   "level": "L4",
+   "claim": "UV-band emission from dividing cells increases mitosis rate in optically coupled detector cell populations (mitogenetic radiation), in at least one reproducible preparation"
+  },
+  {
+   "id": "H5",
+   "level": "L4",
+   "claim": "At least one non-chemical, non-electrical cell-to-cell influence is mediated by emitted photons, demonstrable under optical-only coupling in a defined preparation"
+  },
+  {
+   "id": "H2",
+   "level": "L2",
+   "claim": "UPE from at least one biological system carries a non-classical or partially coherent optical signature (umbrella claim; see operational sub-claims H2.g2, H2.sq)"
+  },
+  {
+   "id": "H2.g2",
+   "level": "L2",
+   "claim": "Second-order coherence g2(0) of UPE from a defined preparation deviates from 1 beyond detector artifacts"
+  },
+  {
+   "id": "H2.sq",
+   "level": "L2",
+   "claim": "UPE photocount distributions from defined preparations are better fit by squeezed-state models than by classical mixtures, with model-comparison statistics"
+  },
+  {
+   "id": "H3",
+   "level": "L6",
+   "claim": "Delayed-luminescence decay parameters predict an external quality/physiology criterion out-of-sample in at least one matrix (defined instrument + excitation protocol)"
+  },
+  {
+   "id": "H6",
+   "level": "L5",
+   "claim": "Intracranial UPE intensity co-varies with neural activity beyond global metabolic rate in at least one preparation (slice or in vivo, invasive measurement)"
+  },
+  {
+   "id": "H7",
+   "level": "L3",
+   "claim": "Cytoskeletal or myelinated structures guide biological photons with transport efficiency materially above unguided tissue propagation (mechanism claim serving H5/H6, not their rival)"
+  },
+  {
+   "id": "H8",
+   "level": "L6",
+   "claim": "Surface UPE adds incremental predictive power for a defined systemic state (oxidative-stress criterion) beyond skin temperature, perfusion and environment, in humans"
+  },
+  {
+   "id": "H9",
+   "level": "L6",
+   "claim": "Seed/plant autoluminescence predicts vigour, stress state or product quality out-of-sample beyond standard assays in at least one crop/matrix"
+  },
+  {
+   "id": "H10",
+   "level": "L1",
+   "claim": "Interfacial/structured water in cells materially alters UPE generation or storage relative to bulk-water chemistry (scoped to UPE-relevant observables)"
+  },
+  {
+   "id": "H11",
+   "level": "L2",
+   "claim": "UPE spectral distribution carries state-specific information beyond total intensity (measurement-feature claim feeding H3/H8/H9)"
+  },
+  {
+   "id": "H12",
+   "level": "L5",
+   "claim": "Mental states or directed intention modulate human surface UPE beyond the physiological covariates they engage (overlaps H6 conceptually; kept for the anomalous-claims record)"
+  }
+ ],
+ "instructions_to_engine": "Propose falsifiable hypotheses that ADVANCE this question. A hypothesis that merely restates a registry claim scores zero for novelty; a hypothesis that cannot be measured with a named instrument scores zero for usefulness. Ground every claim in works retrieved through the corpus API, cite them by work_id, and state the measurement that would settle it."
+}

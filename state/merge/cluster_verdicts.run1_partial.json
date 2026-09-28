@@ -1,0 +1,224 @@
+{
+  "Q1": [
+    {
+      "group": ["Q1-1#baseline-claude"],
+      "same_claim": "sub-350 nm flux scales as the square of the 400-500 nm carbonyl flux, implying pairwise pooling of two carbonyl excitations"
+    },
+    {
+      "group": ["Q1-2#baseline-claude"],
+      "same_claim": "absolute sub-320 nm flux from proliferating cultures is below 1% of the visible flux, refuting the historical mitogenetic UV fraction"
+    },
+    {
+      "group": ["Q1-3#baseline-claude"],
+      "same_claim": "the externally measured UV fraction is set by tryptophan self-absorption and so declines with sample optical depth per Beer-Lambert"
+    },
+    {
+      "group": ["Q1-4#baseline-claude"],
+      "same_claim": "anoxia suppresses the UV and the visible UPE bands by the same factor, leaving no oxygen-independent UV component"
+    },
+    {
+      "group": ["Q1-5#baseline-claude", "Q1-2#codex-solo"],
+      "same_claim": "under singlet-oxygen lifetime manipulation (D2O substitution and 1O2 quenchers) the sub-350 nm band moves with the singlet-oxygen marker emission rather than with the triplet-carbonyl band, placing the UV band downstream of singlet oxygen"
+    },
+    {
+      "group": ["Q1-6#baseline-claude"],
+      "same_claim": "titrating an acceptor chromophore into fixed oxidative chemistry halves the sub-350 nm fraction while conserving total emitted photon number"
+    },
+    {
+      "group": ["Q1-1#codex-solo"],
+      "same_claim": "substituting albumin's tryptophan with phenylalanine selectively lowers UV relative to visible emission at matched carbonyl burden, identifying tryptophan as the terminal UV emitter"
+    },
+    {
+      "group": ["Q1-3#codex-solo"],
+      "same_claim": "restoring plasmalogens in deficient keratinocytes raises dark post-oxidation UV flux at fixed singlet-oxygen dose and peroxide burden"
+    },
+    {
+      "group": ["Q1-4#codex-solo"],
+      "same_claim": "chemically trapping formaldehyde and acetaldehyde suppresses the post-UVA UV afterglow more than the 1270 nm band, marking short-chain triplet carbonyls as the proximal UV emitters"
+    },
+    {
+      "group": ["Q1-5#codex-solo"],
+      "same_claim": "rotenone-induced mitochondrial electron leak selectively raises UV flux and a mitochondria-targeted antioxidant abolishes that increment preferentially"
+    },
+    {
+      "group": ["Q1-6#codex-solo"],
+      "same_claim": "a chlorophyll-deficient alga retains the UV transient while losing the 680 nm peak at matched peroxidation burden, exposing primary excitation normally transferred to chlorophyll"
+    }
+  ],
+  "Q2": [
+    {
+      "group": ["Q2-1#codex-solo"],
+      "same_claim": "source-intrinsic second- and third-order factorial cumulants of germinating-seed UPE obey the Bernoulli-thinning scaling laws across a calibrated attenuation ladder"
+    },
+    {
+      "group": ["Q2-2#codex-solo"],
+      "same_claim": "germinating-seed UPE arrivals are conditionally Poisson from 1 us to 1 s once slow rate variation is regressed out, with residual g2(tau) within 0.05 of unity"
+    },
+    {
+      "group": ["Q2-3#codex-solo"],
+      "same_claim": "wound-induced leaf emission in the chlorophyll band is multimode thermal, so narrowing the detection bandwidth raises g2(0) by at least 0.10 and reveals a picosecond bunching envelope"
+    },
+    {
+      "group": ["Q2-4#codex-solo"],
+      "same_claim": "lichen UPE shows a phase-sensitive homodyne quadrature variance below 0.92 of shot noise, as the published squeezed-state claim requires"
+    },
+    {
+      "group": ["Q2-5#codex-solo"],
+      "same_claim": "wound-induced leaf emission carries intrinsic first-order spatial coherence exceeding the matched-incoherent-source prediction by at least 0.10 in |g1| at 100 um shear"
+    }
+  ],
+  "Q3": [
+    {
+      "group": ["Q3-1#baseline-claude"],
+      "same_claim": "an artificial source dose-matched to the donor's spectral fluence fails to reproduce published donor-to-receiver effects, needing at least 1000-fold more fluence for half the effect"
+    },
+    {
+      "group": ["Q3-2#baseline-claude"],
+      "same_claim": "brightness conservation caps measured reflective-chamber optical gain at about 2, so reflector-specific biological effects cannot be photon-dose-driven"
+    },
+    {
+      "group": ["Q3-3#baseline-claude"],
+      "same_claim": "photon yield per oxidation event is fixed by chemistry, varying less than twofold across physiological states at matched oxidative flux"
+    },
+    {
+      "group": ["Q3-4#baseline-claude"],
+      "same_claim": "donor photon emission per unit metabolic rate is unchanged by the presence, viability or optical accessibility of a receiver population"
+    },
+    {
+      "group": ["Q3-5#baseline-claude"],
+      "same_claim": "reported optical donor-to-receiver effects survive knockout or pharmacological block of every candidate receiver photoacceptor, so they are not photochemical"
+    },
+    {
+      "group": ["Q3-6#baseline-claude"],
+      "same_claim": "solar-blind counting through MgF2 finds under 1 photon/cm2/s in the 200-320 nm mitogenetic band from dense proliferating cultures"
+    }
+  ],
+  "Q4": [
+    {
+      "group": ["Q4-1#baseline-claude"],
+      "same_claim": "the transmission- and detector-weighted sub-skull-origin fraction of extracranially detected photons is below 5%, so head UPE is scalp-dominated"
+    },
+    {
+      "group": ["Q4-2#baseline-claude"],
+      "same_claim": "glutamate-evoked slice emission survives tetrodotoxin spike blockade but is abolished by mitochondrial electron-transport inhibition, making it a redox readout rather than a spike-borne signal"
+    },
+    {
+      "group": ["Q4-3#baseline-claude"],
+      "same_claim": "the species-ordered redshift of glutamate-evoked brain-slice emission vanishes once each slice's own transmission and the detector response are divided out"
+    },
+    {
+      "group": ["Q4-4#baseline-claude"],
+      "same_claim": "fresh white matter preserves a degree of linear polarization above 0.3 over 5 mm along the fibre axis, in excess of the diffusive prediction, and loses it on demyelination"
+    },
+    {
+      "group": ["Q4-5#baseline-claude"],
+      "same_claim": "extracranial UPE features add no more than 0.02 AUC over a nuisance-only model for classifying eyes-open/closed and rest/task states"
+    },
+    {
+      "group": ["Q4-6#baseline-claude"],
+      "same_claim": "head photon flux is light-history-dependent delayed luminescence, falling by more than 30% between 30 min and 24 h of darkness with task modulation shrinking in proportion"
+    }
+  ],
+  "Q5": [
+    {
+      "group": ["Q5-1#baseline-claude"],
+      "same_claim": "published UPE Fano-factor excess is fully recoverable from detection efficiency and dark-count fraction, leaving a source-level Fano factor indistinguishable from 1 across detector classes"
+    },
+    {
+      "group": ["Q5-2#baseline-claude"],
+      "same_claim": "in a round-robin the between-laboratory dispersion of absolute emission rate is at least threefold smaller for a sealed chemical standard than for a common biological sample, so non-comparability is calibration-driven rather than biological"
+    },
+    {
+      "group": ["Q5-3#baseline-claude"],
+      "same_claim": "the clinical band ratios of the human-UPE literature are detector-spectral-response artefacts whose group discrimination does not survive measured filter and quantum-efficiency correction"
+    },
+    {
+      "group": ["Q5-4#baseline-claude"],
+      "same_claim": "a thermally and optically matched inanimate head phantom reproduces the reported extracranial photon flux within a factor of two"
+    },
+    {
+      "group": ["Q5-5#baseline-claude"],
+      "same_claim": "a UPE diagnostic classifier loses over half its AUC across detector classes on raw units, and absolute spectrally-corrected features recover at least half of that loss"
+    },
+    {
+      "group": ["Q5-6#baseline-claude"],
+      "same_claim": "spontaneous UPE has a conserved absolute photon yield per unit oxidative turnover, reproducible within a factor of three across laboratories and predictive of observed emission"
+    },
+    {
+      "group": ["Q5-1#codex-solo"],
+      "same_claim": "independently calibrated PMT and EMCCD measurements of the same wounded-leaf emission-rate-density integral agree within 15%"
+    },
+    {
+      "group": ["Q5-2#codex-solo"],
+      "same_claim": "using a single 500 nm quantum-efficiency value instead of wavelength-resolved response correction biases the inferred emission-rate density by at least 25%"
+    },
+    {
+      "group": ["Q5-3#codex-solo"],
+      "same_claim": "equilibrated cooled-PMT dark counts are Poisson-compatible over 48 h, with per-block Fano factors of 0.8-1.2 and empirical blank thresholds within 10% of Poisson"
+    },
+    {
+      "group": ["Q5-4#codex-solo"],
+      "same_claim": "sealed centrally prepared hydrogen-peroxide ampoules meet transfer-standard specifications of 10% within-laboratory CV and 15% between-laboratory bias"
+    },
+    {
+      "group": ["Q5-5#codex-solo"],
+      "same_claim": "at 10^6 cells per well, at least 90% of astrocyte and glioblastoma replicate wells exceed the empirical blank-defined absolute limit of detection"
+    },
+    {
+      "group": ["Q5-6#codex-solo"],
+      "same_claim": "a malignancy classifier trained on calibrated cell-line UPE time series reaches AUROC of at least 0.80 at two external laboratories without refitting"
+    }
+  ],
+  "Q6": [
+    {
+      "group": ["Q6-1#baseline-claude"],
+      "same_claim": "a UVA-provocation UPE index beats same-session spontaneous UPE intensity by at least 0.10 AUC for discriminating a redox-abnormal patient group"
+    },
+    {
+      "group": ["Q6-2#baseline-claude"],
+      "same_claim": "adding true dark-chamber photon counting to room-lit RGB or corona-discharge device features contributes no discriminative information for a clinical classification"
+    },
+    {
+      "group": ["Q6-3#baseline-claude"],
+      "same_claim": "clamping skin temperature removes at least half of the reported affective/meditative state contrast in human surface UPE, more so beyond 650 nm"
+    },
+    {
+      "group": ["Q6-4#baseline-claude"],
+      "same_claim": "a two-band intensity-ratio clinical classifier loses less than half the cross-laboratory AUC that an absolute-intensity classifier loses on the same transfer"
+    },
+    {
+      "group": ["Q6-5#baseline-claude"],
+      "same_claim": "at least half the nose/glabella-versus-cheek facial UPE contrast comes from the removable surface lipid film and its microbial porphyrins, abolished by one degreasing wipe"
+    },
+    {
+      "group": ["Q6-6#baseline-claude"],
+      "same_claim": "four-week test-retest reliability of dorsal-hand spontaneous UPE has ICC below 0.6, capping any single-session intensity classifier below 0.80 AUC"
+    }
+  ],
+  "Q7": [
+    {
+      "group": ["Q7-1#baseline-claude"],
+      "same_claim": "reported between-preparation spectral differences are dominated by internal reabsorption and scattering, with the measured centroid shifting with specimen optical thickness by at least the reported between-species shift"
+    },
+    {
+      "group": ["Q7-2#baseline-claude"],
+      "same_claim": "at UPE-realistic fluxes and field-standard exposures, resolvable surface image contrast is limited to about 1 mm depth in the visible and 3 mm in the near-infrared"
+    },
+    {
+      "group": ["Q7-3#baseline-claude"],
+      "same_claim": "flux- and silhouette-normalised whole-body UPE images contain reproducible 5 mm-scale spatial structure with split-half ICC above 0.3 and above the shot-noise null"
+    },
+    {
+      "group": ["Q7-4#baseline-claude"],
+      "same_claim": "evoked emission in white matter spreads with an along-versus-across anisotropy ratio near 1.5, as anisotropic scattering alone predicts, excluding a myelin-waveguide contribution"
+    },
+    {
+      "group": ["Q7-5#baseline-claude"],
+      "same_claim": "two-arm coincidence detection of a high-flux preparation returns g2(0) = 1 within 0.001, bounding the correlated photon-pair fraction below 0.001"
+    },
+    {
+      "group": ["Q7-6#baseline-claude"],
+      "same_claim": "co-registered thermal and perfusion maps predict the state-dependent human surface UPE difference image out of sample, explaining at least half its between-state variance"
+    }
+  ]
+}

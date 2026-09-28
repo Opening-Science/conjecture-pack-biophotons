@@ -1,0 +1,461 @@
+{
+ "hof_version": "1.0",
+ "run": {
+  "engine": "baseline-claude",
+  "seed_id": "Q2",
+  "backend": "claude-subagent",
+  "config_hash": "55382a5844e4",
+  "corpus_calls": 44
+ },
+ "hypotheses": [
+  {
+   "id": "Q2-1",
+   "statement": "The photon degeneracy parameter delta (mean photon occupation per electromagnetic mode, delta = L_nu * lambda^2) of spontaneous UPE is below 1e-15 in every biological preparation, which places the Hanbury-Brown-Twiss bunching excess of any photocount experiment more than ten orders of magnitude below its own shot noise, so no photocount statistic measured on spontaneous UPE can discriminate a coherent from a chaotic field at any achievable integration time.",
+   "scope": {
+    "population": "Three standard preparations measured under one calibration: germinating Vigna radiata (mung bean) beds, log-phase aerobic Saccharomyces cerevisiae cultures, and dark-adapted human dorsal hand skin.",
+    "condition": "Spontaneous (unstimulated) emission in a temperature-clamped (+/-0.05 C) light-tight chamber, absolute spectral radiance measured in 0.1 nm resolution elements across 350-900 nm with a traceably calibrated optical train of known etendue.",
+    "comparator": "A traceable low-flux transfer standard (attenuated LED / radioluminescent source, calibrated to <5% at ~1e-16 W) measured through the identical optical train and etendue, plus the matched dark run.",
+    "outcome": "Absolute spectral photon radiance L_nu (photons s-1 cm-2 sr-1 Hz-1), the derived degeneracy delta = L_nu * lambda^2, and the HBT integration time tau = 36/(delta^2 * Delta_nu) implied for SNR = 3."
+   },
+   "null_hypothesis": "Some preparation yields delta >= 1e-15 in at least one 0.1 nm resolution element between 350 and 900 nm, or a mode-counted intensity-correlation measurement on that preparation returns g2(0)-1 significantly larger than 1/M for the independently measured mode number M. Either result kills the claim and re-opens the photocount route.",
+   "estimand": "delta = L_nu * lambda^2, dimensionless photons per mode, with 95% CI, reported per 0.1 nm resolution element and as the band maximum; secondary estimand is the implied SNR=3 integration time tau.",
+   "causal_level": "L2",
+   "rationale": [
+    {
+     "step": "The field's own critical review states that claims about UPE statistical properties are very controversial and closes by hoping that detectors closer to ideal may bring at least partial answers; a separate UPE review states outright that photocount statistics cannot discriminate a coherent from a thermal state when many modes are collected.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2141663490",
+      "W3217353367"
+     ]
+    },
+    {
+     "step": "Measured spontaneous UPE flux is a few to some hundred photons per second per square centimetre of surface (10-1e3 photons cm-2 s-1 over 200-1000 nm in recent EMCCD imaging), and a whole cell-culture dish gives roughly 12 photons per second; the emission goes into approximately 2*pi sr over a 350-900 nm continuum.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2124535387",
+      "W4415884611",
+      "W4404240787",
+      "W1995699286"
+     ]
+    },
+    {
+     "step": "Compute delta for the optimistic case. Take 1e3 photons s-1 cm-2 into 2*pi sr, lambda = 600 nm, Delta_lambda = 400 nm. Optical bandwidth Delta_nu = c*Delta_lambda/lambda^2 = (3e10 cm/s)(4e-5 cm)/(3.6e-9 cm^2) = 3.3e14 Hz. Photon radiance L = 1e3/(2*pi) = 1.6e2 photons s-1 cm-2 sr-1. Spectral photon radiance L_nu = 1.6e2/3.3e14 = 4.8e-13 photons s-1 cm-2 sr-1 Hz-1. Single-mode etendue = lambda^2 = 3.6e-9 cm^2 sr. Therefore delta = L_nu * lambda^2 = 1.7e-21 photons per mode.",
+     "justification_type": "computation"
+    },
+    {
+     "step": "Compute the resulting HBT sensitivity. For chaotic light with M detected modes the fractional bunching excess is g2(0)-1 = 1/M and the excess-to-noise after time tau, at bin T, is SNR = sqrt(R1*R2*T*tau)*(g2(0)-1). Substituting R = delta*Delta_nu*M_spatial and T = 1/Delta_nu (ideal single-temporal-mode timing) gives the mode-independent result SNR = (delta/2)*sqrt(Delta_nu*tau). Setting SNR = 3 with delta = 1.7e-21 and Delta_nu = 3.3e14 Hz gives tau = 36/(delta^2*Delta_nu) = 4e28 s, roughly 1e11 times the age of the universe. Because M_spatial cancels, narrowband filtering, single-mode-fibre selection and light concentration are exactly SNR-neutral: no optical arrangement rescues the measurement.",
+     "justification_type": "computation"
+    },
+    {
+     "step": "The corpus contains both signs of this geometry dependence stated qualitatively rather than computed: hand UPE was reported to lack the usual coherence because of the large area and the long measurement time, while 20000-bin photocount fits yielding squeezed parameters were performed in exactly the same many-mode regime with a broadband 300-800 nm detector.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2337122567",
+      "W43326842"
+     ]
+    },
+    {
+     "step": "Theory in the corpus establishes that stationary light built from randomly timed emissions acquires the correlation properties of chaotic light in the strong-overlap limit regardless of the statistics of the individual emitters, so the chaotic-light SNR formula above is the correct upper bound for any UPE source model, coherent sub-emitters included.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2084070982"
+     ]
+    },
+    {
+     "step": "A field in a genuinely coherent state in the sense claimed by the coherence literature is a macroscopically occupied mode, i.e. delta >= 1. Measuring delta by absolute radiometry therefore tests the coherence claim with a first-order (intensity, etendue, bandwidth) measurement whose sensitivity scales as sqrt(N) rather than as delta, making it ~1e20 times more sensitive than any g2 route; existing calibrated photon-counting radiometry, where detector noise already dominates source photon noise, is adequate to do it.",
+     "justification_type": "computation"
+    },
+    {
+     "step": "Light-concentration schemes that raise collected flux (high-albedo integrating cavity with 50% number efficiency) do so by scrambling angle and therefore raise M in exact proportion, confirming operationally that flux gain cannot buy bunching contrast.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W3161989600",
+      "W3126489816"
+     ]
+    }
+   ],
+   "cited_work_ids": [
+    "W2141663490",
+    "W3217353367",
+    "W2124535387",
+    "W4415884611",
+    "W4404240787",
+    "W1995699286",
+    "W2337122567",
+    "W43326842",
+    "W2084070982",
+    "W3161989600",
+    "W3126489816"
+   ],
+   "proposed_experiment": "Run one traceable radiometric campaign, not a statistics campaign. Calibrate the whole optical train (aperture, solid angle, filter transmission, detector QE, dead time) against a transfer standard traceable to a national metrology institute at the 1e-16 W level. For each of the three preparations, record absolute spectral photon radiance in 0.1 nm resolution elements across 350-900 nm using a grating spectrograph fed to a >90% QE back-illuminated EMCCD photon counter, with interleaved dark and standard-source runs. Report delta = L_nu*lambda^2 per resolution element with uncertainty budget. Then, as a confirmatory arm, run a two-channel HBT on the brightest preparation with the mode number M independently fixed by a single-mode fibre plus a 0.1 nm filter, measure g2(0)-1 and check it against the 1/M prediction and against the delta-derived SNR bound. Pre-register the 1e-15 threshold and the equivalence test.",
+   "required_instrument": "Traceably calibrated cooled bialkali/multialkali PMT (300-850 nm, <10 dark counts/s) and back-illuminated EMCCD photon-counting array (QE > 90%, 400-900 nm) behind a 0.1 nm-resolution grating spectrograph; low-flux transfer standard calibrated to <5% at ~1e-16 W; two SPAD/SNSPD channels with sub-ns time tagging for the confirmatory HBT arm.",
+   "engine_native_score": 0.78,
+   "novelty_self_claim": "H2, H2.g2 and H2.sq all presuppose that some photocount statistic could in principle decide coherence. This supplies the single number that decides whether that presupposition is even admissible - the photon degeneracy delta - shows by an auditable calculation that mode selection is SNR-neutral so the photocount route is closed by physics rather than by technique, and replaces it with an absolute-radiometry measurement carrying an explicit falsification threshold (delta >= 1e-15) that appears nowhere in the register."
+  },
+  {
+   "id": "Q2-2",
+   "statement": "The UPE spectrum of a defined preparation contains no feature narrower than 1 nm anywhere in 400-900 nm, i.e. no emission component with coherence time above ~1.2 ps or coherence length above ~0.36 mm, so first-order (field) coherence of UPE is bounded far below any macroscopic scale.",
+   "scope": {
+    "population": "Mechanically wounded Arabidopsis thaliana leaves (bright, reproducible induced emission with a documented 700-750 nm maximum) and germinating Vigna radiata beds.",
+    "condition": "Photon-counting Fourier-transform (Michelson) interferometry with optical path difference scanned 0-10 mm under the Jacquinot etendue limit, or equivalently a scanning Fabry-Perot etalon at 0.05 nm resolution, over 400-900 nm; total accumulation 1e5-1e6 s.",
+    "comparator": "A spectrally flat calibrated continuum source attenuated to the same count rate (negative control) and the same source with a diode-laser line injected at a known 0.3%, 1% and 3% of band flux (positive controls establishing the visibility floor).",
+    "outcome": "Fringe-visibility envelope |V|(OPD) and the derived maximum line-to-continuum spectral contrast C at 0.1 nm resolution."
+   },
+   "null_hypothesis": "Any preparation shows a visibility revival above the positive-control floor at OPD > 0.5 mm, or a line-to-continuum contrast C > 1.2 in any 0.1 nm resolution element at the pre-registered false-positive rate. That establishes a long-coherence component and falsifies the claim.",
+   "estimand": "Maximum line-to-continuum spectral contrast C = L_nu(peak)/L_nu(local continuum) at 0.1 nm resolution across 400-900 nm, and the OPD at which |V| first falls below the positive-control floor.",
+   "causal_level": "L2",
+   "rationale": [
+    {
+     "step": "The coherence claim under debate is explicitly a claim about the state of the field: that delayed luminescence and steady-state UPE exhibit mode coupling over the entire spectrum and originate from fully coherent and sometimes squeezed states. A claim about phase coherence is a first-order claim, but the field has only ever tested it with second-order (intensity) statistics.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W146728166",
+      "W2199084276",
+      "W2141663490"
+     ]
+    },
+    {
+     "step": "Compute the sensitivity asymmetry between the two routes. Fringe visibility is estimated from the detected intensity, so its shot-noise error is sigma_V ~ N^-1/2 on N total detected photons, whereas the intensity-correlation route's SNR scales as delta (see Q2-1). At 1e2-1e3 counts s-1 and 1e5 s, N = 1e7-1e8 and sigma_V = 1e-4 to 3e-4 before etendue restriction. Applying the Jacquinot limit Omega <= 2*pi/R with R = lambda/dlambda = 6000 costs roughly 1e-4 of the flux, leaving sigma_V ~ 1e-2 after one day and ~3e-3 after ten days. The required-time ratio between the first-order and second-order routes is therefore of order 1e20-1e23.",
+     "justification_type": "computation"
+    },
+    {
+     "step": "Compute what linewidth the coherence claim demands. Coherence length l_c = lambda^2/Delta_lambda. At lambda = 600 nm: Delta_lambda = 400 nm gives l_c = 0.9 um and tau_c = 3 fs; Delta_lambda = 1 nm gives l_c = 0.36 mm and tau_c = 1.2 ps. Coherence across a single cell (10 um) already requires Delta_lambda <= 36 nm; coherence across an organism (10 cm) requires Delta_lambda <= 3.6e-6 nm. The claim is therefore a spectroscopic linewidth claim with a concrete resolution target.",
+     "justification_type": "computation"
+    },
+    {
+     "step": "No work in the corpus has resolved a UPE spectrum better than about 10 nm: plant chemiluminescence is characterised by bandpass or cut-off filters (450-850 nm in vitro, red/far-red > 640 nm peaking 700-750 nm in planta; 50 nm bandpass increments in Arabidopsis; 550 nm and 495 nm cut-off ratios in human fingertips; > 650 nm in wounded Spathiphyllum). The narrow-line hypothesis has therefore never been given a chance to fail.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W4283824773",
+      "W4414929333",
+      "W2049213668",
+      "W2808116502"
+     ]
+    },
+    {
+     "step": "Instrument-side confounds that would fake a narrow feature are documented and controllable: photomultiplier dynode and support-structure light emission with a characterisable spectrum, and the general artifact risk from lacking or improper reference signals in UPE statistics work. The positive/negative control arms are designed against exactly these.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W1552722045",
+      "W2964505745",
+      "W3196307655"
+     ]
+    }
+   ],
+   "cited_work_ids": [
+    "W146728166",
+    "W2199084276",
+    "W2141663490",
+    "W4283824773",
+    "W4414929333",
+    "W2049213668",
+    "W2808116502",
+    "W1552722045",
+    "W2964505745",
+    "W3196307655"
+   ],
+   "proposed_experiment": "Build a photon-counting Fourier-transform interferometer: light-tight chamber, sample on one port, Michelson with piezo-scanned OPD 0-10 mm, field stop set to the Jacquinot limit for R = 6000, output on a cooled multialkali PMT or an SNSPD. Record the interferogram in photon-arrival-tagged mode over 1e5-1e6 s with interleaved dark, flat-continuum and laser-spiked calibration runs at 0.3%, 1% and 3% injected line fraction to establish the empirical visibility floor. Fourier-transform to a 0.1 nm-resolution spectrum and report the maximum line-to-continuum contrast and its uncertainty. Run the scanning Fabry-Perot variant on the same preparation as an independent instrument check. Pre-register C = 1.2 and OPD = 0.5 mm as the decision thresholds.",
+   "required_instrument": "Photon-counting Michelson Fourier-transform interferometer (piezo OPD scan 0-10 mm, field stop at Jacquinot limit) with cooled multialkali PMT or SNSPD, 400-900 nm; alternative arm: scanning Fabry-Perot etalon (finesse >= 30, FSR ~2 nm) plus EMCCD photon counter; tunable narrowband diode laser for injected-line positive controls.",
+   "engine_native_score": 0.72,
+   "novelty_self_claim": "The register carries only second-order intensity claims (H2.g2, H2.sq) and a spectral-shape claim (H11). Nobody has proposed the first-order test, which is the one the coherence claim actually implies and the only one whose sensitivity scales as sqrt(N) rather than as the degeneracy delta - a 1e20 advantage. It restates 'is UPE coherent' as a linewidth measurement with a stated resolution target and an injected-line positive control."
+  },
+  {
+   "id": "Q2-3",
+   "statement": "The super-Poissonian excess in UPE photocount distributions is generated by radical-chain photon clusters describable as a Neyman type-A cluster point process with cluster rate lambda_c and mean mu photons per initiation event, and mu - not any squeezed-state parameter - is the quantity that responds monotonically to antioxidant dose and to oxygen tension.",
+   "scope": {
+    "population": "Chlamydomonas reinhardtii suspensions and aerobic Saccharomyces cerevisiae cultures, with lipid peroxidation initiated by exogenous linoleic acid or by Fenton reagent.",
+    "condition": "Graded antioxidant series (ascorbate or Trolox at 0, 0.1, 1, 10 mM) crossed with an oxygen-tension series (21% O2, 5% O2, <0.1% O2 by N2 purge); photon arrivals time-tagged at 1 us, three bandpass channels (400-450, 550-600, 700-750 nm).",
+    "comparator": "Within-run matched dark reference and heat-killed cells driven to the same mean count rate; and, on the identical data, the three-parameter squeezed-state model (r, theta, phi) fitted as in the published human and lichen analyses.",
+    "outcome": "Fitted (lambda_c, mu) from a joint Neyman type-A fit across bin sizes 1 ms to 10 s, versus fitted (r, theta, phi); dose-response of each parameter set."
+   },
+   "null_hypothesis": "mu shows no monotone dose-response to antioxidant concentration or to pO2 (|Spearman rho| < 0.5 or CI spanning 0), and/or the squeezed-state model beats the cluster model on held-out bin sizes by delta-BIC > 10. Either outcome kills the mechanism claim.",
+   "estimand": "Spearman rho of mu with antioxidant dose and with pO2 (with 95% CI), and the held-out delta-BIC between the two-parameter Neyman type-A model and the three-parameter squeezed-state model fitted jointly across bin sizes.",
+   "causal_level": "L1",
+   "rationale": [
+    {
+     "step": "Superposition of nonstationary emissions occurring at Poisson-random times produces exactly Neyman type-A photocount distributions (coherent sub-emissions) or generalised Polya-Aeppli distributions (chaotic sub-emissions), with enhanced particle-like noise and increased photon-counting variance. This is a purely classical mechanism that manufactures the 'quantum-looking' excess.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2084070982"
+     ]
+    },
+    {
+     "step": "Clustering is directly observed in an ultraweak biological emission: photomultiplier pulses from human breath chemiluminescence arrive in bursts, which the authors attribute to chain reactions, long-lived emitters, or both.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W1501307750"
+     ]
+    },
+    {
+     "step": "In PMA-stimulated neutrophils the Fano factor of the true UPE signal rises with counting-window size while randomly shuffled surrogates of the same signal do not - the defining signature of a clustered point process rather than of a state of the field.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W1972690031"
+     ]
+    },
+    {
+     "step": "The chain chemistry is manipulable in exactly these preparations: UPE arises from ROS-driven lipid and protein oxidation via triplet excited carbonyls and singlet oxygen; it falls under anoxia and under topical antioxidants (glutathione, tocopherol, ascorbate, CoQ10), and linoleic-acid-induced emission in Chlamydomonas is suppressed by hydroxyl-radical scavenging (mannitol), by lipoxygenase inhibition (catechol) and by removal of molecular oxygen; wound-induced leaf emission is suppressed under anoxia. Yeast BAL is likewise driven by Fenton-generated ROS and tracks oxygen partial pressure.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2132454423",
+      "W2034044028",
+      "W2886211841",
+      "W2808116502",
+      "W4308366428",
+      "W3164345057"
+     ]
+    },
+    {
+     "step": "The squeezed-state reading rests on a three-parameter fit (signal strength plus r = 0.06, theta = 2.76, phi = 0.64) claimed to reproduce photocount distributions across 50 ms to 6 s bins from 20000 measurements. The cluster model makes the same multi-bin prediction with two parameters and, unlike r/theta/phi, its parameters carry a chemical interpretation that can be perturbed - which is what makes the comparison decisive rather than aesthetic.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W43326842",
+      "W142859238",
+      "W2141663490"
+     ]
+    },
+    {
+     "step": "Derive the discriminating signature. For a Neyman type-A process the Fano factor at bin T much longer than the cluster duration is F = 1 + mu, independent of lambda_c, while for T much shorter than the cluster duration F tends to 1. The prediction is a sigmoidal F(T) whose plateau height equals mu and whose knee locates the chain duration - a shape no squeezed-state parameterisation predicts. A published seed measurement gives <n> = 27.25 with variance 34.01, i.e. F = 1.25, corresponding to mu = 0.25 detected photons per cluster, i.e. mu/eta = 2.5 emitted photons per initiation at eta = 0.1: a chemically plausible chain yield and a directly falsifiable number.",
+     "justification_type": "computation"
+    }
+   ],
+   "cited_work_ids": [
+    "W2084070982",
+    "W1501307750",
+    "W1972690031",
+    "W2132454423",
+    "W2034044028",
+    "W2886211841",
+    "W2808116502",
+    "W4308366428",
+    "W3164345057",
+    "W43326842",
+    "W142859238",
+    "W4400038049",
+    "W2141663490"
+   ],
+   "proposed_experiment": "Time-tag every photon arrival at 1 us from each preparation across the full 4x3 antioxidant-by-oxygen design, three spectral channels, with interleaved dark and heat-killed arms rate-matched by neutral-density attenuation. Build F(T) curves from 1 ms to 10 s and fit, jointly across all bin sizes, (a) a two-parameter Neyman type-A cluster model and (b) the three-parameter squeezed-state model, holding out two bin sizes for model comparison. Report delta-BIC on held-out bins and the dose-response of every fitted parameter. The decisive contrast is that mu must fall with antioxidant dose and with declining pO2 in step with the known suppression of the chain, while r/theta/phi should either move incoherently or track mean rate alone.",
+   "required_instrument": "Cooled low-dark PMT or SPAD single-photon module with hardware time-tagging at <=1 us (the dual-channel SPAD architecture already demonstrated for human delayed luminescence is sufficient), 350-850 nm, with three bandpass filter channels; gas-tight cuvette with pO2 control and inline oxygen sensor.",
+   "engine_native_score": 0.7,
+   "novelty_self_claim": "H2.sq is a model-comparison claim with no named physical rival - 'classical mixtures' is not a mechanism. This names the rival (a two-parameter clustered point process derived from radical-chain chemistry), derives its distinctive F(T) sigmoid, converts an existing published Fano factor into a falsifiable chain-yield number, and makes the decisive move the register lacks: requiring the winning model's parameter to move under antioxidant and oxygen titration. It turns a statistics contest into a chemistry experiment."
+  },
+  {
+   "id": "Q2-4",
+   "statement": "For every standard UPE preparation, the excess Fano factor and Mandel Q measured at bin sizes 1 ms to 10 s are statistically equivalent to those of a spectrally and rate-matched artificial source whose slow-intensity envelope is programmed to reproduce the biological sample's own drift and which is measured in the same chamber at the same temperature.",
+   "scope": {
+    "population": "Germinating Vigna radiata beds, wounded Spathiphyllum or Arabidopsis leaves, and dark-adapted human dorsal hand skin.",
+    "condition": "Interleaved ABAB runs of the biological sample and a 'sham-luminous' reference: a calibrated LED attenuated ~1e-12 by a traceable neutral-density stack, spectrally shaped to the sample's measured three-band ratios, and driven by an arbitrary waveform that replays the sample's own measured 0.01-1 Hz intensity envelope; chamber temperature clamped to +/-0.05 C.",
+    "comparator": "The biological arm versus the sham-luminous arm; plus a matched dark arm and a constant-rate (undrifted) artificial arm to separate drift from detector effects.",
+    "outcome": "F(T)-1 and Mandel Q(T) curves for each arm across 1 ms to 10 s, and their arm-to-arm difference."
+   },
+   "null_hypothesis": "The biological arm's excess exceeds the sham-luminous arm's by more than the pre-registered equivalence margin (delta-Q > 0.02 at any bin size, lower 90% bound above the margin). That would establish a biology-specific statistical signature and falsify the claim.",
+   "estimand": "delta-Q(T) = Q_bio(T) - Q_sham(T) with 90% CI, evaluated jointly across bin sizes 1 ms to 10 s and tested by two-one-sided-tests against the pre-registered equivalence margin.",
+   "causal_level": "L2",
+   "rationale": [
+    {
+     "step": "The shape of a measured UPE photocount distribution is a convolution of the background distribution with the sample's distribution, so no excess is attributable to the sample unless a reference arm reproduces the background's own fluctuation structure - which a dark run, being non-luminous, cannot do.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2412356141"
+     ]
+    },
+    {
+     "step": "The failure mode is not hypothetical: in 2026 the large reported extracranial 'brain UPE' signals were shown to be explicable by background light contamination once properly dark conditions were imposed, with the additional point that sub-600 nm photons are strongly attenuated by scalp and skull while longer wavelengths fall outside the PMT's effective response.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W7168813583"
+     ]
+    },
+    {
+     "step": "The methodological review of biological autoluminescence statistics states directly that there is little experimental work showing any difference of the signal from random Poisson noise and that several prior works were prone to artifacts due to lacking or improper reference signals.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2964505745",
+      "W2922458642"
+     ]
+    },
+    {
+     "step": "Detector-side generators of correlated counts are documented in the corpus: photomultiplier dynode and support-structure light emission producing afterpulses, afterpulse spectra that degrade photon-correlation spectroscopy, and EM-CCD sensitivity to blackbody radiation above 50 C in a regime where detector noise already dominates source photon noise.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W1552722045",
+      "W2059277266",
+      "W3126489816"
+     ]
+    },
+    {
+     "step": "The observables at stake are exactly the published ones: Fano factor and g2(0) computed at 50 ms bins from a human hand, non-zero kurtosis distinguishing diabetic from healthy subjects, and F = 1.25 from germinating seeds. All were reported without a luminous, drift-matched reference arm.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2030876425",
+      "W2594646273",
+      "W4400038049"
+     ]
+    },
+    {
+     "step": "Compute how little drift is needed to fake the whole literature. For a doubly stochastic (Cox) process whose rate fluctuates with relative variance sigma_I^2 over the bin, the Mandel parameter is Q = <n>*sigma_I^2. At <n> = 5 counts per bin, an intensity drift of only 6% RMS reproduces Q = 0.02, i.e. F = 1.004; at <n> = 27 (the published seed case) a 10% RMS drift reproduces F = 1.27. Percent-level drift is unremarkable in a live sample, a warming chamber or a settling PMT, so the entire published excess is accounted for without any assumption about the state of the field. The sham-luminous arm makes that drift an experimental variable instead of an interpretation.",
+     "justification_type": "computation"
+    }
+   ],
+   "cited_work_ids": [
+    "W2412356141",
+    "W7168813583",
+    "W2964505745",
+    "W2922458642",
+    "W1552722045",
+    "W2059277266",
+    "W3126489816",
+    "W2030876425",
+    "W2594646273",
+    "W4400038049",
+    "W2141663490"
+   ],
+   "proposed_experiment": "For each preparation, first record the biological arm with photon time-tagging and extract its 0.01-1 Hz intensity envelope and its three-band spectral ratios. Then synthesise the sham-luminous arm: an LED attenuated through a traceable neutral-density stack to the same mean count rate, spectrally shaped to the same band ratios, and amplitude-modulated by the recorded envelope. Run ABAB interleaving (biological, sham-luminous, dark, constant-rate artificial) for at least 20 cycles per preparation in a temperature-clamped chamber, with detector afterpulse and dead-time characterisation performed on the same day. Compute F(T) and Q(T) on all arms and test delta-Q(T) by TOST against the pre-registered margin. Report the drift RMS actually required to match, as a check on the Q = <n>*sigma_I^2 arithmetic.",
+   "required_instrument": "Cooled low-dark PMT (300-850 nm, <10 dark counts/s) with hardware time-tagging; calibrated LED attenuated ~1e-12 through a traceable neutral-density stack with arbitrary-waveform drive and three-channel spectral shaping; temperature-clamped (+/-0.05 C) light-tight chamber; separate afterpulse/dead-time characterisation bench.",
+   "engine_native_score": 0.75,
+   "novelty_self_claim": "H2 and H2.sq are catalogued 'with explicit nulls', but the null is a statistical model rather than a physical control arm. This names the missing control - an intensity-, spectrum- and drift-matched luminous sham - and supplies the arithmetic (Q = <n>*sigma_I^2) showing that a few percent of intensity drift regenerates the entire published excess. If it holds, H2.sq is decided negatively without ever fitting a squeezed state; if it fails, the field finally has a positive result that survives its own instrument."
+  },
+  {
+   "id": "Q2-5",
+   "statement": "No photocount or temporal-complexity feature of UPE - Fano factor, Mandel Q, kurtosis, Hurst/fractional-Brownian exponent, diffusion-entropy scaling exponent, or entropy-weighted spectral fractal dimension - adds more than 0.02 AUC out-of-sample to a classifier of biological state that already contains log mean count rate plus chamber temperature and background rate.",
+   "scope": {
+    "population": "Two pre-registered discrimination tasks, each with an independent held-out cohort acquired after the model is frozen: (a) glioblastoma versus astrocyte cell cultures; (b) viable versus degenerated or frozen mouse embryos, and as a second clinical arm healthy versus type-2-diabetic human hand skin.",
+    "condition": "Blinded analysis of fixed-length photon-count time series (identical acquisition length, bin grid and spectral band across classes), with chamber temperature and interleaved dark-reference rate logged as covariates.",
+    "comparator": "An intensity-only baseline model containing log mean count rate plus the same covariates, fitted and evaluated on identical folds.",
+    "outcome": "delta-AUC on the held-out cohort between the full-feature model and the intensity-only baseline."
+   },
+   "null_hypothesis": "delta-AUC > 0.02 with a lower 95% confidence bound above 0 on a genuinely held-out cohort. That would show photocount statistics carry state information beyond intensity and would falsify the claim.",
+   "estimand": "delta-AUC (held-out) between full-feature and intensity-only models, with 95% CI from nested cross-fitting plus an external cohort; reported per task and pooled.",
+   "causal_level": "L6",
+   "rationale": [
+    {
+     "step": "Multiple groups report that temporal-statistical features separate biological states: diffusion entropy analysis separating astrocyte from glioblastoma cultures; anomalous DEA scaling appearing with germinating seeds present but ordinary scaling in dark counts; a fractional-Brownian negative-memory signature in mung-bean autoluminescence; an entropy-weighted spectral fractal dimension distinguishing living from degenerated and frozen from fresh mouse embryos; non-zero kurtosis in healthy and diabetic photocount distributions; and spectral power density profiles yielding 90% discriminant accuracy for malignancy.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W7124764611",
+      "W3157775700",
+      "W2964505745",
+      "W4386752905",
+      "W2594646273",
+      "W3016463384"
+     ]
+    },
+    {
+     "step": "In none of those studies is the comparison made against an intensity-matched baseline, yet mean intensity is itself an established correlate of the same states: tumour cells emit more than non-malignant cells, stressed cells emit more than healthy ones, and UPE intensity tracks ROS production and oxidative status generally.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W3016463384",
+      "W4415884611",
+      "W4308366428",
+      "W2132454423"
+     ]
+    },
+    {
+     "step": "The one UPE study in the corpus that used surrogate randomisation for a physiological correlation found the correlations to be temporary, drifting in phase and frequency - the behaviour expected of a shared slow covariate rather than of a stable state-specific feature.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2035748855"
+     ]
+    },
+    {
+     "step": "Show the confound is structural, not incidental. Every listed feature is a functional of the same intensity time series and is monotonically biased by mean rate. For a Cox process, Q = <n>*sigma_I^2, so any class difference in mean rate propagates directly into Q and F. Likewise, an estimated Hurst or DEA scaling exponent is pulled toward the uncorrelated value 0.5 as the Poisson shot component grows relative to the rate-fluctuation component, i.e. as <n> falls; the dark-count arm returning ordinary scaling while the seed arm returns anomalous scaling is exactly what this bias predicts when the two arms differ in mean rate. Matching or adjusting on log mean rate is therefore the minimal control, and it has been applied in none of the cited works.",
+     "justification_type": "computation"
+    },
+    {
+     "step": "The critical review already frames the whole controversy as one about statistical properties rather than intensity and spectrum, on which there is consensus; so the practical question 'can photocount statistics ever decide anything' is precisely whether these features survive an intensity-matched baseline.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2141663490"
+     ]
+    }
+   ],
+   "cited_work_ids": [
+    "W7124764611",
+    "W3157775700",
+    "W2964505745",
+    "W4386752905",
+    "W2594646273",
+    "W3016463384",
+    "W4415884611",
+    "W4308366428",
+    "W2132454423",
+    "W2035748855",
+    "W2141663490"
+   ],
+   "proposed_experiment": "Pre-register the feature list, the baseline covariates, the equivalence threshold (delta-AUC = 0.02) and the analysis code before any held-out data are acquired. Acquire matched-length photon-count time series for both classes in each task under identical bin grid, spectral band and acquisition length, with in-chamber temperature and an interleaved dark-reference channel recorded continuously. Fit the intensity-only baseline and the full-feature model on the development cohort with nested cross-fitting, freeze both, then evaluate once on the externally acquired held-out cohort. Report delta-AUC with CI, plus a rate-matched subsample analysis in which classes are trimmed to overlapping log-mean-rate distributions. No new detector is needed; the claim is a design-and-analysis claim and is testable on re-analysis of any existing dataset that retained raw time series and rate logs.",
+   "required_instrument": "Cooled PMT photon counter with time tagging or >=1 kHz binned readout, 350-850 nm, plus in-chamber thermistor and an interleaved dark-reference channel; no new detector class required.",
+   "engine_native_score": 0.68,
+   "novelty_self_claim": "The register's out-of-sample claims (H3, H8, H9) concern delayed-luminescence decay parameters, surface intensity and crop vigour, and H11 concerns spectral distribution. None asks whether photocount and temporal-complexity features - the exact observables the coherence debate is conducted in - survive an intensity-matched baseline. This converts 'can photocount statistics ever decide?' into a pre-registerable prediction with a numeric threshold, and identifies the specific estimator bias (rate-dependent pull of Hurst/DEA exponents toward 0.5) that would produce the published pattern with no biology in it."
+  },
+  {
+   "id": "Q2-6",
+   "statement": "The photocount 'squeezed-state' parameters reported for human surface UPE can be reproduced, within the range published across anatomical sites, from a spectrally matched incoherent artificial source viewed through a tissue-mimicking scattering phantom of matched reduced-scattering and absorption coefficients, so those parameters are set by propagation and detection geometry rather than by the emitting state.",
+   "scope": {
+    "population": "An artificial incoherent source (attenuated LED, three-channel spectrally shaped to the reported human skin UPE band ratios) placed behind Intralipid or TiO2-silicone phantoms with reduced scattering coefficient 1-3 mm-1 and absorption 0.01-0.1 mm-1 at 600-750 nm and thicknesses 0.5-3 mm; contrasted with dark-adapted human dorsal hand and palm.",
+    "condition": "Identical detector, chamber, spectral window and acquisition protocol as the published human analyses: 300-800 nm broadband detection, contiguous bins of 50, 100, 200, 300 and 500 ms, 20000 measurements per run, background measured and subtracted the same way.",
+    "comparator": "The published human parameter ranges (signal strength plus r ~ 0.06, theta ~ 2.76, phi ~ 0.64, and the site-wise profiles reported across 12 anatomical sites), and an unfiltered artificial source with no phantom.",
+    "outcome": "Fitted squeezed parameters (r, theta, phi) and Fano factor / g2(0) for the phantom-filtered artificial light, as a function of phantom optical properties and thickness."
+   },
+   "null_hypothesis": "The phantom-filtered artificial source yields parameters outside the published human range at every phantom setting - for instance r below one third or above three times the reported 0.06, with the human range excluded at 95% - which would show that the human parameters carry source-specific information that propagation cannot manufacture.",
+   "estimand": "The fraction of phantom configurations whose fitted (r, theta, phi) fall inside the convex hull of the published human site-wise parameter set, and the minimum |delta-r| between any phantom configuration and the reported human value.",
+   "causal_level": "L3",
+   "rationale": [
+    {
+     "step": "Human surface photocount analyses report squeezed-state parameters recovered from broadband, large-area, long-duration acquisitions - r = 0.06, theta = 2.76, phi = 0.64 from 20000 bins over 50-500 ms in a lichen, and site-wise 'profiles' of nine such properties across 12 anatomical sites in humans, with Fano factor and g2(0) readouts from the hand at 50 ms bins and squeezed-state descriptions of the H2O2-stimulated skin response.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W43326842",
+      "W2188393532",
+      "W2030876425",
+      "W1559651179"
+     ]
+    },
+    {
+     "step": "The same preparation has yielded the opposite conclusion from the same class of measurement: hand UPE was reported to lack the usual coherence because of the large area and the long measurement time. A parameter that flips sign with acquisition geometry is a geometry parameter until proven otherwise.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2337122567"
+     ]
+    },
+    {
+     "step": "Surface UPE in humans is a diffusely propagated signal, not a direct view of an emitter: relating an internal photogenic source to surface fluence requires a photon-diffusion model with an extrapolated zero-boundary condition, and sub-600 nm photons are strongly attenuated by overlying tissue while longer wavelengths sit at the edge of PMT sensitivity.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W3170639556",
+      "W7168813583",
+      "W2124535387"
+     ]
+    },
+    {
+     "step": "Derive why the phantom must reproduce the fit. Multiple scattering through a slab with reduced scattering coefficient 2 mm-1 randomises transverse phase at the exit face and fixes the collected spatial mode count M through the speckle size and the collection etendue. Since for any chaotic field g2(0)-1 = 1/M, and the fitted squeezed parameter r enters the photocount distribution only through the same second-moment excess, r is a monotone reparameterisation of a quantity determined by M together with the slow-drift envelope. The phantom arm reproduces both by construction - M by matched optical properties and geometry, the drift envelope by programmed modulation - so if the human r is a transport quantity the phantom must land inside the human range.",
+     "justification_type": "computation"
+    },
+    {
+     "step": "The measured photocount shape is in any case a convolution of the background distribution with the sample distribution, so an arm matched in rate, drift and mode count is the correct negative control for any fitted state parameter; this control has never been run.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2412356141",
+      "W2141663490"
+     ]
+    }
+   ],
+   "cited_work_ids": [
+    "W43326842",
+    "W2188393532",
+    "W2030876425",
+    "W1559651179",
+    "W2337122567",
+    "W3170639556",
+    "W7168813583",
+    "W2412356141",
+    "W2124535387",
+    "W2141663490"
+   ],
+   "proposed_experiment": "Fabricate a phantom series (Intralipid suspensions and TiO2-silicone slabs) characterised independently by spatially resolved or time-resolved diffuse reflectance to fix reduced scattering 1-3 mm-1 and absorption 0.01-0.1 mm-1 at 600-750 nm, thicknesses 0.5-3 mm. Behind each, place a three-channel LED attenuated to the count rate measured from dorsal hand skin and amplitude-modulated with a drift envelope recorded from a real human run. Acquire with the identical detector, spectral window, bin ladder (50-500 ms) and 20000-bin protocol as the published human analyses, including the same background measurement and subtraction. Fit the published squeezed-state model to each phantom run, and to fresh human dorsal-hand and palm runs recorded the same week. Report where the phantom parameters fall relative to the human convex hull, and the dependence of r on phantom thickness and scattering coefficient. Pre-register the exclusion criterion.",
+   "required_instrument": "Cooled PMT photon counter (300-850 nm) with time tagging; Intralipid and TiO2-silicone tissue phantoms characterised by time-resolved or spatially resolved diffuse reflectance; attenuated three-channel LED with programmable drift; the same light-tight chamber and acquisition software used for the human arm.",
+   "engine_native_score": 0.66,
+   "novelty_self_claim": "H2.sq is stated as a model-fit comparison against classical mixtures, and H2/H6/H8 all rest silently on human surface measurements. This exposes the propagation assumption underneath them: the human-surface squeezed-state literature never established that its fitted parameters are properties of the source rather than of transport through several millimetres of scattering tissue. The tissue phantom is the missing negative control, it is buildable with off-the-shelf materials, and it converts a state claim into a measurable transport claim by predicting that r should vary with phantom thickness and scattering coefficient alone."
+  }
+ ]
+}

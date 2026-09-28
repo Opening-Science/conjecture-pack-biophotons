@@ -1,0 +1,456 @@
+{
+ "groups": [
+  {
+   "group": ["Q1-1#baseline-claude"],
+   "same_claim": "sub-350 nm flux scales as the square of the 400-500 nm carbonyl flux, so UV quanta require pairwise pooling of two carbonyl excitations"
+  },
+  {
+   "group": ["Q1-2#baseline-claude"],
+   "same_claim": "absolute sub-320 nm flux from proliferating cultures is below 1% of the visible flux, refuting the historical mitogenetic UV fraction"
+  },
+  {
+   "group": ["Q1-3#baseline-claude"],
+   "same_claim": "the externally measured UV fraction is set by aromatic-residue self-absorption and so falls with sample optical depth per Beer-Lambert"
+  },
+  {
+   "group": ["Q1-4#baseline-claude"],
+   "same_claim": "anoxia suppresses the sub-350 nm and the visible UPE bands by the same factor, leaving no oxygen-independent UV component"
+  },
+  {
+   "group": ["Q1-5#baseline-claude", "Q1-2#codex-solo"],
+   "same_claim": "under singlet-oxygen lifetime manipulation (D2O substitution plus 1O2 quenchers) the sub-350 nm band moves with the singlet-oxygen marker emission rather than with the triplet-carbonyl band, placing the UV band downstream of singlet oxygen"
+  },
+  {
+   "group": ["Q1-6#baseline-claude", "Q1-6#codex-solo"],
+   "same_claim": "the sub-350 nm fraction is set by the acceptor-chromophore inventory rather than by the primary chemiexcitation step, so removing the pigment acceptor raises the UV-to-acceptor-band ratio and adding one lowers it at fixed oxidative chemistry"
+  },
+  {
+   "group": ["Q1-1#codex-solo"],
+   "same_claim": "substituting albumin's tryptophan with phenylalanine selectively lowers UV relative to visible emission at matched carbonyl burden, identifying tryptophan as the terminal UV emitter"
+  },
+  {
+   "group": ["Q1-3#codex-solo"],
+   "same_claim": "restoring plasmalogens in deficient keratinocytes raises dark post-oxidation UV flux at fixed singlet-oxygen dose and lipid-peroxide burden"
+  },
+  {
+   "group": ["Q1-4#codex-solo"],
+   "same_claim": "trapping formaldehyde and acetaldehyde suppresses the post-UVA UV afterglow more than the 1270 nm band, marking short-chain triplet carbonyls as the proximal UV emitters"
+  },
+  {
+   "group": ["Q1-5#codex-solo"],
+   "same_claim": "rotenone-induced mitochondrial electron leak selectively raises UV flux and a mitochondria-targeted antioxidant preferentially abolishes that increment"
+  },
+
+  {
+   "group": ["Q2-1#baseline-claude"],
+   "same_claim": "the photon degeneracy parameter of spontaneous UPE is below 1e-15, putting any Hanbury-Brown-Twiss bunching excess more than ten orders of magnitude beneath its own shot noise"
+  },
+  {
+   "group": ["Q2-2#baseline-claude"],
+   "same_claim": "UPE contains no spectral feature narrower than 1 nm across 400-900 nm, bounding first-order coherence time below about 1.2 ps"
+  },
+  {
+   "group": ["Q2-3#baseline-claude"],
+   "same_claim": "the super-Poissonian excess is a radical-chain Neyman type-A cluster process whose mean cluster size responds to antioxidant dose and oxygen tension and beats the squeezed-state model"
+  },
+  {
+   "group": ["Q2-4#baseline-claude", "Q2-2#codex-solo"],
+   "same_claim": "the photocount excess of spontaneous UPE is entirely slow intensity modulation: once the sample's own sub-Hz envelope is matched by a sham source or conditioned out of the arrival record, no residual bunching remains from milliseconds to seconds"
+  },
+  {
+   "group": ["Q2-5#baseline-claude"],
+   "same_claim": "no photocount or temporal-complexity feature adds more than 0.02 held-out AUC to an intensity-plus-nuisance classifier of biological state"
+  },
+  {
+   "group": ["Q2-6#baseline-claude"],
+   "same_claim": "published human squeezed-state parameters are reproduced by an incoherent source behind a tissue-mimicking scattering phantom, so they are set by propagation and detection geometry"
+  },
+  {
+   "group": ["Q2-1#codex-solo"],
+   "same_claim": "source-intrinsic second- and third-order factorial cumulants of germinating-seed UPE obey the Bernoulli-thinning scaling laws across a calibrated attenuation ladder"
+  },
+  {
+   "group": ["Q2-3#codex-solo"],
+   "same_claim": "wound-induced leaf emission in the chlorophyll band is multimode thermal, so narrowing the detection bandwidth raises g2(0) by at least 0.10 and reveals a picosecond bunching envelope"
+  },
+  {
+   "group": ["Q2-4#codex-solo"],
+   "same_claim": "lichen UPE shows a phase-sensitive homodyne quadrature variance below 0.92 of shot noise, as the published squeezed-state claim requires"
+  },
+  {
+   "group": ["Q2-5#codex-solo"],
+   "same_claim": "wound-induced leaf emission carries intrinsic spatial first-order coherence exceeding the matched-incoherent-source prediction by at least 0.10 in |g1| at 100 um shear"
+  },
+
+  {
+   "group": ["Q3-1#baseline-claude"],
+   "same_claim": "an artificial source dose-matched to the donor's spectral fluence fails to reproduce published donor-to-receiver effects, needing at least 1000-fold more fluence for half the effect"
+  },
+  {
+   "group": ["Q3-2#baseline-claude"],
+   "same_claim": "brightness conservation caps measured reflective-chamber optical gain at about 2, so reflector-specific biological effects cannot be photon-dose-driven"
+  },
+  {
+   "group": ["Q3-3#baseline-claude"],
+   "same_claim": "photon yield per oxidation event is fixed by chemistry, varying less than twofold across physiological states at matched oxidative flux"
+  },
+  {
+   "group": ["Q3-4#baseline-claude"],
+   "same_claim": "donor photon emission per unit metabolic rate is unchanged by the presence, viability or optical accessibility of a receiver population"
+  },
+  {
+   "group": ["Q3-5#baseline-claude"],
+   "same_claim": "reported optical donor-to-receiver effects survive knockout or pharmacological block of every candidate receiver photoacceptor, so they are not photochemical"
+  },
+  {
+   "group": ["Q3-6#baseline-claude"],
+   "same_claim": "solar-blind counting through MgF2 finds under 1 photon/cm2/s in the 200-320 nm mitogenetic band from dense proliferating cultures"
+  },
+  {
+   "group": ["Q3-1#codex-solo"],
+   "same_claim": "photon-for-photon LED replay of a live Paramecium emitter's calibrated emission reproduces its receiver-growth effect within a 20% equivalence margin while an opaque shutter abolishes it"
+  },
+  {
+   "group": ["Q3-2#codex-solo"],
+   "same_claim": "the four-band action-spectrum ranking of receiver growth per delivered photon is the same under live-emitter coupling and synthetic replay, with at least one familywise-controlled nonzero band effect"
+  },
+  {
+   "group": ["Q3-3#codex-solo"],
+   "same_claim": "preserving the one-second-scale temporal order of replayed UPE changes receiver growth relative to a block-permuted replay of the identical photon sequence"
+  },
+  {
+   "group": ["Q3-4#codex-solo"],
+   "same_claim": "the emitter-density effect on indicator growth is a pure analog photon-dose response, with no residual emitter-density contribution once receiver-plane fluence is accounted for"
+  },
+  {
+   "group": ["Q3-5#codex-solo"],
+   "same_claim": "at equal total delivered photons the spectral-temporal template of a dense emitter population suppresses receiver growth at least 10% more than that of a sparse one"
+  },
+  {
+   "group": ["Q3-6#codex-solo"],
+   "same_claim": "a photon-matched replay effect survives a tenfold spectrally matched Poisson background, retaining at least half its dark-condition size, implying receiver-side filtering"
+  },
+
+  {
+   "group": ["Q4-1#baseline-claude"],
+   "same_claim": "the transmission- and detector-weighted sub-skull-origin fraction of extracranially detected photons is below 5%, so head UPE is scalp-dominated"
+  },
+  {
+   "group": ["Q4-2#baseline-claude"],
+   "same_claim": "glutamate-evoked slice emission survives tetrodotoxin spike blockade but is abolished by mitochondrial electron-transport inhibition, making it a redox readout rather than a spike-borne signal"
+  },
+  {
+   "group": ["Q4-3#baseline-claude"],
+   "same_claim": "the species-ordered redshift of glutamate-evoked brain-slice emission vanishes once each slice's own transmission and the detector response are divided out"
+  },
+  {
+   "group": ["Q4-4#baseline-claude"],
+   "same_claim": "fresh white matter preserves a degree of linear polarization above 0.3 over 5 mm along the fibre axis, in excess of the diffusive prediction, and loses it on demyelination"
+  },
+  {
+   "group": ["Q4-5#baseline-claude"],
+   "same_claim": "extracranial UPE features add no more than 0.02 AUC over a nuisance-only model for classifying eyes-open/closed and rest/task states"
+  },
+  {
+   "group": ["Q4-6#baseline-claude"],
+   "same_claim": "head photon flux is light-history-dependent delayed luminescence, falling more than 30% between 30 min and 24 h of darkness with task modulation shrinking in proportion"
+  },
+  {
+   "group": ["Q4-1#codex-solo"],
+   "same_claim": "paired epidural and external detectors in anesthetized pigs recover a nonzero brain-originated component of task-evoked 650-900 nm scalp counts"
+  },
+  {
+   "group": ["Q4-2#codex-solo"],
+   "same_claim": "the cross-species spectral redshift survives detector-efficiency and self-absorption correction, staying monotonic to a human centroid near 865 nm"
+  },
+  {
+   "group": ["Q4-3#codex-solo"],
+   "same_claim": "cortical UPE spectral-temporal features add more than 0.05 held-out-animal macro-AUC beyond total intensity, ECoG and metabolic covariates in awake mice"
+  },
+  {
+   "group": ["Q4-4#codex-solo"],
+   "same_claim": "GluN2B blockade restores the disease-model UPE spectral centroid toward wild type more than a ROS- and photon-matched mitochondrial antioxidant"
+  },
+  {
+   "group": ["Q4-5#codex-solo"],
+   "same_claim": "forehead UPE-EEG task coupling shows a positive 650-900 nm excess over 400-600 nm after skin, shutter, ambient, temperature and perfusion controls"
+  },
+
+  {
+   "group": ["Q5-1#baseline-claude"],
+   "same_claim": "published UPE Fano-factor excess is fully recoverable from detection efficiency and dark-count fraction, leaving a source-level Fano factor indistinguishable from 1 across detector classes"
+  },
+  {
+   "group": ["Q5-2#baseline-claude", "Q5-4#codex-solo"],
+   "same_claim": "a centrally prepared sealed chemical luminescence artefact circulated round-robin between independent laboratories is reported in absolute units with tight between-laboratory agreement, so the field can be given a transfer standard that its biological samples cannot provide"
+  },
+  {
+   "group": ["Q5-3#baseline-claude"],
+   "same_claim": "the clinical band ratios of the human-UPE literature are detector-spectral-response artefacts whose group discrimination does not survive measured filter and quantum-efficiency correction"
+  },
+  {
+   "group": ["Q5-4#baseline-claude"],
+   "same_claim": "a thermally and optically matched inanimate head phantom reproduces the reported extracranial photon flux within a factor of two"
+  },
+  {
+   "group": ["Q5-5#baseline-claude"],
+   "same_claim": "a UPE diagnostic classifier loses over half its AUC across detector classes on raw units, and absolute spectrally-corrected features recover at least half of that loss"
+  },
+  {
+   "group": ["Q5-6#baseline-claude"],
+   "same_claim": "spontaneous UPE has a conserved absolute photon yield per unit oxidative turnover, reproducible within a factor of three across laboratories and predictive of the observed emission rate"
+  },
+  {
+   "group": ["Q5-1#codex-solo"],
+   "same_claim": "independently calibrated PMT and EMCCD measurements of the same wounded-leaf emission-rate-density integral agree within 15%"
+  },
+  {
+   "group": ["Q5-2#codex-solo"],
+   "same_claim": "using a single 500 nm quantum-efficiency value instead of wavelength-resolved response correction biases the inferred emission-rate density by at least 25%"
+  },
+  {
+   "group": ["Q5-3#codex-solo"],
+   "same_claim": "equilibrated cooled-PMT dark counts are Poisson-compatible over 48 h, with per-block Fano factors of 0.8-1.2 and empirical blank thresholds within 10% of Poisson"
+  },
+  {
+   "group": ["Q5-5#codex-solo"],
+   "same_claim": "at 10^6 cells per well, at least 90% of astrocyte and glioblastoma replicate wells exceed the empirical blank-defined absolute limit of detection"
+  },
+  {
+   "group": ["Q5-6#codex-solo"],
+   "same_claim": "a malignancy classifier trained on calibrated cell-line UPE time series reaches AUROC of at least 0.80 at two external laboratories without refitting"
+  },
+
+  {
+   "group": ["Q6-1#baseline-claude"],
+   "same_claim": "a UVA-provocation UPE index beats same-session spontaneous UPE intensity by at least 0.10 AUC for discriminating a redox-abnormal patient group from matched controls"
+  },
+  {
+   "group": ["Q6-2#baseline-claude"],
+   "same_claim": "adding true dark-chamber photon counting to room-lit RGB or corona-discharge device features contributes no discriminative information for a clinical classification"
+  },
+  {
+   "group": ["Q6-3#baseline-claude"],
+   "same_claim": "clamping skin temperature removes at least half of the reported affective/meditative state contrast in human surface UPE, more so beyond 650 nm"
+  },
+  {
+   "group": ["Q6-4#baseline-claude"],
+   "same_claim": "an uncalibrated two-band intensity-ratio clinical classifier loses less than half the cross-laboratory AUC that an absolute-intensity classifier loses on the same hardware transfer"
+  },
+  {
+   "group": ["Q6-5#baseline-claude"],
+   "same_claim": "at least half the nose/glabella-versus-cheek facial UPE contrast comes from the removable surface lipid film and its microbial porphyrins, abolished by one degreasing wipe"
+  },
+  {
+   "group": ["Q6-6#baseline-claude"],
+   "same_claim": "four-week test-retest reliability of dorsal-hand spontaneous UPE intensity has ICC below 0.6, capping any single-session intensity classifier below 0.80 AUC"
+  },
+  {
+   "group": ["Q6-1#codex-solo"],
+   "same_claim": "post-UVA UPE measured 1-3 min after suberythemal exposure adds at least 0.10 out-of-sample R2 for predicting 24-hour erythema beyond dose, pigmentation, temperature and perfusion"
+  },
+  {
+   "group": ["Q6-2#codex-solo"],
+   "same_claim": "the week-2 change in the hand-UPE 495-550/550-610 nm ratio adds at least 0.10 out-of-sample R2 for predicting 12-week HbA1c reduction beyond clinical covariates and total intensity"
+  },
+  {
+   "group": ["Q6-3#codex-solo"],
+   "same_claim": "the initial post-exposure UPE burst improves prediction of the 24-hour phototoxic reaction in erythropoietic protoporphyria by at least 0.10 AUC beyond PPIX, iron, dose and skin lightness"
+  },
+  {
+   "group": ["Q6-4#codex-solo"],
+   "same_claim": "the simultaneous affected/unaffected hand UPE ratio within 14 days of stroke adds at least 0.10 out-of-sample R2 for 90-day upper-limb motor recovery beyond baseline motor score and lesion burden"
+  },
+  {
+   "group": ["Q6-5#codex-solo"],
+   "same_claim": "a spontaneous UPE radiance-map classifier identifies histopathology-positive regions in fresh colorectal resections with external AUC at least 0.85"
+  },
+  {
+   "group": ["Q6-6#codex-solo"],
+   "same_claim": "wavelength- and area-calibrated radiance features transfer a locked type-2-diabetes UPE model between PMT and EMCCD systems with ICC at least 0.80 and R2 loss at most 0.05, whereas raw detector counts do not"
+  },
+
+  {
+   "group": ["Q7-1#baseline-claude"],
+   "same_claim": "reported between-preparation spectral differences are dominated by internal reabsorption and scattering, with the measured centroid shifting with specimen optical thickness by at least the reported between-species shift"
+  },
+  {
+   "group": ["Q7-2#baseline-claude"],
+   "same_claim": "at UPE-realistic fluxes and field-standard exposures, resolvable surface image contrast is limited to about 1 mm depth in the visible and 3 mm in the near-infrared, so published in vivo images carry no deeper organ-level structure"
+  },
+  {
+   "group": ["Q7-3#baseline-claude"],
+   "same_claim": "flux- and silhouette-normalised whole-body UPE images contain reproducible 5 mm-scale spatial structure with split-half ICC above 0.3 and above the shot-noise-matched null"
+  },
+  {
+   "group": ["Q7-4#baseline-claude"],
+   "same_claim": "evoked emission in white matter spreads with an along-versus-across anisotropy ratio near 1.5, as anisotropic scattering alone predicts, excluding a myelin-waveguide contribution"
+  },
+  {
+   "group": ["Q7-5#baseline-claude"],
+   "same_claim": "two-arm coincidence detection of a high-flux preparation returns g2(0) = 1 within 0.001, bounding the correlated photon-pair fraction below 0.001"
+  },
+  {
+   "group": ["Q7-6#baseline-claude"],
+   "same_claim": "co-registered thermal and perfusion maps predict the state-dependent human surface UPE difference image out of sample, explaining at least half its between-state variance"
+  },
+  {
+   "group": ["Q7-1#codex-solo"],
+   "same_claim": "for calibrated sources at least 2 mm under porcine skin, 640-800 nm imaging localizes better than 400-600 nm imaging, with the band advantage absent for surface sources"
+  },
+  {
+   "group": ["Q7-2#codex-solo"],
+   "same_claim": "the post-wound UPE centroid migrates outward with onset times tracking the independently measured ROS front, indicating a moving biological source rather than a static scattering halo"
+  },
+  {
+   "group": ["Q7-3#codex-solo"],
+   "same_claim": "at equal excess emitted photons, spatially resolved detection beats summed counts for a focal 5%-of-field oxidative lesion but not for a diffuse whole-field perturbation"
+  },
+  {
+   "group": ["Q7-4#codex-solo"],
+   "same_claim": "a focal cortical ultraweak source under intact rat scalp and skull is not localizable to within 5 mm externally even at 640-850 nm, while exposed-cortex and superficial sources are"
+  },
+  {
+   "group": ["Q7-5#codex-solo"],
+   "same_claim": "anterior-to-posterior UPE redistribution features cut held-out error in predicting time to pupal ecdysis by at least 20% relative to whole-body photon counts"
+  },
+  {
+   "group": ["Q7-6#codex-solo"],
+   "same_claim": "spatial UPE heterogeneity of superficial murine tumors predicts histologic viable-tumor fraction with at least 0.10 greater out-of-sample R2 than whole-tumor counts, volume and temperature"
+  }
+ ],
+
+ "conflicts": [
+  {
+   "pair": ["Q1-5#baseline-claude", "Q1-4#codex-solo"],
+   "incompatibility": "Both assign a proximal emitter to the sub-350 nm band and exclude the other's. Q1-5#baseline-claude has the UV band downstream of singlet oxygen, so it must be enhanced by solvent deuteration by the same factor as the 1O2 dimol band and be insensitive to the carbonyl inventory; Q1-4#codex-solo has short-chain triplet carbonyls (formaldehyde, acetaldehyde) as the proximal UV emitters, so removing them by chemical trapping must suppress UV more than the 1270 nm 1O2 emission. One mechanism being proximal makes the other's perturbation inert.",
+   "discriminating_measurement": "In one preparation, cross D2O/H2O substitution and 1O2 quenching with two chemically distinct carbonyl traps, recording 300-349 nm, 350-550 nm and 1270 nm simultaneously: does the UV band track the 1270 nm channel (singlet-oxygen-downstream) or the trappable carbonyl pool (carbonyl-proximal)?"
+  },
+  {
+   "pair": ["Q1-2#codex-solo", "Q1-4#codex-solo"],
+   "incompatibility": "The same contradiction inside one engine, with the same 1270 nm reference channel. Q1-2#codex-solo requires the UV band to change with 1O2 lifetime in the same direction as the 1,270 nm emission and more strongly than the 340-540 nm carbonyl band; Q1-4#codex-solo requires carbonyl trapping to suppress UV more than the 1,270 nm emission, i.e. UV decoupled from the 1O2 channel.",
+   "discriminating_measurement": "The sign of [UV suppression - 1270 nm suppression] under carbonyl trapping, measured in the same cells or biopsies in which D2O and quencher arms are run, with EPR radical burden held fixed."
+  },
+  {
+   "pair": ["Q1-6#baseline-claude", "Q1-1#codex-solo"],
+   "incompatibility": "Opposite sign for the effect of tryptophan-bearing protein on the emergent UV band. Q1-6#baseline-claude titrates BSA in explicitly as a tryptophan-bearing acceptor and predicts the sub-350 nm fraction falls by more than half; Q1-1#codex-solo predicts that removing tryptophan (Trp-to-Phe albumin) lowers the 250-349/350-550 ratio, i.e. that tryptophan is a net UV source.",
+   "discriminating_measurement": "Titrate wild-type versus Trp-to-Phe albumin into one fixed Fe(II)/H2O2 chemistry at matched carbonyl burden, path length and optical depth, and read the sign of d(UV/visible)/d(tryptophan content)."
+  },
+  {
+   "pair": ["Q1-3#baseline-claude", "Q1-1#codex-solo"],
+   "incompatibility": "Aromatic residues are cast as the UV sink versus the UV source. Q1-3#baseline-claude has the external sub-350 nm fraction set by tryptophan self-absorption (more aromatic residue in the optical path means less emergent UV, decaying per Beer-Lambert with the Trp extinction coefficient); Q1-1#codex-solo has tryptophan as the terminal emitter that generates the band.",
+   "discriminating_measurement": "Vary tryptophan content and effective optical depth orthogonally in the same oxidation mixture (Trp-replete versus Trp-free protein at 0.1 and 10 mm path): absorption predicts UV falling with both, emission predicts UV rising with Trp content at fixed thin path."
+  },
+  {
+   "pair": ["Q1-1#baseline-claude", "Q1-4#codex-solo"],
+   "incompatibility": "One-quantum versus two-quantum origin of the UV band. Q1-1#baseline-claude states that no single catalogued chemiexcitation step reaches sub-350 nm and that UV flux is therefore quadratic in carbonyl flux (log-log slope 2.0); Q1-4#codex-solo makes a single short-chain triplet carbonyl the proximal UV emitter, which is a linear, slope-1 relation.",
+   "discriminating_measurement": "The log-log slope of absolute 260-340 nm flux against absolute 400-500 nm flux over a graded initiator dose series spanning 100-fold, with band-specific absolute calibration: 1.0 supports the carbonyl-proximal model, 2.0 the pooling model."
+  },
+  {
+   "pair": ["Q1-1#baseline-claude", "Q1-4#baseline-claude"],
+   "incompatibility": "Same-engine conflict about how the UV band must respond when the visible band is suppressed. Q1-4#baseline-claude predicts anoxia attenuates the sub-350 nm and 450-550 nm bands by the same factor (S_UV/S_vis in [0.8, 1.25]); a quadratic UV-on-visible coupling as in Q1-1#baseline-claude forces S_UV = S_vis^2, so any substantial anoxic suppression must drive S_UV/S_vis far below 1.",
+   "discriminating_measurement": "A graded oxygen series (21%, 2%, <10 ppm) with both bands recorded simultaneously in one preparation, testing S_UV = S_vis against S_UV = S_vis^2."
+  },
+
+  {
+   "pair": ["Q2-1#baseline-claude", "Q2-3#codex-solo"],
+   "incompatibility": "Whether any bunching excess is measurable at all. Q2-1#baseline-claude puts the degeneracy parameter below 1e-15, which places the HBT excess more than ten orders of magnitude beneath its own shot noise for any achievable integration time; Q2-3#codex-solo predicts that narrowing detection from 650-720 nm to 0.1 nm raises g2(0) by at least 0.10 with a resolvable picosecond envelope.",
+   "discriminating_measurement": "Cross-detector g2(0) on wound-induced leaf emission through a 0.1 nm filter, against an attenuated coherent calibration and a flux-matched chaotic reference, with the absolute spectral radiance of the same emission measured to fix delta independently."
+  },
+  {
+   "pair": ["Q2-6#baseline-claude", "Q2-4#codex-solo"],
+   "incompatibility": "Whether the published squeezed-state parameters correspond to a real field state. Q2-6#baseline-claude claims they are reproduced by an incoherent LED behind a scattering phantom, i.e. produced by propagation and detection geometry, which forbids any sub-shot-noise quadrature; Q2-4#codex-solo takes the same published parameters to imply a minimum homodyne variance no greater than 0.92 of shot noise.",
+   "discriminating_measurement": "Mode-matched balanced homodyne detection on dark-adapted lichen thalli, with the phantom-filtered artificial source run through the identical optical chain and analysis: Vmin/Vshot at or above 1 for both kills the squeezing reading."
+  },
+  {
+   "pair": ["Q2-1#baseline-claude", "Q2-4#codex-solo"],
+   "incompatibility": "The degeneracy bound and the squeezing parameter are mutually exclusive numbers. A squeezed state with r ~ 0.06 (the published value that yields Vmin/Vshot ~ 0.89-0.92) carries about 3.6e-3 photons per mode; Q2-1#baseline-claude bounds photons per mode below 1e-15, twelve orders lower, which leaves no room for a measurable quadrature squeezing.",
+   "discriminating_measurement": "Traceable absolute spectral radiance of the same preparation in the same optical etendue, converted to delta = L_nu * lambda^2, measured alongside the homodyne variance on that identical mode."
+  },
+  {
+   "pair": ["Q2-3#baseline-claude", "Q2-4#baseline-claude"],
+   "incompatibility": "Same-engine conflict on the origin of the super-Poissonian excess. Q2-3#baseline-claude requires genuine photon clusters (Neyman type-A, mean cluster size mu responding monotonically to antioxidant dose and pO2); Q2-4#baseline-claude requires the whole F(T)-1 and Q(T) excess to be statistically equivalent to a sham source that only replays the sample's own slow intensity envelope, which leaves no clustering to modulate.",
+   "discriminating_measurement": "Interleaved ABAB biological and drift-matched sham runs analysed with one pipeline: fit the cluster parameters to both arms and test whether mu_bio - mu_sham is nonzero and moves with antioxidant dose and oxygen tension."
+  },
+  {
+   "pair": ["Q2-3#baseline-claude", "Q2-2#codex-solo"],
+   "incompatibility": "The same disagreement across engines: clusters versus conditional Poisson. Q2-3#baseline-claude fits a cluster point process with several photons per initiation event, which produces bunching at millisecond-to-second bins even after slow drift is removed; Q2-2#codex-solo requires residual conditional g2(tau) to stay within 0.05 of unity from 1 us to 1 s once variation slower than 10 s is estimated out.",
+   "discriminating_measurement": "Time-rescaled conditional g2(tau) and factorial cumulants computed on the same time-tagged record after out-of-sample removal of the slow rate envelope, in preparations driven by graded Fenton or linoleic-acid chemistry."
+  },
+  {
+   "pair": ["Q2-3#codex-solo", "Q2-5#codex-solo"],
+   "incompatibility": "Same-engine conflict on the same preparation and band (aerobic wound-induced Spathiphyllum, chlorophyll band). A multimode thermal source as asserted in Q2-3#codex-solo is spatially incoherent, so its |g1| is exactly the van Cittert-Zernike value of an equally extended incoherent source; Q2-5#codex-solo requires |g1| to exceed that matched-incoherent prediction by at least 0.10 at 100 um shear.",
+   "discriminating_measurement": "On the same wounded leaves, measure bandwidth-dependent g2(0) and shear-dependent |g1| in one session against a geometry- and intensity-matched incoherent calibration source through identical optics."
+  },
+
+  {
+   "pair": ["Q3-1#baseline-claude", "Q3-1#codex-solo"],
+   "incompatibility": "Directly opposite predictions for the same experiment on the same preparation. Q3-1#baseline-claude states that an artificial source matched to the donor's absolute spectral fluence at the receiver plane fails, and that roughly 1000-fold more fluence is needed for half the published effect; Q3-1#codex-solo states that photon-for-photon replay of the calibrated donor emission reproduces the live-donor growth contrast within a 20% equivalence margin.",
+   "discriminating_measurement": "Paramecium caudatum receiver growth over 48 h under live-donor coupling, calibrated LED replay matched at the receiver plane, and opaque shutter, with an ND ladder spanning 10^0 to 10^6: the ratio of the replay contrast to the live contrast is either near 1 or near 0."
+  },
+  {
+   "pair": ["Q3-1#baseline-claude", "Q3-2#codex-solo"],
+   "incompatibility": "Whether artificial photons delivered at natural fluence do anything at all. Q3-1#baseline-claude predicts no measurable receiver response to dose-matched artificial light; Q3-2#codex-solo predicts a reproducible four-band action spectrum under synthetic replay with at least one familywise-error-controlled nonzero band effect at equal receiver-plane photon counts.",
+   "discriminating_measurement": "Band-partitioned (260-340, 340-450, 450-600, 600-750 nm) synthetic replay at equal delivered photons versus filtered live emitters, with growth contrast per received photon reported per band."
+  },
+  {
+   "pair": ["Q3-1#baseline-claude", "Q3-4#codex-solo"],
+   "incompatibility": "Whether receiver-plane photon fluence is the causal variable. Q3-4#codex-solo asserts a pure analog photon-dose response in which absolutely measured 300-750 nm fluence fully explains the between-density effect with no residual emitter term, which entails that photons of any origin at that fluence act; Q3-1#baseline-claude asserts that photons at exactly that fluence, from an artificial source, are inert until raised about 1000-fold.",
+   "discriminating_measurement": "One crossed design in which live emitter density and calibrated neutral-density attenuation are varied to overlapping receiver fluences and synthetic replay arms are interleaved: fit growth against measured fluence and test whether the source label (live versus artificial) carries residual explanatory weight."
+  },
+  {
+   "pair": ["Q3-4#codex-solo", "Q3-5#codex-solo"],
+   "incompatibility": "Same-engine conflict on the sufficiency of photon dose. Q3-4#codex-solo requires emitter-density labels to add less than two AIC-equivalent units once receiver fluence is fitted; Q3-5#codex-solo requires a 300-cells/mL emitter template to suppress receiver growth at least 10% more than a 50-cells/mL template at identical integrated photon count, which is exactly a residual emitter-density effect at matched dose.",
+   "discriminating_measurement": "Replay the high-density and low-density spectral-temporal templates normalised to identical receiver-plane photon counts and test whether the 48-h growth difference is zero."
+  },
+  {
+   "pair": ["Q3-4#codex-solo", "Q3-3#codex-solo"],
+   "incompatibility": "Same-engine conflict on whether photon arrival structure matters. Q3-4#codex-solo makes received fluence a sufficient statistic for the effect; Q3-3#codex-solo requires the one-second-scale temporal order to change receiver growth with total and per-block photon counts held exactly constant.",
+   "discriminating_measurement": "Original-order versus within-10-minute-block-permuted replay of the same time-tagged emission record, band-wise photon counts held equal, difference in 48-h log growth."
+  },
+
+  {
+   "pair": ["Q4-3#baseline-claude", "Q4-2#codex-solo"],
+   "incompatibility": "The same corrected quantity, opposite verdicts. Q4-3#baseline-claude predicts the species-ordered redshift of glutamate-evoked slice emission disappears once each slice's own transmission and the detector response are divided out, leaving a human-minus-mouse peak difference under 30 nm; Q4-2#codex-solo predicts the ordering survives exactly those corrections, with human emission still extending to about 865 nm.",
+   "discriminating_measurement": "Identically prepared slices from at least mouse, pig and human measured with per-slice T(lambda) and an embedded known-spectrum in-situ transfer emitter, reporting the corrected spectral centroid contrast and its rank correlation with the species order."
+  },
+  {
+   "pair": ["Q4-5#baseline-claude", "Q4-5#codex-solo"],
+   "incompatibility": "Whether dark-adapted human head UPE carries task information beyond nuisance. Q4-5#baseline-claude predicts extracranial UPE features add at most 0.02 AUC over scalp temperature, perfusion, light history, detector drift and session order; Q4-5#codex-solo predicts a task-locked forehead UPE-EEG coupling with a positive 650-900 nm excess surviving cheek-skin, shutter, ambient, temperature and perfusion subtraction.",
+   "discriminating_measurement": "One protocol with simultaneous EEG, forehead and control-skin photon counting and a shuttered channel, analysed both ways: subject-held-out delta AUC over the nuisance model and the band-differenced partial UPE-EEG coupling on the same epochs."
+  },
+  {
+   "pair": ["Q4-1#baseline-claude", "Q4-1#codex-solo"],
+   "incompatibility": "Whether any sub-skull contribution is recoverable at an external detector. Q4-1#baseline-claude puts the transmission- and detector-weighted sub-skull-origin fraction below 5% and reads head UPE as scalp-dominated; Q4-1#codex-solo predicts a resolvably nonzero brain-originated coefficient linking epidurally measured cortical emission to external task-evoked counts.",
+   "discriminating_measurement": "Simultaneous epidural and external photon counting on the same head with subject-specific scalp-skull transmission measured in situ and a calibrated sub-skull phantom source of known rate, giving the brain-origin fraction with its confidence interval against the 5% threshold."
+  },
+  {
+   "pair": ["Q4-6#baseline-claude", "Q4-5#codex-solo"],
+   "incompatibility": "Whether task-locked head photon signals recorded after conventional dark adaptation are physiological. Q4-6#baseline-claude attributes a substantial part of the flux, and the task modulation in proportion, to light-history-dependent delayed luminescence of hair, scalp and instrument surfaces at the tens-of-minutes adaptation times the field uses; Q4-5#codex-solo reports genuine task-locked forehead coupling after only 60 minutes of adaptation, with controls that do not include light history.",
+   "discriminating_measurement": "Repeat the identical task-coupling protocol at 0.5 h, 4 h and 24 h of continuous darkness after a logged pre-exposure dose, with a hair-and-scalp swatch and empty-chamber arm run identically: if the coupling is delayed luminescence it decays with the count rate."
+  },
+
+  {
+   "pair": ["Q5-3#baseline-claude", "Q5-5#baseline-claude"],
+   "incompatibility": "Same-engine conflict on what spectral-response correction does to clinical UPE features in the same human preparation. Q5-3#baseline-claude predicts that correcting for measured filter transmission and per-band quantum efficiency shifts the band ratio by more than the between-group difference and destroys the healthy-versus-patient discrimination; Q5-5#baseline-claude predicts that re-expressing the same features in absolute spectrally-corrected units recovers at least half the AUC lost on cross-detector transfer.",
+   "discriminating_measurement": "One two-site fingertip/dorsal-hand dataset analysed under both pipelines: the between-group standardised difference and the cross-site out-of-sample AUC computed on raw counts and on absolute spectrally-corrected features from the identical acquisitions."
+  },
+
+  {
+   "pair": ["Q6-4#baseline-claude", "Q6-6#codex-solo"],
+   "incompatibility": "What survives a change of clinical UPE hardware. Q6-4#baseline-claude claims an uncalibrated two-band intensity ratio is self-normalising enough to lose less than half the transfer AUC that absolute intensity loses, with no cross-site recalibration; Q6-6#codex-solo claims only wavelength- and area-calibrated radiance transfers (ICC >= 0.80, R2 loss <= 0.05) and that raw-count features, of which an uncorrected band ratio is one, do not, because per-band quantum efficiency and filter transmission differ between instruments.",
+   "discriminating_measurement": "Duplicate same-subject measurements on two detector classes: cross-instrument ICC and transfer loss computed for the raw band ratio and for the wavelength- and area-calibrated radiance features from the same acquisitions."
+  },
+  {
+   "pair": ["Q6-6#baseline-claude", "Q6-2#codex-solo"],
+   "incompatibility": "Whether a two-session change in hand UPE can carry prognostic signal. Q6-6#baseline-claude puts the four-week test-retest ICC of standardised dorsal-hand UPE below 0.6, so a baseline-to-week-2 difference score is dominated by measurement error; Q6-2#codex-solo requires the week-2 change in the 495-550/550-610 nm ratio to add at least 0.10 out-of-sample R2 for 12-week HbA1c reduction.",
+   "discriminating_measurement": "Measure the multi-week ICC of the spectral ratio itself, not just of integrated intensity, in untreated healthy adults under the identical protocol, and propagate that reliability into the attainable incremental R2."
+  },
+
+  {
+   "pair": ["Q4-4#baseline-claude", "Q7-4#baseline-claude"],
+   "incompatibility": "Cross-seed, same-engine conflict on whether myelinated tracts guide light. Q4-4#baseline-claude predicts white matter retains a degree of linear polarization above 0.3 over a 5 mm longitudinal path, far above the diffusive prediction from its own reduced-scattering coefficient, collapsing after demyelination with axons preserved; Q7-4#baseline-claude predicts evoked emission spreads with an along/across anisotropy ratio of 1.50 +/- 0.15, exactly what anisotropic scattering alone gives, explicitly excluding the >= 2 that a waveguide contribution would require.",
+   "discriminating_measurement": "On the same tracts, measure polarization-resolved longitudinal transmission and the two-dimensional spread anisotropy of focally evoked emission, before and after lysolecithin demyelination, against the scattering-only reference computed from that specimen's directional reduced scattering coefficients."
+  }
+ ]
+}

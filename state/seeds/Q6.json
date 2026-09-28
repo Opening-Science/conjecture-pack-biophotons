@@ -1,0 +1,256 @@
+{
+ "seed_id": "Q6",
+ "title": "Can UPE become a clinical biomarker?",
+ "quotes": [
+  {
+   "quote": "Future studies should prioritize rigorous RCT designs, pre-specified primary endpoints, adequate sample sizes, standardized [...] protocols, and validation of biophotonic measurement techniques as objective biomarkers",
+   "source": "Sá 2026, `W7165757820`"
+  }
+ ],
+ "what_would_settle_it": "one pre-registered clinical validation study of a single endpoint (e.g. skin oxidative status) with calibrated instruments — which again presupposes Q5.",
+ "claims_mentioned": [
+  "H3",
+  "H8"
+ ],
+ "entry_queries": [
+  "ultraweak photon emission human oxidative stress biomarker",
+  "skin photon emission clinical diagnostic",
+  "biophoton measurement reproducibility human subject"
+ ],
+ "entry_points": [
+  {
+   "work_id": "W4416845165",
+   "title": "Mapping the biomarker landscape of Biofield Therapies: An exploration of measurable effects",
+   "year": 2025,
+   "type": "preprint",
+   "text": " … A significant methodological advance that overcomes this limitation is the application of\nultraweak photon emission (UPE), or biophoton emission, as an optical biomarker to … "
+  },
+  {
+   "work_id": "W7165757820",
+   "title": "Biomarkers in Biofield Therapies: Analysis of Measurable Effects",
+   "year": 2026,
+   "type": "article",
+   "text": " … Ultraweak \nPhoton Emission (UPE), or biophoton emission, has been associated as a possible biophysical \nbiomarker in living systems [10, 43-63]. However, the application … "
+  },
+  {
+   "work_id": "W7125637468",
+   "title": "Bioelectromagnetic Field Phenomena in Biological Systems: A Review of Theoretical Framework and Therapeutic Potential",
+   "year": 2026,
+   "type": "article",
+   "text": " … Investigation of BAL from human skin. In: Photocount statistics and spectral analysis of ultraweak photon emission \nfrom biological systems. 2024;95(40):69. \n23 … "
+  },
+  {
+   "work_id": "W7168813583",
+   "title": "Revisiting Claims of Extracranial Biophoton Detection from the Human Brain",
+   "year": 2026,
+   "type": "article",
+   "text": " … Imaging of ultraweak\nphoton emission for evaluating the oxidative stress of human skin.\nJournal of Photochemistry and Photobiology B: Biology 2019, 198,\n111562.\n(5 … "
+  },
+  {
+   "work_id": "W7124563474",
+   "title": "Biophotons and living organisms unified theoretical framework linking metabolism, nutrition, environment and biological information (Part 1)",
+   "year": 2026,
+   "type": "article",
+   "text": " … ultraweak photon emission from a rat's brain \ncorrelated with cerebral energy metabolism and oxidative stress . Journal/Publisher . \nBiophotons and brain activity in humans … "
+  },
+  {
+   "work_id": "W3126963047",
+   "title": "Human ultra-weak photon emission as non-invasive spectroscopic tool for diagnosis of internal states – A review",
+   "year": 2021,
+   "type": "article",
+   "text": " … Kobayashi, Imaging of ultraweak photon emission for \nevaluating the oxidative stress of human skin. J. Photochem. Photobiol. B 198 (2019) 111562. \nDOI: 10.1016 … "
+  },
+  {
+   "work_id": "W4296130797",
+   "title": "Effect of Methamphetamine on Ultraweak Photon Emission and Level of Reactive Oxygen Species in Male Rat Brain",
+   "year": 2022,
+   "type": "preprint",
+   "text": " … In vivo imaging of spontaneous ultraweak photon emission\n276\nfrom a rat’s brain correlated with cerebral energy metabolism and oxidative\n277\nstress. Neurosci … "
+  },
+  {
+   "work_id": "W3041755811",
+   "title": "Integrating Ultra-Weak Photon Emission Analysis in Mitochondrial Research",
+   "year": 2020,
+   "type": "article",
+   "text": " … Imaging of ultraweak photon \nemission for evaluating the oxidative stress of human skin. J. Photochem. \nPhotobiol. B 198:111562. doi: 10.1016/j.jphotobiol … "
+  },
+  {
+   "work_id": "W4410975264",
+   "title": "Potential Use of a New Energy Vision (NEV) Camera for Diagnostic Support of Carpal Tunnel Syndrome: Development of a Decision-Making Algorithm to Differentiate Carpal Tunnel-Affected Hands from Controls",
+   "year": 2025,
+   "type": "article",
+   "text": " … These biofields may serve as neuropathy biomarkers, manifesting as\nskin changes in color, texture, or ultra-weak photon emission (UWPE) [11,12].\nThis study … "
+  },
+  {
+   "work_id": "W1985124214",
+   "title": "Color filters and human photon emission: Implications for auriculomedicine",
+   "year": 2005,
+   "type": "article",
+   "text": " … 103\nColor Filters and Human Photon Emission\nEXPLORE March 2005, Vol. 1, No. 2\n\n\f\nrecording of skin emission, the ﬁlters were evaluated for autolu … "
+  },
+  {
+   "work_id": "W2109151393",
+   "title": "Ultraweak Photon Emission as a Non-Invasive Health Assessment: A Systematic Review",
+   "year": 2014,
+   "type": "review",
+   "text": " … that ultraweak photon\nemission determined in blood might be a general marker for\nhealth and could be used for diagnostic and clinical purposes\n[28 … "
+  },
+  {
+   "work_id": "W4321242749",
+   "title": "The application and trend of ultra-weak photon emission in biology and medicine",
+   "year": 2023,
+   "type": "article",
+   "text": " … The relationship between skin aging and\nsteady state ultraweak photon emission as an indicator of skin oxidative stress in vivo.\nSkin Res. Technol. 20 … "
+  },
+  {
+   "work_id": "W3116163342",
+   "title": "POSSIBILITIES OF ELECTRO-PHOTONIC EMISSION ANALYSIS IN THE REPRESENTATION OF SYSTEM INFORMATION ENERGY PROCESSES OF THE HUMAN ORGANISM",
+   "year": 2020,
+   "type": "article",
+   "text": " … Energy balance readings are important for clinical in-\nterpretation. Clinical interpretation of the energy balance \nbetween the left and right photon emission rates is … "
+  },
+  {
+   "work_id": "W2903943235",
+   "title": "Biophysical Results with Influence of Device ABIEM on Model Systems. Bioharmonization.",
+   "year": 2018,
+   "type": "article",
+   "text": " … It was shown that 1 cm2 of skin generally emits 85 photones for \n1s. The intensity of biophoton emission ranges from 10−19 to … "
+  },
+  {
+   "work_id": "W4245042809",
+   "title": "Evaluation of Possible Methods and Approaches for Registering of Non-Ionizing Radiation Emitted from the Human Body",
+   "year": 2015,
+   "type": "article",
+   "text": " … It was shown that 1 cm2 of \nskin generally emits 85 photons for 1 s. The intensity of biophoton emission ranges from 10−19 … "
+  },
+  {
+   "work_id": "W1583143288",
+   "title": "Registration of Electromagnetic Waves Emitted from the Human Body",
+   "year": 2014,
+   "type": "article",
+   "text": " … It was \nshown that 1 cm2 of skin generally emits 85 photones for 1s. The intensity of biophoton emission ranges \nfrom 10−19 to … "
+  },
+  {
+   "work_id": "W7142519026",
+   "title": "Biological Effects of Concave Reflective Geometries: A Critical Review of Focused Reflective Chamber Research and Its Implications for Clinical Medicine",
+   "year": 2026,
+   "type": "article",
+   "text": " … Human biophoton emission, although modest, has been observed consistently across numerous body \nregions and corresponds with physiological conditions [16,18]. The crucial question is … "
+  },
+  {
+   "work_id": "W7117718612",
+   "title": "Biophotonic evaluation of water treated by biodynamization: comparison of ultra-low emission levels in the 300–400 nm, 400–500 nm and 500–600 nm bands on different types of water",
+   "year": 2025,
+   "type": "article",
+   "text": " … These notions are perfectly consistent with what biophotonic measurements reveal: stable, \nreproducible and multispectral emissions, impossible to obtain with a control water. \nPoint of … "
+  },
+  {
+   "work_id": "W43326842",
+   "title": "Quantum nature of photon signal emitted by Xanthoria parietina and its implications to biology.",
+   "year": 2008,
+   "type": "article",
+   "text": " … Since a human subject receiving information via \nbiophoton channel does not seem to exist, one has to \nreconcile the speculated capability of human subjects … "
+  },
+  {
+   "work_id": "W2951811678",
+   "title": "Non-invasive visualization of physiological changes of insects during metamorphosis based on biophoton emission imaging",
+   "year": 2019,
+   "type": "article",
+   "text": " … Another video comparing \nthe moving pictures of biophoton emission observed in four independent measurements using different subjects \nis provided to express the reproducibility (Supplementary … "
+  }
+ ],
+ "registry_claims_at_stake": [
+  {
+   "id": "H3",
+   "level": "L6",
+   "claim": "Delayed-luminescence decay parameters predict an external quality/physiology criterion out-of-sample in at least one matrix (defined instrument + excitation protocol)",
+   "null": null,
+   "estimand": "AUC / prediction-error vs baseline, blinded, pre-registered; excitation protocol fully specified"
+  },
+  {
+   "id": "H8",
+   "level": "L6",
+   "claim": "Surface UPE adds incremental predictive power for a defined systemic state (oxidative-stress criterion) beyond skin temperature, perfusion and environment, in humans",
+   "null": null,
+   "estimand": "ΔAUC / partial R² over covariate-only model, blinded, test-retest reliability reported"
+  }
+ ],
+ "registry_all_claim_statements": [
+  {
+   "id": "H4a",
+   "level": "L1",
+   "claim": "Known oxidative pathways (ROS-driven lipid/protein oxidation producing triplet carbonyls and singlet oxygen) account for the dominant fraction of spontaneous UPE intensity in aerobic, non-photosynthetic cells (380–700 nm)"
+  },
+  {
+   "id": "H4b",
+   "level": "L4",
+   "claim": "(Null family) Under optical-only coupling, emitted UPE produces no receiver-side biological response above chance in any validated preparation"
+  },
+  {
+   "id": "H1",
+   "level": "L4",
+   "claim": "UV-band emission from dividing cells increases mitosis rate in optically coupled detector cell populations (mitogenetic radiation), in at least one reproducible preparation"
+  },
+  {
+   "id": "H5",
+   "level": "L4",
+   "claim": "At least one non-chemical, non-electrical cell-to-cell influence is mediated by emitted photons, demonstrable under optical-only coupling in a defined preparation"
+  },
+  {
+   "id": "H2",
+   "level": "L2",
+   "claim": "UPE from at least one biological system carries a non-classical or partially coherent optical signature (umbrella claim; see operational sub-claims H2.g2, H2.sq)"
+  },
+  {
+   "id": "H2.g2",
+   "level": "L2",
+   "claim": "Second-order coherence g2(0) of UPE from a defined preparation deviates from 1 beyond detector artifacts"
+  },
+  {
+   "id": "H2.sq",
+   "level": "L2",
+   "claim": "UPE photocount distributions from defined preparations are better fit by squeezed-state models than by classical mixtures, with model-comparison statistics"
+  },
+  {
+   "id": "H3",
+   "level": "L6",
+   "claim": "Delayed-luminescence decay parameters predict an external quality/physiology criterion out-of-sample in at least one matrix (defined instrument + excitation protocol)"
+  },
+  {
+   "id": "H6",
+   "level": "L5",
+   "claim": "Intracranial UPE intensity co-varies with neural activity beyond global metabolic rate in at least one preparation (slice or in vivo, invasive measurement)"
+  },
+  {
+   "id": "H7",
+   "level": "L3",
+   "claim": "Cytoskeletal or myelinated structures guide biological photons with transport efficiency materially above unguided tissue propagation (mechanism claim serving H5/H6, not their rival)"
+  },
+  {
+   "id": "H8",
+   "level": "L6",
+   "claim": "Surface UPE adds incremental predictive power for a defined systemic state (oxidative-stress criterion) beyond skin temperature, perfusion and environment, in humans"
+  },
+  {
+   "id": "H9",
+   "level": "L6",
+   "claim": "Seed/plant autoluminescence predicts vigour, stress state or product quality out-of-sample beyond standard assays in at least one crop/matrix"
+  },
+  {
+   "id": "H10",
+   "level": "L1",
+   "claim": "Interfacial/structured water in cells materially alters UPE generation or storage relative to bulk-water chemistry (scoped to UPE-relevant observables)"
+  },
+  {
+   "id": "H11",
+   "level": "L2",
+   "claim": "UPE spectral distribution carries state-specific information beyond total intensity (measurement-feature claim feeding H3/H8/H9)"
+  },
+  {
+   "id": "H12",
+   "level": "L5",
+   "claim": "Mental states or directed intention modulate human surface UPE beyond the physiological covariates they engage (overlaps H6 conceptually; kept for the anomalous-claims record)"
+  }
+ ],
+ "instructions_to_engine": "Propose falsifiable hypotheses that ADVANCE this question. A hypothesis that merely restates a registry claim scores zero for novelty; a hypothesis that cannot be measured with a named instrument scores zero for usefulness. Ground every claim in works retrieved through the corpus API, cite them by work_id, and state the measurement that would settle it."
+}

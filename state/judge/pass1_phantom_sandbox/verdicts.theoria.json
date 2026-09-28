@@ -1,0 +1,47 @@
+[
+ {
+  "candidate_id": "C001",
+  "judge": "theoria",
+  "verdict": "declined",
+  "theoria_answer": "INCORRECT",
+  "theoria_proof_verified": true,
+  "run_json": "vendor/theoria/runs/custom_hyp_C001_20260826_123927.json",
+  "reason": "theoria: proof verified, answer INCORRECT"
+ },
+ {
+  "candidate_id": "C002",
+  "judge": "theoria",
+  "verdict": "declined",
+  "theoria_answer": "INCORRECT",
+  "theoria_proof_verified": true,
+  "run_json": "vendor/theoria/runs/custom_hyp_C002_20260826_130349.json",
+  "reason": "theoria: proof verified, answer INCORRECT"
+ },
+ {
+  "candidate_id": "C003",
+  "judge": "theoria",
+  "verdict": "declined",
+  "theoria_answer": "INCORRECT",
+  "theoria_proof_verified": true,
+  "run_json": "vendor/theoria/runs/custom_hyp_C003_20260826_133848.json",
+  "reason": "theoria: proof verified, answer INCORRECT"
+ },
+ {
+  "candidate_id": "C009",
+  "judge": "theoria",
+  "verdict": "declined",
+  "theoria_answer": "INCORRECT: theta > 0 is a relative spectral suppression result. The specific error is that the claimed mechanism distinction depends on an unstated identifiability premise tying 1270 nm inhibition to the singlet-oxygen contribution in the UV channel and excluding UV-specific attenuation, quenching, detector/calibration, or unrelated UV-emitting chemistry.",
+  "theoria_proof_verified": true,
+  "run_json": "vendor/theoria/runs/custom_hyp_C009_20260826_144946.json",
+  "reason": "theoria: proof verified, answer INCORRECT: theta > 0 is a relative spectral suppression result. The specific error is that the claimed mechanism distinction depends on an unstated id"
+ },
+ {
+  "candidate_id": "C011",
+  "judge": "theoria",
+  "verdict": "inconclusive",
+  "theoria_answer": "None",
+  "theoria_proof_verified": false,
+  "run_json": "vendor/theoria/runs/custom_hyp_C011_20260826_152425.json",
+  "reason": "theoria: proof not verified, answer None"
+ }
+]

@@ -1,0 +1,277 @@
+{
+ "hof_version": "1.0",
+ "run": {
+  "engine": "codex-solo",
+  "seed_id": "Q1",
+  "backend": "codex-cli",
+  "config_hash": "7c87b2b8611a",
+  "corpus_calls": 28,
+  "elapsed_s": 268.0
+ },
+ "hypotheses": [
+  {
+   "id": "Q1-1",
+   "statement": "In Fe2+/H2O2-oxidized recombinant human serum albumin, replacing its tryptophan with phenylalanine will selectively reduce calibrated 250–349 nm emission relative to 350–550 nm emission at matched protein-carbonyl burden, identifying tryptophan as a final UV emitter receiving chemiexcitation energy.",
+   "scope": {
+    "population": "Purified recombinant wild-type human serum albumin and an otherwise matched Trp-to-Phe variant in quartz cuvettes.",
+    "condition": "Dark Fe2+/H2O2 oxidation at matched temperature, dissolved oxygen, protein concentration and measured carbonyl burden.",
+    "comparator": "Wild-type versus Trp-to-Phe albumin, with unoxidized and fluorophore-free reaction blanks.",
+    "outcome": "Absolute photon flux in 250–299, 300–349 and 350–550 nm bands, plus protein-carbonyl concentration."
+   },
+   "null_hypothesis": "The Trp-to-Phe substitution does not lower the 250–349/350–550 nm photon-flux ratio; a 95% confidence interval for the contrast includes or lies below zero.",
+   "estimand": "θ=ln[(F250–349/F350–550)WT/(F250–349/F350–550)Trp→Phe] at equal carbonyl burden; the claim requires θ>0.",
+   "causal_level": "L1",
+   "rationale": [
+    {
+     "step": "The origin of biological UPE below 350 nm is explicitly unresolved.",
+     "justification_type": "given"
+    },
+    {
+     "step": "Oxidized protein and amino-acid systems emit UPE, and tryptophan can receive excitation energy from other oxidized amino acids and act as the final emitter.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2159034785"
+     ]
+    },
+    {
+     "step": "ROS oxidation can form triplet carbonyls whose energy is transferred to nearby chromophores.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2954526477"
+     ]
+    },
+    {
+     "step": "Taking the ratio of UV to visible flux before comparing genotypes separates a band-specific emitter effect from a uniform change in reaction yield.",
+     "justification_type": "computation"
+    }
+   ],
+   "cited_work_ids": [
+    "W2752165143",
+    "W2159034785",
+    "W2954526477"
+   ],
+   "proposed_experiment": "Oxidize wild-type and Trp-to-Phe albumin in randomized replicate quartz cuvettes, continuously measure calibrated band-resolved photons, and quantify carbonyls by an orthogonal assay; fit photon flux against carbonyl burden and test the genotype-by-band interaction.",
+   "required_instrument": "Light-tight integrating collection chamber with quartz optics, an absolutely calibrated photon-counting UV spectrograph or parallel UV-enhanced PMTs covering 250–550 nm, and 10–25 nm bandpass filters.",
+   "engine_native_score": 0.82,
+   "novelty_self_claim": "This converts the broad ROS-origin claim into a residue-level causal test of the unidentified sub-350 nm final emitter."
+  },
+  {
+   "id": "Q1-2",
+   "statement": "In H2O2-stressed U266 multiple-myeloma cells, perturbations that lengthen or quench singlet-oxygen lifetime will change 300–349 nm photon flux in the same direction as 1,270 nm singlet-oxygen emission and more strongly than 340–540 nm triplet-carbonyl emission.",
+   "scope": {
+    "population": "Viable U266 human multiple-myeloma cell suspensions in quartz vessels.",
+    "condition": "Acute dark H2O2 challenge under H2O, partial D2O substitution, and singlet-oxygen-quenching conditions.",
+    "comparator": "Vehicle-treated H2O2-stressed cells, unstressed cells and cell-free culture-medium controls.",
+    "outcome": "Calibrated absolute flux at 300–349, 340–540 and 1,270±10 nm, with EPR singlet-oxygen trapping and viability measurements."
+   },
+   "null_hypothesis": "The differential response of 300–349 nm flux to D2O and singlet-oxygen quencher is no greater than that of 340–540 nm flux, or it is discordant with the 1,270 nm response.",
+   "estimand": "θ=0.5{ln[(FUVD2O/FUVH2O)/(FVISD2O/FVISH2O)]+ln[(FUVvehicle/FUVquencher)/(FVISvehicle/FVISquencher)]}; the claim requires θ>0 with concordant 1,270 nm changes.",
+   "causal_level": "L1",
+   "rationale": [
+    {
+     "step": "H2O2 exposure of U266 cells produces both triplet excited carbonyls and singlet oxygen, while the cell-free medium can also contribute.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2085110797"
+     ]
+    },
+    {
+     "step": "Excited carbonyls can transfer energy to ground-state oxygen, producing singlet oxygen verified by 1,270 nm emission, EPR trapping and oxygen-isotope trapping.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2048493057"
+     ]
+    },
+    {
+     "step": "A difference-of-log-ratios tests whether UV emission is selectively sensitive to singlet oxygen rather than merely following a global change in chemiexcitation.",
+     "justification_type": "computation"
+    }
+   ],
+   "cited_work_ids": [
+    "W2085110797",
+    "W2048493057",
+    "W2752165143"
+   ],
+   "proposed_experiment": "Apply a randomized factorial H2O2×D2O×singlet-oxygen-quencher design to U266 cells; acquire the three bands simultaneously, subtract cell-free-medium flux, and confirm singlet oxygen independently by EPR trapping and, in a validation arm, 18O2 endoperoxide LC-MS.",
+   "required_instrument": "Absolutely calibrated quartz-optics UV photon-counting spectrometer for 300–540 nm, cooled InGaAs/InP or superconducting single-photon detector with a 1,270±10 nm filter, EPR spectrometer and LC-HRMS.",
+   "engine_native_score": 0.79,
+   "novelty_self_claim": "This discriminates singlet-oxygen-mediated UV generation from direct triplet-carbonyl emission within the same established cellular preparation."
+  },
+  {
+   "id": "Q1-3",
+   "statement": "In genetically plasmalogen-deficient human keratinocytes, restoring plasmalogens will increase dark post-oxidation 300–349 nm flux at a fixed singlet-oxygen dose and lipid-peroxide burden, with the increase scaling with hydroperoxyacetal and dioxetane products.",
+   "scope": {
+    "population": "Isogenic plasmalogen-deficient and genetically rescued human keratinocyte cultures, with lipidomics-confirmed plasmalogen abundance.",
+    "condition": "A matched pulse from a dark singlet-oxygen donor followed by photon recording after donor-only background subtraction.",
+    "comparator": "Deficient versus rescued cells, plus untreated cells and donor-only medium.",
+    "outcome": "Absolute 300–349, 350–550 and 1,270 nm photon fluxes and LC-HRMS abundances of plasmalogen hydroperoxyacetals, dioxetanes and lipid peroxides."
+   },
+   "null_hypothesis": "Plasmalogen rescue does not increase 300–349 nm flux after adjustment for delivered singlet oxygen, cell number and total lipid-peroxide burden, and UV flux does not covary with the specified plasmalogen products.",
+   "estimand": "θ=ln(F300–349,rescued/F300–349,deficient) standardized to equal singlet-oxygen exposure and total lipid peroxide; the claim requires θ>0 and a positive product–flux slope.",
+   "causal_level": "L1",
+   "rationale": [
+    {
+     "step": "Plasmalogen oxidation forms hydroperoxyacetal and dioxetane intermediates that subsequently generate triplet carbonyls and singlet oxygen, demonstrated by visible and 1,270 nm emission and LC-HRMS.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W4399353285"
+     ]
+    },
+    {
+     "step": "Dioxetane and tetroxide decomposition are candidate sources of triplet carbonyls, which can emit or transfer energy to cellular chromophores.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2954526477"
+     ]
+    },
+    {
+     "step": "Normalizing the rescue contrast to singlet-oxygen dose and total lipid-peroxide burden isolates the plasmalogen branch from a nonspecific increase in oxidation.",
+     "justification_type": "computation"
+    }
+   ],
+   "cited_work_ids": [
+    "W4399353285",
+    "W2954526477",
+    "W2752165143"
+   ],
+   "proposed_experiment": "Verify plasmalogen depletion and rescue by lipidomics, expose equal cell numbers to a calibrated dark singlet-oxygen pulse, record emission continuously in three bands, and use LC-HRMS time points to test whether plasmalogen intermediates mediate the rescued UV signal.",
+   "required_instrument": "Absolutely calibrated UV-visible photon-counting spectrograph with quartz optics covering 300–550 nm, a cooled 1,270 nm single-photon detector and LC-HRMS.",
+   "engine_native_score": 0.7,
+   "novelty_self_claim": "This tests a newly demonstrated lipid branch as a specific source of the unresolved UV band rather than treating all lipid peroxidation as one mechanism."
+  },
+  {
+   "id": "Q1-4",
+   "statement": "In UVA-exposed ex vivo porcine skin, trapping formaldehyde and acetaldehyde immediately after irradiation will suppress 300–349 nm afterglow more than 1,270 nm emission while leaving the initiating radical burden substantially intact, identifying short-chain triplet carbonyls as proximal UV emitters.",
+   "scope": {
+    "population": "Adjacent, randomized ex vivo porcine-skin biopsies from the same animals.",
+    "condition": "Standardized UVA exposure followed by dark recording with vehicle or each of two chemically distinct carbonyl traps.",
+    "comparator": "Vehicle, carbonyl-trap, singlet-oxygen-quencher, sham-irradiated and reagent-only biopsies.",
+    "outcome": "Absolute post-UVA photon flux in 300–349, 350–500 and 1,270±10 nm bands; free formaldehyde/acetaldehyde by LC-MS; organic radicals by EPR."
+   },
+   "null_hypothesis": "Carbonyl trapping does not preferentially reduce 300–349 nm flux relative to 1,270 nm flux, or any reduction is fully explained by loss of the initiating radical signal.",
+   "estimand": "θ=[1−FUV,trap/FUV,vehicle]−[1−F1270,trap/F1270,vehicle]; the claim requires θ>0 after adjustment for EPR radical burden.",
+   "causal_level": "L1",
+   "rationale": [
+    {
+     "step": "UVA-exposed porcine skin forms lipid-derived radicals and short-chain carbonyls, particularly formaldehyde and acetaldehyde, with triplet-carbonyl excitation and possible energy transfer to melanin after irradiation ends.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W4415217027"
+     ]
+    },
+    {
+     "step": "Oxidative-radical reactions in porcine skin produce measurable 340–540 nm triplet-carbonyl emission and singlet-oxygen contributions in the visible and near-infrared.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2886211841"
+     ]
+    },
+    {
+     "step": "Subtracting fractional inhibition at 1,270 nm from fractional UV inhibition distinguishes direct carbonyl-band loss from generalized suppression of singlet-oxygen chemistry.",
+     "justification_type": "computation"
+    }
+   ],
+   "cited_work_ids": [
+    "W4415217027",
+    "W2886211841",
+    "W2752165143"
+   ],
+   "proposed_experiment": "Treat matched biopsies with vehicle or two carbonyl traps, apply identical UVA doses, begin photon acquisition immediately after shutter closure, and jointly model band-resolved decay, LC-MS carbonyl depletion and EPR radical persistence.",
+   "required_instrument": "Shutter-synchronized, absolutely calibrated UV-visible photon-counting spectrograph covering 280–550 nm, cooled 1,270 nm single-photon detector, EPR spin-trapping system and LC-MS.",
+   "engine_native_score": 0.73,
+   "novelty_self_claim": "This extends the porcine-skin chemiexcitation program below 350 nm and separates short-chain carbonyl emission from singlet-oxygen emission."
+  },
+  {
+   "id": "Q1-5",
+   "statement": "In dark-adapted permeabilized human keratinocytes supplied with defined respiratory substrates, rotenone-induced mitochondrial electron leak will selectively raise 300–349 nm flux, and a mitochondria-targeted antioxidant will abolish that increment more strongly than the 650–750 nm increment.",
+   "scope": {
+    "population": "Permeabilized, viable HaCaT human keratinocytes with intact mitochondria.",
+    "condition": "Defined complex-I-linked respiratory substrate with vehicle, rotenone, mitochondria-targeted antioxidant, or their combination under controlled oxygen tension.",
+    "comparator": "Vehicle respiration, rotenone alone, antioxidant alone and mitochondria-depleted lysate controls.",
+    "outcome": "Absolute 300–349, 350–550 and 650–750 nm photon flux, mitochondrial H2O2 production, oxygen-consumption rate and viability."
+   },
+   "null_hypothesis": "Rotenone produces no 300–349 nm increment, or the mitochondria-targeted antioxidant does not suppress that increment more than the 650–750 nm increment.",
+   "estimand": "θ={ln(FUV,rotenone/FUV,vehicle)−ln(FUV,rotenone+antioxidant/FUV,antioxidant)}−{the analogous 650–750 nm contrast}; the claim requires θ>0.",
+   "causal_level": "L1",
+   "rationale": [
+    {
+     "step": "Mitochondria are proposed to produce a major fraction of cellular UPE through respiration-related ROS formation.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W3041755811"
+     ]
+    },
+    {
+     "step": "Rotenone increased spontaneous photon emission from rat brain, consistent with electron leakage from the respiratory chain.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2160984073"
+     ]
+    },
+    {
+     "step": "ROS oxidation of lipids, proteins and nucleic acids can converge on triplet-carbonyl, excited-chromophore and singlet-oxygen production.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2954526477"
+     ]
+    },
+    {
+     "step": "The difference between antioxidant-sensitive rotenone effects in UV and red bands is a band-specific mitochondrial-source interaction rather than a total-intensity test.",
+     "justification_type": "computation"
+    }
+   ],
+   "cited_work_ids": [
+    "W3041755811",
+    "W2160984073",
+    "W2954526477",
+    "W2752165143"
+   ],
+   "proposed_experiment": "Measure simultaneous respiration, mitochondrial H2O2 and calibrated spectral flux during sequential substrate, rotenone and antioxidant additions; repeat in mitochondria-depleted lysate and fit the prespecified band-by-treatment interaction.",
+   "required_instrument": "Quartz-window respirometry chamber coupled to an absolutely calibrated UV-visible photon-counting spectrograph spanning 300–750 nm, plus a fluorometric or electrochemical mitochondrial H2O2 assay.",
+   "engine_native_score": 0.66,
+   "novelty_self_claim": "This localizes the unresolved UV component to—or excludes it from—respiratory-chain electron leak while separating it from red lipid/chromophore emission."
+  },
+  {
+   "id": "Q1-6",
+   "statement": "After linoleic-acid challenge of dark-adapted Chlamydomonas reinhardtii, a chlorophyll-deficient line will retain a 300–349 nm transient at matched lipid-peroxidation burden while losing the 680 nm peak, revealing primary oxidative excitation that is normally transferred to chlorophyll.",
+   "scope": {
+    "population": "Wild-type and isogenic chlorophyll-deficient Chlamydomonas reinhardtii cultures.",
+    "condition": "Dark adaptation followed by equal linoleic-acid challenge under aerobic conditions, with matched cell density and lipid-peroxidation burden.",
+    "comparator": "Wild type versus chlorophyll-deficient cells, with catechol lipoxygenase inhibition, mannitol hydroxyl-radical scavenging, anoxia and vehicle controls.",
+    "outcome": "Absolute time-resolved photon flux in 300–349, 350–550 and 660–700 nm bands, plus thiobarbituric-acid-reactive products and viability."
+   },
+   "null_hypothesis": "The chlorophyll-deficient line loses 300–349 nm emission in the same proportion as 660–700 nm emission, or no UV transient remains at matched lipid peroxidation.",
+   "estimand": "θ=ln[(F300–349/F660–700)chlorophyll-deficient/(F300–349/F660–700)wild-type] at equal lipid-peroxidation burden; the claim requires θ>0.",
+   "causal_level": "L1",
+   "rationale": [
+    {
+     "step": "Linoleic acid increases UPE and lipid peroxidation in Chlamydomonas; oxygen removal, hydroxyl-radical scavenging and lipoxygenase inhibition suppress it, while the detected spectrum peaks near 680 nm and implicates chlorophyll as the final emitter.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2034044028"
+     ]
+    },
+    {
+     "step": "Triplet carbonyls formed during oxidative reactions can transfer excitation to nearby chromophores, so the observed final-emitter spectrum need not identify the primary excited species.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2954526477"
+     ]
+    },
+    {
+     "step": "Comparing UV/red ratios at equal lipid-peroxidation burden tests spectral energy routing independently of total oxidative reaction yield.",
+     "justification_type": "computation"
+    }
+   ],
+   "cited_work_ids": [
+    "W2034044028",
+    "W2954526477",
+    "W2752165143"
+   ],
+   "proposed_experiment": "Challenge wild-type and chlorophyll-deficient cultures in quartz vessels, record all three bands from before addition through decay, verify equal lipid oxidation, and test whether catechol, mannitol and anoxia suppress the retained UV transient.",
+   "required_instrument": "Absolutely calibrated, high-throughput photon-counting spectrograph or synchronized UV-enhanced PMTs with quartz optics covering 300–700 nm and narrow filters centered below 350 nm and near 680 nm.",
+   "engine_native_score": 0.76,
+   "novelty_self_claim": "This exposes the hidden assumption that the externally observed spectrum identifies the first chemiexcited molecule and uses loss of the terminal chlorophyll acceptor to reveal a masked UV source."
+  }
+ ]
+}

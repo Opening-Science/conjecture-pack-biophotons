@@ -1,0 +1,303 @@
+{
+ "hof_version": "1.0",
+ "run": {
+  "engine": "codex-solo",
+  "seed_id": "Q3",
+  "backend": "codex-cli",
+  "config_hash": "5beadf896ac6",
+  "corpus_calls": 21,
+  "elapsed_s": 310.6
+ },
+ "hypotheses": [
+  {
+   "id": "Q3-1",
+   "statement": "In clonally split Paramecium caudatum populations exposed for 48 hours in darkness, the growth effect of a live emitter population across a sealed quartz optical path will be reproduced within a preregistered 20% equivalence margin by photon-for-photon replay of its absolutely calibrated 300–750 nm emission, while an opaque shutter will abolish the effect.",
+   "scope": {
+    "population": "Clonal P. caudatum receiver populations started at 5 cells/mL.",
+    "condition": "Forty-eight-hour exposure in darkness across double-sealed quartz compartments with independent gas spaces, tested by at least three blinded laboratories.",
+    "comparator": "Live-emitter coupling, opaque-shutter coupling, emitter-free sham, and attenuated multi-LED replay matched to the live emitter's spectrum and receiver-plane photon flux.",
+    "outcome": "Receiver population growth, expressed as log cell-number change from 0 to 48 hours."
+   },
+   "null_hypothesis": "The live-emitter contrast is absent, survives the opaque shutter, or is not equivalent within ±20% to the photon-matched replay contrast.",
+   "estimand": "The ratio of the replay-versus-sham growth contrast to the live-emitter-versus-shutter growth contrast, with equivalence bounds 0.80–1.20, together with the shutter residual contrast.",
+   "causal_level": "L4",
+   "rationale": [
+    {
+     "step": "P. caudatum populations separated by glass or quartz in darkness were reported to alter neighboring populations' division and energy uptake.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2092319343"
+     ]
+    },
+    {
+     "step": "A distant proliferation effect in adipose-derived stem cells was instead attributed to volatile signaling after optical-container controls reduced the effect, making independent gas isolation a load-bearing control.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2258592615"
+     ]
+    },
+    {
+     "step": "High-albedo photon concentration has detected growth-associated yeast emission, and the same work identifies missing absolute photon reporting as a major measurement gap.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W3161989600"
+     ]
+    },
+    {
+     "step": "For each wavelength bin, the receiver dose is computed as N_receiver = integral[Phi_emitter(lambda,t) × T_window(lambda) × G_geometry(lambda) dt d(lambda)]; matching this quantity in replay makes equality of the two biological contrasts a direct photon-budget closure test.",
+     "justification_type": "computation"
+    }
+   ],
+   "cited_work_ids": [
+    "W2092319343",
+    "W2258592615",
+    "W3161989600"
+   ],
+   "proposed_experiment": "Pre-register and distribute identical clonal cultures and coded exposure cartridges to three laboratories. Randomize receivers among live-emitter, opaque-shutter, sham, and replay arms. Quantify sister emitter cultures continuously, propagate measured window transmission and geometry to receiver-plane photon dose, and replay the resulting spectrum and time course from a calibrated attenuated LED array. Automated image cytometry performs blinded 0- and 48-hour cell counts.",
+   "required_instrument": "Absolutely calibrated cooled photon-counting PMT or silicon-SPAD spectrometer covering 300–750 nm, high-albedo integrating cavity, calibrated quartz transmission standards, attenuated multiwavelength LED replay source, and automated bright-field cell counter.",
+   "engine_native_score": 0.82,
+   "novelty_self_claim": "This advances beyond H5 by requiring photon-for-photon causal substitution: natural emitters must be replaceable by an artificial source at the measured receiver dose, not merely associated with an opaque-versus-transparent difference."
+  },
+  {
+   "id": "Q3-2",
+   "statement": "For optically coupled P. caudatum, the dose-normalized receiver-growth effects in four spectral bands will form the same action-spectrum ranking under live-emitter coupling and synthetic photon replay, with Spearman rho at least 0.8 and at least one familywise-error-controlled nonzero band effect.",
+   "scope": {
+    "population": "Clonal P. caudatum emitter and receiver populations.",
+    "condition": "Forty-eight-hour dark exposure through sealed quartz paths partitioned into 260–340, 340–450, 450–600, and 600–750 nm bands.",
+    "comparator": "Equal receiver-plane photon counts delivered by filtered live emitters versus narrowband synthetic replay, with opaque and zero-photon controls.",
+    "outcome": "Dose-normalized difference in receiver log growth for each spectral band."
+   },
+   "null_hypothesis": "No band has a corrected nonzero effect, or the live-emitter and replay action spectra have Spearman rho below 0.8.",
+   "estimand": "The four-band vector of growth contrast per received photon and its Spearman correlation between natural and replay exposures.",
+   "causal_level": "L4",
+   "rationale": [
+    {
+     "step": "Glass and quartz separators produced different P. caudatum effects, and the original interpretation invoked at least two frequency regions.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2092319343",
+      "W2043432757"
+     ]
+    },
+    {
+     "step": "Historical claims place mitogenetic emission in the ultraviolet, but modern evidence for even 280–390 nm emission was judged limited, so the ultraviolet contribution requires direct measurement rather than inference from window material.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2095038636"
+     ]
+    },
+    {
+     "step": "A proposed framework for light-based cellular interaction explicitly requires both a modulated optical signal and molecular perception by the receiver.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W1523504261"
+     ]
+    },
+    {
+     "step": "Equalizing N_receiver across bands removes total photon count as the explanation; correlation of the dose-normalized natural and replay effect vectors then tests whether wavelength-specific photon absorption predicts the receiver response.",
+     "justification_type": "computation"
+    }
+   ],
+   "cited_work_ids": [
+    "W2092319343",
+    "W2043432757",
+    "W2095038636",
+    "W1523504261"
+   ],
+   "proposed_experiment": "Measure the live-emitter spectrum and filter transmission in the complete exposure cartridge, then expose randomized receivers through one band at a time. In a second factorial arm, use narrowband LEDs attenuated to the same receiver-plane photon count. Estimate band-specific growth contrasts with a preregistered hierarchical model and compare the two action-spectrum vectors.",
+   "required_instrument": "Absolutely calibrated solar-blind UV PMT for 260–400 nm plus a cooled red-sensitive photon-counting PMT or EMCCD spectrometer for 340–750 nm, monochromator or interference-filter wheel, and attenuated UV/visible LED array.",
+   "engine_native_score": 0.7,
+   "novelty_self_claim": "This replaces the register's broad spectral-information and photon-causality claims with a receiver action-spectrum identity test that can distinguish photons from a window-material artifact."
+  },
+  {
+   "id": "Q3-3",
+   "statement": "At identical total photon count and spectrum, replaying the measured one-second-scale temporal order of P. caudatum UPE will change receiver growth relative to replaying a within-10-minute-block permutation of the same photon sequence.",
+   "scope": {
+    "population": "Clonal P. caudatum receivers started at 5 cells/mL and emitter populations measured in the same growth phase.",
+    "condition": "Forty-eight-hour dark exposure to multi-band LED replay generated from time-tagged natural-emission records.",
+    "comparator": "Original-order replay versus block-permuted replay, with photon count in every spectral channel and every 10-minute block held exactly constant.",
+    "outcome": "Difference in receiver log growth at 48 hours."
+   },
+   "null_hypothesis": "The original-order and temporally permuted replays produce the same receiver growth within a preregistered ±5% equivalence margin.",
+   "estimand": "The original-minus-permuted difference in 48-hour log growth, with total and band-specific delivered photon counts constrained to equality.",
+   "causal_level": "L4",
+   "rationale": [
+    {
+     "step": "Time-series analysis of astrocyte and glioblastoma UPE found anomalous diffusion and long-range memory, showing that biological emission can contain measurable temporal structure beyond mean intensity.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W7124764611"
+     ]
+    },
+    {
+     "step": "The light-communication framework requires secondary modulation of an optical signal by emitter cells.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W1523504261"
+     ]
+    },
+    {
+     "step": "Human dental-pulp stem-cell responses to 810 nm photobiomodulation depended on pulse frequency, demonstrating at a higher optical dose that cellular outcome can depend on temporal delivery rather than energy alone.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2769035647"
+     ]
+    },
+    {
+     "step": "Because permutation preserves sum_t N(lambda,t) separately for each wavelength channel and 10-minute block, a nonzero outcome contrast is attributable to sub-block temporal ordering rather than photon dose, spectrum, or slow drift.",
+     "justification_type": "computation"
+    }
+   ],
+   "cited_work_ids": [
+    "W7124764611",
+    "W1523504261",
+    "W2769035647"
+   ],
+   "proposed_experiment": "Record emitter photons with two independent time-tagging detector channels to reject detector bursts, construct original and block-permuted multi-band replay files, and expose coded receiver cultures using the same LED hardware. Verify equality of delivered counts with an independent monitor detector and score growth blindly.",
+   "required_instrument": "Dual time-correlated single-photon-counting PMTs or SPADs covering 300–750 nm with one-second or finer time tags, spectrally multiplexed attenuated LED replay, and calibrated monitor photodetector.",
+   "engine_native_score": 0.55,
+   "novelty_self_claim": "This advances beyond H11 by asking whether temporal UPE structure is causally decoded by a receiver, rather than merely carrying correlational information about the emitter."
+  },
+  {
+   "id": "Q3-4",
+   "statement": "The reported suppression of 5-cells/mL P. caudatum indicator growth by 50–300-cells/mL neighbors is an analog photon-dose response whose between-density variation is fully explained by absolutely measured 300–750 nm receiver fluence, with no residual emitter-density effect.",
+   "scope": {
+    "population": "P. caudatum indicators started at 5 cells/mL, paired with emitters started at 50, 100, 200, or 300 cells/mL.",
+    "condition": "Forty-eight-hour exposure in darkness through sealed optical paths and a crossed series of calibrated neutral-density attenuations.",
+    "comparator": "Different emitter densities adjusted to overlapping receiver-plane photon doses, plus opaque, sham, and synthetic-replay controls.",
+    "outcome": "Indicator log growth and its dose-response relationship to received photon fluence."
+   },
+   "null_hypothesis": "Growth suppression is not monotonic with measured photon fluence, or emitter density improves held-out prediction after photon dose is included.",
+   "estimand": "The cross-validated dose-response function f(N_receiver) and the incremental held-out log-likelihood contributed by emitter-density labels after f(N_receiver), with less than two AIC-equivalent units treated as no residual contribution.",
+   "causal_level": "L4",
+   "rationale": [
+    {
+     "step": "Indicators started at 5 cells/mL reportedly grew less when surrounded by 50, 100, 200, or 300 cells/mL, and graphite shielding removed the neighbor effect.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2765089583"
+     ]
+    },
+    {
+     "step": "Weak cellular emission and unfavorable signal-to-noise ratio have been identified as physical obstacles to light-based cell communication.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2095038636"
+     ]
+    },
+    {
+     "step": "A high-albedo cavity can recover a large fraction of photons from an extended biological volume, enabling absolute flux estimation at intensities relevant to growing cell populations.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W3161989600"
+     ]
+    },
+    {
+     "step": "Crossing four densities with several transmissions creates overlapping doses; fitting growth = alpha + f(N_receiver) + batch and then testing density terms separates photon-dose sufficiency from density-linked non-optical confounding.",
+     "justification_type": "computation"
+    }
+   ],
+   "cited_work_ids": [
+    "W2765089583",
+    "W2095038636",
+    "W3161989600"
+   ],
+   "proposed_experiment": "Repeat the published 5-versus-50/100/200/300-cells/mL design using double-sealed cartridges. Cross density with neutral-density filters chosen to make different densities deliver overlapping photon fluences. Measure transmitted photons continuously in matched cartridges, reproduce selected doses synthetically, and compare dose-only and dose-plus-density models by preregistered leave-batch-out validation.",
+   "required_instrument": "Absolutely calibrated photon-counting PMT or SPAD system covering 300–750 nm, high-albedo integrating cavity, calibrated neutral-density filters, monitor detector, and automated cell-count imaging.",
+   "engine_native_score": 0.69,
+   "novelty_self_claim": "This turns the reported population-density effect into a quantitative analog-quorum hypothesis and tests whether received photon number is sufficient, a mechanism not specified by H5."
+  },
+  {
+   "id": "Q3-5",
+   "statement": "After equalizing total 300–750 nm photon count, replay of the joint spectral-temporal UPE template from a 300-cells/mL P. caudatum population will suppress growth of 5-cells/mL receivers by at least 10% more than replay of the template from a 50-cells/mL population.",
+   "scope": {
+    "population": "Clonal P. caudatum receivers started at 5 cells/mL.",
+    "condition": "Forty-eight-hour dark exposure to photon replays derived from emitters started at 50 or 300 cells/mL.",
+    "comparator": "Low-density and high-density emitter templates normalized to identical integrated receiver-plane photon count, plus spectrally flattened and temporally shuffled versions.",
+    "outcome": "Percent difference in receiver population growth at 48 hours."
+   },
+   "null_hypothesis": "The normalized high-density template suppresses growth by less than 10% relative to the normalized low-density template, or the difference disappears once photon count is equalized.",
+   "estimand": "One minus the ratio of 48-hour receiver growth under the normalized 300-cells/mL template to growth under the normalized 50-cells/mL template.",
+   "causal_level": "L4",
+   "rationale": [
+    {
+     "step": "P. caudatum indicator growth reportedly decreased as neighboring population density increased from 50 to 300 cells/mL.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2765089583"
+     ]
+    },
+    {
+     "step": "P. caudatum effects were reported to vary in sign with cell number and separator material, which is compatible with a structured cue rather than a universally stimulatory photon dose.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2092319343"
+     ]
+    },
+    {
+     "step": "Biological UPE time series can contain long-memory dynamics, while a theoretical communication framework identifies emitter modulation as a required component of information transfer.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W7124764611",
+      "W1523504261"
+     ]
+    },
+    {
+     "step": "Normalizing both templates so that sum_lambda,t N_50(lambda,t) equals sum_lambda,t N_300(lambda,t) removes integrated intensity; a remaining growth difference measures information in the spectral-temporal distribution.",
+     "justification_type": "computation"
+    }
+   ],
+   "cited_work_ids": [
+    "W2765089583",
+    "W2092319343",
+    "W7124764611",
+    "W1523504261"
+   ],
+   "proposed_experiment": "Acquire replicated, time-resolved spectra from 50- and 300-cells/mL emitters, normalize templates to the same receiver-plane photon total, and replay them to blinded 5-cells/mL receivers. Factorially flatten spectrum or shuffle time to determine which component carries any density-dependent effect.",
+   "required_instrument": "Time-tagged photon-counting spectrometer covering 300–750 nm, calibrated multiwavelength LED or monochromator replay system capable of single-photon-level attenuation, and automated cell counter.",
+   "engine_native_score": 0.48,
+   "novelty_self_claim": "This is the explicit pattern-coded rival to Q3-4's intensity-only quorum model and tests whether equal numbers of photons convey different density messages."
+  },
+  {
+   "id": "Q3-6",
+   "statement": "A photon-matched P. caudatum growth signal will retain at least half of its dark-condition effect when superposed on spectrally matched Poisson background light delivering ten times the signal photon count, indicating receiver-side filtering rather than dependence on an unrealistically noise-free channel.",
+   "scope": {
+    "population": "Clonal P. caudatum receivers started at 5 cells/mL.",
+    "condition": "Forty-eight-hour replay exposure under backgrounds of 0, 1, 10, and 100 times the measured UPE photon count.",
+    "comparator": "Identical UPE replay with no background, spectrally matched Poisson background, temporally structured background, and background-only controls.",
+    "outcome": "Receiver growth contrast attributable to the fixed UPE replay at each background level."
+   },
+   "null_hypothesis": "At tenfold background, the replay-attributable growth contrast is less than 50% of its dark-condition value or is statistically indistinguishable from zero.",
+   "estimand": "The ratio of the replay-versus-background-only growth contrast at tenfold background to the replay-versus-sham contrast in darkness.",
+   "causal_level": "L4",
+   "rationale": [
+    {
+     "step": "The principal P. caudatum optical-coupling report performed mutual exposure under darkness.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2092319343"
+     ]
+    },
+    {
+     "step": "A quantitative feasibility analysis concluded that weak emission and unfavorable ambient signal-to-noise ratio are major obstacles to cellular light communication.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2095038636"
+     ]
+    },
+    {
+     "step": "For each condition, signal-to-background ratio is computed as SBR = N_signal/N_background after weighting both spectra by measured window transmission; fixing N_signal while increasing N_background directly estimates the receiver's noise-tolerance curve.",
+     "justification_type": "computation"
+    }
+   ],
+   "cited_work_ids": [
+    "W2092319343",
+    "W2095038636"
+   ],
+   "proposed_experiment": "First establish a photon-matched replay effect in darkness. Repeat the coded exposure with independently generated Poisson and structured backgrounds at defined multiples of the signal dose, continuously verify both components with a monitor detector, and estimate the preregistered signal-by-background interaction across laboratories.",
+   "required_instrument": "Absolutely calibrated photon-counting PMT or SPAD covering 300–750 nm, two independently driven attenuated multiwavelength LED sources for signal and background, optical combiner, and monitor spectrometer.",
+   "engine_native_score": 0.57,
+   "novelty_self_claim": "This exposes the hidden noise-free-channel assumption in darkness-only coupling studies and supplies a quantitative criterion for whether a laboratory photon effect could function outside exceptional darkness."
+  }
+ ]
+}

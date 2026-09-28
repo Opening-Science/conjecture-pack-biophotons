@@ -1,0 +1,12 @@
+# the corpus comes from the release (corpus/fetch.py), never from git
+corpus/*.sqlite
+corpus/SHA256SUMS
+corpus/release/
+# engine transcripts and local-only files
+state/runs/raw/
+state/runs/ui_run.log
+state/judge/raw/
+state/judge/pass1_phantom_sandbox/runs/
+state/verifier_bench/taskA_KEY_local.json
+__pycache__/
+.DS_Store

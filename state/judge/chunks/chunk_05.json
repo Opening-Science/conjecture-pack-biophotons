@@ -1,0 +1,840 @@
+[
+ {
+  "candidate_id": "C033",
+  "seed_id": "Q4",
+  "statement": "Under properly background-free dark conditions, the transmission- and detector-weighted fraction of extracranially detected photons that originate below the skull is below 5% for any photomultiplier-based head measurement, so head UPE recorded with bialkali/multialkali PMTs is scalp-dominated rather than brain-dominated.",
+  "scope": {
+   "population": "Healthy adults, n>=20, stratified by Fitzpatrick skin type and including a shaved-scalp/bald stratum; plus a tissue-equivalent head phantom containing a calibrated sub-skull emitter of known spectrum and rate.",
+   "condition": ">=4 h continuous dark adaptation in a light-tight, temperature-controlled chamber; simultaneous two-band photon counting through one shared collection optic over occipital and temporal scalp; per-subject scalp+skull transmission T(lambda) measured 450-900 nm on the same head.",
+   "comparator": "Matched non-cranial skin site (volar forearm) on the same subject at matched skin temperature and cutaneous perfusion, measured in the same session with the same optic; plus the phantom arm in which the sub-skull source rate is known.",
+   "outcome": "Two-band count ratio R = N(700-900 nm)/N(400-600 nm) at head vs skin site, and the inferred sub-skull-origin fraction beta obtained by fitting head counts with measured T(lambda) and detector response Q(lambda)."
+  },
+  "null_hypothesis": "beta has a 95% CI whose lower bound exceeds 0.05, i.e. the head shows a long-wavelength excess over matched skin that a scalp-only emission model with the measured T(lambda) and Q(lambda) cannot reproduce; the hypothesis is then dead and extracranial brain detection is real at PMT sensitivity.",
+  "estimand": "beta = inferred sub-skull-origin fraction of the head count rate, with 95% CI; pre-registered decision threshold beta < 0.05. Secondary estimand: R_head - R_forearm after temperature and perfusion adjustment.",
+  "proposed_experiment": "Build a two-channel head photon counter sharing one collection optic and one aperture, one channel filtered 400-600 nm and one 700-900 nm, inside a light-tight chamber with continuously logged dark rate. For each subject: (1) log ambient light dose for 24 h before the session; (2) dark-adapt >=4 h; (3) record head and volar-forearm sites in counterbalanced order with skin thermography and laser-Doppler perfusion recorded at the detector footprint; (4) measure that subject's scalp+skull transmission 450-900 nm in situ with a calibrated low-power source and a reference detector. Fit the head two-band counts with a two-compartment model (scalp layer, sub-skull layer) using the measured T(lambda) and the manufacturer-plus-calibration Q(lambda) to recover beta. Validate the whole inference chain on the phantom, where the sub-skull emitter rate is known and beta has a ground truth. Report eta for the instrument as a mandatory instrument specification.",
+  "rationale": [
+   {
+    "step": "Salari et al. measured head UPE under properly dark conditions at 40 counts/s against a 22 counts/s dark rate (net 18 counts/s, flux approx. 41 photons cm^-2 s^-1) and argue that the far larger signals in the extracranial 'brain UPE' literature are explained by background light contamination; they further argue that <600 nm is strongly attenuated by scalp and skull while longer wavelengths fall largely outside effective PMT sensitivity.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W7168813583"
+    ]
+   },
+   {
+    "step": "The extracranial brain-UPE program is being standardised into a measurement modality (photoencephalography), with a published measurement/analysis protocol and a methodological-and-ethical framing paper, so the provenance question is load-bearing for a whole emerging readout rather than for one disputed dataset.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W4407397928",
+     "W4417010158",
+     "W4417459026"
+    ]
+   },
+   {
+    "step": "Direct measurements on brain tissue place the emission mostly below 700 nm: hypoxic rat brain chemiluminescence spectra show peaks at 480, 520-530, 570, 620-640 and 680-700 nm; rat hippocampal slices emit at the order of 1e-19 W/mm2 detected with a silicon avalanche photodiode; and in vivo rat brain imaging detects emission in the visible band.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2018469635",
+     "W2016452924",
+     "W2160984073",
+     "W2086348119"
+    ]
+   },
+   {
+    "step": "Human skin is itself a strong and spectrally resolvable UPE source across roughly 400-700 nm, measurable with EMCCD plus liquid-crystal tunable filter, with the 500-600 nm region attributed in part to melanin; this is the competing scalp source that any head measurement must exclude.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2797018767",
+     "W4389669809"
+    ]
+   },
+   {
+    "step": "Define the detection-efficiency integral eta = INT E(lambda) T(lambda) Q(lambda) d(lambda) / INT E(lambda) d(lambda), where E is the source emission spectrum, T the scalp+skull transmission and Q the detector spectral response. From the cited spectra, E for brain tissue is concentrated at 480-700 nm; T is smallest exactly over that interval and rises toward the near infrared; Q for bialkali/multialkali photocathodes falls steeply beyond about 650 nm. The product is therefore suppressed in both halves of the spectrum, so eta for a sub-skull source is smaller than eta for a scalp source (where T is approximately 1 for the outermost emitting layer) by orders of magnitude. Total head intensity therefore cannot discriminate the two sources, whereas the two-band ratio R can, because a sub-skull source is filtered by T(lambda) and a scalp source is not. This is the photon-budget calculation the field says must precede data collection.",
+    "justification_type": "computation"
+   },
+   {
+    "step": "The seed brief states that the field's own settlement criteria for this question are tissue-optics-informed detection in bands that actually transmit, photon-budget modelling before data collection, and Salari-style artifact controls; eta and beta are those criteria written as numbers.",
+    "justification_type": "given"
+   }
+  ],
+  "cited_works": [
+   {
+    "work_id": "W7168813583",
+    "title": "Revisiting Claims of Extracranial Biophoton Detection from the Human Brain",
+    "year": 2026,
+    "type": "article",
+    "abstract": "Ultraweak photon emission, also referred to as biological autoluminescence or biophoton emission, is the spontaneous emission of extremely low levels of light from a broad range of biological systems. Recent studies have reported that UPE measured extracranially can serve as a potential noninvasive biomarker of brain activity. Here, we show that this interpretation suffers from serious problems. We show that, when observed under properly dark conditions, the UPE from the head is much weaker than what is reported in certain papers on \"brain UPE\" from human heads. We also show that the large signals reported in these studies can be explained by background light contamination. Furthermore, photons with wavelengths <600 nm are strongly attenuated by scalp and skull tissues, and longer wavelengths fall largely outside the effective spectral sensitivity of the photomultiplier tubes (PMTs) used. As a consequence, even if UPE from the head is detected under properly background-free conditions, it is likely to be dominated by emission from the scalp rather than from the brain, certainly as long as PMTs are used. Our results emphasize the importance of careful experimental design to make genuine progress on this important question."
+   },
+   {
+    "work_id": "W4407397928",
+    "title": "Exploring ultraweak photon emissions as optical markers of brain activity",
+    "year": 2025,
+    "type": "article",
+    "abstract": "Brains are highly metabolic organs that emit ultraweak photon emissions (UPEs), which predict oxidative stress, aging, and neurodegeneration. UPEs are triggered by neurotransmitters and biophysical stimuli, but they are also generated by cells at rest and can be passively recorded using modern photodetectors in dark environments. UPEs play a role in cell-to-cell communication, and neural cells might even have waveguiding properties that support optical channels. However, it remains uncertain whether passive light emissions can be used to infer brain states as electric and magnetic fields do for encephalography. We present evidence that brain UPEs differ from background light in spectral and entropic properties, respond dynamically to tasks and stimulation, and correlate moderately with brain rhythms. We discuss these findings in the context of other neuroimaging methods, the potential of new measurement parameters, the limitations of light-based readouts, and the possibility of developing a platform to readout functional brain states: photoencephalography."
+   },
+   {
+    "work_id": "W4417010158",
+    "title": "Protocol for the measurement and analysis of human photoencephalographic signals",
+    "year": 2025,
+    "type": "article",
+    "abstract": ". [NOTE: the corpus holds no usable abstract for this work. Judge its citation step on the title alone and mark the step unverifiable rather than false.]"
+   },
+   {
+    "work_id": "W4417459026",
+    "title": "Photoencephalography as a non-electrical modality for investigating brain function: methodological and ethical considerations",
+    "year": 2025,
+    "type": "article",
+    "abstract": " [NOTE: the corpus holds no usable abstract for this work. Judge its citation step on the title alone and mark the step unverifiable rather than false.]"
+   },
+   {
+    "work_id": "W2018469635",
+    "title": "Chemiluminescence in hypoxic brain--the first report. Correlation between energy metabolism and free radical reaction.",
+    "year": 1984,
+    "type": "article",
+    "abstract": "The possibility that cerebral ischemia or cerebral hypoxia may initiate a series of free radical reactions in brain tissue lipid constituents was explored by measuring sequential changes in chemiluminescence values and energy metabolism during brain hypoxia in the rat. Brain hypoxia was induced by means of arterial hypoxemia (PaO2 17-22 mmHg), normocapnia (PaCO2 28-38 mmHg) and normotension (MABP 100-140 mmHg). To obtain lowered PaO2, 4% O2--96% N2 mixed gas was used. Analysis of the chemiluminescence spectra for the purpose of luminous mechanism investigation was again attempted. No peroxidation occurred in the pre-hypoxic state since there were no photon counts. Chemiluminescence began to rise in the hypoxic state and remained at a high value in the post-hypoxic state. Specifically in the hypoxic state, the 3 min period showed 231 +/- 35 counts/10 sec X g (n = 5) and the 5 min period showed 154 +/- 62 (n = 19) counts/10 sec X g. In the post-hypoxic state, the 5 min period showed 217 +/- 79 counts/10 sec X g (n = 9) and the 30 min period showed a decrease similar to the pre-hypoxic state. The chemiluminescence spectroanalysis showed five peaks in wavelength at 480 nm, 520-530 nm, 570 nm, 620-640 nm and 680-700 nm. Sequential changes in energy metabolism revealed that hypoxia caused marked brain lactic acidosis, an increase in both ADP and pyruvate, and a fall in glucose. However, all metabolites recovered at 30 min in the post-hypoxic state, which suggests this was reversible brain hypoxia. Sequential changes in chemiluminescence values and energy metabolism imply the occu"
+   },
+   {
+    "work_id": "W2016452924",
+    "title": "Ultraweak biochemiluminescence detected from rat hippocampal slices",
+    "year": 1995,
+    "type": "article",
+    "abstract": "From any kind of living organisms, very weak spontaneous light emission without excitation light (ultraweak biochemiluminescence) is observed. We succeeded to detect ultraweak biochemiluminescence from rat hippocampal slice preparation at the order of 10(-19) W/mm2 by a single-photon detector using a silicon avalanche photodiode. It was shown that depolarization induced by the high concentration of potassium caused an increase in the intensity of biochemiluminescence from the rat hippocampal slice, and that suppression of neural activity by tetrodotoxin elicited a decrease of its luminescence. These findings suggest that correlation between the intensity of ultraweak biochemiluminescence and neural metabolic activity."
+   },
+   {
+    "work_id": "W2160984073",
+    "title": "In vivo imaging of spontaneous ultraweak photon emission from a rat’s brain correlated with cerebral energy metabolism and oxidative stress",
+    "year": 1999,
+    "type": "article",
+    "abstract": " [NOTE: the corpus holds no usable abstract for this work. Judge its citation step on the title alone and mark the step unverifiable rather than false.]"
+   },
+   {
+    "work_id": "W2086348119",
+    "title": "Two-dimensional photon counting imaging and spatiotemporal characterization of ultraweak photon emission from a rat’s brain in vivo",
+    "year": 1999,
+    "type": "article",
+    "abstract": " [NOTE: the corpus holds no usable abstract for this work. Judge its citation step on the title alone and mark the step unverifiable rather than false.]"
+   },
+   {
+    "work_id": "W2797018767",
+    "title": "Measuring the Human Ultra-Weak Photon Emission Distribution Using an Electron-Multiplying, Charge-Coupled Device as a Sensor",
+    "year": 2018,
+    "type": "article",
+    "abstract": "Ultra-weak photon emission (UPE) is the spontaneous emission from living systems mainly attributed to oxidation reactions, in which reactive oxygen species (ROS) may play a major role. Given the capability of the next-generation electron-multiplying CCD (EMCCD) sensors and the easy use of liquid crystal tunable filters (LCTF), the aim of this work was to explore the potential of a simple UPE spectrometer to measure the UPE from a human hand. Thus, an easy setup was configured based on a dark box for inserting the subject’s hand prior to LCTF as a monochromator and an EMCCD sensor working in the full vertical binning mode (FVB) as a spectra detector. Under controlled conditions, both dark signals and left hand UPE were acquired by registering the UPE intensity at different selected wavelengths (400, 450, 500, 550, 600, 650, and 700 nm) during a period of 10 min each. Then, spurious signals were filtered out by ignoring the pixels whose values were clearly outside of the Gaussian distribution, and the dark signal was subtracted from the subject hand signal. The stepped spectrum with a peak of approximately 880 photons at 500 nm had a shape that agreed somewhat with previous reports, and agrees with previous UPE research that reported UPE from 420 to 570 nm, or 260 to 800 nm, with a range from 1 to 1000 photons s−1 cm−2. Obtaining the spectral distribution instead of the total intensity of the UPE represents a step forward in this field, as it may provide extra information about a subject’s personal states and relationship with ROS. A new generation of CCD sensors with lower d"
+   },
+   {
+    "work_id": "W4389669809",
+    "title": "Ultra-Weak Photon Emission from Biological Systems",
+    "year": 2023,
+    "type": "book",
+    "abstract": "This book covers the key aspects of ultra-weak photon emission, from mechanisms to applications. This book provides an excellent summary of the UPE field."
+   }
+  ]
+ },
+ {
+  "candidate_id": "C034",
+  "seed_id": "Q4",
+  "statement": "In acute mouse coronal brain slices, at least half of the glutamate-evoked ultraweak photon emission increment survives complete action-potential blockade with tetrodotoxin while mitochondrial electron-transport inhibition abolishes it, establishing that evoked 'brain biophotonic activity' is a redox/metabolic readout rather than a spike-borne signalling event.",
+  "scope": {
+   "population": "Acute 400 um coronal brain slices from adult C57BL/6 mice, n>=12 slices per arm from >=6 animals, slices randomised across arms and imaged one per chamber run.",
+   "condition": "50 mM glutamate perfusion for >=90 min under four arms: (i) control aCSF; (ii) 1 uM TTX with spike blockade verified by a paired field-potential electrode; (iii) sodium azide plus oxygen-glucose deprivation; (iv) TTX plus azide/OGD.",
+   "comparator": "Vehicle-perfused slices from the same animals, and each slice's own 30 min pre-glutamate baseline.",
+   "outcome": "Integrated photon counts over 400-900 nm across the 90-200 min plateau, normalised to that slice's pre-glutamate baseline; paired per-slice TBARS/malondialdehyde and total thiol assays on the same tissue."
+  },
+  "null_hypothesis": "TTX removes more than half of the glutamate-evoked increment (upper 95% bound of the preserved fraction f falls below 0.5) while metabolic substrate is held constant, which would make the evoked emission spike-dependent and would license reading brain UPE as an activity/communication signal rather than an oxidation readout.",
+  "estimand": "f = (evoked increment under 1 uM TTX) / (evoked increment under control aCSF), with 95% CI; claim: lower CI bound of f >= 0.5, with the azide/OGD arm increment CI including 0. Secondary: partial R2 of a spike-rate regressor after per-slice lipid-peroxidation markers are entered first.",
+  "proposed_experiment": "Run the four-arm slice protocol on an ultraweak biophoton imaging system, integrating 400-900 nm with no filter (plus three bandpass channels for a spectral secondary), with a paired extracellular field-potential electrode in every slice to certify that TTX has abolished evoked field potentials and that azide/OGD has not silenced the slice through a different route. Immediately after imaging, assay the same slice for TBARS/MDA and total thiol. Fit normalised photon increment on (lipid-peroxidation marker, thiol, spike-rate proxy) and report both f and the partial R2 of the spike-rate term entered last. Pre-register f >= 0.5 and the ordering of regressors.",
+  "rationale": [
+   {
+    "step": "Tang and Dai report that the glutamate-evoked biophotonic increase in mouse brain slices is significantly blocked by oxygen-glucose deprivation together with a cytochrome c oxidase inhibitor (sodium azide), but only partly by an action-potential inhibitor (TTX), by an anaesthetic (procaine), or by removal of intracellular and extracellular Ca2+.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W1977345460"
+    ]
+   },
+   {
+    "step": "The competing result the estimand must adjudicate: in rat hippocampal slices, potassium depolarisation increased and TTX decreased ultraweak biochemiluminescence, which is the strongest existing case for spike-linked brain emission.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2016452924"
+    ]
+   },
+   {
+    "step": "Activity-dependent neural tissue oxidation has been reported to emit intrinsic ultraweak photons, which ties evoked brain emission to oxidation rather than to spiking as such; in vivo rat brain UPE likewise correlates with cerebral energy metabolism and oxidative stress.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W1977844234",
+     "W2160984073"
+    ]
+   },
+   {
+    "step": "In isolated rat brains, ketamine increased UPE together with lipid peroxidation and antioxidant enzyme activity while reducing thiols, whereas thiopental decreased UPE, oxidative markers and enzyme activity while increasing thiols; UPE correlated negatively with thiol level and positively with oxidative markers.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W4408688794",
+     "W4401804275"
+    ]
+   },
+   {
+    "step": "Both anaesthetics abolish responsiveness, yet they move UPE in opposite directions, so any model in which whole-brain UPE intensity is a monotone function of neural activity or of consciousness is already falsified at the whole-organ level; the surviving candidate is that UPE tracks oxidative load. The slice design above tests that candidate directly by removing spikes at constant oxygen and glucose supply (arm ii) and by removing oxidative turnover at preserved anatomy (arm iii). If f >= 0.5 while arm iii is null, the emission is generated downstream of metabolism and upstream of spiking; if f < 0.5, it is not.",
+    "justification_type": "computation"
+   },
+   {
+    "step": "The register's H6 asserts that intracranial UPE co-varies with neural activity beyond global metabolic rate, but names no manipulation that separates spikes from oxidation, and H4a asserts ROS dominance without a brain-specific test; this hypothesis is the arm that discriminates them.",
+    "justification_type": "given"
+   }
+  ],
+  "cited_works": [
+   {
+    "work_id": "W1977345460",
+    "title": "Spatiotemporal Imaging of Glutamate-Induced Biophotonic Activities and Transmission in Neural Circuits",
+    "year": 2014,
+    "type": "article",
+    "abstract": "The processing of neural information in neural circuits plays key roles in neural functions. Biophotons, also called ultra-weak photon emissions (UPE), may play potential roles in neural signal transmission, contributing to the understanding of the high functions of nervous system such as vision, learning and memory, cognition and consciousness. However, the experimental analysis of biophotonic activities (emissions) in neural circuits has been hampered due to technical limitations. Here by developing and optimizing an in vitro biophoton imaging method, we characterize the spatiotemporal biophotonic activities and transmission in mouse brain slices. We show that the long-lasting application of glutamate to coronal brain slices produces a gradual and significant increase of biophotonic activities and achieves the maximal effect within approximately 90 min, which then lasts for a relatively long time (>200 min). The initiation and/or maintenance of biophotonic activities by glutamate can be significantly blocked by oxygen and glucose deprivation, together with the application of a cytochrome c oxidase inhibitor (sodium azide), but only partly by an action potential inhibitor (TTX), an anesthetic (procaine), or the removal of intracellular and extracellular Ca(2+). We also show that the detected biophotonic activities in the corpus callosum and thalamus in sagittal brain slices mostly originate from axons or axonal terminals of cortical projection neurons, and that the hyperphosphorylation of microtubule-associated protein tau leads to a significant decrease of biophotonic act"
+   },
+   {
+    "work_id": "W2016452924",
+    "title": "Ultraweak biochemiluminescence detected from rat hippocampal slices",
+    "year": 1995,
+    "type": "article",
+    "abstract": "From any kind of living organisms, very weak spontaneous light emission without excitation light (ultraweak biochemiluminescence) is observed. We succeeded to detect ultraweak biochemiluminescence from rat hippocampal slice preparation at the order of 10(-19) W/mm2 by a single-photon detector using a silicon avalanche photodiode. It was shown that depolarization induced by the high concentration of potassium caused an increase in the intensity of biochemiluminescence from the rat hippocampal slice, and that suppression of neural activity by tetrodotoxin elicited a decrease of its luminescence. These findings suggest that correlation between the intensity of ultraweak biochemiluminescence and neural metabolic activity."
+   },
+   {
+    "work_id": "W1977844234",
+    "title": "Activity-Dependent Neural Tissue Oxidation Emits Intrinsic Ultraweak Photons",
+    "year": 2001,
+    "type": "article",
+    "abstract": " [NOTE: the corpus holds no usable abstract for this work. Judge its citation step on the title alone and mark the step unverifiable rather than false.]"
+   },
+   {
+    "work_id": "W2160984073",
+    "title": "In vivo imaging of spontaneous ultraweak photon emission from a rat’s brain correlated with cerebral energy metabolism and oxidative stress",
+    "year": 1999,
+    "type": "article",
+    "abstract": " [NOTE: the corpus holds no usable abstract for this work. Judge its citation step on the title alone and mark the step unverifiable rather than false.]"
+   },
+   {
+    "work_id": "W4408688794",
+    "title": "The impact of ketamine and thiopental anesthesia on ultraweak photon emission and oxidative-nitrosative stress in rat brains",
+    "year": 2025,
+    "type": "article",
+    "abstract": "Anesthetics such as ketamine and thiopental, commonly used for inducing unconsciousness, have distinct effects on neuronal activity, metabolism, and cardiovascular and respiratory systems. Ketamine increases heart rate and blood pressure while preserving respiratory function, whereas thiopental decreases both and can cause respiratory depression. This study investigates the impact of ketamine (100 mg/kg) and thiopental (45 mg/kg) on ultraweak photon emission (UPE), oxidative-nitrosative stress, and antioxidant capacity in isolated rat brains. To our knowledge, no previous study has investigated and compared UPE in the presence and absence of anesthesia. Here, we compare the effects of ketamine and thiopental anesthetics with each other and with a non-anesthetized control group. Ketamine increased UPE, lipid peroxidation, and antioxidant enzyme activity while reducing thiol levels. Conversely, thiopental decreased UPE, oxidative markers, and antioxidant enzyme activity, while increasing thiol levels. UPE was negatively correlated with thiol levels and positively correlated with oxidative stress markers. These findings suggest that the contrasting effects of ketamine and thiopental on UPE are linked to their differing impacts on brain oxidative stress and antioxidant capacity. This research suggests a potential method to monitor brain oxidative stress via UPE during anesthesia, and opens up new ways for understanding and managing anesthetic effects."
+   },
+   {
+    "work_id": "W4401804275",
+    "title": "The Impact of Ketamine and Thiopental Anesthesia on Ultraweak Photon Emission and Oxidative-Nitrosative Stress in Rat Brains",
+    "year": 2024,
+    "type": "preprint",
+    "abstract": "Anesthetics such as ketamine and thiopental, commonly used for inducing unconsciousness, have distinct effects on neuronal activity, metabolism, and cardiovascular and respiratory systems. Ketamine increases heart rate and blood pressure while preserving respiratory function, whereas thiopental decreases both and can cause respiratory depression. This study investigates the impact of ketamine (100 mg/kg) and thiopental (45 mg/kg) on ultraweak photon emission (UPE), oxidative-nitrosative stress, and antioxidant capacity in isolated rat brains. To our knowledge, no previous study has investigated and compared UPE in the presence and absence of anesthesia. Here, we compare the effects of ketamine and thiopental anesthetics with each other and with a non-anesthetized control group. Ketamine increased UPE, lipid peroxidation, and antioxidant enzyme activity while reducing thiol levels. Conversely, thiopental decreased UPE, oxidative markers, and antioxidant enzyme activity, while increasing thiol levels. UPE was negatively correlated with thiol levels and positively correlated with oxidative stress markers. These findings suggest that the contrasting effects of ketamine and thiopental on UPE are linked to their differing impacts on brain oxidative stress and antioxidant capacity. This research suggests a potential method to monitor brain oxidative stress via UPE during anesthesia, and opens up new ways for understanding and managing anesthetic effects."
+   },
+   {
+    "work_id": "W2956127065",
+    "title": "The Characteristics of Biophotonic Activity Induced by Aspartate May Be Related to the Evolution of Species",
+    "year": 2019,
+    "type": "article",
+    "abstract": "Glutamate, the most abundant excitatory neurotransmitter in the nervous system, can induce biophotonic activity and transmission in mouse brain slices. As a signaling molecule, aspartate is not considered to be an independent neurotransmitter during the long evolution process, which may be just a co-transmitter or neuromodulator. In the view of structure and physiological similarities of aspartate and glutamate, as well as some differences between them, we attempted to investigate whether aspartate could also induce biophotonic activity in mouse brain slices and its effect characteristics. The ultraweak biophoton imaging system (UBIS) was used to carry out a real-time observation of biophoton activity induced by aspartate in mouse brain slices. It was found that the biophotonic emissions induced by aspartate at different concentrations (12.5 mM, 25 mM and 50 mM) presented concentration-dependent effects and 50 mM aspartate could obviously induce biophoton activities with the characteristic changes of initiation, maintenance, washing and reapplication, which were also different from that induced by 50 mM glutamate as reported before. Considering the species differences in excitatory neurotransmitters, these findings indicate that aspartate-induced biophotonic activity may imply the evolutionary differences in the animal brains."
+   }
+  ]
+ },
+ {
+  "candidate_id": "C035",
+  "seed_id": "Q4",
+  "statement": "The species-ordered spectral redshift of glutamate-evoked brain biophoton emission (bullfrog to mouse to chicken to pig to monkey to human, reported to reach about 865 nm in human) disappears once each slice's own optical transmission function and the detector's spectral response are divided out, leaving a corrected human-minus-mouse peak-wavelength difference below 30 nm.",
+  "scope": {
+   "population": "Identically prepared 400 um coronal brain slices from mouse, pig and human (surgical resection tissue or <6 h post-mortem), >=8 slices per species, matched for thickness, region and time-from-harvest.",
+   "condition": "50 mM glutamate-evoked plateau emission recorded through a calibrated imaging spectrograph or LCTF over 400-900 nm, with each slice's transmission T(lambda) measured over 450-900 nm on the same slice in the same mount immediately before and after the emission recording, and with a calibrated known-spectrum microsphere emitter embedded at mid-depth as an in-situ transfer standard.",
+   "comparator": "The uncorrected (as-published) spectral estimate computed from the identical raw recordings, so that correction is the only thing that differs between the two estimates.",
+   "outcome": "Corrected peak wavelength lambda_peak per slice and the human-minus-mouse contrast, with the same contrast reported uncorrected."
+  },
+  "null_hypothesis": "The transmission- and response-corrected human-minus-mouse lambda_peak difference remains >=50 nm with a 95% CI excluding 30 nm, i.e. the redshift is a property of the emitting chemistry and not of the tissue's optical window; the in-situ transfer standard is recovered at its true peak in every species, ruling out a correction failure.",
+  "estimand": "Delta lambda_peak(human - mouse) after transmission and detector-response correction, with 95% CI; claim Delta lambda_peak < 30 nm. Secondary: the same corrected contrast applied to the reported Alzheimer/vascular-dementia blueshift.",
+  "proposed_experiment": "For every slice, in one mount and one session: (1) measure T(lambda) 450-900 nm with a broadband calibrated source and the same spectrograph; (2) record the glutamate-evoked plateau emission spectrum M(lambda); (3) re-measure T(lambda); (4) record the embedded transfer-standard emitter through the same slice. Compute E(lambda) = M(lambda) / (T(lambda) Q(lambda)), with Q(lambda) from a NIST-traceable lamp. Report lambda_peak per slice both corrected and uncorrected, and report the transfer standard's recovered peak as the correction's own error bar. Apply the identical pipeline to the Alzheimer/vascular-dementia blueshift preparation.",
+  "rationale": [
+   {
+    "step": "The source claim: combining an ultraweak biophoton imaging system with a biophoton spectral analysis device, glutamate-induced biophotonic activities in brain slices are reported to redshift across species up to about 865 nm in human, and this is offered as a biophysical basis for human intelligence.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2483916403"
+    ]
+   },
+   {
+    "step": "The claim was contested and defended in the same journal without the discriminating measurement being made, so the spectral estimate has never been separated from the optics of the preparation.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2520297174"
+    ]
+   },
+   {
+    "step": "The same imaging platform now reports reduced biophotonic activity and a spectral blueshift in Alzheimer's disease and vascular dementia models, partially reversed by a GluN2B antagonist, so the platform's spectral outputs are already being used as disease markers and their calibration is load-bearing beyond the intelligence claim.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W4386377286"
+    ]
+   },
+   {
+    "step": "Wavelength-dependent attenuation by intervening tissue is exactly the mechanism used to argue that measured head spectra are shaped by tissue rather than by the source, with transmission through human skin, skull and brain rising across 450-900 nm; the same physics applies inside a slice.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W7168813583"
+    ]
+   },
+   {
+    "step": "The confound has a worked precedent in another kingdom: in vitro lipid oxidation luminesces across roughly 450-850 nm, but the in planta signal from leaves and roots appears only above about 640 nm, peaking at 700-750 nm, and is independent of chlorophyll. Identical chemistry therefore reads as red-shifted once it is measured through tissue.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W4283824773"
+    ]
+   },
+   {
+    "step": "The measured spectrum is M(lambda) = E(lambda) x T(lambda) x Q(lambda). Species differ systematically in the absorbers and scatterers of a slice (myelin fraction, residual haemoglobin, lipid content), so T(lambda) differs between species; because T rises monotonically toward the near infrared over 450-900 nm, any species with larger short-wavelength attenuation yields a red-shifted M(lambda) at fixed intrinsic E(lambda). Recovering E(lambda) therefore requires measuring T(lambda) on the same slice. The published protocol reports M(lambda) and interprets it as E(lambda), which is precisely the uncorrected quantity. The embedded known-spectrum emitter makes the correction itself auditable: if correction cannot recover a known spectrum through human slice tissue, no conclusion about E(lambda) is licensed in either direction.",
+    "justification_type": "computation"
+   },
+   {
+    "step": "Spectrally resolved UPE measurement with a liquid-crystal tunable filter in front of a cooled EMCCD, reporting per-band photon counts against a subtracted dark signal, is already demonstrated on human tissue, so the corrected measurement is within current instrument reach rather than aspirational.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2797018767"
+    ]
+   }
+  ],
+  "cited_works": [
+   {
+    "work_id": "W2483916403",
+    "title": "Human high intelligence is involved in spectral redshift of biophotonic activities in the brain",
+    "year": 2016,
+    "type": "article",
+    "abstract": "Human beings hold higher intelligence than other animals on Earth; however, it is still unclear which brain properties might explain the underlying mechanisms. The brain is a major energy-consuming organ compared with other organs. Neural signal communications and information processing in neural circuits play an important role in the realization of various neural functions, whereas improvement in cognitive function is driven by the need for more effective communication that requires less energy. Combining the ultraweak biophoton imaging system (UBIS) with the biophoton spectral analysis device (BSAD), we found that glutamate-induced biophotonic activities and transmission in the brain, which has recently been demonstrated as a novel neural signal communication mechanism, present a spectral redshift from animals (in order of bullfrog, mouse, chicken, pig, and monkey) to humans, even up to a near-infrared wavelength (∼865 nm) in the human brain. This brain property may be a key biophysical basis for explaining high intelligence in humans because biophoton spectral redshift could be a more economical and effective measure of biophotonic signal communications and information processing in the human brain."
+   },
+   {
+    "work_id": "W2520297174",
+    "title": "Reply to Salari et al.: Toward understanding the deep mechanisms regarding the biophotons related to human intelligence",
+    "year": 2016,
+    "type": "letter",
+    "abstract": "Proceedings of the National Academy of Sciences (PNAS), a peer reviewed journal of the National Academy of Sciences (NAS) - an authoritative source of high-impact, original research that broadly spans the biological, physical, and social sciences."
+   },
+   {
+    "work_id": "W4386377286",
+    "title": "Reduced biophotonic activities and spectral blueshift in Alzheimer’s disease and vascular dementia models with cognitive impairment",
+    "year": 2023,
+    "type": "article",
+    "abstract": "Background: Although clinically, Alzheimer's disease (AD) and vascular dementia (VaD) are the two major types of dementia, it is unclear whether the biophotonic activities associated with cognitive impairments in these diseases share common pathological features. Methods: We used the ultraweak biophoton imaging system (UBIS) and synaptosomes prepared by modified percoll method to directly evaluate the functional changes in synapses and neural circuits in AD and VaD model animals. Results: We found that biophotonic activities induced by glutamate were significantly reduced and spectral blueshifted in synaptosomes and brain slices. These changes could be partially reversed by pre-perfusion of the ifenprodil, a specific antagonist of the GluN2B subunit of N-methyl-D-aspartate receptors (NMDARs). Conclusion: Our findings suggest that AD and VaD pathology present similar but complex changes in biophotonic activities and transmission at synapses and neural circuits, implying that communications and information processing of biophotonic signals in the brain are crucial for advanced cognitive functions."
+   },
+   {
+    "work_id": "W7168813583",
+    "title": "Revisiting Claims of Extracranial Biophoton Detection from the Human Brain",
+    "year": 2026,
+    "type": "article",
+    "abstract": "Ultraweak photon emission, also referred to as biological autoluminescence or biophoton emission, is the spontaneous emission of extremely low levels of light from a broad range of biological systems. Recent studies have reported that UPE measured extracranially can serve as a potential noninvasive biomarker of brain activity. Here, we show that this interpretation suffers from serious problems. We show that, when observed under properly dark conditions, the UPE from the head is much weaker than what is reported in certain papers on \"brain UPE\" from human heads. We also show that the large signals reported in these studies can be explained by background light contamination. Furthermore, photons with wavelengths <600 nm are strongly attenuated by scalp and skull tissues, and longer wavelengths fall largely outside the effective spectral sensitivity of the photomultiplier tubes (PMTs) used. As a consequence, even if UPE from the head is detected under properly background-free conditions, it is likely to be dominated by emission from the scalp rather than from the brain, certainly as long as PMTs are used. Our results emphasize the importance of careful experimental design to make genuine progress on this important question."
+   },
+   {
+    "work_id": "W4283824773",
+    "title": "Imaging of Lipid Peroxidation-Associated Chemiluminescence in Plants: Spectral Features, Regulation and Origin of the Signal in Leaves and Roots",
+    "year": 2022,
+    "type": "article",
+    "abstract": "Plants, like most living organisms, spontaneously emit photons of visible light. This ultraweak endogenous chemiluminescence is linked to the oxidative metabolism, with lipid peroxidation constituting a major source of photons in plants. We imaged this signal using a very sensitive cooled CCD camera and analysed its spectral characteristics using bandpass interference filters. In vitro oxidation of lipids induced luminescence throughout the visible spectrum (450−850 nm). However, luminescence in the red spectral domain (>640 nm) occurred first, then declined in parallel with the appearance of the emission in the blue-green (<600 nm). This temporal separation suggests that the chemical species emitting in the blue-green are secondary products, possibly deriving from the red light-emitting species. This conversion did not seem to occur in planta because spontaneous chemiluminescence from plant tissues (leaves, roots) occurred only in the red/far-red light domain (>640 nm), peaking at 700−750 nm. The spectrum of plant chemiluminescence was independent of chlorophyll. The in vivo signal was modulated by cellular detoxification mechanisms and by changes in the concentration of singlet oxygen in the tissues, although the singlet oxygen luminescence bands did not appear as major bands in the spectra. Our results indicate that the intensity of endogenous chemiluminescence from plant tissues is determined by the balance between the formation of luminescent species through secondary reactions involving lipid peroxide-derived intermediates, including singlet oxygen, and their eliminat"
+   },
+   {
+    "work_id": "W2797018767",
+    "title": "Measuring the Human Ultra-Weak Photon Emission Distribution Using an Electron-Multiplying, Charge-Coupled Device as a Sensor",
+    "year": 2018,
+    "type": "article",
+    "abstract": "Ultra-weak photon emission (UPE) is the spontaneous emission from living systems mainly attributed to oxidation reactions, in which reactive oxygen species (ROS) may play a major role. Given the capability of the next-generation electron-multiplying CCD (EMCCD) sensors and the easy use of liquid crystal tunable filters (LCTF), the aim of this work was to explore the potential of a simple UPE spectrometer to measure the UPE from a human hand. Thus, an easy setup was configured based on a dark box for inserting the subject’s hand prior to LCTF as a monochromator and an EMCCD sensor working in the full vertical binning mode (FVB) as a spectra detector. Under controlled conditions, both dark signals and left hand UPE were acquired by registering the UPE intensity at different selected wavelengths (400, 450, 500, 550, 600, 650, and 700 nm) during a period of 10 min each. Then, spurious signals were filtered out by ignoring the pixels whose values were clearly outside of the Gaussian distribution, and the dark signal was subtracted from the subject hand signal. The stepped spectrum with a peak of approximately 880 photons at 500 nm had a shape that agreed somewhat with previous reports, and agrees with previous UPE research that reported UPE from 420 to 570 nm, or 260 to 800 nm, with a range from 1 to 1000 photons s−1 cm−2. Obtaining the spectral distribution instead of the total intensity of the UPE represents a step forward in this field, as it may provide extra information about a subject’s personal states and relationship with ROS. A new generation of CCD sensors with lower d"
+   },
+   {
+    "work_id": "W1977345460",
+    "title": "Spatiotemporal Imaging of Glutamate-Induced Biophotonic Activities and Transmission in Neural Circuits",
+    "year": 2014,
+    "type": "article",
+    "abstract": "The processing of neural information in neural circuits plays key roles in neural functions. Biophotons, also called ultra-weak photon emissions (UPE), may play potential roles in neural signal transmission, contributing to the understanding of the high functions of nervous system such as vision, learning and memory, cognition and consciousness. However, the experimental analysis of biophotonic activities (emissions) in neural circuits has been hampered due to technical limitations. Here by developing and optimizing an in vitro biophoton imaging method, we characterize the spatiotemporal biophotonic activities and transmission in mouse brain slices. We show that the long-lasting application of glutamate to coronal brain slices produces a gradual and significant increase of biophotonic activities and achieves the maximal effect within approximately 90 min, which then lasts for a relatively long time (>200 min). The initiation and/or maintenance of biophotonic activities by glutamate can be significantly blocked by oxygen and glucose deprivation, together with the application of a cytochrome c oxidase inhibitor (sodium azide), but only partly by an action potential inhibitor (TTX), an anesthetic (procaine), or the removal of intracellular and extracellular Ca(2+). We also show that the detected biophotonic activities in the corpus callosum and thalamus in sagittal brain slices mostly originate from axons or axonal terminals of cortical projection neurons, and that the hyperphosphorylation of microtubule-associated protein tau leads to a significant decrease of biophotonic act"
+   },
+   {
+    "work_id": "W2956127065",
+    "title": "The Characteristics of Biophotonic Activity Induced by Aspartate May Be Related to the Evolution of Species",
+    "year": 2019,
+    "type": "article",
+    "abstract": "Glutamate, the most abundant excitatory neurotransmitter in the nervous system, can induce biophotonic activity and transmission in mouse brain slices. As a signaling molecule, aspartate is not considered to be an independent neurotransmitter during the long evolution process, which may be just a co-transmitter or neuromodulator. In the view of structure and physiological similarities of aspartate and glutamate, as well as some differences between them, we attempted to investigate whether aspartate could also induce biophotonic activity in mouse brain slices and its effect characteristics. The ultraweak biophoton imaging system (UBIS) was used to carry out a real-time observation of biophoton activity induced by aspartate in mouse brain slices. It was found that the biophotonic emissions induced by aspartate at different concentrations (12.5 mM, 25 mM and 50 mM) presented concentration-dependent effects and 50 mM aspartate could obviously induce biophoton activities with the characteristic changes of initiation, maintenance, washing and reapplication, which were also different from that induced by 50 mM glutamate as reported before. Considering the species differences in excitatory neurotransmitters, these findings indicate that aspartate-induced biophotonic activity may imply the evolutionary differences in the animal brains."
+   }
+  ]
+ },
+ {
+  "candidate_id": "C036",
+  "seed_id": "Q4",
+  "statement": "Light transmitted along fresh mammalian white matter retains a degree of linear polarization above 0.3 over a 5 mm longitudinal path, far above the diffusive prediction from that tract's own measured reduced-scattering coefficient, and this excess collapses to the diffusive value after chemical demyelination with axons preserved.",
+  "scope": {
+   "population": "Freshly excised white-matter tracts (corpus callosum, optic nerve, spinal cord dorsal column) from >=6 adult rodents and >=3 pigs, measured within 2 h of harvest at 37 C in oxygenated buffer.",
+   "condition": "Polarization-resolved transmission at 660 nm and 800 nm along the fibre axis at path lengths of 1, 2, 5 and 10 mm.",
+   "comparator": "Three controls measured on the same bench: (i) the same specimen transverse to the fibre axis; (ii) an index-matched non-guiding scattering phantom with reduced-scattering coefficient matched to the tissue by integrating-sphere measurement; (iii) lysolecithin-demyelinated tract with axon preservation confirmed by neurofilament immunostaining.",
+   "outcome": "Degree of linear polarization DOP(L, lambda) and transmitted photon flux as a function of path length L."
+  },
+  "null_hypothesis": "DOP at 5 mm longitudinal is <=0.1 and statistically indistinguishable from the index-matched phantom, and transmitted flux decays with the same exponent longitudinally and transversely; the reported white-matter anisotropy is then anisotropic scattering rather than guidance, and the myelin-waveguide leg of the brain-optics argument fails.",
+  "estimand": "DOP(5 mm, 800 nm) along the fibre axis, and the ratio DOP_intact / DOP_demyelinated, each with 95% CI; claim DOP(5 mm) > 0.3 and DOP_intact/DOP_demyelinated > 2.",
+  "proposed_experiment": "Assemble a polarization-resolved single-photon transmission bench: fibre-coupled 660 nm and 800 nm CW diodes, linear polarizer, a specimen stage with sub-millimetre translation for the path-length series, an analyser and Wollaston prism, and two cooled Si SPADs. For each specimen measure DOP and transmitted flux at 1, 2, 5, 10 mm both longitudinally and transversely; independently determine mu_s' and mu_a on the same specimen with an integrating sphere so the diffusive prediction is specimen-specific rather than literature-borrowed. Repeat after lysolecithin demyelination on the contralateral tract from the same animal, with neurofilament staining to confirm axon survival. Fit DOP(L) to a diffusive depolarization model and report the residual excess.",
+  "rationale": [
+   {
+    "step": "Detailed theoretical modelling with realistic optical imperfections proposes myelinated axons as photonic waveguides in the brain, and the authors explicitly propose in vivo and in vitro experiments to test the hypothesis, which have not been performed as direct transport measurements.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2499288807",
+     "W2751268700"
+    ]
+   },
+   {
+    "step": "Simulation of guided modes through a multi-Ranvier-node myelinated axon predicts that polarization is well preserved through multiple nodes and that transmission losses through successive nodes are approximately multiplicative - a quantitative, falsifiable transport signature rather than a qualitative claim.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W4361863949"
+    ]
+   },
+   {
+    "step": "The myelinated axon has a depressed-core refractive-index profile and is modelled as an anti-resonant reflecting optical waveguide, so guidance is expected to be leaky and wavelength-dependent; that is why the design uses two wavelengths rather than one.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W4308920644"
+    ]
+   },
+   {
+    "step": "Measured reduced scattering in mammalian spinal cord white matter is 1.57 +/- 0.03 mm^-1 along the myelinated axons versus 3.52 +/- 0.1 mm^-1 across them, a roughly 50% reduction confirmed by three independent measurement strategies, with no comparable anisotropy in grey matter where myelin organisation is nearly random. This is simultaneously the strongest indirect evidence for guidance and the quantitative null model against which guidance must be shown.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W3012315177"
+    ]
+   },
+   {
+    "step": "In the diffusive regime the linear-depolarization length scales as roughly one transport mean free path, i.e. 1/mu_s'. With mu_s' = 1.57 mm^-1 longitudinally, a 5 mm path is about 8 transport mean free paths, for which an unguided medium predicts DOP well below 0.1. Guided modes are predicted to preserve polarization through many nodes. DOP at 5 mm therefore separates the two mechanisms by roughly an order of magnitude, and it does so using a quantity that anisotropic-scattering models and waveguide models answer differently, unlike total transmission, which both can fit. Demyelination with axons preserved supplies the within-tissue control that removes the guiding structure while leaving the geometry.",
+    "justification_type": "computation"
+   },
+   {
+    "step": "Node-of-Ranvier emission modelling places the wavelengths most likely to propagate through myelinated segments below about 1600 nm, which is why 660 nm and 800 nm are the operative test wavelengths rather than shorter or longer ones.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2782145246"
+    ]
+   }
+  ],
+  "cited_works": [
+   {
+    "work_id": "W2499288807",
+    "title": "Possible existence of optical communication channels in the brain",
+    "year": 2016,
+    "type": "article",
+    "abstract": "Given that many fundamental questions in neuroscience are still open, it seems pertinent to explore whether the brain might use other physical modalities than the ones that have been discovered so far. In particular it is well established that neurons can emit photons, which prompts the question whether these biophotons could serve as signals between neurons, in addition to the well-known electro-chemical signals. For such communication to be targeted, the photons would need to travel in waveguides. Here we show, based on detailed theoretical modeling, that myelinated axons could serve as photonic waveguides, taking into account realistic optical imperfections. We propose experiments, both in vivo and in vitro, to test our hypothesis. We discuss the implications of our results, including the question whether photons could mediate long-range quantum entanglement in the brain."
+   },
+   {
+    "work_id": "W2751268700",
+    "title": "Are there optical communication channels in the brain",
+    "year": 2018,
+    "type": "article",
+    "abstract": "Despite great progress in neuroscience, there are still fundamental unanswered questions about the brain, including the origin of subjective experience and consciousness. Some answers might rely on new physical mechanisms. Given that biophotons have been discovered in the brain, it is interesting to explore if neurons use photonic communication in addition to the well-studied electro-chemical signals. Such photonic communication in the brain would require waveguides. Here we review recent work (S. Kumar, K. Boone, J. Tuszynski, P. Barclay, and C. Simon, Scientific Reports 6, 36508 (2016)) suggesting that myelinated axons could serve as photonic waveguides. The light transmission in the myelinated axon was modeled, taking into account its realistic imperfections, and experiments were proposed both&nbsp;in vivo&nbsp;and&nbsp;in vitro&nbsp;to test this hypothesis. Potential implications for quantum biology are discussed."
+   },
+   {
+    "work_id": "W4361863949",
+    "title": "Optical polarization evolution and transmission in multi-Ranvier-node axonal myelin-sheath waveguides",
+    "year": 2023,
+    "type": "preprint",
+    "abstract": "ABSTRACT In neuroscience, it is of interest to consider all possible modes of information transfer between neurons in order to fully understand processing in the brain. It has been suggested that photonic communication may be possible along axonal connections, especially through the myelin sheath as a waveguide, due to its high refractive index. There is already a good deal of theoretical and experimental evidence for light guidance in the myelin sheath; however, the question of how the polarization of light is transmitted remains largely unexplored. It is presently unclear whether polarization-encoded information could be preserved within the myelin sheath. We simulate guided mode propagation through a myelinated axon structure with multiple Ranvier nodes. This allows both to observe polarization change and to test the assumption of exponentiated transmission loss through multiple Ranvier nodes for guided light in myelin sheath waveguides. We find that the polarization can be well preserved through multiple nodes and that transmission losses through multiple nodes are approximately multiplicative. These results provide an important context for the hypothesis of neural information transmission facilitated by biophotons, strengthening the possibility of both classical and quantum photonic communication within the brain."
+   },
+   {
+    "work_id": "W4308920644",
+    "title": "Simulation of nerve fiber based on anti-resonant reflecting optical waveguide",
+    "year": 2022,
+    "type": "article",
+    "abstract": "Light and optical techniques are widely used for the diagnosis and treatment of neurological diseases as advanced methods. Understanding the optical properties of nervous tissue and nerve cells is vital. Using light sources in these methods raises significant challenges, such as finding the place of light transmission in nerve fibers that could be an appropriate substrate for neural signaling. The myelinated axons are a promising candidate for transmitting neural signals and light due to their waveguide structures. On the other hand, with the emergence of diseases such as multiple sclerosis and disorders within the production and transmission of nerve signals, because of the demyelination, understanding the properties of the myelinated axon as a waveguide is obtaining additional necessity. The present study aims to show that the myelinated axon's refractive index (RI) profile plays an essential role in transmitting the beams in it. According to the nerve fiber, RI profile and its similarity to depressed core fiber with lower RI of the core compared to the cladding, the behaviors of the nerve fiber based on anti-resonant reflecting optical waveguide structure are investigated by taking into account the realistic optical imperfections. Light launching to the myelin sheath and axon is shown by introducing the axon and myelin sheath as a waveguide in the presence of both axon and myelin with bends, myelin sheath variation, and node of Ranvier."
+   },
+   {
+    "work_id": "W3012315177",
+    "title": "Anisotropic light scattering from myelinated axons in the spinal cord",
+    "year": 2020,
+    "type": "article",
+    "abstract": "Optogenetics has become an integral tool for studying and dissecting the neural circuitries of the brain using optical control. Recently, it has also begun to be used in the investigation of the spinal cord and peripheral nervous system. However, information on these regions’ optical properties is sparse. Moreover, there is a lack of data on the dependence of light propagation with respect to neural tissue organization and orientation. This information is important for effective simulations and optogenetic planning, particularly in the spinal cord where the myelinated axons are highly organized. To this end, we report experimental measurements for the scattering coefficient, validated with three different methods in both the longitudinal and radial directions of multiple mammalian spinal cords. In our analysis, we find that there is indeed a directional dependence of photon propagation when interacting with organized myelinated axons. Specifically, light propagating perpendicular to myelinated axons in the white matter of the spinal cord produced a measured reduced scattering coefficient (μs′) of 3.52 ± 0.1 mm − 1, and light that was propagated along the myelinated axons in the white matter produced a measured μs′ of 1.57 ± 0.03 mm − 1, across the various species considered. This 50% decrease in scattering power along the myelinated axons is observed with three different measurement strategies (integrating spheres, observed transmittance, and punch-through method). Furthermore, this directional dependence in scattering power and overall light attenuation did not occur in th"
+   },
+   {
+    "work_id": "W2782145246",
+    "title": "Node of Ranvier as an Array of Bio-Nanoantennas for Infrared Communication in Nerve Tissue",
+    "year": 2018,
+    "type": "article",
+    "abstract": "Electromagnetic radiation, in the visible and infrared spectrum, is increasingly being investigated for its possible role in the most evolved brain capabilities. Beside experimental evidence of electromagnetic cellular interactions, the possibility of light propagation in the axon has been recently demonstrated using computational modelling, although an explanation of its source is still not completely understood. We studied electromagnetic radiation onset and propagation at optical frequencies in myelinated axons, under the assumption that ion channel currents in the node of Ranvier behave like an array of nanoantennas emitting in the wavelength range from 300 to 2500 nm. Our results suggest that the wavelengths below 1600 nm are most likely to propagate throughout myelinated segments. Therefore, a broad wavelength window exists where both generation and propagation could happen, which in turn raises the possibility that such a radiation may play some role in neurotransmission."
+   }
+  ]
+ },
+ {
+  "candidate_id": "C037",
+  "seed_id": "Q4",
+  "statement": "In a pre-registered, subject-held-out cross-validated test, extracranial UPE features add no more than 0.02 AUC over a nuisance-only model (scalp temperature, cutaneous perfusion, prior ambient-light dose, detector dark-rate drift, session order and time-in-chamber) for classifying eyes-open versus eyes-closed and rest versus task in healthy adults.",
+  "scope": {
+   "population": "Healthy adults, n>=40, two sessions each, with subject-wise 5-fold cross-validation so no subject appears in both training and test folds.",
+   "condition": ">=4 h dark adaptation in a light-tight chamber, simultaneous 64-channel EEG and dual-band head photon counting, with a fixed randomised block design of eyes-open/eyes-closed and rest/task epochs.",
+   "comparator": "A nuisance-only logistic model on the identical epochs; a label-permutation null; and a phantom-head arm run through the identical pipeline and analysis.",
+   "outcome": "Delta AUC = AUC(UPE features + nuisance) - AUC(nuisance only) on held-out subjects."
+  },
+  "null_hypothesis": "Delta AUC exceeds 0.02 with a 95% CI excluding 0.02 on subject-held-out folds while the phantom arm stays at chance, i.e. brain state is genuinely readable from extracranial UPE beyond nuisance physiology and photoencephalography has out-of-sample validity.",
+  "estimand": "Delta AUC with 95% CI over subject-held-out folds, pre-registered threshold 0.02; reported separately for the 400-600 nm channel, the 700-900 nm channel and their ratio.",
+  "proposed_experiment": "Pre-register model families, feature sets, nuisance regressors, fold structure and the 0.02 threshold before collection. Record 40+ subjects twice each under >=4 h dark adaptation with simultaneous 64-channel EEG, dual-band head photon counting, skin thermography and laser-Doppler perfusion at the detector footprint, and a logged detector dark rate. Fit nuisance-only and nuisance-plus-UPE classifiers for eyes-open/eyes-closed and rest/task, evaluate on held-out subjects, and report Delta AUC with its CI alongside the permutation null and the phantom arm. Publish the negative result at the same weight as a positive one; the phantom arm is the falsifier for the pipeline itself.",
+  "rationale": [
+   {
+    "step": "The source claim: brain UPEs are reported to differ from background light in spectral and entropic properties, to respond dynamically to tasks and stimulation, and to correlate moderately with qEEG spectral power, motivating a photoencephalography platform; the authors themselves list larger samples, distinct tasks and higher-density sensor arrays as required future work.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W4407397928"
+    ]
+   },
+   {
+    "step": "A measurement-and-analysis protocol and a methodological/ethical framing paper have followed, so the readout is being standardised before its incremental out-of-sample validity has been established.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W4417010158",
+     "W4417459026"
+    ]
+   },
+   {
+    "step": "The same class of signals is argued to be explicable by background light contamination and, even when genuinely dark, to be dominated by scalp rather than brain emission; a nuisance-controlled out-of-sample test is the arbiter that neither side of that exchange has run.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W7168813583"
+    ]
+   },
+   {
+    "step": "The prior head-photon/EEG correlations were obtained in very small samples with within-session designs and no held-out prediction: increased head photon emission while imagining light correlated with EEG power changes, and concurrent photon/qEEG correlations of about r = 0.5 were reported in three subjects.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2138303176",
+     "W2134613477",
+     "W2346999499"
+    ]
+   },
+   {
+    "step": "Human surface UPE is modulated by emotional state - upper-body UPE was higher during induced anger than during relaxation in every one of nine volunteers - and emotional and cognitive load also drive skin temperature and cutaneous perfusion, which is why those must enter as nuisance regressors rather than be assumed away.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W3174216096"
+    ]
+   },
+   {
+    "step": "A within-session correlation between two nonstationary count series can be produced by shared slow drift (skin temperature, detector dark-rate drift, the dark-adaptation transient, time-in-chamber) with no brain-to-detector photon path at all. Subject-wise held-out cross-validation removes exactly that class of explanation, because a nuisance-driven association does not transfer to unseen subjects once the nuisance channels are in the baseline model. Delta AUC is therefore the decision-relevant quantity rather than a within-session correlation coefficient, and a pre-registered threshold of 0.02 makes 'correlates moderately' decidable one way or the other.",
+    "justification_type": "computation"
+   }
+  ],
+  "cited_works": [
+   {
+    "work_id": "W4407397928",
+    "title": "Exploring ultraweak photon emissions as optical markers of brain activity",
+    "year": 2025,
+    "type": "article",
+    "abstract": "Brains are highly metabolic organs that emit ultraweak photon emissions (UPEs), which predict oxidative stress, aging, and neurodegeneration. UPEs are triggered by neurotransmitters and biophysical stimuli, but they are also generated by cells at rest and can be passively recorded using modern photodetectors in dark environments. UPEs play a role in cell-to-cell communication, and neural cells might even have waveguiding properties that support optical channels. However, it remains uncertain whether passive light emissions can be used to infer brain states as electric and magnetic fields do for encephalography. We present evidence that brain UPEs differ from background light in spectral and entropic properties, respond dynamically to tasks and stimulation, and correlate moderately with brain rhythms. We discuss these findings in the context of other neuroimaging methods, the potential of new measurement parameters, the limitations of light-based readouts, and the possibility of developing a platform to readout functional brain states: photoencephalography."
+   },
+   {
+    "work_id": "W4417010158",
+    "title": "Protocol for the measurement and analysis of human photoencephalographic signals",
+    "year": 2025,
+    "type": "article",
+    "abstract": ". [NOTE: the corpus holds no usable abstract for this work. Judge its citation step on the title alone and mark the step unverifiable rather than false.]"
+   },
+   {
+    "work_id": "W4417459026",
+    "title": "Photoencephalography as a non-electrical modality for investigating brain function: methodological and ethical considerations",
+    "year": 2025,
+    "type": "article",
+    "abstract": " [NOTE: the corpus holds no usable abstract for this work. Judge its citation step on the title alone and mark the step unverifiable rather than false.]"
+   },
+   {
+    "work_id": "W7168813583",
+    "title": "Revisiting Claims of Extracranial Biophoton Detection from the Human Brain",
+    "year": 2026,
+    "type": "article",
+    "abstract": "Ultraweak photon emission, also referred to as biological autoluminescence or biophoton emission, is the spontaneous emission of extremely low levels of light from a broad range of biological systems. Recent studies have reported that UPE measured extracranially can serve as a potential noninvasive biomarker of brain activity. Here, we show that this interpretation suffers from serious problems. We show that, when observed under properly dark conditions, the UPE from the head is much weaker than what is reported in certain papers on \"brain UPE\" from human heads. We also show that the large signals reported in these studies can be explained by background light contamination. Furthermore, photons with wavelengths <600 nm are strongly attenuated by scalp and skull tissues, and longer wavelengths fall largely outside the effective spectral sensitivity of the photomultiplier tubes (PMTs) used. As a consequence, even if UPE from the head is detected under properly background-free conditions, it is likely to be dominated by emission from the scalp rather than from the brain, certainly as long as PMTs are used. Our results emphasize the importance of careful experimental design to make genuine progress on this important question."
+   },
+   {
+    "work_id": "W2138303176",
+    "title": "Increased photon emission from the head while imagining light in the dark is correlated with changes in electroencephalographic power: Support for Bókkon's biophoton hypothesis",
+    "year": 2012,
+    "type": "article",
+    "abstract": " [NOTE: the corpus holds no usable abstract for this work. Judge its citation step on the title alone and mark the step unverifiable rather than false.]"
+   },
+   {
+    "work_id": "W2134613477",
+    "title": "CONCURRENT PHOTON EMISSION, CHANGES IN QUANTITATIVE BRAIN ACTIVITY OVER THE RIGHT HEMISPHERE, AND ALTERATIONS IN THE PROXIMAL GEOMAGNETIC FIELD WHILE IMAGINING WHITE LIGHT",
+    "year": 2013,
+    "type": "article",
+    "abstract": "In order to replicate and extend the observation that during meditation was associated with specific changes in brain activity, quantitative EEG measurements were completed simultaneously with measurements of photon emissions (with a photomultiplier tube) while three subjects (one concentrative meditator, two non-mediators) imaged an white light. There were consistent strong (r=0.5) correlations between photon emission from the right side of the head and changes in power within the right prefrontal-central regions. The quantitative convergence of the energies associated with photon emission, change in cerebral power, and the minute decrease in the local adjacent geomagnetic field in the same plane as the photon emission, suggests that experience of an inner light may reflect actual photon production whose energies are shared with changes in the proximal intensity of the geomagnetic field in the plane associated with photon emission."
+   },
+   {
+    "work_id": "W2346999499",
+    "title": "Lagged Coherence of Photon Emissions and Spectral Power Densities between the Cerebral Hemispheres of Human Subjects during Rest Conditions: Phase Shift and Quantum Possibilities",
+    "year": 2016,
+    "type": "article",
+    "abstract": "Photon counts about 15 cm from the left and right sides of the head while subjects sat quietly during baseline conditions within a hyper-dark chamber were measured by photomultiplier units. Lag/lead analyses for photon emissions between the two hemispheres indicated a weak but statistically significant correlation between the amplitude fluctuations that were separated by about 800 to 900 ms. Analyses of the spectral power densities of photon amplitude variations from the left and right hemispheres revealed peak values between 2 and 3 Hz which were equivalent to a difference of about 900 ms. The radiant flux densities were estimated to be in the order of 10?12 W?m?2 and to include the equivalence of about 107 neurons. Our calculations, which accounted for the small magnitude of the strength of the interhemispheric coefficients, suggest that the coherence could be strongly correlated with processes associated with the unmyelinated axons with diameters between 400 to 800 nm, the visible wavelengths, within the corpus callosum. When the ratio of the phase shift was applied to the Aharanov-Bohm equation, the time required for a photon-related electron to be within a cerebral magnetic field was the same duration as a single orbit of an electron and a photon’s traversal latency across a neuronal plasma membrane. We suggest that the peak photon decoherence between the two cerebral hemispheres may reveal a neuronal-quanta substrate to the conditions associated with consciousness."
+   },
+   {
+    "work_id": "W3174216096",
+    "title": "Increment of spontaneous human biophoton emission caused by anger emotional states. Proof of concept",
+    "year": 2021,
+    "type": "article",
+    "abstract": "Humans spontaneously emit visible radiation from their skin, which is known as biophoton or ultra-weak photon emission (UPE). Up to date, UPE intensity changes according to different external and internal factors have been reported. However, the influence in the human UPE of negative emotional states has never been studied despite their clinic and forensic interest. In this work, an ad hoc system based on a high-sensitive CCD detector was developed to detect and image UPE from human’s upper body. Then, the UPE emitted by the upper part of the body of nine volunteers was imaged in two different personal states: (i) when subjects were feeling relaxed; and (ii) when they were emotionally stimulated to feel anger. For all the volunteers, the relative measurement of UPE intensity was higher when feeling anger than when feeling relaxed. Due to the relevance of this disruptive idea and the horizon this knowledge can provide, this proof of concept must be followed by further experiments. An increase in the number of subjects will be accomplished in order to enhance these preliminary results and propose UPE as a new physiological parameter of negative emotional states."
+   }
+  ]
+ },
+ {
+  "candidate_id": "C038",
+  "seed_id": "Q4",
+  "statement": "A substantial part of the photon flux reported from the human head under conventional tens-of-minutes dark adaptation is light-history-dependent delayed luminescence of hair, scalp and instrument surfaces, so the head count rate falls by more than 30% between 30 min and 24 h of continuous darkness and the task-related modulation shrinks in proportion.",
+  "scope": {
+   "population": "Healthy adults, n>=20, plus two non-physiological arms measured identically: a harvested hair-and-scalp-analogue swatch, and the unoccupied chamber with the headrest in place.",
+   "condition": "Continuous photon counting over 24 h of uninterrupted darkness following a standardised, spectrally characterised pre-exposure light dose (spectrum and J/cm2 logged), with the same cognitive task (imagine-light block plus a control block) repeated at 0.5, 4, 12 and 24 h of adaptation.",
+   "comparator": "The same subjects after 72 h of low-light pre-conditioning (dosimeter-verified), and the two non-physiological arms, which have no metabolism and therefore should show the decay if and only if the decay is light-history-driven.",
+   "outcome": "Head count rate as a function of adaptation time, and the task effect size at each adaptation time."
+  },
+  "null_hypothesis": "The head count rate is flat from 0.5 h to 24 h (decline <10%, CI excluding 30%), the pre-exposure dose does not shift it, and the task effect size at 24 h equals that at 30 min - i.e. there is no light-history component and the reported head signal is endogenous and stationary under constant physiology.",
+  "estimand": "The decay ratio N(24 h)/N(0.5 h) and the task effect-size ratio d(24 h)/d(0.5 h), each with 95% CI; claim N(24 h)/N(0.5 h) < 0.7, plus a significant task x adaptation-time interaction.",
+  "proposed_experiment": "Standardise a pre-exposure light dose (measured spectrum, measured J/cm2) delivered immediately before the subject enters the chamber. Count photons continuously for 24 h in uninterrupted darkness with the detector dark rate logged throughout and an in-chamber calibrated attenuated LED fired hourly for gain stability. Run the imagine-light task and its control block at 0.5, 4, 12 and 24 h, order counterbalanced. Repeat the whole session after 72 h dosimeter-verified low-light pre-conditioning. Run the hair/scalp swatch and the empty-chamber arms through the identical 24 h protocol. Fit count rate on adaptation time, pre-exposure dose and their interaction, and test the task x adaptation-time interaction on effect size.",
+  "rationale": [
+   {
+    "step": "Fixed human brains measured in a hyperdark setting after removal from ordinary laboratory lighting emitted more photons than those kept in hyperdark for one week, and the authors themselves conclude that part of the measured emission may be residual from ambient light - in tissue with no metabolism whatsoever.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2403197937"
+    ]
+   },
+   {
+    "step": "The flux densities measured from fixed (metabolically dead) human brain, about 2 x 10^-12 W m^-2, are of the same order as the flux densities the same group reports from living human heads during cognition, so a metabolism-free residual is quantitatively sufficient to account for the live signal rather than being a small correction.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2401427660",
+     "W2548878051"
+    ]
+   },
+   {
+    "step": "Visible light induces ultraweak photon emission in rat eyes over and above the spontaneous level, establishing that a light-induced, decaying emission component exists in vivo in tissue and is not an artefact peculiar to fixed specimens.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W1969097600"
+    ]
+   },
+   {
+    "step": "Background light contamination is the explicit alternative explanation offered for the large head signals in the extracranial literature, and much smaller rates were observed under properly dark conditions (40 counts/s against a 22 counts/s dark rate).",
+    "justification_type": "citation",
+    "work_ids": [
+     "W7168813583"
+    ]
+   },
+   {
+    "step": "The flagship head result - increased photon emission while imagining light in the dark, correlated with changes in EEG power, and its qEEG replication - was obtained under short dark adaptation, so in the existing record the confound and the effect are not separated by any measurement.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2138303176",
+     "W2134613477"
+    ]
+   },
+   {
+    "step": "Delayed luminescence is a decaying, dose-dependent process, whereas metabolic emission under constant physiology is stationary and independent of prior light dose. The two accounts therefore make opposite predictions about two manipulations that cost nothing but time: adaptation duration, and pre-exposure dose. Repeating the identical task at four adaptation times converts the confound into a measurable task x adaptation-time interaction, which no purely metabolic account predicts, and the non-physiological arms bound how much of any observed decay is instrument-surface rather than tissue. If the task effect survives undiminished at 24 h, this hypothesis is dead and the effect is not a light-history artefact - which is the outcome that would most strengthen the field's position.",
+    "justification_type": "computation"
+   },
+   {
+    "step": "The seed brief asks the field to show critical rigour inside the field rather than against it; a protocol change measured in hours of adaptation, applied to the field's own flagship paradigm, is that rigour at its cheapest.",
+    "justification_type": "given"
+   }
+  ],
+  "cited_works": [
+   {
+    "work_id": "W2403197937",
+    "title": "Differential Spontaneous Photon Emissions from Cerebral Hemispheres of Fixed Human Brains: Asymmetric Coupling to Geomagnetic Activity and Potentials for Examining Post-Mortem Intrinsic Photon Information",
+    "year": 2016,
+    "type": "article",
+    "abstract": "The emissions of biophotons have been considered a ubiquitous property of living systems and their components. We measured the “spontaneous” photon emissions from fixed whole and sectioned human brains within hyper-dark settings. Significant differences in photon counts were measured from different spatial planes. The flux densities were in the order of 2 × 10-12 W per m2. The right hemispheres but not the left hemispheres displayed more photon emissions whose spectral power density profiles exhibited a conspicuous amplitude peak between 7.9 and 8 Hz. Brains measured in the hyperdark (~10-12 W·m2) after removal from the typical lighting of the laboratory emitted more photons than those that had been maintained in the hyperdark for one week. The significant correlation between the numbers of photons emitted from the left hemisphere (but not the right) and global geomagnetic activity also exhibited energy equivalence between the photon flux densities and the geomagnetic shift within the cerebral volumes. These results indicate that what has been assumed to be fixed unresponsive human brain tissue still emits small numbers of photons that may be residuals from ambient light and can potentially interact with global geomagnetic activity. The medical implications for post-mortem intrinsic photonic information based upon the anisotropic microstructures within the hemispheres of the human cerebrum are discussed."
+   },
+   {
+    "work_id": "W2401427660",
+    "title": "A Possible Flux Density Value of 10 -12 W·m -2 for \"Spontaneous\" Photon Emissions in Fixed Human Brain Tissue: Was Spinoza Correct?",
+    "year": 2016,
+    "type": "article",
+    "abstract": "The equivalence between universal values of 10 -20 J and 10 -12 W·m -2 involves the product of the inverse of diffusivity of wave impedance distributed over the hydrogen wavelength divided by the magnetic permeability of free space. These two values reflect the increment of energy associated with action potentials (a major correlate of cognition) and the power densities of photon emissions during imagination as measured experimentally. The human brain, alive or dead (if structurally maintained) has similar mass and occupies space. We tested the hypothesis that these two properties would be sufficient to produce enhanced spontaneous photon emission compared to empty space. The photon flux density from different volumes (masses) of fixed human brain ranging between 20 mg and 1100 g were measured. Compared to the 20 mg masses that did not differ from dark counts (background), the average flux density for 100 to 1000 g volumes was ~2·10 -12 -2 . These results are consistent with the possibility that mass occupying space reflects it fundamental properties that relate to an intrinsic relationship between energy (J) and flux density (kg·s -3 ). Within the human cerebrum the energy density would be about 10 -11 W·m -3 or 10 -14 J·s -1 . This is equivalent to the discharge of ~10 7 cortical neurons which is within the range of experiencing a percept in the living human brain. These results also support the Hameroff and Penrose concept of consciousness as well as Spinoza's implicit argument that cerebral properties indicates it is a subset of all space. There is quantitative evidence"
+   },
+   {
+    "work_id": "W2548878051",
+    "title": "Spatial-Temporal Quantitative Global Energy Differences between the Living and Dead Human Brain",
+    "year": 2016,
+    "type": "article",
+    "abstract": "The dynamic differences between a living human brain and a clinically dead (fixed) human brain were measured over international Quantitative Electroencephalographic (QEEG) sites for 1 Hz increments between 1 Hz and 50 Hz. Although the expected greater power (μV2•Hz–1) for the living brain was apparent, the difference was particularly obvious for theta and low beta bands. The integrated square root values over the entire band indicated the difference in intrinsic charge-based energy between the living (higher) and dead brain was ~2•10–23 J. This quantity is remarkably proximal to the Cosmic Background Microwave value and would be consistent with the Hameroff-Penrose definition of consciousness that suggests a permeating presence derived from discrete physical events. A power value obtained by multiplying this increment of energy by the frequency of the universal hydrogen line resulted in ~10–12 W•m–2 when applied to the surface area of the human cerebrum. This value is the median flux density that has been measured from human brains during cognition and defines the ultra-weak photon emissions displayed by cells, tissue, and organisms. These results suggest that modern technology may now be sufficiently precise to discern the critical parameters that differentiate the living brain from the fixed “dead” brain. This information might be useful for future designs of virtual consciousness and simulations within cerebral space."
+   },
+   {
+    "work_id": "W1969097600",
+    "title": "Spontaneous and visible light-induced ultraweak photon emission from rat eyes",
+    "year": 2010,
+    "type": "article",
+    "abstract": " [NOTE: the corpus holds no usable abstract for this work. Judge its citation step on the title alone and mark the step unverifiable rather than false.]"
+   },
+   {
+    "work_id": "W7168813583",
+    "title": "Revisiting Claims of Extracranial Biophoton Detection from the Human Brain",
+    "year": 2026,
+    "type": "article",
+    "abstract": "Ultraweak photon emission, also referred to as biological autoluminescence or biophoton emission, is the spontaneous emission of extremely low levels of light from a broad range of biological systems. Recent studies have reported that UPE measured extracranially can serve as a potential noninvasive biomarker of brain activity. Here, we show that this interpretation suffers from serious problems. We show that, when observed under properly dark conditions, the UPE from the head is much weaker than what is reported in certain papers on \"brain UPE\" from human heads. We also show that the large signals reported in these studies can be explained by background light contamination. Furthermore, photons with wavelengths <600 nm are strongly attenuated by scalp and skull tissues, and longer wavelengths fall largely outside the effective spectral sensitivity of the photomultiplier tubes (PMTs) used. As a consequence, even if UPE from the head is detected under properly background-free conditions, it is likely to be dominated by emission from the scalp rather than from the brain, certainly as long as PMTs are used. Our results emphasize the importance of careful experimental design to make genuine progress on this important question."
+   },
+   {
+    "work_id": "W2138303176",
+    "title": "Increased photon emission from the head while imagining light in the dark is correlated with changes in electroencephalographic power: Support for Bókkon's biophoton hypothesis",
+    "year": 2012,
+    "type": "article",
+    "abstract": " [NOTE: the corpus holds no usable abstract for this work. Judge its citation step on the title alone and mark the step unverifiable rather than false.]"
+   },
+   {
+    "work_id": "W2134613477",
+    "title": "CONCURRENT PHOTON EMISSION, CHANGES IN QUANTITATIVE BRAIN ACTIVITY OVER THE RIGHT HEMISPHERE, AND ALTERATIONS IN THE PROXIMAL GEOMAGNETIC FIELD WHILE IMAGINING WHITE LIGHT",
+    "year": 2013,
+    "type": "article",
+    "abstract": "In order to replicate and extend the observation that during meditation was associated with specific changes in brain activity, quantitative EEG measurements were completed simultaneously with measurements of photon emissions (with a photomultiplier tube) while three subjects (one concentrative meditator, two non-mediators) imaged an white light. There were consistent strong (r=0.5) correlations between photon emission from the right side of the head and changes in power within the right prefrontal-central regions. The quantitative convergence of the energies associated with photon emission, change in cerebral power, and the minute decrease in the local adjacent geomagnetic field in the same plane as the photon emission, suggests that experience of an inner light may reflect actual photon production whose energies are shared with changes in the proximal intensity of the geomagnetic field in the plane associated with photon emission."
+   },
+   {
+    "work_id": "W4417010158",
+    "title": "Protocol for the measurement and analysis of human photoencephalographic signals",
+    "year": 2025,
+    "type": "article",
+    "abstract": ". [NOTE: the corpus holds no usable abstract for this work. Judge its citation step on the title alone and mark the step unverifiable rather than false.]"
+   }
+  ]
+ },
+ {
+  "candidate_id": "C039",
+  "seed_id": "Q4",
+  "statement": "In anesthetized adult pigs, somatosensory-evoked cortical UPE in the 650–900 nm band produces a nonzero brain-originated component at an external scalp detector after accounting for simultaneously measured epidural emission, subject-specific scalp–skull transmission, scalp emission, and detector background.",
+  "scope": {
+   "population": "Twenty anesthetized adult pigs with a light-sealed epidural photon-counting fiber placed over somatosensory cortex and an external detector over the same intact scalp–skull path.",
+   "condition": "Randomized blocks of peripheral somatosensory stimulation and sham stimulation, with simultaneous ECoG, epidural photon counts, external photon counts, scalp temperature, perfusion, and oxygenation.",
+   "comparator": "Sham blocks, a scalp-only control site, an opaque detector channel, and a shuttered matched detector.",
+   "outcome": "The estimated fraction of task-evoked external 650–900 nm counts attributable to the epidurally measured cortical source."
+  },
+  "null_hypothesis": "The lower confidence bound for the brain-originated external fraction is not above zero, or the external modulation is explained by scalp and detector controls.",
+  "estimand": "f_brain, the coefficient linking external task-evoked counts to epidural task-evoked counts after applying the measured wavelength-dependent transfer matrix and adjusting for scalp and background channels.",
+  "proposed_experiment": "Use a sealed lateral tunnel for the epidural fiber so that the external detector views only intact scalp and skull; measure each animal's 650–900 nm transfer matrix with a calibrated ultraweak source before biological blocks, then fit a preregistered hierarchical count model to blinded stimulation and sham trials.",
+  "rationale": [
+   {
+    "step": "Spontaneous rat-brain UPE has been imaged in vivo and associated with cerebral energy metabolism and oxidative stress, while whole-brain emission has also been imaged in living mice.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2160984073",
+     "W2086348119",
+     "W3200731706"
+    ]
+   },
+   {
+    "step": "Extracranial human-head claims face a specific optical mismatch: wavelengths below 600 nm are strongly attenuated by scalp and skull, whereas longer wavelengths are poorly covered by the PMTs used in the disputed measurements.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W7168813583"
+    ]
+   },
+   {
+    "step": "An intracranial photonic detector has been proposed precisely because transcranial readout may be inadequate, providing a technically relevant paired-reference architecture.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W3217353367"
+    ]
+   },
+   {
+    "step": "For spectral bin b, the preregistered photon budget is E[C_external,b]=C_epidural,b×T_b×η_b×G_b, where T_b is measured scalp–skull transmission, η_b is detector efficiency, and G_b is collection geometry; a measured excess incompatible with this budget is classified as artifact rather than brain transmission.",
+    "justification_type": "computation"
+   },
+   {
+    "step": "Tissue-optics-informed bands, photon-budget modelling before collection, and explicit artifact controls are stipulated as the evidence needed to settle extracranial detectability.",
+    "justification_type": "given"
+   }
+  ],
+  "cited_works": [
+   {
+    "work_id": "W2160984073",
+    "title": "In vivo imaging of spontaneous ultraweak photon emission from a rat’s brain correlated with cerebral energy metabolism and oxidative stress",
+    "year": 1999,
+    "type": "article",
+    "abstract": " [NOTE: the corpus holds no usable abstract for this work. Judge its citation step on the title alone and mark the step unverifiable rather than false.]"
+   },
+   {
+    "work_id": "W2086348119",
+    "title": "Two-dimensional photon counting imaging and spatiotemporal characterization of ultraweak photon emission from a rat’s brain in vivo",
+    "year": 1999,
+    "type": "article",
+    "abstract": " [NOTE: the corpus holds no usable abstract for this work. Judge its citation step on the title alone and mark the step unverifiable rather than false.]"
+   },
+   {
+    "work_id": "W3200731706",
+    "title": "&amp;lt;i&amp;gt;In Vivo &amp;lt;/i&amp;gt; Imaging of Biophoton Emission in the Whole Brain of Mice",
+    "year": 2021,
+    "type": "article",
+    "abstract": "In recent years, studies have demonstrated that biophoton is a medium for the transmission and processing of neural information. However, such studies were mainly carried out by using brain slices combined with biophoton imaging technology, while there are few reports on in vivo brain biophoton imaging. In this study, the ultraweak biophoton imaging system (UBIS) was employed to carry out an in vivo biophoton imaging for the whole brain of mice. It was found that the biophoton emission of whole brain in the slightly anesthetized mice was significantly higher than that of the background, suggesting that the brain of living mouse emits a certain intensity of stable biophotons. The biophoton imaging established in this study for the in vivo mouse whole brain may provide a new technical method for further study of the relationship between the biophoton and brain functions, and give new ideas for developing diagnostic method of neuropsychiatric diseases."
+   },
+   {
+    "work_id": "W7168813583",
+    "title": "Revisiting Claims of Extracranial Biophoton Detection from the Human Brain",
+    "year": 2026,
+    "type": "article",
+    "abstract": "Ultraweak photon emission, also referred to as biological autoluminescence or biophoton emission, is the spontaneous emission of extremely low levels of light from a broad range of biological systems. Recent studies have reported that UPE measured extracranially can serve as a potential noninvasive biomarker of brain activity. Here, we show that this interpretation suffers from serious problems. We show that, when observed under properly dark conditions, the UPE from the head is much weaker than what is reported in certain papers on \"brain UPE\" from human heads. We also show that the large signals reported in these studies can be explained by background light contamination. Furthermore, photons with wavelengths <600 nm are strongly attenuated by scalp and skull tissues, and longer wavelengths fall largely outside the effective spectral sensitivity of the photomultiplier tubes (PMTs) used. As a consequence, even if UPE from the head is detected under properly background-free conditions, it is likely to be dominated by emission from the scalp rather than from the brain, certainly as long as PMTs are used. Our results emphasize the importance of careful experimental design to make genuine progress on this important question."
+   },
+   {
+    "work_id": "W3217353367",
+    "title": "Are Brain–Computer Interfaces Feasible With Integrated Photonic Chips?",
+    "year": 2022,
+    "type": "article",
+    "abstract": "The present paper examines the viability of a radically novel idea for brain-computer interface (BCI), which could lead to novel technological, experimental, and clinical applications. BCIs are computer-based systems that enable either one-way or two-way communication between a living brain and an external machine. BCIs read-out brain signals and transduce them into task commands, which are performed by a machine. In closed loop, the machine can stimulate the brain with appropriate signals. In recent years, it has been shown that there is some ultraweak light emission from neurons within or close to the visible and near-infrared parts of the optical spectrum. Such ultraweak photon emission (UPE) reflects the cellular (and body) oxidative status, and compelling pieces of evidence are beginning to emerge that UPE may well play an informational role in neuronal functions. In fact, several experiments point to a direct correlation between UPE intensity and neural activity, oxidative reactions, EEG activity, cerebral blood flow, cerebral energy metabolism, and release of glutamate. Therefore, we propose a novel skull implant BCI that uses UPE. We suggest that a photonic integrated chip installed on the interior surface of the skull may enable a new form of extraction of the relevant features from the UPE signals. In the current technology landscape, photonic technologies are advancing rapidly and poised to overtake many electrical technologies, due to their unique advantages, such as miniaturization, high speed, low thermal effects, and large integration capacity that allow for "
+   }
+  ]
+ },
+ {
+  "candidate_id": "C040",
+  "seed_id": "Q4",
+  "statement": "After equalizing slice thickness, glutamate exposure, collection geometry, and detector response, the reported cross-species redshift of brain UPE will remain monotonic from bullfrog through nonhuman mammals to humans, with human emission extending into the approximately 865 nm region.",
+  "scope": {
+   "population": "Standardized acute cortical slices from bullfrog, mouse, chicken, pig, macaque, and discarded viable human neurosurgical tissue, with at least ten independent biological donors or animals per species.",
+   "condition": "Identical oxygenated incubation and glutamate stimulation, randomized measurement order, fixed optical path length, and radiometric calibration over 400–950 nm.",
+   "comparator": "Unstimulated slices, calibration lamps reduced to UPE intensity, and the same spectra analyzed before versus after correction for detector efficiency and tissue self-absorption.",
+   "outcome": "Corrected photon-energy centroid, 650–950/400–650 nm count ratio, and rank ordering of these measures across species."
+  },
+  "null_hypothesis": "The corrected species-rank correlation is nonpositive, human tissue is not redder than macaque tissue, or the ordering appears only before radiometric and self-absorption correction.",
+  "estimand": "Spearman rho between the preregistered species order and corrected spectral centroid, jointly requiring a positive human-minus-macaque centroid contrast.",
+  "proposed_experiment": "Measure every slice on the same blinded spectrometer with alternating stimulated and unstimulated blocks, independently measure each slice's transmission spectrum, and test the preregistered rank trend on donor-level summaries rather than repeated frames.",
+  "rationale": [
+   {
+    "step": "A prior UBIS/BSAD experiment reported a species-associated redshift of glutamate-induced brain-slice emission, reaching approximately 865 nm in human tissue.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2483916403"
+    ]
+   },
+   {
+    "step": "Glutamate produces long-lasting UPE changes in mouse brain slices whose maintenance depends strongly on oxygen, glucose, and cytochrome-c oxidase activity, establishing a reproducible induction paradigm but also identifying metabolic variables that must be standardized.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W1977345460"
+    ]
+   },
+   {
+    "step": "EMCCD plus wavelength selection has resolved human UPE spectra under controlled dark conditions, while also demonstrating the need to subtract dark signal and reject spurious sensor events.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2797018767"
+    ]
+   },
+   {
+    "step": "For each sample, corrected spectral counts are S_b=(C_b-D_b)/(R_b×A_b×t), where D_b is dark count, R_b is calibrated system response, A_b is self-absorption correction, and t is integration time; species ranking is computed only from S_b.",
+    "justification_type": "computation"
+   }
+  ],
+  "cited_works": [
+   {
+    "work_id": "W2483916403",
+    "title": "Human high intelligence is involved in spectral redshift of biophotonic activities in the brain",
+    "year": 2016,
+    "type": "article",
+    "abstract": "Human beings hold higher intelligence than other animals on Earth; however, it is still unclear which brain properties might explain the underlying mechanisms. The brain is a major energy-consuming organ compared with other organs. Neural signal communications and information processing in neural circuits play an important role in the realization of various neural functions, whereas improvement in cognitive function is driven by the need for more effective communication that requires less energy. Combining the ultraweak biophoton imaging system (UBIS) with the biophoton spectral analysis device (BSAD), we found that glutamate-induced biophotonic activities and transmission in the brain, which has recently been demonstrated as a novel neural signal communication mechanism, present a spectral redshift from animals (in order of bullfrog, mouse, chicken, pig, and monkey) to humans, even up to a near-infrared wavelength (∼865 nm) in the human brain. This brain property may be a key biophysical basis for explaining high intelligence in humans because biophoton spectral redshift could be a more economical and effective measure of biophotonic signal communications and information processing in the human brain."
+   },
+   {
+    "work_id": "W1977345460",
+    "title": "Spatiotemporal Imaging of Glutamate-Induced Biophotonic Activities and Transmission in Neural Circuits",
+    "year": 2014,
+    "type": "article",
+    "abstract": "The processing of neural information in neural circuits plays key roles in neural functions. Biophotons, also called ultra-weak photon emissions (UPE), may play potential roles in neural signal transmission, contributing to the understanding of the high functions of nervous system such as vision, learning and memory, cognition and consciousness. However, the experimental analysis of biophotonic activities (emissions) in neural circuits has been hampered due to technical limitations. Here by developing and optimizing an in vitro biophoton imaging method, we characterize the spatiotemporal biophotonic activities and transmission in mouse brain slices. We show that the long-lasting application of glutamate to coronal brain slices produces a gradual and significant increase of biophotonic activities and achieves the maximal effect within approximately 90 min, which then lasts for a relatively long time (>200 min). The initiation and/or maintenance of biophotonic activities by glutamate can be significantly blocked by oxygen and glucose deprivation, together with the application of a cytochrome c oxidase inhibitor (sodium azide), but only partly by an action potential inhibitor (TTX), an anesthetic (procaine), or the removal of intracellular and extracellular Ca(2+). We also show that the detected biophotonic activities in the corpus callosum and thalamus in sagittal brain slices mostly originate from axons or axonal terminals of cortical projection neurons, and that the hyperphosphorylation of microtubule-associated protein tau leads to a significant decrease of biophotonic act"
+   },
+   {
+    "work_id": "W2797018767",
+    "title": "Measuring the Human Ultra-Weak Photon Emission Distribution Using an Electron-Multiplying, Charge-Coupled Device as a Sensor",
+    "year": 2018,
+    "type": "article",
+    "abstract": "Ultra-weak photon emission (UPE) is the spontaneous emission from living systems mainly attributed to oxidation reactions, in which reactive oxygen species (ROS) may play a major role. Given the capability of the next-generation electron-multiplying CCD (EMCCD) sensors and the easy use of liquid crystal tunable filters (LCTF), the aim of this work was to explore the potential of a simple UPE spectrometer to measure the UPE from a human hand. Thus, an easy setup was configured based on a dark box for inserting the subject’s hand prior to LCTF as a monochromator and an EMCCD sensor working in the full vertical binning mode (FVB) as a spectra detector. Under controlled conditions, both dark signals and left hand UPE were acquired by registering the UPE intensity at different selected wavelengths (400, 450, 500, 550, 600, 650, and 700 nm) during a period of 10 min each. Then, spurious signals were filtered out by ignoring the pixels whose values were clearly outside of the Gaussian distribution, and the dark signal was subtracted from the subject hand signal. The stepped spectrum with a peak of approximately 880 photons at 500 nm had a shape that agreed somewhat with previous reports, and agrees with previous UPE research that reported UPE from 420 to 570 nm, or 260 to 800 nm, with a range from 1 to 1000 photons s−1 cm−2. Obtaining the spectral distribution instead of the total intensity of the UPE represents a step forward in this field, as it may provide extra information about a subject’s personal states and relationship with ROS. A new generation of CCD sensors with lower d"
+   }
+  ]
+ }
+]

@@ -1,0 +1,957 @@
+[
+ {
+  "candidate_id": "C009",
+  "seed_id": "Q1",
+  "statement": "In UVA-exposed ex vivo porcine skin, trapping formaldehyde and acetaldehyde immediately after irradiation will suppress 300–349 nm afterglow more than 1,270 nm emission while leaving the initiating radical burden substantially intact, identifying short-chain triplet carbonyls as proximal UV emitters.",
+  "scope": {
+   "population": "Adjacent, randomized ex vivo porcine-skin biopsies from the same animals.",
+   "condition": "Standardized UVA exposure followed by dark recording with vehicle or each of two chemically distinct carbonyl traps.",
+   "comparator": "Vehicle, carbonyl-trap, singlet-oxygen-quencher, sham-irradiated and reagent-only biopsies.",
+   "outcome": "Absolute post-UVA photon flux in 300–349, 350–500 and 1,270±10 nm bands; free formaldehyde/acetaldehyde by LC-MS; organic radicals by EPR."
+  },
+  "null_hypothesis": "Carbonyl trapping does not preferentially reduce 300–349 nm flux relative to 1,270 nm flux, or any reduction is fully explained by loss of the initiating radical signal.",
+  "estimand": "θ=[1−FUV,trap/FUV,vehicle]−[1−F1270,trap/F1270,vehicle]; the claim requires θ>0 after adjustment for EPR radical burden.",
+  "proposed_experiment": "Treat matched biopsies with vehicle or two carbonyl traps, apply identical UVA doses, begin photon acquisition immediately after shutter closure, and jointly model band-resolved decay, LC-MS carbonyl depletion and EPR radical persistence.",
+  "rationale": [
+   {
+    "step": "UVA-exposed porcine skin forms lipid-derived radicals and short-chain carbonyls, particularly formaldehyde and acetaldehyde, with triplet-carbonyl excitation and possible energy transfer to melanin after irradiation ends.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W4415217027"
+    ]
+   },
+   {
+    "step": "Oxidative-radical reactions in porcine skin produce measurable 340–540 nm triplet-carbonyl emission and singlet-oxygen contributions in the visible and near-infrared.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2886211841"
+    ]
+   },
+   {
+    "step": "Subtracting fractional inhibition at 1,270 nm from fractional UV inhibition distinguishes direct carbonyl-band loss from generalized suppression of singlet-oxygen chemistry.",
+    "justification_type": "computation"
+   }
+  ],
+  "cited_works": [
+   {
+    "work_id": "W4415217027",
+    "title": "Chemiexcitation in Ex Vivo Porcine Skin Model",
+    "year": 2025,
+    "type": "article",
+    "abstract": "Chemiexcitation, the formation of electronically excited states via oxidative chemical reactions, has emerged as a potentially important contributor to skin photobiology beyond direct damage caused by ultraviolet (UV) radiation. This study investigates the hypothesis that UV radiation induces chemiexcitation in skin through the formation of triplet excited carbonyls, which may transfer energy to melanin and contribute to oxidative stress even after the termination of UV exposure. Using porcine skin as a model, we demonstrate that UV exposure leads to lipid peroxidation and the subsequent formation of organic radicals, including carbon-centered (alkyl) and oxygen-centered (peroxyl and alkoxyl) species, as detected by EPR spin-trapping spectroscopy. HPLC-MS analysis revealed that short-chain carbonyl compounds, such as formaldehyde and acetaldehyde, are the predominant electronically excited species in direct chemiexcitation. These triplet carbonyls can transfer their excitation energy to melanin through photon emission (radiative transfer) or direct electron exchange (non-radiative transfer), forming melanin-based secondary excited states via indirect chemiexcitation. These findings highlight a novel, light-independent mechanism of post-UV exposure oxidative damage in the skin and suggest a possible role for chemiexcitation in processes such as photoaging and photocarcinogenesis."
+   },
+   {
+    "work_id": "W2886211841",
+    "title": "Triplet Excited Carbonyls and Singlet Oxygen Formation During Oxidative Radical Reaction in Skin",
+    "year": 2018,
+    "type": "article",
+    "abstract": "The skin is the largest organ in the body and is consistently exposed to aggressive environmental attack (biological/physical/chemical etc.). Reactive oxygen species (ROS) are formed during the normal oxidative metabolism which enhances to a lethal level under stress condition referred to as oxidative stress. While, under normal conditions, cells are capable of dealing with ROS using non-enzymatic and enzymatic defense system, it can lead to a critical damage to cell system via the oxidation of cellular components under stress condition. Lipid peroxidation is a well-established mechanism of cellular injury in all kinds of organisms and it is often used as an indicator of oxidative stress in cells and tissues. In the presence of metal ions, ROS such as hydrogen peroxide (H2O2) produces highly reactive hydroxyl radical (HO•) via Fenton's reaction. In the current study, we have used the porcine skin (intact pig ear/skin biopsies) as an ex-vivo/in-vitro model system to represent human skin. Experimental results have been presented on the participation of HO• in the initiation of lipid peroxidation and thereby leading to the formation of reactive intermediates and the formation of electronically excited species eventually leading to ultra-weak photon emission. To understand the participation of different electronically excited species in the overall ultra-weak photon emission, the effect of a scavenger of singlet oxygen (1O2) on photon emission in the visible and near-infrared region of the spectrum was measured which showed its contribution. In addition, measurement with interf"
+   },
+   {
+    "work_id": "W2752165143",
+    "title": "Oscillations of ultra-weak photon emission from cancer and non-cancer cells stressed by culture medium change and TNF-α",
+    "year": 2017,
+    "type": "article",
+    "abstract": "Cells spontaneously emit photons in the UV to visible/near-infrared range (ultra-weak photon emission, UPE). Perturbations of the cells' state cause changes in UPE (evoked UPE). The aim of the present study was to analyze the evoked UPE dynamics of cells caused by two types of cell perturbations (stressors): (i) a cell culture medium change, and (ii) application of the pro-inflammatory cytokine tumor necrosis factor alpha (TNF-α). Four types of human cell lines were used (squamous cell carcinoma cells, A431; adenocarcinomic alveolar basal epithelial cells, A549; p53-deficient keratinocytes, HaCaT, and cervical cancer cells, HeLa). In addition to the medium change, TNF-α was applied at different concentrations (5, 10, 20, and 40 ng/mL) and UPE measurements were performed after incubation times of 0, 30, 60, 90 min, 2, 5, 12, 24, 48 h. It was observed that (i) the change of cell culture medium (without added TNF-α) induces a cell type-specific transient increase in UPE with the largest UPE increase observed in A549 cells, (ii) the addition of TNF-α induces a cell type-specific and dose-dependent change in UPE, and (iii) stressed cell cultures in general exhibit oscillatory UPE changes."
+   }
+  ]
+ },
+ {
+  "candidate_id": "C010",
+  "seed_id": "Q1",
+  "statement": "In dark-adapted permeabilized human keratinocytes supplied with defined respiratory substrates, rotenone-induced mitochondrial electron leak will selectively raise 300–349 nm flux, and a mitochondria-targeted antioxidant will abolish that increment more strongly than the 650–750 nm increment.",
+  "scope": {
+   "population": "Permeabilized, viable HaCaT human keratinocytes with intact mitochondria.",
+   "condition": "Defined complex-I-linked respiratory substrate with vehicle, rotenone, mitochondria-targeted antioxidant, or their combination under controlled oxygen tension.",
+   "comparator": "Vehicle respiration, rotenone alone, antioxidant alone and mitochondria-depleted lysate controls.",
+   "outcome": "Absolute 300–349, 350–550 and 650–750 nm photon flux, mitochondrial H2O2 production, oxygen-consumption rate and viability."
+  },
+  "null_hypothesis": "Rotenone produces no 300–349 nm increment, or the mitochondria-targeted antioxidant does not suppress that increment more than the 650–750 nm increment.",
+  "estimand": "θ={ln(FUV,rotenone/FUV,vehicle)−ln(FUV,rotenone+antioxidant/FUV,antioxidant)}−{the analogous 650–750 nm contrast}; the claim requires θ>0.",
+  "proposed_experiment": "Measure simultaneous respiration, mitochondrial H2O2 and calibrated spectral flux during sequential substrate, rotenone and antioxidant additions; repeat in mitochondria-depleted lysate and fit the prespecified band-by-treatment interaction.",
+  "rationale": [
+   {
+    "step": "Mitochondria are proposed to produce a major fraction of cellular UPE through respiration-related ROS formation.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W3041755811"
+    ]
+   },
+   {
+    "step": "Rotenone increased spontaneous photon emission from rat brain, consistent with electron leakage from the respiratory chain.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2160984073"
+    ]
+   },
+   {
+    "step": "ROS oxidation of lipids, proteins and nucleic acids can converge on triplet-carbonyl, excited-chromophore and singlet-oxygen production.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2954526477"
+    ]
+   },
+   {
+    "step": "The difference between antioxidant-sensitive rotenone effects in UV and red bands is a band-specific mitochondrial-source interaction rather than a total-intensity test.",
+    "justification_type": "computation"
+   }
+  ],
+  "cited_works": [
+   {
+    "work_id": "W3041755811",
+    "title": "Integrating Ultra-Weak Photon Emission Analysis in Mitochondrial Research",
+    "year": 2020,
+    "type": "article",
+    "abstract": "Once regarded solely as the energy source of the cell, nowadays mitochondria are recognized to perform multiple essential functions in addition to energy production. Since the discovery of pathogenic mitochondrial DNA defects in the 1980s, research advances have revealed an increasing number of common human diseases, which share an underlying pathogenesis involving mitochondrial dysfunction. A major factor in this dysfunction is reactive oxygen species (ROS), which influence the mitochondrial-nuclear crosstalk and the link with the epigenome, an influence that provides explanations for pathogenic mechanisms. Regarding these mechanisms, we should take into account that mitochondria produce the majority of ultra-weak photon emission (UPE), an aspect that is often ignored - this type of emission may serve as assay for ROS, thus providing new opportunities for a non-invasive diagnosis of mitochondrial dysfunction. In this article, we overviewed three relevant areas of mitochondria-related research over the period 1960-2020: (a) respiration and energy production, (b) respiration-related production of free radicals and other ROS species, and (c) ultra-weak photon emission in relation to ROS and stress. First, we have outlined how these research areas initially developed independently of each other - following that, our review aims to show their stepwise integration during later stages of development. It is suggested that a further stimulation of research on UPE may have the potential to enhance the progress of modern mitochondrial research and its integration in medicine."
+   },
+   {
+    "work_id": "W2160984073",
+    "title": "In vivo imaging of spontaneous ultraweak photon emission from a rat’s brain correlated with cerebral energy metabolism and oxidative stress",
+    "year": 1999,
+    "type": "article",
+    "abstract": " [NOTE: the corpus holds no usable abstract for this work. Judge its citation step on the title alone and mark the step unverifiable rather than false.]"
+   },
+   {
+    "work_id": "W2954526477",
+    "title": "Mechanism of the Formation of Electronically Excited Species by Oxidative Metabolic Processes: Role of Reactive Oxygen Species",
+    "year": 2019,
+    "type": "article",
+    "abstract": "It is well known that biological systems, such as microorganisms, plants, and animals, including human beings, form spontaneous electronically excited species through oxidative metabolic processes. Though the mechanism responsible for the formation of electronically excited species is still not clearly understood, several lines of evidence suggest that reactive oxygen species (ROS) are involved in the formation of electronically excited species. This review attempts to describe the role of ROS in the formation of electronically excited species during oxidative metabolic processes. Briefly, the oxidation of biomolecules, such as lipids, proteins, and nucleic acids by ROS initiates a cascade of reactions that leads to the formation of triplet excited carbonyls formed by the decomposition of cyclic (1,2-dioxetane) and linear (tetroxide) high-energy intermediates. When chromophores are in proximity to triplet excited carbonyls, the triplet-singlet and triplet-triplet energy transfers from triplet excited carbonyls to chromophores result in the formation of singlet and triplet excited chromophores, respectively. Alternatively, when molecular oxygen is present, the triplet-singlet energy transfer from triplet excited carbonyls to molecular oxygen initiates the formation of singlet oxygen. Understanding the mechanism of the formation of electronically excited species allows us to use electronically excited species as a marker for oxidative metabolic processes in cells."
+   },
+   {
+    "work_id": "W2752165143",
+    "title": "Oscillations of ultra-weak photon emission from cancer and non-cancer cells stressed by culture medium change and TNF-α",
+    "year": 2017,
+    "type": "article",
+    "abstract": "Cells spontaneously emit photons in the UV to visible/near-infrared range (ultra-weak photon emission, UPE). Perturbations of the cells' state cause changes in UPE (evoked UPE). The aim of the present study was to analyze the evoked UPE dynamics of cells caused by two types of cell perturbations (stressors): (i) a cell culture medium change, and (ii) application of the pro-inflammatory cytokine tumor necrosis factor alpha (TNF-α). Four types of human cell lines were used (squamous cell carcinoma cells, A431; adenocarcinomic alveolar basal epithelial cells, A549; p53-deficient keratinocytes, HaCaT, and cervical cancer cells, HeLa). In addition to the medium change, TNF-α was applied at different concentrations (5, 10, 20, and 40 ng/mL) and UPE measurements were performed after incubation times of 0, 30, 60, 90 min, 2, 5, 12, 24, 48 h. It was observed that (i) the change of cell culture medium (without added TNF-α) induces a cell type-specific transient increase in UPE with the largest UPE increase observed in A549 cells, (ii) the addition of TNF-α induces a cell type-specific and dose-dependent change in UPE, and (iii) stressed cell cultures in general exhibit oscillatory UPE changes."
+   }
+  ]
+ },
+ {
+  "candidate_id": "C011",
+  "seed_id": "Q2",
+  "statement": "The photon degeneracy parameter delta (mean photon occupation per electromagnetic mode, delta = L_nu * lambda^2) of spontaneous UPE is below 1e-15 in every biological preparation, which places the Hanbury-Brown-Twiss bunching excess of any photocount experiment more than ten orders of magnitude below its own shot noise, so no photocount statistic measured on spontaneous UPE can discriminate a coherent from a chaotic field at any achievable integration time.",
+  "scope": {
+   "population": "Three standard preparations measured under one calibration: germinating Vigna radiata (mung bean) beds, log-phase aerobic Saccharomyces cerevisiae cultures, and dark-adapted human dorsal hand skin.",
+   "condition": "Spontaneous (unstimulated) emission in a temperature-clamped (+/-0.05 C) light-tight chamber, absolute spectral radiance measured in 0.1 nm resolution elements across 350-900 nm with a traceably calibrated optical train of known etendue.",
+   "comparator": "A traceable low-flux transfer standard (attenuated LED / radioluminescent source, calibrated to <5% at ~1e-16 W) measured through the identical optical train and etendue, plus the matched dark run.",
+   "outcome": "Absolute spectral photon radiance L_nu (photons s-1 cm-2 sr-1 Hz-1), the derived degeneracy delta = L_nu * lambda^2, and the HBT integration time tau = 36/(delta^2 * Delta_nu) implied for SNR = 3."
+  },
+  "null_hypothesis": "Some preparation yields delta >= 1e-15 in at least one 0.1 nm resolution element between 350 and 900 nm, or a mode-counted intensity-correlation measurement on that preparation returns g2(0)-1 significantly larger than 1/M for the independently measured mode number M. Either result kills the claim and re-opens the photocount route.",
+  "estimand": "delta = L_nu * lambda^2, dimensionless photons per mode, with 95% CI, reported per 0.1 nm resolution element and as the band maximum; secondary estimand is the implied SNR=3 integration time tau.",
+  "proposed_experiment": "Run one traceable radiometric campaign, not a statistics campaign. Calibrate the whole optical train (aperture, solid angle, filter transmission, detector QE, dead time) against a transfer standard traceable to a national metrology institute at the 1e-16 W level. For each of the three preparations, record absolute spectral photon radiance in 0.1 nm resolution elements across 350-900 nm using a grating spectrograph fed to a >90% QE back-illuminated EMCCD photon counter, with interleaved dark and standard-source runs. Report delta = L_nu*lambda^2 per resolution element with uncertainty budget. Then, as a confirmatory arm, run a two-channel HBT on the brightest preparation with the mode number M independently fixed by a single-mode fibre plus a 0.1 nm filter, measure g2(0)-1 and check it against the 1/M prediction and against the delta-derived SNR bound. Pre-register the 1e-15 threshold and the equivalence test.",
+  "rationale": [
+   {
+    "step": "The field's own critical review states that claims about UPE statistical properties are very controversial and closes by hoping that detectors closer to ideal may bring at least partial answers; a separate UPE review states outright that photocount statistics cannot discriminate a coherent from a thermal state when many modes are collected.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2141663490",
+     "W3217353367"
+    ]
+   },
+   {
+    "step": "Measured spontaneous UPE flux is a few to some hundred photons per second per square centimetre of surface (10-1e3 photons cm-2 s-1 over 200-1000 nm in recent EMCCD imaging), and a whole cell-culture dish gives roughly 12 photons per second; the emission goes into approximately 2*pi sr over a 350-900 nm continuum.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2124535387",
+     "W4415884611",
+     "W4404240787",
+     "W1995699286"
+    ]
+   },
+   {
+    "step": "Compute delta for the optimistic case. Take 1e3 photons s-1 cm-2 into 2*pi sr, lambda = 600 nm, Delta_lambda = 400 nm. Optical bandwidth Delta_nu = c*Delta_lambda/lambda^2 = (3e10 cm/s)(4e-5 cm)/(3.6e-9 cm^2) = 3.3e14 Hz. Photon radiance L = 1e3/(2*pi) = 1.6e2 photons s-1 cm-2 sr-1. Spectral photon radiance L_nu = 1.6e2/3.3e14 = 4.8e-13 photons s-1 cm-2 sr-1 Hz-1. Single-mode etendue = lambda^2 = 3.6e-9 cm^2 sr. Therefore delta = L_nu * lambda^2 = 1.7e-21 photons per mode.",
+    "justification_type": "computation"
+   },
+   {
+    "step": "Compute the resulting HBT sensitivity. For chaotic light with M detected modes the fractional bunching excess is g2(0)-1 = 1/M and the excess-to-noise after time tau, at bin T, is SNR = sqrt(R1*R2*T*tau)*(g2(0)-1). Substituting R = delta*Delta_nu*M_spatial and T = 1/Delta_nu (ideal single-temporal-mode timing) gives the mode-independent result SNR = (delta/2)*sqrt(Delta_nu*tau). Setting SNR = 3 with delta = 1.7e-21 and Delta_nu = 3.3e14 Hz gives tau = 36/(delta^2*Delta_nu) = 4e28 s, roughly 1e11 times the age of the universe. Because M_spatial cancels, narrowband filtering, single-mode-fibre selection and light concentration are exactly SNR-neutral: no optical arrangement rescues the measurement.",
+    "justification_type": "computation"
+   },
+   {
+    "step": "The corpus contains both signs of this geometry dependence stated qualitatively rather than computed: hand UPE was reported to lack the usual coherence because of the large area and the long measurement time, while 20000-bin photocount fits yielding squeezed parameters were performed in exactly the same many-mode regime with a broadband 300-800 nm detector.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2337122567",
+     "W43326842"
+    ]
+   },
+   {
+    "step": "Theory in the corpus establishes that stationary light built from randomly timed emissions acquires the correlation properties of chaotic light in the strong-overlap limit regardless of the statistics of the individual emitters, so the chaotic-light SNR formula above is the correct upper bound for any UPE source model, coherent sub-emitters included.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2084070982"
+    ]
+   },
+   {
+    "step": "A field in a genuinely coherent state in the sense claimed by the coherence literature is a macroscopically occupied mode, i.e. delta >= 1. Measuring delta by absolute radiometry therefore tests the coherence claim with a first-order (intensity, etendue, bandwidth) measurement whose sensitivity scales as sqrt(N) rather than as delta, making it ~1e20 times more sensitive than any g2 route; existing calibrated photon-counting radiometry, where detector noise already dominates source photon noise, is adequate to do it.",
+    "justification_type": "computation"
+   },
+   {
+    "step": "Light-concentration schemes that raise collected flux (high-albedo integrating cavity with 50% number efficiency) do so by scrambling angle and therefore raise M in exact proportion, confirming operationally that flux gain cannot buy bunching contrast.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W3161989600",
+     "W3126489816"
+    ]
+   }
+  ],
+  "cited_works": [
+   {
+    "work_id": "W2141663490",
+    "title": "Biophotons, coherence and photocount statistics: A critical review",
+    "year": 2015,
+    "type": "article",
+    "abstract": " [NOTE: the corpus holds no usable abstract for this work. Judge its citation step on the title alone and mark the step unverifiable rather than false.]"
+   },
+   {
+    "work_id": "W3217353367",
+    "title": "Are Brain–Computer Interfaces Feasible With Integrated Photonic Chips?",
+    "year": 2022,
+    "type": "article",
+    "abstract": "The present paper examines the viability of a radically novel idea for brain-computer interface (BCI), which could lead to novel technological, experimental, and clinical applications. BCIs are computer-based systems that enable either one-way or two-way communication between a living brain and an external machine. BCIs read-out brain signals and transduce them into task commands, which are performed by a machine. In closed loop, the machine can stimulate the brain with appropriate signals. In recent years, it has been shown that there is some ultraweak light emission from neurons within or close to the visible and near-infrared parts of the optical spectrum. Such ultraweak photon emission (UPE) reflects the cellular (and body) oxidative status, and compelling pieces of evidence are beginning to emerge that UPE may well play an informational role in neuronal functions. In fact, several experiments point to a direct correlation between UPE intensity and neural activity, oxidative reactions, EEG activity, cerebral blood flow, cerebral energy metabolism, and release of glutamate. Therefore, we propose a novel skull implant BCI that uses UPE. We suggest that a photonic integrated chip installed on the interior surface of the skull may enable a new form of extraction of the relevant features from the UPE signals. In the current technology landscape, photonic technologies are advancing rapidly and poised to overtake many electrical technologies, due to their unique advantages, such as miniaturization, high speed, low thermal effects, and large integration capacity that allow for "
+   },
+   {
+    "work_id": "W2124535387",
+    "title": "Low‐level luminescence of the human skin",
+    "year": 1997,
+    "type": "article",
+    "abstract": "BACKGROUND/AIMS/METHODS: For the first time systematic measurements of the low-level luminescence of the human skin (\"bi-ophotons\") have been performed by means of a photon detector device set up in darkness. RESULTS: Several months of daily investigations have shown that body light emission follows definite and well-known biological rhythms, such as 14 days, 1 month, 3 months, 9 months, and reflects the left-right symmetry of the body. The results confirm that biophotons are related to physiological functions. CONCLUSIONS: This technique provides a new and powerful noninvasive diagnostic method. In particular, skin research and development may use it for testing the influence of different skin treatments."
+   },
+   {
+    "work_id": "W4415884611",
+    "title": "Red and near-infrared light treatment can change the intensity of biophoton emissions in cell culture",
+    "year": 2025,
+    "type": "article",
+    "abstract": "We explored the patterns of biophoton-ultra-weak light made by cells-emissions in Neuro-2a cells and astrocytes in culture. Biophotons were detected using a photomultiplier as a single photon counter. We measured intensity of emissions when healthy (and at rest), stressed with toxins (sodium troclosene or rotenone) and/or treated with red and near infrared light (R-NIr). We measured ATP (adenosine triphosphate) and ROS (reactive oxygen species) levels also. Our results showed that emissions from Neuro-2a cells and astrocytes were similar when both healthy and stressed. Both cell types emitted biophotons at low intensities when healthy (~ 12 photons/s), but this changed markedly under stress. The extent of change was however, dependant on the stressor involved; at the concentrations we used, sodium troclosene increased emissions, while rotenone had a far more limited impact. Finally, we showed that R-NIr did not influence emissions when healthy, but did so when stressed, particularly with sodium troclosene. Under our experimental time-lines, these emission patterns under different conditions did not relate uniformly to the changes in ATP and ROS levels. In summary, we found that biophoton emissions did not readily define cell type, but could-under some circumstances-be reflective of cell health. Further, that R-NIr could influence these emissions, particularly under stress."
+   },
+   {
+    "work_id": "W4404240787",
+    "title": "Imaging Ultraweak Photon Emission from Living and Dead Mice and from Plants under Stress",
+    "year": 2024,
+    "type": "preprint",
+    "abstract": "The phenomenon of biological ultraweak photon emission (UPE), that is, extremely low-intensity emission (10 − 10 3 photons/cm 2 /sec) in the spectral range of 200 − 1000 nm, has been observed in all living systems that have been examined. Here we report experiments that exemplify the ability of novel imaging systems to detect variations in UPE for a set of physiologically important scenarios. We use EMCCD and CCD cameras to capture single visible-wavelength photons with low noise and quantum efficiencies higher than 90%. Our investigation reveals significant contrast between the UPE from live vs. dead mice. In plants we observed that an increase in temperature and injuries both caused an increase in UPE intensity. Moreover, chemical treatments modified the UPE emission characteristics of plants, particularly the application of an anesthetic (benzocaine) to injury, which showed the highest emission among the compounds tested. As a result, UPE imaging provides the possibility of non-invasive label-free imaging of vitality in animals and the responses of plants to stress."
+   },
+   {
+    "work_id": "W1995699286",
+    "title": "Ultra-weak photon emission from biological samples: Definition, mechanisms, properties, detection and applications",
+    "year": 2014,
+    "type": "article",
+    "abstract": " [NOTE: the corpus holds no usable abstract for this work. Judge its citation step on the title alone and mark the step unverifiable rather than false.]"
+   },
+   {
+    "work_id": "W2337122567",
+    "title": "Biophoton Emission from the Hands",
+    "year": 2002,
+    "type": "article",
+    "abstract": "Biophoton emissions from the palms and the backs of the hands were measured for twenty healthy subjects. About 34 % more biophotons (in the range of 300-650 nm) were observed from the hands than from the background, but no significant difference was observed between the palms and the back of the hands. No marked dependence on age or gender was found. Photo-counting statistics were analyzed to study the coherence of biophotons, and the measured biophotons from the hands lacked the usual coherence because of the large area and the long measurement time. PACS numbers: 87"
+   },
+   {
+    "work_id": "W43326842",
+    "title": "Quantum nature of photon signal emitted by Xanthoria parietina and its implications to biology.",
+    "year": 2008,
+    "type": "article",
+    "abstract": "The properties of living systems are usually described in the semi-classical framework that makes phenomenological division of properties into four classes--matter, psyche, soft consciousness and hard consciousness. Quantum framework provides a scientific basis of this classification of properties. The scientific basis requires the existence of macroscopic quantum entity entangled with quantum photon field of a living system. Every living system emits a photon signal with features indicating its quantum nature. Quantum nature of the signal emitted by a sample of X. parietina is confirmed by analysing photo count distributions obtained in 20000 measurements of photon number in contiguous bins of sizes of 50, 100, 200, 300 and 500 ms. The measurements use a broadband detector sensitive in 300-800 nm range (Photo count distributions of background noise and observed signal are measured similarly. These measurements background noise corrected squeezed state parameters of the signal. The parameters are signal strength expressed in counts per bin, r = 0.06, theta = 2.76 and phi = 0.64. The parameters correctly reproduce photo count distribution of any bin size in 50 ms-6 s range. The reproduction of photo count distributions is a credible evidence of spontaneous emission of photon signal in a quantum squeezed state for macroscopic time by the sample. The evidence is extrapolated to other living systems emitting similar photon signals. It is suggested that every living system is associated with a photon field in squeezed state. The suggestion has far reaching implications to biolog"
+   },
+   {
+    "work_id": "W2084070982",
+    "title": "Coherence and photon statistics for optical fields generated by Poisson random emissions",
+    "year": 1983,
+    "type": "article",
+    "abstract": "We examine the coherence properties and photon statistics of stationary light obtained by the superposition of nonstationary emissions occurring at random times, in accordance with a homogeneous Poisson point process. The individual emissions are assumed to be in a coherent, chaotic, or $n$ state. The statistical nature of the emission times results in fluctuations of the relative contributions of different emissions at a given time. This is manifested by an additional positive term, exhibiting particlelike properties, in the normalized second-order correlation function. Thus, the photon-counting variance is increased. For coherent emissions, interference between the randomly delayed emissions produces additional wavelike noise. In the limit when the emissions overlap strongly, the field exhibits the correlation properties of chaotic light, regardless of the statistics of the individual emissions. In the opposite limit, when emissions seldom overlap, the light intensity is describable by a shot-noise stochastic process, and the detected photocounts show an enhanced particlelike noise, which has its largest value when the counting time is long. In that limit, the photocounts obey the Neyman type-$A$ and generalized Polya-Aeppli distributions, when the individual emissions are coherent and chaotic, respectively. When the individual emissions correspond to the $n$ state, the Poisson emission times result in bunching which reduces or eliminates the inherent antibunching associated with the $n$ state."
+   },
+   {
+    "work_id": "W3161989600",
+    "title": "Stochastic light concentration from 3D to 2D reveals ultraweak chemi- and bioluminescence",
+    "year": 2021,
+    "type": "article",
+    "abstract": "For countless applications in science and technology, light must be concentrated, and concentration is classically achieved with reflective and refractive elements. However, there is so far no efficient way, with a 2D detector, to detect photons produced inside an extended volume with a broad or isotropic angular distribution. Here, with theory and experiment, we propose to stochastically transform and concentrate a volume into a smaller surface, using a high-albedo Ulbricht cavity and a small exit orifice through cavity walls. A 3D gas of photons produced inside the cavity is transformed with a 50% number efficiency into a 2D Lambertian emitting orifice with maximal radiance and a much smaller size. With high-albedo quartz-powder cavity walls ([Formula: see text]), the orifice area is [Formula: see text] times smaller than the walls' area. When coupled to a detectivity-optimized photon-counter ([Formula: see text]) the detection limit is [Formula: see text]. Thanks to this unprecedented sensitivity, we could detect the luminescence produced by the non-catalytic disproportionation of hydrogen peroxide in pure water, which has not been observed so far. We could also detect the ultraweak bioluminescence produced by yeast cells at the onset of their growth. Our work opens new perspectives for studying ultraweak luminescence, and the concept of stochastic 3D/2D conjugation should help design novel light detection methods for large samples or diluted emitters."
+   },
+   {
+    "work_id": "W3126489816",
+    "title": "Detectivity optimization to measure ultraweak light fluxes using an EM-CCD as binary photon counter array",
+    "year": 2021,
+    "type": "article",
+    "abstract": "Abstract For a wide range of purposes, one faces the challenge to detect light from extremely faint and spatially extended sources. In such cases, detector noises dominate over the photon noise of the source, and quantum detectors in photon counting mode are generally the best option. Here, we combine a statistical model with an in-depth analysis of detector noises and calibration experiments, and we show that visible light can be detected with an electron-multiplying charge-coupled devices (EM-CCD) with a signal-to-noise ratio (SNR) of 3 for fluxes less than $$30\\,{\\text{photon}}\\,{\\text{s}}^{ - 1} \\,{\\text{cm}}^{ - 2}$$ <mml:math xmlns:mml=\"http://www.w3.org/1998/Math/MathML\"> <mml:mrow> <mml:mn>30</mml:mn> <mml:mspace/> <mml:mtext>photon</mml:mtext> <mml:mspace/> <mml:msup> <mml:mrow> <mml:mtext>s</mml:mtext> </mml:mrow> <mml:mrow> <mml:mo>-</mml:mo> <mml:mn>1</mml:mn> </mml:mrow> </mml:msup> <mml:mspace/> <mml:msup> <mml:mrow> <mml:mtext>cm</mml:mtext> </mml:mrow> <mml:mrow> <mml:mo>-</mml:mo> <mml:mn>2</mml:mn> </mml:mrow> </mml:msup> </mml:mrow> </mml:math> . For green photons, this corresponds to 12 aW $${\\text{cm}}^{ - 2}$$ <mml:math xmlns:mml=\"http://www.w3.org/1998/Math/MathML\"> <mml:msup> <mml:mrow> <mml:mtext>cm</mml:mtext> </mml:mrow> <mml:mrow> <mml:mo>-</mml:mo> <mml:mn>2</mml:mn> </mml:mrow> </mml:msup> </mml:math> ≈ $$9{ } \\times 10^{ - 11}$$ <mml:math xmlns:mml=\"http://www.w3.org/1998/Math/MathML\"> <mml:mrow> <mml:mn>9</mml:mn> <mml:mrow/> <mml:mo>×</mml:mo> <mml:msup> <mml:mn>10</mml:mn> <mml:mrow> <mml:mo>-</mml:mo> <mml:mn>11</mml:mn> </mml:mrow> </mml:"
+   }
+  ]
+ },
+ {
+  "candidate_id": "C012",
+  "seed_id": "Q2",
+  "statement": "The UPE spectrum of a defined preparation contains no feature narrower than 1 nm anywhere in 400-900 nm, i.e. no emission component with coherence time above ~1.2 ps or coherence length above ~0.36 mm, so first-order (field) coherence of UPE is bounded far below any macroscopic scale.",
+  "scope": {
+   "population": "Mechanically wounded Arabidopsis thaliana leaves (bright, reproducible induced emission with a documented 700-750 nm maximum) and germinating Vigna radiata beds.",
+   "condition": "Photon-counting Fourier-transform (Michelson) interferometry with optical path difference scanned 0-10 mm under the Jacquinot etendue limit, or equivalently a scanning Fabry-Perot etalon at 0.05 nm resolution, over 400-900 nm; total accumulation 1e5-1e6 s.",
+   "comparator": "A spectrally flat calibrated continuum source attenuated to the same count rate (negative control) and the same source with a diode-laser line injected at a known 0.3%, 1% and 3% of band flux (positive controls establishing the visibility floor).",
+   "outcome": "Fringe-visibility envelope |V|(OPD) and the derived maximum line-to-continuum spectral contrast C at 0.1 nm resolution."
+  },
+  "null_hypothesis": "Any preparation shows a visibility revival above the positive-control floor at OPD > 0.5 mm, or a line-to-continuum contrast C > 1.2 in any 0.1 nm resolution element at the pre-registered false-positive rate. That establishes a long-coherence component and falsifies the claim.",
+  "estimand": "Maximum line-to-continuum spectral contrast C = L_nu(peak)/L_nu(local continuum) at 0.1 nm resolution across 400-900 nm, and the OPD at which |V| first falls below the positive-control floor.",
+  "proposed_experiment": "Build a photon-counting Fourier-transform interferometer: light-tight chamber, sample on one port, Michelson with piezo-scanned OPD 0-10 mm, field stop set to the Jacquinot limit for R = 6000, output on a cooled multialkali PMT or an SNSPD. Record the interferogram in photon-arrival-tagged mode over 1e5-1e6 s with interleaved dark, flat-continuum and laser-spiked calibration runs at 0.3%, 1% and 3% injected line fraction to establish the empirical visibility floor. Fourier-transform to a 0.1 nm-resolution spectrum and report the maximum line-to-continuum contrast and its uncertainty. Run the scanning Fabry-Perot variant on the same preparation as an independent instrument check. Pre-register C = 1.2 and OPD = 0.5 mm as the decision thresholds.",
+  "rationale": [
+   {
+    "step": "The coherence claim under debate is explicitly a claim about the state of the field: that delayed luminescence and steady-state UPE exhibit mode coupling over the entire spectrum and originate from fully coherent and sometimes squeezed states. A claim about phase coherence is a first-order claim, but the field has only ever tested it with second-order (intensity) statistics.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W146728166",
+     "W2199084276",
+     "W2141663490"
+    ]
+   },
+   {
+    "step": "Compute the sensitivity asymmetry between the two routes. Fringe visibility is estimated from the detected intensity, so its shot-noise error is sigma_V ~ N^-1/2 on N total detected photons, whereas the intensity-correlation route's SNR scales as delta (see Q2-1). At 1e2-1e3 counts s-1 and 1e5 s, N = 1e7-1e8 and sigma_V = 1e-4 to 3e-4 before etendue restriction. Applying the Jacquinot limit Omega <= 2*pi/R with R = lambda/dlambda = 6000 costs roughly 1e-4 of the flux, leaving sigma_V ~ 1e-2 after one day and ~3e-3 after ten days. The required-time ratio between the first-order and second-order routes is therefore of order 1e20-1e23.",
+    "justification_type": "computation"
+   },
+   {
+    "step": "Compute what linewidth the coherence claim demands. Coherence length l_c = lambda^2/Delta_lambda. At lambda = 600 nm: Delta_lambda = 400 nm gives l_c = 0.9 um and tau_c = 3 fs; Delta_lambda = 1 nm gives l_c = 0.36 mm and tau_c = 1.2 ps. Coherence across a single cell (10 um) already requires Delta_lambda <= 36 nm; coherence across an organism (10 cm) requires Delta_lambda <= 3.6e-6 nm. The claim is therefore a spectroscopic linewidth claim with a concrete resolution target.",
+    "justification_type": "computation"
+   },
+   {
+    "step": "No work in the corpus has resolved a UPE spectrum better than about 10 nm: plant chemiluminescence is characterised by bandpass or cut-off filters (450-850 nm in vitro, red/far-red > 640 nm peaking 700-750 nm in planta; 50 nm bandpass increments in Arabidopsis; 550 nm and 495 nm cut-off ratios in human fingertips; > 650 nm in wounded Spathiphyllum). The narrow-line hypothesis has therefore never been given a chance to fail.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W4283824773",
+     "W4414929333",
+     "W2049213668",
+     "W2808116502"
+    ]
+   },
+   {
+    "step": "Instrument-side confounds that would fake a narrow feature are documented and controllable: photomultiplier dynode and support-structure light emission with a characterisable spectrum, and the general artifact risk from lacking or improper reference signals in UPE statistics work. The positive/negative control arms are designed against exactly these.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W1552722045",
+     "W2964505745",
+     "W3196307655"
+    ]
+   }
+  ],
+  "cited_works": [
+   {
+    "work_id": "W146728166",
+    "title": "Properties of biophotons and their theoretical implications.",
+    "year": 2003,
+    "type": "article",
+    "abstract": "The word \"biophotons\" is used to denote a permanent spontaneous photon emission from all living systems. It displays a few up to some hundred photons/(s x cm2) within the spectral range from at least 260 to 800 nm. It is closely linked to delayed luminescence (DL) of biological tissues which describes the long term and ultra weak reemission of photons after exposure to light illumination. During relaxation DL turns continuously into the steady state biophoton emission, where both, DL and biophoton emission exhibit mode coupling over the entire spectrum and a Poissonian photo count distribution. DL is representing excited states of the biophoton field. The physical properties indicate that biophotons originate from fully coherent and sometimes even squeezed states. The physical analysis provides thermodynamic and quantum optical interpretation, in order to understand the biological impacts of biophotons. Biological phenomena like intracellular and intercellular communication, cell growth and differentiation, interactions among biological systems (like \"Gestaltbildung\" or swarming), and microbial infections can be understood in terms of biophotons. \"Biophotonics\", the corresponding field of applications, provide a new powerful tool for assessing the quality of food (like freshness and shelf life), microbial infections, environmental influences and for substantiating medical diagnosis and therapy."
+   },
+   {
+    "work_id": "W2199084276",
+    "title": "Biophotons — Background, Experimental Results, Theoretical Approach and Applications",
+    "year": 2003,
+    "type": "book-chapter",
+    "abstract": " [NOTE: the corpus holds no usable abstract for this work. Judge its citation step on the title alone and mark the step unverifiable rather than false.]"
+   },
+   {
+    "work_id": "W2141663490",
+    "title": "Biophotons, coherence and photocount statistics: A critical review",
+    "year": 2015,
+    "type": "article",
+    "abstract": " [NOTE: the corpus holds no usable abstract for this work. Judge its citation step on the title alone and mark the step unverifiable rather than false.]"
+   },
+   {
+    "work_id": "W4283824773",
+    "title": "Imaging of Lipid Peroxidation-Associated Chemiluminescence in Plants: Spectral Features, Regulation and Origin of the Signal in Leaves and Roots",
+    "year": 2022,
+    "type": "article",
+    "abstract": "Plants, like most living organisms, spontaneously emit photons of visible light. This ultraweak endogenous chemiluminescence is linked to the oxidative metabolism, with lipid peroxidation constituting a major source of photons in plants. We imaged this signal using a very sensitive cooled CCD camera and analysed its spectral characteristics using bandpass interference filters. In vitro oxidation of lipids induced luminescence throughout the visible spectrum (450−850 nm). However, luminescence in the red spectral domain (>640 nm) occurred first, then declined in parallel with the appearance of the emission in the blue-green (<600 nm). This temporal separation suggests that the chemical species emitting in the blue-green are secondary products, possibly deriving from the red light-emitting species. This conversion did not seem to occur in planta because spontaneous chemiluminescence from plant tissues (leaves, roots) occurred only in the red/far-red light domain (>640 nm), peaking at 700−750 nm. The spectrum of plant chemiluminescence was independent of chlorophyll. The in vivo signal was modulated by cellular detoxification mechanisms and by changes in the concentration of singlet oxygen in the tissues, although the singlet oxygen luminescence bands did not appear as major bands in the spectra. Our results indicate that the intensity of endogenous chemiluminescence from plant tissues is determined by the balance between the formation of luminescent species through secondary reactions involving lipid peroxide-derived intermediates, including singlet oxygen, and their eliminat"
+   },
+   {
+    "work_id": "W4414929333",
+    "title": "Ultra-weak photon emission as a physiological indicator of stress: a study of mechanical injury response in Arabidopsis using bandpass filters",
+    "year": 2025,
+    "type": "article",
+    "abstract": "Abstract Ultra-weak photon emission (UPE) offers a non-invasive window into plant physiological states, particularly in response to adverse conditions. This study refines the spectral analysis of UPE in 7-week-old Arabidopsis thaliana plants subjected to mechanical injury, directly addressing well-documented detection challenges in the longer-wavelength regions and enhancing the utility of UPE as a biomarker for oxidative damage. Previous investigations utilized cut-on absorption filters and CCD imaging, which suffered from imprecise spectral resolution due to poor filter characteristics and reliance on subtraction methods for band emission computation. In contrast, our current study employs bandpass optical filters covering the 400–750 nm range in 50 nm increments, significantly improving the accuracy of UPE spectral data. We measured UPE kinetics after applying a standardized mechanical injury by sharp leaf incision. The study evaluates the suitability of these bandpass filters for discerning UPE spectral patterns in both spontaneous and induced emission scenarios in Arabidopsis leaves. It optimizes detection of crucial longer-wavelength emissions often indicative of reactive oxygen species (ROS) formation. Given that UPE intensity directly correlates with the rate and extent of ROS formation, monitoring these changes provides a robust, non-invasive means to assess oxidative metabolic states and internal responses. Our findings reveal that a significant increase in total UPE following mechanical injury occurs in the 700–750 nm spectral range (band B7), emerging as the dom"
+   },
+   {
+    "work_id": "W2049213668",
+    "title": "Spectral discrimination between healthy people and cold patients using spontaneous photon emission",
+    "year": 2015,
+    "type": "article",
+    "abstract": "In this paper, ultra-weak photon emission (UPE) was used to distinguish cold patients from healthy subjects. The UPE intensity of fingertips of two hands from healthy subjects and cold patients was measured using a two-hand UPE detecting system and a group of cut-off filters. We found a significant difference in the maximum spectral peak and photon emission ratio between the filter of 550nm and 495nm, which can be used in distinguish cold patients from healthy people. Methods and results in this work could be useful for developing a new optical diagnostic tool for early disease diagnosis in the future."
+   },
+   {
+    "work_id": "W2808116502",
+    "title": "Leaf wound induced ultraweak photon emission is suppressed under anoxic stress: Observations of Spathiphyllum under aerobic and anaerobic conditions using novel in vivo methodology",
+    "year": 2018,
+    "type": "article",
+    "abstract": "Plants have evolved a variety of means to energetically sense and respond to abiotic and biotic environmental stress. Two typical photochemical signaling responses involve the emission of volatile organic compounds and light. The emission of certain leaf wound volatiles and light are mutually dependent upon oxygen which is subsequently required for the wound-induced lipoxygenase reactions that trigger the formation of fatty acids and hydroperoxides; ultimately leading to photon emission by chlorophyll molecules. A low noise photomultiplier with sensitivity in the visible spectrum (300-720 nm) is used to continuously measure long duration ultraweak photon emission of dark-adapting whole Spathiphyllum leaves (in vivo). Leaves were mechanically wounded after two hours of dark adaptation in aerobic and anaerobic conditions. It was found that (1) nitrogen incubation did not affect the pre-wound basal photocounts; (2) wound induced leaf biophoton emission was significantly suppressed when under anoxic stress; and (3) the aerobic wound induced emission spectra observed was > 650 nm, implicating chlorophyll as the likely emitter. Limitations of the PMT photocathode's radiant sensitivity, however, prevented accurate analysis from 700-720 nm. Further examination of leaf wounding profile photon counts revealed that the pre-wounding basal state (aerobic and anoxic), the anoxic wounding state, and the post-wounding aerobic state statistics all approximate a Poisson distribution. It is additionally observed that aerobic wounding induces two distinct exponential decay events. These observ"
+   },
+   {
+    "work_id": "W1552722045",
+    "title": "Light Induced Afterpulses in Photomultipliers",
+    "year": 2015,
+    "type": "article",
+    "abstract": "Various spurious effects limit the effectiveness of Photomultipliers when used in low-light-level coincidence counting experiments. One of these effects is afterpulses from light emission in the Photomultiplier. Here we present a study on the light emission in Photomultipliers using a variety of methods. First we image the light emission directly. Second we characterize the light emission spectrum. Finally we investigate the time resolved light emission. In particular we find that, not only the dynodes “glow,” but also the support structure emits light. A fluorescent effect is found. The experiments performed help to understand the fundamental effects of light emission and afterpulses in Photomultipliers."
+   },
+   {
+    "work_id": "W2964505745",
+    "title": "Short-time fractal analysis of biological autoluminescence",
+    "year": 2019,
+    "type": "article",
+    "abstract": "Biological systems manifest continuous weak autoluminescence, which is present even in the absence of external stimuli. Since this autoluminescence arises from internal metabolic and physiological processes, several works suggested that it could carry information in the time series of the detected photon counts. However, there is little experimental work which would show any difference of this signal from random Poisson noise and some works were prone to artifacts due to lacking or improper reference signals. Here we apply rigorous statistical methods and advanced reference signals to test the hypothesis whether time series of autoluminescence from germinating mung beans display any intrinsic correlations. Utilizing the fractional Brownian bridge that employs short samples of time series in the method kernel, we suggest that the detected autoluminescence signal from mung beans is not totally random, but it seems to involve a process with a negative memory. Our results contribute to the development of the rigorous methodology of signal analysis of photonic biosignals."
+   },
+   {
+    "work_id": "W3196307655",
+    "title": "Measuring higher-order photon correlations of faint quantum light: A short review",
+    "year": 2022,
+    "type": "article",
+    "abstract": " [NOTE: the corpus holds no usable abstract for this work. Judge its citation step on the title alone and mark the step unverifiable rather than false.]"
+   }
+  ]
+ },
+ {
+  "candidate_id": "C013",
+  "seed_id": "Q2",
+  "statement": "The super-Poissonian excess in UPE photocount distributions is generated by radical-chain photon clusters describable as a Neyman type-A cluster point process with cluster rate lambda_c and mean mu photons per initiation event, and mu - not any squeezed-state parameter - is the quantity that responds monotonically to antioxidant dose and to oxygen tension.",
+  "scope": {
+   "population": "Chlamydomonas reinhardtii suspensions and aerobic Saccharomyces cerevisiae cultures, with lipid peroxidation initiated by exogenous linoleic acid or by Fenton reagent.",
+   "condition": "Graded antioxidant series (ascorbate or Trolox at 0, 0.1, 1, 10 mM) crossed with an oxygen-tension series (21% O2, 5% O2, <0.1% O2 by N2 purge); photon arrivals time-tagged at 1 us, three bandpass channels (400-450, 550-600, 700-750 nm).",
+   "comparator": "Within-run matched dark reference and heat-killed cells driven to the same mean count rate; and, on the identical data, the three-parameter squeezed-state model (r, theta, phi) fitted as in the published human and lichen analyses.",
+   "outcome": "Fitted (lambda_c, mu) from a joint Neyman type-A fit across bin sizes 1 ms to 10 s, versus fitted (r, theta, phi); dose-response of each parameter set."
+  },
+  "null_hypothesis": "mu shows no monotone dose-response to antioxidant concentration or to pO2 (|Spearman rho| < 0.5 or CI spanning 0), and/or the squeezed-state model beats the cluster model on held-out bin sizes by delta-BIC > 10. Either outcome kills the mechanism claim.",
+  "estimand": "Spearman rho of mu with antioxidant dose and with pO2 (with 95% CI), and the held-out delta-BIC between the two-parameter Neyman type-A model and the three-parameter squeezed-state model fitted jointly across bin sizes.",
+  "proposed_experiment": "Time-tag every photon arrival at 1 us from each preparation across the full 4x3 antioxidant-by-oxygen design, three spectral channels, with interleaved dark and heat-killed arms rate-matched by neutral-density attenuation. Build F(T) curves from 1 ms to 10 s and fit, jointly across all bin sizes, (a) a two-parameter Neyman type-A cluster model and (b) the three-parameter squeezed-state model, holding out two bin sizes for model comparison. Report delta-BIC on held-out bins and the dose-response of every fitted parameter. The decisive contrast is that mu must fall with antioxidant dose and with declining pO2 in step with the known suppression of the chain, while r/theta/phi should either move incoherently or track mean rate alone.",
+  "rationale": [
+   {
+    "step": "Superposition of nonstationary emissions occurring at Poisson-random times produces exactly Neyman type-A photocount distributions (coherent sub-emissions) or generalised Polya-Aeppli distributions (chaotic sub-emissions), with enhanced particle-like noise and increased photon-counting variance. This is a purely classical mechanism that manufactures the 'quantum-looking' excess.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2084070982"
+    ]
+   },
+   {
+    "step": "Clustering is directly observed in an ultraweak biological emission: photomultiplier pulses from human breath chemiluminescence arrive in bursts, which the authors attribute to chain reactions, long-lived emitters, or both.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W1501307750"
+    ]
+   },
+   {
+    "step": "In PMA-stimulated neutrophils the Fano factor of the true UPE signal rises with counting-window size while randomly shuffled surrogates of the same signal do not - the defining signature of a clustered point process rather than of a state of the field.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W1972690031"
+    ]
+   },
+   {
+    "step": "The chain chemistry is manipulable in exactly these preparations: UPE arises from ROS-driven lipid and protein oxidation via triplet excited carbonyls and singlet oxygen; it falls under anoxia and under topical antioxidants (glutathione, tocopherol, ascorbate, CoQ10), and linoleic-acid-induced emission in Chlamydomonas is suppressed by hydroxyl-radical scavenging (mannitol), by lipoxygenase inhibition (catechol) and by removal of molecular oxygen; wound-induced leaf emission is suppressed under anoxia. Yeast BAL is likewise driven by Fenton-generated ROS and tracks oxygen partial pressure.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2132454423",
+     "W2034044028",
+     "W2886211841",
+     "W2808116502",
+     "W4308366428",
+     "W3164345057"
+    ]
+   },
+   {
+    "step": "The squeezed-state reading rests on a three-parameter fit (signal strength plus r = 0.06, theta = 2.76, phi = 0.64) claimed to reproduce photocount distributions across 50 ms to 6 s bins from 20000 measurements. The cluster model makes the same multi-bin prediction with two parameters and, unlike r/theta/phi, its parameters carry a chemical interpretation that can be perturbed - which is what makes the comparison decisive rather than aesthetic.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W43326842",
+     "W142859238",
+     "W2141663490"
+    ]
+   },
+   {
+    "step": "Derive the discriminating signature. For a Neyman type-A process the Fano factor at bin T much longer than the cluster duration is F = 1 + mu, independent of lambda_c, while for T much shorter than the cluster duration F tends to 1. The prediction is a sigmoidal F(T) whose plateau height equals mu and whose knee locates the chain duration - a shape no squeezed-state parameterisation predicts. A published seed measurement gives <n> = 27.25 with variance 34.01, i.e. F = 1.25, corresponding to mu = 0.25 detected photons per cluster, i.e. mu/eta = 2.5 emitted photons per initiation at eta = 0.1: a chemically plausible chain yield and a directly falsifiable number.",
+    "justification_type": "computation"
+   }
+  ],
+  "cited_works": [
+   {
+    "work_id": "W2084070982",
+    "title": "Coherence and photon statistics for optical fields generated by Poisson random emissions",
+    "year": 1983,
+    "type": "article",
+    "abstract": "We examine the coherence properties and photon statistics of stationary light obtained by the superposition of nonstationary emissions occurring at random times, in accordance with a homogeneous Poisson point process. The individual emissions are assumed to be in a coherent, chaotic, or $n$ state. The statistical nature of the emission times results in fluctuations of the relative contributions of different emissions at a given time. This is manifested by an additional positive term, exhibiting particlelike properties, in the normalized second-order correlation function. Thus, the photon-counting variance is increased. For coherent emissions, interference between the randomly delayed emissions produces additional wavelike noise. In the limit when the emissions overlap strongly, the field exhibits the correlation properties of chaotic light, regardless of the statistics of the individual emissions. In the opposite limit, when emissions seldom overlap, the light intensity is describable by a shot-noise stochastic process, and the detected photocounts show an enhanced particlelike noise, which has its largest value when the counting time is long. In that limit, the photocounts obey the Neyman type-$A$ and generalized Polya-Aeppli distributions, when the individual emissions are coherent and chaotic, respectively. When the individual emissions correspond to the $n$ state, the Poisson emission times result in bunching which reduces or eliminates the inherent antibunching associated with the $n$ state."
+   },
+   {
+    "work_id": "W1501307750",
+    "title": "Spontaneous chemiluminescence of human breath. Spectrum, lifetime, temporal distribution, and correlation with peroxide.",
+    "year": 1983,
+    "type": "article",
+    "abstract": "Human breath spontaneously emits photons at a rate of approximately 7,000/liter-s. The emission has a peak in the red part of the spectrum and an ultraviolet contribution. The emission count rate correlates with peroxide concentration in a saturating manner under normal breathing conditions. When trapped in a balloon, the breath luminescence count rate has a half-decay time of approximately 20 min and exhibits more than one mode of decay. The photomultiplier pulses generated by breath luminescence arrive in bursts. The chemiluminescence process appears by these criteria to include chain reactions, long-lived emitters, or both."
+   },
+   {
+    "work_id": "W1972690031",
+    "title": "Photon Counts Statistics in Leukocyte Cell Dynamics",
+    "year": 2011,
+    "type": "conference-paper",
+    "abstract": "In the present experiment ultra-weak photon emission/ chemiluminescence from isolated neutrophils was recorded. It is associated with the production of reactive oxygen species (ROS) in the respiratory burst process which can be activated by PMA (Phorbol 12-Myristate 13-Acetate). Commonly, the reaction is demonstrated utilizing the enhancer luminol. However, with the use of highly sensitive photomultiplier equipment it is also recorded without enhancer. In that case, it can be hypothesized that photon count statistics may assist in understanding the underlying metabolic activity and cooperation of these cells. To study this hypothesis leukocytes were stimulated with PMA and increased photon signals were recorded in the quasi stable period utilizing Fano factor analysis at different window sizes. The Fano factor is defined by the variance over the mean of the number of photon within the observation time. The analysis demonstrated that the Fano factor of true signal and not of the surrogate signals obtained by random shuffling increases when the window size increased. It is concluded that photon count statistics, in particular Fano factor analysis, provides information regarding leukocyte interactions. It opens the perspective to utilize this analytical procedure in (in vivo) inflammation research. However, this needs further validation."
+   },
+   {
+    "work_id": "W2132454423",
+    "title": "Spontaneous ultraweak photon emission imaging of oxidative metabolic processes in human skin: effect of molecular oxygen and antioxidant defense system",
+    "year": 2011,
+    "type": "article",
+    "abstract": "All living organisms emit spontaneous ultraweak photon emission as a result of cellular metabolic processes. In this study, the involvement of reactive oxygen species (ROS) formed as the byproduct of oxidative metabolic processes in spontaneous ultraweak photon emission was studied in human hand skin. The effect of molecular oxygen and ROS scavengers on spontaneous ultraweak photon emission from human skin was monitored using a highly sensitive photomultiplier tube and charged coupled device camera. When spontaneous ultraweak photon emission was measured under anaerobic conditions, the photon emission was decreased, whereas under hyperaerobic condition the enhancement in photon emission was observed. Spontaneous ultraweak photon emission measured after topical application of glutathione, α-tocopherol, ascorbate, and coenzyme Q10 was observed to be decreased. These results reveal that ROS formed during the cellular metabolic processes in the epidermal cells play a significant role in the spontaneous ultraweak photon emission. It is proposed that spontaneous ultraweak photon emission can be used as a noninvasive tool for the temporal and spatial monitoring of the oxidative metabolic processes and intrinsic antioxidant system in human skin."
+   },
+   {
+    "work_id": "W2034044028",
+    "title": "Linoleic Acid-Induced Ultra-Weak Photon Emission from Chlamydomonas reinhardtii as a Tool for Monitoring of Lipid Peroxidation in the Cell Membranes",
+    "year": 2011,
+    "type": "article",
+    "abstract": "Reactive oxygen species formed as a response to various abiotic and biotic stresses cause an oxidative damage of cellular component such are lipids, proteins and nucleic acids. Lipid peroxidation is considered as one of the major processes responsible for the oxidative damage of the polyunsaturated fatty acid in the cell membranes. Various methods such as a loss of polyunsaturated fatty acids, amount of the primary and the secondary products are used to monitor the level of lipid peroxidation. To investigate the use of ultra-weak photon emission as a non-invasive tool for monitoring of lipid peroxidation, the involvement of lipid peroxidation in ultra-weak photon emission was studied in the unicellular green alga Chlamydomonas reinhardtii. Lipid peroxidation initiated by addition of exogenous linoleic acid to the cells was monitored by ultra-weak photon emission measured with the employment of highly sensitive charged couple device camera and photomultiplier tube. It was found that the addition of linoleic acid to the cells significantly increased the ultra-weak photon emission that correlates with the accumulation of lipid peroxidation product as measured using thiobarbituric acid assay. Scavenging of hydroxyl radical by mannitol, inhibition of intrinsic lipoxygenase by catechol and removal of molecular oxygen considerably suppressed ultra-weak photon emission measured after the addition of linoleic acid. The photon emission dominated at the red region of the spectrum with emission maximum at 680 nm. These observations reveal that the oxidation of linoleic acid by hydroxyl"
+   },
+   {
+    "work_id": "W2886211841",
+    "title": "Triplet Excited Carbonyls and Singlet Oxygen Formation During Oxidative Radical Reaction in Skin",
+    "year": 2018,
+    "type": "article",
+    "abstract": "The skin is the largest organ in the body and is consistently exposed to aggressive environmental attack (biological/physical/chemical etc.). Reactive oxygen species (ROS) are formed during the normal oxidative metabolism which enhances to a lethal level under stress condition referred to as oxidative stress. While, under normal conditions, cells are capable of dealing with ROS using non-enzymatic and enzymatic defense system, it can lead to a critical damage to cell system via the oxidation of cellular components under stress condition. Lipid peroxidation is a well-established mechanism of cellular injury in all kinds of organisms and it is often used as an indicator of oxidative stress in cells and tissues. In the presence of metal ions, ROS such as hydrogen peroxide (H2O2) produces highly reactive hydroxyl radical (HO•) via Fenton's reaction. In the current study, we have used the porcine skin (intact pig ear/skin biopsies) as an ex-vivo/in-vitro model system to represent human skin. Experimental results have been presented on the participation of HO• in the initiation of lipid peroxidation and thereby leading to the formation of reactive intermediates and the formation of electronically excited species eventually leading to ultra-weak photon emission. To understand the participation of different electronically excited species in the overall ultra-weak photon emission, the effect of a scavenger of singlet oxygen (1O2) on photon emission in the visible and near-infrared region of the spectrum was measured which showed its contribution. In addition, measurement with interf"
+   },
+   {
+    "work_id": "W2808116502",
+    "title": "Leaf wound induced ultraweak photon emission is suppressed under anoxic stress: Observations of Spathiphyllum under aerobic and anaerobic conditions using novel in vivo methodology",
+    "year": 2018,
+    "type": "article",
+    "abstract": "Plants have evolved a variety of means to energetically sense and respond to abiotic and biotic environmental stress. Two typical photochemical signaling responses involve the emission of volatile organic compounds and light. The emission of certain leaf wound volatiles and light are mutually dependent upon oxygen which is subsequently required for the wound-induced lipoxygenase reactions that trigger the formation of fatty acids and hydroperoxides; ultimately leading to photon emission by chlorophyll molecules. A low noise photomultiplier with sensitivity in the visible spectrum (300-720 nm) is used to continuously measure long duration ultraweak photon emission of dark-adapting whole Spathiphyllum leaves (in vivo). Leaves were mechanically wounded after two hours of dark adaptation in aerobic and anaerobic conditions. It was found that (1) nitrogen incubation did not affect the pre-wound basal photocounts; (2) wound induced leaf biophoton emission was significantly suppressed when under anoxic stress; and (3) the aerobic wound induced emission spectra observed was > 650 nm, implicating chlorophyll as the likely emitter. Limitations of the PMT photocathode's radiant sensitivity, however, prevented accurate analysis from 700-720 nm. Further examination of leaf wounding profile photon counts revealed that the pre-wounding basal state (aerobic and anoxic), the anoxic wounding state, and the post-wounding aerobic state statistics all approximate a Poisson distribution. It is additionally observed that aerobic wounding induces two distinct exponential decay events. These observ"
+   },
+   {
+    "work_id": "W4308366428",
+    "title": "Biological autoluminescence as a perturbance-free method for monitoring oxidation in biosystems",
+    "year": 2022,
+    "type": "article",
+    "abstract": " [NOTE: the corpus holds no usable abstract for this work. Judge its citation step on the title alone and mark the step unverifiable rather than false.]"
+   },
+   {
+    "work_id": "W3164345057",
+    "title": "Biological autoluminescence for assessing oxidative processes in yeast cell cultures",
+    "year": 2021,
+    "type": "article",
+    "abstract": "Nowadays, modern medicine is looking for new, more gentle, and more efficient diagnostic methods. A pathological state of an organism is often closely connected with increased amount of reactive oxygen species. They can react with biomolecules and subsequent reactions can lead to very low endogenous light emission (biological autoluminescence-BAL). This phenomenon can be potentially used as a non-invasive and low-operational-cost tool for monitoring oxidative stress during diseases. To contribute to the understanding of the parameters affecting BAL, we analyzed the BAL from yeast Saccharomyces cerevisiae as a representative eukaryotic organism. The relationship between the BAL intensity and the amount of reactive oxygen species that originates as a result of the Fenton reaction as well as correlation between spontaneous BAL and selected physical and chemical parameters (pH, oxygen partial pressure, and cell concentration) during cell growth were established. Our results contribute to real-time non-invasive methodologies for monitoring oxidative processes in biomedicine and biotechnology."
+   },
+   {
+    "work_id": "W43326842",
+    "title": "Quantum nature of photon signal emitted by Xanthoria parietina and its implications to biology.",
+    "year": 2008,
+    "type": "article",
+    "abstract": "The properties of living systems are usually described in the semi-classical framework that makes phenomenological division of properties into four classes--matter, psyche, soft consciousness and hard consciousness. Quantum framework provides a scientific basis of this classification of properties. The scientific basis requires the existence of macroscopic quantum entity entangled with quantum photon field of a living system. Every living system emits a photon signal with features indicating its quantum nature. Quantum nature of the signal emitted by a sample of X. parietina is confirmed by analysing photo count distributions obtained in 20000 measurements of photon number in contiguous bins of sizes of 50, 100, 200, 300 and 500 ms. The measurements use a broadband detector sensitive in 300-800 nm range (Photo count distributions of background noise and observed signal are measured similarly. These measurements background noise corrected squeezed state parameters of the signal. The parameters are signal strength expressed in counts per bin, r = 0.06, theta = 2.76 and phi = 0.64. The parameters correctly reproduce photo count distribution of any bin size in 50 ms-6 s range. The reproduction of photo count distributions is a credible evidence of spontaneous emission of photon signal in a quantum squeezed state for macroscopic time by the sample. The evidence is extrapolated to other living systems emitting similar photon signals. It is suggested that every living system is associated with a photon field in squeezed state. The suggestion has far reaching implications to biolog"
+   },
+   {
+    "work_id": "W142859238",
+    "title": "Quantum coherence of biophotons and living systems.",
+    "year": 2003,
+    "type": "article",
+    "abstract": "Coherence is a property of the description of the system in the classical framework in which the subunits of a system act in a cooperative manner. Coherence becomes classical if the agent causing cooperation is discernible otherwise it is quantum coherence. Both stimulated and spontaneous biophoton signals show properties that can be attributed to the cooperative actions of many photon-emitting units. But the agents responsible for the cooperative actions of units have not been discovered so far. The stimulated signal decays with non-exponential character. It is system and situation specific and sensitive to many physiological and environmental factors. Its measurable holistic parameters are strength, shape, relative strengths of spectral components, and excitation curve. The spontaneous signal is non-decaying with the probabilities of detecting various number of photons to be neither normal nor Poisson. The detected probabilities in a signal of Parmelia tinctorum match with probabilities expected in a squeezed state of photons. It is speculated that an in vivo nucleic acid molecule is an assembly of intermittent quantum patches that emit biophoton in quantum transitions. The distributions of quantum patches and their lifetimes determine the holistic features of biophoton signals, so that the coherence of biophotons is merely a manifestation of the coherence of living systems."
+   },
+   {
+    "work_id": "W4400038049",
+    "title": "Biophotons: A Hard Problem",
+    "year": 2024,
+    "type": "article",
+    "abstract": "About a hundred years ago, the Russian biologist A. Gurwitsch, based on experiments with onion plants by measuring their growth rate, hypothesized that plants emit a weak electromagnetic field that somehow influences cell growth. This interesting observation remained fundamentally ignored by the scientific community; only in the 1950s the electromagnetic emission from some plants was measured using a photomultiplier used in single counting mode. Later, in the 1980s, several groups around the world started extensive work to understand the origin and role of this ultraweak emission, now called biophotons, coming from living organisms. Biophotons are an endogenous very small production of photons in the visible energy range in and from cells and organisms, and this emission is characteristic of living organisms. Today, there is no doubt that biophotons exist, this emission has been measured by many groups and for many different living organisms, from humans to bacteria. However, the origin of biophotons and whether organisms use them to exchange information is not yet well understood; no model proposed to date is capable of reproducing and interpreting the great variety of experimental data coming from the many different living systems measured so far. In this brief review, we present our experimental work on the biophotons coming from germinating seeds, the main experimental results, and some new methods we are using to analyze the data to open the door for interpretative models of this phenomenon clarifying its function in the regulation and communication between cells and l"
+   },
+   {
+    "work_id": "W2141663490",
+    "title": "Biophotons, coherence and photocount statistics: A critical review",
+    "year": 2015,
+    "type": "article",
+    "abstract": " [NOTE: the corpus holds no usable abstract for this work. Judge its citation step on the title alone and mark the step unverifiable rather than false.]"
+   }
+  ]
+ },
+ {
+  "candidate_id": "C014",
+  "seed_id": "Q2",
+  "statement": "For every standard UPE preparation, the excess Fano factor and Mandel Q measured at bin sizes 1 ms to 10 s are statistically equivalent to those of a spectrally and rate-matched artificial source whose slow-intensity envelope is programmed to reproduce the biological sample's own drift and which is measured in the same chamber at the same temperature.",
+  "scope": {
+   "population": "Germinating Vigna radiata beds, wounded Spathiphyllum or Arabidopsis leaves, and dark-adapted human dorsal hand skin.",
+   "condition": "Interleaved ABAB runs of the biological sample and a 'sham-luminous' reference: a calibrated LED attenuated ~1e-12 by a traceable neutral-density stack, spectrally shaped to the sample's measured three-band ratios, and driven by an arbitrary waveform that replays the sample's own measured 0.01-1 Hz intensity envelope; chamber temperature clamped to +/-0.05 C.",
+   "comparator": "The biological arm versus the sham-luminous arm; plus a matched dark arm and a constant-rate (undrifted) artificial arm to separate drift from detector effects.",
+   "outcome": "F(T)-1 and Mandel Q(T) curves for each arm across 1 ms to 10 s, and their arm-to-arm difference."
+  },
+  "null_hypothesis": "The biological arm's excess exceeds the sham-luminous arm's by more than the pre-registered equivalence margin (delta-Q > 0.02 at any bin size, lower 90% bound above the margin). That would establish a biology-specific statistical signature and falsify the claim.",
+  "estimand": "delta-Q(T) = Q_bio(T) - Q_sham(T) with 90% CI, evaluated jointly across bin sizes 1 ms to 10 s and tested by two-one-sided-tests against the pre-registered equivalence margin.",
+  "proposed_experiment": "For each preparation, first record the biological arm with photon time-tagging and extract its 0.01-1 Hz intensity envelope and its three-band spectral ratios. Then synthesise the sham-luminous arm: an LED attenuated through a traceable neutral-density stack to the same mean count rate, spectrally shaped to the same band ratios, and amplitude-modulated by the recorded envelope. Run ABAB interleaving (biological, sham-luminous, dark, constant-rate artificial) for at least 20 cycles per preparation in a temperature-clamped chamber, with detector afterpulse and dead-time characterisation performed on the same day. Compute F(T) and Q(T) on all arms and test delta-Q(T) by TOST against the pre-registered margin. Report the drift RMS actually required to match, as a check on the Q = <n>*sigma_I^2 arithmetic.",
+  "rationale": [
+   {
+    "step": "The shape of a measured UPE photocount distribution is a convolution of the background distribution with the sample's distribution, so no excess is attributable to the sample unless a reference arm reproduces the background's own fluctuation structure - which a dark run, being non-luminous, cannot do.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2412356141"
+    ]
+   },
+   {
+    "step": "The failure mode is not hypothetical: in 2026 the large reported extracranial 'brain UPE' signals were shown to be explicable by background light contamination once properly dark conditions were imposed, with the additional point that sub-600 nm photons are strongly attenuated by scalp and skull while longer wavelengths fall outside the PMT's effective response.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W7168813583"
+    ]
+   },
+   {
+    "step": "The methodological review of biological autoluminescence statistics states directly that there is little experimental work showing any difference of the signal from random Poisson noise and that several prior works were prone to artifacts due to lacking or improper reference signals.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2964505745",
+     "W2922458642"
+    ]
+   },
+   {
+    "step": "Detector-side generators of correlated counts are documented in the corpus: photomultiplier dynode and support-structure light emission producing afterpulses, afterpulse spectra that degrade photon-correlation spectroscopy, and EM-CCD sensitivity to blackbody radiation above 50 C in a regime where detector noise already dominates source photon noise.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W1552722045",
+     "W2059277266",
+     "W3126489816"
+    ]
+   },
+   {
+    "step": "The observables at stake are exactly the published ones: Fano factor and g2(0) computed at 50 ms bins from a human hand, non-zero kurtosis distinguishing diabetic from healthy subjects, and F = 1.25 from germinating seeds. All were reported without a luminous, drift-matched reference arm.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2030876425",
+     "W2594646273",
+     "W4400038049"
+    ]
+   },
+   {
+    "step": "Compute how little drift is needed to fake the whole literature. For a doubly stochastic (Cox) process whose rate fluctuates with relative variance sigma_I^2 over the bin, the Mandel parameter is Q = <n>*sigma_I^2. At <n> = 5 counts per bin, an intensity drift of only 6% RMS reproduces Q = 0.02, i.e. F = 1.004; at <n> = 27 (the published seed case) a 10% RMS drift reproduces F = 1.27. Percent-level drift is unremarkable in a live sample, a warming chamber or a settling PMT, so the entire published excess is accounted for without any assumption about the state of the field. The sham-luminous arm makes that drift an experimental variable instead of an interpretation.",
+    "justification_type": "computation"
+   }
+  ],
+  "cited_works": [
+   {
+    "work_id": "W2412356141",
+    "title": "Photocount statistics of ultra-weak photon emission from germinating mung bean",
+    "year": 2016,
+    "type": "article",
+    "abstract": " [NOTE: the corpus holds no usable abstract for this work. Judge its citation step on the title alone and mark the step unverifiable rather than false.]"
+   },
+   {
+    "work_id": "W7168813583",
+    "title": "Revisiting Claims of Extracranial Biophoton Detection from the Human Brain",
+    "year": 2026,
+    "type": "article",
+    "abstract": "Ultraweak photon emission, also referred to as biological autoluminescence or biophoton emission, is the spontaneous emission of extremely low levels of light from a broad range of biological systems. Recent studies have reported that UPE measured extracranially can serve as a potential noninvasive biomarker of brain activity. Here, we show that this interpretation suffers from serious problems. We show that, when observed under properly dark conditions, the UPE from the head is much weaker than what is reported in certain papers on \"brain UPE\" from human heads. We also show that the large signals reported in these studies can be explained by background light contamination. Furthermore, photons with wavelengths <600 nm are strongly attenuated by scalp and skull tissues, and longer wavelengths fall largely outside the effective spectral sensitivity of the photomultiplier tubes (PMTs) used. As a consequence, even if UPE from the head is detected under properly background-free conditions, it is likely to be dominated by emission from the scalp rather than from the brain, certainly as long as PMTs are used. Our results emphasize the importance of careful experimental design to make genuine progress on this important question."
+   },
+   {
+    "work_id": "W2964505745",
+    "title": "Short-time fractal analysis of biological autoluminescence",
+    "year": 2019,
+    "type": "article",
+    "abstract": "Biological systems manifest continuous weak autoluminescence, which is present even in the absence of external stimuli. Since this autoluminescence arises from internal metabolic and physiological processes, several works suggested that it could carry information in the time series of the detected photon counts. However, there is little experimental work which would show any difference of this signal from random Poisson noise and some works were prone to artifacts due to lacking or improper reference signals. Here we apply rigorous statistical methods and advanced reference signals to test the hypothesis whether time series of autoluminescence from germinating mung beans display any intrinsic correlations. Utilizing the fractional Brownian bridge that employs short samples of time series in the method kernel, we suggest that the detected autoluminescence signal from mung beans is not totally random, but it seems to involve a process with a negative memory. Our results contribute to the development of the rigorous methodology of signal analysis of photonic biosignals."
+   },
+   {
+    "work_id": "W2922458642",
+    "title": "Short-time fractal analysis of biological autoluminescence",
+    "year": 2019,
+    "type": "preprint",
+    "abstract": "Abstract Biological systems manifest continuous weak autoluminescence, which is present even in the absence of external stimuli. Since this autoluminescence arises from internal metabolic and physiological processes, several works suggested that it could carry information in the time series of the detected photon counts. However, there is little experimental work which would show any difference of this signal from random Poisson noise and some works were prone to artifacts due to lacking or improper reference signals. Here we apply rigorous statistical methods and advanced reference signals to test the hypothesis whether time series of autoluminescence from germinating mung beans display any intrinsic correlations. Utilizing the fractional Brownian bridge that employs short samples of time-series in the method kernel, we suggest that the detected autoluminescence signal from mung beans is not totally random, but it seems to involve a process with a negative memory. Our results contribute to the development of the rigorous methodology of signal analysis of photonic biosignals."
+   },
+   {
+    "work_id": "W1552722045",
+    "title": "Light Induced Afterpulses in Photomultipliers",
+    "year": 2015,
+    "type": "article",
+    "abstract": "Various spurious effects limit the effectiveness of Photomultipliers when used in low-light-level coincidence counting experiments. One of these effects is afterpulses from light emission in the Photomultiplier. Here we present a study on the light emission in Photomultipliers using a variety of methods. First we image the light emission directly. Second we characterize the light emission spectrum. Finally we investigate the time resolved light emission. In particular we find that, not only the dynodes “glow,” but also the support structure emits light. A fluorescent effect is found. The experiments performed help to understand the fundamental effects of light emission and afterpulses in Photomultipliers."
+   },
+   {
+    "work_id": "W2059277266",
+    "title": "Evaluation of photomultiplier tubes for use in photon counting correlation spectroscopy",
+    "year": 1975,
+    "type": "article",
+    "abstract": "A simple experimental technique is described for qualitatively determining the afterpulse spectrum of a photomultiplier tube for use in a photon counting mode. Results for several common photon counting tubes are evaluated with particular interest in the use of the tube for photon correlation spectroscopy (PCS) applications. A discussion of the problems which arise due to afterpulsing is included."
+   },
+   {
+    "work_id": "W3126489816",
+    "title": "Detectivity optimization to measure ultraweak light fluxes using an EM-CCD as binary photon counter array",
+    "year": 2021,
+    "type": "article",
+    "abstract": "Abstract For a wide range of purposes, one faces the challenge to detect light from extremely faint and spatially extended sources. In such cases, detector noises dominate over the photon noise of the source, and quantum detectors in photon counting mode are generally the best option. Here, we combine a statistical model with an in-depth analysis of detector noises and calibration experiments, and we show that visible light can be detected with an electron-multiplying charge-coupled devices (EM-CCD) with a signal-to-noise ratio (SNR) of 3 for fluxes less than $$30\\,{\\text{photon}}\\,{\\text{s}}^{ - 1} \\,{\\text{cm}}^{ - 2}$$ <mml:math xmlns:mml=\"http://www.w3.org/1998/Math/MathML\"> <mml:mrow> <mml:mn>30</mml:mn> <mml:mspace/> <mml:mtext>photon</mml:mtext> <mml:mspace/> <mml:msup> <mml:mrow> <mml:mtext>s</mml:mtext> </mml:mrow> <mml:mrow> <mml:mo>-</mml:mo> <mml:mn>1</mml:mn> </mml:mrow> </mml:msup> <mml:mspace/> <mml:msup> <mml:mrow> <mml:mtext>cm</mml:mtext> </mml:mrow> <mml:mrow> <mml:mo>-</mml:mo> <mml:mn>2</mml:mn> </mml:mrow> </mml:msup> </mml:mrow> </mml:math> . For green photons, this corresponds to 12 aW $${\\text{cm}}^{ - 2}$$ <mml:math xmlns:mml=\"http://www.w3.org/1998/Math/MathML\"> <mml:msup> <mml:mrow> <mml:mtext>cm</mml:mtext> </mml:mrow> <mml:mrow> <mml:mo>-</mml:mo> <mml:mn>2</mml:mn> </mml:mrow> </mml:msup> </mml:math> ≈ $$9{ } \\times 10^{ - 11}$$ <mml:math xmlns:mml=\"http://www.w3.org/1998/Math/MathML\"> <mml:mrow> <mml:mn>9</mml:mn> <mml:mrow/> <mml:mo>×</mml:mo> <mml:msup> <mml:mn>10</mml:mn> <mml:mrow> <mml:mo>-</mml:mo> <mml:mn>11</mml:mn> </mml:mrow> </mml:"
+   },
+   {
+    "work_id": "W2030876425",
+    "title": "Hints at Quantum Characteristics of Light Signals Measured from a Human Subject",
+    "year": 2013,
+    "type": "article",
+    "abstract": "We measure ultra-weak photon signals emitted from the hand of a human subject, either spontaneously or gradually decaying after local stress has been induced with five concentrations of H2O2. We analyze the photon distributions of both spontaneous and stimulated number of photons per measuring interval (bin sizes) according to statistics measure Fano Factor which leads to quantum optics, g(2)(0). We also fit either semi-classical based exponential or quantum grounded hyperbolic curves to the decays. Both indicators point towards an adequate description of the photon signal in an interpretation that is quantum. We extend the interpretation towards the suggestion of a quantum coherent aspect of the subject which, once placed in a therapeutic perspective, links to the holistic views on health."
+   },
+   {
+    "work_id": "W2594646273",
+    "title": "Ultra-weak photon emission in healthy subjects and patients with type 2 diabetes: evidence for a non-invasive diagnostic tool",
+    "year": 2017,
+    "type": "article",
+    "abstract": " [NOTE: the corpus holds no usable abstract for this work. Judge its citation step on the title alone and mark the step unverifiable rather than false.]"
+   },
+   {
+    "work_id": "W4400038049",
+    "title": "Biophotons: A Hard Problem",
+    "year": 2024,
+    "type": "article",
+    "abstract": "About a hundred years ago, the Russian biologist A. Gurwitsch, based on experiments with onion plants by measuring their growth rate, hypothesized that plants emit a weak electromagnetic field that somehow influences cell growth. This interesting observation remained fundamentally ignored by the scientific community; only in the 1950s the electromagnetic emission from some plants was measured using a photomultiplier used in single counting mode. Later, in the 1980s, several groups around the world started extensive work to understand the origin and role of this ultraweak emission, now called biophotons, coming from living organisms. Biophotons are an endogenous very small production of photons in the visible energy range in and from cells and organisms, and this emission is characteristic of living organisms. Today, there is no doubt that biophotons exist, this emission has been measured by many groups and for many different living organisms, from humans to bacteria. However, the origin of biophotons and whether organisms use them to exchange information is not yet well understood; no model proposed to date is capable of reproducing and interpreting the great variety of experimental data coming from the many different living systems measured so far. In this brief review, we present our experimental work on the biophotons coming from germinating seeds, the main experimental results, and some new methods we are using to analyze the data to open the door for interpretative models of this phenomenon clarifying its function in the regulation and communication between cells and l"
+   },
+   {
+    "work_id": "W2141663490",
+    "title": "Biophotons, coherence and photocount statistics: A critical review",
+    "year": 2015,
+    "type": "article",
+    "abstract": " [NOTE: the corpus holds no usable abstract for this work. Judge its citation step on the title alone and mark the step unverifiable rather than false.]"
+   }
+  ]
+ },
+ {
+  "candidate_id": "C015",
+  "seed_id": "Q2",
+  "statement": "No photocount or temporal-complexity feature of UPE - Fano factor, Mandel Q, kurtosis, Hurst/fractional-Brownian exponent, diffusion-entropy scaling exponent, or entropy-weighted spectral fractal dimension - adds more than 0.02 AUC out-of-sample to a classifier of biological state that already contains log mean count rate plus chamber temperature and background rate.",
+  "scope": {
+   "population": "Two pre-registered discrimination tasks, each with an independent held-out cohort acquired after the model is frozen: (a) glioblastoma versus astrocyte cell cultures; (b) viable versus degenerated or frozen mouse embryos, and as a second clinical arm healthy versus type-2-diabetic human hand skin.",
+   "condition": "Blinded analysis of fixed-length photon-count time series (identical acquisition length, bin grid and spectral band across classes), with chamber temperature and interleaved dark-reference rate logged as covariates.",
+   "comparator": "An intensity-only baseline model containing log mean count rate plus the same covariates, fitted and evaluated on identical folds.",
+   "outcome": "delta-AUC on the held-out cohort between the full-feature model and the intensity-only baseline."
+  },
+  "null_hypothesis": "delta-AUC > 0.02 with a lower 95% confidence bound above 0 on a genuinely held-out cohort. That would show photocount statistics carry state information beyond intensity and would falsify the claim.",
+  "estimand": "delta-AUC (held-out) between full-feature and intensity-only models, with 95% CI from nested cross-fitting plus an external cohort; reported per task and pooled.",
+  "proposed_experiment": "Pre-register the feature list, the baseline covariates, the equivalence threshold (delta-AUC = 0.02) and the analysis code before any held-out data are acquired. Acquire matched-length photon-count time series for both classes in each task under identical bin grid, spectral band and acquisition length, with in-chamber temperature and an interleaved dark-reference channel recorded continuously. Fit the intensity-only baseline and the full-feature model on the development cohort with nested cross-fitting, freeze both, then evaluate once on the externally acquired held-out cohort. Report delta-AUC with CI, plus a rate-matched subsample analysis in which classes are trimmed to overlapping log-mean-rate distributions. No new detector is needed; the claim is a design-and-analysis claim and is testable on re-analysis of any existing dataset that retained raw time series and rate logs.",
+  "rationale": [
+   {
+    "step": "Multiple groups report that temporal-statistical features separate biological states: diffusion entropy analysis separating astrocyte from glioblastoma cultures; anomalous DEA scaling appearing with germinating seeds present but ordinary scaling in dark counts; a fractional-Brownian negative-memory signature in mung-bean autoluminescence; an entropy-weighted spectral fractal dimension distinguishing living from degenerated and frozen from fresh mouse embryos; non-zero kurtosis in healthy and diabetic photocount distributions; and spectral power density profiles yielding 90% discriminant accuracy for malignancy.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W7124764611",
+     "W3157775700",
+     "W2964505745",
+     "W4386752905",
+     "W2594646273",
+     "W3016463384"
+    ]
+   },
+   {
+    "step": "In none of those studies is the comparison made against an intensity-matched baseline, yet mean intensity is itself an established correlate of the same states: tumour cells emit more than non-malignant cells, stressed cells emit more than healthy ones, and UPE intensity tracks ROS production and oxidative status generally.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W3016463384",
+     "W4415884611",
+     "W4308366428",
+     "W2132454423"
+    ]
+   },
+   {
+    "step": "The one UPE study in the corpus that used surrogate randomisation for a physiological correlation found the correlations to be temporary, drifting in phase and frequency - the behaviour expected of a shared slow covariate rather than of a stable state-specific feature.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2035748855"
+    ]
+   },
+   {
+    "step": "Show the confound is structural, not incidental. Every listed feature is a functional of the same intensity time series and is monotonically biased by mean rate. For a Cox process, Q = <n>*sigma_I^2, so any class difference in mean rate propagates directly into Q and F. Likewise, an estimated Hurst or DEA scaling exponent is pulled toward the uncorrelated value 0.5 as the Poisson shot component grows relative to the rate-fluctuation component, i.e. as <n> falls; the dark-count arm returning ordinary scaling while the seed arm returns anomalous scaling is exactly what this bias predicts when the two arms differ in mean rate. Matching or adjusting on log mean rate is therefore the minimal control, and it has been applied in none of the cited works.",
+    "justification_type": "computation"
+   },
+   {
+    "step": "The critical review already frames the whole controversy as one about statistical properties rather than intensity and spectrum, on which there is consensus; so the practical question 'can photocount statistics ever decide anything' is precisely whether these features survive an intensity-matched baseline.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2141663490"
+    ]
+   }
+  ],
+  "cited_works": [
+   {
+    "work_id": "W7124764611",
+    "title": "First Experimental Measurements of Biophotons from Astrocytes and Glioblastoma Cell Cultures",
+    "year": 2026,
+    "type": "article",
+    "abstract": "Biophotons are non-thermal and non-bioluminescent ultraweak photon emissions, first hypothesised by Gurwitsch as a regulatory mechanism in cell division, and then experimentally observed in living organisms. Today, two main hypotheses explain their origin: stochastic decay of excited molecules and coherent electromagnetic fields produced in biochemical processes. Recent interest focuses on the role of biophotons in cellular communication and disease monitoring. This study presents the first campaign of biophoton emission measurements from cultured astrocytes and glioblastoma cells, conducted at Fondazione Pisana per la Scienza (FPS) using two ultra-sensitive setups developed in collaboration between the National Laboratories of Frascati (LNF-INFN) and the University of Rome II Tor Vergata. The statistical analyses of the collected data revealed a clear separation between cellular signals and dark noise, confirming the high sensitivity of the apparatus. The Diffusion Entropy Analysis (DEA) was applied to the data to uncover dynamic patterns, revealing anomalous diffusion and long-range memory effects that may be related to intercellular signaling and cellular communication. These findings support the hypothesis that biophoton emissions encode rich information beyond intensity, reflecting metabolic and pathological states. The differences revealed by applying the Diffusion Entropy Analysis to the biophotonic signals of Astrocytes and Glioblastoma are highlighted and discussed in the paper. This work lays the groundwork for future studies on neuronal cultures and proposes biop"
+   },
+   {
+    "work_id": "W3157775700",
+    "title": "Biophotons and Emergence of Quantum Coherence—A Diffusion Entropy Analysis",
+    "year": 2021,
+    "type": "article",
+    "abstract": "We study the emission of photons from germinating seeds using an experimental technique designed to detect light of extremely small intensity. We analyze the dark count signal without germinating seeds as well as the photon emission during the germination process. The technique of analysis adopted here, called diffusion entropy analysis (DEA) and originally designed to measure the temporal complexity of astrophysical, sociological and physiological processes, rests on Kolmogorov complexity. The updated version of DEA used in this paper is designed to determine if the signal complexity is generated either by non-ergodic crucial events with a non-stationary correlation function or by the infinite memory of a stationary but non-integrable correlation function or by a mixture of both processes. We find that dark count yields the ordinary scaling, thereby showing that no complexity of either kinds may occur without any seeds in the chamber. In the presence of seeds in the chamber anomalous scaling emerges, reminiscent of that found in neuro-physiological processes. However, this is a mixture of both processes and with the progress of germination the non-ergodic component tends to vanish and complexity becomes dominated by the stationary infinite memory. We illustrate some conjectures ranging from stress induced annihilation of crucial events to the emergence of quantum coherence."
+   },
+   {
+    "work_id": "W2964505745",
+    "title": "Short-time fractal analysis of biological autoluminescence",
+    "year": 2019,
+    "type": "article",
+    "abstract": "Biological systems manifest continuous weak autoluminescence, which is present even in the absence of external stimuli. Since this autoluminescence arises from internal metabolic and physiological processes, several works suggested that it could carry information in the time series of the detected photon counts. However, there is little experimental work which would show any difference of this signal from random Poisson noise and some works were prone to artifacts due to lacking or improper reference signals. Here we apply rigorous statistical methods and advanced reference signals to test the hypothesis whether time series of autoluminescence from germinating mung beans display any intrinsic correlations. Utilizing the fractional Brownian bridge that employs short samples of time series in the method kernel, we suggest that the detected autoluminescence signal from mung beans is not totally random, but it seems to involve a process with a negative memory. Our results contribute to the development of the rigorous methodology of signal analysis of photonic biosignals."
+   },
+   {
+    "work_id": "W4386752905",
+    "title": "Unique algorithm for the evaluation of embryo photon emission and viability",
+    "year": 2023,
+    "type": "preprint",
+    "abstract": "Abstract Living cells have spontaneous ultraweak photon emission derived from metabolic reactions associated with physiological conditions. The ORCA-Quest CMOS camera (Hamamatsu Photonics, Japan) is a highly sensitive and essential tool for photon detection; its use with a microscope incubator (Olympus) enables the detection of photons emitted by embryos with the exclusion of harmful visible light. With the application of the second law of thermodynamics, the low-entropy energy absorbed and used by embryos can be distinguished from the higher-entropy energy released and detectable in their environment. To evaluate higher-entropy energy data from embryos, we developed a unique algorithm for the calculation of the entropy-weighted spectral fractal dimension, which demonstrates the self-similar structure of the energy (photons) released by embryos. Analyses based on this structure enabled the distinction of living and degenerated mouse embryos, and of frozen and fresh embryos and the background. This novel detection of ultra-weak photon emission from mouse embryos can provide the basis for the development of a photon emission embryo control system. The ultraweak photon emission fingerprints of embryos may be used for the selection of viable specimens in an ideal dark environment."
+   },
+   {
+    "work_id": "W2594646273",
+    "title": "Ultra-weak photon emission in healthy subjects and patients with type 2 diabetes: evidence for a non-invasive diagnostic tool",
+    "year": 2017,
+    "type": "article",
+    "abstract": " [NOTE: the corpus holds no usable abstract for this work. Judge its citation step on the title alone and mark the step unverifiable rather than false.]"
+   },
+   {
+    "work_id": "W3016463384",
+    "title": "Ultraweak Photon Emissions as a Non-Invasive, Early-Malignancy Detection Tool: An In Vitro and In Vivo Study",
+    "year": 2020,
+    "type": "article",
+    "abstract": "Early detection of cancer improves treatment options and increases survival. Building upon previous demonstrations that ultraweak photon emissions (UPE) could be measured to detect cancers, we designed an early detection protocol to test malignancy in both in vitro and in vivo systems. Photons were measured for 100 s from plates containing ~1 million malignant or non-malignant cells from 13 different types of human and mouse cell lines. Tumor cells displayed increased photon emissions compared to non-malignant cells. Examining the standardized Spectral Power Density (SPD) configurations for flux densities between 0.1 and 25 Hz (Δf = 0.01 Hz) yielded 90% discriminant accuracy. The emission profiles of mice that had been injected with melanoma cells could be differentiated from a non-malignant reference groups as early as 24 h post-injection. The peak SPD associated with photon emissions was ~20 Hz for both malignant cell cultures and mice with growing tumors. These results extend the original suggestion by Takeda and his colleagues (2004) published in this journal concerning the potential diagnostic value of UPEs for assessing proliferations of carcinoma cells. The specificity of the spectral profile in the 20 Hz range may be relevant to the consistent efficacy reported by several authors that weak magnetic field pulsations within this frequency range can diminish the growth of malignant cells in culture and tumor weights in mice."
+   },
+   {
+    "work_id": "W4415884611",
+    "title": "Red and near-infrared light treatment can change the intensity of biophoton emissions in cell culture",
+    "year": 2025,
+    "type": "article",
+    "abstract": "We explored the patterns of biophoton-ultra-weak light made by cells-emissions in Neuro-2a cells and astrocytes in culture. Biophotons were detected using a photomultiplier as a single photon counter. We measured intensity of emissions when healthy (and at rest), stressed with toxins (sodium troclosene or rotenone) and/or treated with red and near infrared light (R-NIr). We measured ATP (adenosine triphosphate) and ROS (reactive oxygen species) levels also. Our results showed that emissions from Neuro-2a cells and astrocytes were similar when both healthy and stressed. Both cell types emitted biophotons at low intensities when healthy (~ 12 photons/s), but this changed markedly under stress. The extent of change was however, dependant on the stressor involved; at the concentrations we used, sodium troclosene increased emissions, while rotenone had a far more limited impact. Finally, we showed that R-NIr did not influence emissions when healthy, but did so when stressed, particularly with sodium troclosene. Under our experimental time-lines, these emission patterns under different conditions did not relate uniformly to the changes in ATP and ROS levels. In summary, we found that biophoton emissions did not readily define cell type, but could-under some circumstances-be reflective of cell health. Further, that R-NIr could influence these emissions, particularly under stress."
+   },
+   {
+    "work_id": "W4308366428",
+    "title": "Biological autoluminescence as a perturbance-free method for monitoring oxidation in biosystems",
+    "year": 2022,
+    "type": "article",
+    "abstract": " [NOTE: the corpus holds no usable abstract for this work. Judge its citation step on the title alone and mark the step unverifiable rather than false.]"
+   },
+   {
+    "work_id": "W2132454423",
+    "title": "Spontaneous ultraweak photon emission imaging of oxidative metabolic processes in human skin: effect of molecular oxygen and antioxidant defense system",
+    "year": 2011,
+    "type": "article",
+    "abstract": "All living organisms emit spontaneous ultraweak photon emission as a result of cellular metabolic processes. In this study, the involvement of reactive oxygen species (ROS) formed as the byproduct of oxidative metabolic processes in spontaneous ultraweak photon emission was studied in human hand skin. The effect of molecular oxygen and ROS scavengers on spontaneous ultraweak photon emission from human skin was monitored using a highly sensitive photomultiplier tube and charged coupled device camera. When spontaneous ultraweak photon emission was measured under anaerobic conditions, the photon emission was decreased, whereas under hyperaerobic condition the enhancement in photon emission was observed. Spontaneous ultraweak photon emission measured after topical application of glutathione, α-tocopherol, ascorbate, and coenzyme Q10 was observed to be decreased. These results reveal that ROS formed during the cellular metabolic processes in the epidermal cells play a significant role in the spontaneous ultraweak photon emission. It is proposed that spontaneous ultraweak photon emission can be used as a noninvasive tool for the temporal and spatial monitoring of the oxidative metabolic processes and intrinsic antioxidant system in human skin."
+   },
+   {
+    "work_id": "W2035748855",
+    "title": "Correlation between Fluctuations in Human Ultra-weak Photon Emission and EEG Alpha Rhythm",
+    "year": 2008,
+    "type": "article",
+    "abstract": "“Ultra-weak photon emission” (UPE) recording is a technique that registers, non-invasively and on-line, reactive oxygen species (ROS) fluctuations. The objective of the present study was to perform simultaneous recordings in human subjects of UPE and EEG and to study a possible correlation between UPE and EEG fluctuations. Thirty-six EEG recordings of 1 h each were performed at P3 and P4 with simultaneous regis-tration of UPE of the right dorsum hand utilizing a newly designed tabletop photomultiplier device. Both spectral, statistical and correlation analyses were performed. The data suggest significant correlations between fluctuations in photon emission and fluctua-tions in strength of alpha wave production in the 7-13 Hz frequency band and its 1-Hz sub-bands. Correlations between UPE and the whole alpha region were clarified when correlations were addressed UPE and specific 1-Hz sub-bands. Further clarification was observed with smaller fragments of time series data which suggested that the correlations were temporary. When one data row was shifted over defined lag periods compared to the other, different data emerged. The synchronization exhibits characteristics of a weak phase and frequency coupling, indicat-ing that the systems are neither completely independent nor in a fixed mutual relationship. The synchronization also highlights that the weak coupling may involve slowly drifting and sliding phases. The data are discussed in relationship to mind – body interactions and the role of consciousness in health."
+   },
+   {
+    "work_id": "W2141663490",
+    "title": "Biophotons, coherence and photocount statistics: A critical review",
+    "year": 2015,
+    "type": "article",
+    "abstract": " [NOTE: the corpus holds no usable abstract for this work. Judge its citation step on the title alone and mark the step unverifiable rather than false.]"
+   }
+  ]
+ },
+ {
+  "candidate_id": "C016",
+  "seed_id": "Q2",
+  "statement": "The photocount 'squeezed-state' parameters reported for human surface UPE can be reproduced, within the range published across anatomical sites, from a spectrally matched incoherent artificial source viewed through a tissue-mimicking scattering phantom of matched reduced-scattering and absorption coefficients, so those parameters are set by propagation and detection geometry rather than by the emitting state.",
+  "scope": {
+   "population": "An artificial incoherent source (attenuated LED, three-channel spectrally shaped to the reported human skin UPE band ratios) placed behind Intralipid or TiO2-silicone phantoms with reduced scattering coefficient 1-3 mm-1 and absorption 0.01-0.1 mm-1 at 600-750 nm and thicknesses 0.5-3 mm; contrasted with dark-adapted human dorsal hand and palm.",
+   "condition": "Identical detector, chamber, spectral window and acquisition protocol as the published human analyses: 300-800 nm broadband detection, contiguous bins of 50, 100, 200, 300 and 500 ms, 20000 measurements per run, background measured and subtracted the same way.",
+   "comparator": "The published human parameter ranges (signal strength plus r ~ 0.06, theta ~ 2.76, phi ~ 0.64, and the site-wise profiles reported across 12 anatomical sites), and an unfiltered artificial source with no phantom.",
+   "outcome": "Fitted squeezed parameters (r, theta, phi) and Fano factor / g2(0) for the phantom-filtered artificial light, as a function of phantom optical properties and thickness."
+  },
+  "null_hypothesis": "The phantom-filtered artificial source yields parameters outside the published human range at every phantom setting - for instance r below one third or above three times the reported 0.06, with the human range excluded at 95% - which would show that the human parameters carry source-specific information that propagation cannot manufacture.",
+  "estimand": "The fraction of phantom configurations whose fitted (r, theta, phi) fall inside the convex hull of the published human site-wise parameter set, and the minimum |delta-r| between any phantom configuration and the reported human value.",
+  "proposed_experiment": "Fabricate a phantom series (Intralipid suspensions and TiO2-silicone slabs) characterised independently by spatially resolved or time-resolved diffuse reflectance to fix reduced scattering 1-3 mm-1 and absorption 0.01-0.1 mm-1 at 600-750 nm, thicknesses 0.5-3 mm. Behind each, place a three-channel LED attenuated to the count rate measured from dorsal hand skin and amplitude-modulated with a drift envelope recorded from a real human run. Acquire with the identical detector, spectral window, bin ladder (50-500 ms) and 20000-bin protocol as the published human analyses, including the same background measurement and subtraction. Fit the published squeezed-state model to each phantom run, and to fresh human dorsal-hand and palm runs recorded the same week. Report where the phantom parameters fall relative to the human convex hull, and the dependence of r on phantom thickness and scattering coefficient. Pre-register the exclusion criterion.",
+  "rationale": [
+   {
+    "step": "Human surface photocount analyses report squeezed-state parameters recovered from broadband, large-area, long-duration acquisitions - r = 0.06, theta = 2.76, phi = 0.64 from 20000 bins over 50-500 ms in a lichen, and site-wise 'profiles' of nine such properties across 12 anatomical sites in humans, with Fano factor and g2(0) readouts from the hand at 50 ms bins and squeezed-state descriptions of the H2O2-stimulated skin response.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W43326842",
+     "W2188393532",
+     "W2030876425",
+     "W1559651179"
+    ]
+   },
+   {
+    "step": "The same preparation has yielded the opposite conclusion from the same class of measurement: hand UPE was reported to lack the usual coherence because of the large area and the long measurement time. A parameter that flips sign with acquisition geometry is a geometry parameter until proven otherwise.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2337122567"
+    ]
+   },
+   {
+    "step": "Surface UPE in humans is a diffusely propagated signal, not a direct view of an emitter: relating an internal photogenic source to surface fluence requires a photon-diffusion model with an extrapolated zero-boundary condition, and sub-600 nm photons are strongly attenuated by overlying tissue while longer wavelengths sit at the edge of PMT sensitivity.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W3170639556",
+     "W7168813583",
+     "W2124535387"
+    ]
+   },
+   {
+    "step": "Derive why the phantom must reproduce the fit. Multiple scattering through a slab with reduced scattering coefficient 2 mm-1 randomises transverse phase at the exit face and fixes the collected spatial mode count M through the speckle size and the collection etendue. Since for any chaotic field g2(0)-1 = 1/M, and the fitted squeezed parameter r enters the photocount distribution only through the same second-moment excess, r is a monotone reparameterisation of a quantity determined by M together with the slow-drift envelope. The phantom arm reproduces both by construction - M by matched optical properties and geometry, the drift envelope by programmed modulation - so if the human r is a transport quantity the phantom must land inside the human range.",
+    "justification_type": "computation"
+   },
+   {
+    "step": "The measured photocount shape is in any case a convolution of the background distribution with the sample distribution, so an arm matched in rate, drift and mode count is the correct negative control for any fitted state parameter; this control has never been run.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2412356141",
+     "W2141663490"
+    ]
+   }
+  ],
+  "cited_works": [
+   {
+    "work_id": "W43326842",
+    "title": "Quantum nature of photon signal emitted by Xanthoria parietina and its implications to biology.",
+    "year": 2008,
+    "type": "article",
+    "abstract": "The properties of living systems are usually described in the semi-classical framework that makes phenomenological division of properties into four classes--matter, psyche, soft consciousness and hard consciousness. Quantum framework provides a scientific basis of this classification of properties. The scientific basis requires the existence of macroscopic quantum entity entangled with quantum photon field of a living system. Every living system emits a photon signal with features indicating its quantum nature. Quantum nature of the signal emitted by a sample of X. parietina is confirmed by analysing photo count distributions obtained in 20000 measurements of photon number in contiguous bins of sizes of 50, 100, 200, 300 and 500 ms. The measurements use a broadband detector sensitive in 300-800 nm range (Photo count distributions of background noise and observed signal are measured similarly. These measurements background noise corrected squeezed state parameters of the signal. The parameters are signal strength expressed in counts per bin, r = 0.06, theta = 2.76 and phi = 0.64. The parameters correctly reproduce photo count distribution of any bin size in 50 ms-6 s range. The reproduction of photo count distributions is a credible evidence of spontaneous emission of photon signal in a quantum squeezed state for macroscopic time by the sample. The evidence is extrapolated to other living systems emitting similar photon signals. It is suggested that every living system is associated with a photon field in squeezed state. The suggestion has far reaching implications to biolog"
+   },
+   {
+    "work_id": "W2188393532",
+    "title": "Biophotonic Route for Understanding Mind, Brain and the World",
+    "year": 2015,
+    "type": "article",
+    "abstract": "Man is endowed with brain and mind for comprehending reality of the world.Brain is material entity and is observable, while mind is a non-physical conceived entity.Scientific investigations enhance our knowledge of the functioning of brain and its constituents.They indicate mind-brain association but do not rule out the possibility, in which mind is a property of brain.The perceived reality of the world has both objective and subjective components.The objective components are attributed to brain either alone or in association with mind.The subjective components are considered to be the creations of mind but they appear to contain grains of reality.Attempts made to separate these grains have succeeded partially.One hopes for complete success only after the incorporation of a few missing ingredients.It is our contention that the missing ingredients are human being as an entangled quantum entity -photon field, quantum entity's capability to read information from photon fields of other humans and from its own field reflected by the environment.The evidence for the first ingredient is provided by the analysis of spontaneously emitted visible range photon signals by human beings.The other two ingredients put usual charge-photon interaction in proper context.The experimental results relevant to mind-brain interface are briefly described.A few minutes' time series of small portion of these signals determines their nine properties, which establish quantum nature of signal, and specify quantum state of the dominant component to be squeezed state.Six properties differ in signals emitt"
+   },
+   {
+    "work_id": "W2030876425",
+    "title": "Hints at Quantum Characteristics of Light Signals Measured from a Human Subject",
+    "year": 2013,
+    "type": "article",
+    "abstract": "We measure ultra-weak photon signals emitted from the hand of a human subject, either spontaneously or gradually decaying after local stress has been induced with five concentrations of H2O2. We analyze the photon distributions of both spontaneous and stimulated number of photons per measuring interval (bin sizes) according to statistics measure Fano Factor which leads to quantum optics, g(2)(0). We also fit either semi-classical based exponential or quantum grounded hyperbolic curves to the decays. Both indicators point towards an adequate description of the photon signal in an interpretation that is quantum. We extend the interpretation towards the suggestion of a quantum coherent aspect of the subject which, once placed in a therapeutic perspective, links to the holistic views on health."
+   },
+   {
+    "work_id": "W1559651179",
+    "title": "Quantum Response of Human Skin to Hydrogen Peroxide Stimulation",
+    "year": 2015,
+    "type": "article",
+    "abstract": "Visible range photon signals emitted after applying five concentrations of hydrogen peroxide (H 2 O 2 ) on both sides of the left hand were measured and called response signals. Their quantum nature was ascertained in two analyses. The first analysis determined decay parameters of signals in two models - quantum and two exponential decays - and checked the robustness of decay parameters. The analysis established hyperbolic decay of response signals and showed that signals were in evolving squeezed states. The second analysis split response signal in small sections and determined the properties of the signal in each section from mean, variance and photon count distribution in the section. The properties showed that every section was a high strength biophoton signal having a core quantum component in squeezed state and a peripheral classical component. The properties further suggested the involvement of same or similar quantum entities in the emission of response and biophoton signals."
+   },
+   {
+    "work_id": "W2337122567",
+    "title": "Biophoton Emission from the Hands",
+    "year": 2002,
+    "type": "article",
+    "abstract": "Biophoton emissions from the palms and the backs of the hands were measured for twenty healthy subjects. About 34 % more biophotons (in the range of 300-650 nm) were observed from the hands than from the background, but no significant difference was observed between the palms and the back of the hands. No marked dependence on age or gender was found. Photo-counting statistics were analyzed to study the coherence of biophotons, and the measured biophotons from the hands lacked the usual coherence because of the large area and the long measurement time. PACS numbers: 87"
+   },
+   {
+    "work_id": "W3170639556",
+    "title": "Phenomenological Interpretations of Some Somatic Temporal and Spatial Patterns of Biophoton Emission in Humans",
+    "year": 2021,
+    "type": "article",
+    "abstract": "Biophoton emission remains controversial. The photo-genic origin of biophoton has been attributed to the oxidative stress or free radical production. However, there are considerable gaps in quantitative understanding of biophoton emission. I propose an analytical hypothesis for interpreting a few patterns of steady-state biophoton emission of human, including the dependency on age, the diurnal variation, and the geometric asymmetry associated with serious asymmetrical pathological conditions. The hypothesis is based on an alternative form of energy state, termed vivo-nergy, which is associated with only metabolically active organisms that are also under neuronal control. The hypothesis projects a decrease of the vivo-nergy in human during growth beyond puberty. The hypothesis also proposes a modification of the vivo-nergy by the phases of systematic or homeostatic physiology. The hypothesis further postulates that the deviation of the physiology-modified vivo-nergy from the pre-puberty level is deteriorated by acquired organ-specific pathological conditions. A temporal differential change of vivo-nergy is hypothesized to proportionally modulate oxidative stress that functions as the physical source of biophoton emission. The resulted steady-state diffusion of the photon emitted from a photo-genic source in a human geometry simplified as a homogeneous spherical domain is modeled by photon diffusion principles incorporating an extrapolated zero-boundary condition. The age and systematic physiology combined determines the intensity of the centered physiological steady-state ph"
+   },
+   {
+    "work_id": "W7168813583",
+    "title": "Revisiting Claims of Extracranial Biophoton Detection from the Human Brain",
+    "year": 2026,
+    "type": "article",
+    "abstract": "Ultraweak photon emission, also referred to as biological autoluminescence or biophoton emission, is the spontaneous emission of extremely low levels of light from a broad range of biological systems. Recent studies have reported that UPE measured extracranially can serve as a potential noninvasive biomarker of brain activity. Here, we show that this interpretation suffers from serious problems. We show that, when observed under properly dark conditions, the UPE from the head is much weaker than what is reported in certain papers on \"brain UPE\" from human heads. We also show that the large signals reported in these studies can be explained by background light contamination. Furthermore, photons with wavelengths <600 nm are strongly attenuated by scalp and skull tissues, and longer wavelengths fall largely outside the effective spectral sensitivity of the photomultiplier tubes (PMTs) used. As a consequence, even if UPE from the head is detected under properly background-free conditions, it is likely to be dominated by emission from the scalp rather than from the brain, certainly as long as PMTs are used. Our results emphasize the importance of careful experimental design to make genuine progress on this important question."
+   },
+   {
+    "work_id": "W2412356141",
+    "title": "Photocount statistics of ultra-weak photon emission from germinating mung bean",
+    "year": 2016,
+    "type": "article",
+    "abstract": " [NOTE: the corpus holds no usable abstract for this work. Judge its citation step on the title alone and mark the step unverifiable rather than false.]"
+   },
+   {
+    "work_id": "W2124535387",
+    "title": "Low‐level luminescence of the human skin",
+    "year": 1997,
+    "type": "article",
+    "abstract": "BACKGROUND/AIMS/METHODS: For the first time systematic measurements of the low-level luminescence of the human skin (\"bi-ophotons\") have been performed by means of a photon detector device set up in darkness. RESULTS: Several months of daily investigations have shown that body light emission follows definite and well-known biological rhythms, such as 14 days, 1 month, 3 months, 9 months, and reflects the left-right symmetry of the body. The results confirm that biophotons are related to physiological functions. CONCLUSIONS: This technique provides a new and powerful noninvasive diagnostic method. In particular, skin research and development may use it for testing the influence of different skin treatments."
+   },
+   {
+    "work_id": "W2141663490",
+    "title": "Biophotons, coherence and photocount statistics: A critical review",
+    "year": 2015,
+    "type": "article",
+    "abstract": " [NOTE: the corpus holds no usable abstract for this work. Judge its citation step on the title alone and mark the step unverifiable rather than false.]"
+   }
+  ]
+ }
+]

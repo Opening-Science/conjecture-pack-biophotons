@@ -1,0 +1,390 @@
+[
+ {
+  "candidate_id": "C073",
+  "seed_id": "Q7",
+  "statement": "For calibrated ultraweak emitters placed at least 2 mm beneath ex vivo porcine skin, 640–800 nm images will have smaller source-localization error than 400–600 nm images after wavelength-specific detector calibration, whereas the band difference will be absent for surface emitters.",
+  "scope": {
+   "population": "Excised porcine-ear skin over calibrated broadband ultraweak chemiluminescent point sources",
+   "condition": "Sources positioned at depths of 0, 1, 2, and 4 mm with matched emitted photon numbers",
+   "comparator": "Red/far-red imaging at 640–800 nm versus blue-green imaging at 400–600 nm",
+   "outcome": "Centroid-localization error, point-spread-function width, and recovered photon fraction at each depth"
+  },
+  "null_hypothesis": "At depths of at least 2 mm, red/far-red localization error is no smaller than blue-green localization error, or any apparent advantage is already present at zero depth.",
+  "estimand": "The depth-by-band interaction in localization error: [error(blue-green)-error(red/far-red)] at 2–4 mm minus the same difference at 0 mm; the claim requires a positive interaction with a 95% confidence interval excluding zero.",
+  "proposed_experiment": "Image a NIST-traceable attenuated broadband source or stable chemiluminescent microsource through randomized porcine-skin thicknesses, alternating calibrated bandpass filters and blinded source positions; estimate wavelength-specific transfer functions, centroid error, FWHM, and photon recovery from repeated dark-subtracted frames.",
+  "rationale": [
+   {
+    "step": "Tissue scattering and absorption can lower the signal-to-noise ratio of in vivo optical images.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W3083575255"
+    ]
+   },
+   {
+    "step": "Photons below 600 nm are strongly attenuated by scalp and skull, while longer wavelengths are poorly captured by some conventional PMTs, establishing that source spectrum and detector response jointly constrain biological imaging.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W7168813583"
+    ]
+   },
+   {
+    "step": "Human UPE has been measured from 400 to 700 nm with an LCTF-EMCCD system, so the proposed spectral partition is accessible with current detectors.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2797018767"
+    ]
+   },
+   {
+    "step": "For each source, localization error is the Euclidean distance between the known source coordinate and the fitted image centroid; subtracting the zero-depth band difference removes band-dependent camera and lens bias.",
+    "justification_type": "computation"
+   }
+  ],
+  "cited_works": [
+   {
+    "work_id": "W3083575255",
+    "title": "Advanced Bioluminescence System for In Vivo Imaging with Brighter and Red-Shifted Light Emission",
+    "year": 2020,
+    "type": "article",
+    "abstract": "In vivo bioluminescence imaging (BLI), which is based on luminescence emitted by the luciferase-luciferin reaction, has enabled continuous monitoring of various biochemical processes in living animals. Bright luminescence with a high signal-to-background ratio, ideally red or near-infrared light as the emission maximum, is necessary for in vivo animal experiments. Various attempts have been undertaken to achieve this goal, including genetic engineering of luciferase, chemical modulation of luciferin, and utilization of bioluminescence resonance energy transfer (BRET). In this review, we overview a recent advance in the development of a bioluminescence system for in vivo BLI. We also specifically examine the improvement in bioluminescence intensity by mutagenic or chemical modulation on several beetle and marine luciferase bioluminescence systems. We further describe that intramolecular BRET enhances luminescence emission, with recent attempts for the development of red-shifted bioluminescence system, showing great potency in in vivo BLI. Perspectives for future improvement of bioluminescence systems are discussed."
+   },
+   {
+    "work_id": "W7168813583",
+    "title": "Revisiting Claims of Extracranial Biophoton Detection from the Human Brain",
+    "year": 2026,
+    "type": "article",
+    "abstract": "Ultraweak photon emission, also referred to as biological autoluminescence or biophoton emission, is the spontaneous emission of extremely low levels of light from a broad range of biological systems. Recent studies have reported that UPE measured extracranially can serve as a potential noninvasive biomarker of brain activity. Here, we show that this interpretation suffers from serious problems. We show that, when observed under properly dark conditions, the UPE from the head is much weaker than what is reported in certain papers on \"brain UPE\" from human heads. We also show that the large signals reported in these studies can be explained by background light contamination. Furthermore, photons with wavelengths <600 nm are strongly attenuated by scalp and skull tissues, and longer wavelengths fall largely outside the effective spectral sensitivity of the photomultiplier tubes (PMTs) used. As a consequence, even if UPE from the head is detected under properly background-free conditions, it is likely to be dominated by emission from the scalp rather than from the brain, certainly as long as PMTs are used. Our results emphasize the importance of careful experimental design to make genuine progress on this important question."
+   },
+   {
+    "work_id": "W2797018767",
+    "title": "Measuring the Human Ultra-Weak Photon Emission Distribution Using an Electron-Multiplying, Charge-Coupled Device as a Sensor",
+    "year": 2018,
+    "type": "article",
+    "abstract": "Ultra-weak photon emission (UPE) is the spontaneous emission from living systems mainly attributed to oxidation reactions, in which reactive oxygen species (ROS) may play a major role. Given the capability of the next-generation electron-multiplying CCD (EMCCD) sensors and the easy use of liquid crystal tunable filters (LCTF), the aim of this work was to explore the potential of a simple UPE spectrometer to measure the UPE from a human hand. Thus, an easy setup was configured based on a dark box for inserting the subject’s hand prior to LCTF as a monochromator and an EMCCD sensor working in the full vertical binning mode (FVB) as a spectra detector. Under controlled conditions, both dark signals and left hand UPE were acquired by registering the UPE intensity at different selected wavelengths (400, 450, 500, 550, 600, 650, and 700 nm) during a period of 10 min each. Then, spurious signals were filtered out by ignoring the pixels whose values were clearly outside of the Gaussian distribution, and the dark signal was subtracted from the subject hand signal. The stepped spectrum with a peak of approximately 880 photons at 500 nm had a shape that agreed somewhat with previous reports, and agrees with previous UPE research that reported UPE from 420 to 570 nm, or 260 to 800 nm, with a range from 1 to 1000 photons s−1 cm−2. Obtaining the spectral distribution instead of the total intensity of the UPE represents a step forward in this field, as it may provide extra information about a subject’s personal states and relationship with ROS. A new generation of CCD sensors with lower d"
+   },
+   {
+    "work_id": "W2888240508",
+    "title": "Measurement of tissue optical properties in the context of tissue optical clearing",
+    "year": 2018,
+    "type": "article",
+    "abstract": "Nowadays, dynamically developing optical (photonic) technologies play an ever-increasing role in medicine. Their adequate and effective implementation in diagnostics, surgery, and therapy needs reliable data on optical properties of human tissues, including skin. This paper presents an overview of recent results on the measurements and control of tissue optical properties. The issues reported comprise a brief review of optical properties of biological tissues and efficacy of optical clearing (OC) method in application to monitoring of diabetic complications and visualization of blood vessels and microcirculation using a number of optical imaging technologies, including spectroscopic, optical coherence tomography, and polarization- and speckle-based ones. Molecular modeling of immersion OC of skin and specific technique of OC of adipose tissue by its heating and photodynamic treatment are also discussed."
+   }
+  ]
+ },
+ {
+  "candidate_id": "C074",
+  "seed_id": "Q7",
+  "statement": "Following a standardized puncture wound in Arabidopsis thaliana leaves, the centroid of red/far-red UPE will move outward from the wound with distance-dependent onset times that track the independently measured ROS-response front, indicating a changing biological source distribution rather than a static scattering halo.",
+  "scope": {
+   "population": "Dark-adapted adult Arabidopsis thaliana rosette leaves",
+   "condition": "Single standardized puncture wound imaged continuously for 120 minutes",
+   "comparator": "Sham-handled leaves and matched wounded leaves used for independent ROS imaging",
+   "outcome": "Radial UPE onset time as a function of distance, propagation speed, and concordance with the ROS front"
+  },
+  "null_hypothesis": "UPE remains confined to a stationary wound-centered point-spread function, shows no positive distance-onset slope, or its estimated propagation speed is unrelated to the independently measured ROS front.",
+  "estimand": "The UPE-front speed from the inverse slope of onset time versus radial distance and its ratio to the independently measured ROS-front speed; the claim requires both a positive distance-onset slope and a speed ratio between 0.5 and 2.0.",
+  "proposed_experiment": "Acquire one-minute red/far-red UPE frames from wounded and sham leaves; estimate onset independently in concentric and vein-aligned regions after correcting the measured point-spread function. In a separate matched cohort, measure the wound-induced ROS front at the same time points to avoid excitation afterglow contaminating UPE.",
+  "rationale": [
+   {
+    "step": "Wounding Arabidopsis produces ROS and oxidized biomolecules that can form electronically excited species.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2991640993"
+    ]
+   },
+   {
+    "step": "Wounded Arabidopsis shows enhanced UPE and altered spectral kinetics measurable by cryogenic CCD imaging and PMT spectroscopy.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W3037707140"
+    ]
+   },
+   {
+    "step": "Plant autoluminescence in vivo is concentrated above 640 nm and peaks near 700–750 nm, identifying the highest-yield band for dynamic imaging.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W4283824773"
+    ]
+   },
+   {
+    "step": "A static optical point-spread function can broaden an image spatially but cannot generate onset times that increase systematically with distance over successive frames; such a slope requires a time-varying source or tissue optical properties.",
+    "justification_type": "computation"
+   }
+  ],
+  "cited_works": [
+   {
+    "work_id": "W2991640993",
+    "title": "Reactive Oxygen Species as a Response to Wounding: In Vivo Imaging in Arabidopsis thaliana",
+    "year": 2020,
+    "type": "article",
+    "abstract": "Mechanical injury or wounding in plants can be attributed to abiotic or/and biotic causes. Subsequent defence responses are either local, i. e. within or in the close vicinity of affected tissue, or systemic, i. e. at distant plant organs. Stress stimuli activate a plethora of early and late reactions, from electric signals induced within seconds upon injury, oxidative burst within minutes, and slightly slower changes in hormone levels or expression of defence-related genes, to later cell wall reinforcement by polysaccharides deposition, or accumulation of proteinase inhibitors and hydrolytic enzymes. In the current study, we focused on the production of reactive oxygen species (ROS) in wounded Arabidopsis leaves. Based on fluorescence imaging, we provide experimental evidence that ROS [superoxide anion radical (O2•-) and singlet oxygen (1O2)] are produced following wounding. As a consequence, oxidation of biomolecules is induced, predominantly of polyunsaturated fatty acid, which leads to the formation of reactive intermediate, products and electronically excited species."
+   },
+   {
+    "work_id": "W3037707140",
+    "title": "Spectral Distribution of Ultra-Weak Photon Emission as a Response to Wounding in Plants: An In Vivo Study",
+    "year": 2020,
+    "type": "article",
+    "abstract": "It is well established that every living organism spontaneously emits photons referred to as ultra-weak photon emission (synonym biophotons or low-level chemiluminescence) which inherently embodies information about the wellbeing of the source. In recent years, efforts have been made to use this feature as a non-invasive diagnostic tool related to the detection of food quality, agriculture and biomedicine. The current study deals with stress resulting from wounding (mechanical injury) on Arabidopsis thaliana and how it modifies the spontaneous ultra-weak photon emission. The ultra-weak photon emission from control (non-wounded) and stressed (wounded) plants was monitored using different modes of ultra-weak photon emission measurement sensors like charge-coupled device (CCD) cameras and photomultiplier tubes (PMT) and the collected data were analyzed to determine the level of stress generated, photon emission patterns, and underlying biochemical process. It is generally considered that electronically excited species formed during the oxidative metabolic processes are responsible for the ultra-weak photon emission. In the current study, a high-performance cryogenic full-frame CCD camera was employed for two-dimensional in-vivo imaging of ultra-weak photon emission (up to several counts/s) and the spectral analysis was done by using spectral system connected to a PMT. The results show that Arabidopsis subjected to mechanical injury enhances the photon emission and also leads to changes in the spectral pattern of ultra-weak photon emission. Thus, ultra-weak photon emission can "
+   },
+   {
+    "work_id": "W4283824773",
+    "title": "Imaging of Lipid Peroxidation-Associated Chemiluminescence in Plants: Spectral Features, Regulation and Origin of the Signal in Leaves and Roots",
+    "year": 2022,
+    "type": "article",
+    "abstract": "Plants, like most living organisms, spontaneously emit photons of visible light. This ultraweak endogenous chemiluminescence is linked to the oxidative metabolism, with lipid peroxidation constituting a major source of photons in plants. We imaged this signal using a very sensitive cooled CCD camera and analysed its spectral characteristics using bandpass interference filters. In vitro oxidation of lipids induced luminescence throughout the visible spectrum (450−850 nm). However, luminescence in the red spectral domain (>640 nm) occurred first, then declined in parallel with the appearance of the emission in the blue-green (<600 nm). This temporal separation suggests that the chemical species emitting in the blue-green are secondary products, possibly deriving from the red light-emitting species. This conversion did not seem to occur in planta because spontaneous chemiluminescence from plant tissues (leaves, roots) occurred only in the red/far-red light domain (>640 nm), peaking at 700−750 nm. The spectrum of plant chemiluminescence was independent of chlorophyll. The in vivo signal was modulated by cellular detoxification mechanisms and by changes in the concentration of singlet oxygen in the tissues, although the singlet oxygen luminescence bands did not appear as major bands in the spectra. Our results indicate that the intensity of endogenous chemiluminescence from plant tissues is determined by the balance between the formation of luminescent species through secondary reactions involving lipid peroxide-derived intermediates, including singlet oxygen, and their eliminat"
+   },
+   {
+    "work_id": "W2058931687",
+    "title": "Biophoton Imaging: A Nondestructive Method for Assaying <i>R</i> Gene Responses",
+    "year": 2005,
+    "type": "article",
+    "abstract": "Plant disease resistance (R) proteins of the nucleotide binding-leucine rich repeat class are responsible for pathogen recognition and activation of defense signaling networks leading to the hypersensitive response (HR). Genetically, R-protein signaling appears to be integrated through a limited set of common downstream components. However, the timing of development of visible HR is unique to individual R proteins. By utilizing the phenomena of ultraweak photon emission from leaves undergoing an incompatible interacttion, a powerful nondestructive and facile assay is described to compare timing of defense responses elicited by different R proteins. We demonstrate that ultraweak photon emission, or \"biophoton generation,\" is demonstrated to be associated with hypersensitive cell death. Biophoton emission requires an intact R signaling network and increases in cytosolic calcium and nitric oxide, but elevated reactive oxygen species are not necessary. Importantly, the assay is robust and applicable to a range of incompatible interactions in various plant species. The ability to assay R responses nondestructively in real time and a chosen genetic background makes this technique amenable to subtle genetic dissection of plant defense responses."
+   }
+  ]
+ },
+ {
+  "candidate_id": "C075",
+  "seed_id": "Q7",
+  "statement": "At equal excess emitted photon numbers, spatially resolved UPE analysis will detect an unknown focal oxidative lesion occupying 5% of an ex vivo porcine-skin field more accurately than spatially summed counts, while summed counts will perform at least as well for a diffuse whole-field perturbation.",
+  "scope": {
+   "population": "Excised porcine-ear skin specimens",
+   "condition": "Fenton-reagent oxidative perturbations applied either focally to 5% of the field or diffusely over the entire field, with dose adjusted to equalize excess photons",
+   "comparator": "A spatial generalized-likelihood-ratio detector versus the sum of all pixels from the same camera frames",
+   "outcome": "Detection AUC at fixed exposure and false-positive rate for focal and diffuse perturbations"
+  },
+  "null_hypothesis": "There is no positive focal-versus-diffuse interaction in the advantage of spatial analysis over summed counts.",
+  "estimand": "D=[AUC(spatial)-AUC(sum)]focal-[AUC(spatial)-AUC(sum)]diffuse; the claim requires D greater than 0.10 with a bootstrap 95% confidence interval excluding zero.",
+  "proposed_experiment": "Randomize focal, diffuse, vehicle, and untreated conditions across skin specimens; acquire blinded dark-corrected frames; equalize excess detected counts by titrating dose in pilot specimens; then compare preregistered spatial and summed-count detectors on held-out specimens.",
+  "rationale": [
+   {
+    "step": "Fenton-reagent exposure produces a marked two-dimensional UPE response in porcine skin and is associated with oxidative protein modifications.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W4321104258"
+    ]
+   },
+   {
+    "step": "CCD accumulation time and hardware binning materially determine the quality of two-dimensional UPE images in biological samples.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2039224325"
+    ]
+   },
+   {
+    "step": "Using the same raw frames for both analyses holds quantum efficiency, exposure, optics, and total detected photons constant, isolating the information contributed by photon coordinates.",
+    "justification_type": "computation"
+   },
+   {
+    "step": "The interaction D distinguishes a genuine benefit of pictures for localized sources from a generic sensitivity difference between camera and counter hardware.",
+    "justification_type": "computation"
+   }
+  ],
+  "cited_works": [
+   {
+    "work_id": "W4321104258",
+    "title": "Imaging and Characterization of Oxidative Protein Modifications in Skin",
+    "year": 2023,
+    "type": "article",
+    "abstract": "Skin plays an important role in protection, metabolism, thermoregulation, sensation, and excretion whilst being consistently exposed to environmental aggression, including biotic and abiotic stresses. During the generation of oxidative stress in the skin, the epidermal and dermal cells are generally regarded as the most affected regions. The participation of reactive oxygen species (ROS) as a result of environmental fluctuations has been experimentally proven by several researchers and is well known to contribute to ultra-weak photon emission via the oxidation of biomolecules (lipids, proteins, and nucleic acids). More recently, ultra-weak photon emission detection techniques have been introduced to investigate the conditions of oxidative stress in various living systems in in vivo, ex vivo and in vitro studies. Research into two-dimensional photon imaging is drawing growing attention because of its application as a non-invasive tool. We monitored spontaneous and stress-induced ultra-weak photon emission under the exogenous application of a Fenton reagent. The results showed a marked difference in the ultra-weak photon emission. Overall, these results suggest that triplet carbonyl (3C=O∗) and singlet oxygen (1O2) are the final emitters. Furthermore, the formation of oxidatively modified protein adducts and protein carbonyl formation upon treatment with hydrogen peroxide (H2O2) were observed using an immunoblotting assay. The results from this study broaden our understanding of the mechanism of the generation of ROS in skin layers and the formation/contribution of various ex"
+   },
+   {
+    "work_id": "W2039224325",
+    "title": "Towards the two-dimensional imaging of spontaneous ultra-weak photon emission from microbial, plant and animal cells",
+    "year": 2013,
+    "type": "article",
+    "abstract": "Two-dimensional imaging of spontaneous ultra-weak photon emission was measured in the yeast cells, Arabidopsis plant and the human hand using highly sensitive charge coupled device (CCD) camera. For the first time, the detail analysis of measuring parameters such as accumulation time and binning is provided with the aim to achieve two-dimensional images of spontaneous ultra-weak photon emission of good quality. We present data showing that using a hardware binning with binning factor 4 × 4, the accumulation time decreases in the following order: yeast cells (30 min) > the human hand (20 min) > Arabidopsis plant (10 min). Analysis of measuring parameters provides a detailed description of standard condition to be used for two-dimensional spontaneous ultra-weak photon imaging in microbes, plants and animals. Thus, CCD imaging can be employed as a unique tool to examine the oxidative state of the living organism with the application in microbiological, plant and medical research."
+   },
+   {
+    "work_id": "W1995699286",
+    "title": "Ultra-weak photon emission from biological samples: Definition, mechanisms, properties, detection and applications",
+    "year": 2014,
+    "type": "article",
+    "abstract": " [NOTE: the corpus holds no usable abstract for this work. Judge its citation step on the title alone and mark the step unverifiable rather than false.]"
+   }
+  ]
+ },
+ {
+  "candidate_id": "C076",
+  "seed_id": "Q7",
+  "statement": "A focal cortical ultraweak source beneath intact rat scalp and skull will not be localizable to within 5 mm from an external image even in the 640–850 nm band, although the same source will be localizable after scalp-and-skull removal and a superficial scalp source will remain localizable externally.",
+  "scope": {
+   "population": "Fresh ex vivo rat heads with intact scalp and skull and matched exposed-cortex preparations",
+   "condition": "A calibrated UPE-level microsource placed at randomized cortical coordinates beneath the skull",
+   "comparator": "Intact-head imaging versus exposed-cortex imaging and superficial scalp-source imaging",
+   "outcome": "Blinded source-localization error, recovered photon fraction, and image contrast-to-noise ratio"
+  },
+  "null_hypothesis": "The cortical source is localized through intact scalp and skull with median error below 5 mm and performance significantly above shuffled-coordinate controls.",
+  "estimand": "Median intact-head localization error for cortical sources, with exposed-cortex and superficial-source errors as positive controls; the hypothesis is killed if the intact cortical median is below 5 mm and its 95% interval excludes 5 mm.",
+  "proposed_experiment": "Insert a stable, calibrated microsource emitting at biological UPE rates at computer-randomized cortical coordinates in ex vivo rat heads; image sequentially with intact tissues, scalp removed, and skull removed, with separate superficial-source positive controls and blinded coordinate recovery.",
+  "rationale": [
+   {
+    "step": "Two-dimensional UPE imaging has been reported from rat brain in vivo and related to cerebral metabolism and oxidative stress.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2086348119",
+     "W2160984073"
+    ]
+   },
+   {
+    "step": "Properly dark extracranial measurements indicate that photons below 600 nm are strongly attenuated and that detected head UPE is likely dominated by scalp rather than brain when conventional PMTs are used.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W7168813583"
+    ]
+   },
+   {
+    "step": "The seed question identifies tissue scattering and absorption as causes of low-SNR in vivo images.",
+    "justification_type": "given"
+   },
+   {
+    "step": "Comparing localization against randomized source coordinates tests whether an apparent hotspot contains source-position information rather than merely excess counts.",
+    "justification_type": "computation"
+   }
+  ],
+  "cited_works": [
+   {
+    "work_id": "W2086348119",
+    "title": "Two-dimensional photon counting imaging and spatiotemporal characterization of ultraweak photon emission from a rat’s brain in vivo",
+    "year": 1999,
+    "type": "article",
+    "abstract": " [NOTE: the corpus holds no usable abstract for this work. Judge its citation step on the title alone and mark the step unverifiable rather than false.]"
+   },
+   {
+    "work_id": "W2160984073",
+    "title": "In vivo imaging of spontaneous ultraweak photon emission from a rat’s brain correlated with cerebral energy metabolism and oxidative stress",
+    "year": 1999,
+    "type": "article",
+    "abstract": " [NOTE: the corpus holds no usable abstract for this work. Judge its citation step on the title alone and mark the step unverifiable rather than false.]"
+   },
+   {
+    "work_id": "W7168813583",
+    "title": "Revisiting Claims of Extracranial Biophoton Detection from the Human Brain",
+    "year": 2026,
+    "type": "article",
+    "abstract": "Ultraweak photon emission, also referred to as biological autoluminescence or biophoton emission, is the spontaneous emission of extremely low levels of light from a broad range of biological systems. Recent studies have reported that UPE measured extracranially can serve as a potential noninvasive biomarker of brain activity. Here, we show that this interpretation suffers from serious problems. We show that, when observed under properly dark conditions, the UPE from the head is much weaker than what is reported in certain papers on \"brain UPE\" from human heads. We also show that the large signals reported in these studies can be explained by background light contamination. Furthermore, photons with wavelengths <600 nm are strongly attenuated by scalp and skull tissues, and longer wavelengths fall largely outside the effective spectral sensitivity of the photomultiplier tubes (PMTs) used. As a consequence, even if UPE from the head is detected under properly background-free conditions, it is likely to be dominated by emission from the scalp rather than from the brain, certainly as long as PMTs are used. Our results emphasize the importance of careful experimental design to make genuine progress on this important question."
+   },
+   {
+    "work_id": "W3083575255",
+    "title": "Advanced Bioluminescence System for In Vivo Imaging with Brighter and Red-Shifted Light Emission",
+    "year": 2020,
+    "type": "article",
+    "abstract": "In vivo bioluminescence imaging (BLI), which is based on luminescence emitted by the luciferase-luciferin reaction, has enabled continuous monitoring of various biochemical processes in living animals. Bright luminescence with a high signal-to-background ratio, ideally red or near-infrared light as the emission maximum, is necessary for in vivo animal experiments. Various attempts have been undertaken to achieve this goal, including genetic engineering of luciferase, chemical modulation of luciferin, and utilization of bioluminescence resonance energy transfer (BRET). In this review, we overview a recent advance in the development of a bioluminescence system for in vivo BLI. We also specifically examine the improvement in bioluminescence intensity by mutagenic or chemical modulation on several beetle and marine luciferase bioluminescence systems. We further describe that intramolecular BRET enhances luminescence emission, with recent attempts for the development of red-shifted bioluminescence system, showing great potency in in vivo BLI. Perspectives for future improvement of bioluminescence systems are discussed."
+   }
+  ]
+ },
+ {
+  "candidate_id": "C077",
+  "seed_id": "Q7",
+  "statement": "In Papilio protenor during the pharate-to-pupal transition, anterior-to-posterior UPE redistribution features will reduce held-out error in predicting time to ecdysis by at least 20% relative to whole-body photon counts, temperature, and elapsed pharate time alone.",
+  "scope": {
+   "population": "Individually staged Papilio protenor larvae entering the pharate stage",
+   "condition": "Continuous dark-chamber monitoring through larval-pupal ecdysis",
+   "comparator": "Prediction from whole-body counts, temperature, and elapsed stage time versus the same model plus spatial centroid, anterior/posterior ratio, and hotspot-motion features",
+   "outcome": "Cross-validated mean absolute error for time-to-ecdysis prediction"
+  },
+  "null_hypothesis": "Adding spatial UPE features reduces held-out mean absolute error by less than 20% or increases it.",
+  "estimand": "Relative error reduction, 1-MAE(spatial model)/MAE(count-only model), evaluated with animal-level nested cross-validation; the claim requires a lower 95% bootstrap bound above 0.20.",
+  "proposed_experiment": "Record binned one-to-five-minute UPE frames and synchronized thermal images from a preregistered cohort through ecdysis; extract spatial features without using outcome times, and compare nested cross-validated survival or time-to-event models at the animal level.",
+  "rationale": [
+   {
+    "step": "Cooled-CCD moving-picture imaging has revealed spatiotemporal UPE dynamics during Papilio protenor metamorphosis, including anterior-localized emission whose source remains uncertain.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2951811678"
+    ]
+   },
+   {
+    "step": "Long exposures and binning are established requirements for imaging very low biological photon fluxes.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2039224325",
+     "W4391831883"
+    ]
+   },
+   {
+    "step": "Animal-level cross-validation prevents adjacent frames from the same insect appearing in both training and test sets.",
+    "justification_type": "computation"
+   },
+   {
+    "step": "The relative-error formula directly measures the predictive information in the picture after retaining all count-only covariates in both models.",
+    "justification_type": "computation"
+   }
+  ],
+  "cited_works": [
+   {
+    "work_id": "W2951811678",
+    "title": "Non-invasive visualization of physiological changes of insects during metamorphosis based on biophoton emission imaging",
+    "year": 2019,
+    "type": "article",
+    "abstract": "Spontaneous ultra-weak photon emission from living organisms, designated as biophoton emission, is a generally observed phenomenon irrespective of the organism species. Biophoton emission is attributed to the production of excited molecules in a metabolic biochemical reaction, especially in processes involving reactive oxygen species (ROS). Although many plant and mammal subjects have reportedly been used to study its application to biological measurements, biophoton emission properties of insects remain unclear. For this study, we strove to measure the variation of two-dimensional images of biophoton emission during the metamorphosis of lepidopterous insects as a moving picture to elucidate the physiological changes underlying the mechanism of drastic changes of morphological and ecological characteristics of the insects. We used our developed biophoton imaging system incorporating a cooled charge-coupled device (CCD) camera and a specially designed lens system to elucidate the spatiotemporal dynamics of biophoton emission during metamorphosis, larval-pupal ecdysis/pupation of Papilio protenor, suggesting its applicability for in vivo observation of physiological changes during the regulation of metamorphosis."
+   },
+   {
+    "work_id": "W2039224325",
+    "title": "Towards the two-dimensional imaging of spontaneous ultra-weak photon emission from microbial, plant and animal cells",
+    "year": 2013,
+    "type": "article",
+    "abstract": "Two-dimensional imaging of spontaneous ultra-weak photon emission was measured in the yeast cells, Arabidopsis plant and the human hand using highly sensitive charge coupled device (CCD) camera. For the first time, the detail analysis of measuring parameters such as accumulation time and binning is provided with the aim to achieve two-dimensional images of spontaneous ultra-weak photon emission of good quality. We present data showing that using a hardware binning with binning factor 4 × 4, the accumulation time decreases in the following order: yeast cells (30 min) > the human hand (20 min) > Arabidopsis plant (10 min). Analysis of measuring parameters provides a detailed description of standard condition to be used for two-dimensional spontaneous ultra-weak photon imaging in microbes, plants and animals. Thus, CCD imaging can be employed as a unique tool to examine the oxidative state of the living organism with the application in microbiological, plant and medical research."
+   },
+   {
+    "work_id": "W4391831883",
+    "title": "Ultra weak photon emission—a brief review",
+    "year": 2024,
+    "type": "article",
+    "abstract": "Cells emit light at ultra-low intensities: photons which are produced as by-products of cellular metabolism, distinct from other light emission processes such as delayed luminescence, bioluminescence, and chemiluminescence. The phenomenon is known by a large range of names, including, but not limited to, biophotons, biological autoluminescence, metabolic photon emission and ultraweak photon emission (UPE), the latter of which shall be used for the purposes of this review. It is worth noting that the photons when produced are neither 'weak' nor specifically biological in characteristics. Research of UPE has a long yet tattered past, historically hamstrung by a lack of technology sensitive enough to detect it. Today, as technology progresses rapidly, it is becoming easier to detect and image these photons, as well as to describe their function. In this brief review we will examine the history of UPE research, their proposed mechanism, possible biological role, the detection of the phenomenon, and the potential medical applications."
+   }
+  ]
+ },
+ {
+  "candidate_id": "C078",
+  "seed_id": "Q7",
+  "statement": "For superficial subcutaneous murine tumors, spatial UPE heterogeneity will predict the histologic viable-tumor fraction out of sample with at least 0.10 greater R-squared than whole-tumor photon counts, tumor volume, and skin temperature alone.",
+  "scope": {
+   "population": "Mice bearing superficial subcutaneous AH109A, TE4, or TE9 tumors",
+   "condition": "Serial spontaneous UPE imaging at one, two, and three weeks after transplantation under controlled dark adaptation",
+   "comparator": "A baseline model using integrated tumor counts, tumor volume, time point, and skin temperature versus the same model plus preregistered spatial UPE features",
+   "outcome": "Histologic viable-tumor fraction and its spatial correspondence to the terminal UPE map"
+  },
+  "null_hypothesis": "Spatial UPE features add no more than 0.10 to held-out R-squared for viable-tumor fraction, or their coefficients fail to generalize across animals and cell lines.",
+  "estimand": "Delta R-squared=R-squared(spatial-plus-baseline)-R-squared(baseline) under animal-level, cell-line-stratified cross-validation; the claim requires delta R-squared of at least 0.10 with a positive bootstrap confidence interval.",
+  "proposed_experiment": "Acquire serial broadband UPE and thermal images under fixed geometry, perform terminal whole-tumor sectioning with blinded viable/necrotic annotation, register histology to the final optical image, and compare preregistered baseline and spatial models using animal-level held-out predictions.",
+  "rationale": [
+   {
+    "step": "Sequential CCD imaging of transplanted murine tumors found UPE related to tumor size and suggested correspondence between UPE intensity and histologic viability.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2009372666"
+    ]
+   },
+   {
+    "step": "Modern CCD and EMCCD systems can capture single visible-wavelength photons with quantum efficiency above 90% and image physiological contrasts in mice.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W4409735377"
+    ]
+   },
+   {
+    "step": "Including integrated counts and volume in both models makes delta R-squared an estimate of information contributed by spatial distribution rather than total brightness or tumor size.",
+    "justification_type": "computation"
+   },
+   {
+    "step": "Holding every serial image from an animal in one cross-validation fold prevents longitudinal data leakage.",
+    "justification_type": "computation"
+   }
+  ],
+  "cited_works": [
+   {
+    "work_id": "W2009372666",
+    "title": "Biophoton detection as a novel technique for cancer imaging",
+    "year": 2004,
+    "type": "article",
+    "abstract": "Biophoton emission is defined as extremely weak light that is radiated from any living system due to its metabolic activities, without excitation or enhancement. We measured biophoton images of tumors transplanted in mice with a highly sensitive and ultra-low noise CCD camera system. Cell lines employed for this study were AH109A, TE4 and TE9. Biophoton images of each tumor were measured 1 week after carcinoma cell transplantation to estimate the tumor size at week 1 and the biophoton intensity. Some were also measured at 2 and 3 weeks to compare the biophoton distribution with histological findings. We achieved sequential biophoton imaging during tumor growth for the first time. Comparison of microscopic findings and biophoton intensity suggested that the intensity of biophoton emission reflects the viability of the tumor tissue. The size at week 1 differed between cell lines, and the biophoton intensity of the tumor was correlated with the tumor size at week 1 (correlation coefficient 0.73). This non-invasive and simple technique has the potential to be used as an optical biopsy to detect tumor viability."
+   },
+   {
+    "work_id": "W4409735377",
+    "title": "Imaging Ultraweak Photon Emission from Living and Dead Mice and from Plants under Stress",
+    "year": 2025,
+    "type": "article",
+    "abstract": ") in the spectral range of 200-1000 nm, has been observed in all living systems that have been examined. Here, we report experiments that exemplify the ability of novel imaging systems to detect variations in UPE for a set of physiologically important scenarios. We use electron-multiplying charge-coupled device (EMCCD) and charge-coupled device (CCD) cameras to capture single visible-wavelength photons with low noise and quantum efficiencies higher than 90%. Our investigation reveals significant contrast between the UPE from live vs dead mice. In plants, we observed that an increase in the temperature and injuries both caused an increase in UPE intensity. Moreover, chemical treatments modified the UPE emission characteristics of plants, particularly the application of a local anesthetic (benzocaine) to injury, which showed the highest emission among the compounds tested. As a result, UPE imaging provides the possibility of non-invasive label-free imaging of vitality in animals and the responses of plants to stress."
+   }
+  ]
+ }
+]

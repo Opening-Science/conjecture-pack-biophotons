@@ -1,0 +1,428 @@
+{
+ "hof_version": "1.0",
+ "run": {
+  "engine": "baseline-claude",
+  "seed_id": "Q3",
+  "backend": "claude-subagent",
+  "config_hash": "a0c1f9dd206e",
+  "corpus_calls": 34
+ },
+ "hypotheses": [
+  {
+   "id": "Q3-1",
+   "statement": "In every preparation with a published optical-only donor-to-receiver effect, an artificial source calibrated to reproduce the donor's absolute spectral photon fluence rate at the receiver plane fails to reproduce the effect, and the artificial fluence rate needed to reproduce half the reported effect exceeds the donor's own fluence rate by at least a factor of 1000.",
+   "scope": {
+    "population": "Paramecium caudatum population pairs separated by glass or quartz cuvette walls (Fels preparation), and isolated MCF7 / MCF10A mitochondria in adjacent optically coupled cuvettes (Frontiers 2023 preparation)",
+    "condition": "receiver exposed to a spectrally and absolutely dose-matched artificial source (programmable LED array / monochromator, 300-800 nm, matched to within +/-30 percent in every 50 nm band and matched in temporal profile) in place of the live donor, plus an ND-attenuation ladder spanning 10^0 to 10^6 times the donor fluence",
+    "comparator": "live donor across the identical optical window; opaque-shutter sham with identical thermal and gas conditions; medium-only chamber",
+    "outcome": "the original published endpoint - cell division rate and vacuole/energy uptake for Paramecium; oxygen consumption rate for the mitochondrial preparation"
+   },
+   "null_hypothesis": "R <= 1: artificial illumination dose-matched to the donor reproduces at least half the published donor effect size, establishing photon sufficiency and killing this hypothesis.",
+   "estimand": "R = F_half / F_donor, where F_half is the artificial-source photon fluence rate (photons cm^-2 s^-1 integrated 300-800 nm) that produces 50 percent of the published donor effect size, and F_donor is the absolutely calibrated donor fluence rate at the receiver plane. Claim: R >= 10^3.",
+   "causal_level": "L4",
+   "rationale": [
+    {
+     "step": "Positive optical-only donor-to-receiver effects are on record in exactly these two preparations, with glass-versus-quartz window contrasts and physically separated cuvettes; the mitochondrial study explicitly leaves the carrier unidentified and calls for UPE characterisation.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2092319343",
+      "W1993467765",
+      "W4386957427"
+     ]
+    },
+    {
+     "step": "The field's own signal-to-noise analysis argues that emitted intensity plus ambient noise makes receiver-side detection implausible, but it is a calculation over literature values and never substitutes a calibrated source for the donor inside the same preparation.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2095038636",
+      "W1523504261"
+     ]
+    },
+    {
+     "step": "Reported spontaneous UPE intensities span a few to about 10^4 photons cm^-2 s^-1 over roughly 260-800 nm, with 10 to 10^4 photons s^-1 cm^-2 quoted specifically for the UV from active cells.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W146728166",
+      "W2618829643",
+      "W4404871602"
+     ]
+    },
+    {
+     "step": "Take the most generous published emission, 10^4 photons cm^-2 s^-1, sustained for 24 h = 8.64e4 s. Accumulated fluence = 8.64e8 photons cm^-2. At 450 nm the photon energy is hc/lambda = (6.626e-34 * 2.998e8) / 450e-9 = 4.41e-19 J, so the 24 h energy fluence is 8.64e8 * 4.41e-19 = 3.81e-10 J cm^-2.",
+     "justification_type": "computation"
+    },
+    {
+     "step": "Documented photobiomodulation effects on proliferation in cultured cells require of order 1-10 J cm^-2 at the target, with peak proliferative benefit near 2 J cm^-2 and a characterised blue/green anti-proliferative effect at 3 J cm^-2.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2135147563",
+      "W2904905977",
+      "W2744285886"
+     ]
+    },
+    {
+     "step": "Ratio of the weakest documented photobiological dose to the entire 24 h UPE budget: 1 J cm^-2 / 3.81e-10 J cm^-2 = 2.6e9. The claim R >= 10^3 is therefore conservative by about six orders of magnitude relative to established photobiology dose-response.",
+     "justification_type": "computation"
+    },
+    {
+     "step": "The field itself names absolutely calibrated photon budgets, showing the receiver plausibly gets enough photons, as the criterion that would settle the functional-role question.",
+     "justification_type": "given"
+    }
+   ],
+   "cited_work_ids": [
+    "W2092319343",
+    "W1993467765",
+    "W4386957427",
+    "W2095038636",
+    "W1523504261",
+    "W146728166",
+    "W2618829643",
+    "W4404871602",
+    "W2135147563",
+    "W2904905977",
+    "W2744285886"
+   ],
+   "proposed_experiment": "Rebuild one published DCI preparation with a removable donor chamber. Step 1: map the donor's absolute spectral photon fluence at the exact receiver plane with a traceably calibrated photon-counting PMT plus a cooled qCMOS for spatial uniformity, in 50 nm bands from 300 to 800 nm, over the full exposure window. Step 2: replace the donor with a programmable LED/monochromator source driven to reproduce that map within +/-30 percent per band and matched in temporal envelope, verified in situ at the receiver plane. Step 3: run a blinded, pre-registered ND ladder at 10^0, 10^1, 10^2, 10^3, 10^4, 10^5, 10^6 times the donor fluence plus opaque sham, with the receiver endpoint scored by an operator blind to arm. Fit the dose-response and read off F_half. Multi-lab, with the calibration transfer standard physically shipped between labs.",
+   "required_instrument": "NIST-traceable photon-counting PMT (bialkali, 300-650 nm) with calibrated quartz optics; back-illuminated qCMOS or EMCCD (ORCA-Quest class, as used for mouse-embryo UPE) for receiver-plane fluence mapping; programmable multi-LED / monochromator source with calibrated neutral-density ladder spanning 10^0-10^6, 300-800 nm",
+   "engine_native_score": 0.72,
+   "novelty_self_claim": "Register H4b states the receiver-side null bare. This replaces it with one calibrated ratio R that is informative whichever way it falls: a quantitative upper bound on receiver photosensitivity if large, an immediate mechanism if it is at or below 1. No study in the corpus has substituted a dose-matched artificial source for the donor inside a preparation that reported a positive effect."
+  },
+  {
+   "id": "Q3-2",
+   "statement": "Brightness conservation caps any reflective or focusing geometry at roughly twice the photon fluence a receiver gets facing the bare donor, so the reflector-specific biological effects reported in focused-chamber research cannot be dose-driven optical effects.",
+   "scope": {
+    "population": "adult murine subventricular-zone neural stem cell / neurosphere cultures, and Caenorhabditis elegans cohorts, in concave or sector reflective chambers of the type reviewed in the focused-reflective-chamber literature",
+    "condition": "reflective chamber with optical return gain G measured in situ with a traceably calibrated isotropic micro-source, per 50 nm band",
+    "comparator": "geometrically identical blackened chamber (G approximately 1) matched for wall thermal emissivity, gas volume and evaporation; plus a direct-exposure arm in which donor emission is doubled by doubling donor biomass at fixed distance",
+    "outcome": "neuronal differentiation fraction by immunocytochemistry, neurosphere count, and median C. elegans lifespan"
+   },
+   "null_hypothesis": "Measured in-situ G exceeds 2, or effect size rises monotonically with log G and vanishes at G approximately 1 - either result falsifies the etendue-bound claim and supports optical mediation.",
+   "estimand": "G = (photon fluence at the receiver plane with the reflector) / (without it), measured per 50 nm band with a calibrated in-situ source; and beta = the slope of biological effect size on log G. Claim: G <= 2 and beta indistinguishable from 0 at alpha = 0.05 with pre-registered power.",
+   "causal_level": "L3",
+   "rationale": [
+    {
+     "step": "Concave and sector reflective chambers are claimed to focus ultraweak biophoton emission and to alter neural stem cell UPE and differentiation, and to extend C. elegans lifespan by 19-30 percent; the review that collects these reports itself flags absent blinding, small samples, inconsistent methods and no independent replication.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W7142519026"
+     ]
+    },
+    {
+     "step": "The primary neural stem cell experiment that this literature rests on reports the opposite of the summary: the mirror did not significantly increase UPE either before or after differentiation, and neither mirror nor silver nanoparticles changed neurosphere number, while silver nanoparticles alone raised UPE and increased neuronal differentiation by 44 percent. The reflector arm was the null arm.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2999575750"
+     ]
+    },
+    {
+     "step": "Mirror-based self-exposure ('autooptic') geometry has separately been claimed to boost a genoprotective drug effect in HepG2 cells, using the same untested premise that a mirror materially raises the delivered optical dose.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2618829643"
+     ]
+    },
+    {
+     "step": "Etendue / brightness conservation: no passive optic can raise the radiance L of a source. The maximum irradiance deliverable to a receiver from a Lambertian source of radiance L is pi*L, attained when the receiver collects a full hemisphere. A receiver already facing the donor across a short gap collects approximately one hemisphere, so a rear mirror of reflectivity R_m can add at most the back hemisphere: G <= 1 + R_m <= 1.9 for R_m = 0.9. Curvature redistributes but cannot exceed this bound.",
+     "justification_type": "computation"
+    },
+    {
+     "step": "Combining with the fluence arithmetic of Q3-1: the baseline optical dose in these chambers is about 10^9 below the weakest documented photobiological threshold, so a factor <= 2 change could only produce a 19-30 percent lifespan shift if the receiver dose-response were a step function sited at 10^-9 of every measured photobiological threshold.",
+     "justification_type": "computation"
+    },
+    {
+     "step": "Measured photobiological dose-response is biphasic and shallow near threshold rather than step-like, over exactly the fluence range where thresholds have been characterised.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2135147563",
+      "W2904905977"
+     ]
+    }
+   ],
+   "cited_work_ids": [
+    "W7142519026",
+    "W2999575750",
+    "W2618829643",
+    "W2135147563",
+    "W2904905977",
+    "W4404871602"
+   ],
+   "proposed_experiment": "Take one reflective chamber with a published positive result. First, with no biology present, place a traceably calibrated fibre-coupled isotropic micro-source at the donor position and a calibrated PMT/qCMOS at the receiver position, and measure G per 50 nm band from 300 to 800 nm - this number has never been reported. Second, fabricate a matched blackened chamber with identical geometry, wall thermal emissivity, gas volume and evaporation rate, and instrument both with thermocouples and an IR camera to bound the radiative-thermal confound. Third, run the biological endpoint blinded and randomised across a graded gain series (blackened, half-silvered, fully silvered, silvered plus focusing) whose G values were measured in step one, and regress effect size on log G. A photon-mediated effect must show beta > 0 and must vanish at G approximately 1.",
+   "required_instrument": "traceably calibrated fibre-coupled isotropic micro-source (300-800 nm) for in-situ gain mapping; photon-counting PMT plus cooled qCMOS for UPE and receiver-plane fluence; thermocouples and IR camera for the thermal-confound bound",
+   "engine_native_score": 0.78,
+   "novelty_self_claim": "Introduces a hard physical bound - conservation of radiance - that the entire focused-reflector and autooptic literature assumes away and has never measured, converts 'the mirror concentrates biophotons' into a measurable gain G with a predicted ceiling, and surfaces a concrete contradiction between the review's summary of the reflective-chamber evidence and its own most rigorous primary source, which found the mirror inert."
+  },
+  {
+   "id": "Q3-3",
+   "statement": "The UPE photon yield per oxidation event is fixed by chemistry and not by physiological state: within a defined preparation, at matched independently measured oxidative flux, no physiological state changes photons emitted per oxidation event by more than twofold in any spectral band.",
+   "scope": {
+    "population": "one mammalian cell line (MCF10A) plus mitochondria isolated from the same line, and Arabidopsis thaliana rosette leaves",
+    "condition": "physiological state pairs contrasted at deliberately matched oxidative flux - proliferating versus contact-inhibited; pre- versus post-mechanical-wounding titrated to equal H2O2 efflux; antimycin-inhibited versus uninhibited; normoxic versus mildly hypoxic at equal peroxidation rate",
+    "comparator": "a cell-free chemical reference emitter (thermolysis of 3,3,4,4-tetramethyl-1,2-dioxetane) run through the identical optical chain, fixing the instrument's absolute photons-per-event calibration",
+    "outcome": "Phi = band-resolved photon emission rate (photons s^-1 per 50 nm bin, 350-850 nm) divided by simultaneously measured oxidative flux (H2O2 efflux by Amplex Red, oxygen consumption rate, malondialdehyde / TBARS)"
+   },
+   "null_hypothesis": "Some state pair changes Phi by more than twofold at matched oxidative flux, in a blinded pre-registered comparison - showing the radiative step itself is under biological control and falsifying the pure-byproduct reading of the emitter.",
+   "estimand": "max over state pairs and bands of |log2(Phi_state1 / Phi_state2)| at matched oxidative flux. Claim: < 1.",
+   "causal_level": "L1",
+   "rationale": [
+    {
+     "step": "The field currently reads UPE as a monotone proxy for ROS and oxidative flux, and proposes it as a perturbance-free oxidation monitor and a non-invasive mitochondrial-dysfunction assay - a reading that presupposes a fixed conversion efficiency without ever measuring one.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W3041755811",
+      "W4308366428",
+      "W4414929333"
+     ]
+    },
+    {
+     "step": "The emitting chemistry is identified: lipid hydroperoxide decomposition through dioxetane intermediates to excited triplet carbonyls, with triplet-triplet energy transfer to ground-state O2 producing singlet oxygen; wound-induced emission is abolished under anoxia; in Acanthamoeba, mitochondrial and peroxisomal substrates gave no increase in emission while superoxide-generating conditions did.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2048493057",
+      "W2808116502",
+      "W2343307968"
+     ]
+    },
+    {
+     "step": "Phi is a product of three separable branch ratios: the fraction of peroxidation events routed through dioxetane, the triplet yield of the carbonyl, and the radiative branching against non-radiative quenching. All three depend on local solvent polarity, oxygen tension and quencher concentration - variables that cells actively regulate - so invariance of Phi is a substantive empirical claim rather than a definitional one.",
+     "justification_type": "computation"
+    },
+    {
+     "step": "The radiative branch is demonstrably manipulable independently of the oxidative flux: dietary alpha-tocopherol and in-vitro radical scavengers quench tissue ultraweak chemiluminescence, and the emission spectrum shows discrete singlet-oxygen-like peaks that a change in quencher environment would reweight.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2326730546",
+      "W2048493057"
+     ]
+    },
+    {
+     "step": "The seed question is precisely whether UPE is a metabolic byproduct or carries a functional role; a regulated emission efficiency at the emitter is what a signal looks like before any receiver is invoked, and it is testable without solving the receiver problem at all.",
+     "justification_type": "given"
+    }
+   ],
+   "cited_work_ids": [
+    "W3041755811",
+    "W4308366428",
+    "W4414929333",
+    "W2048493057",
+    "W2808116502",
+    "W2343307968",
+    "W2326730546"
+   ],
+   "proposed_experiment": "Build a thermostatted light-tight chamber with a photon-counting PMT behind a motorised 50 nm bandpass wheel (350-850 nm), co-registered with an optical oxygen sensor and an in-chamber Amplex Red readout, plus destructive TBARS sampling at fixed times. Calibrate absolute photons per event by running tetramethyl-1,2-dioxetane thermolysis at known concentration through the identical chain. For each state pair, titrate the treatment so that the two states have statistically indistinguishable H2O2 efflux and oxygen consumption, then compare Phi band by band. Pre-register the matching tolerance and the twofold decision boundary; blind the analyst to state labels.",
+   "required_instrument": "photon-counting PMT (bialkali/multialkali, 350-850 nm) with motorised 50 nm bandpass filter wheel in a thermostatted dark chamber; optical O2 sensor and Amplex Red plate readout in-chamber; chemical reference emitter for absolute photons-per-event calibration",
+   "engine_native_score": 0.66,
+   "novelty_self_claim": "Register H4a asks what fraction of UPE intensity known oxidative chemistry accounts for. This asks the different and decisive question - whether the conversion efficiency from oxidation event to emitted photon is itself under biological control. Invariance settles the emitter side for byproduct; modulation is emitter-side evidence for function that does not depend on any receiver claim surviving."
+  },
+  {
+   "id": "Q3-4",
+   "statement": "Donor UPE per unit metabolic rate is not modulated by the presence, viability, or optical accessibility of a receiver population - emitters do not regulate emission in a receiver-contingent way.",
+   "scope": {
+    "population": "Paramecium caudatum donor populations, and isolated MCF7 / MCF10A mitochondria in the paired-cuvette preparation",
+    "condition": "donor optically coupled to (a) a live conspecific receiver, (b) a heat-killed receiver at identical turbidity and scattering, (c) medium only, (d) an opaque shutter - order randomised, operator blind, with donor oxygen consumption and temperature logged continuously",
+    "comparator": "condition (d), the opaque-shutter arm, at matched donor metabolic rate",
+    "outcome": "donor photon count rate per unit oxygen consumed, per 50 nm band"
+   },
+   "null_hypothesis": "rho departs from 1 by more than 25 percent in a blinded, metabolic-rate-matched comparison - demonstrating sender-side, receiver-contingent regulation of emission and falsifying this hypothesis.",
+   "estimand": "rho = [donor photons per unit O2 consumed, live receiver optically coupled] / [donor photons per unit O2 consumed, opaque shutter]. Claim: rho within [0.80, 1.25].",
+   "causal_level": "L5",
+   "rationale": [
+    {
+     "step": "The seed question is whether UPE is a byproduct of metabolism or carries an informational or functional role.",
+     "justification_type": "given"
+    },
+    {
+     "step": "A trait counts as a signal only if its production is contingent on the communicative context; a trait whose production is fully accounted for by the sender's own metabolic state is a cue. Receiver-contingency of emission, measured at matched metabolic rate, is therefore the sharpest emitter-side operationalisation of 'signal', and it is logically independent of whether any receiver effect exists - it can be decided even if every receiver-side claim in the field is false.",
+     "justification_type": "computation"
+    },
+    {
+     "step": "Existing distant-cellular-interaction preparations report mutual or bidirectional effects and growth correlation between coupled populations, which - if the reports are real - entails that donors are not passive lamps and makes receiver-contingent emission a live possibility rather than an idle one.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2092319343",
+      "W4386957427",
+      "W66681095"
+     ]
+    },
+    {
+     "step": "UPE tracks metabolic and oxidative rate, and has been reported to co-vary with cerebral blood flow and energy metabolism, so any comparison that does not hold metabolic rate fixed is confounded at the outset - which is why simultaneous respirometry is load-bearing here rather than decorative.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W3041755811",
+      "W4308366428",
+      "W2172375368"
+     ]
+    },
+    {
+     "step": "The same 'beyond global metabolic rate' structure is already what the field demands of neural UPE claims, where photon activity has been imaged in situ during stimulation without the metabolic covariate being separated out.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2056591841",
+      "W4391831883"
+     ]
+    }
+   ],
+   "cited_work_ids": [
+    "W2092319343",
+    "W4386957427",
+    "W66681095",
+    "W3041755811",
+    "W4308366428",
+    "W2172375368",
+    "W2056591841",
+    "W4391831883"
+   ],
+   "proposed_experiment": "Two thermostatted chambers joined by a computer-controlled quartz shutter, each with its own photon-counting PMT and in-line optical oxygen sensor. The donor chamber's emission is recorded continuously in 50 nm bands while the receiver chamber is cycled, in randomised blocks, through live receiver, heat-killed receiver at matched turbidity, medium only, and shutter closed. Turbidity and scattering are matched optically before the run so back-scatter into the donor PMT is identical across arms. All analysis is on photons per unit O2 consumed; the analyst is blind to arm labels. Pre-register the 25 percent decision band and the metabolic-matching tolerance. Because a positive result here is the single cheapest route to 'signal', it should be run in at least two labs with a shipped calibration standard.",
+   "required_instrument": "dual-channel photon-counting PMT (300-650 nm) with computer-controlled quartz shutter and transmission-matched windows; thermostatted dark chambers; in-line optical O2 sensors on both chambers",
+   "engine_native_score": 0.6,
+   "novelty_self_claim": "Imports the signal-versus-cue criterion from communication theory and turns it into a measurement on the emitter. Nothing on the register tests whether the emitter modulates output as a function of receiver presence; H6 asks the 'beyond metabolic rate' question of neural activity, and nobody asks it of the social or optical context. It is also the only route on this list by which the functional-role question could be settled affirmatively without any receiver-side photon budget being solved."
+  },
+  {
+   "id": "Q3-5",
+   "statement": "Reported optical-only donor-to-receiver effects survive removal of the receiver's candidate photoacceptors - no single chromophore knockout or pharmacological block abolishes them - which means those effects are not photochemical.",
+   "scope": {
+    "population": "genetically tractable receivers: Arabidopsis thaliana cry1 cry2 double mutants and phot1 phot2 mutants; human adipose-derived stem cells with TRPV1 blocked by capsazepine or with CRY1/CRY2 knocked down",
+    "condition": "receiver exposed across a quartz (200 nm cut-on) window to a proliferating conspecific or same-line donor whose in-band emission is monitored continuously by a calibrated PMT",
+    "comparator": "isogenic wild-type receiver run in the same session, plus a long-pass optical block that removes the candidate chromophore's absorption band while leaving all non-optical coupling intact",
+    "outcome": "receiver proliferation index (EdU incorporation) or germination and growth rate, with intracellular Ca2+ and ROS as pathway readouts"
+   },
+   "null_hypothesis": "A specific photoacceptor removal cuts the effect by 80 percent or more while the wild-type effect is intact in the same session - identifying a molecular receiver and falsifying this hypothesis.",
+   "estimand": "f = (effect size in the photoacceptor-deficient receiver) / (effect size in the isogenic wild type), same session, blinded. Claim: f >= 0.8 for every candidate tested.",
+   "causal_level": "L4",
+   "rationale": [
+    {
+     "step": "Light-sensitive proteins and light-responsive processes are now localised to many non-ocular cell types and tissues, so a receiver molecule is available in principle and the knockout panel is not a strawman.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W4388034593",
+      "W2342982958",
+      "W2218121269"
+     ]
+    },
+    {
+     "step": "A fully characterised receiver pathway already exists for blue and green light in human adipose-derived stem cells - TRPV1 activation, raised intracellular Ca2+ and ROS, proliferation inhibited, all abolished by capsazepine and by N-acetylcysteine - which supplies both the positive control and the dose scale, since it operates at 3 J cm^-2.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2744285886"
+     ]
+    },
+    {
+     "step": "Per-cell photon interception: a mammalian cell footprint is about 10 um x 10 um = 1e-6 cm^2. At a generous 1e4 photons cm^-2 s^-1 the cell intercepts 1e-2 photons s^-1, about 864 per 24 h. At the more typical 10-100 photons cm^-2 s^-1 it intercepts 1e-5 to 1e-4 photons s^-1, i.e. about 0.9 to 8.6 photons per cell per day. With an in-band chromophore absorbing of order 1 percent of incident photons, the receiver absorbs about 0.01-0.1 photons per cell per day.",
+     "justification_type": "computation"
+    },
+    {
+     "step": "A 24 h proliferation change therefore requires a phenotypic response from fewer than one absorbed photon per cell - most responding cells would have absorbed nothing at all. This is why photoacceptor necessity is the decisive test and not merely a mechanistic nicety: a genuinely photochemical effect must funnel through some absorber, and no absorber can be bypassed.",
+     "justification_type": "computation"
+    },
+    {
+     "step": "The most sensitive photodetector biology is known to build, the vertebrate rod, was tested against exactly this budget: absolutely calibrated measurement of retinal and eyecup emission found biophoton intensity at least 100-fold too low to account even for the rods' own discrete dark noise, against a measured rhodopsin activation rate constant of 1.2e-11 s^-1 in frog and 7.6e-11 s^-1 in sterlet.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2939950252",
+      "W2293195849"
+     ]
+    },
+    {
+     "step": "Rod sensitivity rests on a large transduction cascade gain - one activated metarhodopsin activating hundreds of transducins, each driving further amplification - which non-specialised receivers do not possess, so a non-specialised cell would have to beat the best specialised detector in biology to close the gap.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W1992124648"
+     ]
+    }
+   ],
+   "cited_work_ids": [
+    "W4388034593",
+    "W2342982958",
+    "W2218121269",
+    "W2744285886",
+    "W2939950252",
+    "W2293195849",
+    "W1992124648",
+    "W146728166",
+    "W4404871602"
+   ],
+   "proposed_experiment": "Dual-chamber quartz-windowed optical coupler with a calibrated photon-counting PMT tapping the donor output continuously (solar-blind channel 200-320 nm, bialkali channel 300-650 nm), so the delivered budget is recorded rather than assumed. Each session runs wild-type and photoacceptor-deficient receivers side by side against the same donor, with arm assignment blinded. Positive control: the same receivers exposed to 3 J cm^-2 of 415 nm or 540 nm light, where the TRPV1/Ca2+/ROS pathway is known to respond and the knockout or capsazepine block must abolish the response - this validates the knockout before the UPE arm is interpreted. Panel: cry1 cry2, phot1 phot2, OPN3 knockdown, TRPV1 block, and a flavin-depletion arm. Pre-register f = 0.8 as the decision boundary.",
+   "required_instrument": "dual-chamber quartz-windowed optical coupler; photon-counting PMT with a solar-blind channel (200-320 nm) and a bialkali channel (300-650 nm) monitoring donor output in absolute units; standard EdU, Fura-2/GCaMP and ROS imaging on the receiver",
+   "engine_native_score": 0.7,
+   "novelty_self_claim": "Register H5 and H1 assume without test that the receiver possesses a photoacceptor with adequate absorption cross-section. This exposes that assumption and converts it into a molecular-necessity experiment with a built-in validated positive control, and attaches to it a per-cell absorbed-photon budget - about 0.01-0.1 absorbed photons per cell per day - that the register never computes."
+  },
+  {
+   "id": "Q3-6",
+   "statement": "Absolutely calibrated solar-blind photon counting of the 200-320 nm band from densely proliferating cultures behind an MgF2 window will find an emission rate below 1 photon cm^-2 s^-1 at the window, orders of magnitude too low for any mitogenetic-band mechanism.",
+   "scope": {
+    "population": "densely proliferating Saccharomyces cerevisiae and one proliferating mammalian line, prepared as thin films or with a sub-millimetre aqueous path behind MgF2 or synthetic-silica windows",
+    "condition": "dark-adapted, thermostatted, solar-blind photon counting in 20 nm bins from 200 to 320 nm, with a second bialkali channel recording 300-650 nm simultaneously",
+    "comparator": "heat-killed sample at matched turbidity; medium-only blank; instrument dark count in the same band; whole-chain traceable calibration with a deuterium lamp and vacuum-UV monochromator including window and water path",
+    "outcome": "absolute photon rate in photons cm^-2 s^-1 at the sample window, per 20 nm bin from 200 to 320 nm"
+   },
+   "null_hypothesis": "The 200-320 nm rate is 100 photons cm^-2 s^-1 or more above blank - falsifying this hypothesis and handing the mitogenetic-band mechanism the photon budget it has never had.",
+   "estimand": "N_UV = absolute emission rate integrated over 200-320 nm, in photons cm^-2 s^-1 at the sample window, blank-subtracted. Claim: N_UV < 1.",
+   "causal_level": "L2",
+   "rationale": [
+    {
+     "step": "Gurwitsch-type mitogenetic mechanisms require emission in the deep UV (190-250 nm), and the modern open-quantum-systems revival of the onion experiment explicitly assumes UV intensities of 10 to 1e4 photons s^-1 cm^-2 from active cells as the input to its resonance model.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W4404871602",
+      "W2748679677"
+     ]
+    },
+    {
+     "step": "The field's own signal-to-noise review states that the Gurwitsch 190-250 nm claim is highly controversial and that there is little modern evidence even for the longer 280-390 nm UV band in biological photon emission.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2095038636"
+     ]
+    },
+    {
+     "step": "Modern reviews quote UPE as spanning roughly 260-800 nm (some as wide as 200-1300 nm) at a few to a few hundred photons cm^-2 s^-1 total, but the UV share is never separately budgeted in absolute units - the total is reported and the band composition is inferred from cut-on filters.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W146728166",
+      "W4389669809",
+      "W4391831883",
+      "W2797018767"
+     ]
+    },
+    {
+     "step": "The dedicated review of the mitogenetic controversy concludes that the UV fraction of UPE should be regarded as real while its biological effects remain hard to reproduce - the exact asymmetry that an absolute, band-resolved UV budget would resolve in one measurement.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W1920668343"
+     ]
+    },
+    {
+     "step": "Water absorbs strongly below about 200 nm and borosilicate cuts off below about 340 nm, while the widely used bialkali PMTs and EMCCD/LCTF spectrometers are optimised for 400-700 nm and cannot separate a deep-UV component from visible dark count. So nearly every UPE instrument in the corpus is structurally blind to the mitogenetic band; MgF2 or synthetic silica plus a CsI or CsTe solar-blind photocathode is the minimum chain that can measure it, and the same chain measures its own dark count inside the band of interest.",
+     "justification_type": "computation"
+    },
+    {
+     "step": "Fels reported different outcomes across glass (transmitting above about 340 nm) versus quartz (transmitting from about 150 nm) barriers, and the adipose-stem-cell replication used a UV-filter tube versus a quartz tube - so the entire glass-versus-quartz design logic in this literature presupposes a deep-UV budget that has never been measured in absolute units.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2092319343",
+      "W2258592615"
+     ]
+    },
+    {
+     "step": "The field names absolutely calibrated photon budgets as the criterion that would settle the functional-role question, and the mitogenetic band is where that criterion has never been applied.",
+     "justification_type": "given"
+    }
+   ],
+   "cited_work_ids": [
+    "W4404871602",
+    "W2748679677",
+    "W2095038636",
+    "W146728166",
+    "W4389669809",
+    "W4391831883",
+    "W2797018767",
+    "W1920668343",
+    "W2092319343",
+    "W2258592615"
+   ],
+   "proposed_experiment": "Assemble a vacuum-UV-capable dark chamber: sample in a thin-film or sub-millimetre-path holder behind an MgF2 window, viewed by a solar-blind photon-counting PMT (CsI or CsTe photocathode) through a stepped set of 20 nm bandpass filters covering 200-320 nm, with a second bialkali channel on 300-650 nm for simultaneous total-UPE reference. Calibrate the entire chain end to end - window, filters, water path, photocathode - against a deuterium lamp through a vacuum-UV monochromator, with the transfer standard shipped between the participating labs. Run live culture, heat-killed matched-turbidity control, medium-only blank and closed-shutter dark count in randomised blocks, blinded, integrating long enough that the blank-subtracted 1 photon cm^-2 s^-1 boundary is resolved with pre-registered power. Report N_UV in absolute units per bin, whichever way it falls.",
+   "required_instrument": "solar-blind photon-counting PMT (CsI or CsTe photocathode, 160-320 nm) or UV SiPM behind MgF2 / synthetic-silica windows with 20 nm bandpass set; deuterium lamp plus vacuum-UV monochromator for traceable end-to-end calibration; second bialkali photon-counting channel, 300-650 nm",
+   "engine_native_score": 0.68,
+   "novelty_self_claim": "Register H11 asks whether the spectral distribution carries state information beyond total intensity. Nobody on the register asks for an absolute, band-resolved budget in the one band the mitogenetic mechanism actually needs, measured with a detector that is blind to the visible so the dark count cannot masquerade as signal. N_UV is a single number that decides whether H1 is physically possible at all, and it also retro-validates or invalidates the glass-versus-quartz contrast on which the whole distant-cellular-interaction design tradition rests."
+  }
+ ]
+}

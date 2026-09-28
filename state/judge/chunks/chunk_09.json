@@ -1,0 +1,929 @@
+[
+ {
+  "candidate_id": "C065",
+  "seed_id": "Q6",
+  "statement": "In fresh colorectal cancer resections, a pre-specified spontaneous UPE radiance-map classifier will identify histopathology-positive tissue regions in held-out patients with AUC at least 0.85 and sensitivity at least 0.90 at specificity at least 0.80.",
+  "scope": {
+   "population": "Adults undergoing primary colorectal cancer resection",
+   "condition": "Unfixed fresh resection slices imaged within 30 minutes in darkness without optical excitation",
+   "comparator": "Adjacent pathology-negative tissue from the same specimen and a gross-inspection-only baseline classifier",
+   "outcome": "Region-level malignant versus non-malignant status on co-registered blinded histopathology"
+  },
+  "null_hypothesis": "Patient-held-out AUC is below 0.85, or sensitivity is below 0.90 when specificity is fixed at 0.80.",
+  "estimand": "Patient-clustered external-validation AUC and sensitivity at the pre-specified 0.80-specificity operating point.",
+  "proposed_experiment": "Prospectively collect consecutive resections, image dark-adapted fresh slices for a fixed duration, co-register the radiance map with whole-mount histology, and validate a locked spatial-temporal classifier in specimens from a second hospital.",
+  "rationale": [
+   {
+    "step": "A small human-tissue study reported mean spontaneous emission of 982±513 counts/min/cm² in tumor tissue versus 625±419 in normal tissue, but used frozen samples and unequal small groups.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2055110733"
+    ]
+   },
+   {
+    "step": "Cell-line and mouse experiments reported increased tumor UPE and 90% discrimination from temporal spectral-power-density configurations, but did not establish performance on fresh human surgical specimens.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W3016463384"
+    ]
+   },
+   {
+    "step": "Calibrated EMCCD photon counting has demonstrated visible-light detection below 30 photons/s/cm², placing spatial imaging of reported biological fluxes within current detector capability.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W3126489816"
+    ]
+   },
+   {
+    "step": "Partition data strictly by patient, lock preprocessing and thresholds in the training set, then compute clustered ROC statistics against co-registered histology; failure of either operating threshold kills the claim.",
+    "justification_type": "computation"
+   }
+  ],
+  "cited_works": [
+   {
+    "work_id": "W2055110733",
+    "title": "Measurements of Spontaneous Ultraweak Photon Emission and Delayed Luminescence from Human Cancer Tissues",
+    "year": 2005,
+    "type": "article",
+    "abstract": "OBJECTIVE: The aim of this study was to measure spontaneous photon emission (SPE) and delayed luminescence (DL) from various human cancer tissues. MATERIALS AND METHODS: A photomultiplier tube attached to a dark chamber was used for the detection of ultraweak photon emission from cancer tissues in the chamber. The samples were illuminated with a 150 W metal halide lamp for the measurement of delayed luminescence. Frozen tissues were provided by the hospitals and preserved in saline solution in a CO2 incubator for 1 hour before starting the measurement of spontaneous photon emission. We successively measured the afterglows from the samples after 30-second irradiation of the lamp. The samples were divided into two groups: tumor tissues and normal tissues around tumor tissues. We presented experimental data and interpreted their characteristic patterns of spontaneous photon emission and delayed luminescence. RESULTS: Mean values of spontaneous photon emissions from the normal tissues and the tumor tissues were measured with the standard errors of the mean as 625 +/- 419 counts/minute/cm2 (n = 6) and 982 +/- 513 counts/minute/cm2 (n = 14), respectively. Peak values of the intensity of delayed luminescence from normal and cancerous tissues were 63 +/- 20 counts/ms (n = 6) and 48 +/- 12 counts/ms (n = 14). CONCLUSIONS: The intensity of spontaneous photon emissions from cancer tissues were mostly discriminated from those of normal tissues, and their delayed luminescent properties were investigated."
+   },
+   {
+    "work_id": "W3016463384",
+    "title": "Ultraweak Photon Emissions as a Non-Invasive, Early-Malignancy Detection Tool: An In Vitro and In Vivo Study",
+    "year": 2020,
+    "type": "article",
+    "abstract": "Early detection of cancer improves treatment options and increases survival. Building upon previous demonstrations that ultraweak photon emissions (UPE) could be measured to detect cancers, we designed an early detection protocol to test malignancy in both in vitro and in vivo systems. Photons were measured for 100 s from plates containing ~1 million malignant or non-malignant cells from 13 different types of human and mouse cell lines. Tumor cells displayed increased photon emissions compared to non-malignant cells. Examining the standardized Spectral Power Density (SPD) configurations for flux densities between 0.1 and 25 Hz (Δf = 0.01 Hz) yielded 90% discriminant accuracy. The emission profiles of mice that had been injected with melanoma cells could be differentiated from a non-malignant reference groups as early as 24 h post-injection. The peak SPD associated with photon emissions was ~20 Hz for both malignant cell cultures and mice with growing tumors. These results extend the original suggestion by Takeda and his colleagues (2004) published in this journal concerning the potential diagnostic value of UPEs for assessing proliferations of carcinoma cells. The specificity of the spectral profile in the 20 Hz range may be relevant to the consistent efficacy reported by several authors that weak magnetic field pulsations within this frequency range can diminish the growth of malignant cells in culture and tumor weights in mice."
+   },
+   {
+    "work_id": "W3126489816",
+    "title": "Detectivity optimization to measure ultraweak light fluxes using an EM-CCD as binary photon counter array",
+    "year": 2021,
+    "type": "article",
+    "abstract": "Abstract For a wide range of purposes, one faces the challenge to detect light from extremely faint and spatially extended sources. In such cases, detector noises dominate over the photon noise of the source, and quantum detectors in photon counting mode are generally the best option. Here, we combine a statistical model with an in-depth analysis of detector noises and calibration experiments, and we show that visible light can be detected with an electron-multiplying charge-coupled devices (EM-CCD) with a signal-to-noise ratio (SNR) of 3 for fluxes less than $$30\\,{\\text{photon}}\\,{\\text{s}}^{ - 1} \\,{\\text{cm}}^{ - 2}$$ <mml:math xmlns:mml=\"http://www.w3.org/1998/Math/MathML\"> <mml:mrow> <mml:mn>30</mml:mn> <mml:mspace/> <mml:mtext>photon</mml:mtext> <mml:mspace/> <mml:msup> <mml:mrow> <mml:mtext>s</mml:mtext> </mml:mrow> <mml:mrow> <mml:mo>-</mml:mo> <mml:mn>1</mml:mn> </mml:mrow> </mml:msup> <mml:mspace/> <mml:msup> <mml:mrow> <mml:mtext>cm</mml:mtext> </mml:mrow> <mml:mrow> <mml:mo>-</mml:mo> <mml:mn>2</mml:mn> </mml:mrow> </mml:msup> </mml:mrow> </mml:math> . For green photons, this corresponds to 12 aW $${\\text{cm}}^{ - 2}$$ <mml:math xmlns:mml=\"http://www.w3.org/1998/Math/MathML\"> <mml:msup> <mml:mrow> <mml:mtext>cm</mml:mtext> </mml:mrow> <mml:mrow> <mml:mo>-</mml:mo> <mml:mn>2</mml:mn> </mml:mrow> </mml:msup> </mml:math> ≈ $$9{ } \\times 10^{ - 11}$$ <mml:math xmlns:mml=\"http://www.w3.org/1998/Math/MathML\"> <mml:mrow> <mml:mn>9</mml:mn> <mml:mrow/> <mml:mo>×</mml:mo> <mml:msup> <mml:mn>10</mml:mn> <mml:mrow> <mml:mo>-</mml:mo> <mml:mn>11</mml:mn> </mml:mrow> </mml:"
+   }
+  ]
+ },
+ {
+  "candidate_id": "C066",
+  "seed_id": "Q6",
+  "statement": "For a locked type-2-diabetes UPE model, wavelength- and area-calibrated radiance measurements will achieve cross-instrument ICC of at least 0.80 and limit the loss of external predictive R² to at most 0.05 when the model is transferred between PMT and EMCCD systems, whereas raw detector counts will not.",
+  "scope": {
+   "population": "Adults with type 2 diabetes starting treatment, sampled across at least three clinical centres",
+   "condition": "Duplicate same-site hand measurements on calibrated PMT and EMCCD systems after identical acclimation and dark adaptation",
+   "comparator": "Raw-count harmonization without wavelength-dependent quantum-efficiency, aperture-area and dark-noise correction",
+   "outcome": "Agreement of UPE features and transfer performance for predicting 12-week HbA1c change"
+  },
+  "null_hypothesis": "Calibrated cross-instrument ICC is below 0.80, calibrated cross-device predictive R² loss exceeds 0.05, or calibration does not outperform raw-count harmonization.",
+  "estimand": "ICC for calibrated radiance features and ΔR²transfer = R²same-device − R²cross-device, compared between calibrated and raw-count pipelines.",
+  "proposed_experiment": "Circulate the same traceable reference source among centres, measure each participant consecutively on both detector classes, convert counts to photons/s/cm² within fixed spectral bands, freeze the diabetes-response model, and perform bidirectional PMT-to-EMCCD and EMCCD-to-PMT transfer tests.",
+  "rationale": [
+   {
+    "step": "The clinical literature identifies extremely low intensity, thermal and optical confounds, and absence of standardized protocols as central barriers to UPE biomarker validation.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W7165757820"
+    ]
+   },
+   {
+    "step": "Human UPE studies use both PMTs and CCD cameras under differing analytical conditions, making detector portability a hidden requirement for clinical deployment.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2906242287"
+    ]
+   },
+   {
+    "step": "EMCCD work shows that detector noise, sampling time and wavelength-dependent quantum efficiency govern detectivity and can be addressed through calibration experiments.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W3126489816"
+    ]
+   },
+   {
+    "step": "A defined two-band diabetes UPE feature and a later HbA1c endpoint provide a concrete model on which to test portability.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W4384029814"
+    ]
+   },
+   {
+    "step": "For each feature, compute cross-instrument ICC after calibration; train the outcome model on one detector class and evaluate it unchanged on the other, with support requiring ICC≥0.80, R² loss≤0.05 and improvement over the raw-count pipeline.",
+    "justification_type": "computation"
+   },
+   {
+    "step": "Clinical biomarker validation presupposes calibrated instruments and standardized protocols.",
+    "justification_type": "given"
+   }
+  ],
+  "cited_works": [
+   {
+    "work_id": "W7165757820",
+    "title": "Biomarkers in Biofield Therapies: Analysis of Measurable Effects",
+    "year": 2026,
+    "type": "article",
+    "abstract": "Biofield Therapies (BTs), such as Reiki and Healing Touch, are used in integrative and complementary medicine, but their biological mechanisms remain poorly understood. This review aimed to explore the physiological biomarkers modulated by BTs in a selected sample of studies to identify common patterns and elucidate potential mechanisms of action. A focused narrative synthesis of 14 intentionally selected studies was performed, encompassing various BT modalities, study designs (including randomized clinical trials, preclinical studies, and &lt;em&gt;in vitro&lt;/em&gt; models), and biomarker types. A total of 64 biomarkers were extracted and classified based on type, clinical application, and biological function. Data synthesis included descriptive statistics to summarize the distribution of biomarker categories within this sample. In the RCTs, the analysis of the 17 biomarkers pointed to diagnostic and diagnostic-prognostic contexts, with a relevant subset of prognostic-therapeutic biomarkers (23.5%) suggesting an adjuvant role in predicting clinical outcomes and in therapeutic monitoring. The most frequently reported biomarkers in the selected studies were inflammatory and immunological (40.6%), followed by cellular regulatory markers. The main findings included evidence of modulation of the hypothalamic-pituitary-adrenal (HPA) axis, enhanced immune function (Natural Killer (NK) cell activity), cytoprotective effects in &lt;em&gt;in vitro&lt;/em&gt; models, and exploratory observations of increased telomere length. This synthesis suggests that BTs are associated with meas"
+   },
+   {
+    "work_id": "W2906242287",
+    "title": "Human Ultraweak Photon Emission: Key Analytical Aspects, Results and Future Trends – A Review",
+    "year": 2018,
+    "type": "article",
+    "abstract": "Living systems emit what is called ultraweak photon emission (UPE). This visually undetectable phenomenon has only been studied in humans for the last 30 years, finding that UPE is a complex process depending on multitude factors. Considering previous literature, this review discusses the current trends in the analysis of in vivo UPE from human beings. To this aim, Analytical Approaches Employed for UPE Measurement section focuses on the analytical techniques employed (photomultipliers and charged coupled device cameras), summarizing analytical conditions and reporting figures of merit reached to date. Then, Human UPE Depending on External Factors and Human UPE Depending on Internal Factors sections address external and internal factors, which have proved to affect UPE, pointing out the important influence on oxidative processes outside and inside the body, and also highlighting some personal states of the individuals affecting UPE. Last section is devoted to give a general view on the goals and achieved up to date regarding UPE measurement, emphasizing some potential applications as well as recommendations which include: use of UPE spectra information together with UPE intensity, larger populations (≈50-100 subjects), further studies on internal states of individuals, and use of statistical tools."
+   },
+   {
+    "work_id": "W3126489816",
+    "title": "Detectivity optimization to measure ultraweak light fluxes using an EM-CCD as binary photon counter array",
+    "year": 2021,
+    "type": "article",
+    "abstract": "Abstract For a wide range of purposes, one faces the challenge to detect light from extremely faint and spatially extended sources. In such cases, detector noises dominate over the photon noise of the source, and quantum detectors in photon counting mode are generally the best option. Here, we combine a statistical model with an in-depth analysis of detector noises and calibration experiments, and we show that visible light can be detected with an electron-multiplying charge-coupled devices (EM-CCD) with a signal-to-noise ratio (SNR) of 3 for fluxes less than $$30\\,{\\text{photon}}\\,{\\text{s}}^{ - 1} \\,{\\text{cm}}^{ - 2}$$ <mml:math xmlns:mml=\"http://www.w3.org/1998/Math/MathML\"> <mml:mrow> <mml:mn>30</mml:mn> <mml:mspace/> <mml:mtext>photon</mml:mtext> <mml:mspace/> <mml:msup> <mml:mrow> <mml:mtext>s</mml:mtext> </mml:mrow> <mml:mrow> <mml:mo>-</mml:mo> <mml:mn>1</mml:mn> </mml:mrow> </mml:msup> <mml:mspace/> <mml:msup> <mml:mrow> <mml:mtext>cm</mml:mtext> </mml:mrow> <mml:mrow> <mml:mo>-</mml:mo> <mml:mn>2</mml:mn> </mml:mrow> </mml:msup> </mml:mrow> </mml:math> . For green photons, this corresponds to 12 aW $${\\text{cm}}^{ - 2}$$ <mml:math xmlns:mml=\"http://www.w3.org/1998/Math/MathML\"> <mml:msup> <mml:mrow> <mml:mtext>cm</mml:mtext> </mml:mrow> <mml:mrow> <mml:mo>-</mml:mo> <mml:mn>2</mml:mn> </mml:mrow> </mml:msup> </mml:math> ≈ $$9{ } \\times 10^{ - 11}$$ <mml:math xmlns:mml=\"http://www.w3.org/1998/Math/MathML\"> <mml:mrow> <mml:mn>9</mml:mn> <mml:mrow/> <mml:mo>×</mml:mo> <mml:msup> <mml:mn>10</mml:mn> <mml:mrow> <mml:mo>-</mml:mo> <mml:mn>11</mml:mn> </mml:mrow> </mml:"
+   },
+   {
+    "work_id": "W4384029814",
+    "title": "Ultra-weak photon emission as a potential tool for evaluating the therapeutic effect of traditional Chinese medicine in patients with type 2 diabetes",
+    "year": 2023,
+    "type": "article",
+    "abstract": "Background: Traditional Chinese medicine (TCM) has been used to prevent and treat type 2 diabetes (T2DM) for thousands of years. The holistic view of TCM and the \"multitarget\" characteristics of Chinese medicine have unique advantages in the prevention and treatment of T2DM. TCM syndrome differentiation and treatment are effective for T2DM; however, currently, the therapeutic effect of TCM is generally evaluated by asking for patients' subjective feelings, or by checking the changes in relevant indicators. The main problems are that the patient's descriptions are unclear and subjective, and although the self-reported symptoms may have improved significantly, the relevant indicators are sometimes not obvious, which cannot truly reflect the therapeutic effect of TCM. Therefore, it is urgent to develop a novel, sensitive, and noninvasive method to quantitatively evaluate the therapeutic effect of TCM. Methods: In this study, ultra-weak photon emission (UPE) was measured at four sites of hands of T2DM patients with Qi-Yin deficiency before treatment and after 1 and 2 weeks of treatment with TCM. The UPE intensity and spectral distribution were calculated and analyzed using the results measured at these four sites. Spearman's correlation coefficient was used to quantify the correlation between the UPE parameters and the syndrome scores of TCM. Results: The UPE intensity of T2DM patients with Qi-Yin deficiency decreased gradually with the course of the treatment and was significantly lower than that before the treatment. The ratio of photon counts between the wavelength ranges of"
+   }
+  ]
+ },
+ {
+  "candidate_id": "C067",
+  "seed_id": "Q7",
+  "statement": "The between-preparation differences in reported UPE spectra - including the claimed species-ordered redshift of glutamate-evoked brain-slice emission toward ~865 nm in humans - are dominated by wavelength-dependent reabsorption and scattering along the exit path inside the specimen, such that the measured spectral centroid shifts with specimen optical thickness by at least as much as the reported between-species shift.",
+  "scope": {
+   "population": "Acute brain slices from at least three species (mouse, pig, and human resected cortex or monkey), plus Arabidopsis thaliana leaves and human hand skin, i.e. the exact preparations from which the published spectral claims come.",
+   "condition": "Emitter chemistry held fixed while the internal optical path is varied (slice thickness 200 / 400 / 800 um; leaf intact vs abraded vs homogenate; skin vs skin with optical-clearing agent), with diffuse transmittance and mu_eff(lambda) measured on the same specimen immediately after the emission measurement.",
+   "comparator": "The implicit fixed-emitter model used in the literature, in which the detected spectrum is treated as the emitter spectrum with no transport correction.",
+   "outcome": "Spectral centroid lambda_bar of the detected UPE spectrum over 400-900 nm and the (700-850 nm)/(450-600 nm) band ratio, before and after dividing by the specimen's own measured T(lambda)."
+  },
+  "null_hypothesis": "d(lambda_bar)/dL is smaller than 20% of the reported between-species centroid shift per equivalent change in optical path, and transport correction leaves the species ordering and the in-planta red-only spectrum intact - i.e. the spectral differences really are emitter differences.",
+  "estimand": "d(lambda_bar)/dL in nm per mm of specimen optical path, and the fraction of the reported between-preparation delta(lambda_bar) reproduced by the measured transmittance T(lambda) = exp(-mu_eff(lambda)L) alone.",
+  "proposed_experiment": "Acquire UPE spectra with a 50 nm-step bandpass filter set over 400-900 nm from paired specimens differing only in optical path (slice thickness series; intact leaf vs homogenate; skin with and without an optical clearing agent). Immediately measure mu_eff(lambda) of each specimen with an integrating sphere. Divide the detected spectrum by the specimen's own T(lambda) and test whether the transport-corrected emitter spectra collapse across species and preparations, and whether d(lambda_bar)/dL within one species reproduces the reported between-species shift.",
+  "rationale": [
+   {
+    "step": "The field reports that glutamate-evoked brain-slice biophotonic emission redshifts in a species order up to ~865 nm in humans, measured with an EMCCD-based ultraweak biophoton imaging system plus a spectral device, and reads this as an emitter/mechanism property tied to intelligence; the same instrument line reports a spectral blueshift in dementia models.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2483916403",
+     "W1977345460",
+     "W4386377286"
+    ]
+   },
+   {
+    "step": "The same lipid-peroxidation chemistry emits across 450-850 nm in vitro but is detected only above 640 nm (peaking 700-750 nm) in planta; bandpass-filter work on injured Arabidopsis finds the injury-driven increase dominated by 700-750 nm; yet human hand skin measured through a liquid-crystal tunable filter and EMCCD peaks near 500 nm. These three results are mutually inconsistent as emitter spectra but are consistent as emitter-spectrum x exit-path-transmittance products.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W4283824773",
+     "W4414929333",
+     "W2797018767"
+    ]
+   },
+   {
+    "step": "Tissue absorption and reduced scattering, and hence penetration depth, differ by roughly an order of magnitude between the 450-600 nm region and the 700-850 nm first near-infrared window, and attenuation lengths lengthen further in the second and third NIR windows.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2888240508",
+     "W2090063882"
+    ]
+   },
+   {
+    "step": "For T(lambda) = exp(-mu_eff(lambda) L), a difference of only 1 mm^-1 in mu_eff between 500 nm and 800 nm converts a 0.4 mm change in effective internal path into a factor exp(0.4) = 1.49 change in the 800/500 band ratio. Applied to a broad 400-900 nm emitter this moves the spectral centroid by tens of nm. The effect is multiplicative in L, so it is fully confounded with any between-preparation difference in slice thickness, tissue opacity or pigment load.",
+    "justification_type": "computation"
+   },
+   {
+    "step": "Therefore the decisive control is internal to one species: vary L on the same tissue. If d(lambda_bar)/dL over the 200-800 um range is comparable to the published between-species shift, the transport account suffices and the emitter-chemistry account is unsupported.",
+    "justification_type": "computation"
+   }
+  ],
+  "cited_works": [
+   {
+    "work_id": "W2483916403",
+    "title": "Human high intelligence is involved in spectral redshift of biophotonic activities in the brain",
+    "year": 2016,
+    "type": "article",
+    "abstract": "Human beings hold higher intelligence than other animals on Earth; however, it is still unclear which brain properties might explain the underlying mechanisms. The brain is a major energy-consuming organ compared with other organs. Neural signal communications and information processing in neural circuits play an important role in the realization of various neural functions, whereas improvement in cognitive function is driven by the need for more effective communication that requires less energy. Combining the ultraweak biophoton imaging system (UBIS) with the biophoton spectral analysis device (BSAD), we found that glutamate-induced biophotonic activities and transmission in the brain, which has recently been demonstrated as a novel neural signal communication mechanism, present a spectral redshift from animals (in order of bullfrog, mouse, chicken, pig, and monkey) to humans, even up to a near-infrared wavelength (∼865 nm) in the human brain. This brain property may be a key biophysical basis for explaining high intelligence in humans because biophoton spectral redshift could be a more economical and effective measure of biophotonic signal communications and information processing in the human brain."
+   },
+   {
+    "work_id": "W1977345460",
+    "title": "Spatiotemporal Imaging of Glutamate-Induced Biophotonic Activities and Transmission in Neural Circuits",
+    "year": 2014,
+    "type": "article",
+    "abstract": "The processing of neural information in neural circuits plays key roles in neural functions. Biophotons, also called ultra-weak photon emissions (UPE), may play potential roles in neural signal transmission, contributing to the understanding of the high functions of nervous system such as vision, learning and memory, cognition and consciousness. However, the experimental analysis of biophotonic activities (emissions) in neural circuits has been hampered due to technical limitations. Here by developing and optimizing an in vitro biophoton imaging method, we characterize the spatiotemporal biophotonic activities and transmission in mouse brain slices. We show that the long-lasting application of glutamate to coronal brain slices produces a gradual and significant increase of biophotonic activities and achieves the maximal effect within approximately 90 min, which then lasts for a relatively long time (>200 min). The initiation and/or maintenance of biophotonic activities by glutamate can be significantly blocked by oxygen and glucose deprivation, together with the application of a cytochrome c oxidase inhibitor (sodium azide), but only partly by an action potential inhibitor (TTX), an anesthetic (procaine), or the removal of intracellular and extracellular Ca(2+). We also show that the detected biophotonic activities in the corpus callosum and thalamus in sagittal brain slices mostly originate from axons or axonal terminals of cortical projection neurons, and that the hyperphosphorylation of microtubule-associated protein tau leads to a significant decrease of biophotonic act"
+   },
+   {
+    "work_id": "W4386377286",
+    "title": "Reduced biophotonic activities and spectral blueshift in Alzheimer’s disease and vascular dementia models with cognitive impairment",
+    "year": 2023,
+    "type": "article",
+    "abstract": "Background: Although clinically, Alzheimer's disease (AD) and vascular dementia (VaD) are the two major types of dementia, it is unclear whether the biophotonic activities associated with cognitive impairments in these diseases share common pathological features. Methods: We used the ultraweak biophoton imaging system (UBIS) and synaptosomes prepared by modified percoll method to directly evaluate the functional changes in synapses and neural circuits in AD and VaD model animals. Results: We found that biophotonic activities induced by glutamate were significantly reduced and spectral blueshifted in synaptosomes and brain slices. These changes could be partially reversed by pre-perfusion of the ifenprodil, a specific antagonist of the GluN2B subunit of N-methyl-D-aspartate receptors (NMDARs). Conclusion: Our findings suggest that AD and VaD pathology present similar but complex changes in biophotonic activities and transmission at synapses and neural circuits, implying that communications and information processing of biophotonic signals in the brain are crucial for advanced cognitive functions."
+   },
+   {
+    "work_id": "W4283824773",
+    "title": "Imaging of Lipid Peroxidation-Associated Chemiluminescence in Plants: Spectral Features, Regulation and Origin of the Signal in Leaves and Roots",
+    "year": 2022,
+    "type": "article",
+    "abstract": "Plants, like most living organisms, spontaneously emit photons of visible light. This ultraweak endogenous chemiluminescence is linked to the oxidative metabolism, with lipid peroxidation constituting a major source of photons in plants. We imaged this signal using a very sensitive cooled CCD camera and analysed its spectral characteristics using bandpass interference filters. In vitro oxidation of lipids induced luminescence throughout the visible spectrum (450−850 nm). However, luminescence in the red spectral domain (>640 nm) occurred first, then declined in parallel with the appearance of the emission in the blue-green (<600 nm). This temporal separation suggests that the chemical species emitting in the blue-green are secondary products, possibly deriving from the red light-emitting species. This conversion did not seem to occur in planta because spontaneous chemiluminescence from plant tissues (leaves, roots) occurred only in the red/far-red light domain (>640 nm), peaking at 700−750 nm. The spectrum of plant chemiluminescence was independent of chlorophyll. The in vivo signal was modulated by cellular detoxification mechanisms and by changes in the concentration of singlet oxygen in the tissues, although the singlet oxygen luminescence bands did not appear as major bands in the spectra. Our results indicate that the intensity of endogenous chemiluminescence from plant tissues is determined by the balance between the formation of luminescent species through secondary reactions involving lipid peroxide-derived intermediates, including singlet oxygen, and their eliminat"
+   },
+   {
+    "work_id": "W4414929333",
+    "title": "Ultra-weak photon emission as a physiological indicator of stress: a study of mechanical injury response in Arabidopsis using bandpass filters",
+    "year": 2025,
+    "type": "article",
+    "abstract": "Abstract Ultra-weak photon emission (UPE) offers a non-invasive window into plant physiological states, particularly in response to adverse conditions. This study refines the spectral analysis of UPE in 7-week-old Arabidopsis thaliana plants subjected to mechanical injury, directly addressing well-documented detection challenges in the longer-wavelength regions and enhancing the utility of UPE as a biomarker for oxidative damage. Previous investigations utilized cut-on absorption filters and CCD imaging, which suffered from imprecise spectral resolution due to poor filter characteristics and reliance on subtraction methods for band emission computation. In contrast, our current study employs bandpass optical filters covering the 400–750 nm range in 50 nm increments, significantly improving the accuracy of UPE spectral data. We measured UPE kinetics after applying a standardized mechanical injury by sharp leaf incision. The study evaluates the suitability of these bandpass filters for discerning UPE spectral patterns in both spontaneous and induced emission scenarios in Arabidopsis leaves. It optimizes detection of crucial longer-wavelength emissions often indicative of reactive oxygen species (ROS) formation. Given that UPE intensity directly correlates with the rate and extent of ROS formation, monitoring these changes provides a robust, non-invasive means to assess oxidative metabolic states and internal responses. Our findings reveal that a significant increase in total UPE following mechanical injury occurs in the 700–750 nm spectral range (band B7), emerging as the dom"
+   },
+   {
+    "work_id": "W2797018767",
+    "title": "Measuring the Human Ultra-Weak Photon Emission Distribution Using an Electron-Multiplying, Charge-Coupled Device as a Sensor",
+    "year": 2018,
+    "type": "article",
+    "abstract": "Ultra-weak photon emission (UPE) is the spontaneous emission from living systems mainly attributed to oxidation reactions, in which reactive oxygen species (ROS) may play a major role. Given the capability of the next-generation electron-multiplying CCD (EMCCD) sensors and the easy use of liquid crystal tunable filters (LCTF), the aim of this work was to explore the potential of a simple UPE spectrometer to measure the UPE from a human hand. Thus, an easy setup was configured based on a dark box for inserting the subject’s hand prior to LCTF as a monochromator and an EMCCD sensor working in the full vertical binning mode (FVB) as a spectra detector. Under controlled conditions, both dark signals and left hand UPE were acquired by registering the UPE intensity at different selected wavelengths (400, 450, 500, 550, 600, 650, and 700 nm) during a period of 10 min each. Then, spurious signals were filtered out by ignoring the pixels whose values were clearly outside of the Gaussian distribution, and the dark signal was subtracted from the subject hand signal. The stepped spectrum with a peak of approximately 880 photons at 500 nm had a shape that agreed somewhat with previous reports, and agrees with previous UPE research that reported UPE from 420 to 570 nm, or 260 to 800 nm, with a range from 1 to 1000 photons s−1 cm−2. Obtaining the spectral distribution instead of the total intensity of the UPE represents a step forward in this field, as it may provide extra information about a subject’s personal states and relationship with ROS. A new generation of CCD sensors with lower d"
+   },
+   {
+    "work_id": "W2888240508",
+    "title": "Measurement of tissue optical properties in the context of tissue optical clearing",
+    "year": 2018,
+    "type": "article",
+    "abstract": "Nowadays, dynamically developing optical (photonic) technologies play an ever-increasing role in medicine. Their adequate and effective implementation in diagnostics, surgery, and therapy needs reliable data on optical properties of human tissues, including skin. This paper presents an overview of recent results on the measurements and control of tissue optical properties. The issues reported comprise a brief review of optical properties of biological tissues and efficacy of optical clearing (OC) method in application to monitoring of diabetic complications and visualization of blood vessels and microcirculation using a number of optical imaging technologies, including spectroscopic, optical coherence tomography, and polarization- and speckle-based ones. Molecular modeling of immersion OC of skin and specific technique of OC of adipose tissue by its heating and photodynamic treatment are also discussed."
+   },
+   {
+    "work_id": "W2090063882",
+    "title": "Deep optical imaging of tissue using the second and third near-infrared spectral windows",
+    "year": 2014,
+    "type": "article",
+    "abstract": "Light at wavelengths in the near-infrared (NIR) region allows for deep penetration and minimal absorption through high scattering tissue media. NIR light has been conventionally used through the first NIR optical tissue window with wavelengths from 650 to 950 nm. Longer NIR wavelengths had been overlooked due to major water absorption peaks and a lack of NIR-CCD detectors. The second NIR spectral window from 1100 to 1350 nm and a new spectral window from 1600 to 1870 nm, known as the third NIR optical window, were investigated. Optical attenuation measurements from thin tissue slices of normal and malignant breast and prostate tissues, pig brain, and chicken tissue were obtained in the spectral range from 400 to 2500 nm. Optical images of chicken tissue overlying three black wires were also obtained using the second and third spectral windows. Due to a reduction in scattering and minimal absorption, longer attenuation lengths and clearer optical images could be seen in the second and third NIR optical windows compared to the conventional first NIR optical window. A possible fourth optical window centered at 2200 nm was noted."
+   }
+  ]
+ },
+ {
+  "candidate_id": "C068",
+  "seed_id": "Q7",
+  "statement": "In perfused mammalian tissue the depth from which a surface UPE image retains resolvable spatial contrast is at most ~1 mm in the 450-600 nm band and at most ~3 mm in the 700-850 nm band at the exposure times the field actually uses (<= 1800 s), so no published in vivo whole-body UPE image contains organ-level spatial information originating below those depths.",
+  "scope": {
+   "population": "Tissue phantoms with independently measured mu_a and mu_s', plus ex vivo perfused mammalian tissue slabs (mouse whole-body phantom, porcine skin, rodent scalp+skull).",
+   "condition": "A flux-calibrated ultraweak source (point and 5 mm bar target) emitting 10-10^3 photons s^-1 cm^-2, i.e. matched to biological UPE, placed at depths of 0.5, 1, 2, 3, 5 and 10 mm.",
+   "comparator": "The identical source imaged at the tissue surface (depth 0), and a source-absent dark run, with the same camera, binning, cosmic-ray filter and 1800 s exposure used for in vivo UPE imaging.",
+   "outcome": "Contrast-to-noise ratio of the 5 mm test feature in the surface image, per spectral band, as a function of depth."
+  },
+  "null_hypothesis": "CNR >= 1 is still achieved for sources at 5 mm or deeper in the 450-600 nm band, i.e. surface UPE images do carry deep-tissue spatial contrast, which would falsify the shallow-ceiling claim and legitimise anatomical reading of whole-body UPE images.",
+  "estimand": "d_max(band): the source depth at which CNR falls to 1 in an 1800 s exposure, with 95% CI, reported separately for 450-600 nm and 700-850 nm.",
+  "proposed_experiment": "Build a flux-calibrated ultraweak emitter (heavily attenuated LED behind calibrated neutral filters, or a tritium-phosphor plaque) cross-calibrated against a photon-counting PMT to 10-10^3 photons s^-1 cm^-2. Embed point and 5 mm bar targets at graded depths in phantoms of measured mu_a/mu_s' and in ex vivo tissue. Image with the same camera, binning, filtering and 1800 s protocol used for in vivo UPE, in 450-600 nm and 700-850 nm bands. Fit CNR versus depth, extract d_max per band, and then re-examine published whole-body images against that ceiling.",
+  "rationale": [
+   {
+    "step": "The seed brief states the field's own diagnosis: in vivo imaging attempts are hampered by tissue scattering and absorption, producing low signal-to-noise ratios.",
+    "justification_type": "given"
+   },
+   {
+    "step": "Published in vivo UPE imaging uses 15-60 min accumulations with 2x2 to 4x4 binning and cosmic-ray filtering, and then reads the resulting maps anatomically - diurnal whole-body patterns, upper-body emotional-state maps, tumour maps correlated with tumour size - while the rat work explicitly asserts that photons crossing the skull are the chief contributors to the brain image.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W1995699286",
+     "W2039224325",
+     "W4409735377",
+     "W4406075774",
+     "W2165767379",
+     "W3174216096",
+     "W2009372666",
+     "W2086348119",
+     "W2160984073"
+    ]
+   },
+   {
+    "step": "The corpus contains detector-side metrology (EM-CCD detectivity, Ulbricht-cavity concentration of a 3D photon gas onto a 2D detector) but no traceable ultraweak calibration source and no measured tissue transfer function for UPE-level fluxes; the only quantitative propagation treatment models the human body as a homogeneous sphere with an extrapolated zero-boundary photon-diffusion solution, with no experimental depth calibration.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W3126489816",
+     "W3161989600",
+     "W3170639556"
+    ]
+   },
+   {
+    "step": "Image blur alone cannot certify source depth. For a point source at depth d in a non-absorbing scattering half-space the surface exitance scales as d/(d^2+rho^2)^{3/2}; setting this to half its on-axis value gives rho = d*sqrt(2^{2/3}-1) = 0.766 d, i.e. FWHM = 1.53 d, and adding absorption narrows the profile further rather than widening it. Hence a narrow hotspot is not evidence of a shallow source, and the decisive quantity is the escape fraction, which falls approximately as exp(-mu_eff d), one e-fold per 1/mu_eff of depth.",
+    "justification_type": "computation"
+   },
+   {
+    "step": "Because mu_eff differs several-fold between the 450-600 nm region and the 700-850 nm window, the depth ceiling is band-specific and must be quoted per band; a single 'penetration depth' number for UPE imaging is not well defined.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2888240508",
+     "W2090063882"
+    ]
+   }
+  ],
+  "cited_works": [
+   {
+    "work_id": "W1995699286",
+    "title": "Ultra-weak photon emission from biological samples: Definition, mechanisms, properties, detection and applications",
+    "year": 2014,
+    "type": "article",
+    "abstract": " [NOTE: the corpus holds no usable abstract for this work. Judge its citation step on the title alone and mark the step unverifiable rather than false.]"
+   },
+   {
+    "work_id": "W2039224325",
+    "title": "Towards the two-dimensional imaging of spontaneous ultra-weak photon emission from microbial, plant and animal cells",
+    "year": 2013,
+    "type": "article",
+    "abstract": "Two-dimensional imaging of spontaneous ultra-weak photon emission was measured in the yeast cells, Arabidopsis plant and the human hand using highly sensitive charge coupled device (CCD) camera. For the first time, the detail analysis of measuring parameters such as accumulation time and binning is provided with the aim to achieve two-dimensional images of spontaneous ultra-weak photon emission of good quality. We present data showing that using a hardware binning with binning factor 4 × 4, the accumulation time decreases in the following order: yeast cells (30 min) > the human hand (20 min) > Arabidopsis plant (10 min). Analysis of measuring parameters provides a detailed description of standard condition to be used for two-dimensional spontaneous ultra-weak photon imaging in microbes, plants and animals. Thus, CCD imaging can be employed as a unique tool to examine the oxidative state of the living organism with the application in microbiological, plant and medical research."
+   },
+   {
+    "work_id": "W4409735377",
+    "title": "Imaging Ultraweak Photon Emission from Living and Dead Mice and from Plants under Stress",
+    "year": 2025,
+    "type": "article",
+    "abstract": ") in the spectral range of 200-1000 nm, has been observed in all living systems that have been examined. Here, we report experiments that exemplify the ability of novel imaging systems to detect variations in UPE for a set of physiologically important scenarios. We use electron-multiplying charge-coupled device (EMCCD) and charge-coupled device (CCD) cameras to capture single visible-wavelength photons with low noise and quantum efficiencies higher than 90%. Our investigation reveals significant contrast between the UPE from live vs dead mice. In plants, we observed that an increase in the temperature and injuries both caused an increase in UPE intensity. Moreover, chemical treatments modified the UPE emission characteristics of plants, particularly the application of a local anesthetic (benzocaine) to injury, which showed the highest emission among the compounds tested. As a result, UPE imaging provides the possibility of non-invasive label-free imaging of vitality in animals and the responses of plants to stress."
+   },
+   {
+    "work_id": "W4406075774",
+    "title": "Application of ultra-weak photon emission imaging in plant stress assessment",
+    "year": 2025,
+    "type": "article",
+    "abstract": "The oxidative damage induced by abiotic stress factors such as salinity, drought, extreme temperatures, heavy metals, pollution, and high irradiance has been studied in Arabidopsis thaliana. Ultra-weak photon emission (UPE) is presented as a signature reflecting the extent of the oxidation process and/or damage. It can be used to predict the physiological state and general health of plants. This study presents an overview of a potential research platform where the technique can be applied. The results presented can aid in providing invaluable information for developing strategies to mitigate abiotic stress in crops by improving plant breeding programs with a focus on enhancing tolerance. This study evaluates the applicability of charged couple device (CCD) imaging in evaluating plant stress and degree of damage and to discuss the advantages and limitations of the claimed non-invasive label-free tool."
+   },
+   {
+    "work_id": "W2165767379",
+    "title": "Imaging of Ultraweak Spontaneous Photon Emission from Human Body Displaying Diurnal Rhythm",
+    "year": 2009,
+    "type": "article",
+    "abstract": "The human body literally glimmers. The intensity of the light emitted by the body is 1000 times lower than the sensitivity of our naked eyes. Ultraweak photon emission is known as the energy released as light through the changes in energy metabolism. We successfully imaged the diurnal change of this ultraweak photon emission with an improved highly sensitive imaging system using cryogenic charge-coupled device (CCD) camera. We found that the human body directly and rhythmically emits light. The diurnal changes in photon emission might be linked to changes in energy metabolism."
+   },
+   {
+    "work_id": "W3174216096",
+    "title": "Increment of spontaneous human biophoton emission caused by anger emotional states. Proof of concept",
+    "year": 2021,
+    "type": "article",
+    "abstract": "Humans spontaneously emit visible radiation from their skin, which is known as biophoton or ultra-weak photon emission (UPE). Up to date, UPE intensity changes according to different external and internal factors have been reported. However, the influence in the human UPE of negative emotional states has never been studied despite their clinic and forensic interest. In this work, an ad hoc system based on a high-sensitive CCD detector was developed to detect and image UPE from human’s upper body. Then, the UPE emitted by the upper part of the body of nine volunteers was imaged in two different personal states: (i) when subjects were feeling relaxed; and (ii) when they were emotionally stimulated to feel anger. For all the volunteers, the relative measurement of UPE intensity was higher when feeling anger than when feeling relaxed. Due to the relevance of this disruptive idea and the horizon this knowledge can provide, this proof of concept must be followed by further experiments. An increase in the number of subjects will be accomplished in order to enhance these preliminary results and propose UPE as a new physiological parameter of negative emotional states."
+   },
+   {
+    "work_id": "W2009372666",
+    "title": "Biophoton detection as a novel technique for cancer imaging",
+    "year": 2004,
+    "type": "article",
+    "abstract": "Biophoton emission is defined as extremely weak light that is radiated from any living system due to its metabolic activities, without excitation or enhancement. We measured biophoton images of tumors transplanted in mice with a highly sensitive and ultra-low noise CCD camera system. Cell lines employed for this study were AH109A, TE4 and TE9. Biophoton images of each tumor were measured 1 week after carcinoma cell transplantation to estimate the tumor size at week 1 and the biophoton intensity. Some were also measured at 2 and 3 weeks to compare the biophoton distribution with histological findings. We achieved sequential biophoton imaging during tumor growth for the first time. Comparison of microscopic findings and biophoton intensity suggested that the intensity of biophoton emission reflects the viability of the tumor tissue. The size at week 1 differed between cell lines, and the biophoton intensity of the tumor was correlated with the tumor size at week 1 (correlation coefficient 0.73). This non-invasive and simple technique has the potential to be used as an optical biopsy to detect tumor viability."
+   },
+   {
+    "work_id": "W2086348119",
+    "title": "Two-dimensional photon counting imaging and spatiotemporal characterization of ultraweak photon emission from a rat’s brain in vivo",
+    "year": 1999,
+    "type": "article",
+    "abstract": " [NOTE: the corpus holds no usable abstract for this work. Judge its citation step on the title alone and mark the step unverifiable rather than false.]"
+   },
+   {
+    "work_id": "W2160984073",
+    "title": "In vivo imaging of spontaneous ultraweak photon emission from a rat’s brain correlated with cerebral energy metabolism and oxidative stress",
+    "year": 1999,
+    "type": "article",
+    "abstract": " [NOTE: the corpus holds no usable abstract for this work. Judge its citation step on the title alone and mark the step unverifiable rather than false.]"
+   },
+   {
+    "work_id": "W3126489816",
+    "title": "Detectivity optimization to measure ultraweak light fluxes using an EM-CCD as binary photon counter array",
+    "year": 2021,
+    "type": "article",
+    "abstract": "Abstract For a wide range of purposes, one faces the challenge to detect light from extremely faint and spatially extended sources. In such cases, detector noises dominate over the photon noise of the source, and quantum detectors in photon counting mode are generally the best option. Here, we combine a statistical model with an in-depth analysis of detector noises and calibration experiments, and we show that visible light can be detected with an electron-multiplying charge-coupled devices (EM-CCD) with a signal-to-noise ratio (SNR) of 3 for fluxes less than $$30\\,{\\text{photon}}\\,{\\text{s}}^{ - 1} \\,{\\text{cm}}^{ - 2}$$ <mml:math xmlns:mml=\"http://www.w3.org/1998/Math/MathML\"> <mml:mrow> <mml:mn>30</mml:mn> <mml:mspace/> <mml:mtext>photon</mml:mtext> <mml:mspace/> <mml:msup> <mml:mrow> <mml:mtext>s</mml:mtext> </mml:mrow> <mml:mrow> <mml:mo>-</mml:mo> <mml:mn>1</mml:mn> </mml:mrow> </mml:msup> <mml:mspace/> <mml:msup> <mml:mrow> <mml:mtext>cm</mml:mtext> </mml:mrow> <mml:mrow> <mml:mo>-</mml:mo> <mml:mn>2</mml:mn> </mml:mrow> </mml:msup> </mml:mrow> </mml:math> . For green photons, this corresponds to 12 aW $${\\text{cm}}^{ - 2}$$ <mml:math xmlns:mml=\"http://www.w3.org/1998/Math/MathML\"> <mml:msup> <mml:mrow> <mml:mtext>cm</mml:mtext> </mml:mrow> <mml:mrow> <mml:mo>-</mml:mo> <mml:mn>2</mml:mn> </mml:mrow> </mml:msup> </mml:math> ≈ $$9{ } \\times 10^{ - 11}$$ <mml:math xmlns:mml=\"http://www.w3.org/1998/Math/MathML\"> <mml:mrow> <mml:mn>9</mml:mn> <mml:mrow/> <mml:mo>×</mml:mo> <mml:msup> <mml:mn>10</mml:mn> <mml:mrow> <mml:mo>-</mml:mo> <mml:mn>11</mml:mn> </mml:mrow> </mml:"
+   },
+   {
+    "work_id": "W3161989600",
+    "title": "Stochastic light concentration from 3D to 2D reveals ultraweak chemi- and bioluminescence",
+    "year": 2021,
+    "type": "article",
+    "abstract": "For countless applications in science and technology, light must be concentrated, and concentration is classically achieved with reflective and refractive elements. However, there is so far no efficient way, with a 2D detector, to detect photons produced inside an extended volume with a broad or isotropic angular distribution. Here, with theory and experiment, we propose to stochastically transform and concentrate a volume into a smaller surface, using a high-albedo Ulbricht cavity and a small exit orifice through cavity walls. A 3D gas of photons produced inside the cavity is transformed with a 50% number efficiency into a 2D Lambertian emitting orifice with maximal radiance and a much smaller size. With high-albedo quartz-powder cavity walls ([Formula: see text]), the orifice area is [Formula: see text] times smaller than the walls' area. When coupled to a detectivity-optimized photon-counter ([Formula: see text]) the detection limit is [Formula: see text]. Thanks to this unprecedented sensitivity, we could detect the luminescence produced by the non-catalytic disproportionation of hydrogen peroxide in pure water, which has not been observed so far. We could also detect the ultraweak bioluminescence produced by yeast cells at the onset of their growth. Our work opens new perspectives for studying ultraweak luminescence, and the concept of stochastic 3D/2D conjugation should help design novel light detection methods for large samples or diluted emitters."
+   },
+   {
+    "work_id": "W3170639556",
+    "title": "Phenomenological Interpretations of Some Somatic Temporal and Spatial Patterns of Biophoton Emission in Humans",
+    "year": 2021,
+    "type": "article",
+    "abstract": "Biophoton emission remains controversial. The photo-genic origin of biophoton has been attributed to the oxidative stress or free radical production. However, there are considerable gaps in quantitative understanding of biophoton emission. I propose an analytical hypothesis for interpreting a few patterns of steady-state biophoton emission of human, including the dependency on age, the diurnal variation, and the geometric asymmetry associated with serious asymmetrical pathological conditions. The hypothesis is based on an alternative form of energy state, termed vivo-nergy, which is associated with only metabolically active organisms that are also under neuronal control. The hypothesis projects a decrease of the vivo-nergy in human during growth beyond puberty. The hypothesis also proposes a modification of the vivo-nergy by the phases of systematic or homeostatic physiology. The hypothesis further postulates that the deviation of the physiology-modified vivo-nergy from the pre-puberty level is deteriorated by acquired organ-specific pathological conditions. A temporal differential change of vivo-nergy is hypothesized to proportionally modulate oxidative stress that functions as the physical source of biophoton emission. The resulted steady-state diffusion of the photon emitted from a photo-genic source in a human geometry simplified as a homogeneous spherical domain is modeled by photon diffusion principles incorporating an extrapolated zero-boundary condition. The age and systematic physiology combined determines the intensity of the centered physiological steady-state ph"
+   },
+   {
+    "work_id": "W2888240508",
+    "title": "Measurement of tissue optical properties in the context of tissue optical clearing",
+    "year": 2018,
+    "type": "article",
+    "abstract": "Nowadays, dynamically developing optical (photonic) technologies play an ever-increasing role in medicine. Their adequate and effective implementation in diagnostics, surgery, and therapy needs reliable data on optical properties of human tissues, including skin. This paper presents an overview of recent results on the measurements and control of tissue optical properties. The issues reported comprise a brief review of optical properties of biological tissues and efficacy of optical clearing (OC) method in application to monitoring of diabetic complications and visualization of blood vessels and microcirculation using a number of optical imaging technologies, including spectroscopic, optical coherence tomography, and polarization- and speckle-based ones. Molecular modeling of immersion OC of skin and specific technique of OC of adipose tissue by its heating and photodynamic treatment are also discussed."
+   },
+   {
+    "work_id": "W2090063882",
+    "title": "Deep optical imaging of tissue using the second and third near-infrared spectral windows",
+    "year": 2014,
+    "type": "article",
+    "abstract": "Light at wavelengths in the near-infrared (NIR) region allows for deep penetration and minimal absorption through high scattering tissue media. NIR light has been conventionally used through the first NIR optical tissue window with wavelengths from 650 to 950 nm. Longer NIR wavelengths had been overlooked due to major water absorption peaks and a lack of NIR-CCD detectors. The second NIR spectral window from 1100 to 1350 nm and a new spectral window from 1600 to 1870 nm, known as the third NIR optical window, were investigated. Optical attenuation measurements from thin tissue slices of normal and malignant breast and prostate tissues, pig brain, and chicken tissue were obtained in the spectral range from 400 to 2500 nm. Optical images of chicken tissue overlying three black wires were also obtained using the second and third spectral windows. Due to a reduction in scattering and minimal absorption, longer attenuation lengths and clearer optical images could be seen in the second and third NIR optical windows compared to the conventional first NIR optical window. A possible fourth optical window centered at 2200 nm was noted."
+   }
+  ]
+ },
+ {
+  "candidate_id": "C069",
+  "seed_id": "Q7",
+  "statement": "After normalising out total flux and the anatomical silhouette, whole-body and whole-organ UPE images acquired under the field's standard protocol contain reproducible spatial structure at 5 mm scale, with split-half intraclass correlation exceeding 0.3 and exceeding the shot-noise-matched simulated null.",
+  "scope": {
+   "population": "Human hand and upper body (>= 20 imaging sessions across >= 20 subjects) and mice (>= 10 animals), imaged under the standard protocol: light-tight box, >= 60 min dark adaptation, 15-30 min accumulation, 2x2 to 4x4 binning, cosmic-ray filtering.",
+   "condition": "Each acquisition stored as individual frames and split into two interleaved half-datasets, each flux-normalised and masked to the silhouette.",
+   "comparator": "1000 synthetic image pairs drawn from a Poisson process with the same total counts, the same silhouette, and the measured flat-field, dark-current and EM excess-noise statistics of the same camera.",
+   "outcome": "Split-half intraclass correlation of the flux-normalised residual map at 5, 10 and 20 mm smoothing scales, and its excess over the simulated null distribution."
+  },
+  "null_hypothesis": "Split-half ICC lies at or below the 95th percentile of the shot-noise-matched simulated null at every scale, i.e. published UPE images carry no reproducible spatial information beyond total intensity and body outline - the pictures are display artefacts of a counting measurement.",
+  "estimand": "Split-half ICC of the residual spatial map at 5 mm scale, minus the 95th percentile of the matched simulated null, with CI.",
+  "proposed_experiment": "Re-analyse archived raw frame stacks plus a prospective cohort. Interleave frames into two half-datasets, flux-normalise, mask to the silhouette, smooth at 5/10/20 mm, and compute the ICC between halves. Compare against 1000 Poisson surrogate image pairs matched on total counts, silhouette and measured detector noise. Repeat the whole procedure at 30 and 90 min dark adaptation and with the subject replaced by a matched inert phantom.",
+  "rationale": [
+   {
+    "step": "The field publishes two-dimensional UPE maps of human skin, human upper body, whole mice, tumours and plants and reads regional structure off them, but none of the retrieved imaging works reports any reproducibility statistic for the spatial pattern itself - only total or regional intensity comparisons.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2165767379",
+     "W3174216096",
+     "W2132454423",
+     "W2039224325",
+     "W4409735377",
+     "W2009372666",
+     "W4406075774"
+    ]
+   },
+   {
+    "step": "Detector-side sensitivity is quantified: an EM-CCD run as a binary photon counter reaches SNR 3 at fluxes below 30 photons s^-1 cm^-2, with detectivity D = 0.015 photon^-1 s^{1/2} cm; human skin emits of order 85 photons s^-1 cm^-2 in the visible.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W3126489816",
+     "W1583143288",
+     "W1899483214"
+    ]
+   },
+   {
+    "step": "From SNR = D * Phi * sqrt(A t) we get t = [SNR/(D*Phi)]^2 / A. For Phi = 85 photons s^-1 cm^-2 and SNR = 3 the numerator is (3/1.275)^2 = 5.54 cm^2 s, so t = 5.5 s for a 1 cm^2 element, 554 s (9.2 min) for a 1 mm^2 element, and 5.5e4 s (15.4 h) for a (100 um)^2 element. Exposure time scales as the inverse of the resolution-element area, so a tenfold finer linear resolution costs a hundredfold longer exposure; realistic lens collection efficiency eta_c << 1 multiplies all of these by 1/eta_c. At the field's 15-30 min exposures the SNR-3 resolution element is therefore of order 1 mm at best even in the idealised eta_c = 1 limit, and any finer claimed structure must be tested against the shot-noise null rather than asserted over it.",
+    "justification_type": "computation"
+   },
+   {
+    "step": "Consistency check on the same formula against the source: at Phi = 30 photons s^-1 cm^-2 and SNR = 3 it requires A*t = 44.4 cm^2 s, reproducing the reported regime for extended sources.",
+    "justification_type": "computation"
+   },
+   {
+    "step": "Residual light-induced emission takes about 60 min of darkness to decay to the spontaneous level, and dark adaptation of 30 min is used elsewhere to eliminate delayed-luminescence interference; an inadequate dark-adaptation period would imprint a reproducible but non-spontaneous spatial pattern, so the test must be repeated at two dark-adaptation delays to separate genuine spontaneous structure from persistence of prior illumination.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W4408461558",
+     "W2737370177"
+    ]
+   }
+  ],
+  "cited_works": [
+   {
+    "work_id": "W2165767379",
+    "title": "Imaging of Ultraweak Spontaneous Photon Emission from Human Body Displaying Diurnal Rhythm",
+    "year": 2009,
+    "type": "article",
+    "abstract": "The human body literally glimmers. The intensity of the light emitted by the body is 1000 times lower than the sensitivity of our naked eyes. Ultraweak photon emission is known as the energy released as light through the changes in energy metabolism. We successfully imaged the diurnal change of this ultraweak photon emission with an improved highly sensitive imaging system using cryogenic charge-coupled device (CCD) camera. We found that the human body directly and rhythmically emits light. The diurnal changes in photon emission might be linked to changes in energy metabolism."
+   },
+   {
+    "work_id": "W3174216096",
+    "title": "Increment of spontaneous human biophoton emission caused by anger emotional states. Proof of concept",
+    "year": 2021,
+    "type": "article",
+    "abstract": "Humans spontaneously emit visible radiation from their skin, which is known as biophoton or ultra-weak photon emission (UPE). Up to date, UPE intensity changes according to different external and internal factors have been reported. However, the influence in the human UPE of negative emotional states has never been studied despite their clinic and forensic interest. In this work, an ad hoc system based on a high-sensitive CCD detector was developed to detect and image UPE from human’s upper body. Then, the UPE emitted by the upper part of the body of nine volunteers was imaged in two different personal states: (i) when subjects were feeling relaxed; and (ii) when they were emotionally stimulated to feel anger. For all the volunteers, the relative measurement of UPE intensity was higher when feeling anger than when feeling relaxed. Due to the relevance of this disruptive idea and the horizon this knowledge can provide, this proof of concept must be followed by further experiments. An increase in the number of subjects will be accomplished in order to enhance these preliminary results and propose UPE as a new physiological parameter of negative emotional states."
+   },
+   {
+    "work_id": "W2132454423",
+    "title": "Spontaneous ultraweak photon emission imaging of oxidative metabolic processes in human skin: effect of molecular oxygen and antioxidant defense system",
+    "year": 2011,
+    "type": "article",
+    "abstract": "All living organisms emit spontaneous ultraweak photon emission as a result of cellular metabolic processes. In this study, the involvement of reactive oxygen species (ROS) formed as the byproduct of oxidative metabolic processes in spontaneous ultraweak photon emission was studied in human hand skin. The effect of molecular oxygen and ROS scavengers on spontaneous ultraweak photon emission from human skin was monitored using a highly sensitive photomultiplier tube and charged coupled device camera. When spontaneous ultraweak photon emission was measured under anaerobic conditions, the photon emission was decreased, whereas under hyperaerobic condition the enhancement in photon emission was observed. Spontaneous ultraweak photon emission measured after topical application of glutathione, α-tocopherol, ascorbate, and coenzyme Q10 was observed to be decreased. These results reveal that ROS formed during the cellular metabolic processes in the epidermal cells play a significant role in the spontaneous ultraweak photon emission. It is proposed that spontaneous ultraweak photon emission can be used as a noninvasive tool for the temporal and spatial monitoring of the oxidative metabolic processes and intrinsic antioxidant system in human skin."
+   },
+   {
+    "work_id": "W2039224325",
+    "title": "Towards the two-dimensional imaging of spontaneous ultra-weak photon emission from microbial, plant and animal cells",
+    "year": 2013,
+    "type": "article",
+    "abstract": "Two-dimensional imaging of spontaneous ultra-weak photon emission was measured in the yeast cells, Arabidopsis plant and the human hand using highly sensitive charge coupled device (CCD) camera. For the first time, the detail analysis of measuring parameters such as accumulation time and binning is provided with the aim to achieve two-dimensional images of spontaneous ultra-weak photon emission of good quality. We present data showing that using a hardware binning with binning factor 4 × 4, the accumulation time decreases in the following order: yeast cells (30 min) > the human hand (20 min) > Arabidopsis plant (10 min). Analysis of measuring parameters provides a detailed description of standard condition to be used for two-dimensional spontaneous ultra-weak photon imaging in microbes, plants and animals. Thus, CCD imaging can be employed as a unique tool to examine the oxidative state of the living organism with the application in microbiological, plant and medical research."
+   },
+   {
+    "work_id": "W4409735377",
+    "title": "Imaging Ultraweak Photon Emission from Living and Dead Mice and from Plants under Stress",
+    "year": 2025,
+    "type": "article",
+    "abstract": ") in the spectral range of 200-1000 nm, has been observed in all living systems that have been examined. Here, we report experiments that exemplify the ability of novel imaging systems to detect variations in UPE for a set of physiologically important scenarios. We use electron-multiplying charge-coupled device (EMCCD) and charge-coupled device (CCD) cameras to capture single visible-wavelength photons with low noise and quantum efficiencies higher than 90%. Our investigation reveals significant contrast between the UPE from live vs dead mice. In plants, we observed that an increase in the temperature and injuries both caused an increase in UPE intensity. Moreover, chemical treatments modified the UPE emission characteristics of plants, particularly the application of a local anesthetic (benzocaine) to injury, which showed the highest emission among the compounds tested. As a result, UPE imaging provides the possibility of non-invasive label-free imaging of vitality in animals and the responses of plants to stress."
+   },
+   {
+    "work_id": "W2009372666",
+    "title": "Biophoton detection as a novel technique for cancer imaging",
+    "year": 2004,
+    "type": "article",
+    "abstract": "Biophoton emission is defined as extremely weak light that is radiated from any living system due to its metabolic activities, without excitation or enhancement. We measured biophoton images of tumors transplanted in mice with a highly sensitive and ultra-low noise CCD camera system. Cell lines employed for this study were AH109A, TE4 and TE9. Biophoton images of each tumor were measured 1 week after carcinoma cell transplantation to estimate the tumor size at week 1 and the biophoton intensity. Some were also measured at 2 and 3 weeks to compare the biophoton distribution with histological findings. We achieved sequential biophoton imaging during tumor growth for the first time. Comparison of microscopic findings and biophoton intensity suggested that the intensity of biophoton emission reflects the viability of the tumor tissue. The size at week 1 differed between cell lines, and the biophoton intensity of the tumor was correlated with the tumor size at week 1 (correlation coefficient 0.73). This non-invasive and simple technique has the potential to be used as an optical biopsy to detect tumor viability."
+   },
+   {
+    "work_id": "W4406075774",
+    "title": "Application of ultra-weak photon emission imaging in plant stress assessment",
+    "year": 2025,
+    "type": "article",
+    "abstract": "The oxidative damage induced by abiotic stress factors such as salinity, drought, extreme temperatures, heavy metals, pollution, and high irradiance has been studied in Arabidopsis thaliana. Ultra-weak photon emission (UPE) is presented as a signature reflecting the extent of the oxidation process and/or damage. It can be used to predict the physiological state and general health of plants. This study presents an overview of a potential research platform where the technique can be applied. The results presented can aid in providing invaluable information for developing strategies to mitigate abiotic stress in crops by improving plant breeding programs with a focus on enhancing tolerance. This study evaluates the applicability of charged couple device (CCD) imaging in evaluating plant stress and degree of damage and to discuss the advantages and limitations of the claimed non-invasive label-free tool."
+   },
+   {
+    "work_id": "W3126489816",
+    "title": "Detectivity optimization to measure ultraweak light fluxes using an EM-CCD as binary photon counter array",
+    "year": 2021,
+    "type": "article",
+    "abstract": "Abstract For a wide range of purposes, one faces the challenge to detect light from extremely faint and spatially extended sources. In such cases, detector noises dominate over the photon noise of the source, and quantum detectors in photon counting mode are generally the best option. Here, we combine a statistical model with an in-depth analysis of detector noises and calibration experiments, and we show that visible light can be detected with an electron-multiplying charge-coupled devices (EM-CCD) with a signal-to-noise ratio (SNR) of 3 for fluxes less than $$30\\,{\\text{photon}}\\,{\\text{s}}^{ - 1} \\,{\\text{cm}}^{ - 2}$$ <mml:math xmlns:mml=\"http://www.w3.org/1998/Math/MathML\"> <mml:mrow> <mml:mn>30</mml:mn> <mml:mspace/> <mml:mtext>photon</mml:mtext> <mml:mspace/> <mml:msup> <mml:mrow> <mml:mtext>s</mml:mtext> </mml:mrow> <mml:mrow> <mml:mo>-</mml:mo> <mml:mn>1</mml:mn> </mml:mrow> </mml:msup> <mml:mspace/> <mml:msup> <mml:mrow> <mml:mtext>cm</mml:mtext> </mml:mrow> <mml:mrow> <mml:mo>-</mml:mo> <mml:mn>2</mml:mn> </mml:mrow> </mml:msup> </mml:mrow> </mml:math> . For green photons, this corresponds to 12 aW $${\\text{cm}}^{ - 2}$$ <mml:math xmlns:mml=\"http://www.w3.org/1998/Math/MathML\"> <mml:msup> <mml:mrow> <mml:mtext>cm</mml:mtext> </mml:mrow> <mml:mrow> <mml:mo>-</mml:mo> <mml:mn>2</mml:mn> </mml:mrow> </mml:msup> </mml:math> ≈ $$9{ } \\times 10^{ - 11}$$ <mml:math xmlns:mml=\"http://www.w3.org/1998/Math/MathML\"> <mml:mrow> <mml:mn>9</mml:mn> <mml:mrow/> <mml:mo>×</mml:mo> <mml:msup> <mml:mn>10</mml:mn> <mml:mrow> <mml:mo>-</mml:mo> <mml:mn>11</mml:mn> </mml:mrow> </mml:"
+   },
+   {
+    "work_id": "W1583143288",
+    "title": "Registration of Electromagnetic Waves Emitted from the Human Body",
+    "year": 2014,
+    "type": "article",
+    "abstract": "This paper presents the results of evaluation of possible biophysical methods and approaches for registering various non-ionizing radiation (NIR) wave types of the human body in the electromagnetic range. Many types of NIR (electromagnetic waves, infrared radiation, thermo radiation, bioluminescence) emitted from the human body were reviewed. In particular the results of spontaneous biophoton emission and delayed luminescence from the human body are submitted along with i nfrared thermography (IRT) results. It was shown that 1 cm 2 of skin generally emits ~85 photones for 1s. The intensity of biophoton emission ranges from 10 ?19 to 10 ?16 W/cm 2 (approx. ~1–1000 photons . cm -2. s -1 ). The specific photon emission from part of the human thumb was detected as a spectrum of various colours with the method of Color coronal spectral analysis on a device with an electrode made ??of polyethylene terephthalate (PET hostafan) with applied electric voltage of 15 kV, electric impulse duration 10 ms, and electric current frequency 15 kHz. It was established that photons corresponding to a red color emission of the visible electromagnetic spectrum have energy at 1.82 ?V. The orange color of the visible electromagnetic spectrum has energy at 2.05, yellow – 2.14, blue-green (cyan) – 2.43, blue – 2.64, and violet – 3.03 eV. The reliable result measurement norm was at E ? 2.53 eV, while the spectral range of the emission was within 380–495 nm and 570–750 nm±5 nm. Some important physical characteristics were also demonstrated (energy of hydrogen bonds, wetting angle, surface tension) of w"
+   },
+   {
+    "work_id": "W1899483214",
+    "title": "Research of Biophysical Influence on Model Physical Systems form the Students of Walter Luebeck",
+    "year": 2015,
+    "type": "article",
+    "abstract": "This paper presents the results of evaluation of possible biophysical methods and approaches for registering of various non-ionizing radiation (NIR) wave types of the human body in the electromagnetic and optical range. Many types of NIR (electromagnetic waves, infrared radiation, thermo radiation, bioluminescence) emitted from the human body were reviewed. In particular the results on of spontaneous biophoton emission and delayed luminescence from the human body are submitted along with infrared thermography (IRT) results. It was shown that 1 cm2 of skin generally emits ∼85 photones for 1s. The intensity of biophoton emission ranges from 10−19 to 10−16 W/cm2 (approx. ∼1–1000 photons.cm-2.s-1). The specific photon emission from part of the human thumb was detected as a spectrum of various colors with the method of Color coronal spectral analysis on a device with an electrode made of polyethylene terephthalate (PET hostafan) with applied electric voltage 15 kV, electric impulse duration 10 µs, and electric current frequency 15 kHz. It was established that photons corresponding to a red color emission of visible electromagnetic spectrum have energy at 1.82 еV. The orange color of visible electromagnetic spectrum has energy at 2.05, yellow – 2.14, blue-green (cyan) – 2.43, blue – 2.64, and violet – 3.03 eV. The reliable result measurement norm was at E ≥ 2.53 eV, while the spectral range of the emission was within 380–495 nm and 570–750 nm±5 nm. Also were estimated some important physical characteristics"
+   },
+   {
+    "work_id": "W4408461558",
+    "title": "Influence of External Light on Ultra-Weak Photon Emission of Fruits: Forensic Differentiation of Organic and Conventional Fruits",
+    "year": 2025,
+    "type": "article",
+    "abstract": "Ultra-weak photon emission (UPE) provides a non-invasive method for assessing the biochemical state of biological materials. In this work, we investigated UPE in fruits of various colours (red, orange, yellow, and green) for potential forensic applications. Firstly, fruits were exposed to natural sunlight for 10 min, after which UPE was measured at 10 min intervals over a three-hour period. The results indicated that, following the initial induced response, all fruit types stabilised to a spontaneous UPE state after approximately 60 min in darkness. Subsequently, we compared UPE responses following exposure to natural sunlight with those obtained under artificial red, green, and blue lights. Under natural sunlight, induced UPE values ranged from 15 to 35 intensity units (IU) and spontaneous UPE from 1 to 25 IU, whereas under artificial lighting, induced UPE ranged from 5 to 30 IU and spontaneous UPE from 1 to 20 IU. Finally, a preliminary comparative study between organic and conventional fruits revealed that organic fruits consistently emitted slightly higher UPE levels than conventional ones, suggesting subtle differences in their biochemical properties. All these findings underscore the potential of UPE as a forensic tool for differentiating plant-based materials, with promising applications in food fraud detection and criminal investigations."
+   },
+   {
+    "work_id": "W2737370177",
+    "title": "Formation of singlet oxygen by decomposition of protein hydroperoxide in photosystem II",
+    "year": 2017,
+    "type": "article",
+    "abstract": "Singlet oxygen (1O2) is formed by triplet-triplet energy transfer from triplet chlorophyll to O2 via Type II photosensitization reaction in photosystem II (PSII). Formation of triplet chlorophyll is associated with the change in spin state of the excited electron and recombination of triplet radical pair in the PSII antenna complex and reaction center, respectively. Here, we have provided evidence for the formation of 1O2 by decomposition of protein hydroperoxide in PSII membranes deprived of Mn4O5Ca complex. Protein hydroperoxide is formed by protein oxidation initiated by highly oxidizing chlorophyll cation radical and hydroxyl radical formed by Type I photosensitization reaction. Under highly oxidizing conditions, protein hydroperoxide is oxidized to protein peroxyl radical which either cyclizes to dioxetane or recombines with another protein peroxyl radical to tetroxide. These highly unstable intermediates decompose to triplet carbonyls which transfer energy to O2 forming 1O2. Data presented in this study show for the first time that 1O2 is formed by decomposition of protein hydroperoxide in PSII membranes deprived of Mn4O5Ca complex."
+   },
+   {
+    "work_id": "W1995699286",
+    "title": "Ultra-weak photon emission from biological samples: Definition, mechanisms, properties, detection and applications",
+    "year": 2014,
+    "type": "article",
+    "abstract": " [NOTE: the corpus holds no usable abstract for this work. Judge its citation step on the title alone and mark the step unverifiable rather than false.]"
+   }
+  ]
+ },
+ {
+  "candidate_id": "C070",
+  "seed_id": "Q7",
+  "statement": "Evoked UPE imaged in mammalian white matter spreads anisotropically no more than anisotropic scattering alone predicts: the ratio of the 1/e spatial decay length along fibre tracts to that across them is 1.50 +/- 0.15, not the >= 2 that a myelin-waveguide contribution would require.",
+  "scope": {
+   "population": "Acute mouse brain slices containing corpus callosum (ordered white matter) with cortex or striatal grey matter in the same slice as an isotropic internal control, plus excised rodent spinal-cord white matter.",
+   "condition": "Focal pipette application of glutamate at a defined point, imaged with the established EMCCD-based ultraweak biophoton imaging protocol, in 450-900 nm and repeated in a 700-850 nm band.",
+   "comparator": "(i) grey matter in the same slice, (ii) demyelinated slices (cuprizone-fed or lysolecithin-treated), (iii) heat- or detergent-disrupted slices, and (iv) the scattering-only reference computed from the same tissue's directional reduced scattering coefficients measured by transmittance.",
+   "outcome": "Two-dimensional anisotropy ratio A = L_along / L_across of the elliptical exponential fit to the evoked emission profile."
+  },
+  "null_hypothesis": "A <= 1.65 at the upper 95% bound in intact white matter, A = 1 in grey matter, and A unchanged by demyelination - i.e. no guided component is detectable at the spatial scale that imaging can resolve, and H7's claimed transport advantage does not exist at imaging scale.",
+  "estimand": "A = L_along / L_across, compared against the scattering-only reference A_0 computed from the specimen's own directional mu_s'.",
+  "proposed_experiment": "Apply glutamate focally through a pipette at a defined point in corpus callosum of an acute slice; image evoked UPE with an EMCCD (iXon Ultra 897 class, as already used in this literature) at 2x2 binning; fit an elliptical exponential to the spatial decay to obtain L_along and L_across; repeat the identical procedure in grey matter, in demyelinated slices and in disrupted slices; measure the same slice's directional mu_s' by transmittance to compute A_0 for that specimen; repeat in a 700-850 nm band where a guided mode should be relatively favoured.",
+  "rationale": [
+   {
+    "step": "Myelinated axons have been modelled in detail as photonic waveguides with modest loss, approximately multiplicative loss across Ranvier nodes and preserved polarisation, and dedicated in vivo/in vitro tests have been proposed but not performed at imaging scale.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2499288807",
+     "W2751268700",
+     "W4361863949",
+     "W4402626864",
+     "W4308920644"
+    ]
+   },
+   {
+    "step": "The imaging literature already asserts the anatomical corollary - that biophotonic activity detected in corpus callosum and thalamus originates from axons or axonal terminals of cortical projection neurons - using exactly the EMCCD-based imaging system this test would use.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W1977345460",
+     "W4386377286",
+     "W2956127065"
+    ]
+   },
+   {
+    "step": "Directional reduced scattering coefficients in mammalian spinal-cord white matter are measured as mu_s' = 1.57 +/- 0.03 mm^-1 for propagation along the myelinated axons and 3.52 +/- 0.1 mm^-1 perpendicular to them, a ~50% reduction along the fibres, with no comparable anisotropy in grey matter where myelin orientation is near-random.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W3012315177"
+    ]
+   },
+   {
+    "step": "In the diffusion limit the direction-dependent diffusion coefficient is D_i = 1/(3 mu_s'_i) and the attenuation length L_i = sqrt(D_i/mu_a) scales as 1/sqrt(mu_s'_i). The scattering-only anisotropy is therefore A_0 = sqrt(mu_s'_perp / mu_s'_along) = sqrt(3.52/1.57) = sqrt(2.242) = 1.50. Anything at or below ~1.6 is fully accounted for by ordinary anisotropic scattering and requires no waveguide.",
+    "justification_type": "computation"
+   },
+   {
+    "step": "A guided fraction would not decay diffusively: its along-tract decay length is set by waveguide loss rather than by sqrt(D/mu_a), so even a 10% guided fraction persisting over 1 mm adds a slowly decaying along-tract component that lifts the fitted A above 2. The grey-matter region of the same slice fixes A_0 = 1 empirically, so the test is internally calibrated and does not depend on absolute optical-property values.",
+    "justification_type": "computation"
+   }
+  ],
+  "cited_works": [
+   {
+    "work_id": "W2499288807",
+    "title": "Possible existence of optical communication channels in the brain",
+    "year": 2016,
+    "type": "article",
+    "abstract": "Given that many fundamental questions in neuroscience are still open, it seems pertinent to explore whether the brain might use other physical modalities than the ones that have been discovered so far. In particular it is well established that neurons can emit photons, which prompts the question whether these biophotons could serve as signals between neurons, in addition to the well-known electro-chemical signals. For such communication to be targeted, the photons would need to travel in waveguides. Here we show, based on detailed theoretical modeling, that myelinated axons could serve as photonic waveguides, taking into account realistic optical imperfections. We propose experiments, both in vivo and in vitro, to test our hypothesis. We discuss the implications of our results, including the question whether photons could mediate long-range quantum entanglement in the brain."
+   },
+   {
+    "work_id": "W2751268700",
+    "title": "Are there optical communication channels in the brain",
+    "year": 2018,
+    "type": "article",
+    "abstract": "Despite great progress in neuroscience, there are still fundamental unanswered questions about the brain, including the origin of subjective experience and consciousness. Some answers might rely on new physical mechanisms. Given that biophotons have been discovered in the brain, it is interesting to explore if neurons use photonic communication in addition to the well-studied electro-chemical signals. Such photonic communication in the brain would require waveguides. Here we review recent work (S. Kumar, K. Boone, J. Tuszynski, P. Barclay, and C. Simon, Scientific Reports 6, 36508 (2016)) suggesting that myelinated axons could serve as photonic waveguides. The light transmission in the myelinated axon was modeled, taking into account its realistic imperfections, and experiments were proposed both&nbsp;in vivo&nbsp;and&nbsp;in vitro&nbsp;to test this hypothesis. Potential implications for quantum biology are discussed."
+   },
+   {
+    "work_id": "W4361863949",
+    "title": "Optical polarization evolution and transmission in multi-Ranvier-node axonal myelin-sheath waveguides",
+    "year": 2023,
+    "type": "preprint",
+    "abstract": "ABSTRACT In neuroscience, it is of interest to consider all possible modes of information transfer between neurons in order to fully understand processing in the brain. It has been suggested that photonic communication may be possible along axonal connections, especially through the myelin sheath as a waveguide, due to its high refractive index. There is already a good deal of theoretical and experimental evidence for light guidance in the myelin sheath; however, the question of how the polarization of light is transmitted remains largely unexplored. It is presently unclear whether polarization-encoded information could be preserved within the myelin sheath. We simulate guided mode propagation through a myelinated axon structure with multiple Ranvier nodes. This allows both to observe polarization change and to test the assumption of exponentiated transmission loss through multiple Ranvier nodes for guided light in myelin sheath waveguides. We find that the polarization can be well preserved through multiple nodes and that transmission losses through multiple nodes are approximately multiplicative. These results provide an important context for the hypothesis of neural information transmission facilitated by biophotons, strengthening the possibility of both classical and quantum photonic communication within the brain."
+   },
+   {
+    "work_id": "W4402626864",
+    "title": "Optical Polarization Evolution and Transmission in Multi-Ranvier-Node Axonal Myelin-Sheath Waveguides",
+    "year": 2024,
+    "type": "article",
+    "abstract": "In neuroscience, it is of interest to consider all possible modes of information transfer between neurons in order to fully understand processing in the brain. It has been suggested that photonic communication may be possible along axonal connections, especially through the myelin sheath as a waveguide, due to its high refractive index. There is already a good deal of theoretical and experimental evidence for light guidance in the myelin sheath; however, the question of how the polarization of light is transmitted remains largely unexplored. It is presently unclear whether polarization-encoded information could be preserved within the myelin sheath. We simulate guided mode propagation through a myelinated axon structure with multiple Ranvier nodes. This allows both to observe polarization change and to test the assumption of exponentiated transmission loss through multiple Ranvier nodes for guided light in myelin sheath waveguides. We find that the polarization can be well preserved through multiple nodes and that transmission losses through multiple nodes are approximately multiplicative. These results provide an important context for the hypothesis of neural information transmission facilitated by biophotons, strengthening the possibility of both classical and quantum photonic communication within the brain."
+   },
+   {
+    "work_id": "W4308920644",
+    "title": "Simulation of nerve fiber based on anti-resonant reflecting optical waveguide",
+    "year": 2022,
+    "type": "article",
+    "abstract": "Light and optical techniques are widely used for the diagnosis and treatment of neurological diseases as advanced methods. Understanding the optical properties of nervous tissue and nerve cells is vital. Using light sources in these methods raises significant challenges, such as finding the place of light transmission in nerve fibers that could be an appropriate substrate for neural signaling. The myelinated axons are a promising candidate for transmitting neural signals and light due to their waveguide structures. On the other hand, with the emergence of diseases such as multiple sclerosis and disorders within the production and transmission of nerve signals, because of the demyelination, understanding the properties of the myelinated axon as a waveguide is obtaining additional necessity. The present study aims to show that the myelinated axon's refractive index (RI) profile plays an essential role in transmitting the beams in it. According to the nerve fiber, RI profile and its similarity to depressed core fiber with lower RI of the core compared to the cladding, the behaviors of the nerve fiber based on anti-resonant reflecting optical waveguide structure are investigated by taking into account the realistic optical imperfections. Light launching to the myelin sheath and axon is shown by introducing the axon and myelin sheath as a waveguide in the presence of both axon and myelin with bends, myelin sheath variation, and node of Ranvier."
+   },
+   {
+    "work_id": "W1977345460",
+    "title": "Spatiotemporal Imaging of Glutamate-Induced Biophotonic Activities and Transmission in Neural Circuits",
+    "year": 2014,
+    "type": "article",
+    "abstract": "The processing of neural information in neural circuits plays key roles in neural functions. Biophotons, also called ultra-weak photon emissions (UPE), may play potential roles in neural signal transmission, contributing to the understanding of the high functions of nervous system such as vision, learning and memory, cognition and consciousness. However, the experimental analysis of biophotonic activities (emissions) in neural circuits has been hampered due to technical limitations. Here by developing and optimizing an in vitro biophoton imaging method, we characterize the spatiotemporal biophotonic activities and transmission in mouse brain slices. We show that the long-lasting application of glutamate to coronal brain slices produces a gradual and significant increase of biophotonic activities and achieves the maximal effect within approximately 90 min, which then lasts for a relatively long time (>200 min). The initiation and/or maintenance of biophotonic activities by glutamate can be significantly blocked by oxygen and glucose deprivation, together with the application of a cytochrome c oxidase inhibitor (sodium azide), but only partly by an action potential inhibitor (TTX), an anesthetic (procaine), or the removal of intracellular and extracellular Ca(2+). We also show that the detected biophotonic activities in the corpus callosum and thalamus in sagittal brain slices mostly originate from axons or axonal terminals of cortical projection neurons, and that the hyperphosphorylation of microtubule-associated protein tau leads to a significant decrease of biophotonic act"
+   },
+   {
+    "work_id": "W4386377286",
+    "title": "Reduced biophotonic activities and spectral blueshift in Alzheimer’s disease and vascular dementia models with cognitive impairment",
+    "year": 2023,
+    "type": "article",
+    "abstract": "Background: Although clinically, Alzheimer's disease (AD) and vascular dementia (VaD) are the two major types of dementia, it is unclear whether the biophotonic activities associated with cognitive impairments in these diseases share common pathological features. Methods: We used the ultraweak biophoton imaging system (UBIS) and synaptosomes prepared by modified percoll method to directly evaluate the functional changes in synapses and neural circuits in AD and VaD model animals. Results: We found that biophotonic activities induced by glutamate were significantly reduced and spectral blueshifted in synaptosomes and brain slices. These changes could be partially reversed by pre-perfusion of the ifenprodil, a specific antagonist of the GluN2B subunit of N-methyl-D-aspartate receptors (NMDARs). Conclusion: Our findings suggest that AD and VaD pathology present similar but complex changes in biophotonic activities and transmission at synapses and neural circuits, implying that communications and information processing of biophotonic signals in the brain are crucial for advanced cognitive functions."
+   },
+   {
+    "work_id": "W2956127065",
+    "title": "The Characteristics of Biophotonic Activity Induced by Aspartate May Be Related to the Evolution of Species",
+    "year": 2019,
+    "type": "article",
+    "abstract": "Glutamate, the most abundant excitatory neurotransmitter in the nervous system, can induce biophotonic activity and transmission in mouse brain slices. As a signaling molecule, aspartate is not considered to be an independent neurotransmitter during the long evolution process, which may be just a co-transmitter or neuromodulator. In the view of structure and physiological similarities of aspartate and glutamate, as well as some differences between them, we attempted to investigate whether aspartate could also induce biophotonic activity in mouse brain slices and its effect characteristics. The ultraweak biophoton imaging system (UBIS) was used to carry out a real-time observation of biophoton activity induced by aspartate in mouse brain slices. It was found that the biophotonic emissions induced by aspartate at different concentrations (12.5 mM, 25 mM and 50 mM) presented concentration-dependent effects and 50 mM aspartate could obviously induce biophoton activities with the characteristic changes of initiation, maintenance, washing and reapplication, which were also different from that induced by 50 mM glutamate as reported before. Considering the species differences in excitatory neurotransmitters, these findings indicate that aspartate-induced biophotonic activity may imply the evolutionary differences in the animal brains."
+   },
+   {
+    "work_id": "W3012315177",
+    "title": "Anisotropic light scattering from myelinated axons in the spinal cord",
+    "year": 2020,
+    "type": "article",
+    "abstract": "Optogenetics has become an integral tool for studying and dissecting the neural circuitries of the brain using optical control. Recently, it has also begun to be used in the investigation of the spinal cord and peripheral nervous system. However, information on these regions’ optical properties is sparse. Moreover, there is a lack of data on the dependence of light propagation with respect to neural tissue organization and orientation. This information is important for effective simulations and optogenetic planning, particularly in the spinal cord where the myelinated axons are highly organized. To this end, we report experimental measurements for the scattering coefficient, validated with three different methods in both the longitudinal and radial directions of multiple mammalian spinal cords. In our analysis, we find that there is indeed a directional dependence of photon propagation when interacting with organized myelinated axons. Specifically, light propagating perpendicular to myelinated axons in the white matter of the spinal cord produced a measured reduced scattering coefficient (μs′) of 3.52 ± 0.1 mm − 1, and light that was propagated along the myelinated axons in the white matter produced a measured μs′ of 1.57 ± 0.03 mm − 1, across the various species considered. This 50% decrease in scattering power along the myelinated axons is observed with three different measurement strategies (integrating spheres, observed transmittance, and punch-through method). Furthermore, this directional dependence in scattering power and overall light attenuation did not occur in th"
+   }
+  ]
+ },
+ {
+  "candidate_id": "C071",
+  "seed_id": "Q7",
+  "statement": "Spontaneous UPE from a defined high-flux preparation contains no detectable population of correlated photon pairs: spatially resolved two-arm coincidence detection returns g2(0) = 1 within +/- 10^-3 and bounds the correlated-pair fraction below 10^-3, which forecloses coincidence-gated background rejection as a route to UPE imaging.",
+  "scope": {
+   "population": "A stable high-emitting preparation - linoleic-acid-stimulated Chlamydomonas reinhardtii culture or freshly wounded Arabidopsis leaf - plus a luminol/H2O2 chemiluminescence standard matched in photon flux as a classical control.",
+   "condition": "Emission split by a 50:50 non-polarising beamsplitter onto two optically isolated SPAD channels, or onto two halves of a SPAD array for spatially resolved pair mapping; coincidence windows 1 ns to 1 us; 8 h integration; one arm shutter-blocked in a control run.",
+   "comparator": "The measured accidental coincidence rate R1*R2*tau, the shutter-blocked crosstalk run, and the flux-matched classical chemiluminescence standard.",
+   "outcome": "Normalised coincidence excess g2(0) - 1 and the derived upper bound on the correlated-pair fraction f."
+  },
+  "null_hypothesis": "g2(0) - 1 is consistent with zero at the 10^-3 level and no spatial pair correlation exceeds accidentals, i.e. spontaneous UPE supplies no herald photon, so entanglement- and coincidence-based imaging methods cannot be transferred to it and the 'quantum imaging' route to solving Q7 is closed.",
+  "estimand": "g2(0) - 1 with its CI, and the 95% upper bound on the correlated-pair fraction f.",
+  "proposed_experiment": "Mount the stimulated Chlamydomonas culture or wounded Arabidopsis leaf at the input of a high-albedo Ulbricht concentrator; split the output 50:50 onto two optically isolated SPAD modules with TCSPC timestamping; accumulate 8 h; compute g2(tau) over 1 ns to 1 us windows; repeat with one arm shuttered (crosstalk control) and with flux-matched luminol chemiluminescence (classical control). For the spatial version, replace the two SPADs with a per-pixel-timestamping SPAD array and test for pixel-pair coincidence excess above accidentals.",
+  "rationale": [
+   {
+    "step": "Coincidence imaging from entanglement achieves roughly 25-fold stray-light suppression and works with SPAD-array cameras, and large-scale photon-level correlation imaging maps correlations onto position with single-photon-sensitive cameras - but both require photon pairs supplied by an external source, not by the specimen. Transferring either to spontaneous UPE presupposes that UPE itself emits pairs.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W4392581751",
+     "W2811014638"
+    ]
+   },
+   {
+    "step": "The hardware already exists in this field: a dual-channel coincidence-counting system with two low-noise SPAD modules and 1 us time resolution has been built for human delayed luminescence, and SiPM/SPAD photon counters are now cheap, compact and field-deployable.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W3114612921",
+     "W4303614346"
+    ]
+   },
+   {
+    "step": "A specific artefact must be controlled: SPADs emit light during detection events, so an unshielded two-detector geometry can manufacture spurious coincidences. The two arms must be optically isolated and the crosstalk rate measured directly with one arm shutter-blocked.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W4391831883"
+    ]
+   },
+   {
+    "step": "Classical null. For a broadband chemiluminescent source the coherence time is tau_c = lambda^2/(c*delta_lambda) = (550e-9)^2 / (3e8 * 200e-9) = 5.0e-15 s, about 5 fs. With a 1 ns resolving time the thermal bunching excess is g2(0) - 1 ~ tau_c/tau_res = 5e-6, indistinguishable from 1. Ordinary chemiluminescence therefore predicts g2(0) = 1 to within 10^-5, and any excess above 10^-3 is not classical chemiluminescence.",
+    "justification_type": "computation"
+   },
+   {
+    "step": "Sensitivity. With two channels each at R = 100 s^-1 and tau = 1 ns, accidentals are R1*R2*tau = 1e-5 s^-1, i.e. 0.29 counts in 8 h (28800 s). If a fraction f of emitted photons leave as pairs, detected coincidences are approximately (f*R_emit/2) * eta^2 * 1/2, the last factor accounting for the two photons taking different beamsplitter ports. With R_emit = 200 s^-1 and total efficiency eta = 0.05, f = 1e-3 gives 3.6 counts in 8 h against 0.29 expected - a decisive Poisson discrimination. Sensitivity scales as eta^-2, so raising eta to 0.25 pushes the bound to f = 4e-5.",
+    "justification_type": "computation"
+   },
+   {
+    "step": "Collection efficiency eta is the binding parameter, and a high-albedo Ulbricht cavity with a small exit orifice transforms a 3D photon gas into a much smaller Lambertian emitting surface at ~50% number efficiency, which is the practical route to raising eta and hence tightening the bound quadratically.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W3161989600"
+    ]
+   }
+  ],
+  "cited_works": [
+   {
+    "work_id": "W4392581751",
+    "title": "Quantum imaging of biological organisms through spatial and polarization entanglement",
+    "year": 2024,
+    "type": "article",
+    "abstract": "Quantum imaging holds potential benefits over classical imaging but has faced challenges such as poor signal-to-noise ratios, low resolvable pixel counts, difficulty in imaging biological organisms, and inability to quantify full birefringence properties. Here, we introduce quantum imaging by coincidence from entanglement (ICE), using spatially and polarization-entangled photon pairs to overcome these challenges. With spatial entanglement, ICE offers higher signal-to-noise ratios, greater resolvable pixel counts, and the ability to image biological organisms. With polarization entanglement, ICE provides quantitative quantum birefringence imaging capability, where both the phase retardation and the principal refractive index axis angle of an object can be remotely and instantly quantified without changing the polarization states of the photons incident on the object. Furthermore, ICE enables 25 times greater suppression of stray light than classical imaging. ICE has the potential to pave the way for quantum imaging in diverse fields, such as life sciences and remote sensing."
+   },
+   {
+    "work_id": "W2811014638",
+    "title": "Mapping and Measuring Large-scale Photonic Correlation with Single-photon Imaging",
+    "year": 2018,
+    "type": "preprint",
+    "abstract": "Quantum correlation and its measurement are essential in exploring fundamental quantum physics problems and developing quantum enhanced technologies. Quantum correlation may be generated and manipulated in different spaces, which demands different measurement approaches corresponding to position, time, frequency and polarization of quantum particles. In addition, after early proof-of-principle demonstrations, it is of great demand to measure quantum correlation in a Hilbert space large enough for real quantum applications. When the number of modes goes up to several hundreds, it becomes economically unfeasible for single-mode addressing and also extremely challenging for processing correlation events with hardware. Here we present a general and large-scale measurement approach of Correlation on Spatially-mapped Photon-Level Image (COSPLI). The quantum correlations in other spaces are mapped into the position space and are captured by single-photon-sensitive imaging system. Synthetic methods are developed to suppress noises so that single-photon registrations can be faithfully identified in images. We eventually succeed in retrieving all the correlations with big-data technique from tens of millions of images. We demonstrate our COSPLI by measuring the joint spectrum of parametric down-conversion photons. Our approach provides an elegant way to observe the evolution results of large-scale quantum systems, representing an innovative and powerful tool added into the platform for boosting quantum information processing."
+   },
+   {
+    "work_id": "W3114612921",
+    "title": "Quantum correlating measurements of human-body delayed luminescence and preliminary experimental results",
+    "year": 2020,
+    "type": "article",
+    "abstract": "Biological delayed luminescence (DL) refers to the emission of photons of 200-800 nm after an organism is exposed to a beam of light. At present, DL research is mostly conducted on plants and cells. Most human research uses low-temperature photomultiplier tubes (PMT) with poor performance. This paper introduces a newly developed dual-channel, coincident counting DL acquisition system, as well as preliminary experimental results with acupuncture meridians and acupoints in humans. The system employs two low-noise SPAD (single photon avalanche diode) modules to achieve not only a time resolution as low as 1 μs , but also a spatio-temporal correlation relation between two simultaneous measurements. Using a laser excitation of 400 nm and 532 nm , we measured the DL emission for different parts of the human body and found that the corresponding DL curves follow the hyperbolic law of <mml:math xmlns:mml=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"> <mml:mi>I</mml:mi> <mml:mo>=</mml:mo> <mml:mrow class=\"MJX-TeXAtom-ORD\"> <mml:msub> <mml:mi>I</mml:mi> <mml:mn>0</mml:mn> </mml:msub> </mml:mrow> <mml:mrow class=\"MJX-TeXAtom-ORD\"> <mml:msup> <mml:mrow> <mml:mo>(</mml:mo> <mml:mrow class=\"MJX-TeXAtom-ORD\"> <mml:mn>1</mml:mn> <mml:mo>+</mml:mo> <mml:mfrac> <mml:mi>t</mml:mi> <mml:mi>τ</mml:mi> </mml:mfrac> </mml:mrow> <mml:mo>)</mml:mo> </mml:mrow> <mml:mrow class=\"MJX-TeXAtom-ORD\"> <mml:mo>−</mml:mo> <mml:mi>γ</mml:mi> </mml:mrow> </mml:msup> </mml:mrow> </mml:math> . The emission curves are sensitive to many factors including the current health state of the participants. We hy"
+   },
+   {
+    "work_id": "W4303614346",
+    "title": "A SiPM-Enabled Portable Delayed Fluorescence Photon Counting Device: Climatic Plant Stress Biosensing",
+    "year": 2022,
+    "type": "article",
+    "abstract": "A portable and sensitive time-resolved biosensor for capturing very low intensity light emission is a promising avenue to study plant delayed fluorescence. These weak emissions provide insight on plant health and can be useful in plant science as well as in the development of accurate feedback indicators for plant growth and yield in applications of agricultural crop cultivation. A field-based delayed fluorescence device is also desirable to enable monitoring of plant stress response to climate change. Among basic techniques for the detection of rapidly fluctuating low intensity light is photon counting. Despite its vast utility, photon counting techniques often relying on photomultiplier tube (PMT) technology, having restricted use in agricultural and environment measurements of plant stress outside of the laboratory setting, mainly due to the prohibitive cost of the equipment, high voltage nature, and the complexity of its operation. However, recent development of the new generation solid-state silicon photomultiplier (SiPM) single photon avalanche diode array has enabled the availability of high quantum efficiency, easy-to-operate, compact, photon counting systems which are not constrained to sophisticated laboratories, and are accessible owing to their low-cost. In this contribution, we have conceived, fabricated and validated a novel SiPM-based photon counting device with integrated plug-and-play excitation LED, all housed inside a miniaturized sample chamber to record weak delayed fluorescence lifetime response from plant leaves subjected to varying temperature condit"
+   },
+   {
+    "work_id": "W4391831883",
+    "title": "Ultra weak photon emission—a brief review",
+    "year": 2024,
+    "type": "article",
+    "abstract": "Cells emit light at ultra-low intensities: photons which are produced as by-products of cellular metabolism, distinct from other light emission processes such as delayed luminescence, bioluminescence, and chemiluminescence. The phenomenon is known by a large range of names, including, but not limited to, biophotons, biological autoluminescence, metabolic photon emission and ultraweak photon emission (UPE), the latter of which shall be used for the purposes of this review. It is worth noting that the photons when produced are neither 'weak' nor specifically biological in characteristics. Research of UPE has a long yet tattered past, historically hamstrung by a lack of technology sensitive enough to detect it. Today, as technology progresses rapidly, it is becoming easier to detect and image these photons, as well as to describe their function. In this brief review we will examine the history of UPE research, their proposed mechanism, possible biological role, the detection of the phenomenon, and the potential medical applications."
+   },
+   {
+    "work_id": "W3161989600",
+    "title": "Stochastic light concentration from 3D to 2D reveals ultraweak chemi- and bioluminescence",
+    "year": 2021,
+    "type": "article",
+    "abstract": "For countless applications in science and technology, light must be concentrated, and concentration is classically achieved with reflective and refractive elements. However, there is so far no efficient way, with a 2D detector, to detect photons produced inside an extended volume with a broad or isotropic angular distribution. Here, with theory and experiment, we propose to stochastically transform and concentrate a volume into a smaller surface, using a high-albedo Ulbricht cavity and a small exit orifice through cavity walls. A 3D gas of photons produced inside the cavity is transformed with a 50% number efficiency into a 2D Lambertian emitting orifice with maximal radiance and a much smaller size. With high-albedo quartz-powder cavity walls ([Formula: see text]), the orifice area is [Formula: see text] times smaller than the walls' area. When coupled to a detectivity-optimized photon-counter ([Formula: see text]) the detection limit is [Formula: see text]. Thanks to this unprecedented sensitivity, we could detect the luminescence produced by the non-catalytic disproportionation of hydrogen peroxide in pure water, which has not been observed so far. We could also detect the ultraweak bioluminescence produced by yeast cells at the onset of their growth. Our work opens new perspectives for studying ultraweak luminescence, and the concept of stochastic 3D/2D conjugation should help design novel light detection methods for large samples or diluted emitters."
+   },
+   {
+    "work_id": "W2034044028",
+    "title": "Linoleic Acid-Induced Ultra-Weak Photon Emission from Chlamydomonas reinhardtii as a Tool for Monitoring of Lipid Peroxidation in the Cell Membranes",
+    "year": 2011,
+    "type": "article",
+    "abstract": "Reactive oxygen species formed as a response to various abiotic and biotic stresses cause an oxidative damage of cellular component such are lipids, proteins and nucleic acids. Lipid peroxidation is considered as one of the major processes responsible for the oxidative damage of the polyunsaturated fatty acid in the cell membranes. Various methods such as a loss of polyunsaturated fatty acids, amount of the primary and the secondary products are used to monitor the level of lipid peroxidation. To investigate the use of ultra-weak photon emission as a non-invasive tool for monitoring of lipid peroxidation, the involvement of lipid peroxidation in ultra-weak photon emission was studied in the unicellular green alga Chlamydomonas reinhardtii. Lipid peroxidation initiated by addition of exogenous linoleic acid to the cells was monitored by ultra-weak photon emission measured with the employment of highly sensitive charged couple device camera and photomultiplier tube. It was found that the addition of linoleic acid to the cells significantly increased the ultra-weak photon emission that correlates with the accumulation of lipid peroxidation product as measured using thiobarbituric acid assay. Scavenging of hydroxyl radical by mannitol, inhibition of intrinsic lipoxygenase by catechol and removal of molecular oxygen considerably suppressed ultra-weak photon emission measured after the addition of linoleic acid. The photon emission dominated at the red region of the spectrum with emission maximum at 680 nm. These observations reveal that the oxidation of linoleic acid by hydroxyl"
+   },
+   {
+    "work_id": "W3037707140",
+    "title": "Spectral Distribution of Ultra-Weak Photon Emission as a Response to Wounding in Plants: An In Vivo Study",
+    "year": 2020,
+    "type": "article",
+    "abstract": "It is well established that every living organism spontaneously emits photons referred to as ultra-weak photon emission (synonym biophotons or low-level chemiluminescence) which inherently embodies information about the wellbeing of the source. In recent years, efforts have been made to use this feature as a non-invasive diagnostic tool related to the detection of food quality, agriculture and biomedicine. The current study deals with stress resulting from wounding (mechanical injury) on Arabidopsis thaliana and how it modifies the spontaneous ultra-weak photon emission. The ultra-weak photon emission from control (non-wounded) and stressed (wounded) plants was monitored using different modes of ultra-weak photon emission measurement sensors like charge-coupled device (CCD) cameras and photomultiplier tubes (PMT) and the collected data were analyzed to determine the level of stress generated, photon emission patterns, and underlying biochemical process. It is generally considered that electronically excited species formed during the oxidative metabolic processes are responsible for the ultra-weak photon emission. In the current study, a high-performance cryogenic full-frame CCD camera was employed for two-dimensional in-vivo imaging of ultra-weak photon emission (up to several counts/s) and the spectral analysis was done by using spectral system connected to a PMT. The results show that Arabidopsis subjected to mechanical injury enhances the photon emission and also leads to changes in the spectral pattern of ultra-weak photon emission. Thus, ultra-weak photon emission can "
+   }
+  ]
+ },
+ {
+  "candidate_id": "C072",
+  "seed_id": "Q7",
+  "statement": "The reported state-dependent contrasts in human surface UPE images - relaxed versus anger, diurnal variation, post-illumination change - are predicted out of sample, pixel by pixel, by a co-registered infrared thermal image plus a perfusion map of the same skin area, with a thermal model trained on one cohort explaining at least 50% of the between-state variance of the UPE difference map in a held-out cohort.",
+  "scope": {
+   "population": "Healthy adults, n >= 40, split into disjoint training and test cohorts; imaging field = upper body or dorsal hand.",
+   "condition": "Paired acquisitions in two physiological states (rest versus an emotional, exercise or mild thermal challenge), with a long-wave infrared camera imaging the identical field of view via a dichroic or interleaved capture, plus laser speckle contrast perfusion imaging, all registered to a common pixel frame.",
+   "comparator": "A UPE-only model and a state-label-shuffled model, both evaluated on the same held-out cohort.",
+   "outcome": "Out-of-sample pixelwise R^2 of the thermal+perfusion model on the UPE difference map, and the incremental out-of-sample AUC that UPE adds to thermal+perfusion for state classification."
+  },
+  "null_hypothesis": "Out-of-sample pixelwise R^2 < 0.2 while UPE retains at least 0.05 incremental AUC over thermal+perfusion - i.e. surface UPE imaging carries genuinely non-thermal, non-perfusion state information, which would support H12 and strengthen H8.",
+  "estimand": "Out-of-sample pixelwise R^2 of the co-registered thermal+perfusion model on the UPE difference map, together with the incremental out-of-sample AUC of UPE beyond those covariates.",
+  "proposed_experiment": "Interleave a 30 min UPE accumulation with 8-14 um LWIR frames of the identical field of view (dichroic beamsplitter or motorised mirror) and laser speckle contrast perfusion frames; register all three modalities to a common pixel grid; in the training cohort fit a pixelwise model predicting the UPE difference map from the thermal and perfusion difference maps; evaluate R^2 and incremental UPE AUC on the held-out cohort with the analysis pre-registered.",
+  "rationale": [
+   {
+    "step": "Human surface UPE imaging reports state-dependent contrasts read as physiological signals: higher emission during anger than relaxation in nine subjects imaged with a sensitive CCD, whole-body diurnal variation, light-exposure-dependent changes proposed as a cosmetics control tool, and hand-location and day-night asymmetries.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W3174216096",
+     "W2165767379",
+     "W4401282046",
+     "W2182257766"
+    ]
+   },
+   {
+    "step": "UPE intensity is strongly and non-linearly temperature dependent: ultraweak luminescence varies exponentially with temperature over 4-38 C with a hysteresis loop, heat shock induces emission scaling with the rate of temperature rise, and the plant arm of the recent mouse/plant imaging study found that raising temperature increases UPE.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W1981011748",
+     "W2002499683",
+     "W4404240787",
+     "W4409735377"
+    ]
+   },
+   {
+    "step": "A Q10 of 2 for the underlying oxidative chemistry implies 2^{0.1} = 1.072, i.e. about a 7% change in emission per 1 C of tissue temperature. Emotional arousal, exercise and posture routinely shift regional facial and hand skin temperature by 1-3 C, predicting 7-23% UPE changes - the same order of magnitude as the published state effects, and spatially patterned in exactly the regions where the state effects are reported.",
+    "justification_type": "computation"
+   },
+   {
+    "step": "The detector itself is not thermally neutral: an EM-CCD characterised as a binary photon counter has non-negligible sensitivity to blackbody radiation above ~50 C, so the thermal covariate acts through both the emission chemistry and the detector response and must be measured on the same field of view rather than assumed away.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W3126489816"
+    ]
+   },
+   {
+    "step": "None of the retrieved human or plant imaging studies reports pixel-registered thermography alongside the UPE map; temperature enters the literature only as a whole-sample condition or a narrative caveat, while the claims being defended are spatial.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2132454423",
+     "W2906242287",
+     "W4406075774"
+    ]
+   }
+  ],
+  "cited_works": [
+   {
+    "work_id": "W3174216096",
+    "title": "Increment of spontaneous human biophoton emission caused by anger emotional states. Proof of concept",
+    "year": 2021,
+    "type": "article",
+    "abstract": "Humans spontaneously emit visible radiation from their skin, which is known as biophoton or ultra-weak photon emission (UPE). Up to date, UPE intensity changes according to different external and internal factors have been reported. However, the influence in the human UPE of negative emotional states has never been studied despite their clinic and forensic interest. In this work, an ad hoc system based on a high-sensitive CCD detector was developed to detect and image UPE from human’s upper body. Then, the UPE emitted by the upper part of the body of nine volunteers was imaged in two different personal states: (i) when subjects were feeling relaxed; and (ii) when they were emotionally stimulated to feel anger. For all the volunteers, the relative measurement of UPE intensity was higher when feeling anger than when feeling relaxed. Due to the relevance of this disruptive idea and the horizon this knowledge can provide, this proof of concept must be followed by further experiments. An increase in the number of subjects will be accomplished in order to enhance these preliminary results and propose UPE as a new physiological parameter of negative emotional states."
+   },
+   {
+    "work_id": "W2165767379",
+    "title": "Imaging of Ultraweak Spontaneous Photon Emission from Human Body Displaying Diurnal Rhythm",
+    "year": 2009,
+    "type": "article",
+    "abstract": "The human body literally glimmers. The intensity of the light emitted by the body is 1000 times lower than the sensitivity of our naked eyes. Ultraweak photon emission is known as the energy released as light through the changes in energy metabolism. We successfully imaged the diurnal change of this ultraweak photon emission with an improved highly sensitive imaging system using cryogenic charge-coupled device (CCD) camera. We found that the human body directly and rhythmically emits light. The diurnal changes in photon emission might be linked to changes in energy metabolism."
+   },
+   {
+    "work_id": "W4401282046",
+    "title": "Effects of light exposure on human ultra-weak photon emission: Preliminary findings for a pioneering control tool in cosmetics",
+    "year": 2024,
+    "type": "article",
+    "abstract": "Currently, the cosmetic industry is developing several treatments based on the use of lights with different wavelengths for anti-ageing strategies and facial rejuvenation. Some lights have been proven to be beneficial for our skincare, but their actual effects require an in-depth analysis. Ultra-weak photon emission (UPE) is a spontaneous, low intensity emission from all living systems produced as a consequence of metabolic reactions (e.g., oxidative metabolism, cell division, photosynthesis, or carcinogenesis). However, it can also be induced by several factors, such as light exposure, wounds, thermal shock, and other stress elements. Thus, measuring human biophotonic emission can open new horizons to explore the real benefits of light therapies, particularly regarding the direct relationship between light exposure and free radicals, such as reactive oxygen species (ROS), which are the main cause of UPE. In this study, the ultra-weak photon emission from a sample of ten human beings after exposure to different lights was studied using red and green lights (artificially produced by an RGB LED lamp) and natural light (directly received from the sun), aiming to assess the UPE changes when directly focusing these types of lights on the skin. Hence, this technique could be proposed as a pioneering control tool in cosmetics, principally with phototherapies. Our preliminary results showed that the UPE response after light stimulation differed when a person was exposed to artificial lights compared to sunlight. Besides, there were relevant variations between women and men that sho"
+   },
+   {
+    "work_id": "W2182257766",
+    "title": "Spontaneous Ultra-Weak Photon Emission from Human Hands Is Time Dependent",
+    "year": 2007,
+    "type": "article",
+    "abstract": "Ultra-weak photon emission in the visible range was measured on palm and dorsal side of left and right hand by means of a low noise photomultiplier system. To study the dynamics of this photon emission in a 24 h period photon emission was recorded in 2 h intervals in 5 experiments, utilizing strict protocols for dark adaptation and recording of subjects. Fluctuations in photon emission in the course of 24 h period were demonstrated for each anatomic location. Mean photon emission over the 24 h period differed both between subjects and hand locations. To detect a pattern in the fluctuations the mean value for each location of each subject in each experiment was utilized to calculate fluctuations during the course of 24 h for each anatomical location. The fluctuations in photon emission in the course of 24 h were more at dorsal sides than palm sides. The correlation between fluctuations in palm and dorsal side was not apparent. During the 24 h period a change in left-right symmetry occurred for the dorsal side but not for the palm of the hands. Photon emission at the left dorsal location was high at night, while the right dorsal side emitted most during the day. It is concluded that a daily rhythm in photon emission can be recorded from both the dorsal and palm sides of the hands."
+   },
+   {
+    "work_id": "W1981011748",
+    "title": "Ultraweak luminescence of the Characeae plants under the circumstances of cyclical changes in temperature",
+    "year": 2011,
+    "type": "article",
+    "abstract": "Ultraweak luminescence of the Characeae plants under the circumstances of cyclical changes in temperature The study sought to measure ultraweak chemiluminescence (UWL) of Nitellopsis Obtusa plants with regards to temperature changes within the range from 4°C to 38°C. The temperature changes were being executed in reversible cycles. The variations of UWL intensity with temperature had an exponential character. In case when temperature was changed rapidly by 5°C every 20 min or fluently with rate of 0.17 °C/min we observed a temperature hysteresis loop in the first cycles and the loop character disappeared in the second cycles. When the temperature was being changed fluently but faster (1.3 °C/min) after 3 cycles (about 2 hours) the curves no longer manifested the loop character. This phenomenon can point that the plants adapted themselves to the temperature changes. We also observed a stimulation of UWL made in successful cycles. Our spectral experiments showed that the UWL may consist mainly of emission of the singlet oxygen sigma (762 nm) and induced emission of chlorophyll."
+   },
+   {
+    "work_id": "W2002499683",
+    "title": "Biophoton Emission Induced by Heat Shock",
+    "year": 2014,
+    "type": "article",
+    "abstract": "Ultraweak biophoton emission originates from the generation of reactive oxygen species (ROS) that are produced in mitochondria as by-products of cellular respiration. In healthy cells, the concentration of ROS is minimized by a system of biological antioxidants. However, heat shock changes the equilibrium between oxidative stress and antioxidant activity, that is, a rapid rise in temperature induces biophoton emission from ROS. Although the rate and intensity of biophoton emission was observed to increase in response to elevated temperatures, pretreatment at lower high temperatures inhibited photon emission at higher temperatures. Biophoton measurements are useful for observing and evaluating heat shock."
+   },
+   {
+    "work_id": "W4404240787",
+    "title": "Imaging Ultraweak Photon Emission from Living and Dead Mice and from Plants under Stress",
+    "year": 2024,
+    "type": "preprint",
+    "abstract": "The phenomenon of biological ultraweak photon emission (UPE), that is, extremely low-intensity emission (10 − 10 3 photons/cm 2 /sec) in the spectral range of 200 − 1000 nm, has been observed in all living systems that have been examined. Here we report experiments that exemplify the ability of novel imaging systems to detect variations in UPE for a set of physiologically important scenarios. We use EMCCD and CCD cameras to capture single visible-wavelength photons with low noise and quantum efficiencies higher than 90%. Our investigation reveals significant contrast between the UPE from live vs. dead mice. In plants we observed that an increase in temperature and injuries both caused an increase in UPE intensity. Moreover, chemical treatments modified the UPE emission characteristics of plants, particularly the application of an anesthetic (benzocaine) to injury, which showed the highest emission among the compounds tested. As a result, UPE imaging provides the possibility of non-invasive label-free imaging of vitality in animals and the responses of plants to stress."
+   },
+   {
+    "work_id": "W4409735377",
+    "title": "Imaging Ultraweak Photon Emission from Living and Dead Mice and from Plants under Stress",
+    "year": 2025,
+    "type": "article",
+    "abstract": ") in the spectral range of 200-1000 nm, has been observed in all living systems that have been examined. Here, we report experiments that exemplify the ability of novel imaging systems to detect variations in UPE for a set of physiologically important scenarios. We use electron-multiplying charge-coupled device (EMCCD) and charge-coupled device (CCD) cameras to capture single visible-wavelength photons with low noise and quantum efficiencies higher than 90%. Our investigation reveals significant contrast between the UPE from live vs dead mice. In plants, we observed that an increase in the temperature and injuries both caused an increase in UPE intensity. Moreover, chemical treatments modified the UPE emission characteristics of plants, particularly the application of a local anesthetic (benzocaine) to injury, which showed the highest emission among the compounds tested. As a result, UPE imaging provides the possibility of non-invasive label-free imaging of vitality in animals and the responses of plants to stress."
+   },
+   {
+    "work_id": "W3126489816",
+    "title": "Detectivity optimization to measure ultraweak light fluxes using an EM-CCD as binary photon counter array",
+    "year": 2021,
+    "type": "article",
+    "abstract": "Abstract For a wide range of purposes, one faces the challenge to detect light from extremely faint and spatially extended sources. In such cases, detector noises dominate over the photon noise of the source, and quantum detectors in photon counting mode are generally the best option. Here, we combine a statistical model with an in-depth analysis of detector noises and calibration experiments, and we show that visible light can be detected with an electron-multiplying charge-coupled devices (EM-CCD) with a signal-to-noise ratio (SNR) of 3 for fluxes less than $$30\\,{\\text{photon}}\\,{\\text{s}}^{ - 1} \\,{\\text{cm}}^{ - 2}$$ <mml:math xmlns:mml=\"http://www.w3.org/1998/Math/MathML\"> <mml:mrow> <mml:mn>30</mml:mn> <mml:mspace/> <mml:mtext>photon</mml:mtext> <mml:mspace/> <mml:msup> <mml:mrow> <mml:mtext>s</mml:mtext> </mml:mrow> <mml:mrow> <mml:mo>-</mml:mo> <mml:mn>1</mml:mn> </mml:mrow> </mml:msup> <mml:mspace/> <mml:msup> <mml:mrow> <mml:mtext>cm</mml:mtext> </mml:mrow> <mml:mrow> <mml:mo>-</mml:mo> <mml:mn>2</mml:mn> </mml:mrow> </mml:msup> </mml:mrow> </mml:math> . For green photons, this corresponds to 12 aW $${\\text{cm}}^{ - 2}$$ <mml:math xmlns:mml=\"http://www.w3.org/1998/Math/MathML\"> <mml:msup> <mml:mrow> <mml:mtext>cm</mml:mtext> </mml:mrow> <mml:mrow> <mml:mo>-</mml:mo> <mml:mn>2</mml:mn> </mml:mrow> </mml:msup> </mml:math> ≈ $$9{ } \\times 10^{ - 11}$$ <mml:math xmlns:mml=\"http://www.w3.org/1998/Math/MathML\"> <mml:mrow> <mml:mn>9</mml:mn> <mml:mrow/> <mml:mo>×</mml:mo> <mml:msup> <mml:mn>10</mml:mn> <mml:mrow> <mml:mo>-</mml:mo> <mml:mn>11</mml:mn> </mml:mrow> </mml:"
+   },
+   {
+    "work_id": "W2132454423",
+    "title": "Spontaneous ultraweak photon emission imaging of oxidative metabolic processes in human skin: effect of molecular oxygen and antioxidant defense system",
+    "year": 2011,
+    "type": "article",
+    "abstract": "All living organisms emit spontaneous ultraweak photon emission as a result of cellular metabolic processes. In this study, the involvement of reactive oxygen species (ROS) formed as the byproduct of oxidative metabolic processes in spontaneous ultraweak photon emission was studied in human hand skin. The effect of molecular oxygen and ROS scavengers on spontaneous ultraweak photon emission from human skin was monitored using a highly sensitive photomultiplier tube and charged coupled device camera. When spontaneous ultraweak photon emission was measured under anaerobic conditions, the photon emission was decreased, whereas under hyperaerobic condition the enhancement in photon emission was observed. Spontaneous ultraweak photon emission measured after topical application of glutathione, α-tocopherol, ascorbate, and coenzyme Q10 was observed to be decreased. These results reveal that ROS formed during the cellular metabolic processes in the epidermal cells play a significant role in the spontaneous ultraweak photon emission. It is proposed that spontaneous ultraweak photon emission can be used as a noninvasive tool for the temporal and spatial monitoring of the oxidative metabolic processes and intrinsic antioxidant system in human skin."
+   },
+   {
+    "work_id": "W2906242287",
+    "title": "Human Ultraweak Photon Emission: Key Analytical Aspects, Results and Future Trends – A Review",
+    "year": 2018,
+    "type": "article",
+    "abstract": "Living systems emit what is called ultraweak photon emission (UPE). This visually undetectable phenomenon has only been studied in humans for the last 30 years, finding that UPE is a complex process depending on multitude factors. Considering previous literature, this review discusses the current trends in the analysis of in vivo UPE from human beings. To this aim, Analytical Approaches Employed for UPE Measurement section focuses on the analytical techniques employed (photomultipliers and charged coupled device cameras), summarizing analytical conditions and reporting figures of merit reached to date. Then, Human UPE Depending on External Factors and Human UPE Depending on Internal Factors sections address external and internal factors, which have proved to affect UPE, pointing out the important influence on oxidative processes outside and inside the body, and also highlighting some personal states of the individuals affecting UPE. Last section is devoted to give a general view on the goals and achieved up to date regarding UPE measurement, emphasizing some potential applications as well as recommendations which include: use of UPE spectra information together with UPE intensity, larger populations (≈50-100 subjects), further studies on internal states of individuals, and use of statistical tools."
+   },
+   {
+    "work_id": "W4406075774",
+    "title": "Application of ultra-weak photon emission imaging in plant stress assessment",
+    "year": 2025,
+    "type": "article",
+    "abstract": "The oxidative damage induced by abiotic stress factors such as salinity, drought, extreme temperatures, heavy metals, pollution, and high irradiance has been studied in Arabidopsis thaliana. Ultra-weak photon emission (UPE) is presented as a signature reflecting the extent of the oxidation process and/or damage. It can be used to predict the physiological state and general health of plants. This study presents an overview of a potential research platform where the technique can be applied. The results presented can aid in providing invaluable information for developing strategies to mitigate abiotic stress in crops by improving plant breeding programs with a focus on enhancing tolerance. This study evaluates the applicability of charged couple device (CCD) imaging in evaluating plant stress and degree of damage and to discuss the advantages and limitations of the claimed non-invasive label-free tool."
+   }
+  ]
+ }
+]

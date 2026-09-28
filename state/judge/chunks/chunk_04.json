@@ -1,0 +1,644 @@
+[
+ {
+  "candidate_id": "C025",
+  "seed_id": "Q3",
+  "statement": "Reported optical-only donor-to-receiver effects survive removal of the receiver's candidate photoacceptors - no single chromophore knockout or pharmacological block abolishes them - which means those effects are not photochemical.",
+  "scope": {
+   "population": "genetically tractable receivers: Arabidopsis thaliana cry1 cry2 double mutants and phot1 phot2 mutants; human adipose-derived stem cells with TRPV1 blocked by capsazepine or with CRY1/CRY2 knocked down",
+   "condition": "receiver exposed across a quartz (200 nm cut-on) window to a proliferating conspecific or same-line donor whose in-band emission is monitored continuously by a calibrated PMT",
+   "comparator": "isogenic wild-type receiver run in the same session, plus a long-pass optical block that removes the candidate chromophore's absorption band while leaving all non-optical coupling intact",
+   "outcome": "receiver proliferation index (EdU incorporation) or germination and growth rate, with intracellular Ca2+ and ROS as pathway readouts"
+  },
+  "null_hypothesis": "A specific photoacceptor removal cuts the effect by 80 percent or more while the wild-type effect is intact in the same session - identifying a molecular receiver and falsifying this hypothesis.",
+  "estimand": "f = (effect size in the photoacceptor-deficient receiver) / (effect size in the isogenic wild type), same session, blinded. Claim: f >= 0.8 for every candidate tested.",
+  "proposed_experiment": "Dual-chamber quartz-windowed optical coupler with a calibrated photon-counting PMT tapping the donor output continuously (solar-blind channel 200-320 nm, bialkali channel 300-650 nm), so the delivered budget is recorded rather than assumed. Each session runs wild-type and photoacceptor-deficient receivers side by side against the same donor, with arm assignment blinded. Positive control: the same receivers exposed to 3 J cm^-2 of 415 nm or 540 nm light, where the TRPV1/Ca2+/ROS pathway is known to respond and the knockout or capsazepine block must abolish the response - this validates the knockout before the UPE arm is interpreted. Panel: cry1 cry2, phot1 phot2, OPN3 knockdown, TRPV1 block, and a flavin-depletion arm. Pre-register f = 0.8 as the decision boundary.",
+  "rationale": [
+   {
+    "step": "Light-sensitive proteins and light-responsive processes are now localised to many non-ocular cell types and tissues, so a receiver molecule is available in principle and the knockout panel is not a strawman.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W4388034593",
+     "W2342982958",
+     "W2218121269"
+    ]
+   },
+   {
+    "step": "A fully characterised receiver pathway already exists for blue and green light in human adipose-derived stem cells - TRPV1 activation, raised intracellular Ca2+ and ROS, proliferation inhibited, all abolished by capsazepine and by N-acetylcysteine - which supplies both the positive control and the dose scale, since it operates at 3 J cm^-2.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2744285886"
+    ]
+   },
+   {
+    "step": "Per-cell photon interception: a mammalian cell footprint is about 10 um x 10 um = 1e-6 cm^2. At a generous 1e4 photons cm^-2 s^-1 the cell intercepts 1e-2 photons s^-1, about 864 per 24 h. At the more typical 10-100 photons cm^-2 s^-1 it intercepts 1e-5 to 1e-4 photons s^-1, i.e. about 0.9 to 8.6 photons per cell per day. With an in-band chromophore absorbing of order 1 percent of incident photons, the receiver absorbs about 0.01-0.1 photons per cell per day.",
+    "justification_type": "computation"
+   },
+   {
+    "step": "A 24 h proliferation change therefore requires a phenotypic response from fewer than one absorbed photon per cell - most responding cells would have absorbed nothing at all. This is why photoacceptor necessity is the decisive test and not merely a mechanistic nicety: a genuinely photochemical effect must funnel through some absorber, and no absorber can be bypassed.",
+    "justification_type": "computation"
+   },
+   {
+    "step": "The most sensitive photodetector biology is known to build, the vertebrate rod, was tested against exactly this budget: absolutely calibrated measurement of retinal and eyecup emission found biophoton intensity at least 100-fold too low to account even for the rods' own discrete dark noise, against a measured rhodopsin activation rate constant of 1.2e-11 s^-1 in frog and 7.6e-11 s^-1 in sterlet.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2939950252",
+     "W2293195849"
+    ]
+   },
+   {
+    "step": "Rod sensitivity rests on a large transduction cascade gain - one activated metarhodopsin activating hundreds of transducins, each driving further amplification - which non-specialised receivers do not possess, so a non-specialised cell would have to beat the best specialised detector in biology to close the gap.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W1992124648"
+    ]
+   }
+  ],
+  "cited_works": [
+   {
+    "work_id": "W4388034593",
+    "title": "All Light, Everywhere? Photoreceptors at Nonconventional Sites",
+    "year": 2023,
+    "type": "article",
+    "abstract": "One of the biggest environmental alterations we have made to our species is the change in the exposure to light. During the day, we typically sit behind glass windows illuminated by artificial light that is >400 times dimmer and has a very different spectrum than natural daylight. On the opposite end are the nights that are now lit up by several orders of magnitude. This review aims to provide food for thought as to why this matters for humans and other animals. Evidence from behavioral neuroscience, physiology, chronobiology, and molecular biology is increasingly converging on the conclusions that the biological nonvisual functions of light and photosensory molecules are highly complex. The initial work of von Frisch on extraocular photoreceptors in fish, the identification of rhodopsins as the molecular light receptors in animal eyes and eye-like structures and cryptochromes as light sensors in nonmammalian chronobiology, still allowed for the impression that light reception would be a relatively restricted, localized sense in most animals. However, light-sensitive processes and/or sensory proteins have now been localized to many different cell types and tissues. It might be necessary to consider nonlight-responding cells as the exception, rather than the rule."
+   },
+   {
+    "work_id": "W2342982958",
+    "title": "The Radical-Pair Mechanism of Magnetoreception",
+    "year": 2016,
+    "type": "article",
+    "abstract": "Although it has been known for almost half a century that migratory birds can detect the direction of the Earth's magnetic field, the primary sensory mechanism behind this remarkable feat is still unclear. The leading hypothesis centers on radical pairs-magnetically sensitive chemical intermediates formed by photoexcitation of cryptochrome proteins in the retina. Our primary aim here is to explain the chemical and physical aspects of the radical-pair mechanism to biologists and the biological and chemical aspects to physicists. In doing so, we review the current state of knowledge on magnetoreception mechanisms. We dare to hope that this tutorial will stimulate new interdisciplinary experimental and theoretical work that will shed much-needed additional light on this fascinating problem in sensory biology."
+   },
+   {
+    "work_id": "W2218121269",
+    "title": "Demystifying the Biophoton-Induced Cellular Growth: A Simple Model",
+    "year": 2015,
+    "type": "article",
+    "abstract": "Modern neuroscience is on the verge of exploring new frontiers within various subdisciplines.The question of how our brain with over hundred billion neurons puts together cognition, emotion and behavior has always been captivating.As such, the study of neural processes through which we not only maintain our survival and homeostasis, but also stay productive and functional, has attracted cognitive neuroscientists for decades.With the advent of neurotechnologies and ever-growing research facilities, modern neuroscience has seen a tremendous progress in dealing with such questions.This letter argues the most referenced theories with respect to key concepts in affective neuroscience, i.e. fear, love and related emotions or traits.We hope the present letter is found thought-provoking with regards to further theoretical models and empirical research in affective neuroscience and neuropsychology"
+   },
+   {
+    "work_id": "W2744285886",
+    "title": "Red (660 nm) or near-infrared (810 nm) photobiomodulation stimulates, while blue (415 nm), green (540 nm) light inhibits proliferation in human adipose-derived stem cells",
+    "year": 2017,
+    "type": "article",
+    "abstract": "Abstract We previously showed that blue (415 nm) and green (540 nm) wavelengths were more effective in stimulating osteoblast differentiation of human adipose-derived stem cells (hASC), compared to red (660 nm) and near-infrared (NIR, 810 nm). Intracellular calcium was higher after blue/green, and could be inhibited by the ion channel blocker, capsazepine. In the present study we asked what was the effect of these four wavelengths on proliferation of the hASC? When cultured in proliferation medium there was a clear difference between blue/green which inhibited proliferation and red/NIR which stimulated proliferation, all at 3 J/cm 2 . Blue/green reduced cellular ATP, while red/NIR increased ATP in a biphasic manner. Blue/green produced a bigger increase in intracellular calcium and reactive oxygen species (ROS). Blue/green reduced mitochondrial membrane potential (MMP) and lowered intracellular pH, while red/NIR had the opposite effect. Transient receptor potential vanilloid 1 (TRPV1) ion channel was expressed in hADSC, and the TRPV1 ligand capsaicin (5uM) stimulated proliferation, which could be abrogated by capsazepine. The inhibition of proliferation caused by blue/green could also be abrogated by capsazepine, and by the antioxidant, N-acetylcysteine. The data suggest that blue/green light inhibits proliferation by activating TRPV1, and increasing calcium and ROS."
+   },
+   {
+    "work_id": "W2939950252",
+    "title": "Rejection of the biophoton hypothesis on the origin of photoreceptor dark noise",
+    "year": 2019,
+    "type": "article",
+    "abstract": "Rod photoreceptors of the vertebrate retina produce, in darkness, spontaneous discrete current waves virtually identical to responses to single photons. The waves comprise an irreducible source of noise (discrete dark noise) that may limit the threshold sensitivity of vision. The waves obviously originate from acts of random activation of single rhodopsin molecules. Until recently, it was generally accepted that the activation occurs due to the rhodopsin thermal motion. Yet, a few years ago it was proposed that rhodopsin molecules are activated not by heat but rather by real photons generated within the retina by chemiluminescence. Using a high-sensitive photomultiplier, we measured intensities of biophoton emission from isolated retinas and eyecups of frogs (Rana ridibunda) and fish (sterlet, Acipenser ruthenus). Retinal samples were placed in a perfusion chamber and emitted photons collected by a high-aperture quartz lens. The collected light was sent to the photomultiplier cathode through a rotating chopper so that a long-lasting synchronous accumulation of the light signal was possible. The absolute intensity of bio-emission was estimated by the response of the measuring system to a calibrated light source. The intensity of the source, in turn, was quantified by measuring rhodopsin bleaching with single-rod microspectrophotometry. We also measured the frequency of discrete dark waves in rods of the two species with suction pipette recordings. Expressed as the rate constant of rhodopsin activation, it was 1.2 × 10−11/s in frogs and 7.6 × 10−11/s in sterlets. Approximatel"
+   },
+   {
+    "work_id": "W2293195849",
+    "title": "The Physical Mechanism for Retinal Discrete Dark Noise: Thermal Activation or Cellular Ultraweak Photon Emission?",
+    "year": 2016,
+    "type": "article",
+    "abstract": "For several decades the physical mechanism underlying discrete dark noise of photoreceptors in the eye has remained highly controversial and poorly understood. It is known that the Arrhenius equation, which is based on the Boltzmann distribution for thermal activation, can model only a part (e.g. half of the activation energy) of the retinal dark noise experimentally observed for vertebrate rod and cone pigments. Using the Hinshelwood distribution instead of the Boltzmann distribution in the Arrhenius equation has been proposed as a solution to the problem. Here, we show that the using the Hinshelwood distribution does not solve the problem completely. As the discrete components of noise are indistinguishable in shape and duration from those produced by real photon induced photo-isomerization, the retinal discrete dark noise is most likely due to 'internal photons' inside cells and not due to thermal activation of visual pigments. Indeed, all living cells exhibit spontaneous ultraweak photon emission (UPE), mainly in the optical wavelength range, i.e., 350-700 nm. We show here that the retinal discrete dark noise has a similar rate as UPE and therefore dark noise is most likely due to spontaneous cellular UPE and not due to thermal activation."
+   },
+   {
+    "work_id": "W1992124648",
+    "title": "Discovering electrophysiology in photobiology",
+    "year": 2014,
+    "type": "article",
+    "abstract": "The mini-review gives special attention to holistic approach and mechanisms of processes. The physical and chemical frames and background for visual perception and signaling are discussed. Perception of photons by retinal rod cells is described in more detail starting from photon absorption and culminating in ion currents. Dark noise and temperature-dependence of photocurrents in photoreceptor cells are analyzed. Perception of polarized light, its effects and informational importance are discussed based on underlying mechanisms and specialized morphological structures of biological organisms. Role of statistics of photons in photoreception is questioned. The review also pinpoints new and developing directions and raises questions for future research."
+   },
+   {
+    "work_id": "W146728166",
+    "title": "Properties of biophotons and their theoretical implications.",
+    "year": 2003,
+    "type": "article",
+    "abstract": "The word \"biophotons\" is used to denote a permanent spontaneous photon emission from all living systems. It displays a few up to some hundred photons/(s x cm2) within the spectral range from at least 260 to 800 nm. It is closely linked to delayed luminescence (DL) of biological tissues which describes the long term and ultra weak reemission of photons after exposure to light illumination. During relaxation DL turns continuously into the steady state biophoton emission, where both, DL and biophoton emission exhibit mode coupling over the entire spectrum and a Poissonian photo count distribution. DL is representing excited states of the biophoton field. The physical properties indicate that biophotons originate from fully coherent and sometimes even squeezed states. The physical analysis provides thermodynamic and quantum optical interpretation, in order to understand the biological impacts of biophotons. Biological phenomena like intracellular and intercellular communication, cell growth and differentiation, interactions among biological systems (like \"Gestaltbildung\" or swarming), and microbial infections can be understood in terms of biophotons. \"Biophotonics\", the corresponding field of applications, provide a new powerful tool for assessing the quality of food (like freshness and shelf life), microbial infections, environmental influences and for substantiating medical diagnosis and therapy."
+   },
+   {
+    "work_id": "W4404871602",
+    "title": "Open quantum systems theory of ultraweak ultraviolet photon emissions: Revisiting Gurwitsch's onion experiment as a prototype for quantum biology",
+    "year": 2024,
+    "type": "article",
+    "abstract": "A century ago it was discovered that metabolic processes in living cells emit a spectrum of very low intensity radiation. This was based on observations that radiant energy from proliferating cells can amplify the rate of cell division in other nearby cellular life. Although metabolic radiation is now thoroughly documented in research on ultraweak photon emissions (UPE), the original finding that UPE can enhance mitogenesis remains controversial. This controversy is addressed by establishing a physical basis for phenomenological observations that biological UPE can amplify mitogenesis in living cells. Enhanced mitosis is rationalized as a resonance effect based on open quantum systems theory using Fano and Feshbach's methods. This application of quantum theory to biology has important consequences for understanding health, medicine, and principles of living matter."
+   }
+  ]
+ },
+ {
+  "candidate_id": "C026",
+  "seed_id": "Q3",
+  "statement": "Absolutely calibrated solar-blind photon counting of the 200-320 nm band from densely proliferating cultures behind an MgF2 window will find an emission rate below 1 photon cm^-2 s^-1 at the window, orders of magnitude too low for any mitogenetic-band mechanism.",
+  "scope": {
+   "population": "densely proliferating Saccharomyces cerevisiae and one proliferating mammalian line, prepared as thin films or with a sub-millimetre aqueous path behind MgF2 or synthetic-silica windows",
+   "condition": "dark-adapted, thermostatted, solar-blind photon counting in 20 nm bins from 200 to 320 nm, with a second bialkali channel recording 300-650 nm simultaneously",
+   "comparator": "heat-killed sample at matched turbidity; medium-only blank; instrument dark count in the same band; whole-chain traceable calibration with a deuterium lamp and vacuum-UV monochromator including window and water path",
+   "outcome": "absolute photon rate in photons cm^-2 s^-1 at the sample window, per 20 nm bin from 200 to 320 nm"
+  },
+  "null_hypothesis": "The 200-320 nm rate is 100 photons cm^-2 s^-1 or more above blank - falsifying this hypothesis and handing the mitogenetic-band mechanism the photon budget it has never had.",
+  "estimand": "N_UV = absolute emission rate integrated over 200-320 nm, in photons cm^-2 s^-1 at the sample window, blank-subtracted. Claim: N_UV < 1.",
+  "proposed_experiment": "Assemble a vacuum-UV-capable dark chamber: sample in a thin-film or sub-millimetre-path holder behind an MgF2 window, viewed by a solar-blind photon-counting PMT (CsI or CsTe photocathode) through a stepped set of 20 nm bandpass filters covering 200-320 nm, with a second bialkali channel on 300-650 nm for simultaneous total-UPE reference. Calibrate the entire chain end to end - window, filters, water path, photocathode - against a deuterium lamp through a vacuum-UV monochromator, with the transfer standard shipped between the participating labs. Run live culture, heat-killed matched-turbidity control, medium-only blank and closed-shutter dark count in randomised blocks, blinded, integrating long enough that the blank-subtracted 1 photon cm^-2 s^-1 boundary is resolved with pre-registered power. Report N_UV in absolute units per bin, whichever way it falls.",
+  "rationale": [
+   {
+    "step": "Gurwitsch-type mitogenetic mechanisms require emission in the deep UV (190-250 nm), and the modern open-quantum-systems revival of the onion experiment explicitly assumes UV intensities of 10 to 1e4 photons s^-1 cm^-2 from active cells as the input to its resonance model.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W4404871602",
+     "W2748679677"
+    ]
+   },
+   {
+    "step": "The field's own signal-to-noise review states that the Gurwitsch 190-250 nm claim is highly controversial and that there is little modern evidence even for the longer 280-390 nm UV band in biological photon emission.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2095038636"
+    ]
+   },
+   {
+    "step": "Modern reviews quote UPE as spanning roughly 260-800 nm (some as wide as 200-1300 nm) at a few to a few hundred photons cm^-2 s^-1 total, but the UV share is never separately budgeted in absolute units - the total is reported and the band composition is inferred from cut-on filters.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W146728166",
+     "W4389669809",
+     "W4391831883",
+     "W2797018767"
+    ]
+   },
+   {
+    "step": "The dedicated review of the mitogenetic controversy concludes that the UV fraction of UPE should be regarded as real while its biological effects remain hard to reproduce - the exact asymmetry that an absolute, band-resolved UV budget would resolve in one measurement.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W1920668343"
+    ]
+   },
+   {
+    "step": "Water absorbs strongly below about 200 nm and borosilicate cuts off below about 340 nm, while the widely used bialkali PMTs and EMCCD/LCTF spectrometers are optimised for 400-700 nm and cannot separate a deep-UV component from visible dark count. So nearly every UPE instrument in the corpus is structurally blind to the mitogenetic band; MgF2 or synthetic silica plus a CsI or CsTe solar-blind photocathode is the minimum chain that can measure it, and the same chain measures its own dark count inside the band of interest.",
+    "justification_type": "computation"
+   },
+   {
+    "step": "Fels reported different outcomes across glass (transmitting above about 340 nm) versus quartz (transmitting from about 150 nm) barriers, and the adipose-stem-cell replication used a UV-filter tube versus a quartz tube - so the entire glass-versus-quartz design logic in this literature presupposes a deep-UV budget that has never been measured in absolute units.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2092319343",
+     "W2258592615"
+    ]
+   },
+   {
+    "step": "The field names absolutely calibrated photon budgets as the criterion that would settle the functional-role question, and the mitogenetic band is where that criterion has never been applied.",
+    "justification_type": "given"
+   }
+  ],
+  "cited_works": [
+   {
+    "work_id": "W4404871602",
+    "title": "Open quantum systems theory of ultraweak ultraviolet photon emissions: Revisiting Gurwitsch's onion experiment as a prototype for quantum biology",
+    "year": 2024,
+    "type": "article",
+    "abstract": "A century ago it was discovered that metabolic processes in living cells emit a spectrum of very low intensity radiation. This was based on observations that radiant energy from proliferating cells can amplify the rate of cell division in other nearby cellular life. Although metabolic radiation is now thoroughly documented in research on ultraweak photon emissions (UPE), the original finding that UPE can enhance mitogenesis remains controversial. This controversy is addressed by establishing a physical basis for phenomenological observations that biological UPE can amplify mitogenesis in living cells. Enhanced mitosis is rationalized as a resonance effect based on open quantum systems theory using Fano and Feshbach's methods. This application of quantum theory to biology has important consequences for understanding health, medicine, and principles of living matter."
+   },
+   {
+    "work_id": "W2748679677",
+    "title": "Oxidative species-induced excitonic transport in tubulin aromatic networks: Potential implications for neurodegenerative disease",
+    "year": 2017,
+    "type": "preprint",
+    "abstract": "Oxidative stress is a pathological hallmark of neurodegenerative tauopathic disorders such as Alzheimer's disease and Parkinson's disease-related dementia, which are characterized by altered forms of the microtubule-associated protein (MAP) tau. MAP tau is a key protein in stabilizing the microtubule architecture that regulates neuron morphology and synaptic strength. The precise role of reactive oxygen species (ROS) in the tauopathic disease process, however, is poorly understood. It is known that the production of ROS by mitochondria can result in ultraweak photon emission (UPE) within cells. One likely absorber of these photons is the microtubule cytoskeleton, as it forms a vast network spanning neurons, is highly co-localized with mitochondria, and shows a high density of aromatic amino acids. Functional microtubule networks may traffic this ROS-generated endogenous photon energy for cellular signaling, or they may serve as dissipaters/conduits of such energy. Experimentally, after in vitro exposure to exogenous photons, microtubules have been shown to reorient and reorganize in a dose-dependent manner with the greatest effect being observed around 280 nm, in the tryptophan and tyrosine absorption range. In this paper, recent modeling efforts based on ambient temperature experiment are presented, showing that tubulin polymers can feasibly absorb and channel these photoexcitations via resonance energy transfer, on the order of dendritic length scales. Since microtubule networks are compromised in tauopathic diseases, patients with these illnesses would be unable to suppo"
+   },
+   {
+    "work_id": "W2095038636",
+    "title": "Cell-to-cell signaling through light: just a ghost of chance?",
+    "year": 2013,
+    "type": "article",
+    "abstract": "Despite the large number of reports attributing the signaling between detached cell cultures to the electromagnetic phenomena, almost no report so far included a rigorous analysis of the possibility of such signaling.In this paper, we examine the physical feasibility of the electromagnetic communication between cells, especially through light, with regard to the ambient noise illumination. We compare theoretically attainable parameters of communication with experimentally obtained data of the photon emission from cells without a specially pronounced ability of bioluminescence.We show that the weak intensity of the emission together with an unfavorable signal-to-noise ratio, which is typical for natural conditions, represent an important obstacle to the signal detection by cells."
+   },
+   {
+    "work_id": "W146728166",
+    "title": "Properties of biophotons and their theoretical implications.",
+    "year": 2003,
+    "type": "article",
+    "abstract": "The word \"biophotons\" is used to denote a permanent spontaneous photon emission from all living systems. It displays a few up to some hundred photons/(s x cm2) within the spectral range from at least 260 to 800 nm. It is closely linked to delayed luminescence (DL) of biological tissues which describes the long term and ultra weak reemission of photons after exposure to light illumination. During relaxation DL turns continuously into the steady state biophoton emission, where both, DL and biophoton emission exhibit mode coupling over the entire spectrum and a Poissonian photo count distribution. DL is representing excited states of the biophoton field. The physical properties indicate that biophotons originate from fully coherent and sometimes even squeezed states. The physical analysis provides thermodynamic and quantum optical interpretation, in order to understand the biological impacts of biophotons. Biological phenomena like intracellular and intercellular communication, cell growth and differentiation, interactions among biological systems (like \"Gestaltbildung\" or swarming), and microbial infections can be understood in terms of biophotons. \"Biophotonics\", the corresponding field of applications, provide a new powerful tool for assessing the quality of food (like freshness and shelf life), microbial infections, environmental influences and for substantiating medical diagnosis and therapy."
+   },
+   {
+    "work_id": "W4389669809",
+    "title": "Ultra-Weak Photon Emission from Biological Systems",
+    "year": 2023,
+    "type": "book",
+    "abstract": "This book covers the key aspects of ultra-weak photon emission, from mechanisms to applications. This book provides an excellent summary of the UPE field."
+   },
+   {
+    "work_id": "W4391831883",
+    "title": "Ultra weak photon emission—a brief review",
+    "year": 2024,
+    "type": "article",
+    "abstract": "Cells emit light at ultra-low intensities: photons which are produced as by-products of cellular metabolism, distinct from other light emission processes such as delayed luminescence, bioluminescence, and chemiluminescence. The phenomenon is known by a large range of names, including, but not limited to, biophotons, biological autoluminescence, metabolic photon emission and ultraweak photon emission (UPE), the latter of which shall be used for the purposes of this review. It is worth noting that the photons when produced are neither 'weak' nor specifically biological in characteristics. Research of UPE has a long yet tattered past, historically hamstrung by a lack of technology sensitive enough to detect it. Today, as technology progresses rapidly, it is becoming easier to detect and image these photons, as well as to describe their function. In this brief review we will examine the history of UPE research, their proposed mechanism, possible biological role, the detection of the phenomenon, and the potential medical applications."
+   },
+   {
+    "work_id": "W2797018767",
+    "title": "Measuring the Human Ultra-Weak Photon Emission Distribution Using an Electron-Multiplying, Charge-Coupled Device as a Sensor",
+    "year": 2018,
+    "type": "article",
+    "abstract": "Ultra-weak photon emission (UPE) is the spontaneous emission from living systems mainly attributed to oxidation reactions, in which reactive oxygen species (ROS) may play a major role. Given the capability of the next-generation electron-multiplying CCD (EMCCD) sensors and the easy use of liquid crystal tunable filters (LCTF), the aim of this work was to explore the potential of a simple UPE spectrometer to measure the UPE from a human hand. Thus, an easy setup was configured based on a dark box for inserting the subject’s hand prior to LCTF as a monochromator and an EMCCD sensor working in the full vertical binning mode (FVB) as a spectra detector. Under controlled conditions, both dark signals and left hand UPE were acquired by registering the UPE intensity at different selected wavelengths (400, 450, 500, 550, 600, 650, and 700 nm) during a period of 10 min each. Then, spurious signals were filtered out by ignoring the pixels whose values were clearly outside of the Gaussian distribution, and the dark signal was subtracted from the subject hand signal. The stepped spectrum with a peak of approximately 880 photons at 500 nm had a shape that agreed somewhat with previous reports, and agrees with previous UPE research that reported UPE from 420 to 570 nm, or 260 to 800 nm, with a range from 1 to 1000 photons s−1 cm−2. Obtaining the spectral distribution instead of the total intensity of the UPE represents a step forward in this field, as it may provide extra information about a subject’s personal states and relationship with ROS. A new generation of CCD sensors with lower d"
+   },
+   {
+    "work_id": "W1920668343",
+    "title": "Revisiting the mitogenetic effect of ultra-weak photon emission",
+    "year": 2015,
+    "type": "article",
+    "abstract": "This paper reviews the 90 years long controversial history of the so-called \"mitogenetic radiation,\" the first case of non-chemical distant interactions, reported by Gurwitsch (1923). It was soon described as ultraweak UV, emitted by a number of biological systems, and stimulating mitosis in \"competent\" (in this sense) cells. In the following 20 years this phenomenon attracted enormous interest of the scientific community, and gave rise to more than 700 publications around the world. Yet, this wave of research vanished after several ostensibly disproving works in late 1930-s, and was not resumed later, regardless of quite serious grounds for that. The authors discuss separately two aspects of the problem: (1) do living organisms emit ultraweak radiation in the UV range (irrespective of whether it has any biological role), and (2) are there any real effects of this ultraweak photon emission (UPE) upon cell division and/or other biological functions? Analysis of the available data permits to conclude, that UV fraction of UPE should be regarded real, while its biological effects are difficult to reproduce. This causes a paradox. A number of presently known qualities of UPE were initially discovered (predicted?) by the \"early workers\" on the basis of biological effects. Yet the qualities they discovered were proved later (the UV component of UPE, the sources of UPE among biological systems, etc…), while the biological effect they used for UPE \"detection\" remains questionable. Importance of this area for basic biology and medicine, and potential usefulness of UPE as a non-invasi"
+   },
+   {
+    "work_id": "W2092319343",
+    "title": "Cellular Communication through Light",
+    "year": 2009,
+    "type": "article",
+    "abstract": "Information transfer is a fundamental of life. A few studies have reported that cells use photons (from an endogenous source) as information carriers. This study finds that cells can have an influence on other cells even when separated with a glass barrier, thereby disabling molecule diffusion through the cell-containing medium. As there is still very little known about the potential of photons for intercellular communication this study is designed to test for non-molecule-based triggering of two fundamental properties of life: cell division and energy uptake. The study was performed with a cellular organism, the ciliate Paramecium caudatum. Mutual exposure of cell populations occurred under conditions of darkness and separation with cuvettes (vials) allowing photon but not molecule transfer. The cell populations were separated either with glass allowing photon transmission from 340 nm to longer waves, or quartz being transmittable from 150 nm, i.e. from UV-light to longer waves. Even through glass, the cells affected cell division and energy uptake in neighboring cell populations. Depending on the cuvette material and the number of cells involved, these effects were positive or negative. Also, while paired populations with lower growth rates grew uncorrelated, growth of the better growing populations was correlated. As there were significant differences when separating the populations with glass or quartz, it is suggested that the cell populations use two (or more) frequencies for cellular information transfer, which influences at least energy uptake, cell division rate an"
+   },
+   {
+    "work_id": "W2258592615",
+    "title": "Experimental Investigation of Distant Cellular Interaction among Adipose Derived Stem-Cells",
+    "year": 2014,
+    "type": "preprint",
+    "abstract": "In addition to chemical and mechanical interactions between cells electromagnetic field produced by cells has been considered as another form of signaling for cell-cell communication. The aim of this study is evaluation of electromagnetic effects on viability of Adipose-derived stem cells (ADSCs) without co-culturing. In this study, stem cells were isolated from human adipose tissue enzymatically and proliferated in monolayer culture. Then, 5.(10^4) adipose-derived stem cells were cultured in each well of the test plate. In the first row (4 wells), ADSCs as inducer cells were cultured in DMEM1 with 10 ng/ml Fibroblast growth factor (FGF). In adjacent and the last rows, ADSCs were cultured without FGF (as detector cells). After the three and five days the viability of cells were evaluated. Moreover, ADSCs were cultured in the same conditions but the inducer cells were placed once in the UV-filter tube and once in the quartz tube to see whether there is electromagnetic interaction among cells. Inducer cells caused significant cell proliferation in adjacent row cells (p- value&lt;0.01) in the fifth day. However, using the UV-filter tube and quartz tube both reduced the effect of inducer cells on adjacent cells significantly. As a conclusion, we could detect distant cellular interaction (DCI) among adipose derived stem cells (ADSCs), but it was not electromagnetic signaling. Our results show that ADSCs affect each other via volatile signaling as a chemical distant cellular interaction (CDCI)."
+   }
+  ]
+ },
+ {
+  "candidate_id": "C027",
+  "seed_id": "Q3",
+  "statement": "In clonally split Paramecium caudatum populations exposed for 48 hours in darkness, the growth effect of a live emitter population across a sealed quartz optical path will be reproduced within a preregistered 20% equivalence margin by photon-for-photon replay of its absolutely calibrated 300–750 nm emission, while an opaque shutter will abolish the effect.",
+  "scope": {
+   "population": "Clonal P. caudatum receiver populations started at 5 cells/mL.",
+   "condition": "Forty-eight-hour exposure in darkness across double-sealed quartz compartments with independent gas spaces, tested by at least three blinded laboratories.",
+   "comparator": "Live-emitter coupling, opaque-shutter coupling, emitter-free sham, and attenuated multi-LED replay matched to the live emitter's spectrum and receiver-plane photon flux.",
+   "outcome": "Receiver population growth, expressed as log cell-number change from 0 to 48 hours."
+  },
+  "null_hypothesis": "The live-emitter contrast is absent, survives the opaque shutter, or is not equivalent within ±20% to the photon-matched replay contrast.",
+  "estimand": "The ratio of the replay-versus-sham growth contrast to the live-emitter-versus-shutter growth contrast, with equivalence bounds 0.80–1.20, together with the shutter residual contrast.",
+  "proposed_experiment": "Pre-register and distribute identical clonal cultures and coded exposure cartridges to three laboratories. Randomize receivers among live-emitter, opaque-shutter, sham, and replay arms. Quantify sister emitter cultures continuously, propagate measured window transmission and geometry to receiver-plane photon dose, and replay the resulting spectrum and time course from a calibrated attenuated LED array. Automated image cytometry performs blinded 0- and 48-hour cell counts.",
+  "rationale": [
+   {
+    "step": "P. caudatum populations separated by glass or quartz in darkness were reported to alter neighboring populations' division and energy uptake.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2092319343"
+    ]
+   },
+   {
+    "step": "A distant proliferation effect in adipose-derived stem cells was instead attributed to volatile signaling after optical-container controls reduced the effect, making independent gas isolation a load-bearing control.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2258592615"
+    ]
+   },
+   {
+    "step": "High-albedo photon concentration has detected growth-associated yeast emission, and the same work identifies missing absolute photon reporting as a major measurement gap.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W3161989600"
+    ]
+   },
+   {
+    "step": "For each wavelength bin, the receiver dose is computed as N_receiver = integral[Phi_emitter(lambda,t) × T_window(lambda) × G_geometry(lambda) dt d(lambda)]; matching this quantity in replay makes equality of the two biological contrasts a direct photon-budget closure test.",
+    "justification_type": "computation"
+   }
+  ],
+  "cited_works": [
+   {
+    "work_id": "W2092319343",
+    "title": "Cellular Communication through Light",
+    "year": 2009,
+    "type": "article",
+    "abstract": "Information transfer is a fundamental of life. A few studies have reported that cells use photons (from an endogenous source) as information carriers. This study finds that cells can have an influence on other cells even when separated with a glass barrier, thereby disabling molecule diffusion through the cell-containing medium. As there is still very little known about the potential of photons for intercellular communication this study is designed to test for non-molecule-based triggering of two fundamental properties of life: cell division and energy uptake. The study was performed with a cellular organism, the ciliate Paramecium caudatum. Mutual exposure of cell populations occurred under conditions of darkness and separation with cuvettes (vials) allowing photon but not molecule transfer. The cell populations were separated either with glass allowing photon transmission from 340 nm to longer waves, or quartz being transmittable from 150 nm, i.e. from UV-light to longer waves. Even through glass, the cells affected cell division and energy uptake in neighboring cell populations. Depending on the cuvette material and the number of cells involved, these effects were positive or negative. Also, while paired populations with lower growth rates grew uncorrelated, growth of the better growing populations was correlated. As there were significant differences when separating the populations with glass or quartz, it is suggested that the cell populations use two (or more) frequencies for cellular information transfer, which influences at least energy uptake, cell division rate an"
+   },
+   {
+    "work_id": "W2258592615",
+    "title": "Experimental Investigation of Distant Cellular Interaction among Adipose Derived Stem-Cells",
+    "year": 2014,
+    "type": "preprint",
+    "abstract": "In addition to chemical and mechanical interactions between cells electromagnetic field produced by cells has been considered as another form of signaling for cell-cell communication. The aim of this study is evaluation of electromagnetic effects on viability of Adipose-derived stem cells (ADSCs) without co-culturing. In this study, stem cells were isolated from human adipose tissue enzymatically and proliferated in monolayer culture. Then, 5.(10^4) adipose-derived stem cells were cultured in each well of the test plate. In the first row (4 wells), ADSCs as inducer cells were cultured in DMEM1 with 10 ng/ml Fibroblast growth factor (FGF). In adjacent and the last rows, ADSCs were cultured without FGF (as detector cells). After the three and five days the viability of cells were evaluated. Moreover, ADSCs were cultured in the same conditions but the inducer cells were placed once in the UV-filter tube and once in the quartz tube to see whether there is electromagnetic interaction among cells. Inducer cells caused significant cell proliferation in adjacent row cells (p- value&lt;0.01) in the fifth day. However, using the UV-filter tube and quartz tube both reduced the effect of inducer cells on adjacent cells significantly. As a conclusion, we could detect distant cellular interaction (DCI) among adipose derived stem cells (ADSCs), but it was not electromagnetic signaling. Our results show that ADSCs affect each other via volatile signaling as a chemical distant cellular interaction (CDCI)."
+   },
+   {
+    "work_id": "W3161989600",
+    "title": "Stochastic light concentration from 3D to 2D reveals ultraweak chemi- and bioluminescence",
+    "year": 2021,
+    "type": "article",
+    "abstract": "For countless applications in science and technology, light must be concentrated, and concentration is classically achieved with reflective and refractive elements. However, there is so far no efficient way, with a 2D detector, to detect photons produced inside an extended volume with a broad or isotropic angular distribution. Here, with theory and experiment, we propose to stochastically transform and concentrate a volume into a smaller surface, using a high-albedo Ulbricht cavity and a small exit orifice through cavity walls. A 3D gas of photons produced inside the cavity is transformed with a 50% number efficiency into a 2D Lambertian emitting orifice with maximal radiance and a much smaller size. With high-albedo quartz-powder cavity walls ([Formula: see text]), the orifice area is [Formula: see text] times smaller than the walls' area. When coupled to a detectivity-optimized photon-counter ([Formula: see text]) the detection limit is [Formula: see text]. Thanks to this unprecedented sensitivity, we could detect the luminescence produced by the non-catalytic disproportionation of hydrogen peroxide in pure water, which has not been observed so far. We could also detect the ultraweak bioluminescence produced by yeast cells at the onset of their growth. Our work opens new perspectives for studying ultraweak luminescence, and the concept of stochastic 3D/2D conjugation should help design novel light detection methods for large samples or diluted emitters."
+   }
+  ]
+ },
+ {
+  "candidate_id": "C028",
+  "seed_id": "Q3",
+  "statement": "For optically coupled P. caudatum, the dose-normalized receiver-growth effects in four spectral bands will form the same action-spectrum ranking under live-emitter coupling and synthetic photon replay, with Spearman rho at least 0.8 and at least one familywise-error-controlled nonzero band effect.",
+  "scope": {
+   "population": "Clonal P. caudatum emitter and receiver populations.",
+   "condition": "Forty-eight-hour dark exposure through sealed quartz paths partitioned into 260–340, 340–450, 450–600, and 600–750 nm bands.",
+   "comparator": "Equal receiver-plane photon counts delivered by filtered live emitters versus narrowband synthetic replay, with opaque and zero-photon controls.",
+   "outcome": "Dose-normalized difference in receiver log growth for each spectral band."
+  },
+  "null_hypothesis": "No band has a corrected nonzero effect, or the live-emitter and replay action spectra have Spearman rho below 0.8.",
+  "estimand": "The four-band vector of growth contrast per received photon and its Spearman correlation between natural and replay exposures.",
+  "proposed_experiment": "Measure the live-emitter spectrum and filter transmission in the complete exposure cartridge, then expose randomized receivers through one band at a time. In a second factorial arm, use narrowband LEDs attenuated to the same receiver-plane photon count. Estimate band-specific growth contrasts with a preregistered hierarchical model and compare the two action-spectrum vectors.",
+  "rationale": [
+   {
+    "step": "Glass and quartz separators produced different P. caudatum effects, and the original interpretation invoked at least two frequency regions.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2092319343",
+     "W2043432757"
+    ]
+   },
+   {
+    "step": "Historical claims place mitogenetic emission in the ultraviolet, but modern evidence for even 280–390 nm emission was judged limited, so the ultraviolet contribution requires direct measurement rather than inference from window material.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2095038636"
+    ]
+   },
+   {
+    "step": "A proposed framework for light-based cellular interaction explicitly requires both a modulated optical signal and molecular perception by the receiver.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W1523504261"
+    ]
+   },
+   {
+    "step": "Equalizing N_receiver across bands removes total photon count as the explanation; correlation of the dose-normalized natural and replay effect vectors then tests whether wavelength-specific photon absorption predicts the receiver response.",
+    "justification_type": "computation"
+   }
+  ],
+  "cited_works": [
+   {
+    "work_id": "W2092319343",
+    "title": "Cellular Communication through Light",
+    "year": 2009,
+    "type": "article",
+    "abstract": "Information transfer is a fundamental of life. A few studies have reported that cells use photons (from an endogenous source) as information carriers. This study finds that cells can have an influence on other cells even when separated with a glass barrier, thereby disabling molecule diffusion through the cell-containing medium. As there is still very little known about the potential of photons for intercellular communication this study is designed to test for non-molecule-based triggering of two fundamental properties of life: cell division and energy uptake. The study was performed with a cellular organism, the ciliate Paramecium caudatum. Mutual exposure of cell populations occurred under conditions of darkness and separation with cuvettes (vials) allowing photon but not molecule transfer. The cell populations were separated either with glass allowing photon transmission from 340 nm to longer waves, or quartz being transmittable from 150 nm, i.e. from UV-light to longer waves. Even through glass, the cells affected cell division and energy uptake in neighboring cell populations. Depending on the cuvette material and the number of cells involved, these effects were positive or negative. Also, while paired populations with lower growth rates grew uncorrelated, growth of the better growing populations was correlated. As there were significant differences when separating the populations with glass or quartz, it is suggested that the cell populations use two (or more) frequencies for cellular information transfer, which influences at least energy uptake, cell division rate an"
+   },
+   {
+    "work_id": "W2043432757",
+    "title": "Electromagnetic cellular interactions",
+    "year": 2010,
+    "type": "article",
+    "abstract": " [NOTE: the corpus holds no usable abstract for this work. Judge its citation step on the title alone and mark the step unverifiable rather than false.]"
+   },
+   {
+    "work_id": "W2095038636",
+    "title": "Cell-to-cell signaling through light: just a ghost of chance?",
+    "year": 2013,
+    "type": "article",
+    "abstract": "Despite the large number of reports attributing the signaling between detached cell cultures to the electromagnetic phenomena, almost no report so far included a rigorous analysis of the possibility of such signaling.In this paper, we examine the physical feasibility of the electromagnetic communication between cells, especially through light, with regard to the ambient noise illumination. We compare theoretically attainable parameters of communication with experimentally obtained data of the photon emission from cells without a specially pronounced ability of bioluminescence.We show that the weak intensity of the emission together with an unfavorable signal-to-noise ratio, which is typical for natural conditions, represent an important obstacle to the signal detection by cells."
+   },
+   {
+    "work_id": "W1523504261",
+    "title": "Light based cellular interactions: hypotheses and perspectives",
+    "year": 2015,
+    "type": "article",
+    "abstract": "This work investigates the theoretical possibility of interactions between cells via light. We first take a brief look at the previous research done in the past to have a better understanding of the field and the origins of the concept of cellular interactions. Then we identify the different elements essential for interactions between two parties. We then compare the required elements with the known and studied elements and characteristics which are well defined in biology, chemistry and physics. This way we are able to set up four postulates required for cell interactions: I. A signal is present and subject to secondary modulation by the emitter cells. II. There is a plastic information medium that reacts directly to the metabolic state of the emitter and therefore carries information about the emitter. III. An optical signal can be perceived by cells on a molecular level by a multitude of different receptors. IV. The information can in theory be processed by cells and metabolic changes in reaction to the signals can be observed. We demonstrate that all required elements have been observed. Most of them have important and well-known roles in cells. Therefore we suggest that our hypothetical model is a good explanation for light based cellular interactions."
+   }
+  ]
+ },
+ {
+  "candidate_id": "C029",
+  "seed_id": "Q3",
+  "statement": "At identical total photon count and spectrum, replaying the measured one-second-scale temporal order of P. caudatum UPE will change receiver growth relative to replaying a within-10-minute-block permutation of the same photon sequence.",
+  "scope": {
+   "population": "Clonal P. caudatum receivers started at 5 cells/mL and emitter populations measured in the same growth phase.",
+   "condition": "Forty-eight-hour dark exposure to multi-band LED replay generated from time-tagged natural-emission records.",
+   "comparator": "Original-order replay versus block-permuted replay, with photon count in every spectral channel and every 10-minute block held exactly constant.",
+   "outcome": "Difference in receiver log growth at 48 hours."
+  },
+  "null_hypothesis": "The original-order and temporally permuted replays produce the same receiver growth within a preregistered ±5% equivalence margin.",
+  "estimand": "The original-minus-permuted difference in 48-hour log growth, with total and band-specific delivered photon counts constrained to equality.",
+  "proposed_experiment": "Record emitter photons with two independent time-tagging detector channels to reject detector bursts, construct original and block-permuted multi-band replay files, and expose coded receiver cultures using the same LED hardware. Verify equality of delivered counts with an independent monitor detector and score growth blindly.",
+  "rationale": [
+   {
+    "step": "Time-series analysis of astrocyte and glioblastoma UPE found anomalous diffusion and long-range memory, showing that biological emission can contain measurable temporal structure beyond mean intensity.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W7124764611"
+    ]
+   },
+   {
+    "step": "The light-communication framework requires secondary modulation of an optical signal by emitter cells.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W1523504261"
+    ]
+   },
+   {
+    "step": "Human dental-pulp stem-cell responses to 810 nm photobiomodulation depended on pulse frequency, demonstrating at a higher optical dose that cellular outcome can depend on temporal delivery rather than energy alone.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2769035647"
+    ]
+   },
+   {
+    "step": "Because permutation preserves sum_t N(lambda,t) separately for each wavelength channel and 10-minute block, a nonzero outcome contrast is attributable to sub-block temporal ordering rather than photon dose, spectrum, or slow drift.",
+    "justification_type": "computation"
+   }
+  ],
+  "cited_works": [
+   {
+    "work_id": "W7124764611",
+    "title": "First Experimental Measurements of Biophotons from Astrocytes and Glioblastoma Cell Cultures",
+    "year": 2026,
+    "type": "article",
+    "abstract": "Biophotons are non-thermal and non-bioluminescent ultraweak photon emissions, first hypothesised by Gurwitsch as a regulatory mechanism in cell division, and then experimentally observed in living organisms. Today, two main hypotheses explain their origin: stochastic decay of excited molecules and coherent electromagnetic fields produced in biochemical processes. Recent interest focuses on the role of biophotons in cellular communication and disease monitoring. This study presents the first campaign of biophoton emission measurements from cultured astrocytes and glioblastoma cells, conducted at Fondazione Pisana per la Scienza (FPS) using two ultra-sensitive setups developed in collaboration between the National Laboratories of Frascati (LNF-INFN) and the University of Rome II Tor Vergata. The statistical analyses of the collected data revealed a clear separation between cellular signals and dark noise, confirming the high sensitivity of the apparatus. The Diffusion Entropy Analysis (DEA) was applied to the data to uncover dynamic patterns, revealing anomalous diffusion and long-range memory effects that may be related to intercellular signaling and cellular communication. These findings support the hypothesis that biophoton emissions encode rich information beyond intensity, reflecting metabolic and pathological states. The differences revealed by applying the Diffusion Entropy Analysis to the biophotonic signals of Astrocytes and Glioblastoma are highlighted and discussed in the paper. This work lays the groundwork for future studies on neuronal cultures and proposes biop"
+   },
+   {
+    "work_id": "W1523504261",
+    "title": "Light based cellular interactions: hypotheses and perspectives",
+    "year": 2015,
+    "type": "article",
+    "abstract": "This work investigates the theoretical possibility of interactions between cells via light. We first take a brief look at the previous research done in the past to have a better understanding of the field and the origins of the concept of cellular interactions. Then we identify the different elements essential for interactions between two parties. We then compare the required elements with the known and studied elements and characteristics which are well defined in biology, chemistry and physics. This way we are able to set up four postulates required for cell interactions: I. A signal is present and subject to secondary modulation by the emitter cells. II. There is a plastic information medium that reacts directly to the metabolic state of the emitter and therefore carries information about the emitter. III. An optical signal can be perceived by cells on a molecular level by a multitude of different receptors. IV. The information can in theory be processed by cells and metabolic changes in reaction to the signals can be observed. We demonstrate that all required elements have been observed. Most of them have important and well-known roles in cells. Therefore we suggest that our hypothetical model is a good explanation for light based cellular interactions."
+   },
+   {
+    "work_id": "W2769035647",
+    "title": "Pulse frequency dependency of photobiomodulation on the bioenergetic functions of human dental pulp stem cells",
+    "year": 2017,
+    "type": "article",
+    "abstract": "Abstract Photobiomodulation (PBM) therapy contributes to pain relief, wound healing, and tissue regeneration. The pulsed wave (PW) mode has been reported to be more effective than the continuous wave (CW) mode when applying PBM to many biological systems. However, the reason for the higher effectiveness of PW-PBM is poorly understood. Herein, we suggest using delayed luminescence (DL) as a reporter of mitochondrial activity after PBM treatment. DL originates mainly from mitochondrial electron transport chain systems, which produce reactive oxygen species (ROS) and adenosine triphosphate (ATP). The decay time of DL depends on the pulse frequencies of applied light, which correlate with the biological responses of human dental pulp stem cells (hDPSCs). Using a low-power light whose wavelength is 810 nm and energy density is 38 mJ/cm 2 , we find that a 300-Hz pulse frequency prolonged the DL pattern and enhanced alkaline phosphatase activity. In addition, we analyze mitochondrial morphological changes and their volume density and find evidence supporting mitochondrial physiological changes from PBM treatment. Our data suggest a new methodology for determining the effectiveness of PBM and the specific pulse frequency dependency of PBM in the differentiation of hDPSCs."
+   }
+  ]
+ },
+ {
+  "candidate_id": "C030",
+  "seed_id": "Q3",
+  "statement": "The reported suppression of 5-cells/mL P. caudatum indicator growth by 50–300-cells/mL neighbors is an analog photon-dose response whose between-density variation is fully explained by absolutely measured 300–750 nm receiver fluence, with no residual emitter-density effect.",
+  "scope": {
+   "population": "P. caudatum indicators started at 5 cells/mL, paired with emitters started at 50, 100, 200, or 300 cells/mL.",
+   "condition": "Forty-eight-hour exposure in darkness through sealed optical paths and a crossed series of calibrated neutral-density attenuations.",
+   "comparator": "Different emitter densities adjusted to overlapping receiver-plane photon doses, plus opaque, sham, and synthetic-replay controls.",
+   "outcome": "Indicator log growth and its dose-response relationship to received photon fluence."
+  },
+  "null_hypothesis": "Growth suppression is not monotonic with measured photon fluence, or emitter density improves held-out prediction after photon dose is included.",
+  "estimand": "The cross-validated dose-response function f(N_receiver) and the incremental held-out log-likelihood contributed by emitter-density labels after f(N_receiver), with less than two AIC-equivalent units treated as no residual contribution.",
+  "proposed_experiment": "Repeat the published 5-versus-50/100/200/300-cells/mL design using double-sealed cartridges. Cross density with neutral-density filters chosen to make different densities deliver overlapping photon fluences. Measure transmitted photons continuously in matched cartridges, reproduce selected doses synthetically, and compare dose-only and dose-plus-density models by preregistered leave-batch-out validation.",
+  "rationale": [
+   {
+    "step": "Indicators started at 5 cells/mL reportedly grew less when surrounded by 50, 100, 200, or 300 cells/mL, and graphite shielding removed the neighbor effect.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2765089583"
+    ]
+   },
+   {
+    "step": "Weak cellular emission and unfavorable signal-to-noise ratio have been identified as physical obstacles to light-based cell communication.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2095038636"
+    ]
+   },
+   {
+    "step": "A high-albedo cavity can recover a large fraction of photons from an extended biological volume, enabling absolute flux estimation at intensities relevant to growing cell populations.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W3161989600"
+    ]
+   },
+   {
+    "step": "Crossing four densities with several transmissions creates overlapping doses; fitting growth = alpha + f(N_receiver) + batch and then testing density terms separates photon-dose sufficiency from density-linked non-optical confounding.",
+    "justification_type": "computation"
+   }
+  ],
+  "cited_works": [
+   {
+    "work_id": "W2765089583",
+    "title": "Endogenous physical regulation of population density in the freshwater protozoan Paramecium caudatum",
+    "year": 2017,
+    "type": "article",
+    "abstract": "Studies confirm physical long-range cell-cell communication, most evidently based on electromagnetic fields. Effects concern induction or inhibition of cell growth. Their natural function is unclear. With the protozoan Paramecium caudatum I tested whether the signals regulate cell density and are electromagnetic. Up to 300 cells/mL, cell growth in clones of this study is decreasingly pronounced. Using cuvettes as chemical barriers enabling physical communication I placed 5 indicator cells/mL, the inducer populations, into smaller cuvettes that stand in bigger and contained 50, 100, 200 or 300 cells/mL. Under conditions of total darkness such pairs were mutually exposed for 48 hours. The hypothesis was that indicator cells, too, grow less the more neighbor cells there are. The bigger inducer populations were in the beginning the less they grew. The indicator populations grew accordingly; the more cells they were surrounded by the less they grew. The suppressing neighbors-effect disappeared when inner cuvettes were shielded by graphite known to shield electromagnetic radiation from GHz to PHz, i.e. to absorb energy from microwaves to light. These are the first results demonstrating non-contact physical quorum sensing for cell population density regulation. I assume rules intrinsic to electromagnetic fields interacting with matter and life."
+   },
+   {
+    "work_id": "W2095038636",
+    "title": "Cell-to-cell signaling through light: just a ghost of chance?",
+    "year": 2013,
+    "type": "article",
+    "abstract": "Despite the large number of reports attributing the signaling between detached cell cultures to the electromagnetic phenomena, almost no report so far included a rigorous analysis of the possibility of such signaling.In this paper, we examine the physical feasibility of the electromagnetic communication between cells, especially through light, with regard to the ambient noise illumination. We compare theoretically attainable parameters of communication with experimentally obtained data of the photon emission from cells without a specially pronounced ability of bioluminescence.We show that the weak intensity of the emission together with an unfavorable signal-to-noise ratio, which is typical for natural conditions, represent an important obstacle to the signal detection by cells."
+   },
+   {
+    "work_id": "W3161989600",
+    "title": "Stochastic light concentration from 3D to 2D reveals ultraweak chemi- and bioluminescence",
+    "year": 2021,
+    "type": "article",
+    "abstract": "For countless applications in science and technology, light must be concentrated, and concentration is classically achieved with reflective and refractive elements. However, there is so far no efficient way, with a 2D detector, to detect photons produced inside an extended volume with a broad or isotropic angular distribution. Here, with theory and experiment, we propose to stochastically transform and concentrate a volume into a smaller surface, using a high-albedo Ulbricht cavity and a small exit orifice through cavity walls. A 3D gas of photons produced inside the cavity is transformed with a 50% number efficiency into a 2D Lambertian emitting orifice with maximal radiance and a much smaller size. With high-albedo quartz-powder cavity walls ([Formula: see text]), the orifice area is [Formula: see text] times smaller than the walls' area. When coupled to a detectivity-optimized photon-counter ([Formula: see text]) the detection limit is [Formula: see text]. Thanks to this unprecedented sensitivity, we could detect the luminescence produced by the non-catalytic disproportionation of hydrogen peroxide in pure water, which has not been observed so far. We could also detect the ultraweak bioluminescence produced by yeast cells at the onset of their growth. Our work opens new perspectives for studying ultraweak luminescence, and the concept of stochastic 3D/2D conjugation should help design novel light detection methods for large samples or diluted emitters."
+   }
+  ]
+ },
+ {
+  "candidate_id": "C031",
+  "seed_id": "Q3",
+  "statement": "After equalizing total 300–750 nm photon count, replay of the joint spectral-temporal UPE template from a 300-cells/mL P. caudatum population will suppress growth of 5-cells/mL receivers by at least 10% more than replay of the template from a 50-cells/mL population.",
+  "scope": {
+   "population": "Clonal P. caudatum receivers started at 5 cells/mL.",
+   "condition": "Forty-eight-hour dark exposure to photon replays derived from emitters started at 50 or 300 cells/mL.",
+   "comparator": "Low-density and high-density emitter templates normalized to identical integrated receiver-plane photon count, plus spectrally flattened and temporally shuffled versions.",
+   "outcome": "Percent difference in receiver population growth at 48 hours."
+  },
+  "null_hypothesis": "The normalized high-density template suppresses growth by less than 10% relative to the normalized low-density template, or the difference disappears once photon count is equalized.",
+  "estimand": "One minus the ratio of 48-hour receiver growth under the normalized 300-cells/mL template to growth under the normalized 50-cells/mL template.",
+  "proposed_experiment": "Acquire replicated, time-resolved spectra from 50- and 300-cells/mL emitters, normalize templates to the same receiver-plane photon total, and replay them to blinded 5-cells/mL receivers. Factorially flatten spectrum or shuffle time to determine which component carries any density-dependent effect.",
+  "rationale": [
+   {
+    "step": "P. caudatum indicator growth reportedly decreased as neighboring population density increased from 50 to 300 cells/mL.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2765089583"
+    ]
+   },
+   {
+    "step": "P. caudatum effects were reported to vary in sign with cell number and separator material, which is compatible with a structured cue rather than a universally stimulatory photon dose.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2092319343"
+    ]
+   },
+   {
+    "step": "Biological UPE time series can contain long-memory dynamics, while a theoretical communication framework identifies emitter modulation as a required component of information transfer.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W7124764611",
+     "W1523504261"
+    ]
+   },
+   {
+    "step": "Normalizing both templates so that sum_lambda,t N_50(lambda,t) equals sum_lambda,t N_300(lambda,t) removes integrated intensity; a remaining growth difference measures information in the spectral-temporal distribution.",
+    "justification_type": "computation"
+   }
+  ],
+  "cited_works": [
+   {
+    "work_id": "W2765089583",
+    "title": "Endogenous physical regulation of population density in the freshwater protozoan Paramecium caudatum",
+    "year": 2017,
+    "type": "article",
+    "abstract": "Studies confirm physical long-range cell-cell communication, most evidently based on electromagnetic fields. Effects concern induction or inhibition of cell growth. Their natural function is unclear. With the protozoan Paramecium caudatum I tested whether the signals regulate cell density and are electromagnetic. Up to 300 cells/mL, cell growth in clones of this study is decreasingly pronounced. Using cuvettes as chemical barriers enabling physical communication I placed 5 indicator cells/mL, the inducer populations, into smaller cuvettes that stand in bigger and contained 50, 100, 200 or 300 cells/mL. Under conditions of total darkness such pairs were mutually exposed for 48 hours. The hypothesis was that indicator cells, too, grow less the more neighbor cells there are. The bigger inducer populations were in the beginning the less they grew. The indicator populations grew accordingly; the more cells they were surrounded by the less they grew. The suppressing neighbors-effect disappeared when inner cuvettes were shielded by graphite known to shield electromagnetic radiation from GHz to PHz, i.e. to absorb energy from microwaves to light. These are the first results demonstrating non-contact physical quorum sensing for cell population density regulation. I assume rules intrinsic to electromagnetic fields interacting with matter and life."
+   },
+   {
+    "work_id": "W2092319343",
+    "title": "Cellular Communication through Light",
+    "year": 2009,
+    "type": "article",
+    "abstract": "Information transfer is a fundamental of life. A few studies have reported that cells use photons (from an endogenous source) as information carriers. This study finds that cells can have an influence on other cells even when separated with a glass barrier, thereby disabling molecule diffusion through the cell-containing medium. As there is still very little known about the potential of photons for intercellular communication this study is designed to test for non-molecule-based triggering of two fundamental properties of life: cell division and energy uptake. The study was performed with a cellular organism, the ciliate Paramecium caudatum. Mutual exposure of cell populations occurred under conditions of darkness and separation with cuvettes (vials) allowing photon but not molecule transfer. The cell populations were separated either with glass allowing photon transmission from 340 nm to longer waves, or quartz being transmittable from 150 nm, i.e. from UV-light to longer waves. Even through glass, the cells affected cell division and energy uptake in neighboring cell populations. Depending on the cuvette material and the number of cells involved, these effects were positive or negative. Also, while paired populations with lower growth rates grew uncorrelated, growth of the better growing populations was correlated. As there were significant differences when separating the populations with glass or quartz, it is suggested that the cell populations use two (or more) frequencies for cellular information transfer, which influences at least energy uptake, cell division rate an"
+   },
+   {
+    "work_id": "W7124764611",
+    "title": "First Experimental Measurements of Biophotons from Astrocytes and Glioblastoma Cell Cultures",
+    "year": 2026,
+    "type": "article",
+    "abstract": "Biophotons are non-thermal and non-bioluminescent ultraweak photon emissions, first hypothesised by Gurwitsch as a regulatory mechanism in cell division, and then experimentally observed in living organisms. Today, two main hypotheses explain their origin: stochastic decay of excited molecules and coherent electromagnetic fields produced in biochemical processes. Recent interest focuses on the role of biophotons in cellular communication and disease monitoring. This study presents the first campaign of biophoton emission measurements from cultured astrocytes and glioblastoma cells, conducted at Fondazione Pisana per la Scienza (FPS) using two ultra-sensitive setups developed in collaboration between the National Laboratories of Frascati (LNF-INFN) and the University of Rome II Tor Vergata. The statistical analyses of the collected data revealed a clear separation between cellular signals and dark noise, confirming the high sensitivity of the apparatus. The Diffusion Entropy Analysis (DEA) was applied to the data to uncover dynamic patterns, revealing anomalous diffusion and long-range memory effects that may be related to intercellular signaling and cellular communication. These findings support the hypothesis that biophoton emissions encode rich information beyond intensity, reflecting metabolic and pathological states. The differences revealed by applying the Diffusion Entropy Analysis to the biophotonic signals of Astrocytes and Glioblastoma are highlighted and discussed in the paper. This work lays the groundwork for future studies on neuronal cultures and proposes biop"
+   },
+   {
+    "work_id": "W1523504261",
+    "title": "Light based cellular interactions: hypotheses and perspectives",
+    "year": 2015,
+    "type": "article",
+    "abstract": "This work investigates the theoretical possibility of interactions between cells via light. We first take a brief look at the previous research done in the past to have a better understanding of the field and the origins of the concept of cellular interactions. Then we identify the different elements essential for interactions between two parties. We then compare the required elements with the known and studied elements and characteristics which are well defined in biology, chemistry and physics. This way we are able to set up four postulates required for cell interactions: I. A signal is present and subject to secondary modulation by the emitter cells. II. There is a plastic information medium that reacts directly to the metabolic state of the emitter and therefore carries information about the emitter. III. An optical signal can be perceived by cells on a molecular level by a multitude of different receptors. IV. The information can in theory be processed by cells and metabolic changes in reaction to the signals can be observed. We demonstrate that all required elements have been observed. Most of them have important and well-known roles in cells. Therefore we suggest that our hypothetical model is a good explanation for light based cellular interactions."
+   }
+  ]
+ },
+ {
+  "candidate_id": "C032",
+  "seed_id": "Q3",
+  "statement": "A photon-matched P. caudatum growth signal will retain at least half of its dark-condition effect when superposed on spectrally matched Poisson background light delivering ten times the signal photon count, indicating receiver-side filtering rather than dependence on an unrealistically noise-free channel.",
+  "scope": {
+   "population": "Clonal P. caudatum receivers started at 5 cells/mL.",
+   "condition": "Forty-eight-hour replay exposure under backgrounds of 0, 1, 10, and 100 times the measured UPE photon count.",
+   "comparator": "Identical UPE replay with no background, spectrally matched Poisson background, temporally structured background, and background-only controls.",
+   "outcome": "Receiver growth contrast attributable to the fixed UPE replay at each background level."
+  },
+  "null_hypothesis": "At tenfold background, the replay-attributable growth contrast is less than 50% of its dark-condition value or is statistically indistinguishable from zero.",
+  "estimand": "The ratio of the replay-versus-background-only growth contrast at tenfold background to the replay-versus-sham contrast in darkness.",
+  "proposed_experiment": "First establish a photon-matched replay effect in darkness. Repeat the coded exposure with independently generated Poisson and structured backgrounds at defined multiples of the signal dose, continuously verify both components with a monitor detector, and estimate the preregistered signal-by-background interaction across laboratories.",
+  "rationale": [
+   {
+    "step": "The principal P. caudatum optical-coupling report performed mutual exposure under darkness.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2092319343"
+    ]
+   },
+   {
+    "step": "A quantitative feasibility analysis concluded that weak emission and unfavorable ambient signal-to-noise ratio are major obstacles to cellular light communication.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2095038636"
+    ]
+   },
+   {
+    "step": "For each condition, signal-to-background ratio is computed as SBR = N_signal/N_background after weighting both spectra by measured window transmission; fixing N_signal while increasing N_background directly estimates the receiver's noise-tolerance curve.",
+    "justification_type": "computation"
+   }
+  ],
+  "cited_works": [
+   {
+    "work_id": "W2092319343",
+    "title": "Cellular Communication through Light",
+    "year": 2009,
+    "type": "article",
+    "abstract": "Information transfer is a fundamental of life. A few studies have reported that cells use photons (from an endogenous source) as information carriers. This study finds that cells can have an influence on other cells even when separated with a glass barrier, thereby disabling molecule diffusion through the cell-containing medium. As there is still very little known about the potential of photons for intercellular communication this study is designed to test for non-molecule-based triggering of two fundamental properties of life: cell division and energy uptake. The study was performed with a cellular organism, the ciliate Paramecium caudatum. Mutual exposure of cell populations occurred under conditions of darkness and separation with cuvettes (vials) allowing photon but not molecule transfer. The cell populations were separated either with glass allowing photon transmission from 340 nm to longer waves, or quartz being transmittable from 150 nm, i.e. from UV-light to longer waves. Even through glass, the cells affected cell division and energy uptake in neighboring cell populations. Depending on the cuvette material and the number of cells involved, these effects were positive or negative. Also, while paired populations with lower growth rates grew uncorrelated, growth of the better growing populations was correlated. As there were significant differences when separating the populations with glass or quartz, it is suggested that the cell populations use two (or more) frequencies for cellular information transfer, which influences at least energy uptake, cell division rate an"
+   },
+   {
+    "work_id": "W2095038636",
+    "title": "Cell-to-cell signaling through light: just a ghost of chance?",
+    "year": 2013,
+    "type": "article",
+    "abstract": "Despite the large number of reports attributing the signaling between detached cell cultures to the electromagnetic phenomena, almost no report so far included a rigorous analysis of the possibility of such signaling.In this paper, we examine the physical feasibility of the electromagnetic communication between cells, especially through light, with regard to the ambient noise illumination. We compare theoretically attainable parameters of communication with experimentally obtained data of the photon emission from cells without a specially pronounced ability of bioluminescence.We show that the weak intensity of the emission together with an unfavorable signal-to-noise ratio, which is typical for natural conditions, represent an important obstacle to the signal detection by cells."
+   }
+  ]
+ }
+]

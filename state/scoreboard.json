@@ -1,0 +1,24 @@
+{
+ "engines": [
+  {
+   "engine": "baseline-claude",
+   "candidates": 42,
+   "certified": 2,
+   "restatements": 0,
+   "novelty_yield": 2,
+   "mean_citations": 9.4,
+   "certification_rate": 0.05
+  },
+  {
+   "engine": "codex-solo",
+   "candidates": 40,
+   "certified": 16,
+   "restatements": 1,
+   "novelty_yield": 15,
+   "mean_citations": 4.2,
+   "certification_rate": 0.4
+  }
+ ],
+ "n_candidates": 78,
+ "n_claims": 15
+}

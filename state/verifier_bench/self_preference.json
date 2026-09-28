@@ -1,0 +1,16 @@
+{
+ "claude": {
+  "own_rate": 0.868,
+  "other_rate": 0.75,
+  "delta": 0.118,
+  "n_own": 38,
+  "n_other": 40
+ },
+ "codex": {
+  "own_rate": 0.45,
+  "other_rate": 0.053,
+  "delta": 0.397,
+  "n_own": 40,
+  "n_other": 38
+ }
+}

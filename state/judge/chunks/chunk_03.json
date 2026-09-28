@@ -1,0 +1,698 @@
+[
+ {
+  "candidate_id": "C017",
+  "seed_id": "Q2",
+  "statement": "For day-3 germinating Vigna radiata, source-intrinsic second- and third-order factorial cumulants of 400–750 nm UPE obey the calibrated Bernoulli-thinning laws κ2(η)=η²κ2(1) and κ3(η)=η³κ3(1) across optical transmissions η=0.10, 0.25, 0.50 and 1.00.",
+  "scope": {
+   "population": "Independent batches of day-3 germinating Vigna radiata seeds",
+   "condition": "Dark-adapted spontaneous emission recorded in stationary 30-minute blocks",
+   "comparator": "Empty chamber and intensity-matched Poisson LED measured through the same four transmissions",
+   "outcome": "Detector-corrected second- and third-order factorial cumulants of counts in preregistered 50 ms, 200 ms and 1 s bins"
+  },
+  "null_hypothesis": "The biological-sample cumulants reject the thinning laws at the preregistered 0.01 level or show the same transmission-dependent residuals as detector controls, indicating that the apparent statistics cannot be assigned to the emitted field.",
+  "estimand": "The joint chi-square lack-of-fit statistic for κr(η)=η^rκr(1), r=2,3, after propagation of quantum-efficiency, dark-count, crosstalk and dead-time uncertainties",
+  "proposed_experiment": "Place calibrated neutral-density filters before all detection optics, randomize filter order within each stationary recording block, and acquire photon-number histograms simultaneously with environmental and empty-chamber controls. Estimate factorial cumulants with a preregistered detector-response matrix calibrated using a pulsed Poisson source; test the two thinning equations jointly at every bin width and in held-out seed batches.",
+  "rationale": [
+   {
+    "step": "Photocount distributions have been measured in germinating mung beans, and their form changes with bin size.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2412356141"
+    ]
+   },
+   {
+    "step": "The critical review identifies detector nonideality as a central obstacle and argues that detectors closer to ideal may resolve UPE statistical properties.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2141663490"
+    ]
+   },
+   {
+    "step": "Calibrated statistical detector models have already enabled visible-light detection below 30 photons s−1 cm−2 while explicitly treating quantum efficiency and detector noise.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W3126489816"
+    ]
+   },
+   {
+    "step": "Independent detection with probability η binomially thins photon number, so the r-th factorial cumulant scales as η^r; failure of this scaling localizes the anomaly to the detector or an unmodelled transmission-dependent background.",
+    "justification_type": "computation"
+   },
+   {
+    "step": "The seed brief makes characterized quantum efficiency and dead-time prerequisites for interpreting photocount statistics.",
+    "justification_type": "given"
+   }
+  ],
+  "cited_works": [
+   {
+    "work_id": "W2141663490",
+    "title": "Biophotons, coherence and photocount statistics: A critical review",
+    "year": 2015,
+    "type": "article",
+    "abstract": " [NOTE: the corpus holds no usable abstract for this work. Judge its citation step on the title alone and mark the step unverifiable rather than false.]"
+   },
+   {
+    "work_id": "W2412356141",
+    "title": "Photocount statistics of ultra-weak photon emission from germinating mung bean",
+    "year": 2016,
+    "type": "article",
+    "abstract": " [NOTE: the corpus holds no usable abstract for this work. Judge its citation step on the title alone and mark the step unverifiable rather than false.]"
+   },
+   {
+    "work_id": "W3126489816",
+    "title": "Detectivity optimization to measure ultraweak light fluxes using an EM-CCD as binary photon counter array",
+    "year": 2021,
+    "type": "article",
+    "abstract": "Abstract For a wide range of purposes, one faces the challenge to detect light from extremely faint and spatially extended sources. In such cases, detector noises dominate over the photon noise of the source, and quantum detectors in photon counting mode are generally the best option. Here, we combine a statistical model with an in-depth analysis of detector noises and calibration experiments, and we show that visible light can be detected with an electron-multiplying charge-coupled devices (EM-CCD) with a signal-to-noise ratio (SNR) of 3 for fluxes less than $$30\\,{\\text{photon}}\\,{\\text{s}}^{ - 1} \\,{\\text{cm}}^{ - 2}$$ <mml:math xmlns:mml=\"http://www.w3.org/1998/Math/MathML\"> <mml:mrow> <mml:mn>30</mml:mn> <mml:mspace/> <mml:mtext>photon</mml:mtext> <mml:mspace/> <mml:msup> <mml:mrow> <mml:mtext>s</mml:mtext> </mml:mrow> <mml:mrow> <mml:mo>-</mml:mo> <mml:mn>1</mml:mn> </mml:mrow> </mml:msup> <mml:mspace/> <mml:msup> <mml:mrow> <mml:mtext>cm</mml:mtext> </mml:mrow> <mml:mrow> <mml:mo>-</mml:mo> <mml:mn>2</mml:mn> </mml:mrow> </mml:msup> </mml:mrow> </mml:math> . For green photons, this corresponds to 12 aW $${\\text{cm}}^{ - 2}$$ <mml:math xmlns:mml=\"http://www.w3.org/1998/Math/MathML\"> <mml:msup> <mml:mrow> <mml:mtext>cm</mml:mtext> </mml:mrow> <mml:mrow> <mml:mo>-</mml:mo> <mml:mn>2</mml:mn> </mml:mrow> </mml:msup> </mml:math> ≈ $$9{ } \\times 10^{ - 11}$$ <mml:math xmlns:mml=\"http://www.w3.org/1998/Math/MathML\"> <mml:mrow> <mml:mn>9</mml:mn> <mml:mrow/> <mml:mo>×</mml:mo> <mml:msup> <mml:mn>10</mml:mn> <mml:mrow> <mml:mo>-</mml:mo> <mml:mn>11</mml:mn> </mml:mrow> </mml:"
+   }
+  ]
+ },
+ {
+  "candidate_id": "C018",
+  "seed_id": "Q2",
+  "statement": "Aerobic wound-induced Spathiphyllum UPE is multimode thermal in the chlorophyll band: narrowing detection from 650–720 nm to 669.95–670.05 nm will increase g2(0) by at least 0.10 and reveal a picosecond bunching envelope absent under anoxia.",
+  "scope": {
+   "population": "Mature Spathiphyllum leaves from independently grown plants",
+   "condition": "Mechanical wounding after two hours of dark adaptation, measured separately under air and nitrogen",
+   "comparator": "The same leaves before wounding, wounded leaves under anoxia, broadband 650–720 nm detection, and an attenuated coherent laser calibration",
+   "outcome": "Cross-detector g2(τ) near zero delay and its dependence on optical bandwidth"
+  },
+  "null_hypothesis": "Narrowing the band produces less than a 0.10 increase in g2(0), no reproducible bunching envelope, or an identical feature in anoxic and detector-only controls.",
+  "estimand": "Δg2=g2,narrow(0)−g2,broad(0), together with the fitted bunching-envelope half-width after deconvolution of detector jitter",
+  "proposed_experiment": "Collect emission from a standardized array of wounded leaves into a stabilized Hanbury Brown–Twiss system. Alternate a 650–720 nm filter with a 0.10 nm tunable etalon centered at 670 nm, hold collection étendue fixed, and integrate coincidences over repeated leaves. Pre-register a jitter-convolved thermal bunching model and coherent g2=1 model, with filter order randomized and anoxic leaves processed identically.",
+  "rationale": [
+   {
+    "step": "Aerobic wounded Spathiphyllum leaves emit predominantly above 650 nm, whereas anoxia suppresses wound-induced emission; broadband count distributions in several states approximately followed Poisson laws.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2808116502"
+    ]
+   },
+   {
+    "step": "The UPE literature notes that a many-mode thermal photocount distribution approaches a Poisson distribution, making coherent and thermal emissions difficult to distinguish under broad mode collection.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W4400038049",
+     "W2141663490"
+    ]
+   },
+   {
+    "step": "At λ=670 nm and Δλ=0.10 nm, λ²/(cΔλ) is approximately 15 ps, setting the order of the expected first-order coherence time and thermal g2 bunching width.",
+    "justification_type": "computation"
+   },
+   {
+    "step": "For M independent equally populated thermal modes, g2(0)=1+1/M; spectral and spatial mode restriction should therefore increase bunching, whereas a coherent state retains g2(0)=1 under passive filtering.",
+    "justification_type": "computation"
+   }
+  ],
+  "cited_works": [
+   {
+    "work_id": "W2141663490",
+    "title": "Biophotons, coherence and photocount statistics: A critical review",
+    "year": 2015,
+    "type": "article",
+    "abstract": " [NOTE: the corpus holds no usable abstract for this work. Judge its citation step on the title alone and mark the step unverifiable rather than false.]"
+   },
+   {
+    "work_id": "W2808116502",
+    "title": "Leaf wound induced ultraweak photon emission is suppressed under anoxic stress: Observations of Spathiphyllum under aerobic and anaerobic conditions using novel in vivo methodology",
+    "year": 2018,
+    "type": "article",
+    "abstract": "Plants have evolved a variety of means to energetically sense and respond to abiotic and biotic environmental stress. Two typical photochemical signaling responses involve the emission of volatile organic compounds and light. The emission of certain leaf wound volatiles and light are mutually dependent upon oxygen which is subsequently required for the wound-induced lipoxygenase reactions that trigger the formation of fatty acids and hydroperoxides; ultimately leading to photon emission by chlorophyll molecules. A low noise photomultiplier with sensitivity in the visible spectrum (300-720 nm) is used to continuously measure long duration ultraweak photon emission of dark-adapting whole Spathiphyllum leaves (in vivo). Leaves were mechanically wounded after two hours of dark adaptation in aerobic and anaerobic conditions. It was found that (1) nitrogen incubation did not affect the pre-wound basal photocounts; (2) wound induced leaf biophoton emission was significantly suppressed when under anoxic stress; and (3) the aerobic wound induced emission spectra observed was > 650 nm, implicating chlorophyll as the likely emitter. Limitations of the PMT photocathode's radiant sensitivity, however, prevented accurate analysis from 700-720 nm. Further examination of leaf wounding profile photon counts revealed that the pre-wounding basal state (aerobic and anoxic), the anoxic wounding state, and the post-wounding aerobic state statistics all approximate a Poisson distribution. It is additionally observed that aerobic wounding induces two distinct exponential decay events. These observ"
+   },
+   {
+    "work_id": "W4400038049",
+    "title": "Biophotons: A Hard Problem",
+    "year": 2024,
+    "type": "article",
+    "abstract": "About a hundred years ago, the Russian biologist A. Gurwitsch, based on experiments with onion plants by measuring their growth rate, hypothesized that plants emit a weak electromagnetic field that somehow influences cell growth. This interesting observation remained fundamentally ignored by the scientific community; only in the 1950s the electromagnetic emission from some plants was measured using a photomultiplier used in single counting mode. Later, in the 1980s, several groups around the world started extensive work to understand the origin and role of this ultraweak emission, now called biophotons, coming from living organisms. Biophotons are an endogenous very small production of photons in the visible energy range in and from cells and organisms, and this emission is characteristic of living organisms. Today, there is no doubt that biophotons exist, this emission has been measured by many groups and for many different living organisms, from humans to bacteria. However, the origin of biophotons and whether organisms use them to exchange information is not yet well understood; no model proposed to date is capable of reproducing and interpreting the great variety of experimental data coming from the many different living systems measured so far. In this brief review, we present our experimental work on the biophotons coming from germinating seeds, the main experimental results, and some new methods we are using to analyze the data to open the door for interpretative models of this phenomenon clarifying its function in the regulation and communication between cells and l"
+   }
+  ]
+ },
+ {
+  "candidate_id": "C019",
+  "seed_id": "Q2",
+  "statement": "The squeezed-state claim for Xanthoria parietina implies a phase-sensitive minimum quadrature variance no greater than 0.92 of shot noise in a mode-matched 300–800 nm optical mode.",
+  "scope": {
+   "population": "Viable, dark-adapted Xanthoria parietina thalli prepared as in the published photocount study",
+   "condition": "Spontaneous emission measured in repeated stationary intervals, with the local-oscillator spectrum and spatial mode matched to the measured UPE",
+   "comparator": "Killed lichen, empty chamber, blocked signal port, and an attenuation-matched coherent calibration source",
+   "outcome": "Minimum balanced-homodyne quadrature variance normalized to contemporaneous shot noise"
+  },
+  "null_hypothesis": "All preregistered quadrature phases have variance at or above 0.98 of shot noise after correcting electronic noise, loss and mode mismatch, or any apparent reduction also occurs in blocked-port controls.",
+  "estimand": "The minimum loss-corrected quadrature variance Vmin/Vshot and its one-sided 95% confidence bound",
+  "proposed_experiment": "First measure the lichen's spectral and spatial emission profile, then shape a weak local oscillator to that mode and scan quadrature phase in randomized blocks. Calibrate shot noise before and after every biological block, quantify total optical loss and mode overlap, and perform the preregistered one-sided variance test on held-out thalli.",
+  "rationale": [
+   {
+    "step": "Photocount distributions from Xanthoria parietina were reported to be reproduced over 50 ms–6 s by a squeezed-state model with squeezing parameter r=0.06.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W43326842"
+    ]
+   },
+   {
+    "step": "Interpretations of UPE photocount statistics as coherent or squeezed states remain controversial and are not generally accepted.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2141663490"
+    ]
+   },
+   {
+    "step": "For an ideal squeezed quadrature, Vmin/Vshot=e^(−2r); substituting r=0.06 gives e^(−0.12)=0.887, so a 0.92 threshold allows limited calibrated loss while remaining a direct prediction of the reported parameter.",
+    "justification_type": "computation"
+   },
+   {
+    "step": "A classical mixture can imitate some photon-number distributions, but a reproducible quadrature variance below shot noise is a phase-sensitive nonclassical signature independent of fitting the same count histogram.",
+    "justification_type": "computation"
+   }
+  ],
+  "cited_works": [
+   {
+    "work_id": "W43326842",
+    "title": "Quantum nature of photon signal emitted by Xanthoria parietina and its implications to biology.",
+    "year": 2008,
+    "type": "article",
+    "abstract": "The properties of living systems are usually described in the semi-classical framework that makes phenomenological division of properties into four classes--matter, psyche, soft consciousness and hard consciousness. Quantum framework provides a scientific basis of this classification of properties. The scientific basis requires the existence of macroscopic quantum entity entangled with quantum photon field of a living system. Every living system emits a photon signal with features indicating its quantum nature. Quantum nature of the signal emitted by a sample of X. parietina is confirmed by analysing photo count distributions obtained in 20000 measurements of photon number in contiguous bins of sizes of 50, 100, 200, 300 and 500 ms. The measurements use a broadband detector sensitive in 300-800 nm range (Photo count distributions of background noise and observed signal are measured similarly. These measurements background noise corrected squeezed state parameters of the signal. The parameters are signal strength expressed in counts per bin, r = 0.06, theta = 2.76 and phi = 0.64. The parameters correctly reproduce photo count distribution of any bin size in 50 ms-6 s range. The reproduction of photo count distributions is a credible evidence of spontaneous emission of photon signal in a quantum squeezed state for macroscopic time by the sample. The evidence is extrapolated to other living systems emitting similar photon signals. It is suggested that every living system is associated with a photon field in squeezed state. The suggestion has far reaching implications to biolog"
+   },
+   {
+    "work_id": "W2141663490",
+    "title": "Biophotons, coherence and photocount statistics: A critical review",
+    "year": 2015,
+    "type": "article",
+    "abstract": " [NOTE: the corpus holds no usable abstract for this work. Judge its citation step on the title alone and mark the step unverifiable rather than false.]"
+   }
+  ]
+ },
+ {
+  "candidate_id": "C020",
+  "seed_id": "Q2",
+  "statement": "Aerobic wound-induced Spathiphyllum emission at 660–680 nm has intrinsic spatial first-order coherence exceeding that produced by passive filtering of an equally extended incoherent source, with excess |g1| of at least 0.10 at a 100 µm source-plane shear.",
+  "scope": {
+   "population": "Mature Spathiphyllum leaves from independently grown plants",
+   "condition": "Mechanical wounding after two hours of dark adaptation in air, analyzed in preregistered quasi-stationary decay windows",
+   "comparator": "Pre-wound leaves, wounded leaves under anoxia, and an intensity- and geometry-matched incoherent calibration source passed through identical optics",
+   "outcome": "Interferometric fringe visibility converted to |g1| after correcting arm imbalance and subtracting the incoherent-source prediction"
+  },
+  "null_hypothesis": "At 100 µm shear, the upper 95% confidence bound for excess |g1| is below 0.10 or the observed visibility is fully reproduced by the filtered incoherent calibration source.",
+  "estimand": "Excess spatial coherence Δ|g1|=|g1|leaf−|g1|matched-incoherent at 100 µm shear",
+  "proposed_experiment": "Image a fixed leaf region through a stabilized lateral-shearing interferometer at several source-plane separations, with 100 µm designated as primary. Measure each arm separately, phase-step the interferometer, and estimate visibility from repeated wound-decay windows. Run an extended incoherent source matched to the leaf's measured intensity map and spectrum through the identical aperture and filter to quantify coherence introduced by the optics alone.",
+  "rationale": [
+   {
+    "step": "Wound-induced Spathiphyllum emission is oxygen-dependent and concentrated above 650 nm, providing a defined high-signal biological and spectral reference.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2808116502"
+    ]
+   },
+   {
+    "step": "The UPE literature's claims about coherence and the interpretation of photocount statistics are explicitly controversial.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2141663490"
+    ]
+   },
+   {
+    "step": "Photon-counting EMCCD systems with calibrated detector-noise models can detect visible fluxes below 30 photons s−1 cm−2, supporting long-exposure interferometric imaging at UPE levels.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W3126489816"
+    ]
+   },
+   {
+    "step": "For two interferometer arms with intensities I1 and I2, visibility V=[2√(I1I2)/(I1+I2)]|g1|; measuring both arm intensities therefore permits a checkable estimate of first-order coherence.",
+    "justification_type": "computation"
+   }
+  ],
+  "cited_works": [
+   {
+    "work_id": "W2141663490",
+    "title": "Biophotons, coherence and photocount statistics: A critical review",
+    "year": 2015,
+    "type": "article",
+    "abstract": " [NOTE: the corpus holds no usable abstract for this work. Judge its citation step on the title alone and mark the step unverifiable rather than false.]"
+   },
+   {
+    "work_id": "W2808116502",
+    "title": "Leaf wound induced ultraweak photon emission is suppressed under anoxic stress: Observations of Spathiphyllum under aerobic and anaerobic conditions using novel in vivo methodology",
+    "year": 2018,
+    "type": "article",
+    "abstract": "Plants have evolved a variety of means to energetically sense and respond to abiotic and biotic environmental stress. Two typical photochemical signaling responses involve the emission of volatile organic compounds and light. The emission of certain leaf wound volatiles and light are mutually dependent upon oxygen which is subsequently required for the wound-induced lipoxygenase reactions that trigger the formation of fatty acids and hydroperoxides; ultimately leading to photon emission by chlorophyll molecules. A low noise photomultiplier with sensitivity in the visible spectrum (300-720 nm) is used to continuously measure long duration ultraweak photon emission of dark-adapting whole Spathiphyllum leaves (in vivo). Leaves were mechanically wounded after two hours of dark adaptation in aerobic and anaerobic conditions. It was found that (1) nitrogen incubation did not affect the pre-wound basal photocounts; (2) wound induced leaf biophoton emission was significantly suppressed when under anoxic stress; and (3) the aerobic wound induced emission spectra observed was > 650 nm, implicating chlorophyll as the likely emitter. Limitations of the PMT photocathode's radiant sensitivity, however, prevented accurate analysis from 700-720 nm. Further examination of leaf wounding profile photon counts revealed that the pre-wounding basal state (aerobic and anoxic), the anoxic wounding state, and the post-wounding aerobic state statistics all approximate a Poisson distribution. It is additionally observed that aerobic wounding induces two distinct exponential decay events. These observ"
+   },
+   {
+    "work_id": "W3126489816",
+    "title": "Detectivity optimization to measure ultraweak light fluxes using an EM-CCD as binary photon counter array",
+    "year": 2021,
+    "type": "article",
+    "abstract": "Abstract For a wide range of purposes, one faces the challenge to detect light from extremely faint and spatially extended sources. In such cases, detector noises dominate over the photon noise of the source, and quantum detectors in photon counting mode are generally the best option. Here, we combine a statistical model with an in-depth analysis of detector noises and calibration experiments, and we show that visible light can be detected with an electron-multiplying charge-coupled devices (EM-CCD) with a signal-to-noise ratio (SNR) of 3 for fluxes less than $$30\\,{\\text{photon}}\\,{\\text{s}}^{ - 1} \\,{\\text{cm}}^{ - 2}$$ <mml:math xmlns:mml=\"http://www.w3.org/1998/Math/MathML\"> <mml:mrow> <mml:mn>30</mml:mn> <mml:mspace/> <mml:mtext>photon</mml:mtext> <mml:mspace/> <mml:msup> <mml:mrow> <mml:mtext>s</mml:mtext> </mml:mrow> <mml:mrow> <mml:mo>-</mml:mo> <mml:mn>1</mml:mn> </mml:mrow> </mml:msup> <mml:mspace/> <mml:msup> <mml:mrow> <mml:mtext>cm</mml:mtext> </mml:mrow> <mml:mrow> <mml:mo>-</mml:mo> <mml:mn>2</mml:mn> </mml:mrow> </mml:msup> </mml:mrow> </mml:math> . For green photons, this corresponds to 12 aW $${\\text{cm}}^{ - 2}$$ <mml:math xmlns:mml=\"http://www.w3.org/1998/Math/MathML\"> <mml:msup> <mml:mrow> <mml:mtext>cm</mml:mtext> </mml:mrow> <mml:mrow> <mml:mo>-</mml:mo> <mml:mn>2</mml:mn> </mml:mrow> </mml:msup> </mml:math> ≈ $$9{ } \\times 10^{ - 11}$$ <mml:math xmlns:mml=\"http://www.w3.org/1998/Math/MathML\"> <mml:mrow> <mml:mn>9</mml:mn> <mml:mrow/> <mml:mo>×</mml:mo> <mml:msup> <mml:mn>10</mml:mn> <mml:mrow> <mml:mo>-</mml:mo> <mml:mn>11</mml:mn> </mml:mrow> </mml:"
+   }
+  ]
+ },
+ {
+  "candidate_id": "C021",
+  "seed_id": "Q3",
+  "statement": "In every preparation with a published optical-only donor-to-receiver effect, an artificial source calibrated to reproduce the donor's absolute spectral photon fluence rate at the receiver plane fails to reproduce the effect, and the artificial fluence rate needed to reproduce half the reported effect exceeds the donor's own fluence rate by at least a factor of 1000.",
+  "scope": {
+   "population": "Paramecium caudatum population pairs separated by glass or quartz cuvette walls (Fels preparation), and isolated MCF7 / MCF10A mitochondria in adjacent optically coupled cuvettes (Frontiers 2023 preparation)",
+   "condition": "receiver exposed to a spectrally and absolutely dose-matched artificial source (programmable LED array / monochromator, 300-800 nm, matched to within +/-30 percent in every 50 nm band and matched in temporal profile) in place of the live donor, plus an ND-attenuation ladder spanning 10^0 to 10^6 times the donor fluence",
+   "comparator": "live donor across the identical optical window; opaque-shutter sham with identical thermal and gas conditions; medium-only chamber",
+   "outcome": "the original published endpoint - cell division rate and vacuole/energy uptake for Paramecium; oxygen consumption rate for the mitochondrial preparation"
+  },
+  "null_hypothesis": "R <= 1: artificial illumination dose-matched to the donor reproduces at least half the published donor effect size, establishing photon sufficiency and killing this hypothesis.",
+  "estimand": "R = F_half / F_donor, where F_half is the artificial-source photon fluence rate (photons cm^-2 s^-1 integrated 300-800 nm) that produces 50 percent of the published donor effect size, and F_donor is the absolutely calibrated donor fluence rate at the receiver plane. Claim: R >= 10^3.",
+  "proposed_experiment": "Rebuild one published DCI preparation with a removable donor chamber. Step 1: map the donor's absolute spectral photon fluence at the exact receiver plane with a traceably calibrated photon-counting PMT plus a cooled qCMOS for spatial uniformity, in 50 nm bands from 300 to 800 nm, over the full exposure window. Step 2: replace the donor with a programmable LED/monochromator source driven to reproduce that map within +/-30 percent per band and matched in temporal envelope, verified in situ at the receiver plane. Step 3: run a blinded, pre-registered ND ladder at 10^0, 10^1, 10^2, 10^3, 10^4, 10^5, 10^6 times the donor fluence plus opaque sham, with the receiver endpoint scored by an operator blind to arm. Fit the dose-response and read off F_half. Multi-lab, with the calibration transfer standard physically shipped between labs.",
+  "rationale": [
+   {
+    "step": "Positive optical-only donor-to-receiver effects are on record in exactly these two preparations, with glass-versus-quartz window contrasts and physically separated cuvettes; the mitochondrial study explicitly leaves the carrier unidentified and calls for UPE characterisation.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2092319343",
+     "W1993467765",
+     "W4386957427"
+    ]
+   },
+   {
+    "step": "The field's own signal-to-noise analysis argues that emitted intensity plus ambient noise makes receiver-side detection implausible, but it is a calculation over literature values and never substitutes a calibrated source for the donor inside the same preparation.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2095038636",
+     "W1523504261"
+    ]
+   },
+   {
+    "step": "Reported spontaneous UPE intensities span a few to about 10^4 photons cm^-2 s^-1 over roughly 260-800 nm, with 10 to 10^4 photons s^-1 cm^-2 quoted specifically for the UV from active cells.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W146728166",
+     "W2618829643",
+     "W4404871602"
+    ]
+   },
+   {
+    "step": "Take the most generous published emission, 10^4 photons cm^-2 s^-1, sustained for 24 h = 8.64e4 s. Accumulated fluence = 8.64e8 photons cm^-2. At 450 nm the photon energy is hc/lambda = (6.626e-34 * 2.998e8) / 450e-9 = 4.41e-19 J, so the 24 h energy fluence is 8.64e8 * 4.41e-19 = 3.81e-10 J cm^-2.",
+    "justification_type": "computation"
+   },
+   {
+    "step": "Documented photobiomodulation effects on proliferation in cultured cells require of order 1-10 J cm^-2 at the target, with peak proliferative benefit near 2 J cm^-2 and a characterised blue/green anti-proliferative effect at 3 J cm^-2.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2135147563",
+     "W2904905977",
+     "W2744285886"
+    ]
+   },
+   {
+    "step": "Ratio of the weakest documented photobiological dose to the entire 24 h UPE budget: 1 J cm^-2 / 3.81e-10 J cm^-2 = 2.6e9. The claim R >= 10^3 is therefore conservative by about six orders of magnitude relative to established photobiology dose-response.",
+    "justification_type": "computation"
+   },
+   {
+    "step": "The field itself names absolutely calibrated photon budgets, showing the receiver plausibly gets enough photons, as the criterion that would settle the functional-role question.",
+    "justification_type": "given"
+   }
+  ],
+  "cited_works": [
+   {
+    "work_id": "W2092319343",
+    "title": "Cellular Communication through Light",
+    "year": 2009,
+    "type": "article",
+    "abstract": "Information transfer is a fundamental of life. A few studies have reported that cells use photons (from an endogenous source) as information carriers. This study finds that cells can have an influence on other cells even when separated with a glass barrier, thereby disabling molecule diffusion through the cell-containing medium. As there is still very little known about the potential of photons for intercellular communication this study is designed to test for non-molecule-based triggering of two fundamental properties of life: cell division and energy uptake. The study was performed with a cellular organism, the ciliate Paramecium caudatum. Mutual exposure of cell populations occurred under conditions of darkness and separation with cuvettes (vials) allowing photon but not molecule transfer. The cell populations were separated either with glass allowing photon transmission from 340 nm to longer waves, or quartz being transmittable from 150 nm, i.e. from UV-light to longer waves. Even through glass, the cells affected cell division and energy uptake in neighboring cell populations. Depending on the cuvette material and the number of cells involved, these effects were positive or negative. Also, while paired populations with lower growth rates grew uncorrelated, growth of the better growing populations was correlated. As there were significant differences when separating the populations with glass or quartz, it is suggested that the cell populations use two (or more) frequencies for cellular information transfer, which influences at least energy uptake, cell division rate an"
+   },
+   {
+    "work_id": "W1993467765",
+    "title": "Correction: Cellular Communication through Light",
+    "year": 2009,
+    "type": "erratum",
+    "abstract": "Information transfer is a fundamental of life. A few studies have reported that cells use photons (from an endogenous source) as information carriers. This study finds that cells can have an influence on other cells even when separated with a glass barrier, thereby disabling molecule diffusion through the cell-containing medium. As there is still very little known about the potential of photons for intercellular communication this study is designed to test for non-molecule-based triggering of two fundamental properties of life: cell division and energy uptake. The study was performed with a cellular organism, the ciliate Paramecium caudatum. Mutual exposure of cell populations occurred under conditions of darkness and separation with cuvettes (vials) allowing photon but not molecule transfer. The cell populations were separated either with glass allowing photon transmission from 340 nm to longer waves, or quartz being transmittable from 150 nm, i.e. from UVlight to longer waves. Even through glass, the cells affected cell division and energy uptake in neighboring cell populations. Depending on the cuvette material and the number of cells involved, these effects were positive or negative. Also, while paired populations with lower growth rates grew uncorrelated, growth of the better growing populations was correlated. As there were significant differences when separating the populations with glass or quartz, it is suggested that the cell populations use two (or more) frequencies for cellular information transfer, which influences at least energy uptake, cell division rate and"
+   },
+   {
+    "work_id": "W4386957427",
+    "title": "Non-chemical signalling between mitochondria",
+    "year": 2023,
+    "type": "article",
+    "abstract": "A wide variety of studies have reported some form of non-chemical or non-aqueous communication between physically isolated organisms, eliciting changes in cellular proliferation, morphology, and/or metabolism. The sources and mechanisms of such signalling pathways are still unknown, but have been postulated to involve vibration, volatile transmission, or light through the phenomenon of ultraweak photon emission. Here, we report non-chemical communication between isolated mitochondria from MCF7 (cancer) and MCF10A (non-cancer) cell lines. We found that mitochondria in one cuvette stressed by an electron transport chain inhibitor, antimycin, alters the respiration of mitochondria in an adjacent, but chemically and physically separate cuvette, significantly decreasing the rate of oxygen consumption compared to a control ( p = &amp;lt;0.0001 in MCF7 and MCF10A mitochondria). Moreover, the changes in O 2 -consumption were dependent on the origin of mitochondria (cancer vs. non-cancer) as well as the presence of “ambient” light. Our results support the existence of non-chemical signalling between isolated mitochondria. The experimental design suggests that the non-chemical communication is light-based, although further work is needed to fully elucidate its nature."
+   },
+   {
+    "work_id": "W2095038636",
+    "title": "Cell-to-cell signaling through light: just a ghost of chance?",
+    "year": 2013,
+    "type": "article",
+    "abstract": "Despite the large number of reports attributing the signaling between detached cell cultures to the electromagnetic phenomena, almost no report so far included a rigorous analysis of the possibility of such signaling.In this paper, we examine the physical feasibility of the electromagnetic communication between cells, especially through light, with regard to the ambient noise illumination. We compare theoretically attainable parameters of communication with experimentally obtained data of the photon emission from cells without a specially pronounced ability of bioluminescence.We show that the weak intensity of the emission together with an unfavorable signal-to-noise ratio, which is typical for natural conditions, represent an important obstacle to the signal detection by cells."
+   },
+   {
+    "work_id": "W1523504261",
+    "title": "Light based cellular interactions: hypotheses and perspectives",
+    "year": 2015,
+    "type": "article",
+    "abstract": "This work investigates the theoretical possibility of interactions between cells via light. We first take a brief look at the previous research done in the past to have a better understanding of the field and the origins of the concept of cellular interactions. Then we identify the different elements essential for interactions between two parties. We then compare the required elements with the known and studied elements and characteristics which are well defined in biology, chemistry and physics. This way we are able to set up four postulates required for cell interactions: I. A signal is present and subject to secondary modulation by the emitter cells. II. There is a plastic information medium that reacts directly to the metabolic state of the emitter and therefore carries information about the emitter. III. An optical signal can be perceived by cells on a molecular level by a multitude of different receptors. IV. The information can in theory be processed by cells and metabolic changes in reaction to the signals can be observed. We demonstrate that all required elements have been observed. Most of them have important and well-known roles in cells. Therefore we suggest that our hypothetical model is a good explanation for light based cellular interactions."
+   },
+   {
+    "work_id": "W146728166",
+    "title": "Properties of biophotons and their theoretical implications.",
+    "year": 2003,
+    "type": "article",
+    "abstract": "The word \"biophotons\" is used to denote a permanent spontaneous photon emission from all living systems. It displays a few up to some hundred photons/(s x cm2) within the spectral range from at least 260 to 800 nm. It is closely linked to delayed luminescence (DL) of biological tissues which describes the long term and ultra weak reemission of photons after exposure to light illumination. During relaxation DL turns continuously into the steady state biophoton emission, where both, DL and biophoton emission exhibit mode coupling over the entire spectrum and a Poissonian photo count distribution. DL is representing excited states of the biophoton field. The physical properties indicate that biophotons originate from fully coherent and sometimes even squeezed states. The physical analysis provides thermodynamic and quantum optical interpretation, in order to understand the biological impacts of biophotons. Biological phenomena like intracellular and intercellular communication, cell growth and differentiation, interactions among biological systems (like \"Gestaltbildung\" or swarming), and microbial infections can be understood in terms of biophotons. \"Biophotonics\", the corresponding field of applications, provide a new powerful tool for assessing the quality of food (like freshness and shelf life), microbial infections, environmental influences and for substantiating medical diagnosis and therapy."
+   },
+   {
+    "work_id": "W2618829643",
+    "title": "The Increment of Genoprotective Effect of Melatonin due to “Autooptic” Effect versus the Genotoxicity of Mitoxantron",
+    "year": 2017,
+    "type": "article",
+    "abstract": "Background: Genotoxicity due to the effect of anti-cancer drugs on the healthy cells in cancerous patients is one of the problems of chemotherapy. Mitoxantrone is a chemotherapy anti-cancer drug, which can have side effects on the healthy cells like secondary cancers. On the other side, Melatonin is a hormone that is responsible for the daily rhythm adjustment and has several properties to be anti-cancer and anti-inflammation, and therefore it has a genoprotective effect against the genotoxicity. Recently, it has been shown that all living cells produce ultraweak photon emission (UPE) spontaneously and continuously. The intensity of UPE is in the order of a few, up to 104 photon/(cm2 sec) (or 10−19 to 10−14 W/cm2) measurable by photodetectors. UPEs are produced from diverse natural oxidative and biochemical reactions, especially free radical reactions and the simple cessation of excited molecules. Also, it has been evidenced that UPE has a signaling role at a distance among different cell cultures.Objective: Here, we investigate the effect of UPE among similar cells (i.e. “Autooptic effect”) by using mirrors around the cell plate(s). Here, we have used HepG2 as sample cancer cells.Methods: In this study, the HepG2 cells were co-treated by melatonin as a genoprotective and silver nanoparticles as a carrier against mitoxantrone’s genotoxicity. Our results are analyzed based on the Comet assay method, and the genoprotective effect of melatonin is investigated in presence of (and without) mirrors against the genotoxicity of mitoxantrone. Additionally, the autooptic effect is in"
+   },
+   {
+    "work_id": "W4404871602",
+    "title": "Open quantum systems theory of ultraweak ultraviolet photon emissions: Revisiting Gurwitsch's onion experiment as a prototype for quantum biology",
+    "year": 2024,
+    "type": "article",
+    "abstract": "A century ago it was discovered that metabolic processes in living cells emit a spectrum of very low intensity radiation. This was based on observations that radiant energy from proliferating cells can amplify the rate of cell division in other nearby cellular life. Although metabolic radiation is now thoroughly documented in research on ultraweak photon emissions (UPE), the original finding that UPE can enhance mitogenesis remains controversial. This controversy is addressed by establishing a physical basis for phenomenological observations that biological UPE can amplify mitogenesis in living cells. Enhanced mitosis is rationalized as a resonance effect based on open quantum systems theory using Fano and Feshbach's methods. This application of quantum theory to biology has important consequences for understanding health, medicine, and principles of living matter."
+   },
+   {
+    "work_id": "W2135147563",
+    "title": "Biphasic Dose Response in Low Level Light Therapy",
+    "year": 2009,
+    "type": "article",
+    "abstract": "The use of low levels of visible or near infrared light for reducing pain, inflammation and edema, promoting healing of wounds, deeper tissues and nerves, and preventing cell death and tissue damage has been known for over forty years since the invention of lasers. Despite many reports of positive findings from experiments conducted in vitro, in animal models and in randomized controlled clinical trials, LLLT remains controversial in mainstream medicine. The biochemical mechanisms underlying the positive effects are incompletely understood, and the complexity of rationally choosing amongst a large number of illumination parameters such as wavelength, fluence, power density, pulse structure and treatment timing has led to the publication of a number of negative studies as well as many positive ones. A biphasic dose response has been frequently observed where low levels of light have a much better effect on stimulating and repairing tissues than higher levels of light. The so-called Arndt-Schulz curve is frequently used to describe this biphasic dose response. This review will cover the molecular and cellular mechanisms in LLLT, and describe some of our recent results in vitro and in vivo that provide scientific explanations for this biphasic dose response."
+   },
+   {
+    "work_id": "W2904905977",
+    "title": "Review of light parameters and photobiomodulation efficacy: dive into complexity",
+    "year": 2018,
+    "type": "article",
+    "abstract": "Photobiomodulation (PBM) therapy, previously known as low-level laser therapy, was discovered more than 50 years ago, yet there is still no agreement on the parameters and protocols for its clinical application. Some groups have recommended the use of a power density less than 100 mW/cm2 and an energy density of 4 to 10 J/cm2 at the level of the target tissue. Others recommend as much as 50 J/cm2 at the tissue surface. The wide range of parameters that can be applied (wavelength, energy, fluence, power, irradiance, pulse mode, treatment duration, and repetition) in some cases has led to contradictory results. In our review, we attempt to evaluate the range of effective and ineffective parameters in PBM. Studies in vitro with cultured cells or in vivo with different tissues were divided into those with higher numbers of mitochondria (muscle, brain, heart, nerve) or lower numbers of mitochondria (skin, tendon, cartilage). Graphs were plotted of energy density against power density. Although the results showed a high degree of variability, cells/tissues with high numbers of mitochondria tended to respond to lower doses of light than those with lower number of mitochondria. Ineffective studies in cells with high mitochondrial activity appeared to be more often due to over-dosing than to under-dosing."
+   },
+   {
+    "work_id": "W2744285886",
+    "title": "Red (660 nm) or near-infrared (810 nm) photobiomodulation stimulates, while blue (415 nm), green (540 nm) light inhibits proliferation in human adipose-derived stem cells",
+    "year": 2017,
+    "type": "article",
+    "abstract": "Abstract We previously showed that blue (415 nm) and green (540 nm) wavelengths were more effective in stimulating osteoblast differentiation of human adipose-derived stem cells (hASC), compared to red (660 nm) and near-infrared (NIR, 810 nm). Intracellular calcium was higher after blue/green, and could be inhibited by the ion channel blocker, capsazepine. In the present study we asked what was the effect of these four wavelengths on proliferation of the hASC? When cultured in proliferation medium there was a clear difference between blue/green which inhibited proliferation and red/NIR which stimulated proliferation, all at 3 J/cm 2 . Blue/green reduced cellular ATP, while red/NIR increased ATP in a biphasic manner. Blue/green produced a bigger increase in intracellular calcium and reactive oxygen species (ROS). Blue/green reduced mitochondrial membrane potential (MMP) and lowered intracellular pH, while red/NIR had the opposite effect. Transient receptor potential vanilloid 1 (TRPV1) ion channel was expressed in hADSC, and the TRPV1 ligand capsaicin (5uM) stimulated proliferation, which could be abrogated by capsazepine. The inhibition of proliferation caused by blue/green could also be abrogated by capsazepine, and by the antioxidant, N-acetylcysteine. The data suggest that blue/green light inhibits proliferation by activating TRPV1, and increasing calcium and ROS."
+   }
+  ]
+ },
+ {
+  "candidate_id": "C022",
+  "seed_id": "Q3",
+  "statement": "Brightness conservation caps any reflective or focusing geometry at roughly twice the photon fluence a receiver gets facing the bare donor, so the reflector-specific biological effects reported in focused-chamber research cannot be dose-driven optical effects.",
+  "scope": {
+   "population": "adult murine subventricular-zone neural stem cell / neurosphere cultures, and Caenorhabditis elegans cohorts, in concave or sector reflective chambers of the type reviewed in the focused-reflective-chamber literature",
+   "condition": "reflective chamber with optical return gain G measured in situ with a traceably calibrated isotropic micro-source, per 50 nm band",
+   "comparator": "geometrically identical blackened chamber (G approximately 1) matched for wall thermal emissivity, gas volume and evaporation; plus a direct-exposure arm in which donor emission is doubled by doubling donor biomass at fixed distance",
+   "outcome": "neuronal differentiation fraction by immunocytochemistry, neurosphere count, and median C. elegans lifespan"
+  },
+  "null_hypothesis": "Measured in-situ G exceeds 2, or effect size rises monotonically with log G and vanishes at G approximately 1 - either result falsifies the etendue-bound claim and supports optical mediation.",
+  "estimand": "G = (photon fluence at the receiver plane with the reflector) / (without it), measured per 50 nm band with a calibrated in-situ source; and beta = the slope of biological effect size on log G. Claim: G <= 2 and beta indistinguishable from 0 at alpha = 0.05 with pre-registered power.",
+  "proposed_experiment": "Take one reflective chamber with a published positive result. First, with no biology present, place a traceably calibrated fibre-coupled isotropic micro-source at the donor position and a calibrated PMT/qCMOS at the receiver position, and measure G per 50 nm band from 300 to 800 nm - this number has never been reported. Second, fabricate a matched blackened chamber with identical geometry, wall thermal emissivity, gas volume and evaporation rate, and instrument both with thermocouples and an IR camera to bound the radiative-thermal confound. Third, run the biological endpoint blinded and randomised across a graded gain series (blackened, half-silvered, fully silvered, silvered plus focusing) whose G values were measured in step one, and regress effect size on log G. A photon-mediated effect must show beta > 0 and must vanish at G approximately 1.",
+  "rationale": [
+   {
+    "step": "Concave and sector reflective chambers are claimed to focus ultraweak biophoton emission and to alter neural stem cell UPE and differentiation, and to extend C. elegans lifespan by 19-30 percent; the review that collects these reports itself flags absent blinding, small samples, inconsistent methods and no independent replication.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W7142519026"
+    ]
+   },
+   {
+    "step": "The primary neural stem cell experiment that this literature rests on reports the opposite of the summary: the mirror did not significantly increase UPE either before or after differentiation, and neither mirror nor silver nanoparticles changed neurosphere number, while silver nanoparticles alone raised UPE and increased neuronal differentiation by 44 percent. The reflector arm was the null arm.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2999575750"
+    ]
+   },
+   {
+    "step": "Mirror-based self-exposure ('autooptic') geometry has separately been claimed to boost a genoprotective drug effect in HepG2 cells, using the same untested premise that a mirror materially raises the delivered optical dose.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2618829643"
+    ]
+   },
+   {
+    "step": "Etendue / brightness conservation: no passive optic can raise the radiance L of a source. The maximum irradiance deliverable to a receiver from a Lambertian source of radiance L is pi*L, attained when the receiver collects a full hemisphere. A receiver already facing the donor across a short gap collects approximately one hemisphere, so a rear mirror of reflectivity R_m can add at most the back hemisphere: G <= 1 + R_m <= 1.9 for R_m = 0.9. Curvature redistributes but cannot exceed this bound.",
+    "justification_type": "computation"
+   },
+   {
+    "step": "Combining with the fluence arithmetic of Q3-1: the baseline optical dose in these chambers is about 10^9 below the weakest documented photobiological threshold, so a factor <= 2 change could only produce a 19-30 percent lifespan shift if the receiver dose-response were a step function sited at 10^-9 of every measured photobiological threshold.",
+    "justification_type": "computation"
+   },
+   {
+    "step": "Measured photobiological dose-response is biphasic and shallow near threshold rather than step-like, over exactly the fluence range where thresholds have been characterised.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2135147563",
+     "W2904905977"
+    ]
+   }
+  ],
+  "cited_works": [
+   {
+    "work_id": "W7142519026",
+    "title": "Biological Effects of Concave Reflective Geometries: A Critical Review of Focused Reflective Chamber Research and Its Implications for Clinical Medicine",
+    "year": 2026,
+    "type": "article",
+    "abstract": "Background: Concave reflective chambers are metallic enclosures that use curved geometries to focus electromagnetic radiation, including ultraweak biophoton emissions from biological systems, on a specific area. Originating from Soviet-era research, these devices remain largely unknown in Western clinical medicine. This review critically evaluates the available research on physiological and cellular responses to focused reflection settings. Objective: This systematic review examines published experimental and clinical literature on concave reflective geometries to identify credible biophysical mechanisms, evaluate study quality, assess reproducibility and determine whether sufficient evidence exists to support controlled clinical research. Methods: An in-depth literature review was conducted using PubMed, Google Scholar, Scopus, Journal of Scientific Exploration archives and the Russian Science Citation Index (RSCI). Search terms included “concave reflective geometry,” “biophoton reflection,” and “ultraweak photon emission.” Russian and English periodicals were included. Modified GRADE criteria tailored for emerging technology were applied. Results: Between 1990 and 2025, 47 pertinent publications were identified. Variations in the autonomic nervous system, intensity of ultraweak photon emission, electroencephalogram patterns and organism survivability in model systems have been reported. The most methodologically rigorous investigation showed that concave reflective surroundings changed the emission of ultra-weak photons from neural stem cells and affected the patterns of "
+   },
+   {
+    "work_id": "W2999575750",
+    "title": "An Experimental Investigation of Ultraweak Photon Emission from Adult Murine Neural Stem Cells",
+    "year": 2020,
+    "type": "article",
+    "abstract": "Neurons like other living cells may have ultraweak photon emission (UPE) during neuronal activity. This study is aimed to evaluate UPE from neural stem cells (NSC) during their serial passaging and differentiation. We also investigate whether the addition of silver nanoparticles (AgNPs) or enhancement of UPE (by AgNPs or mirror) affect the differentiation of NSC. In our method, neural stem and progenitor cells of subventricular zone (SVZ) are isolated and expanded using the neurosphere assay. The obtained dissociated cells allocated and cultivated into three groups: groups: I: cell (control), II: cell + mirror, and III: cell + AgNPs. After seven days, the primary neurospheres were counted and their mean number was obtained. Serial passages continuous up to sixth passages in the control group. Differentiation capacity of the resulting neurospheres were evaluated in vitro by immunocytochemistry techniques. Measurement of UPE was carried out by photomultiplier tube (PMT) in the following steps: at the end of primary culture, six serial cell passages of the control group, before and after of the differentiation for 5 minutes. The results show that neither mirror nor AgNPs affect on the neurosphere number. The UPE of the NSC in the sixth subculturing passage was significantly higher than in the primary passage (P < 0.05). AgNPs significantly increased the UPE of the NSC compared to the control group before and after the differentiation (P < 0.05). Also, the treatment with AgNPs increased 44% neuronal differentiation of the harvested NSCs. UPE of NSC after the differentiation was"
+   },
+   {
+    "work_id": "W2618829643",
+    "title": "The Increment of Genoprotective Effect of Melatonin due to “Autooptic” Effect versus the Genotoxicity of Mitoxantron",
+    "year": 2017,
+    "type": "article",
+    "abstract": "Background: Genotoxicity due to the effect of anti-cancer drugs on the healthy cells in cancerous patients is one of the problems of chemotherapy. Mitoxantrone is a chemotherapy anti-cancer drug, which can have side effects on the healthy cells like secondary cancers. On the other side, Melatonin is a hormone that is responsible for the daily rhythm adjustment and has several properties to be anti-cancer and anti-inflammation, and therefore it has a genoprotective effect against the genotoxicity. Recently, it has been shown that all living cells produce ultraweak photon emission (UPE) spontaneously and continuously. The intensity of UPE is in the order of a few, up to 104 photon/(cm2 sec) (or 10−19 to 10−14 W/cm2) measurable by photodetectors. UPEs are produced from diverse natural oxidative and biochemical reactions, especially free radical reactions and the simple cessation of excited molecules. Also, it has been evidenced that UPE has a signaling role at a distance among different cell cultures.Objective: Here, we investigate the effect of UPE among similar cells (i.e. “Autooptic effect”) by using mirrors around the cell plate(s). Here, we have used HepG2 as sample cancer cells.Methods: In this study, the HepG2 cells were co-treated by melatonin as a genoprotective and silver nanoparticles as a carrier against mitoxantrone’s genotoxicity. Our results are analyzed based on the Comet assay method, and the genoprotective effect of melatonin is investigated in presence of (and without) mirrors against the genotoxicity of mitoxantrone. Additionally, the autooptic effect is in"
+   },
+   {
+    "work_id": "W2135147563",
+    "title": "Biphasic Dose Response in Low Level Light Therapy",
+    "year": 2009,
+    "type": "article",
+    "abstract": "The use of low levels of visible or near infrared light for reducing pain, inflammation and edema, promoting healing of wounds, deeper tissues and nerves, and preventing cell death and tissue damage has been known for over forty years since the invention of lasers. Despite many reports of positive findings from experiments conducted in vitro, in animal models and in randomized controlled clinical trials, LLLT remains controversial in mainstream medicine. The biochemical mechanisms underlying the positive effects are incompletely understood, and the complexity of rationally choosing amongst a large number of illumination parameters such as wavelength, fluence, power density, pulse structure and treatment timing has led to the publication of a number of negative studies as well as many positive ones. A biphasic dose response has been frequently observed where low levels of light have a much better effect on stimulating and repairing tissues than higher levels of light. The so-called Arndt-Schulz curve is frequently used to describe this biphasic dose response. This review will cover the molecular and cellular mechanisms in LLLT, and describe some of our recent results in vitro and in vivo that provide scientific explanations for this biphasic dose response."
+   },
+   {
+    "work_id": "W2904905977",
+    "title": "Review of light parameters and photobiomodulation efficacy: dive into complexity",
+    "year": 2018,
+    "type": "article",
+    "abstract": "Photobiomodulation (PBM) therapy, previously known as low-level laser therapy, was discovered more than 50 years ago, yet there is still no agreement on the parameters and protocols for its clinical application. Some groups have recommended the use of a power density less than 100 mW/cm2 and an energy density of 4 to 10 J/cm2 at the level of the target tissue. Others recommend as much as 50 J/cm2 at the tissue surface. The wide range of parameters that can be applied (wavelength, energy, fluence, power, irradiance, pulse mode, treatment duration, and repetition) in some cases has led to contradictory results. In our review, we attempt to evaluate the range of effective and ineffective parameters in PBM. Studies in vitro with cultured cells or in vivo with different tissues were divided into those with higher numbers of mitochondria (muscle, brain, heart, nerve) or lower numbers of mitochondria (skin, tendon, cartilage). Graphs were plotted of energy density against power density. Although the results showed a high degree of variability, cells/tissues with high numbers of mitochondria tended to respond to lower doses of light than those with lower number of mitochondria. Ineffective studies in cells with high mitochondrial activity appeared to be more often due to over-dosing than to under-dosing."
+   },
+   {
+    "work_id": "W4404871602",
+    "title": "Open quantum systems theory of ultraweak ultraviolet photon emissions: Revisiting Gurwitsch's onion experiment as a prototype for quantum biology",
+    "year": 2024,
+    "type": "article",
+    "abstract": "A century ago it was discovered that metabolic processes in living cells emit a spectrum of very low intensity radiation. This was based on observations that radiant energy from proliferating cells can amplify the rate of cell division in other nearby cellular life. Although metabolic radiation is now thoroughly documented in research on ultraweak photon emissions (UPE), the original finding that UPE can enhance mitogenesis remains controversial. This controversy is addressed by establishing a physical basis for phenomenological observations that biological UPE can amplify mitogenesis in living cells. Enhanced mitosis is rationalized as a resonance effect based on open quantum systems theory using Fano and Feshbach's methods. This application of quantum theory to biology has important consequences for understanding health, medicine, and principles of living matter."
+   }
+  ]
+ },
+ {
+  "candidate_id": "C023",
+  "seed_id": "Q3",
+  "statement": "The UPE photon yield per oxidation event is fixed by chemistry and not by physiological state: within a defined preparation, at matched independently measured oxidative flux, no physiological state changes photons emitted per oxidation event by more than twofold in any spectral band.",
+  "scope": {
+   "population": "one mammalian cell line (MCF10A) plus mitochondria isolated from the same line, and Arabidopsis thaliana rosette leaves",
+   "condition": "physiological state pairs contrasted at deliberately matched oxidative flux - proliferating versus contact-inhibited; pre- versus post-mechanical-wounding titrated to equal H2O2 efflux; antimycin-inhibited versus uninhibited; normoxic versus mildly hypoxic at equal peroxidation rate",
+   "comparator": "a cell-free chemical reference emitter (thermolysis of 3,3,4,4-tetramethyl-1,2-dioxetane) run through the identical optical chain, fixing the instrument's absolute photons-per-event calibration",
+   "outcome": "Phi = band-resolved photon emission rate (photons s^-1 per 50 nm bin, 350-850 nm) divided by simultaneously measured oxidative flux (H2O2 efflux by Amplex Red, oxygen consumption rate, malondialdehyde / TBARS)"
+  },
+  "null_hypothesis": "Some state pair changes Phi by more than twofold at matched oxidative flux, in a blinded pre-registered comparison - showing the radiative step itself is under biological control and falsifying the pure-byproduct reading of the emitter.",
+  "estimand": "max over state pairs and bands of |log2(Phi_state1 / Phi_state2)| at matched oxidative flux. Claim: < 1.",
+  "proposed_experiment": "Build a thermostatted light-tight chamber with a photon-counting PMT behind a motorised 50 nm bandpass wheel (350-850 nm), co-registered with an optical oxygen sensor and an in-chamber Amplex Red readout, plus destructive TBARS sampling at fixed times. Calibrate absolute photons per event by running tetramethyl-1,2-dioxetane thermolysis at known concentration through the identical chain. For each state pair, titrate the treatment so that the two states have statistically indistinguishable H2O2 efflux and oxygen consumption, then compare Phi band by band. Pre-register the matching tolerance and the twofold decision boundary; blind the analyst to state labels.",
+  "rationale": [
+   {
+    "step": "The field currently reads UPE as a monotone proxy for ROS and oxidative flux, and proposes it as a perturbance-free oxidation monitor and a non-invasive mitochondrial-dysfunction assay - a reading that presupposes a fixed conversion efficiency without ever measuring one.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W3041755811",
+     "W4308366428",
+     "W4414929333"
+    ]
+   },
+   {
+    "step": "The emitting chemistry is identified: lipid hydroperoxide decomposition through dioxetane intermediates to excited triplet carbonyls, with triplet-triplet energy transfer to ground-state O2 producing singlet oxygen; wound-induced emission is abolished under anoxia; in Acanthamoeba, mitochondrial and peroxisomal substrates gave no increase in emission while superoxide-generating conditions did.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2048493057",
+     "W2808116502",
+     "W2343307968"
+    ]
+   },
+   {
+    "step": "Phi is a product of three separable branch ratios: the fraction of peroxidation events routed through dioxetane, the triplet yield of the carbonyl, and the radiative branching against non-radiative quenching. All three depend on local solvent polarity, oxygen tension and quencher concentration - variables that cells actively regulate - so invariance of Phi is a substantive empirical claim rather than a definitional one.",
+    "justification_type": "computation"
+   },
+   {
+    "step": "The radiative branch is demonstrably manipulable independently of the oxidative flux: dietary alpha-tocopherol and in-vitro radical scavengers quench tissue ultraweak chemiluminescence, and the emission spectrum shows discrete singlet-oxygen-like peaks that a change in quencher environment would reweight.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2326730546",
+     "W2048493057"
+    ]
+   },
+   {
+    "step": "The seed question is precisely whether UPE is a metabolic byproduct or carries a functional role; a regulated emission efficiency at the emitter is what a signal looks like before any receiver is invoked, and it is testable without solving the receiver problem at all.",
+    "justification_type": "given"
+   }
+  ],
+  "cited_works": [
+   {
+    "work_id": "W3041755811",
+    "title": "Integrating Ultra-Weak Photon Emission Analysis in Mitochondrial Research",
+    "year": 2020,
+    "type": "article",
+    "abstract": "Once regarded solely as the energy source of the cell, nowadays mitochondria are recognized to perform multiple essential functions in addition to energy production. Since the discovery of pathogenic mitochondrial DNA defects in the 1980s, research advances have revealed an increasing number of common human diseases, which share an underlying pathogenesis involving mitochondrial dysfunction. A major factor in this dysfunction is reactive oxygen species (ROS), which influence the mitochondrial-nuclear crosstalk and the link with the epigenome, an influence that provides explanations for pathogenic mechanisms. Regarding these mechanisms, we should take into account that mitochondria produce the majority of ultra-weak photon emission (UPE), an aspect that is often ignored - this type of emission may serve as assay for ROS, thus providing new opportunities for a non-invasive diagnosis of mitochondrial dysfunction. In this article, we overviewed three relevant areas of mitochondria-related research over the period 1960-2020: (a) respiration and energy production, (b) respiration-related production of free radicals and other ROS species, and (c) ultra-weak photon emission in relation to ROS and stress. First, we have outlined how these research areas initially developed independently of each other - following that, our review aims to show their stepwise integration during later stages of development. It is suggested that a further stimulation of research on UPE may have the potential to enhance the progress of modern mitochondrial research and its integration in medicine."
+   },
+   {
+    "work_id": "W4308366428",
+    "title": "Biological autoluminescence as a perturbance-free method for monitoring oxidation in biosystems",
+    "year": 2022,
+    "type": "article",
+    "abstract": " [NOTE: the corpus holds no usable abstract for this work. Judge its citation step on the title alone and mark the step unverifiable rather than false.]"
+   },
+   {
+    "work_id": "W4414929333",
+    "title": "Ultra-weak photon emission as a physiological indicator of stress: a study of mechanical injury response in Arabidopsis using bandpass filters",
+    "year": 2025,
+    "type": "article",
+    "abstract": "Abstract Ultra-weak photon emission (UPE) offers a non-invasive window into plant physiological states, particularly in response to adverse conditions. This study refines the spectral analysis of UPE in 7-week-old Arabidopsis thaliana plants subjected to mechanical injury, directly addressing well-documented detection challenges in the longer-wavelength regions and enhancing the utility of UPE as a biomarker for oxidative damage. Previous investigations utilized cut-on absorption filters and CCD imaging, which suffered from imprecise spectral resolution due to poor filter characteristics and reliance on subtraction methods for band emission computation. In contrast, our current study employs bandpass optical filters covering the 400–750 nm range in 50 nm increments, significantly improving the accuracy of UPE spectral data. We measured UPE kinetics after applying a standardized mechanical injury by sharp leaf incision. The study evaluates the suitability of these bandpass filters for discerning UPE spectral patterns in both spontaneous and induced emission scenarios in Arabidopsis leaves. It optimizes detection of crucial longer-wavelength emissions often indicative of reactive oxygen species (ROS) formation. Given that UPE intensity directly correlates with the rate and extent of ROS formation, monitoring these changes provides a robust, non-invasive means to assess oxidative metabolic states and internal responses. Our findings reveal that a significant increase in total UPE following mechanical injury occurs in the 700–750 nm spectral range (band B7), emerging as the dom"
+   },
+   {
+    "work_id": "W2048493057",
+    "title": "Excited singlet molecular O2 (1Δg) is generated enzymatically from excited carbonyls in the dark",
+    "year": 2014,
+    "type": "article",
+    "abstract": "In mammalian tissues, ultraweak chemiluminescence arising from biomolecule oxidation has been attributed to the radiative deactivation of singlet molecular oxygen [O2 ((1)Δg)] and electronically excited triplet carbonyl products involving dioxetane intermediates. Herein, we describe evidence of the generation of O2 ((1)Δg) in aqueous solution via energy transfer from excited triplet acetone. This involves thermolysis of 3,3,4,4-tetramethyl-1,2-dioxetane, a chemical source, and horseradish peroxidase-catalyzed oxidation of 2-methylpropanal, as an enzymatic source. Both sources of excited carbonyls showed characteristic light emission at 1,270 nm, directly indicative of the monomolecular decay of O2 ((1)Δg). Indirect analysis of O2 ((1)Δg) by electron paramagnetic resonance using the chemical trap 2,2,6,6-tetramethylpiperidine showed the formation of 2,2,6,6-tetramethylpiperidine-1-oxyl. Using [(18)O]-labeled triplet, ground state molecular oxygen [(18)O2 ((3)Σg(-))], chemical trapping of (18)O2 ((1)Δg) with disodium salt of anthracene-9,10-diyldiethane-2,1-diyl disulfate yielding the corresponding double-[(18)O]-labeled 9,10-endoperoxide, was detected through mass spectrometry. This corroborates formation of O2 ((1)Δg). Altogether, photoemission and chemical trapping studies clearly demonstrate that chemically and enzymatically nascent excited carbonyl generates (18)O2 ((1)Δg) by triplet-triplet energy transfer to ground state oxygen O2 ((3)Σg(-)), and supports the long formulated hypothesis of O2 ((1)Δg) involvement in physiological and pathophysiological events that might "
+   },
+   {
+    "work_id": "W2808116502",
+    "title": "Leaf wound induced ultraweak photon emission is suppressed under anoxic stress: Observations of Spathiphyllum under aerobic and anaerobic conditions using novel in vivo methodology",
+    "year": 2018,
+    "type": "article",
+    "abstract": "Plants have evolved a variety of means to energetically sense and respond to abiotic and biotic environmental stress. Two typical photochemical signaling responses involve the emission of volatile organic compounds and light. The emission of certain leaf wound volatiles and light are mutually dependent upon oxygen which is subsequently required for the wound-induced lipoxygenase reactions that trigger the formation of fatty acids and hydroperoxides; ultimately leading to photon emission by chlorophyll molecules. A low noise photomultiplier with sensitivity in the visible spectrum (300-720 nm) is used to continuously measure long duration ultraweak photon emission of dark-adapting whole Spathiphyllum leaves (in vivo). Leaves were mechanically wounded after two hours of dark adaptation in aerobic and anaerobic conditions. It was found that (1) nitrogen incubation did not affect the pre-wound basal photocounts; (2) wound induced leaf biophoton emission was significantly suppressed when under anoxic stress; and (3) the aerobic wound induced emission spectra observed was > 650 nm, implicating chlorophyll as the likely emitter. Limitations of the PMT photocathode's radiant sensitivity, however, prevented accurate analysis from 700-720 nm. Further examination of leaf wounding profile photon counts revealed that the pre-wounding basal state (aerobic and anoxic), the anoxic wounding state, and the post-wounding aerobic state statistics all approximate a Poisson distribution. It is additionally observed that aerobic wounding induces two distinct exponential decay events. These observ"
+   },
+   {
+    "work_id": "W2343307968",
+    "title": "Chemiluminescence of <i>Acanthamoeba castellanii</i>",
+    "year": 1979,
+    "type": "article",
+    "abstract": "1. Chemiluminescence of Acanthomoeba castellanii in the presence of O2 was of similar intensity in organisms harvested early or late during exponential growth [when cyanide (1 mM) stimulates or inhibits respiration respectively]. 2. Cyanide (up to 1.5 mM) stimulated photoemission in both types of organism by 250--300 photons/s per 10(7) cells above the value observed under aerobic conditions. 3. 'Dibromothymoquinone' (2,5-dibromo-6-isopropyl-3-methyl-p-benzoquinone) (up to 80 microM) further increased chemiluminescence. 4. Similar responses were also demonstrated in whole homogenates and in subcellular fractions; 36% of the chemiluminescence was provided by a fraction sedimenting at 100000g-min, and 20% in that fraction that was non-sedimentable at 200000g-min. 5. Mitochondrial substrates (succinate, 2-oxoglutarate, NADH) in the presence or absence of ADP and Pi or peroxisomal substrates (glycollate, urate or ethanol) gave no increases in light emission by whole homogenates or in any of the fractions. 6. It is suggested that reactions responsible for production of chemiluminescence are those primarily producing superoxide anions and leading to lipid peroxidation and singlet-oxygen formation. Photoemission enhancement and superoxide dismutase inhibition showed similar cyanide concentration-dependencies."
+   },
+   {
+    "work_id": "W2326730546",
+    "title": "Characteristics of tissue ultraweak chemiluminescence in rats fed with autoxidized linseed oil.",
+    "year": 1983,
+    "type": "article",
+    "abstract": "After 2 days of oral administration of autoxidized linseed oil (AOLO; peroxide value 1, 000meq/kg, 0.3ml/rat/day), ultraweak chemiluminescence (CL) spontaneously emitted from rat liver homogenate increased up to about three times accompanying the accumulation of thiobarbituric acid (TBA) reactive products. This liver CL was quenched effectively by the in vitro addition of free radical scavengers, e.g. butyl hydroxytoluene, d-α-tocopherol and 2, 5-diphenylfuran, while superoxide dismutase, catalase and D-mannitol gave only negligible inhibitions on AOLO-induced liver CL. The luminescence spectrum recorded by a filter spectral analyzing method gave definitive two emission peaks at 585 and 635 nm and broad emission band around 500-560 nm. The spectrum was similar to that reported for a singlet molecular oxygen. In the experiment of successive AOLO administration (0.3ml/rat/day) for 10 days, a large increase in CL intensities and TBA reactants in various tissues was observed, especially on the 2nd day to the 6th day of feeding. Among them, the enhancement of CL and the accumulation of TBA reactants in liver and kidney were inhibited significantly by the oral administration of supplemental d-α-tocopherol (5mg/rat/day). These results suggest that AOLO-induced tissue spontaneous CL originated in the occurrence of free radical species which are possibly derived from chain reactions of tissue lipid peroxidation caused by the AOLO administration to rats."
+   }
+  ]
+ },
+ {
+  "candidate_id": "C024",
+  "seed_id": "Q3",
+  "statement": "Donor UPE per unit metabolic rate is not modulated by the presence, viability, or optical accessibility of a receiver population - emitters do not regulate emission in a receiver-contingent way.",
+  "scope": {
+   "population": "Paramecium caudatum donor populations, and isolated MCF7 / MCF10A mitochondria in the paired-cuvette preparation",
+   "condition": "donor optically coupled to (a) a live conspecific receiver, (b) a heat-killed receiver at identical turbidity and scattering, (c) medium only, (d) an opaque shutter - order randomised, operator blind, with donor oxygen consumption and temperature logged continuously",
+   "comparator": "condition (d), the opaque-shutter arm, at matched donor metabolic rate",
+   "outcome": "donor photon count rate per unit oxygen consumed, per 50 nm band"
+  },
+  "null_hypothesis": "rho departs from 1 by more than 25 percent in a blinded, metabolic-rate-matched comparison - demonstrating sender-side, receiver-contingent regulation of emission and falsifying this hypothesis.",
+  "estimand": "rho = [donor photons per unit O2 consumed, live receiver optically coupled] / [donor photons per unit O2 consumed, opaque shutter]. Claim: rho within [0.80, 1.25].",
+  "proposed_experiment": "Two thermostatted chambers joined by a computer-controlled quartz shutter, each with its own photon-counting PMT and in-line optical oxygen sensor. The donor chamber's emission is recorded continuously in 50 nm bands while the receiver chamber is cycled, in randomised blocks, through live receiver, heat-killed receiver at matched turbidity, medium only, and shutter closed. Turbidity and scattering are matched optically before the run so back-scatter into the donor PMT is identical across arms. All analysis is on photons per unit O2 consumed; the analyst is blind to arm labels. Pre-register the 25 percent decision band and the metabolic-matching tolerance. Because a positive result here is the single cheapest route to 'signal', it should be run in at least two labs with a shipped calibration standard.",
+  "rationale": [
+   {
+    "step": "The seed question is whether UPE is a byproduct of metabolism or carries an informational or functional role.",
+    "justification_type": "given"
+   },
+   {
+    "step": "A trait counts as a signal only if its production is contingent on the communicative context; a trait whose production is fully accounted for by the sender's own metabolic state is a cue. Receiver-contingency of emission, measured at matched metabolic rate, is therefore the sharpest emitter-side operationalisation of 'signal', and it is logically independent of whether any receiver effect exists - it can be decided even if every receiver-side claim in the field is false.",
+    "justification_type": "computation"
+   },
+   {
+    "step": "Existing distant-cellular-interaction preparations report mutual or bidirectional effects and growth correlation between coupled populations, which - if the reports are real - entails that donors are not passive lamps and makes receiver-contingent emission a live possibility rather than an idle one.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2092319343",
+     "W4386957427",
+     "W66681095"
+    ]
+   },
+   {
+    "step": "UPE tracks metabolic and oxidative rate, and has been reported to co-vary with cerebral blood flow and energy metabolism, so any comparison that does not hold metabolic rate fixed is confounded at the outset - which is why simultaneous respirometry is load-bearing here rather than decorative.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W3041755811",
+     "W4308366428",
+     "W2172375368"
+    ]
+   },
+   {
+    "step": "The same 'beyond global metabolic rate' structure is already what the field demands of neural UPE claims, where photon activity has been imaged in situ during stimulation without the metabolic covariate being separated out.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2056591841",
+     "W4391831883"
+    ]
+   }
+  ],
+  "cited_works": [
+   {
+    "work_id": "W2092319343",
+    "title": "Cellular Communication through Light",
+    "year": 2009,
+    "type": "article",
+    "abstract": "Information transfer is a fundamental of life. A few studies have reported that cells use photons (from an endogenous source) as information carriers. This study finds that cells can have an influence on other cells even when separated with a glass barrier, thereby disabling molecule diffusion through the cell-containing medium. As there is still very little known about the potential of photons for intercellular communication this study is designed to test for non-molecule-based triggering of two fundamental properties of life: cell division and energy uptake. The study was performed with a cellular organism, the ciliate Paramecium caudatum. Mutual exposure of cell populations occurred under conditions of darkness and separation with cuvettes (vials) allowing photon but not molecule transfer. The cell populations were separated either with glass allowing photon transmission from 340 nm to longer waves, or quartz being transmittable from 150 nm, i.e. from UV-light to longer waves. Even through glass, the cells affected cell division and energy uptake in neighboring cell populations. Depending on the cuvette material and the number of cells involved, these effects were positive or negative. Also, while paired populations with lower growth rates grew uncorrelated, growth of the better growing populations was correlated. As there were significant differences when separating the populations with glass or quartz, it is suggested that the cell populations use two (or more) frequencies for cellular information transfer, which influences at least energy uptake, cell division rate an"
+   },
+   {
+    "work_id": "W4386957427",
+    "title": "Non-chemical signalling between mitochondria",
+    "year": 2023,
+    "type": "article",
+    "abstract": "A wide variety of studies have reported some form of non-chemical or non-aqueous communication between physically isolated organisms, eliciting changes in cellular proliferation, morphology, and/or metabolism. The sources and mechanisms of such signalling pathways are still unknown, but have been postulated to involve vibration, volatile transmission, or light through the phenomenon of ultraweak photon emission. Here, we report non-chemical communication between isolated mitochondria from MCF7 (cancer) and MCF10A (non-cancer) cell lines. We found that mitochondria in one cuvette stressed by an electron transport chain inhibitor, antimycin, alters the respiration of mitochondria in an adjacent, but chemically and physically separate cuvette, significantly decreasing the rate of oxygen consumption compared to a control ( p = &amp;lt;0.0001 in MCF7 and MCF10A mitochondria). Moreover, the changes in O 2 -consumption were dependent on the origin of mitochondria (cancer vs. non-cancer) as well as the presence of “ambient” light. Our results support the existence of non-chemical signalling between isolated mitochondria. The experimental design suggests that the non-chemical communication is light-based, although further work is needed to fully elucidate its nature."
+   },
+   {
+    "work_id": "W66681095",
+    "title": "Non-chemical and non-contact cell-to-cell communication: a short review.",
+    "year": 2013,
+    "type": "article",
+    "abstract": "Cell-to-cell communication is the basis of coordinated cellular activity and thus fundamental for the functioning of biological systems. In a recently published research article by Chaban et al. (Am. J. Transl. Res., 5(1), 69-79), the authors report on interesting new experimental findings supporting a neuro-hormonal independent, non-diffusible cell-to-cell signaling. Our paper aims to (i) discuss some critical notions used by the authors to describe their findings, and (ii) briefly review related experimental work performed so far but not discussed in the original work of Chaban et al. In our opinion, the research on principles of non-chemical and non-contact cell-to-cell communication has the potential to offer new fundamental insights into biological processes. With this paper, we want to encourage future research on this topic by discussing critical issues and giving an overview of the current state of research."
+   },
+   {
+    "work_id": "W3041755811",
+    "title": "Integrating Ultra-Weak Photon Emission Analysis in Mitochondrial Research",
+    "year": 2020,
+    "type": "article",
+    "abstract": "Once regarded solely as the energy source of the cell, nowadays mitochondria are recognized to perform multiple essential functions in addition to energy production. Since the discovery of pathogenic mitochondrial DNA defects in the 1980s, research advances have revealed an increasing number of common human diseases, which share an underlying pathogenesis involving mitochondrial dysfunction. A major factor in this dysfunction is reactive oxygen species (ROS), which influence the mitochondrial-nuclear crosstalk and the link with the epigenome, an influence that provides explanations for pathogenic mechanisms. Regarding these mechanisms, we should take into account that mitochondria produce the majority of ultra-weak photon emission (UPE), an aspect that is often ignored - this type of emission may serve as assay for ROS, thus providing new opportunities for a non-invasive diagnosis of mitochondrial dysfunction. In this article, we overviewed three relevant areas of mitochondria-related research over the period 1960-2020: (a) respiration and energy production, (b) respiration-related production of free radicals and other ROS species, and (c) ultra-weak photon emission in relation to ROS and stress. First, we have outlined how these research areas initially developed independently of each other - following that, our review aims to show their stepwise integration during later stages of development. It is suggested that a further stimulation of research on UPE may have the potential to enhance the progress of modern mitochondrial research and its integration in medicine."
+   },
+   {
+    "work_id": "W4308366428",
+    "title": "Biological autoluminescence as a perturbance-free method for monitoring oxidation in biosystems",
+    "year": 2022,
+    "type": "article",
+    "abstract": " [NOTE: the corpus holds no usable abstract for this work. Judge its citation step on the title alone and mark the step unverifiable rather than false.]"
+   },
+   {
+    "work_id": "W2172375368",
+    "title": "Biofield physiology: A Framework for an emerging discipline",
+    "year": 2015,
+    "type": "article",
+    "abstract": "Biofield physiology is proposed as an overarching descriptor for the electromagnetic, biophotonic, and other types of spatially-distributed fields that living systems generate and respond to as integral aspects of cellular, tissue, and whole organism self-regulation and organization. Medical physiology, cell biology, and biophysics provide the framework within which evidence for biofields, their proposed receptors, and functions is presented. As such, biofields can be viewed as affecting physiological regulatory systems in a manner that complements the more familiar molecular-based mechanisms. Examples of clinically relevant biofields are the electrical and magnetic fields generated by arrays of heart cells and neurons that are detected, respectively, as electrocardiograms (ECGs) or magnetocardiograms (MCGs) and electroencephalograms (EEGs) or magnetoencephalograms (MEGs). At a basic physiology level, electromagnetic activity of neural assemblies appears to modulate neuronal synchronization and circadian rhythmicity. Numerous nonneural electrical fields have been detected and analyzed, including those arising from patterns of resting membrane potentials that guide development and regeneration, and from slowly-varying transepithelial direct current fields that initiate cellular responses to tissue damage. Another biofield phenomenon is the coherent, ultraweak photon emissions (UPE), detected from cell cultures and from the body surface. A physiological role for biophotons is consistent with observations that fluctuations in UPE correlate with cerebral blood flow, cerebral en"
+   },
+   {
+    "work_id": "W2056591841",
+    "title": "Biophotons as neural communication signals demonstrated by in situ biophoton autography",
+    "year": 2010,
+    "type": "article",
+    "abstract": " [NOTE: the corpus holds no usable abstract for this work. Judge its citation step on the title alone and mark the step unverifiable rather than false.]"
+   },
+   {
+    "work_id": "W4391831883",
+    "title": "Ultra weak photon emission—a brief review",
+    "year": 2024,
+    "type": "article",
+    "abstract": "Cells emit light at ultra-low intensities: photons which are produced as by-products of cellular metabolism, distinct from other light emission processes such as delayed luminescence, bioluminescence, and chemiluminescence. The phenomenon is known by a large range of names, including, but not limited to, biophotons, biological autoluminescence, metabolic photon emission and ultraweak photon emission (UPE), the latter of which shall be used for the purposes of this review. It is worth noting that the photons when produced are neither 'weak' nor specifically biological in characteristics. Research of UPE has a long yet tattered past, historically hamstrung by a lack of technology sensitive enough to detect it. Today, as technology progresses rapidly, it is becoming easier to detect and image these photons, as well as to describe their function. In this brief review we will examine the history of UPE research, their proposed mechanism, possible biological role, the detection of the phenomenon, and the potential medical applications."
+   }
+  ]
+ }
+]

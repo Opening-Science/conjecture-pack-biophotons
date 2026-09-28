@@ -1,0 +1,654 @@
+[
+ {
+  "candidate_id": "C057",
+  "seed_id": "Q6",
+  "statement": "Clamping the measured skin site to a fixed temperature (32.0 +/- 0.2 C) through a transparent thermostatted window removes at least half of the between-state difference in human surface UPE reported for affective and meditative state manipulations, and the attenuation is larger for detectors whose spectral window extends beyond 650 nm than for detectors restricted to 300-650 nm.",
+  "scope": {
+   "population": "Healthy adults 18-65, n >= 60, no dermatological disease at the measured site.",
+   "condition": "Within-subject crossover: two state conditions (guided relaxation vs. an arousal task of the anger-induction or breathwork type used in the corpus), each measured twice - once with the dorsal hand at free skin temperature and once with the site thermostatted at 32.0 +/- 0.2 C behind a fused-silica window - with condition order randomized and calibrated IR thermography of the site logged throughout.",
+   "comparator": "The free-skin-temperature arm of the same subject and the same state contrast; and, in parallel, the bialkali (300-650 nm) versus extended-red multialkali (300-850 nm) detector.",
+   "outcome": "Standardized effect size of the state contrast on integrated hand UPE, computed separately for each temperature arm and each detector band."
+  },
+  "null_hypothesis": "The thermostatted effect size is >= 80% of the free-temperature effect size (its lower 95% CI bound above 0.8 of it), i.e. skin temperature is a benign additive covariate rather than the generator of the reported state effects - which would kill this hypothesis and support H12/H8 as stated.",
+  "estimand": "Ratio of state-contrast effect sizes, d(thermostatted)/d(free), with 95% CI; secondary estimand is the partial correlation between UPE and skin temperature with state regressed out, reported per detector band.",
+  "proposed_experiment": "Randomized crossover with a fused-silica thermostatted contact window over the dorsal hand, calibrated IR thermography of the same field, and two photon-counting channels run in parallel on a beamsplit field (bialkali 300-650 nm; extended-red multialkali 300-850 nm). Primary endpoint is the ratio of state-contrast effect sizes between thermostatted and free arms; secondary endpoint is whether that ratio differs between the two spectral channels, which discriminates a physiological temperature effect from a detector-side red/NIR artifact.",
+  "rationale": [
+   {
+    "step": "In exactly the meditation/breathwork paradigm used to claim state-dependent human UPE, a 2026 multi-sensor feasibility study reports moderate within-subject correlation (r > 0.4) between infrared nose temperature and left-hand UPE, alongside strong correlations (r > 0.5) between UPE from the two hands. Thermal state and the UPE readout co-vary within the very design that attributes the change to the mental state.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W7131390579"
+    ]
+   },
+   {
+    "step": "Skin temperature is an established modulator of the UPE signal itself, not merely of the physiology behind it: the validation study that qualified UVA-provoked UPE as a clinical method identified skin temperature, skin humidity and ambient O2 concentration as critical parameters affecting both quality and quantity of the signal, with UVA-induced UPE decreasing as temperature rose.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2113953738"
+    ]
+   },
+   {
+    "step": "Claims that human surface/head UPE reports internal state have already been shown to be vulnerable to background-light contamination and to detector spectral response: photons below 600 nm are strongly attenuated by tissue while longer wavelengths fall largely outside PMT sensitivity, so the residual signal in a red-extended detector is precisely where a thermal/optical artifact would sit.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W7168813583"
+    ]
+   },
+   {
+    "step": "The field's own 2026 biomarker review names susceptibility to thermal and optical confounds, together with the absence of standardized clinical measurement protocols, as the key experimental constraints on UPE as a candidate biomarker - so this is the field's stated blocker, stated by the same source that frames Q6.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W7165757820"
+    ]
+   },
+   {
+    "step": "Identifiability argument: the published state-contrast studies (e.g. the nine-volunteer anger proof-of-concept) report relative intensity changes with no thermostatting and no temperature covariate. State manipulations that alter peripheral vasomotor tone move hand skin temperature by several degrees C, so in those designs the redox-driven and temperature-driven components are not merely unmeasured, they are structurally unidentified: no post-hoc statistical adjustment can separate them, and only an intervention that fixes temperature can.",
+    "justification_type": "computation"
+   },
+   {
+    "step": "The anger-induction proof of concept is the corpus's clearest instance of an uncontrolled state contrast: nine volunteers, CCD imaging of the upper body, relative intensity higher during induced anger than during relaxation, with the authors themselves calling for replication at larger n.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W3174216096"
+    ]
+   }
+  ],
+  "cited_works": [
+   {
+    "work_id": "W7131390579",
+    "title": "Changes in biofield measures and experienced states during meditation and breathwork practices: an uncontrolled feasibility study",
+    "year": 2026,
+    "type": "article",
+    "abstract": "Background: The human body radiates multiple biological fields which can be measured with sensors directly on or off the body. These electromagnetic fields are hypothesized to be altered by mind and body practices. The primary goal of the current study was to evaluate the feasibility of continuous multi-sensor monitoring during meditation and breathwork practices. It also explored methods to investigate whether simultaneous biological field measures correlate as parts of a dynamic system of biofields responsive to changes in states of consciousness. Methods: Twenty-three adults were recruited to participate. The intervention consisted of a guided loving kindness meditation followed by a guided breathwork exercise while equipped with multiple biofield sensors to measure heart rate (HR), heart rate variability (HRV), skin conductance (SCR), alpha waves with electroencephalography (EEG), infrared radiation (IR), and ultraweak photon emission (UPE). Participants completed self-report measures of emotional affect and states of consciousness. Aggregate and individual differences in participants' responses to the meditation and breathwork were assessed. Exploratory analyses of within-subject correlations between biofields were also conducted. Results: = 0.057). Biofield measures changed as expected for some participants. Post-meditation, participants reported lower arousal and increased control, boundarylessness, and non-duality. Post-breathwork, participants reported increased arousal and decreased boundarylessness, connectedness, and non-duality. There were strong correlations ("
+   },
+   {
+    "work_id": "W2113953738",
+    "title": "Non‐invasive monitoring of oxidative skin stress by ultraweak photon emission measurement. II: biological validation on ultraviolet A‐stressed skin",
+    "year": 2007,
+    "type": "article",
+    "abstract": "BACKGROUND/PURPOSE: Several physical or chemical environmental stressors generate reactive oxygen species, which trigger oxidation reactions of cells or tissues and thereby induce a correlated ultraweak photon emission (UPE) signal. The present study was designed to qualify and validate UPE measurement following ultraviolet (UV) excitation of porcine and human skin as an analytical method to assess the potency of topical antioxidants in vivo. METHODS: UPE of porcine skin in vitro and human skin in vivo following excitation with UVA was recorded using sensitive photomultiplier systems. For validation purposes, the effects of variation of extrinsic and intrinsic parameters encompassing skin thickness, humidity, temperature, pH, and composition of the surrounding atmosphere were assessed. Signals were analyzed with regard to overall signal intensity and spectral distribution. In two clinical trials enrolling 20 volunteers each, the effects of topical antioxidant treatment on UVA-induced UPE were validated. RESULTS: Different stressors encompassing exposition to ozone, UVA irradiation, or even cigarette smoke induced UPE of skin. Critical parameters affecting the quality and quantity of the UPE signal were the spectral composition of the exciting UV light, skin temperature, skin humidity, and the O(2) concentration of the surrounding atmosphere. Generally, UVA-induced UPE decreased with increasing temperature, humidity, and O(2) concentration. Skin pH had no significant effect on UPE with regard to signal quality and quantity over a pH range of 2.8-8.2. In a clinical study UPE "
+   },
+   {
+    "work_id": "W7168813583",
+    "title": "Revisiting Claims of Extracranial Biophoton Detection from the Human Brain",
+    "year": 2026,
+    "type": "article",
+    "abstract": "Ultraweak photon emission, also referred to as biological autoluminescence or biophoton emission, is the spontaneous emission of extremely low levels of light from a broad range of biological systems. Recent studies have reported that UPE measured extracranially can serve as a potential noninvasive biomarker of brain activity. Here, we show that this interpretation suffers from serious problems. We show that, when observed under properly dark conditions, the UPE from the head is much weaker than what is reported in certain papers on \"brain UPE\" from human heads. We also show that the large signals reported in these studies can be explained by background light contamination. Furthermore, photons with wavelengths <600 nm are strongly attenuated by scalp and skull tissues, and longer wavelengths fall largely outside the effective spectral sensitivity of the photomultiplier tubes (PMTs) used. As a consequence, even if UPE from the head is detected under properly background-free conditions, it is likely to be dominated by emission from the scalp rather than from the brain, certainly as long as PMTs are used. Our results emphasize the importance of careful experimental design to make genuine progress on this important question."
+   },
+   {
+    "work_id": "W7165757820",
+    "title": "Biomarkers in Biofield Therapies: Analysis of Measurable Effects",
+    "year": 2026,
+    "type": "article",
+    "abstract": "Biofield Therapies (BTs), such as Reiki and Healing Touch, are used in integrative and complementary medicine, but their biological mechanisms remain poorly understood. This review aimed to explore the physiological biomarkers modulated by BTs in a selected sample of studies to identify common patterns and elucidate potential mechanisms of action. A focused narrative synthesis of 14 intentionally selected studies was performed, encompassing various BT modalities, study designs (including randomized clinical trials, preclinical studies, and &lt;em&gt;in vitro&lt;/em&gt; models), and biomarker types. A total of 64 biomarkers were extracted and classified based on type, clinical application, and biological function. Data synthesis included descriptive statistics to summarize the distribution of biomarker categories within this sample. In the RCTs, the analysis of the 17 biomarkers pointed to diagnostic and diagnostic-prognostic contexts, with a relevant subset of prognostic-therapeutic biomarkers (23.5%) suggesting an adjuvant role in predicting clinical outcomes and in therapeutic monitoring. The most frequently reported biomarkers in the selected studies were inflammatory and immunological (40.6%), followed by cellular regulatory markers. The main findings included evidence of modulation of the hypothalamic-pituitary-adrenal (HPA) axis, enhanced immune function (Natural Killer (NK) cell activity), cytoprotective effects in &lt;em&gt;in vitro&lt;/em&gt; models, and exploratory observations of increased telomere length. This synthesis suggests that BTs are associated with meas"
+   },
+   {
+    "work_id": "W3174216096",
+    "title": "Increment of spontaneous human biophoton emission caused by anger emotional states. Proof of concept",
+    "year": 2021,
+    "type": "article",
+    "abstract": "Humans spontaneously emit visible radiation from their skin, which is known as biophoton or ultra-weak photon emission (UPE). Up to date, UPE intensity changes according to different external and internal factors have been reported. However, the influence in the human UPE of negative emotional states has never been studied despite their clinic and forensic interest. In this work, an ad hoc system based on a high-sensitive CCD detector was developed to detect and image UPE from human’s upper body. Then, the UPE emitted by the upper part of the body of nine volunteers was imaged in two different personal states: (i) when subjects were feeling relaxed; and (ii) when they were emotionally stimulated to feel anger. For all the volunteers, the relative measurement of UPE intensity was higher when feeling anger than when feeling relaxed. Due to the relevance of this disruptive idea and the horizon this knowledge can provide, this proof of concept must be followed by further experiments. An increase in the number of subjects will be accomplished in order to enhance these preliminary results and propose UPE as a new physiological parameter of negative emotional states."
+   }
+  ]
+ },
+ {
+  "candidate_id": "C058",
+  "seed_id": "Q6",
+  "statement": "A two-band UPE intensity ratio (I(>550 nm)/I(>495 nm), or I(610-630 nm)/I(395-455 nm)) trained as a clinical classifier at one laboratory transfers to an independent laboratory with different photomultiplier and filter hardware losing less than half the AUC that an absolute-intensity classifier loses on the same transfer, in the same pre-specified clinical task.",
+  "scope": {
+   "population": "One pre-specified clinical contrast - acute upper-respiratory infection versus healthy, the contrast for which the corpus already reports a working spectral ratio - measured at two independent laboratories with different PMT and filter hardware; n >= 80 per site.",
+   "condition": "Fingertip/two-hand UPE with a motorized cut-off and bandpass filter wheel, identical written acquisition protocol at both sites, no cross-site recalibration, no site-specific retraining; site A model frozen and registered before any site B data are unblinded.",
+   "comparator": "The absolute-intensity classifier built from the same acquisitions at site A, transferred identically.",
+   "outcome": "Transfer AUC loss for each classifier, defined as AUC(internal, site A held-out) minus AUC(external, site B)."
+  },
+  "null_hypothesis": "The ratio classifier's transfer loss is >= 50% of the intensity classifier's transfer loss (lower CI bound above 0.5 of it), i.e. band ratios are no more portable across instruments than absolute intensity, and spectral features buy no transferability.",
+  "estimand": "The ratio of transfer AUC losses, Delta-AUC(ratio)/Delta-AUC(intensity), with bootstrap 95% CI; reported alongside both internal and external AUCs for each classifier.",
+  "proposed_experiment": "Two-site external validation with hardware-blind protocol transfer. Site A collects, trains and freezes two classifiers (two-band ratio; absolute intensity) with a registered analysis plan; site B collects under the same written protocol on different hardware and the frozen models are applied once. Per-band throughput at both sites is measured against a traceable calibrated low-level light source and reported, so any residual ratio drift can be attributed to filter/QE rather than biology. Primary endpoint is the ratio of transfer losses.",
+  "rationale": [
+   {
+    "step": "Spectral ratios, not absolute intensities, are already the discriminating feature in two independent UPE studies in the corpus: the photon emission ratio between 550 nm and 495 nm cut-off filters separated cold patients from healthy subjects using a two-hand fingertip system, and the 610-630/395-455 nm spectral ratio tracked the logarithm of tumour volume in a breast-cancer-bearing mouse model (R2 = 0.947 at the lesion site, 0.892 at the healthy site).",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2049213668",
+     "W2762231588"
+    ]
+   },
+   {
+    "step": "Band ratios have a mechanistic referent rather than being an arbitrary engineered feature: UVA-induced UPE from skin shows biomolecule-specific spectral patterns (linoleic and linolenic acid, elastin, phospholipids, DHICA), and the skin tissue spectrum is a superposition of these distinct emitters, so a ratio between two bands reports a shift in which emitter dominates.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W3111078497"
+    ]
+   },
+   {
+    "step": "Absolute UPE intensity is documented to be non-transferable: it differs between subjects and between hand locations, fluctuates over the 24 h cycle with the dorsal side varying more than the palm, changes left-right symmetry across the day, and carries additional 14-day, 1-month, 3-month and 9-month rhythms plus a whole-body diurnal rhythm. Every one of these is a multiplicative nuisance on the intensity scale.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2182257766",
+     "W2165767379",
+     "W2124535387"
+    ]
+   },
+   {
+    "step": "Variance derivation for why a same-detector ratio should transfer better. Write the measured band intensities as log I1 = log a + log g + n1 and log I2 = log b + log g + n2, where g collects all multiplicative nuisances common to both bands measured through the same optical train (collection solid angle, source-detector distance, gain drift, dark-adaptation-dependent scaling, subject-level scaling). Then log R = log I1 - log I2 removes log g exactly. Across sites, Var(log R) = Var(log I1) + Var(log I2) - 2 Cov(log I1, log I2), which is strictly less than min(Var(log I1), Var(log I2)) whenever the cross-band correlation exceeds 0.5 and the band variances are comparable - the regime that common-mode nuisance dominance implies. The residual cross-site term is only the band-differential filter/QE response, which is directly measurable against a traceable calibrated source.",
+    "justification_type": "computation"
+   }
+  ],
+  "cited_works": [
+   {
+    "work_id": "W2049213668",
+    "title": "Spectral discrimination between healthy people and cold patients using spontaneous photon emission",
+    "year": 2015,
+    "type": "article",
+    "abstract": "In this paper, ultra-weak photon emission (UPE) was used to distinguish cold patients from healthy subjects. The UPE intensity of fingertips of two hands from healthy subjects and cold patients was measured using a two-hand UPE detecting system and a group of cut-off filters. We found a significant difference in the maximum spectral peak and photon emission ratio between the filter of 550nm and 495nm, which can be used in distinguish cold patients from healthy people. Methods and results in this work could be useful for developing a new optical diagnostic tool for early disease diagnosis in the future."
+   },
+   {
+    "work_id": "W2762231588",
+    "title": "Spectrum of spontaneous photon emission as a promising biophysical indicator for breast cancer research",
+    "year": 2017,
+    "type": "article",
+    "abstract": "Abstract In this study, we investigated the spectral characteristics of Spontaneous Photon Emission (SPE) from the body surface of a human breast cancer-bearing nude mice model during the overall growth process of breast cancers. By comparing and analyzing the data, we found that there was a striking difference between tumor mice and healthy controls in the spectral distribution of SPE from the body surface of lesion site, even when the morphological changes at the lesion site were not obvious. The spectral distribution of SPE from the healthy site of the tumor mice also differed from that of the healthy controls as the breast cancer developed to a certain stage. In addition, the difference in spectrum was related with different growth states of tumors. Interestingly, there was a positive correlation between the spectral ratio (610–630/395–455 nm) and the logarithm of the tumor volume for both the lesion site (R 2 = 0.947; p &lt; 0.001) and the normal site (R 2 = 0.892; p &lt; 0.001) of the tumor mice. The results suggested that the spectrum of SPE was sensitive to changes in the tumor status."
+   },
+   {
+    "work_id": "W3111078497",
+    "title": "Ultraviolet A irradiation induces ultraweak photon emission with characteristic spectral patterns from biomolecules present in human skin",
+    "year": 2020,
+    "type": "article",
+    "abstract": "Oxidative stress is associated with photoaging of the skin as well as with skin cancer, and is therefore, critical to monitor. Ultraweak photon emission (UPE) is extremely weak light generated during the oxidative process in the living body and has been used as a non-invasive and label-free marker for the evaluation of oxidative stress. However, the mechanism of UPE generation is not clear. Therefore, we aimed to elucidate the molecular mechanism underlying UPE generation by analyzing the spectra of UPE generated from biomolecules in the skin during ultraviolet A (UVA) exposure. The spectra of UVA-induced UPE generated from linoleic acid, linolenic acid, elastin, phospholipids, and 5,6-dihydroxyindole-2-carboxylic acid were measured, and the spectrum of human skin tissue was also obtained. The spectral patterns varied for the different biomolecules and the peaks were distinct from those of the skin tissue. These results suggested that the UPE generated from skin tissue is a collection of light emitted by biomolecules. Moreover, we proposed that UPE is generated through a photosensitization reaction and energy transfer. The identified characteristic spectral patterns of UPE can be useful to elucidate UVA-induced oxidative stress in the skin, with implications for prevention and treatment of photoaging and skin diseases."
+   },
+   {
+    "work_id": "W2182257766",
+    "title": "Spontaneous Ultra-Weak Photon Emission from Human Hands Is Time Dependent",
+    "year": 2007,
+    "type": "article",
+    "abstract": "Ultra-weak photon emission in the visible range was measured on palm and dorsal side of left and right hand by means of a low noise photomultiplier system. To study the dynamics of this photon emission in a 24 h period photon emission was recorded in 2 h intervals in 5 experiments, utilizing strict protocols for dark adaptation and recording of subjects. Fluctuations in photon emission in the course of 24 h period were demonstrated for each anatomic location. Mean photon emission over the 24 h period differed both between subjects and hand locations. To detect a pattern in the fluctuations the mean value for each location of each subject in each experiment was utilized to calculate fluctuations during the course of 24 h for each anatomical location. The fluctuations in photon emission in the course of 24 h were more at dorsal sides than palm sides. The correlation between fluctuations in palm and dorsal side was not apparent. During the 24 h period a change in left-right symmetry occurred for the dorsal side but not for the palm of the hands. Photon emission at the left dorsal location was high at night, while the right dorsal side emitted most during the day. It is concluded that a daily rhythm in photon emission can be recorded from both the dorsal and palm sides of the hands."
+   },
+   {
+    "work_id": "W2165767379",
+    "title": "Imaging of Ultraweak Spontaneous Photon Emission from Human Body Displaying Diurnal Rhythm",
+    "year": 2009,
+    "type": "article",
+    "abstract": "The human body literally glimmers. The intensity of the light emitted by the body is 1000 times lower than the sensitivity of our naked eyes. Ultraweak photon emission is known as the energy released as light through the changes in energy metabolism. We successfully imaged the diurnal change of this ultraweak photon emission with an improved highly sensitive imaging system using cryogenic charge-coupled device (CCD) camera. We found that the human body directly and rhythmically emits light. The diurnal changes in photon emission might be linked to changes in energy metabolism."
+   },
+   {
+    "work_id": "W2124535387",
+    "title": "Low‐level luminescence of the human skin",
+    "year": 1997,
+    "type": "article",
+    "abstract": "BACKGROUND/AIMS/METHODS: For the first time systematic measurements of the low-level luminescence of the human skin (\"bi-ophotons\") have been performed by means of a photon detector device set up in darkness. RESULTS: Several months of daily investigations have shown that body light emission follows definite and well-known biological rhythms, such as 14 days, 1 month, 3 months, 9 months, and reflects the left-right symmetry of the body. The results confirm that biophotons are related to physiological functions. CONCLUSIONS: This technique provides a new and powerful noninvasive diagnostic method. In particular, skin research and development may use it for testing the influence of different skin treatments."
+   }
+  ]
+ },
+ {
+  "candidate_id": "C059",
+  "seed_id": "Q6",
+  "statement": "At least half of the nose/glabella-versus-cheek UPE intensity contrast in human facial skin originates in the removable skin-surface lipid film and its microbial porphyrins rather than in viable epidermal or dermal cells, such that a single standardized degreasing wipe abolishes >= 50% of that regional contrast.",
+  "scope": {
+   "population": "Healthy adults 20-60 with a measurable baseline facial porphyrin score, n >= 40, no acne treatment or topical antimicrobial in the preceding 8 weeks.",
+   "condition": "Within-subject split-face: one hemiface receives a standardized lipid-solvent degreasing wipe, the other a sham wipe; UPE imaged before and 10 min after. Arm 2 repeats the imaging after 4 weeks of split-face topical antimicrobial versus vehicle.",
+   "comparator": "The sham-wiped / vehicle-treated hemiface of the same subject at the same session, same camera, same dark adaptation.",
+   "outcome": "The (nose + glabella) minus cheek UPE intensity contrast measured by cryogenic CCD imaging, and the correlation between UPE intensity and facial porphyrin score."
+  },
+  "null_hypothesis": "Degreasing and 4-week antimicrobial treatment reduce the regional contrast by less than 50% (upper 95% CI bound below 50%), i.e. the regional facial UPE pattern is generated in living epidermis/dermis and surface lipid is not the dominant source.",
+  "estimand": "Fractional reduction in the (nose+glabella - cheek) UPE contrast, treated versus sham, with 95% CI; secondary estimand is the change in the UPE-porphyrin-score correlation coefficient after treatment.",
+  "proposed_experiment": "Split-face, sham-controlled study. Cryogenic CCD UPE imaging of the full face before and 10 min after a standardized lipid-solvent degreasing wipe on one randomly assigned hemiface; region-of-interest analysis over nose, glabella and cheek. Repeat after 4 weeks of split-face topical antimicrobial versus vehicle. Facial porphyrin score by standard UV-fluorescence imaging at each timepoint, plus skin surface temperature to confirm the wipe did not shift it. Primary endpoint is the fractional collapse of the regional contrast.",
+  "rationale": [
+   {
+    "step": "Facial UPE imaging localizes the highest intensity to the nose, its surrounding regions and the area between the eyebrows, and finds UPE intensity correlated with skin porphyrin score while showing no correlation with skin colour parameters. Those are precisely the sebaceous, porphyrin-producing regions, and the porphyrin association is the strongest reported covariate.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W3035757108"
+    ]
+   },
+   {
+    "step": "The skin surface lipid film is a sebum plus keratinocyte-membrane mixture uniquely rich in squalene, continuously oxidatively modified by resident and pathological microbial metabolism and by UV, generating reactive peroxidation by-products - i.e. an extracellular, UPE-competent oxidation compartment sitting on top of the tissue the assay is intended to interrogate.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W1991638083"
+    ]
+   },
+   {
+    "step": "The accepted final emitters of skin UPE are triplet carbonyls and singlet oxygen produced by ROS-driven lipid and protein oxidation, and skin UPE is a superposition of light from several biomolecular emitters. Those same reactions run in surface lipid exactly as in cells, so intensity and geometry alone cannot attribute the emission to a living compartment.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W4321104258",
+     "W3111078497"
+    ]
+   },
+   {
+    "step": "The competing account is explicit in the corpus - CCD imaging with antioxidant suppression indicates UPE is generated not only from the epidermis but also from the dermis - and it makes the opposite prediction for this experiment: a surface-only manipulation should leave the regional contrast intact. The two accounts are therefore directly separable by one intervention.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2958430166"
+    ]
+   },
+   {
+    "step": "Identification argument for why degreasing is the right instrument: the surface lipid film is the only UPE-competent compartment that can be removed in seconds without changing perfusion, skin temperature, cell viability or the optical geometry of the measurement. Every other way of suppressing a compartment (antioxidant application, occlusion, cooling) alters at least one of those and reintroduces the confounds this experiment is meant to exclude. A sham-wiped hemiface controls for the mechanical and thermal perturbation of wiping itself.",
+    "justification_type": "computation"
+   }
+  ],
+  "cited_works": [
+   {
+    "work_id": "W3035757108",
+    "title": "Oxidative stress in human facial skin observed by ultraweak photon emission imaging and its correlation with biophysical properties of skin",
+    "year": 2020,
+    "type": "article",
+    "abstract": "Oxidative stress is associated with skin ageing and disease in humans. However, it is difficult to evaluate the effects of oxidative stress on the skin in vivo using conventional invasive methods. In this study, we performed two-dimensional imaging of ultra-weak photon emission (UPE) generated by excited species in oxidative reaction to determine regional variations in oxidative stress in human facial skin and analysed the relationship between UPE intensity and biophysical properties in vivo. UPE imaging of the facial skin of volunteers revealed regional variations in oxidative stress. The nose, its surrounding regions, and the area between eyebrows showed higher UPE intensity than other facial regions, indicating high oxidative stress in these regions. In contrast, only the region surrounding the eyes showed age-related alterations in UPE intensity; moreover, wrinkle score in these regions was correlated with UPE intensity. These results suggest that oxidative stress in the skin induces wrinkle formation. UPE intensity was correlated with porphyrin score in the skin; however, no correlation was observed between UPE intensity and skin colour parameters. This study provides insights into the treatment of facial skin areas vulnerable to ageing and helps improve our understanding of topical skin diseases related to oxidative stress."
+   },
+   {
+    "work_id": "W1991638083",
+    "title": "Surface Lipids as Multifunctional Mediators of Skin Responses to Environmental Stimuli",
+    "year": 2010,
+    "type": "article",
+    "abstract": "Skin surface lipid (SSL) film is a mixture of sebum and keratinocyte membrane lipids, protecting skin from environment. Its composition is unique for the high percentage of long chain fatty acids, and of the polyterpenoid squalene, absent in other human tissues, and in non-human Primates sebum. Here, the still incomplete body of information on SSL as mediators of external chemical, physical, and microbial signals and stressors is revised, focusing on the central event of the continuous oxidative modification induced by the metabolic activity of residential and pathological microbial flora, natural or iatrogenic UV irradiation, exposure to chemicals and cosmetics. Once alpha-tocopherol and ubiquinol-10 antioxidant defences of SSL are overcome, oxidation of squalene and cholesterol gives rise to reactive by-products penetrating deeper into skin layers, to mediate local defensive inflammatory, photo-protective, immune reactions or, at higher concentrations, inducing local but also systemic immune depression, ultimately implicating skin cancerogenesis. Qualitative modifications of SSL represent a pathogenetic sign of diagnostic value in dermatological disorders involving altered sebum production, like pytiriasis versicolor, acne, atopic or seborrheic dermatitis, as well as photo-aging. Achievements of nutriceutical interventions aimed at restoring normal SSL composition and homeostasis are discussed, as feasible therapeutic goals and major means of photo-protection."
+   },
+   {
+    "work_id": "W4321104258",
+    "title": "Imaging and Characterization of Oxidative Protein Modifications in Skin",
+    "year": 2023,
+    "type": "article",
+    "abstract": "Skin plays an important role in protection, metabolism, thermoregulation, sensation, and excretion whilst being consistently exposed to environmental aggression, including biotic and abiotic stresses. During the generation of oxidative stress in the skin, the epidermal and dermal cells are generally regarded as the most affected regions. The participation of reactive oxygen species (ROS) as a result of environmental fluctuations has been experimentally proven by several researchers and is well known to contribute to ultra-weak photon emission via the oxidation of biomolecules (lipids, proteins, and nucleic acids). More recently, ultra-weak photon emission detection techniques have been introduced to investigate the conditions of oxidative stress in various living systems in in vivo, ex vivo and in vitro studies. Research into two-dimensional photon imaging is drawing growing attention because of its application as a non-invasive tool. We monitored spontaneous and stress-induced ultra-weak photon emission under the exogenous application of a Fenton reagent. The results showed a marked difference in the ultra-weak photon emission. Overall, these results suggest that triplet carbonyl (3C=O∗) and singlet oxygen (1O2) are the final emitters. Furthermore, the formation of oxidatively modified protein adducts and protein carbonyl formation upon treatment with hydrogen peroxide (H2O2) were observed using an immunoblotting assay. The results from this study broaden our understanding of the mechanism of the generation of ROS in skin layers and the formation/contribution of various ex"
+   },
+   {
+    "work_id": "W3111078497",
+    "title": "Ultraviolet A irradiation induces ultraweak photon emission with characteristic spectral patterns from biomolecules present in human skin",
+    "year": 2020,
+    "type": "article",
+    "abstract": "Oxidative stress is associated with photoaging of the skin as well as with skin cancer, and is therefore, critical to monitor. Ultraweak photon emission (UPE) is extremely weak light generated during the oxidative process in the living body and has been used as a non-invasive and label-free marker for the evaluation of oxidative stress. However, the mechanism of UPE generation is not clear. Therefore, we aimed to elucidate the molecular mechanism underlying UPE generation by analyzing the spectra of UPE generated from biomolecules in the skin during ultraviolet A (UVA) exposure. The spectra of UVA-induced UPE generated from linoleic acid, linolenic acid, elastin, phospholipids, and 5,6-dihydroxyindole-2-carboxylic acid were measured, and the spectrum of human skin tissue was also obtained. The spectral patterns varied for the different biomolecules and the peaks were distinct from those of the skin tissue. These results suggested that the UPE generated from skin tissue is a collection of light emitted by biomolecules. Moreover, we proposed that UPE is generated through a photosensitization reaction and energy transfer. The identified characteristic spectral patterns of UPE can be useful to elucidate UVA-induced oxidative stress in the skin, with implications for prevention and treatment of photoaging and skin diseases."
+   },
+   {
+    "work_id": "W2958430166",
+    "title": "Imaging of ultraweak photon emission for evaluating the oxidative stress of human skin",
+    "year": 2019,
+    "type": "article",
+    "abstract": "Ultraweak photon emission (UPE) is generally observed in living organisms and often designated as biophoton emission. UPE is detectable from human skin, and its intensity increases by external stress such as ultraviolet (UV) irradiation. Presently, UPE measurement is used to evaluate oxidation status. The fact that the electronically excited species responsible for UPE are formed by reactive oxygen species (ROS)-induced lipid peroxidation and protein and nucleic acid oxidation is well known. The human skin undergoes oxidative stress by UV irradiation, resulting in various skin complications; therefore, it is essential to know the oxidation status of the skin. In this study, we assessed the characteristics of UV-induced UPE in the skin by the imaging and spectroscopy systems. Two-dimensional images obtained by a highly sensitive imaging system using a cooled charge-coupled device (CCD) camera revealed that UPE intensity increases with the amount of UV and is suppressed by antioxidants. Additionally, it is indicated that UPE is generated not only from the epidermis but also from the dermis. The spectra of UPE induced by UVA or UVB showed similar peaks in the visible light region. Furthermore, we confirmed the efficiency of sunscreen by the imaging technique. UPE measurement is a useful method to evaluate UV-induced oxidation in the human skin, and UPE imaging is an effective method to visually evaluate oxidative stress in the human skin."
+   }
+  ]
+ },
+ {
+  "candidate_id": "C060",
+  "seed_id": "Q6",
+  "statement": "Same-clock-time, 4-week test-retest reliability of standardized dorsal-hand spontaneous UPE intensity in healthy adults has ICC(2,1) below 0.6, which caps the out-of-sample AUC of any single-session intensity-based classifier below 0.80 even when the true group separation is a large standardized difference of 1.5.",
+  "scope": {
+   "population": "Healthy adults 18-65, n >= 50, no acute illness, stable medication, no intervention of any kind during the study.",
+   "condition": "Five sessions at weekly intervals, each at the same clock time (+/- 30 min), identical 20 min dark adaptation, identical detector-to-skin geometry, dorsal left and right hand, 600 s integration, with capped-detector and empty-chamber background runs at every session.",
+   "comparator": "None - this is a reliability study; the comparator is the reliability threshold the field's own reported single-session accuracies implicitly require.",
+   "outcome": "ICC(2,1) of the 600 s integrated photon count, its standard error of measurement, and the minimal detectable change."
+  },
+  "null_hypothesis": "ICC(2,1) >= 0.75 with lower 95% CI bound above 0.6 - i.e. spontaneous UPE intensity is a reliable individual-level quantity and the attenuation ceiling does not bind, which kills this hypothesis.",
+  "estimand": "ICC(2,1) with 95% CI, and the derived attenuation-implied maximum achievable AUC, AUC_max = Phi(d_true * sqrt(ICC) / sqrt(2)), reported for d_true = 1.0 and 1.5.",
+  "proposed_experiment": "Five-session, no-intervention reliability study on the identical rig, site and protocol that a subsequent diagnostic study would use. Report ICC(2,1), SEM and minimal detectable change for the 600 s integrated count, for each hand and side, and publish the attenuation-implied AUC ceiling for that rig as a pre-registered constraint on any accuracy the same rig later reports. Run capped-detector and empty-chamber background acquisitions at every session and report their drift alongside the biological drift, so instrument instability and biological instability are separated.",
+  "rationale": [
+   {
+    "step": "Spontaneous human hand UPE fluctuates systematically within 24 h, with mean emission differing both between subjects and between hand locations, greater fluctuation on the dorsal than the palmar side, no apparent correlation between palm and dorsal fluctuations, and a change in left-right symmetry across the day on the dorsal side - i.e. the exact site and readout used for clinical claims is the least stable one.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2182257766"
+    ]
+   },
+   {
+    "step": "Whole-body UPE follows a diurnal rhythm imaged with a cryogenic CCD, and long-run daily human skin measurements report additional 14-day, 1-month, 3-month and 9-month rhythms. Week-scale drift is therefore expected by the field's own descriptive literature, not an anomaly to be designed away.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2165767379",
+     "W2124535387"
+    ]
+   },
+   {
+    "step": "No test-retest reliability coefficient for human UPE appears anywhere in the retrieved corpus. The closest is a 2025 human measurement protocol that uses the coefficient of variation as a proxy for signal variability - a quantity that pools between-subject and within-subject variance and therefore cannot yield a reliability coefficient or an attenuation ceiling.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W4417010158"
+    ]
+   },
+   {
+    "step": "Attenuation computation fixing the ceiling. For X = T + e with reliability rho = Var(T)/Var(X), an observed standardized group difference attenuates as d_obs = d_true * sqrt(rho), and for normal equal-variance groups AUC = Phi(d_obs / sqrt(2)). At rho = 0.6 and d_true = 1.5: d_obs = 1.5 * 0.7746 = 1.162, AUC = Phi(0.8216) = 0.794 < 0.80. At rho = 0.6 and d_true = 1.0: AUC = Phi(0.548) = 0.708. At rho = 0.4 and d_true = 1.0: AUC = Phi(0.447) = 0.673. Any single-session single-feature intensity classifier reporting held-out AUC above these values, given a measured rho in this range, is reporting overfitting or leakage rather than signal - which makes the reliability coefficient a pre-emptive audit on the entire published accuracy record.",
+    "justification_type": "computation"
+   },
+   {
+    "step": "The field asks for larger populations, better statistical tools, and validation of biophotonic measurement techniques as objective biomarkers, but neither its analytical review nor its 2026 biomarker review names measurement reliability as the prerequisite that bounds all of it; the 2026 review instead cites thermal/optical confounds and the absence of standardized clinical protocols.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2906242287",
+     "W7165757820"
+    ]
+   },
+   {
+    "step": "The background discipline needed for this study is already specified in the corpus: capped-detector dark count runs and no-participant background runs must bracket the participant acquisition, because reported human UPE magnitudes have been shown to be explicable by background light contamination when that discipline is absent.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W7168813583"
+    ]
+   }
+  ],
+  "cited_works": [
+   {
+    "work_id": "W2182257766",
+    "title": "Spontaneous Ultra-Weak Photon Emission from Human Hands Is Time Dependent",
+    "year": 2007,
+    "type": "article",
+    "abstract": "Ultra-weak photon emission in the visible range was measured on palm and dorsal side of left and right hand by means of a low noise photomultiplier system. To study the dynamics of this photon emission in a 24 h period photon emission was recorded in 2 h intervals in 5 experiments, utilizing strict protocols for dark adaptation and recording of subjects. Fluctuations in photon emission in the course of 24 h period were demonstrated for each anatomic location. Mean photon emission over the 24 h period differed both between subjects and hand locations. To detect a pattern in the fluctuations the mean value for each location of each subject in each experiment was utilized to calculate fluctuations during the course of 24 h for each anatomical location. The fluctuations in photon emission in the course of 24 h were more at dorsal sides than palm sides. The correlation between fluctuations in palm and dorsal side was not apparent. During the 24 h period a change in left-right symmetry occurred for the dorsal side but not for the palm of the hands. Photon emission at the left dorsal location was high at night, while the right dorsal side emitted most during the day. It is concluded that a daily rhythm in photon emission can be recorded from both the dorsal and palm sides of the hands."
+   },
+   {
+    "work_id": "W2165767379",
+    "title": "Imaging of Ultraweak Spontaneous Photon Emission from Human Body Displaying Diurnal Rhythm",
+    "year": 2009,
+    "type": "article",
+    "abstract": "The human body literally glimmers. The intensity of the light emitted by the body is 1000 times lower than the sensitivity of our naked eyes. Ultraweak photon emission is known as the energy released as light through the changes in energy metabolism. We successfully imaged the diurnal change of this ultraweak photon emission with an improved highly sensitive imaging system using cryogenic charge-coupled device (CCD) camera. We found that the human body directly and rhythmically emits light. The diurnal changes in photon emission might be linked to changes in energy metabolism."
+   },
+   {
+    "work_id": "W2124535387",
+    "title": "Low‐level luminescence of the human skin",
+    "year": 1997,
+    "type": "article",
+    "abstract": "BACKGROUND/AIMS/METHODS: For the first time systematic measurements of the low-level luminescence of the human skin (\"bi-ophotons\") have been performed by means of a photon detector device set up in darkness. RESULTS: Several months of daily investigations have shown that body light emission follows definite and well-known biological rhythms, such as 14 days, 1 month, 3 months, 9 months, and reflects the left-right symmetry of the body. The results confirm that biophotons are related to physiological functions. CONCLUSIONS: This technique provides a new and powerful noninvasive diagnostic method. In particular, skin research and development may use it for testing the influence of different skin treatments."
+   },
+   {
+    "work_id": "W4417010158",
+    "title": "Protocol for the measurement and analysis of human photoencephalographic signals",
+    "year": 2025,
+    "type": "article",
+    "abstract": ". [NOTE: the corpus holds no usable abstract for this work. Judge its citation step on the title alone and mark the step unverifiable rather than false.]"
+   },
+   {
+    "work_id": "W2906242287",
+    "title": "Human Ultraweak Photon Emission: Key Analytical Aspects, Results and Future Trends – A Review",
+    "year": 2018,
+    "type": "article",
+    "abstract": "Living systems emit what is called ultraweak photon emission (UPE). This visually undetectable phenomenon has only been studied in humans for the last 30 years, finding that UPE is a complex process depending on multitude factors. Considering previous literature, this review discusses the current trends in the analysis of in vivo UPE from human beings. To this aim, Analytical Approaches Employed for UPE Measurement section focuses on the analytical techniques employed (photomultipliers and charged coupled device cameras), summarizing analytical conditions and reporting figures of merit reached to date. Then, Human UPE Depending on External Factors and Human UPE Depending on Internal Factors sections address external and internal factors, which have proved to affect UPE, pointing out the important influence on oxidative processes outside and inside the body, and also highlighting some personal states of the individuals affecting UPE. Last section is devoted to give a general view on the goals and achieved up to date regarding UPE measurement, emphasizing some potential applications as well as recommendations which include: use of UPE spectra information together with UPE intensity, larger populations (≈50-100 subjects), further studies on internal states of individuals, and use of statistical tools."
+   },
+   {
+    "work_id": "W7165757820",
+    "title": "Biomarkers in Biofield Therapies: Analysis of Measurable Effects",
+    "year": 2026,
+    "type": "article",
+    "abstract": "Biofield Therapies (BTs), such as Reiki and Healing Touch, are used in integrative and complementary medicine, but their biological mechanisms remain poorly understood. This review aimed to explore the physiological biomarkers modulated by BTs in a selected sample of studies to identify common patterns and elucidate potential mechanisms of action. A focused narrative synthesis of 14 intentionally selected studies was performed, encompassing various BT modalities, study designs (including randomized clinical trials, preclinical studies, and &lt;em&gt;in vitro&lt;/em&gt; models), and biomarker types. A total of 64 biomarkers were extracted and classified based on type, clinical application, and biological function. Data synthesis included descriptive statistics to summarize the distribution of biomarker categories within this sample. In the RCTs, the analysis of the 17 biomarkers pointed to diagnostic and diagnostic-prognostic contexts, with a relevant subset of prognostic-therapeutic biomarkers (23.5%) suggesting an adjuvant role in predicting clinical outcomes and in therapeutic monitoring. The most frequently reported biomarkers in the selected studies were inflammatory and immunological (40.6%), followed by cellular regulatory markers. The main findings included evidence of modulation of the hypothalamic-pituitary-adrenal (HPA) axis, enhanced immune function (Natural Killer (NK) cell activity), cytoprotective effects in &lt;em&gt;in vitro&lt;/em&gt; models, and exploratory observations of increased telomere length. This synthesis suggests that BTs are associated with meas"
+   },
+   {
+    "work_id": "W7168813583",
+    "title": "Revisiting Claims of Extracranial Biophoton Detection from the Human Brain",
+    "year": 2026,
+    "type": "article",
+    "abstract": "Ultraweak photon emission, also referred to as biological autoluminescence or biophoton emission, is the spontaneous emission of extremely low levels of light from a broad range of biological systems. Recent studies have reported that UPE measured extracranially can serve as a potential noninvasive biomarker of brain activity. Here, we show that this interpretation suffers from serious problems. We show that, when observed under properly dark conditions, the UPE from the head is much weaker than what is reported in certain papers on \"brain UPE\" from human heads. We also show that the large signals reported in these studies can be explained by background light contamination. Furthermore, photons with wavelengths <600 nm are strongly attenuated by scalp and skull tissues, and longer wavelengths fall largely outside the effective spectral sensitivity of the photomultiplier tubes (PMTs) used. As a consequence, even if UPE from the head is detected under properly background-free conditions, it is likely to be dominated by emission from the scalp rather than from the brain, certainly as long as PMTs are used. Our results emphasize the importance of careful experimental design to make genuine progress on this important question."
+   }
+  ]
+ },
+ {
+  "candidate_id": "C061",
+  "seed_id": "Q6",
+  "statement": "In adults spanning the full range of skin pigmentation, calibrated 350–650 nm UPE emitted 1–3 minutes after a standardized suberythemal UVA exposure will add at least 0.10 to out-of-sample R² for predicting 24-hour erythema beyond UVA dose, baseline erythema, skin lightness, skin temperature and perfusion.",
+  "scope": {
+   "population": "Adults with prospectively balanced skin-lightness strata",
+   "condition": "Standardized suberythemal solar-simulated UVA exposure after controlled acclimation and dark adaptation",
+   "comparator": "Prediction model containing UVA dose, baseline colorimetry, skin lightness L*, temperature and perfusion but no UPE",
+   "outcome": "Change in colorimeter-measured erythema a* at 24 hours"
+  },
+  "null_hypothesis": "The cross-validated incremental R² from adding 1–3-minute UPE is less than 0.10, or its bootstrap 95% confidence interval includes zero.",
+  "estimand": "ΔR² = R²clinical+UPE − R²clinical in a locked external-validation cohort.",
+  "proposed_experiment": "Pre-register a multicentre dose-response study with a locked acquisition window, sham-exposed neighboring skin, photon-reference calibration, blinded 24-hour colorimetry and a completely held-out validation centre; fit the clinical model first and add only the pre-specified background-subtracted 1–3-minute photon radiance.",
+  "rationale": [
+   {
+    "step": "UV-induced UPE averaged over 1–3 minutes increased with dose and was highly correlated with cutaneous redness 24 hours later; accompanying cell experiments linked the signal to lipid peroxidation.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W3092282708"
+    ]
+   },
+   {
+    "step": "UVA-induced UPE depends on skin lightness and persists for up to two hours, making pigmentation a load-bearing covariate rather than a demographic nuisance variable.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W4306729560"
+    ]
+   },
+   {
+    "step": "Clinical UPE measurement is vulnerable to thermal and optical confounds and lacks standardized protocols.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W7165757820"
+    ]
+   },
+   {
+    "step": "For each held-out participant, compute predictions from nested models and calculate ΔR²; the hypothesis survives only if ΔR²≥0.10 and the participant-bootstrap 95% confidence interval excludes zero.",
+    "justification_type": "computation"
+   }
+  ],
+  "cited_works": [
+   {
+    "work_id": "W3092282708",
+    "title": "Exploitation of long‐lasting ultraweak photon emission to estimate skin photodamage after ultraviolet exposure",
+    "year": 2020,
+    "type": "article",
+    "abstract": "BACKGROUND: Establishing a noninvasive method to estimate skin damage immediately after ultraviolet (UV) exposure is required to minimize the anticipated severe symptoms triggered by early phase UV-induced reactions in the skin. To develop a suitable method, we focused on ultraweak photon emission (UPE) immediately after UV exposure to characterize the relationship of UPE to skin photodamage caused by the UV exposure. MATERIALS AND METHODS: Analysis of the correlation between UV-induced UPE and erythema formation characterized by skin redness was conducted in a clinical study. To clarify the source of UPE, time-dependent lipid oxidation was analyzed in human epidermal keratinocytes in vitro using a fluorescence indicator as well as the lipid hydroperoxide (LPO) assay. RESULTS: The average amount of UV-induced long-lasting UPE per second, especially from 1 to 3 minutes compared to other time periods after the UV radiation, increased in a dose-dependent manner and was highly correlated with the intensity of cutaneous redness 24 hours after UV exposure. In addition, cellular examinations elucidated that both the long-lasting UPE signals and the increased amounts of LPO 2 minutes after UV radiation were significantly suppressed by Trolox (a vitamin E derivative), which has been shown to inhibit UV-induced erythema formation in human skin. CONCLUSION: Long-lasting UPE generated between 1 and 3 minutes immediately after UV exposure, which is associated with LPO production, is a valuable indicator to estimate and/or avoid severe cutaneous photodamage."
+   },
+   {
+    "work_id": "W4306729560",
+    "title": "Skin lightness affects ultraviolet A‐induced oxidative stress: Evaluation using ultraweak photon emission measurement",
+    "year": 2022,
+    "type": "article",
+    "abstract": "The human skin is usually exposed to ultraviolet A (UVA) in the sunlight and experiences oxidative stress associated with skin disorders and aging. Although oxidative stress caused by UVA exposure is assumed to be dependent on skin colour, few studies have demonstrated this dependency. We investigated the effects of skin colour on UVA-induced oxidative stress using ultraweak photon emission (UPE) generated from the skin during oxidation processes. The UPE intensities of skin samples were detected using a photomultiplier tube every second without any labelling. We irradiated skin tissue of different colours with UVA and measured UPE over time. UVA-induced UPE could be detected from immediately after irradiation to 2 h after irradiation, indicating persistent oxidative stress. Skin lightness (L*) positively correlates with UPE intensity. Lighter-coloured skin exhibited more UVA-induced UPE, indicating higher oxidative stress. Additionally, oxidative stress persisted significantly more in lighter skin compared with darker skin. Skin tissues exhibited pigment darkening after UVA irradiation. Our results suggest that skin lightness affects oxidative stress induced by UV irradiation. Our study demonstrated the relationship between skin lightness and UVA-induced oxidative stress for the first time and offers new photodermatological insights into the human skin."
+   },
+   {
+    "work_id": "W7165757820",
+    "title": "Biomarkers in Biofield Therapies: Analysis of Measurable Effects",
+    "year": 2026,
+    "type": "article",
+    "abstract": "Biofield Therapies (BTs), such as Reiki and Healing Touch, are used in integrative and complementary medicine, but their biological mechanisms remain poorly understood. This review aimed to explore the physiological biomarkers modulated by BTs in a selected sample of studies to identify common patterns and elucidate potential mechanisms of action. A focused narrative synthesis of 14 intentionally selected studies was performed, encompassing various BT modalities, study designs (including randomized clinical trials, preclinical studies, and &lt;em&gt;in vitro&lt;/em&gt; models), and biomarker types. A total of 64 biomarkers were extracted and classified based on type, clinical application, and biological function. Data synthesis included descriptive statistics to summarize the distribution of biomarker categories within this sample. In the RCTs, the analysis of the 17 biomarkers pointed to diagnostic and diagnostic-prognostic contexts, with a relevant subset of prognostic-therapeutic biomarkers (23.5%) suggesting an adjuvant role in predicting clinical outcomes and in therapeutic monitoring. The most frequently reported biomarkers in the selected studies were inflammatory and immunological (40.6%), followed by cellular regulatory markers. The main findings included evidence of modulation of the hypothalamic-pituitary-adrenal (HPA) axis, enhanced immune function (Natural Killer (NK) cell activity), cytoprotective effects in &lt;em&gt;in vitro&lt;/em&gt; models, and exploratory observations of increased telomere length. This synthesis suggests that BTs are associated with meas"
+   }
+  ]
+ },
+ {
+  "candidate_id": "C062",
+  "seed_id": "Q6",
+  "statement": "In adults with type 2 diabetes starting a glucose-lowering regimen, the week-2 change in the hand-UPE photon-count ratio 495–550 nm/550–610 nm will add at least 0.10 to out-of-sample R² for predicting 12-week HbA1c reduction beyond baseline HbA1c, medication class, BMI and total UPE intensity.",
+  "scope": {
+   "population": "Adults with type 2 diabetes initiating or intensifying a stable glucose-lowering regimen",
+   "condition": "Bilateral hand UPE measured before treatment and at week 2 under identical circadian, dark-adaptation and environmental conditions",
+   "comparator": "Clinical prediction model using baseline HbA1c, medication class, BMI and broadband UPE intensity without the spectral ratio",
+   "outcome": "Laboratory-measured change in HbA1c from baseline to week 12"
+  },
+  "null_hypothesis": "Adding the week-2 spectral-ratio change produces incremental cross-validated R² below 0.10 or a 95% confidence interval including zero.",
+  "estimand": "Incremental external-validation R² attributable to Δlog[(495–550 nm counts)/(550–610 nm counts)].",
+  "proposed_experiment": "Run a pre-registered prospective cohort alongside routine diabetes treatment, with fixed hand sites and blinded HbA1c assays; train the model in two clinics and test it without refitting in a third clinic.",
+  "rationale": [
+   {
+    "step": "In treated type 2 diabetes patients, UPE intensity changed over two weeks and the 495–550 nm/550–610 nm ratio was negatively correlated with contemporaneous syndrome scores.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W4384029814"
+    ]
+   },
+   {
+    "step": "Separate human studies report UPE differences between people with type 2 diabetes and healthy controls and propose UPE for early-stage diabetes detection.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2594646273",
+     "W2554446151"
+    ]
+   },
+   {
+    "step": "Plasma metabolomics work in pre-diabetes linked UPE-based subtyping to lipid-profile differences, providing a biochemical candidate source of diabetes-related optical variation.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2950162936"
+    ]
+   },
+   {
+    "step": "An analytical review specifically recommends combining spectral information with intensity, using larger populations and applying statistical validation.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2906242287"
+    ]
+   },
+   {
+    "step": "Calculate the log spectral ratio at both visits, subtract baseline from week 2, and compare locked nested models in held-out patients; ΔR²≥0.10 with a positive lower confidence bound is the decision rule.",
+    "justification_type": "computation"
+   }
+  ],
+  "cited_works": [
+   {
+    "work_id": "W4384029814",
+    "title": "Ultra-weak photon emission as a potential tool for evaluating the therapeutic effect of traditional Chinese medicine in patients with type 2 diabetes",
+    "year": 2023,
+    "type": "article",
+    "abstract": "Background: Traditional Chinese medicine (TCM) has been used to prevent and treat type 2 diabetes (T2DM) for thousands of years. The holistic view of TCM and the \"multitarget\" characteristics of Chinese medicine have unique advantages in the prevention and treatment of T2DM. TCM syndrome differentiation and treatment are effective for T2DM; however, currently, the therapeutic effect of TCM is generally evaluated by asking for patients' subjective feelings, or by checking the changes in relevant indicators. The main problems are that the patient's descriptions are unclear and subjective, and although the self-reported symptoms may have improved significantly, the relevant indicators are sometimes not obvious, which cannot truly reflect the therapeutic effect of TCM. Therefore, it is urgent to develop a novel, sensitive, and noninvasive method to quantitatively evaluate the therapeutic effect of TCM. Methods: In this study, ultra-weak photon emission (UPE) was measured at four sites of hands of T2DM patients with Qi-Yin deficiency before treatment and after 1 and 2 weeks of treatment with TCM. The UPE intensity and spectral distribution were calculated and analyzed using the results measured at these four sites. Spearman's correlation coefficient was used to quantify the correlation between the UPE parameters and the syndrome scores of TCM. Results: The UPE intensity of T2DM patients with Qi-Yin deficiency decreased gradually with the course of the treatment and was significantly lower than that before the treatment. The ratio of photon counts between the wavelength ranges of"
+   },
+   {
+    "work_id": "W2594646273",
+    "title": "Ultra-weak photon emission in healthy subjects and patients with type 2 diabetes: evidence for a non-invasive diagnostic tool",
+    "year": 2017,
+    "type": "article",
+    "abstract": " [NOTE: the corpus holds no usable abstract for this work. Judge its citation step on the title alone and mark the step unverifiable rather than false.]"
+   },
+   {
+    "work_id": "W2554446151",
+    "title": "Measuring ultra-weak photon emission as a non-invasive diagnostic tool for detecting early-stage type 2 diabetes: A step toward personalized medicine",
+    "year": 2016,
+    "type": "article",
+    "abstract": " [NOTE: the corpus holds no usable abstract for this work. Judge its citation step on the title alone and mark the step unverifiable rather than false.]"
+   },
+   {
+    "work_id": "W2950162936",
+    "title": "Traditional Chinese Medicine-Based Subtyping of Early-Stage Type 2 Diabetes Using Plasma Metabolomics Combined with Ultra-Weak Photon Emission",
+    "year": 2019,
+    "type": "article",
+    "abstract": "The prevalence of type 2 diabetes mellitus (T2DM) is increasing rapidly worldwide. Because of the limited success of generic interventions, the focus of the disease study has shifted toward personalized strategies, particularly in the early stages of the disease. Traditional Chinese medicine (TCM) is based on a systems view combined with personalized strategies and has improved our knowledge of personalized diagnostics. From a systems biology perspective, the understanding of personalized diagnostics can be improved to yield a biochemical basis for such strategies; for example, metabolomics can be used in combination with other system-based diagnostic methods such as ultra-weak photon emission (UPE). In this study, we investigated the feasibility of using plasma metabolomics obtained from 44 pre-T2DM subjects to stratify the following TCM-based subtypes: Qi-Yin deficiency, Qi-Yin deficiency with dampness, and Qi-Yin deficiency with stagnation. We studied the relationship between plasma metabolomics and UPE with respect to TCM-based subtyping in order to obtain biochemical information for further interpreting disease subtypes. Principal component analysis of plasma metabolites revealed differences among the TCM-based pre-T2DM subtypes. Relatively high levels of lipids (e.g., cholesterol esters and triglycerides) were important discriminators of two of the three subtypes and may be associated with a higher risk of cardiovascular disease. Plasma metabolomics data indicate that the lipid profile is an essential component captured by UPE with respect to stratifying subtypes of T"
+   },
+   {
+    "work_id": "W2906242287",
+    "title": "Human Ultraweak Photon Emission: Key Analytical Aspects, Results and Future Trends – A Review",
+    "year": 2018,
+    "type": "article",
+    "abstract": "Living systems emit what is called ultraweak photon emission (UPE). This visually undetectable phenomenon has only been studied in humans for the last 30 years, finding that UPE is a complex process depending on multitude factors. Considering previous literature, this review discusses the current trends in the analysis of in vivo UPE from human beings. To this aim, Analytical Approaches Employed for UPE Measurement section focuses on the analytical techniques employed (photomultipliers and charged coupled device cameras), summarizing analytical conditions and reporting figures of merit reached to date. Then, Human UPE Depending on External Factors and Human UPE Depending on Internal Factors sections address external and internal factors, which have proved to affect UPE, pointing out the important influence on oxidative processes outside and inside the body, and also highlighting some personal states of the individuals affecting UPE. Last section is devoted to give a general view on the goals and achieved up to date regarding UPE measurement, emphasizing some potential applications as well as recommendations which include: use of UPE spectra information together with UPE intensity, larger populations (≈50-100 subjects), further studies on internal states of individuals, and use of statistical tools."
+   }
+  ]
+ },
+ {
+  "candidate_id": "C063",
+  "seed_id": "Q6",
+  "statement": "In patients with erythropoietic protoporphyria, the calibrated initial 350–650 nm UPE burst following a standardized low-dose solar-simulated exposure will improve prediction of the 24-hour phototoxic skin reaction by at least 0.10 AUC beyond erythrocyte protoporphyrin IX, plasma iron, exposure dose and skin lightness.",
+  "scope": {
+   "population": "Adolescents and adults with biochemically or genetically confirmed erythropoietic protoporphyria",
+   "condition": "Dermatologist-supervised low-dose solar-simulated exposure of a fixed skin site, measured before and during routine treatment",
+   "comparator": "Clinical model containing erythrocyte PPIX, plasma iron, exposure dose and L* but no UPE",
+   "outcome": "Pre-specified 24-hour phototoxic reaction defined by blinded erythema colorimetry and a standardized pain threshold"
+  },
+  "null_hypothesis": "The UPE-augmented model improves externally validated AUC by less than 0.10 or has a non-positive lower 95% confidence bound.",
+  "estimand": "ΔAUC = AUCclinical+initial-burst-UPE − AUCclinical for the pre-specified 24-hour phototoxic-reaction endpoint.",
+  "proposed_experiment": "Pre-register a repeated-measures dermatology study using a safe dose ladder, fixed anatomical site, sham-exposed control site and blinded 24-hour assessment; lock the initial-burst integration window before enrollment and validate the model at a second EPP centre.",
+  "rationale": [
+   {
+    "step": "EPP involves PPIX accumulation and acute photosensitivity; in 14 patients, the post-exposure initial UPE burst correlated with plasma iron and erythrocyte PPIX and varied inversely with plasma zinc during treatment.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W1977870833"
+    ]
+   },
+   {
+    "step": "In human skin generally, early post-UV UPE predicted 24-hour erythema and tracked lipid-peroxidation-related photodamage.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W3092282708"
+    ]
+   },
+   {
+    "step": "Skin lightness materially affects UVA-induced UPE and therefore must be included in the comparator model.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W4306729560"
+    ]
+   },
+   {
+    "step": "Compute each model's patient-level ROC curve in a held-out centre; subtract AUCs and bootstrap by patient, declaring support only for ΔAUC≥0.10 with a positive lower confidence bound.",
+    "justification_type": "computation"
+   }
+  ],
+  "cited_works": [
+   {
+    "work_id": "W1977870833",
+    "title": "An explorative study of non‐invasive ultra‐weak photon emission and the anti‐oxidative influence of oral zinc sulphate in light‐sensitive patients with erythropoietic protoporphyria",
+    "year": 2011,
+    "type": "article",
+    "abstract": "BACKGROUND: Erythropoietic protoporphyria (EPP) is a rare, inherited disorder of haem biosynthesis owing to deficient ferrochelatase (FECH) and accumulation of protoporphyrin IX (PPIX). This results in acute cutaneous photosensitivity upon light exposure with production of reactive oxygen species (ROS) and ultra-weak photon emission (UPE) as a by-product. We investigated if UPE evaluated the light sensitivity in EPP patients and influence of zinc treatment. METHODS: Fourteen EPP patients took zinc sulphate (3 × 200 mg/day) during spring and summer. Using a photomultiplier (PM), UPE was measured from the buttock skin and dorsal hand before and after solar-simulated light (SUN) exposure. Blood samples were analysed routinely for plasma zinc, iron, ferritin, transferrin, haemoglobin, erythrocyte PPIX and Zn-PPIX. RESULTS: UPE in EPP patients resembled that seen in healthy individuals. Without treatment, a seasonal decrease was seen from spring to summer in four control patients. However, oral zinc treatment reduced ROS formation significantly regardless of SUN exposure. After SUN exposure, the initial burst was correlated to plasma iron and erythrocyte PPIX. During treatment, an inverse correlation was found between plasma zinc concentration and the initial burst. CONCLUSION: Measurements of UPE can be used for monitoring UVA-induced oxidative processes in vivo in the skin of EPP patients."
+   },
+   {
+    "work_id": "W3092282708",
+    "title": "Exploitation of long‐lasting ultraweak photon emission to estimate skin photodamage after ultraviolet exposure",
+    "year": 2020,
+    "type": "article",
+    "abstract": "BACKGROUND: Establishing a noninvasive method to estimate skin damage immediately after ultraviolet (UV) exposure is required to minimize the anticipated severe symptoms triggered by early phase UV-induced reactions in the skin. To develop a suitable method, we focused on ultraweak photon emission (UPE) immediately after UV exposure to characterize the relationship of UPE to skin photodamage caused by the UV exposure. MATERIALS AND METHODS: Analysis of the correlation between UV-induced UPE and erythema formation characterized by skin redness was conducted in a clinical study. To clarify the source of UPE, time-dependent lipid oxidation was analyzed in human epidermal keratinocytes in vitro using a fluorescence indicator as well as the lipid hydroperoxide (LPO) assay. RESULTS: The average amount of UV-induced long-lasting UPE per second, especially from 1 to 3 minutes compared to other time periods after the UV radiation, increased in a dose-dependent manner and was highly correlated with the intensity of cutaneous redness 24 hours after UV exposure. In addition, cellular examinations elucidated that both the long-lasting UPE signals and the increased amounts of LPO 2 minutes after UV radiation were significantly suppressed by Trolox (a vitamin E derivative), which has been shown to inhibit UV-induced erythema formation in human skin. CONCLUSION: Long-lasting UPE generated between 1 and 3 minutes immediately after UV exposure, which is associated with LPO production, is a valuable indicator to estimate and/or avoid severe cutaneous photodamage."
+   },
+   {
+    "work_id": "W4306729560",
+    "title": "Skin lightness affects ultraviolet A‐induced oxidative stress: Evaluation using ultraweak photon emission measurement",
+    "year": 2022,
+    "type": "article",
+    "abstract": "The human skin is usually exposed to ultraviolet A (UVA) in the sunlight and experiences oxidative stress associated with skin disorders and aging. Although oxidative stress caused by UVA exposure is assumed to be dependent on skin colour, few studies have demonstrated this dependency. We investigated the effects of skin colour on UVA-induced oxidative stress using ultraweak photon emission (UPE) generated from the skin during oxidation processes. The UPE intensities of skin samples were detected using a photomultiplier tube every second without any labelling. We irradiated skin tissue of different colours with UVA and measured UPE over time. UVA-induced UPE could be detected from immediately after irradiation to 2 h after irradiation, indicating persistent oxidative stress. Skin lightness (L*) positively correlates with UPE intensity. Lighter-coloured skin exhibited more UVA-induced UPE, indicating higher oxidative stress. Additionally, oxidative stress persisted significantly more in lighter skin compared with darker skin. Skin tissues exhibited pigment darkening after UVA irradiation. Our results suggest that skin lightness affects oxidative stress induced by UV irradiation. Our study demonstrated the relationship between skin lightness and UVA-induced oxidative stress for the first time and offers new photodermatological insights into the human skin."
+   }
+  ]
+ },
+ {
+  "candidate_id": "C064",
+  "seed_id": "Q6",
+  "statement": "In first-ever unilateral ischemic stroke with upper-limb paresis, the simultaneous affected/unaffected hand UPE ratio measured within 14 days will add at least 0.10 to out-of-sample R² for 90-day upper-limb motor recovery beyond baseline motor score, lesion burden, skin temperature and perfusion.",
+  "scope": {
+   "population": "Adults with first-ever unilateral ischemic stroke and measurable upper-limb paresis, plus age-matched neurologically healthy controls",
+   "condition": "Simultaneous bilateral palmar measurement within 14 days of stroke after environmental acclimation and dark adaptation",
+   "comparator": "Prognostic model containing baseline Fugl–Meyer Upper Extremity score, imaging-derived lesion burden, skin temperature and perfusion but no UPE ratio",
+   "outcome": "Change in Fugl–Meyer Upper Extremity score from baseline to day 90"
+  },
+  "null_hypothesis": "The affected/unaffected UPE ratio contributes less than 0.10 incremental external-validation R² or its coefficient is unstable in sign across validation sites.",
+  "estimand": "Incremental R² for 90-day Fugl–Meyer improvement plus the cross-site sign consistency of the log affected/unaffected photon-radiance ratio.",
+  "proposed_experiment": "Use paired detectors to measure both palms concurrently at baseline, repeat at discharge for reliability, and obtain blinded day-90 motor scores; train across two stroke units and validate without recalibration at a third.",
+  "rationale": [
+   {
+    "step": "Year-long bilateral measurements found relatively preserved left-right balance in healthy people but reported severe imbalance in some stroke patients using two PMTs spanning 300–650 nm.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W130479031"
+    ]
+   },
+   {
+    "step": "Human UPE displays a diurnal rhythm, so sequential left-right measurements could convert time drift into apparent pathological asymmetry.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2165767379"
+    ]
+   },
+   {
+    "step": "Human hand UPE varies by surface and individual, with palmar measurements reported as less variable in an analytical review, supporting a simultaneous within-person palmar ratio.",
+    "justification_type": "citation",
+    "work_ids": [
+     "W2906242287"
+    ]
+   },
+   {
+    "step": "Calculate log(UPEaffected/UPEunaffected), add it to the locked clinical model and evaluate ΔR² in a held-out hospital; support requires ΔR²≥0.10 and the same coefficient direction at every site.",
+    "justification_type": "computation"
+   }
+  ],
+  "cited_works": [
+   {
+    "work_id": "W130479031",
+    "title": "Left-Right and Yin-Yang Balance of Biophoton Emission from Hands",
+    "year": 2004,
+    "type": "article",
+    "abstract": "Yearlong measurements of biophotons from palm and back of hand of three healthy people were performed. The detection of biophoton was done with two photomultiplier tubes whose spectral range was from 300 nm to 650 nm. The measurement was done on a circular area of diameter 46 mm whose centers were at the acupuncture point Laogong (PC8) of a palm and the mid-point of a back, respectively. The emission rates from the dorsa showed strong seasonal dependence which is consistent with the active nature of Yang meridians, while the palm sides show less seasonal dependence as they belong to the passive Yin meridians. This could be quantified simply by the standard deviations from the yearly average: They were 47.6 counts per second (cps), 66.1 cps and 66.0 cps from the dorsa, and 23.8 cps, 29.7 cps and 30.4 cps from the palms of subject 1, 2 and 3, respectively. Biophoton emission revealed qualitative individual tendencies: The subjects 1 and 2 emitted more strongly from the left dorsa, while the subject 3 from the right dorsum. The left-right balance of biophoton emission was well kept for normal people, which is in contrast with the severe imbalance for some stroke patients. Thus biophoton measurement has a diagnostic potential that encourages more studies."
+   },
+   {
+    "work_id": "W2165767379",
+    "title": "Imaging of Ultraweak Spontaneous Photon Emission from Human Body Displaying Diurnal Rhythm",
+    "year": 2009,
+    "type": "article",
+    "abstract": "The human body literally glimmers. The intensity of the light emitted by the body is 1000 times lower than the sensitivity of our naked eyes. Ultraweak photon emission is known as the energy released as light through the changes in energy metabolism. We successfully imaged the diurnal change of this ultraweak photon emission with an improved highly sensitive imaging system using cryogenic charge-coupled device (CCD) camera. We found that the human body directly and rhythmically emits light. The diurnal changes in photon emission might be linked to changes in energy metabolism."
+   },
+   {
+    "work_id": "W2906242287",
+    "title": "Human Ultraweak Photon Emission: Key Analytical Aspects, Results and Future Trends – A Review",
+    "year": 2018,
+    "type": "article",
+    "abstract": "Living systems emit what is called ultraweak photon emission (UPE). This visually undetectable phenomenon has only been studied in humans for the last 30 years, finding that UPE is a complex process depending on multitude factors. Considering previous literature, this review discusses the current trends in the analysis of in vivo UPE from human beings. To this aim, Analytical Approaches Employed for UPE Measurement section focuses on the analytical techniques employed (photomultipliers and charged coupled device cameras), summarizing analytical conditions and reporting figures of merit reached to date. Then, Human UPE Depending on External Factors and Human UPE Depending on Internal Factors sections address external and internal factors, which have proved to affect UPE, pointing out the important influence on oxidative processes outside and inside the body, and also highlighting some personal states of the individuals affecting UPE. Last section is devoted to give a general view on the goals and achieved up to date regarding UPE measurement, emphasizing some potential applications as well as recommendations which include: use of UPE spectra information together with UPE intensity, larger populations (≈50-100 subjects), further studies on internal states of individuals, and use of statistical tools."
+   }
+  ]
+ }
+]

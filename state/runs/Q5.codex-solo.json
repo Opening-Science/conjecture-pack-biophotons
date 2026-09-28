@@ -1,0 +1,307 @@
+{
+ "hof_version": "1.0",
+ "run": {
+  "engine": "codex-solo",
+  "seed_id": "Q5",
+  "backend": "codex-cli",
+  "config_hash": "6758372e811b",
+  "corpus_calls": 24,
+  "elapsed_s": 277.0
+ },
+ "hypotheses": [
+  {
+   "id": "Q5-1",
+   "statement": "For mechanically wounded seven-week-old Arabidopsis thaliana, independently calibrated PMT and EMCCD measurements of the 400–870 nm photon-emission-rate-density integral over the first 30 minutes after incision will be equivalent within ±15%.",
+   "scope": {
+    "population": "Seven-week-old Arabidopsis thaliana plants, with at least 30 plants per detector comparison",
+    "condition": "Two-hour dark adaptation followed by a standardized sharp leaf incision and simultaneous 30-minute acquisition",
+    "comparator": "A red-sensitive photon-counting PMT versus a back-illuminated EMCCD viewing the same leaf through a calibrated beam splitter",
+    "outcome": "Background-subtracted 400–870 nm photon emission per second per square centimetre, integrated over 30 minutes"
+   },
+   "null_hypothesis": "The 90% confidence interval for the PMT-to-EMCCD mean emission-density ratio is not wholly contained within 0.85–1.15.",
+   "estimand": "Ratio of geometric-mean calibrated 30-minute emission-density integrals from the PMT and EMCCD.",
+   "causal_level": "L2",
+   "rationale": [
+    {
+     "step": "The seed brief identifies the absence of absolute photon units and direct instrument comparability as the metrology hole.",
+     "justification_type": "given"
+    },
+    {
+     "step": "Standardized incision of seven-week-old Arabidopsis produces measurable UPE extending through 400–870 nm, with a dominant 700–750 nm contribution.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W4414929333"
+     ]
+    },
+    {
+     "step": "A prior wound-emission experiment could not accurately analyze 700–720 nm because of its PMT photocathode sensitivity, demonstrating that detector response can limit comparability in the relevant band.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2808116502"
+     ]
+    },
+    {
+     "step": "For each wavelength bin, emission-rate density is computed as Jλ=(Cλ-Dλ)/(t·A·Gλ·QEλ·Tλ), where Cλ is sample counts, Dλ is matched dark counts, t is acquisition time, A is emitting area, Gλ is calibrated collection efficiency, QEλ is detector efficiency, and Tλ is optical transmission.",
+     "justification_type": "computation"
+    }
+   ],
+   "cited_work_ids": [
+    "W4414929333",
+    "W2808116502",
+    "W3161989600"
+   ],
+   "proposed_experiment": "Calibrate both detector paths with the same wavelength-scanned low-flux transfer source, measure beam-splitter ratio and collection geometry, then acquire injured leaves and shuttered dark frames simultaneously. Convert both count streams to photon s^-1 cm^-2 and perform a preregistered paired equivalence test with bounds 0.85–1.15.",
+   "required_instrument": "Thermoelectrically cooled red-sensitive photon-counting PMT and back-illuminated EMCCD, both characterized from 400 to 870 nm, plus a calibrated beam splitter and tunable low-flux source.",
+   "engine_native_score": 0.91,
+   "novelty_self_claim": "This tests whether a complete calibration chain makes two detector classes agree on absolute wound-induced UPE, rather than advancing another biological stress association already covered by the register."
+  },
+  {
+   "id": "Q5-2",
+   "statement": "For wounded Arabidopsis thaliana leaves, replacing wavelength-resolved response correction with a single quantum-efficiency value specified at 500 nm will bias the inferred 400–870 nm photon-emission-rate density by at least 25%.",
+   "scope": {
+    "population": "Mechanically wounded seven-week-old Arabidopsis thaliana leaves",
+    "condition": "First 30 minutes after standardized incision following two-hour dark adaptation",
+    "comparator": "A scalar correction using QE at 500 nm versus correction using measured QE and optical transmission in wavelength bins across 400–870 nm",
+    "outcome": "Relative error in total photon-emission-rate density and in the estimated 700–870 nm emission fraction"
+   },
+   "null_hypothesis": "The absolute relative difference between scalar-QE and wavelength-resolved estimates is less than 25%.",
+   "estimand": "Absolute calibration bias |Jscalar-Jspectral|/Jspectral.",
+   "causal_level": "L2",
+   "rationale": [
+    {
+     "step": "Wound-induced Arabidopsis emission is spectrally nonuniform and is dominated by 700–750 nm, with additional emission reported from 750–870 nm.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W4414929333"
+     ]
+    },
+    {
+     "step": "Plant lipid-peroxidation UPE has independently been reported to peak near 680 nm, while another wound study explicitly reported inadequate PMT sensitivity near 700–720 nm.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2034044028",
+      "W2808116502"
+     ]
+    },
+    {
+     "step": "A human UPE spectrometer study identified wavelength-dependent spectrograph transmission and dark signal as constraints on spectral measurement.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2797018767"
+     ]
+    },
+    {
+     "step": "The scalar estimate is Jscalar=Σλ(Cλ-Dλ)/(QE500·T500), whereas the spectral estimate is Jspectral=Σλ(Cλ-Dλ)/(QEλ·Tλ); their relative difference directly quantifies spectral-mismatch bias.",
+     "justification_type": "computation"
+    }
+   ],
+   "cited_work_ids": [
+    "W4414929333",
+    "W2034044028",
+    "W2808116502",
+    "W2797018767"
+   ],
+   "proposed_experiment": "Record injured-leaf emission with a calibrated imaging spectrograph or contiguous bandpass filters, determine end-to-end response at each wavelength using a low-flux source, and process the identical raw observations with scalar and wavelength-resolved corrections.",
+   "required_instrument": "Back-illuminated cooled EMCCD spectrograph or red-enhanced photon-counting PMT with contiguous bandpass filters, covering 400–870 nm.",
+   "engine_native_score": 0.88,
+   "novelty_self_claim": "This exposes the hidden assumption that one quoted QE can convert broadband counts into photons despite strongly red-weighted biological emission."
+  },
+  {
+   "id": "Q5-3",
+   "statement": "After two hours of thermal equilibration, cooled PMT dark counts collected over 48 hours will be Poisson-compatible enough that every six-hour block has a Fano factor of 0.8–1.2 and its empirical one-sided 95% blank threshold is no more than 10% above the Poisson-derived threshold.",
+   "scope": {
+    "population": "At least three low-dark-count PMT models tested in three light-tight UPE chambers",
+    "condition": "Fixed gain and detector temperature, two-hour equilibration, followed by continuous 48-hour shuttered acquisition in 60-second bins",
+    "comparator": "Empirical block-specific blank distribution versus a stationary Poisson model with the same mean",
+    "outcome": "Fano factor and the ratio of empirical to Poisson one-sided 95% thresholds, also expressed as photon s^-1 cm^-2 after calibration"
+   },
+   "null_hypothesis": "At least one detector has a six-hour block with Fano factor outside 0.8–1.2 or an empirical 95% threshold more than 10% above the Poisson threshold.",
+   "estimand": "For each detector and block, F=Var(C)/Mean(C) and RLOD=Q0.95,empirical/Q0.95,Poisson.",
+   "causal_level": "L5",
+   "rationale": [
+    {
+     "step": "Dark-count measurements without germinating seeds have been reported to show ordinary rather than anomalous temporal scaling.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W3157775700"
+     ]
+    },
+    {
+     "step": "Basal and several wound-experiment photocount states have been reported to approximate Poisson distributions.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2808116502"
+     ]
+    },
+    {
+     "step": "The UPE review notes that detector dark counts are central to instrument choice and that signal-to-noise ratio of at least one is commonly required.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W4391831883"
+     ]
+    },
+    {
+     "step": "Fano factor tests dispersion independently of count scale, while the empirical-to-Poisson threshold ratio measures how much a stationary-Poisson assumption understates the blank-defined detection threshold.",
+     "justification_type": "computation"
+    }
+   ],
+   "cited_work_ids": [
+    "W3157775700",
+    "W2808116502",
+    "W4391831883",
+    "W3161989600"
+   ],
+   "proposed_experiment": "Distribute an identical acquisition protocol to three laboratories, log detector and chamber temperatures, acquire continuous shuttered counts, and analyze preregistered six-hour blocks without removing bursts except under explicit hardware-fault rules. Convert thresholds using each detector's wavelength-dependent efficiency and collection geometry.",
+   "required_instrument": "Thermoelectrically cooled photon-counting PMTs sensitive over approximately 300–800 nm, with electronic shutters, temperature logging, and traceable low-flux efficiency calibration.",
+   "engine_native_score": 0.73,
+   "novelty_self_claim": "This directly tests the stationary-Poisson dark-noise assumption on which many count-subtraction and LOD calculations implicitly depend."
+  },
+  {
+   "id": "Q5-4",
+   "statement": "Centrally prepared sealed ampoules containing 100 mmol/L hydrogen peroxide in ultrapure water will provide a transferable ultraweak-luminescence reference whose 350–800 nm emission-rate density has within-laboratory ampoule CV no greater than 10% and between-laboratory bias no greater than 15% during minutes 5–15 at 25 °C.",
+   "scope": {
+    "population": "A single centrally prepared lot of sealed quartz ampoules containing 100 mmol/L hydrogen peroxide in ultrapure water",
+    "condition": "Measurement at 25 °C during a fixed 5–15 minute window after placement in the optical cavity",
+    "comparator": "Replicate ampoules within each laboratory and consensus emission-rate density across at least three laboratories",
+    "outcome": "Absolute 350–800 nm photon emission per second per cubic centimetre"
+   },
+   "null_hypothesis": "Within-laboratory ampoule CV exceeds 10% in any laboratory or at least one laboratory's mean differs from the cross-laboratory consensus by more than 15%.",
+   "estimand": "Maximum within-laboratory coefficient of variation and maximum absolute laboratory deviation from the consensus mean.",
+   "causal_level": "L1",
+   "rationale": [
+    {
+     "step": "Non-catalytic hydrogen-peroxide disproportionation in pure water has been detected as ultraweak luminescence using a high-albedo quartz-powder Ulbricht cavity and photon counter.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W3161989600"
+     ]
+    },
+    {
+     "step": "The same work reports conversion of an extended isotropic photon source into a smaller Lambertian output with approximately 50% number efficiency and reports a detection limit in photon-emission-rate-density units.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W3161989600"
+     ]
+    },
+    {
+     "step": "The seed brief identifies reference materials and an inter-laboratory comparison as missing components of the UPE calibration chain.",
+     "justification_type": "given"
+    },
+    {
+     "step": "Within-laboratory CV is SD(J)/Mean(J), and laboratory bias is |Mean(Jlab)-Mean(Jconsensus)|/Mean(Jconsensus); the stated bounds therefore give unambiguous acceptance criteria.",
+     "justification_type": "computation"
+    }
+   ],
+   "cited_work_ids": [
+    "W3161989600"
+   ],
+   "proposed_experiment": "Prepare, randomize, and blind-code one ampoule lot; distribute it with identical quartz-powder cavities and a spectral calibration protocol to three laboratories; acquire matched water blanks and replicate ampoules; and compare absolute volume-normalized emission without laboratory-specific rescaling.",
+   "required_instrument": "High-albedo quartz-powder Ulbricht cavity coupled to a calibrated cooled silicon single-photon counter or low-dark-count PMT covering 350–800 nm.",
+   "engine_native_score": 0.82,
+   "novelty_self_claim": "This proposes and quantitatively qualifies a matrix-matched transfer reference for UPE-level emission, addressing the reference-material gap rather than another biological mechanism."
+  },
+  {
+   "id": "Q5-5",
+   "statement": "For matched astrocyte and glioblastoma cultures containing 10^6 viable cells per well, at least 90% of replicate wells in each cell class will produce a calibrated 350–800 nm emission-rate density whose lower 95% confidence bound exceeds the empirical blank-defined LOD.",
+   "scope": {
+    "population": "Cultured astrocytes and glioblastoma cells normalized to 10^6 viable cells per well, with at least 30 wells per class",
+    "condition": "Fixed medium volume, temperature and dark-adaptation interval, followed by a 30-minute spontaneous-emission measurement",
+    "comparator": "Cell-free medium wells handled identically and interleaved throughout acquisition",
+    "outcome": "Fraction of cell-containing wells exceeding an empirical absolute LOD in photon s^-1 cm^-2"
+   },
+   "null_hypothesis": "Fewer than 90% of wells in either cell class have a lower 95% confidence bound above the blank-defined LOD.",
+   "estimand": "Detection probability in each cell class and the median ratio of net emission-rate density to absolute LOD.",
+   "causal_level": "L5",
+   "rationale": [
+    {
+     "step": "Initial astrocyte and glioblastoma measurements reported clear separation of cellular signals from dark noise using ultra-sensitive photon-counting setups.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W7124764611"
+     ]
+    },
+    {
+     "step": "That study identifies further optical integration and detector cooling as setup optimizations, indicating that detection performance remains instrument-dependent.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W7124764611"
+     ]
+    },
+    {
+     "step": "Absolute photon-emission-rate-density LOD is required for direct sensitivity comparison, but is rarely reported in luminescence detection studies.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W3161989600"
+     ]
+    },
+    {
+     "step": "For each well, the decision statistic is S=(Jcell-Jblank)/LOD; detection requires the lower 95% confidence bound of S to exceed one.",
+     "justification_type": "computation"
+    }
+   ],
+   "cited_work_ids": [
+    "W7124764611",
+    "W3161989600",
+    "W4391831883"
+   ],
+   "proposed_experiment": "Randomize cell and medium-only wells, interleave shuttered and medium blanks, calibrate end-to-end efficiency and collection geometry, and report both net emission density and a blank-distribution LOD. Repeat the campaign with a PMT and a silicon photon counter.",
+   "required_instrument": "Low-dark-count cooled PMT and independently calibrated silicon single-photon counter with quartz collection optics covering 350–800 nm.",
+   "engine_native_score": 0.84,
+   "novelty_self_claim": "This converts a reported qualitative separation from dark noise into a preregistered absolute-unit detection claim that another laboratory can directly reproduce."
+  },
+  {
+   "id": "Q5-6",
+   "statement": "A malignancy classifier trained in one laboratory on calibrated 400–800 nm UPE emission-rate-density time series from a 13-cell-line malignant/non-malignant panel will achieve AUROC of at least 0.80 without model refitting in each of two laboratories using different detector classes.",
+   "scope": {
+    "population": "The 13 human and mouse malignant and non-malignant cell-line panel represented by 10^6 viable cells per plate",
+    "condition": "Standardized culture, medium, dark adaptation and 100-second acquisition protocol at three laboratories",
+    "comparator": "External laboratories using detector classes different from the training laboratory, with predictions from the frozen training-laboratory model",
+    "outcome": "Held-out laboratory AUROC for malignant versus non-malignant classification using absolute time-series and temporal power-density features"
+   },
+   "null_hypothesis": "The frozen classifier has AUROC below 0.80 in either external laboratory.",
+   "estimand": "Minimum AUROC across the two external laboratories, with cell line rather than plate used as the resampling unit.",
+   "causal_level": "L6",
+   "rationale": [
+    {
+     "step": "A 13-cell-line in vitro study reported increased emission from tumor cells and 90% discrimination using temporal spectral-power-density features derived from 100-second photon measurements.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W3016463384"
+     ]
+    },
+    {
+     "step": "The UPE literature explicitly characterizes the absence of standardization as preventing UPE from becoming a reliable biomarker.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W4417459026"
+     ]
+    },
+    {
+     "step": "Lack of absolute photon and emission-density LOD reporting precludes direct sensitivity comparison between luminescence instruments.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W3161989600"
+     ]
+    },
+    {
+     "step": "Each raw bin is transformed to J(t)=[C(t)-D(t)]/[A·G·QEeff·Δt], after which the frozen feature transformation and classifier are applied identically at every laboratory.",
+     "justification_type": "computation"
+    },
+    {
+     "step": "The hypothesis is accepted only if both external AUROCs are at least 0.80; taking their minimum prevents a high-performing laboratory from masking a portability failure.",
+     "justification_type": "computation"
+    }
+   ],
+   "cited_work_ids": [
+    "W3016463384",
+    "W4417459026",
+    "W3161989600",
+    "W4391831883"
+   ],
+   "proposed_experiment": "Distribute authenticated cell stocks and a locked acquisition protocol to three laboratories using, respectively, a PMT, EMCCD and silicon photon counter. Calibrate wavelength response, geometry, dark distribution and LOD locally; train once at the designated laboratory; freeze preprocessing and model coefficients; and evaluate blinded external plates without threshold adjustment.",
+   "required_instrument": "Calibrated photon-counting PMT, back-illuminated EMCCD, or cooled silicon single-photon detector with characterized response across 400–800 nm.",
+   "engine_native_score": 0.86,
+   "novelty_self_claim": "This tests whether absolute calibration makes a published cell-state signal transportable across laboratories and detector classes, rather than merely reproducing within-instrument discrimination."
+  }
+ ]
+}

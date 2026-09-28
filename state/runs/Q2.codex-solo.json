@@ -1,0 +1,256 @@
+{
+ "hof_version": "1.0",
+ "run": {
+  "engine": "codex-solo",
+  "seed_id": "Q2",
+  "backend": "codex-cli",
+  "config_hash": "bab487242b03",
+  "corpus_calls": 17,
+  "elapsed_s": 275.9
+ },
+ "hypotheses": [
+  {
+   "id": "Q2-1",
+   "statement": "For day-3 germinating Vigna radiata, source-intrinsic second- and third-order factorial cumulants of 400–750 nm UPE obey the calibrated Bernoulli-thinning laws κ2(η)=η²κ2(1) and κ3(η)=η³κ3(1) across optical transmissions η=0.10, 0.25, 0.50 and 1.00.",
+   "scope": {
+    "population": "Independent batches of day-3 germinating Vigna radiata seeds",
+    "condition": "Dark-adapted spontaneous emission recorded in stationary 30-minute blocks",
+    "comparator": "Empty chamber and intensity-matched Poisson LED measured through the same four transmissions",
+    "outcome": "Detector-corrected second- and third-order factorial cumulants of counts in preregistered 50 ms, 200 ms and 1 s bins"
+   },
+   "null_hypothesis": "The biological-sample cumulants reject the thinning laws at the preregistered 0.01 level or show the same transmission-dependent residuals as detector controls, indicating that the apparent statistics cannot be assigned to the emitted field.",
+   "estimand": "The joint chi-square lack-of-fit statistic for κr(η)=η^rκr(1), r=2,3, after propagation of quantum-efficiency, dark-count, crosstalk and dead-time uncertainties",
+   "causal_level": "L2",
+   "rationale": [
+    {
+     "step": "Photocount distributions have been measured in germinating mung beans, and their form changes with bin size.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2412356141"
+     ]
+    },
+    {
+     "step": "The critical review identifies detector nonideality as a central obstacle and argues that detectors closer to ideal may resolve UPE statistical properties.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2141663490"
+     ]
+    },
+    {
+     "step": "Calibrated statistical detector models have already enabled visible-light detection below 30 photons s−1 cm−2 while explicitly treating quantum efficiency and detector noise.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W3126489816"
+     ]
+    },
+    {
+     "step": "Independent detection with probability η binomially thins photon number, so the r-th factorial cumulant scales as η^r; failure of this scaling localizes the anomaly to the detector or an unmodelled transmission-dependent background.",
+     "justification_type": "computation"
+    },
+    {
+     "step": "The seed brief makes characterized quantum efficiency and dead-time prerequisites for interpreting photocount statistics.",
+     "justification_type": "given"
+    }
+   ],
+   "cited_work_ids": [
+    "W2141663490",
+    "W2412356141",
+    "W3126489816"
+   ],
+   "proposed_experiment": "Place calibrated neutral-density filters before all detection optics, randomize filter order within each stationary recording block, and acquire photon-number histograms simultaneously with environmental and empty-chamber controls. Estimate factorial cumulants with a preregistered detector-response matrix calibrated using a pulsed Poisson source; test the two thinning equations jointly at every bin width and in held-out seed batches.",
+   "required_instrument": "Calibrated visible-sensitive multi-pixel SNSPD or other photon-number-resolving array covering 400–750 nm, with independently measured wavelength-dependent efficiency, pixel crosstalk, timing jitter and dead-time",
+   "engine_native_score": 0.88,
+   "novelty_self_claim": "This adds an intervention-based detector-validity test: unlike H2.g2 or H2.sq, it requires a purported optical-state signature to transform correctly under known loss before any biological interpretation is allowed."
+  },
+  {
+   "id": "Q2-2",
+   "statement": "For day-3 germinating Vigna radiata, broadband UPE arrivals are conditionally Poisson from 1 µs to 1 s once intensity variation slower than 10 s is estimated out-of-sample, so the residual cross-detector g2(τ) remains within 0.05 of unity throughout that lag range.",
+   "scope": {
+    "population": "At least three independent batches of day-3 germinating Vigna radiata seeds",
+    "condition": "Dark-adapted spontaneous 350–750 nm emission during six-hour recordings",
+    "comparator": "Empty chamber, intensity-matched inhomogeneous Poisson LED, and raw counts without conditional-rate transformation",
+    "outcome": "Time-rescaled interarrival distribution and conditional cross-detector g2(τ) over 1 µs–1 s"
+   },
+   "null_hypothesis": "After held-out rate conditioning, replicated biological recordings retain |g2(τ)−1| greater than 0.05 at any preregistered lag band or reject the unit-rate Poisson time-rescaling model after multiplicity correction.",
+   "estimand": "The maximum absolute conditional excess correlation maxτ|g2(τ)−1|, accompanied by the Cramér–von Mises distance of time-rescaled gaps from an exponential distribution",
+   "causal_level": "L2",
+   "rationale": [
+    {
+     "step": "Nonstationary Poisson signals can retain trend-derived variance after ordinary detrending and thereby generate artifactual Fano-factor and Hurst-exponent results.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2775301342"
+     ]
+    },
+    {
+     "step": "Mung-bean autoluminescence has been reported to contain negative memory, but that work also identifies reference-signal quality and detector contributions as unresolved issues.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2964505745"
+     ]
+    },
+    {
+     "step": "Photocount distributions from the same standard preparation have previously been evaluated at multiple aggregation scales.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2412356141"
+     ]
+    },
+    {
+     "step": "If arrivals follow an inhomogeneous Poisson process with conditional rate λ(t), transformed gaps zi=∫ti−1^ti λ(u)du are independent unit-exponential variables; persistent residual correlation therefore cannot be explained solely by the fitted slow rate.",
+     "justification_type": "computation"
+    }
+   ],
+   "cited_work_ids": [
+    "W2412356141",
+    "W2775301342",
+    "W2964505745"
+   ],
+   "proposed_experiment": "Split collected UPE equally between two detectors and record unbinned arrival times. Fit a preregistered conditional-rate model using alternate 30-minute training blocks while excluding frequencies above 0.1 Hz, transform held-out arrivals, and test both rescaled gaps and cross-detector correlations. Replicate the complete analysis in seed batches withheld until the model is frozen.",
+   "required_instrument": "Two low-dark-count, time-tagging Si-SPAD or SNSPD channels behind a 50:50 beamsplitter, sensitive over 350–750 nm with characterized afterpulsing, dead-time and sub-microsecond timing",
+   "engine_native_score": 0.79,
+   "novelty_self_claim": "This sharpens H2.g2 by separating fast optical correlations from slow biological rate modulation with an out-of-sample point-process null rather than treating binned non-Poisson variance as coherence."
+  },
+  {
+   "id": "Q2-3",
+   "statement": "Aerobic wound-induced Spathiphyllum UPE is multimode thermal in the chlorophyll band: narrowing detection from 650–720 nm to 669.95–670.05 nm will increase g2(0) by at least 0.10 and reveal a picosecond bunching envelope absent under anoxia.",
+   "scope": {
+    "population": "Mature Spathiphyllum leaves from independently grown plants",
+    "condition": "Mechanical wounding after two hours of dark adaptation, measured separately under air and nitrogen",
+    "comparator": "The same leaves before wounding, wounded leaves under anoxia, broadband 650–720 nm detection, and an attenuated coherent laser calibration",
+    "outcome": "Cross-detector g2(τ) near zero delay and its dependence on optical bandwidth"
+   },
+   "null_hypothesis": "Narrowing the band produces less than a 0.10 increase in g2(0), no reproducible bunching envelope, or an identical feature in anoxic and detector-only controls.",
+   "estimand": "Δg2=g2,narrow(0)−g2,broad(0), together with the fitted bunching-envelope half-width after deconvolution of detector jitter",
+   "causal_level": "L2",
+   "rationale": [
+    {
+     "step": "Aerobic wounded Spathiphyllum leaves emit predominantly above 650 nm, whereas anoxia suppresses wound-induced emission; broadband count distributions in several states approximately followed Poisson laws.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2808116502"
+     ]
+    },
+    {
+     "step": "The UPE literature notes that a many-mode thermal photocount distribution approaches a Poisson distribution, making coherent and thermal emissions difficult to distinguish under broad mode collection.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W4400038049",
+      "W2141663490"
+     ]
+    },
+    {
+     "step": "At λ=670 nm and Δλ=0.10 nm, λ²/(cΔλ) is approximately 15 ps, setting the order of the expected first-order coherence time and thermal g2 bunching width.",
+     "justification_type": "computation"
+    },
+    {
+     "step": "For M independent equally populated thermal modes, g2(0)=1+1/M; spectral and spatial mode restriction should therefore increase bunching, whereas a coherent state retains g2(0)=1 under passive filtering.",
+     "justification_type": "computation"
+    }
+   ],
+   "cited_work_ids": [
+    "W2141663490",
+    "W2808116502",
+    "W4400038049"
+   ],
+   "proposed_experiment": "Collect emission from a standardized array of wounded leaves into a stabilized Hanbury Brown–Twiss system. Alternate a 650–720 nm filter with a 0.10 nm tunable etalon centered at 670 nm, hold collection étendue fixed, and integrate coincidences over repeated leaves. Pre-register a jitter-convolved thermal bunching model and coherent g2=1 model, with filter order randomized and anoxic leaves processed identically.",
+   "required_instrument": "Two high-efficiency red-sensitive SNSPDs with approximately 10–20 ps timing jitter, a time-correlated single-photon counter, and switchable 650–720 nm and 0.10 nm filters centered near 670 nm",
+   "engine_native_score": 0.58,
+   "novelty_self_claim": "Instead of merely asking whether g2(0) differs from one, this tests the specific multimode-averaging explanation for Poisson-like UPE through a predicted bandwidth-dependent bunching law."
+  },
+  {
+   "id": "Q2-4",
+   "statement": "The squeezed-state claim for Xanthoria parietina implies a phase-sensitive minimum quadrature variance no greater than 0.92 of shot noise in a mode-matched 300–800 nm optical mode.",
+   "scope": {
+    "population": "Viable, dark-adapted Xanthoria parietina thalli prepared as in the published photocount study",
+    "condition": "Spontaneous emission measured in repeated stationary intervals, with the local-oscillator spectrum and spatial mode matched to the measured UPE",
+    "comparator": "Killed lichen, empty chamber, blocked signal port, and an attenuation-matched coherent calibration source",
+    "outcome": "Minimum balanced-homodyne quadrature variance normalized to contemporaneous shot noise"
+   },
+   "null_hypothesis": "All preregistered quadrature phases have variance at or above 0.98 of shot noise after correcting electronic noise, loss and mode mismatch, or any apparent reduction also occurs in blocked-port controls.",
+   "estimand": "The minimum loss-corrected quadrature variance Vmin/Vshot and its one-sided 95% confidence bound",
+   "causal_level": "L2",
+   "rationale": [
+    {
+     "step": "Photocount distributions from Xanthoria parietina were reported to be reproduced over 50 ms–6 s by a squeezed-state model with squeezing parameter r=0.06.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W43326842"
+     ]
+    },
+    {
+     "step": "Interpretations of UPE photocount statistics as coherent or squeezed states remain controversial and are not generally accepted.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2141663490"
+     ]
+    },
+    {
+     "step": "For an ideal squeezed quadrature, Vmin/Vshot=e^(−2r); substituting r=0.06 gives e^(−0.12)=0.887, so a 0.92 threshold allows limited calibrated loss while remaining a direct prediction of the reported parameter.",
+     "justification_type": "computation"
+    },
+    {
+     "step": "A classical mixture can imitate some photon-number distributions, but a reproducible quadrature variance below shot noise is a phase-sensitive nonclassical signature independent of fitting the same count histogram.",
+     "justification_type": "computation"
+    }
+   ],
+   "cited_work_ids": [
+    "W43326842",
+    "W2141663490"
+   ],
+   "proposed_experiment": "First measure the lichen's spectral and spatial emission profile, then shape a weak local oscillator to that mode and scan quadrature phase in randomized blocks. Calibrate shot noise before and after every biological block, quantify total optical loss and mode overlap, and perform the preregistered one-sided variance test on held-out thalli.",
+   "required_instrument": "High-quantum-efficiency balanced homodyne receiver with a spectrally shaped local oscillator covering the detected 300–800 nm UPE mode, shot-noise clearance monitoring and low-noise visible photodiodes",
+   "engine_native_score": 0.4,
+   "novelty_self_claim": "This advances beyond H2.sq by demanding the independent phase-sensitive consequence of the published squeezing parameter rather than another comparison of photon-count models."
+  },
+  {
+   "id": "Q2-5",
+   "statement": "Aerobic wound-induced Spathiphyllum emission at 660–680 nm has intrinsic spatial first-order coherence exceeding that produced by passive filtering of an equally extended incoherent source, with excess |g1| of at least 0.10 at a 100 µm source-plane shear.",
+   "scope": {
+    "population": "Mature Spathiphyllum leaves from independently grown plants",
+    "condition": "Mechanical wounding after two hours of dark adaptation in air, analyzed in preregistered quasi-stationary decay windows",
+    "comparator": "Pre-wound leaves, wounded leaves under anoxia, and an intensity- and geometry-matched incoherent calibration source passed through identical optics",
+    "outcome": "Interferometric fringe visibility converted to |g1| after correcting arm imbalance and subtracting the incoherent-source prediction"
+   },
+   "null_hypothesis": "At 100 µm shear, the upper 95% confidence bound for excess |g1| is below 0.10 or the observed visibility is fully reproduced by the filtered incoherent calibration source.",
+   "estimand": "Excess spatial coherence Δ|g1|=|g1|leaf−|g1|matched-incoherent at 100 µm shear",
+   "causal_level": "L2",
+   "rationale": [
+    {
+     "step": "Wound-induced Spathiphyllum emission is oxygen-dependent and concentrated above 650 nm, providing a defined high-signal biological and spectral reference.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2808116502"
+     ]
+    },
+    {
+     "step": "The UPE literature's claims about coherence and the interpretation of photocount statistics are explicitly controversial.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2141663490"
+     ]
+    },
+    {
+     "step": "Photon-counting EMCCD systems with calibrated detector-noise models can detect visible fluxes below 30 photons s−1 cm−2, supporting long-exposure interferometric imaging at UPE levels.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W3126489816"
+     ]
+    },
+    {
+     "step": "For two interferometer arms with intensities I1 and I2, visibility V=[2√(I1I2)/(I1+I2)]|g1|; measuring both arm intensities therefore permits a checkable estimate of first-order coherence.",
+     "justification_type": "computation"
+    }
+   ],
+   "cited_work_ids": [
+    "W2141663490",
+    "W2808116502",
+    "W3126489816"
+   ],
+   "proposed_experiment": "Image a fixed leaf region through a stabilized lateral-shearing interferometer at several source-plane separations, with 100 µm designated as primary. Measure each arm separately, phase-step the interferometer, and estimate visibility from repeated wound-decay windows. Run an extended incoherent source matched to the leaf's measured intensity map and spectrum through the identical aperture and filter to quantify coherence introduced by the optics alone.",
+   "required_instrument": "Back-illuminated photon-counting EMCCD or qCMOS camera with a phase-stepped lateral-shearing interferometer and a 660–680 nm bandpass filter",
+   "engine_native_score": 0.51,
+   "novelty_self_claim": "This operationalizes coherence as first-order spatial coherence, which neither H2.g2 nor H2.sq measures, and explicitly subtracts coherence created by spectral and spatial filtering."
+  }
+ ]
+}

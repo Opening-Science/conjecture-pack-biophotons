@@ -1,0 +1,382 @@
+{
+ "hof_version": "1.0",
+ "run": {
+  "engine": "baseline-claude",
+  "seed_id": "Q6",
+  "backend": "claude-subagent",
+  "config_hash": "eeb1a94050a3",
+  "corpus_calls": 38
+ },
+ "hypotheses": [
+  {
+   "id": "Q6-1",
+   "statement": "In a single pre-registered diagnostic-accuracy study, a standardized UVA-provocation UPE index (integrated 0-120 s post-irradiation photon count divided by the dark-adapted pre-irradiation baseline on the volar forearm) discriminates a pre-specified redox-abnormal patient group from matched controls with an out-of-sample AUC at least 0.10 higher than spontaneous UPE intensity measured on the same site in the same session.",
+   "scope": {
+    "population": "Adults 18-65 with one pre-specified systemic redox disorder (erythropoietic protoporphyria or early-stage type 2 diabetes), plus controls matched on age, sex and Fitzpatrick skin type; n >= 100 per arm, split 60/40 into a training and a single-use held-out set.",
+    "condition": "One session per subject: 20 min standardized dark adaptation, volar forearm, spontaneous UPE recorded for 600 s, then a radiometer-verified 365 nm UVA dose (5 J/cm2) followed by 120 s provoked recording; classifier specification locked and registered before unblinding.",
+    "comparator": "Spontaneous (unprovoked) UPE intensity from the identical site, subject, session and detector - a within-subject head-to-head, not a cross-study comparison.",
+    "outcome": "Area under the ROC curve on the held-out set, evaluated once, for each of the two locked classifiers."
+   },
+   "null_hypothesis": "Delta-AUC (provoked minus spontaneous) is <= 0, or its upper 95% CI bound lies below 0.10 - i.e. provocation buys no discriminative advantage over the spontaneous intensity on which nearly all existing clinical UPE claims rest.",
+   "estimand": "Delta-AUC = AUC(provocation index) - AUC(spontaneous intensity), with 95% CI from a paired DeLong test on the held-out set.",
+   "causal_level": "L6",
+   "rationale": [
+    {
+     "step": "A within-study dissociation between spontaneous and provoked UPE already exists in the corpus: in erythropoietic protoporphyria patients, spontaneous UPE resembled that of healthy individuals, while the post-solar-simulated-light initial burst correlated with plasma iron and erythrocyte protoporphyrin IX and was suppressed by oral zinc. Spontaneous emission carried no disease information; provoked emission did.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W1977870833"
+     ]
+    },
+    {
+     "step": "UVA-provoked UPE is the only human UPE readout in the corpus that has been shown to move dose-dependently with a controlled intervention in formal clinical trials (two trials, 20 volunteers each, dose-dependent antioxidant effect of topical vitamin C and alpha-glucosylrutin), and the same work qualifies UVA-provoked UPE explicitly as a validated non-invasive method.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2113953738"
+     ]
+    },
+    {
+     "step": "Spontaneous human skin UPE is on the order of tens to hundreds of photons per second per square centimetre, whereas UV provocation raises skin emission by a factor that scales with UV dose and is suppressible by antioxidants - i.e. the provoked signal sits far above the spontaneous one on the same detector.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2124535387",
+      "W3080192087",
+      "W2958430166"
+     ]
+    },
+    {
+     "step": "Photon-shot-noise calculation of the SNR gain: take spontaneous emission s = 10 detected counts/s (100 photons/s/cm2 over 1 cm2 at ~10% end-to-end detection efficiency) against a background b = 10 counts/s, integrated for T = 100 s. SNR = sT/sqrt((s+b)T) = 1000/sqrt(2000) = 22.4. A provocation that raises the emission tenfold gives s = 100 counts/s: SNR = 10000/sqrt(11000) = 95.3. The provoked acquisition delivers a ~4.3-fold SNR gain at fixed integration time, which for a fixed true group separation propagates directly into higher attainable discrimination.",
+     "justification_type": "computation"
+    },
+    {
+     "step": "The field's own analytical review recommends populations of approximately 50-100 subjects for human UPE studies, so the n >= 100 per arm specified here is the smallest sample the field itself would accept as adequate.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2906242287"
+     ]
+    }
+   ],
+   "cited_work_ids": [
+    "W1977870833",
+    "W2113953738",
+    "W2124535387",
+    "W3080192087",
+    "W2958430166",
+    "W2906242287"
+   ],
+   "proposed_experiment": "Pre-registered two-arm diagnostic accuracy study. Each participant is measured once spontaneously (600 s) and once after a calibrated 365 nm UVA dose on the volar forearm, in a single light-tight session with capped-detector and empty-chamber background runs bracketing every acquisition. Two classifiers (spontaneous intensity; provocation index) are specified, trained and frozen on the 60% training split, then evaluated exactly once on the 40% held-out split, with the paired Delta-AUC as the pre-specified primary endpoint.",
+   "required_instrument": "Cooled low-noise bialkali photomultiplier in photon-counting mode, 300-650 nm, in a light-tight chamber; calibrated 365 nm UVA LED source with radiometer-verified irradiance; per-session capped-detector and empty-chamber dark runs.",
+   "engine_native_score": 0.62,
+   "novelty_self_claim": "Register claim H8 asks whether surface UPE adds predictive power beyond physiological covariates; it does not ask which acquisition modality carries the information. This claim makes the modality itself the estimand and predicts that spontaneous intensity - the readout underlying essentially every clinical UPE claim on the register - loses head-to-head to a provocation-response index, with an existing within-study dissociation (EPP) as the seed observation."
+  },
+  {
+   "id": "Q6-2",
+   "statement": "For the clinical classification tasks in the corpus that are performed with room-lit RGB/multispectral cameras or corona-discharge (GDV/electro-photonic) devices, adding a true dark-chamber single-photon-counting UPE measurement of the same anatomical site contributes no discriminative information (Delta-AUC <= 0.05), because those devices record reflected or discharge-generated light and not endogenous photon emission.",
+   "scope": {
+    "population": "Patients with carpal tunnel syndrome confirmed by nerve conduction testing plus matched controls, replicating the cohort design of the NEV-camera study; n >= 100 total.",
+    "condition": "Every hand measured three ways within one session: (a) NEV-class RGB multispectral camera under specified room illumination with lux logged, (b) Bio-Well-class GDV/electro-photonic fingertip imaging, (c) EMCCD photon counting of the same palmar field in a light-tight chamber after 20 min dark adaptation.",
+    "comparator": "The locked RGB + GDV feature classifier alone, i.e. the published instrument classes without any photon-counting input.",
+    "outcome": "Held-out AUC of the combined classifier minus the held-out AUC of the RGB + GDV classifier, plus the directly measured photon flux ratio between the room-lit and dark-chamber conditions on the same skin."
+   },
+   "null_hypothesis": "Delta-AUC > 0.05 with the lower 95% CI bound above 0.05 - i.e. genuine endogenous photon emission does carry clinical information that the reflectance and discharge devices miss, and the instrument-class objection fails.",
+   "estimand": "Delta-AUC on the single-use held-out split, with 95% bootstrap CI; secondary estimand is the measured ratio of detected photon flux (room-lit reflectance : dark-chamber emission) from the identical skin field.",
+   "causal_level": "L6",
+   "rationale": [
+    {
+     "step": "The carpal tunnel study that supplies the corpus's highest reported clinical accuracy for a 'biophotonic' device (93.33% SVM accuracy, 81.79% cross-validated) explicitly derives its features from skin texture and colour variation in RGB multispectral images, and its own text distances the method from subtle-energy-field claims. The measured quantity is reflectance under illumination, not emission in darkness.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W4410975264"
+     ]
+    },
+    {
+     "step": "The electro-photonic emission analysis literature grouped with UPE as clinical evidence uses a certified Bio-Well GDV Camera 2.0 to image light generated by a high-voltage gas discharge at the fingertip in an open, non-randomized study of 56 respondents; a second corpus work uses the same EPI/GDV modality alongside EEG. Corona-discharge luminescence is externally driven, orders of magnitude brighter than UPE, and is not spontaneous emission.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W3116163342",
+      "W7116696153"
+     ]
+    },
+    {
+     "step": "Spontaneous human skin UPE is quantified in the corpus at tens to hundreds of photons per second per square centimetre, which fixes the scale of the quantity these devices would have to detect.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2124535387",
+      "W3080192087"
+     ]
+    },
+    {
+     "step": "Order-of-magnitude computation of the reflectance-to-emission ratio: 100 lux of room light at 555 nm equals 100/683 = 0.146 W/m2 = 1.46e-5 W/cm2. At a 555 nm photon energy of 3.58e-19 J, that is 4.1e13 photons/s/cm2 incident on the skin. At ~30% diffuse skin reflectance, ~1.2e13 photons/s/cm2 reach the camera, versus ~1e2 photons/s/cm2 of endogenous UPE - a ratio of ~1.2e11. Any room-lit RGB image is more than ten orders of magnitude dominated by reflected illumination, so no UPE component is recoverable from it even in principle.",
+     "justification_type": "computation"
+    },
+    {
+     "step": "A photon-counting arm capable of the required sensitivity is available and demonstrated on living animals: EMCCD and CCD cameras with >90% quantum efficiency capture single visible photons at low noise and resolve live-versus-dead contrast in mice, so the null arm of this experiment is technically decisive rather than underpowered.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W4409735377"
+     ]
+    }
+   ],
+   "proposed_experiment": "Three-modality, same-session study on one locked clinical task (CTS vs control), with feature sets, model class and split pre-registered and the held-out set evaluated once. In parallel, use the EMCCD to measure absolute detected photon flux from the same hand field (i) under the RGB camera's illumination and (ii) in the light-tight chamber, and report the measured ratio against the calculated 1e11 prediction. The instrument-provenance audit is the primary deliverable: which detected photons actually carry the classification.",
+   "required_instrument": "EMCCD, >90% QE, 400-900 nm, in a light-tight chamber with capped-detector dark runs; NEV-class RGB multispectral camera and Bio-Well-class GDV device as published; calibrated lux meter and traceable low-level light source for the flux comparison.",
+   "cited_work_ids": [
+    "W4410975264",
+    "W3116163342",
+    "W7116696153",
+    "W2124535387",
+    "W3080192087",
+    "W4409735377"
+   ],
+   "engine_native_score": 0.78,
+   "novelty_self_claim": "This exposes a hidden assumption that the register's entire L6 clinical branch (H8, and the diagnostic literature feeding it) depends on: that the accuracies cited as evidence for 'UPE as clinical biomarker' were obtained with instruments physically capable of detecting UPE. No register claim addresses instrument-class provenance, and the corpus's two highest-profile recent clinical-support results (NEV camera, GDV) are both non-UPE modalities."
+  },
+  {
+   "id": "Q6-3",
+   "statement": "Clamping the measured skin site to a fixed temperature (32.0 +/- 0.2 C) through a transparent thermostatted window removes at least half of the between-state difference in human surface UPE reported for affective and meditative state manipulations, and the attenuation is larger for detectors whose spectral window extends beyond 650 nm than for detectors restricted to 300-650 nm.",
+   "scope": {
+    "population": "Healthy adults 18-65, n >= 60, no dermatological disease at the measured site.",
+    "condition": "Within-subject crossover: two state conditions (guided relaxation vs. an arousal task of the anger-induction or breathwork type used in the corpus), each measured twice - once with the dorsal hand at free skin temperature and once with the site thermostatted at 32.0 +/- 0.2 C behind a fused-silica window - with condition order randomized and calibrated IR thermography of the site logged throughout.",
+    "comparator": "The free-skin-temperature arm of the same subject and the same state contrast; and, in parallel, the bialkali (300-650 nm) versus extended-red multialkali (300-850 nm) detector.",
+    "outcome": "Standardized effect size of the state contrast on integrated hand UPE, computed separately for each temperature arm and each detector band."
+   },
+   "null_hypothesis": "The thermostatted effect size is >= 80% of the free-temperature effect size (its lower 95% CI bound above 0.8 of it), i.e. skin temperature is a benign additive covariate rather than the generator of the reported state effects - which would kill this hypothesis and support H12/H8 as stated.",
+   "estimand": "Ratio of state-contrast effect sizes, d(thermostatted)/d(free), with 95% CI; secondary estimand is the partial correlation between UPE and skin temperature with state regressed out, reported per detector band.",
+   "causal_level": "L5",
+   "rationale": [
+    {
+     "step": "In exactly the meditation/breathwork paradigm used to claim state-dependent human UPE, a 2026 multi-sensor feasibility study reports moderate within-subject correlation (r > 0.4) between infrared nose temperature and left-hand UPE, alongside strong correlations (r > 0.5) between UPE from the two hands. Thermal state and the UPE readout co-vary within the very design that attributes the change to the mental state.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W7131390579"
+     ]
+    },
+    {
+     "step": "Skin temperature is an established modulator of the UPE signal itself, not merely of the physiology behind it: the validation study that qualified UVA-provoked UPE as a clinical method identified skin temperature, skin humidity and ambient O2 concentration as critical parameters affecting both quality and quantity of the signal, with UVA-induced UPE decreasing as temperature rose.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2113953738"
+     ]
+    },
+    {
+     "step": "Claims that human surface/head UPE reports internal state have already been shown to be vulnerable to background-light contamination and to detector spectral response: photons below 600 nm are strongly attenuated by tissue while longer wavelengths fall largely outside PMT sensitivity, so the residual signal in a red-extended detector is precisely where a thermal/optical artifact would sit.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W7168813583"
+     ]
+    },
+    {
+     "step": "The field's own 2026 biomarker review names susceptibility to thermal and optical confounds, together with the absence of standardized clinical measurement protocols, as the key experimental constraints on UPE as a candidate biomarker - so this is the field's stated blocker, stated by the same source that frames Q6.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W7165757820"
+     ]
+    },
+    {
+     "step": "Identifiability argument: the published state-contrast studies (e.g. the nine-volunteer anger proof-of-concept) report relative intensity changes with no thermostatting and no temperature covariate. State manipulations that alter peripheral vasomotor tone move hand skin temperature by several degrees C, so in those designs the redox-driven and temperature-driven components are not merely unmeasured, they are structurally unidentified: no post-hoc statistical adjustment can separate them, and only an intervention that fixes temperature can.",
+     "justification_type": "computation"
+    },
+    {
+     "step": "The anger-induction proof of concept is the corpus's clearest instance of an uncontrolled state contrast: nine volunteers, CCD imaging of the upper body, relative intensity higher during induced anger than during relaxation, with the authors themselves calling for replication at larger n.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W3174216096"
+     ]
+    }
+   ],
+   "proposed_experiment": "Randomized crossover with a fused-silica thermostatted contact window over the dorsal hand, calibrated IR thermography of the same field, and two photon-counting channels run in parallel on a beamsplit field (bialkali 300-650 nm; extended-red multialkali 300-850 nm). Primary endpoint is the ratio of state-contrast effect sizes between thermostatted and free arms; secondary endpoint is whether that ratio differs between the two spectral channels, which discriminates a physiological temperature effect from a detector-side red/NIR artifact.",
+   "required_instrument": "Two photon-counting PMTs - bialkali 300-650 nm and extended-red multialkali 300-850 nm - on a split field in a light-tight room; calibrated 8-14 micron IR camera; Peltier-thermostatted fused-silica contact window; capped-detector and empty-chamber background runs bracketing every acquisition.",
+   "cited_work_ids": [
+    "W7131390579",
+    "W2113953738",
+    "W7168813583",
+    "W7165757820",
+    "W3174216096"
+   ],
+   "engine_native_score": 0.7,
+   "novelty_self_claim": "Register claim H8 lists skin temperature as a covariate to be adjusted for and H12 treats state effects as a live anomalous claim. This hypothesis asserts that temperature is not an additive nuisance but the generating mechanism of the reported state effects, and it specifies the only design that can identify that - physically clamping the temperature rather than regressing on it - plus a dual-band contrast that separates a physiological from a detector-side origin. Neither the intervention nor the band-dependence prediction is on the register."
+  },
+  {
+   "id": "Q6-4",
+   "statement": "A two-band UPE intensity ratio (I(>550 nm)/I(>495 nm), or I(610-630 nm)/I(395-455 nm)) trained as a clinical classifier at one laboratory transfers to an independent laboratory with different photomultiplier and filter hardware losing less than half the AUC that an absolute-intensity classifier loses on the same transfer, in the same pre-specified clinical task.",
+   "scope": {
+    "population": "One pre-specified clinical contrast - acute upper-respiratory infection versus healthy, the contrast for which the corpus already reports a working spectral ratio - measured at two independent laboratories with different PMT and filter hardware; n >= 80 per site.",
+    "condition": "Fingertip/two-hand UPE with a motorized cut-off and bandpass filter wheel, identical written acquisition protocol at both sites, no cross-site recalibration, no site-specific retraining; site A model frozen and registered before any site B data are unblinded.",
+    "comparator": "The absolute-intensity classifier built from the same acquisitions at site A, transferred identically.",
+    "outcome": "Transfer AUC loss for each classifier, defined as AUC(internal, site A held-out) minus AUC(external, site B)."
+   },
+   "null_hypothesis": "The ratio classifier's transfer loss is >= 50% of the intensity classifier's transfer loss (lower CI bound above 0.5 of it), i.e. band ratios are no more portable across instruments than absolute intensity, and spectral features buy no transferability.",
+   "estimand": "The ratio of transfer AUC losses, Delta-AUC(ratio)/Delta-AUC(intensity), with bootstrap 95% CI; reported alongside both internal and external AUCs for each classifier.",
+   "causal_level": "L6",
+   "rationale": [
+    {
+     "step": "Spectral ratios, not absolute intensities, are already the discriminating feature in two independent UPE studies in the corpus: the photon emission ratio between 550 nm and 495 nm cut-off filters separated cold patients from healthy subjects using a two-hand fingertip system, and the 610-630/395-455 nm spectral ratio tracked the logarithm of tumour volume in a breast-cancer-bearing mouse model (R2 = 0.947 at the lesion site, 0.892 at the healthy site).",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2049213668",
+      "W2762231588"
+     ]
+    },
+    {
+     "step": "Band ratios have a mechanistic referent rather than being an arbitrary engineered feature: UVA-induced UPE from skin shows biomolecule-specific spectral patterns (linoleic and linolenic acid, elastin, phospholipids, DHICA), and the skin tissue spectrum is a superposition of these distinct emitters, so a ratio between two bands reports a shift in which emitter dominates.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W3111078497"
+     ]
+    },
+    {
+     "step": "Absolute UPE intensity is documented to be non-transferable: it differs between subjects and between hand locations, fluctuates over the 24 h cycle with the dorsal side varying more than the palm, changes left-right symmetry across the day, and carries additional 14-day, 1-month, 3-month and 9-month rhythms plus a whole-body diurnal rhythm. Every one of these is a multiplicative nuisance on the intensity scale.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2182257766",
+      "W2165767379",
+      "W2124535387"
+     ]
+    },
+    {
+     "step": "Variance derivation for why a same-detector ratio should transfer better. Write the measured band intensities as log I1 = log a + log g + n1 and log I2 = log b + log g + n2, where g collects all multiplicative nuisances common to both bands measured through the same optical train (collection solid angle, source-detector distance, gain drift, dark-adaptation-dependent scaling, subject-level scaling). Then log R = log I1 - log I2 removes log g exactly. Across sites, Var(log R) = Var(log I1) + Var(log I2) - 2 Cov(log I1, log I2), which is strictly less than min(Var(log I1), Var(log I2)) whenever the cross-band correlation exceeds 0.5 and the band variances are comparable - the regime that common-mode nuisance dominance implies. The residual cross-site term is only the band-differential filter/QE response, which is directly measurable against a traceable calibrated source.",
+     "justification_type": "computation"
+    }
+   ],
+   "proposed_experiment": "Two-site external validation with hardware-blind protocol transfer. Site A collects, trains and freezes two classifiers (two-band ratio; absolute intensity) with a registered analysis plan; site B collects under the same written protocol on different hardware and the frozen models are applied once. Per-band throughput at both sites is measured against a traceable calibrated low-level light source and reported, so any residual ratio drift can be attributed to filter/QE rather than biology. Primary endpoint is the ratio of transfer losses.",
+   "required_instrument": "Photon-counting PMT with a motorized cut-off/bandpass filter wheel covering 395-455, 495, 550 and 610-630 nm, at both sites; traceable calibrated low-level light source for per-band throughput characterization; light-tight chamber with per-session capped and empty background runs.",
+   "cited_work_ids": [
+    "W2049213668",
+    "W2762231588",
+    "W3111078497",
+    "W2182257766",
+    "W2165767379",
+    "W2124535387"
+   ],
+   "engine_native_score": 0.58,
+   "novelty_self_claim": "Register claim H11 asserts that UPE spectral distribution carries state-specific information beyond total intensity. That is an information claim inside one laboratory. This converts it into the property that actually decides clinical adoption - portability across instruments and sites - and states a specific, falsifiable ordering of transfer losses with a variance derivation behind it. No register claim mentions cross-site transfer, which is the step at which candidate biomarkers usually die."
+  },
+  {
+   "id": "Q6-5",
+   "statement": "At least half of the nose/glabella-versus-cheek UPE intensity contrast in human facial skin originates in the removable skin-surface lipid film and its microbial porphyrins rather than in viable epidermal or dermal cells, such that a single standardized degreasing wipe abolishes >= 50% of that regional contrast.",
+   "scope": {
+    "population": "Healthy adults 20-60 with a measurable baseline facial porphyrin score, n >= 40, no acne treatment or topical antimicrobial in the preceding 8 weeks.",
+    "condition": "Within-subject split-face: one hemiface receives a standardized lipid-solvent degreasing wipe, the other a sham wipe; UPE imaged before and 10 min after. Arm 2 repeats the imaging after 4 weeks of split-face topical antimicrobial versus vehicle.",
+    "comparator": "The sham-wiped / vehicle-treated hemiface of the same subject at the same session, same camera, same dark adaptation.",
+    "outcome": "The (nose + glabella) minus cheek UPE intensity contrast measured by cryogenic CCD imaging, and the correlation between UPE intensity and facial porphyrin score."
+   },
+   "null_hypothesis": "Degreasing and 4-week antimicrobial treatment reduce the regional contrast by less than 50% (upper 95% CI bound below 50%), i.e. the regional facial UPE pattern is generated in living epidermis/dermis and surface lipid is not the dominant source.",
+   "estimand": "Fractional reduction in the (nose+glabella - cheek) UPE contrast, treated versus sham, with 95% CI; secondary estimand is the change in the UPE-porphyrin-score correlation coefficient after treatment.",
+   "causal_level": "L1",
+   "rationale": [
+    {
+     "step": "Facial UPE imaging localizes the highest intensity to the nose, its surrounding regions and the area between the eyebrows, and finds UPE intensity correlated with skin porphyrin score while showing no correlation with skin colour parameters. Those are precisely the sebaceous, porphyrin-producing regions, and the porphyrin association is the strongest reported covariate.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W3035757108"
+     ]
+    },
+    {
+     "step": "The skin surface lipid film is a sebum plus keratinocyte-membrane mixture uniquely rich in squalene, continuously oxidatively modified by resident and pathological microbial metabolism and by UV, generating reactive peroxidation by-products - i.e. an extracellular, UPE-competent oxidation compartment sitting on top of the tissue the assay is intended to interrogate.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W1991638083"
+     ]
+    },
+    {
+     "step": "The accepted final emitters of skin UPE are triplet carbonyls and singlet oxygen produced by ROS-driven lipid and protein oxidation, and skin UPE is a superposition of light from several biomolecular emitters. Those same reactions run in surface lipid exactly as in cells, so intensity and geometry alone cannot attribute the emission to a living compartment.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W4321104258",
+      "W3111078497"
+     ]
+    },
+    {
+     "step": "The competing account is explicit in the corpus - CCD imaging with antioxidant suppression indicates UPE is generated not only from the epidermis but also from the dermis - and it makes the opposite prediction for this experiment: a surface-only manipulation should leave the regional contrast intact. The two accounts are therefore directly separable by one intervention.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2958430166"
+     ]
+    },
+    {
+     "step": "Identification argument for why degreasing is the right instrument: the surface lipid film is the only UPE-competent compartment that can be removed in seconds without changing perfusion, skin temperature, cell viability or the optical geometry of the measurement. Every other way of suppressing a compartment (antioxidant application, occlusion, cooling) alters at least one of those and reintroduces the confounds this experiment is meant to exclude. A sham-wiped hemiface controls for the mechanical and thermal perturbation of wiping itself.",
+     "justification_type": "computation"
+    }
+   ],
+   "proposed_experiment": "Split-face, sham-controlled study. Cryogenic CCD UPE imaging of the full face before and 10 min after a standardized lipid-solvent degreasing wipe on one randomly assigned hemiface; region-of-interest analysis over nose, glabella and cheek. Repeat after 4 weeks of split-face topical antimicrobial versus vehicle. Facial porphyrin score by standard UV-fluorescence imaging at each timepoint, plus skin surface temperature to confirm the wipe did not shift it. Primary endpoint is the fractional collapse of the regional contrast.",
+   "required_instrument": "Cryogenic full-frame back-illuminated CCD imaging system, 400-700 nm, in a light-tight room (the class used for facial UPE imaging in the corpus); standard UV-fluorescence facial porphyrin imaging; contact thermometry of each ROI.",
+   "cited_work_ids": [
+    "W3035757108",
+    "W1991638083",
+    "W4321104258",
+    "W3111078497",
+    "W2958430166"
+   ],
+   "engine_native_score": 0.55,
+   "novelty_self_claim": "Register claim H4a attributes UPE to ROS-driven lipid/protein oxidation without asking in which compartment, and H8 presumes surface UPE reports a systemic state. This exposes the compartment assumption both depend on: if the dominant regional signal comes from a wipe-removable extracorporeal lipid/microbial film, human surface UPE is a skin-surface-lipid assay rather than a systemic biomarker, and any clinical validation that does not standardize degreasing is measuring grooming. The register contains no compartment-attribution claim and no surface-removal experiment."
+  },
+  {
+   "id": "Q6-6",
+   "statement": "Same-clock-time, 4-week test-retest reliability of standardized dorsal-hand spontaneous UPE intensity in healthy adults has ICC(2,1) below 0.6, which caps the out-of-sample AUC of any single-session intensity-based classifier below 0.80 even when the true group separation is a large standardized difference of 1.5.",
+   "scope": {
+    "population": "Healthy adults 18-65, n >= 50, no acute illness, stable medication, no intervention of any kind during the study.",
+    "condition": "Five sessions at weekly intervals, each at the same clock time (+/- 30 min), identical 20 min dark adaptation, identical detector-to-skin geometry, dorsal left and right hand, 600 s integration, with capped-detector and empty-chamber background runs at every session.",
+    "comparator": "None - this is a reliability study; the comparator is the reliability threshold the field's own reported single-session accuracies implicitly require.",
+    "outcome": "ICC(2,1) of the 600 s integrated photon count, its standard error of measurement, and the minimal detectable change."
+   },
+   "null_hypothesis": "ICC(2,1) >= 0.75 with lower 95% CI bound above 0.6 - i.e. spontaneous UPE intensity is a reliable individual-level quantity and the attenuation ceiling does not bind, which kills this hypothesis.",
+   "estimand": "ICC(2,1) with 95% CI, and the derived attenuation-implied maximum achievable AUC, AUC_max = Phi(d_true * sqrt(ICC) / sqrt(2)), reported for d_true = 1.0 and 1.5.",
+   "causal_level": "L5",
+   "rationale": [
+    {
+     "step": "Spontaneous human hand UPE fluctuates systematically within 24 h, with mean emission differing both between subjects and between hand locations, greater fluctuation on the dorsal than the palmar side, no apparent correlation between palm and dorsal fluctuations, and a change in left-right symmetry across the day on the dorsal side - i.e. the exact site and readout used for clinical claims is the least stable one.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2182257766"
+     ]
+    },
+    {
+     "step": "Whole-body UPE follows a diurnal rhythm imaged with a cryogenic CCD, and long-run daily human skin measurements report additional 14-day, 1-month, 3-month and 9-month rhythms. Week-scale drift is therefore expected by the field's own descriptive literature, not an anomaly to be designed away.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2165767379",
+      "W2124535387"
+     ]
+    },
+    {
+     "step": "No test-retest reliability coefficient for human UPE appears anywhere in the retrieved corpus. The closest is a 2025 human measurement protocol that uses the coefficient of variation as a proxy for signal variability - a quantity that pools between-subject and within-subject variance and therefore cannot yield a reliability coefficient or an attenuation ceiling.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W4417010158"
+     ]
+    },
+    {
+     "step": "Attenuation computation fixing the ceiling. For X = T + e with reliability rho = Var(T)/Var(X), an observed standardized group difference attenuates as d_obs = d_true * sqrt(rho), and for normal equal-variance groups AUC = Phi(d_obs / sqrt(2)). At rho = 0.6 and d_true = 1.5: d_obs = 1.5 * 0.7746 = 1.162, AUC = Phi(0.8216) = 0.794 < 0.80. At rho = 0.6 and d_true = 1.0: AUC = Phi(0.548) = 0.708. At rho = 0.4 and d_true = 1.0: AUC = Phi(0.447) = 0.673. Any single-session single-feature intensity classifier reporting held-out AUC above these values, given a measured rho in this range, is reporting overfitting or leakage rather than signal - which makes the reliability coefficient a pre-emptive audit on the entire published accuracy record.",
+     "justification_type": "computation"
+    },
+    {
+     "step": "The field asks for larger populations, better statistical tools, and validation of biophotonic measurement techniques as objective biomarkers, but neither its analytical review nor its 2026 biomarker review names measurement reliability as the prerequisite that bounds all of it; the 2026 review instead cites thermal/optical confounds and the absence of standardized clinical protocols.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2906242287",
+      "W7165757820"
+     ]
+    },
+    {
+     "step": "The background discipline needed for this study is already specified in the corpus: capped-detector dark count runs and no-participant background runs must bracket the participant acquisition, because reported human UPE magnitudes have been shown to be explicable by background light contamination when that discipline is absent.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W7168813583"
+     ]
+    }
+   ],
+   "proposed_experiment": "Five-session, no-intervention reliability study on the identical rig, site and protocol that a subsequent diagnostic study would use. Report ICC(2,1), SEM and minimal detectable change for the 600 s integrated count, for each hand and side, and publish the attenuation-implied AUC ceiling for that rig as a pre-registered constraint on any accuracy the same rig later reports. Run capped-detector and empty-chamber background acquisitions at every session and report their drift alongside the biological drift, so instrument instability and biological instability are separated.",
+   "required_instrument": "Cooled low-noise photon-counting PMT, 300-650 nm, moveable head with fixed reproducible detector-to-skin geometry, in a light-tight dark room; per-session capped-detector and empty-chamber background runs; logged room temperature, humidity and skin surface temperature.",
+   "cited_work_ids": [
+    "W2182257766",
+    "W2165767379",
+    "W2124535387",
+    "W4417010158",
+    "W2906242287",
+    "W7165757820",
+    "W7168813583"
+   ],
+   "engine_native_score": 0.8,
+   "novelty_self_claim": "The register contains no reliability claim of any kind, yet every one of its L5/L6 claims (H3, H8, H9, H12) silently assumes the measurement is reliable enough to carry the predictive load it is assigned. This makes the reliability ceiling itself the estimand, derives the exact AUC bound it implies, and is the cheapest experiment on this list - one no-intervention study that would either license or pre-emptively invalidate a whole class of reported single-session accuracies before any clinical validation is funded."
+  }
+ ]
+}

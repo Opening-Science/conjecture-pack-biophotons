@@ -1,0 +1,494 @@
+{
+ "hof_version": "1.0",
+ "run": {
+  "engine": "baseline-claude",
+  "seed_id": "Q1",
+  "backend": "claude-subagent",
+  "config_hash": "0219e9cd8e3f",
+  "corpus_calls": 33
+ },
+ "hypotheses": [
+  {
+   "id": "Q1-1",
+   "statement": "In a graded lipid-peroxidation series, the sub-350 nm photon flux scales as the square of the 400-500 nm triplet-carbonyl photon flux (log-log slope 2.0 +/- 0.3), because sub-350 nm quanta require pairwise pooling of two carbonyl excitations rather than any single catalogued chemiexcitation step.",
+   "scope": {
+    "population": "Cell-free aqueous linoleic-acid / phosphatidylcholine liposome suspension undergoing Fe(II)/H2O2-initiated peroxidation, and in parallel Chlamydomonas reinhardtii suspensions dosed with exogenous linoleic acid, both in 1 cm quartz cuvettes at 25 C, air-saturated",
+    "condition": "At least six initiator doses spanning a 100-fold range of total emission intensity, each measured simultaneously in two calibrated bands: 260-340 nm and 400-500 nm",
+    "comparator": "The same preparation at the lowest initiator dose; and the alternative model in which sub-350 nm emission is the short-wave tail of the same single-step chemiexcitation (predicting slope 1.0)",
+    "outcome": "beta = d(log absolute photon flux 260-340 nm)/d(log absolute photon flux 400-500 nm), fitted across the dose series with band-specific absolute calibration"
+   },
+   "null_hypothesis": "beta is statistically indistinguishable from 1.0 (95% CI containing 1.0 and excluding 2.0), i.e. the UV band tracks the visible band proportionally and therefore shares its single-quantum origin (or is filter leakage); equivalently, the sub-340 nm band is undetectable at every dose so beta is undefined.",
+   "estimand": "beta, the log-log slope of absolute 260-340 nm flux on absolute 400-500 nm flux; decision thresholds beta<1.3 refutes, beta>1.7 supports.",
+   "causal_level": "L1",
+   "rationale": [
+    {
+     "step": "The field states its own UPE band as ~350-1300 nm and locates the unexplained region at wavelengths shorter than 350 nm, i.e. the mechanistic gap opens exactly at the short-wave edge of the band the field can account for.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2752165143",
+      "W4404871602",
+      "W3037707140"
+     ]
+    },
+    {
+     "step": "The catalogued ROS chemiexcitation scheme terminates in triplet excited carbonyls from cyclic (1,2-dioxetane) and linear (tetroxide) high-energy intermediates, and the emission window assigned to excited carbonyl species is 350-550 nm; homogenate chemiluminescence spectra resolve five bands whose shortest is 420-450 nm, with nothing catalogued below 420 nm.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2954526477",
+      "W4391831883",
+      "W2258231078",
+      "W2790280419",
+      "W1981792019"
+     ]
+    },
+    {
+     "step": "Photon energy in kcal/mol equals 28591 divided by wavelength in nm. The short-wave edge of the carbonyl band, 350 nm, is therefore 81.7 kcal/mol; this is the maximum single-quantum energy the catalogued chemistry delivers. 300 nm needs 95.3, 280 nm needs 102.1, 250 nm needs 114.4 and 190 nm needs 150.5 kcal/mol - all above that ceiling. Two pooled carbonyl quanta cap at 163.4 kcal/mol, i.e. a shortest accessible wavelength of 28591/163.4 = 175 nm, which brackets the entire historically claimed 190-250 nm band. Pairwise pooling is thus the minimal mechanism that reaches the unexplained region, and the only one that reaches it without new chemistry.",
+     "justification_type": "computation"
+    },
+    {
+     "step": "A pooling channel is second order in the excited-state population [T] while direct carbonyl emission is first order, so R_UV / R_vis is proportional to [T] and R_UV is proportional to R_vis squared; the log-log slope of UV on visible flux is therefore 2, independent of the reaction order of the primary chemistry that sets [T].",
+     "justification_type": "computation"
+    },
+    {
+     "step": "The estimand is deliberately UV flux against visible flux, not against substrate, because the primary chemistry is itself already known to be non-linear: low-level chemiluminescence in Fe-induced peroxidation of mitochondrial and microsomal membranes goes as the square of accumulated lipid hydroperoxide. Regressing band on band cancels that primary order out.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W4229886885",
+      "W2895088970"
+     ]
+    },
+    {
+     "step": "Linoleic-acid dosing of a living cell suspension is an established, graded UPE-generating perturbation in this corpus, and rat-tissue hydroperoxide dosing produces graded chemiluminescence with quantified lipid-peroxidation endpoints, so the dose series is a known-good preparation rather than a new one.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2034044028",
+      "W2039060183",
+      "W2326730546",
+      "W4307038714"
+     ]
+    },
+    {
+     "step": "The prediction has an immediate corollary that discriminates it from the register's H4a: the UV percentage of total UPE is not a constant but rises with total intensity, which reconciles the historical report that a definite UV component of 20-40% appeared specifically during periods of active growth.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2979283984",
+      "W1920668343"
+     ]
+    }
+   ],
+   "cited_work_ids": [
+    "W2752165143",
+    "W4404871602",
+    "W3037707140",
+    "W2954526477",
+    "W4391831883",
+    "W2258231078",
+    "W2790280419",
+    "W1981792019",
+    "W4229886885",
+    "W2895088970",
+    "W2034044028",
+    "W2039060183",
+    "W2326730546",
+    "W4307038714",
+    "W2979283984",
+    "W1920668343"
+   ],
+   "proposed_experiment": "Build a two-channel photon counter: a quartz/MgF2 collection train from a 1 cm quartz cuvette, split by a 380 nm dichroic into (a) a cooled UV-extended bialkali or CsTe PMT behind a 260-340 nm interference filter and (b) a cooled bialkali PMT behind a 400-500 nm interference filter, both absolutely calibrated per band against a traceable low-flux standard so that counts convert to photons/s/cm2. Run a six-to-eight point Fe(II)/H2O2 dose series on linoleic-acid liposomes and, separately, an exogenous-linoleic-acid dose series on Chlamydomonas, spanning 100-fold in 400-500 nm flux. At each dose acquire both bands simultaneously for >=600 s. Interleave blanked controls (heat-killed sample, buffer only, filter-swapped) at every dose to bound leakage. Fit log(UV flux) against log(visible flux) by orthogonal-distance regression and report beta with its 95% CI. Repeat with the UV filter replaced by a matched blocked filter to quantify out-of-band leakage as an explicit additive term in the fit.",
+   "required_instrument": "Two-channel cooled photon-counting PMT bench with quartz/MgF2 optics: UV-extended bialkali or CsTe photocathode with 260-340 nm interference filter, plus bialkali with 400-500 nm filter; per-band absolute radiometric calibration; sensitivity floor ~1 photon/s/cm2 per band.",
+   "engine_native_score": 0.55,
+   "novelty_self_claim": "The register's H4a asserts a fraction of intensity explained by ROS chemistry but assigns no reaction order to any band. This converts 'the UV is unexplained' into a single dimensionless number, beta, whose value discriminates single-quantum chemiexcitation (beta=1) from pairwise excitation pooling (beta=2), and derives the 175 nm floor of the pooling channel from the field's own 350 nm carbonyl edge - showing that the historically claimed 190-250 nm window is precisely the interval that pairwise pooling can reach and single-step chemiexcitation cannot."
+  },
+  {
+   "id": "Q1-2",
+   "statement": "Measured with a solar-blind photocathode and a fully quartz optical train, the absolute spontaneous photon flux below 320 nm from a proliferating cell culture is less than 1% of its 350-700 nm flux, i.e. more than an order of magnitude below the 20-40% UV fraction and the 10-1000 photons/cm2/s mitogenetic level claimed in the historical record.",
+   "scope": {
+    "population": "Exponentially growing Saccharomyces cerevisiae and a proliferating mammalian line (HeLa or A549) in quartz vessels, dark-adapted >2 h, 25-37 C; onion-root or yeast preparations of the classic mitogenetic type included as a positive-control arm",
+    "condition": "Spontaneous (unstimulated) emission recorded through a CsTe or CsI solar-blind photocathode with out-of-band rejection >1e5 above 350 nm, quartz windows throughout, against a paired 350-700 nm bialkali channel",
+    "comparator": "Identical acquisition on heat-killed cells, on cell-free medium, and on the same live culture behind a UV-blocking borosilicate window; plus the historically asserted values (20-40% UV fraction; 10-1000 photons/cm2/s at 190-250 nm)",
+    "outcome": "Absolute background-subtracted photon flux in photons/cm2/s in the <320 nm band, and its ratio to the simultaneously measured 350-700 nm flux"
+   },
+   "null_hypothesis": "The <320 nm flux is >=5% of the 350-700 nm flux, or exceeds 10 photons/cm2/s in absolute terms, in live cultures and not in heat-killed or medium controls - which would confirm a large genuine UV component and force a new generating chemistry.",
+   "estimand": "f_UV = (absolute photons/cm2/s in 190-320 nm) / (absolute photons/cm2/s in 350-700 nm), with a two-sided 95% CI; and the absolute <320 nm flux itself with its detection limit stated.",
+   "causal_level": "L2",
+   "rationale": [
+    {
+     "step": "The historical mitogenetic literature specifies both an intensity (~10-1000 photons/cm2/s) and a band (~190-250 nm), giving a directly testable absolute target rather than a relative one.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W4389669809",
+      "W2979283984"
+     ]
+    },
+    {
+     "step": "A critical review of the same literature concludes there is little modern evidence even for the longer UV interval 280-390 nm, while a separate review concludes the UV fraction should be regarded as real - the two reviews disagree on the same object, which is the definition of an unaudited measurement.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2095038636",
+      "W1920668343"
+     ]
+    },
+    {
+     "step": "Modern instruments that report UPE over a 200-1000 nm range in fact use EMCCD and CCD cameras described as capturing single visible-wavelength photons, so the sub-350 nm end of the quoted range is asserted by the stated band rather than measured by the stated detector; a hand-UPE spectrometer built on an EMCCD plus tunable filter likewise sampled only 400-700 nm.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W4404240787",
+      "W4409735377",
+      "W2797018767",
+      "W2906242287"
+     ]
+    },
+    {
+     "step": "The absolute-calibration audit is a proven design in this corpus: photon emission from isolated frog and fish retinas was quantified against a calibrated source and found >=100x too weak to sustain the biophoton hypothesis of photoreceptor dark noise, retiring that claim decisively.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2939950252"
+     ]
+    },
+    {
+     "step": "The required sensitivity exists. EMCCD binary photon counting reaches SNR 3 at fluxes below 30 photons/s/cm2, and a high-albedo Ulbricht-cavity concentrator pushes lower still, having detected the luminescence of non-catalytic H2O2 disproportionation in pure water. If the historical 20-40% fraction were real, given total UPE of 10-1000 photons/cm2/s the UV band would carry 2-400 photons/cm2/s, comfortably above these floors; a null at that sensitivity is therefore informative rather than merely underpowered.",
+     "justification_type": "computation"
+    },
+    {
+     "step": "Solar-blind photocathodes are the correct instrument class precisely because the failure mode being tested is red leakage: a bialkali cathode peaks near 350-420 nm, so any coloured-glass or interference filter with finite out-of-band transmission converts abundant blue-green carbonyl photons into apparent UV counts. A CsTe cathode with >1e5 rejection above 350 nm removes that pathway physically rather than by subtraction.",
+     "justification_type": "computation"
+    },
+    {
+     "step": "Borosilicate optics are common in this literature (a luminometer arm using borosilicate test tubes is used to report 300-400 nm band intensities), so a paired borosilicate-versus-quartz arm is a necessary control on whether reported UV is transmitted at all.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W4416736719",
+      "W7117718612"
+     ]
+    }
+   ],
+   "cited_work_ids": [
+    "W4389669809",
+    "W2979283984",
+    "W2095038636",
+    "W1920668343",
+    "W4404240787",
+    "W4409735377",
+    "W2797018767",
+    "W2906242287",
+    "W2939950252",
+    "W3126489816",
+    "W3161989600",
+    "W4416736719",
+    "W7117718612"
+   ],
+   "proposed_experiment": "Assemble a solar-blind channel: sample in a fused-silica vessel inside a light-tight, temperature-controlled dark chamber; all-quartz collection; a cooled CsTe (or CsI) PMT in photon counting, with a solar-blind bandpass defining 190-320 nm; and a simultaneous bialkali channel at 350-700 nm through a beam splitter. Calibrate both channels absolutely against a traceable attenuated deuterium/tungsten source so that counts map to photons/cm2/s at the sample surface. Optionally couple the sample into a high-albedo quartz-powder Ulbricht cavity to convert the 3D emitting volume into a small high-radiance orifice and gain roughly two orders of magnitude in effective sensitivity. Acquire >=4 h per condition on: exponential yeast, exponential mammalian culture, onion-root positive control, heat-killed cells, sterile medium, empty vessel, and live culture behind borosilicate. Report f_UV with CIs and state the detection limit explicitly. Pre-register the decision rule: f_UV < 0.01 refutes the 20-40% claim; f_UV >= 0.05 with live-versus-killed separation confirms it.",
+   "required_instrument": "Cooled solar-blind CsTe/CsI photon-counting PMT (190-320 nm, >1e5 out-of-band rejection) with all-fused-silica optics and NIST-traceable absolute calibration, paired with a cooled bialkali 350-700 nm channel; optional high-albedo Ulbricht-cavity photon concentrator.",
+   "engine_native_score": 0.7,
+   "novelty_self_claim": "Register entries H1 and H11 both presuppose that a UV band exists at a level worth explaining or decoding; none of them contains the absolute per-band flux measurement that would license the presupposition. This makes the presupposition itself the estimand, sets the pass/fail against numbers the historical literature actually committed to (20-40%; 10-1000 photons/cm2/s at 190-250 nm), and specifies the one detector class - solar-blind photocathode plus all-quartz train - under which a positive result cannot be red leakage. It resolves a live contradiction between two reviews in the corpus rather than adding to it."
+  },
+  {
+   "id": "Q1-3",
+   "statement": "The externally measured sub-350 nm fraction of UPE is set by aromatic-amino-acid self-absorption inside the sample, so it declines with optical depth according to Beer-Lambert with the tryptophan extinction coefficient, and the same preparation measured at 0.1 mm path emits a UV/visible ratio at least fivefold higher than at 10 mm path, at matched total oxidative flux.",
+   "scope": {
+    "population": "One cell suspension (yeast or HeLa) and one cell-free protein-plus-lipid oxidation mixture, each measured at four optical depths (0.1, 1, 3, 10 mm quartz path) and three volume fractions spanning 100-fold, with total oxidative turnover held constant per unit emitting volume",
+    "condition": "Constant chemical trigger (fixed Fe(II)/H2O2 or fixed linoleic-acid dose per unit volume), varying only geometry and packing",
+    "comparator": "The same series measured in the 450-500 nm band, where aromatic-residue absorption is negligible, which must show no comparable geometry dependence",
+    "outcome": "Ratio R(d) = flux(280-340 nm)/flux(450-500 nm) as a function of effective optical depth d = (volume fraction x path length)"
+   },
+   "null_hypothesis": "R(d) is flat within 20% across a 100-fold change in effective optical depth, i.e. the escaping UV fraction is geometry-independent, which would mean the measured spectrum is the generated spectrum and self-absorption cannot explain the apparent UV deficit.",
+   "estimand": "The fitted decay constant of ln R(d) against d, compared with the Beer-Lambert prediction 2.303 x epsilon_Trp x c_Trp; agreement within a factor of 2 supports, a fitted constant consistent with zero refutes.",
+   "causal_level": "L3",
+   "rationale": [
+    {
+     "step": "The field's own reference text states that the reabsorption effect increases with the sample optical density in the luminescing system and is governed by the absorption spectra of substances present - so the mechanism is acknowledged in principle but is not used as a quantitative correction on reported UV fractions.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W4389669809"
+     ]
+    },
+    {
+     "step": "Tryptophan is not a bystander in this system: on oxidation of amino acids it both emits and acts as an energy acceptor, and mixing histidine with tryptophan yields a spectrum congruent with pure tryptophan, demonstrating that the aromatic pool dominates the sub-350 nm optical behaviour of an oxidising protein sample.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2159034785"
+     ]
+    },
+    {
+     "step": "Aromatic residues are also the designated absorbers in this corpus's transport models, with microtubule reorientation to exogenous photons peaking near 280 nm in the tryptophan/tyrosine absorption range - the same band whose emission is reported missing.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2748679677"
+     ]
+    },
+    {
+     "step": "Beer-Lambert arithmetic makes the geometry dependence extreme rather than marginal. With epsilon_Trp near 5.5e3 M^-1 cm^-1 at 280 nm and intracellular protein-bound tryptophan of order 3 mM: a single 10 um cell has A = 5.5e3 x 3e-3 x 1e-3 = 0.017, transmission 96%, effectively transparent; a 1 cm path of packed cells has A = 16.5, transmission ~3e-17, effectively opaque; a 1 cm path of a 0.2% v/v suspension has A = 0.033, transmission 93%. The escaping UV fraction therefore varies over sixteen orders of magnitude across preparations that the literature reports side by side, while the 450-500 nm band, where epsilon is near zero, varies not at all.",
+     "justification_type": "computation"
+    },
+    {
+     "step": "The corpus supplies direct evidence that the in-vivo spectrum is not the in-vitro spectrum: in-vitro lipid oxidation luminesces across 450-850 nm, whereas the in-planta signal from leaves and roots occurs only above 640 nm, peaking at 700-750 nm. Something in the tissue removes the short-wave half of the generated spectrum.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W4283824773",
+      "W2808116502"
+     ]
+    },
+    {
+     "step": "A scattering/geometry treatment of stress-induced emission and a photon-diffusion treatment of human surface emission both already exist in this corpus, so the modelling machinery for converting surface flux to source flux is available and can be fitted rather than assumed.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W3082196445",
+      "W3170639556"
+     ]
+    }
+   ],
+   "cited_work_ids": [
+    "W4389669809",
+    "W2159034785",
+    "W2748679677",
+    "W4283824773",
+    "W2808116502",
+    "W3082196445",
+    "W3170639556",
+    "W2797018767",
+    "W3126489816"
+   ],
+   "proposed_experiment": "Use demountable fused-silica cells at 0.1, 1, 3 and 10 mm path with identical face area, so emitting area is constant and only depth varies. For each of three volume fractions, trigger a fixed per-volume oxidative dose and record simultaneously through 280-340 nm and 450-500 nm interference filters, either by dual PMT or by an EMCCD in binary photon-counting mode behind a tunable filter, absolutely calibrated per band. Independently measure the sample's own absorbance spectrum at each condition on a standard spectrophotometer so epsilon x c is measured, not assumed, and quantify total tryptophan by amino-acid analysis. Fit ln R(d) against measured absorbance-derived d. Run the whole matrix a second time after exhaustive proteolysis plus dialysis to strip aromatic residues at constant lipid load: the predicted result is that R becomes flat with depth in the stripped arm. A flat R(d) in the intact arm refutes the hypothesis outright.",
+   "required_instrument": "EMCCD in binary photon-counting mode (or dual cooled PMT) with 280-340 nm and 450-500 nm interference filters and quartz optics; variable-path demountable fused-silica cells; a companion UV-Vis spectrophotometer for per-sample absorbance.",
+   "engine_native_score": 0.62,
+   "novelty_self_claim": "Every claim on the register that reads a spectrum - H4a's accounting of intensity, H11's spectral information content, H1's UV band, H2's optical state - silently assumes the escaping spectrum equals the generated spectrum. This names that assumption, shows by Beer-Lambert arithmetic that it fails by up to sixteen orders of magnitude in the UV specifically and not at all in the blue-green, and turns it into a single fitted decay constant measurable in an afternoon with a variable-path cell. If it holds, the UV is not missing but trapped, and 'unexplained UV' is a transport result misfiled as a generation result."
+  },
+  {
+   "id": "Q1-4",
+   "statement": "Under strict anoxia (<10 ppm O2) the sub-350 nm and the 450-550 nm bands of wound-induced and chemically induced UPE are suppressed by the same factor within 25%, i.e. the UV band has no oxygen-independent component and therefore no source outside the catalogued ROS chemistry.",
+   "scope": {
+    "population": "Detached Spathiphyllum or Arabidopsis leaves subjected to standardised mechanical wounding, plus a yeast culture subjected to a fixed H2O2 challenge, in a sealed quartz chamber with an in-line O2 sensor",
+    "condition": "Three atmospheres: air (21% O2), 2% O2, and strict anoxia (<10 ppm O2, N2-purged with getter), wound or challenge applied inside the chamber after 2 h dark adaptation",
+    "comparator": "The air arm of the same preparation, and the paired 450-550 nm band measured simultaneously",
+    "outcome": "Suppression ratio S_band = flux(anoxia)/flux(air) computed separately for 260-340 nm and 450-550 nm; the contrast of interest is S_UV / S_vis"
+   },
+   "null_hypothesis": "S_UV / S_vis exceeds 1.25 with a 95% CI excluding 1.0 - i.e. a residual UV emission survives anoxia that the visible band does not - which would demonstrate an oxygen-independent UV source and falsify the claim that the catalogued ROS chemistry exhausts the UV band.",
+   "estimand": "S_UV / S_vis with a 95% CI; equivalence within [0.8, 1.25] supports, exclusion of 1.0 refutes.",
+   "causal_level": "L1",
+   "rationale": [
+    {
+     "step": "Oxygen dependence is already an established, reproducible handle on this system: wound-induced leaf UPE is significantly suppressed under anoxic stress while pre-wound basal photocounts are unaffected by nitrogen incubation, so the experimental arm and its own internal control both exist.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2808116502"
+     ]
+    },
+    {
+     "step": "The catalogued mechanism makes oxygen dependence obligatory for every product: ROS oxidation of lipids, proteins and nucleic acids forms dioxetane and tetroxide intermediates whose decomposition yields triplet carbonyls, and singlet oxygen arises by triplet-singlet transfer from those carbonyls to ground-state O2 - so both the primary and the secondary emitters vanish together when O2 is removed.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2954526477",
+      "W2048493057"
+     ]
+    },
+    {
+     "step": "Anoxia is therefore a single knob that acts on the whole catalogued pathway at once, which makes band-resolved anoxia a clean discriminator: a shared suppression factor localises the UV inside the pathway, whereas any surviving UV localises a source outside it.",
+     "justification_type": "computation"
+    },
+    {
+     "step": "Candidate oxygen-independent UV sources are present in the corpus and would be the beneficiaries of a positive result: mechanically induced long-lived luminescence in shaken aqueous solutions, triboluminescence as a biological phenomenon, and free-radical recombination reactions in water systems tabulated with their enthalpies.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W3095923286",
+      "W4389669809",
+      "W7140171627"
+     ]
+    },
+    {
+     "step": "The wounding preparation additionally has independent ROS readouts - superoxide and singlet oxygen imaged directly in wounded Arabidopsis leaves - so the O2 titration can be verified chemically rather than inferred from the light alone.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2991640993",
+      "W3037707140"
+     ]
+    },
+    {
+     "step": "The measurement must be band-resolved and simultaneous, because the wound response is kinetically structured: aerobic wounding induces two distinct exponential decay events, so sequential single-band acquisition would confound band with time.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2808116502"
+     ]
+    }
+   ],
+   "cited_work_ids": [
+    "W2808116502",
+    "W2954526477",
+    "W2048493057",
+    "W3095923286",
+    "W4389669809",
+    "W7140171627",
+    "W2991640993",
+    "W3037707140"
+   ],
+   "proposed_experiment": "Mount the leaf or culture in a sealed fused-silica chamber with feedthroughs for a remote-actuated wounding blade and an in-line trace-O2 sensor reading to <10 ppm; purge with N2 through an oxygen getter. Collect through a quartz train split by a 380 nm dichroic onto two cooled photon counters, 260-340 nm (UV-extended or CsTe cathode) and 450-550 nm (bialkali), both absolutely calibrated. Protocol per replicate: 2 h dark adapt, 30 min baseline, wound (or inject H2O2), record 60 min, in each of the three atmospheres, with the atmosphere order randomised across replicates and >=8 biological replicates per arm. Confirm the ROS titration independently by fluorescent superoxide and singlet-oxygen imaging on sibling samples. Compute S_UV and S_vis from time-integrated absolute fluxes and test S_UV/S_vis for equivalence in [0.8, 1.25]. Include a leakage control in which the UV filter is replaced by a blocked equivalent at every atmosphere, so any anoxia-surviving UV must exceed leakage.",
+   "required_instrument": "Sealed quartz anoxia chamber with <10 ppm O2 sensing, feeding a dual-channel cooled photon-counting PMT bench at 260-340 nm (UV-extended bialkali or CsTe) and 450-550 nm (bialkali), absolutely calibrated per band.",
+   "engine_native_score": 0.45,
+   "novelty_self_claim": "H4a claims the ROS pathway carries the dominant fraction of intensity but is stated over total intensity and offers no way to fail band-by-band. This makes anoxia a per-band test with a pre-set equivalence interval, so a surviving sub-350 nm component under strict anoxia would carve a specific, bounded exception out of H4a rather than merely qualifying it - and would nominate named oxygen-independent candidates already in the corpus (mechanoluminescence, triboluminescence, aqueous radical recombination) as the residual source."
+  },
+  {
+   "id": "Q1-5",
+   "statement": "Deuteration of the solvent enhances the sub-350 nm UPE band by the same factor as it enhances the 620-720 nm singlet-oxygen dimol band, establishing that the sub-350 nm emission lies downstream of singlet oxygen rather than arising directly from triplet carbonyls, whose lifetime is deuteration-insensitive.",
+   "scope": {
+    "population": "Rat or porcine skin homogenate and a defined lipid-plus-tryptophan cell-free oxidation mixture, each prepared in matched H2O and D2O buffers of identical ionic strength and pH/pD",
+    "condition": "Fixed oxidative trigger (UV irradiation of the homogenate, or Fe(II)/H2O2 of the defined mixture), measured in four bands simultaneously or in rapid rotation: 260-340 nm, 400-500 nm, 620-720 nm, and 1270 nm",
+    "comparator": "The matched H2O preparation; and the DABCO-quenched and azide-quenched arms of both solvents",
+    "outcome": "Per-band deuteration enhancement E_band = flux(D2O)/flux(H2O), and the contrast rho = E_UV / E_dimol"
+   },
+   "null_hypothesis": "rho is significantly below 1 (e.g. E_dimol near 3 while E_UV is near 1), i.e. the UV band is deuteration-insensitive while the red dimol band is strongly enhanced - which excludes singlet oxygen as the UV precursor and points instead to a direct carbonyl-pooling or aromatic-residue route.",
+   "estimand": "rho = E_UV / E_dimol with a 95% CI; rho within [0.7, 1.4] supports a singlet-oxygen-downstream UV, rho < 0.5 refutes it.",
+   "causal_level": "L1",
+   "rationale": [
+    {
+     "step": "Solvent deuteration is an established, quantified perturbation for this exact class of signal in this corpus: substituting D2O for H2O enhanced ultraweak chemiluminescence of rat epidermal homogenate to 300%, while the singlet-oxygen quencher DABCO reduced it to 50%.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W1976025008"
+     ]
+    },
+    {
+     "step": "The red band it should act on is spectrally identified: singlet oxygen dimol emission has bands at 634 and 703 nm with a characteristic low point near 668 nm, and DABCO's action on monomol (1270 nm) versus dimol emission has been characterised - though its enhancement is not universal, so azide quenching must be run as an independent check rather than relying on DABCO alone.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2083432698",
+      "W2003146645",
+      "W2315000366",
+      "W1996052019"
+     ]
+    },
+    {
+     "step": "The mechanistic asymmetry that makes this a discriminator: deuteration lengthens the singlet-oxygen lifetime and therefore raises the yield of every channel fed by singlet oxygen, while triplet carbonyl lifetimes are not governed by solvent O-H/O-D coupling. Bands sharing a factor therefore share a precursor; bands whose factors diverge do not.",
+     "justification_type": "computation"
+    },
+    {
+     "step": "A concrete singlet-oxygen-to-UV route exists in the corpus: singlet oxygen oxidises tryptophan to isomeric hydroperoxides whose decomposition to N-formylkynurenine is chemiluminescent, and tryptophan is the dominant energy acceptor in oxidised protein samples - giving singlet oxygen a specific chemical path into the aromatic emitter that occupies the sub-350 nm region.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W1535453108",
+      "W2159034785",
+      "W2288679619",
+      "W4318819757"
+     ]
+    },
+    {
+     "step": "The counter-route is equally concrete: excited carbonyls generate singlet oxygen by triplet-triplet energy transfer to ground-state O2, so causality runs carbonyl-to-singlet-oxygen in the established scheme. If the UV instead tracked the carbonyl band and not the dimol band, the UV would sit upstream of singlet oxygen, inverting the assumed order.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2048493057",
+      "W2954526477"
+     ]
+    },
+    {
+     "step": "Skin homogenate is the right matrix because a minimal chemical model of skin built from lipid, melanin and water already reproduces essential features of real skin's autoluminescence response, so a cell-free arm and a tissue arm can be compared without changing the chemistry.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W4387077320",
+      "W2886211841",
+      "W2132454423"
+     ]
+    }
+   ],
+   "cited_work_ids": [
+    "W1976025008",
+    "W2083432698",
+    "W2003146645",
+    "W2315000366",
+    "W1996052019",
+    "W1535453108",
+    "W2159034785",
+    "W2288679619",
+    "W4318819757",
+    "W2048493057",
+    "W2954526477",
+    "W4387077320",
+    "W2886211841",
+    "W2132454423"
+   ],
+   "proposed_experiment": "Prepare matched H2O and D2O buffers (>=99% D, pD corrected) and split each homogenate or defined mixture between them. Apply the fixed trigger and acquire four bands: 260-340 nm and 400-500 nm on cooled UV-capable and bialkali PMTs through quartz, 620-720 nm on a red-sensitive PMT with the 634/668/703 nm three-point sampling that identifies dimol emission, and 1270 nm on a cooled Ge or InGaAs detector for monomol confirmation. Absolutely calibrate each band. Compute E_band for each of the four bands and form rho. Run azide and DABCO quench arms in both solvents at matched concentration to confirm that the red band responds as singlet oxygen and to test whether the UV band inherits the same quench sensitivity. Pre-register: rho in [0.7, 1.4] with E_dimol significantly >1 supports; rho < 0.5 refutes and reassigns the UV upstream of singlet oxygen.",
+   "required_instrument": "Four-band photon-counting bench: cooled UV-extended PMT with quartz optics for 260-340 nm, bialkali for 400-500 nm, red-extended (multialkali/GaAs) PMT for 620-720 nm, and cooled Ge or InGaAs detector for 1270 nm; per-band absolute calibration.",
+   "engine_native_score": 0.4,
+   "novelty_self_claim": "The field's own prescription is targeted chemical perturbation of candidate ROS pathways extended below 350 nm, but the register contains no claim that ties a specific perturbation to a specific band ratio. This turns solvent deuteration - already quantified at 300% for total skin chemiluminescence in this corpus - into a per-band contrast rho whose value fixes whether the UV band sits upstream or downstream of singlet oxygen, using an isotope substitution that changes no concentration, no dose and no geometry."
+  },
+  {
+   "id": "Q1-6",
+   "statement": "The spectral shape of UPE, including the size of its sub-350 nm fraction, is set by the acceptor-chromophore inventory of the preparation rather than by the primary chemiexcitation step, such that adding melanin or chlorophyll at fixed oxidative chemistry suppresses the sub-350 nm fraction by more than half while leaving total emitted photon number changed by less than 30%.",
+   "scope": {
+    "population": "A minimal cell-free skin-model oxidation system (lipid + water) run at fixed Fe(II)/H2O2 or fixed UVA dose, with a titrated acceptor added: synthetic melanin, chlorophyll a, or bovine serum albumin as a tryptophan-bearing acceptor, at four concentrations spanning 100-fold",
+    "condition": "Identical primary chemistry across all arms, verified by matched malondialdehyde/peroxide-value assay, with only the added acceptor varying",
+    "comparator": "The acceptor-free arm of the same chemistry; and, as a cross-check, the same chemistry run in a matrix that already contains a dominant acceptor (leaf tissue, pigmented skin)",
+    "outcome": "Fraction of total emitted photons in 260-340 nm, and total emitted photons integrated 260-900 nm, as functions of acceptor concentration"
+   },
+   "null_hypothesis": "The sub-350 nm fraction is invariant to acceptor concentration (change <20% across a 100-fold acceptor titration) at matched oxidative turnover, i.e. the emitted spectrum is a property of the primary chemistry and acceptors merely attenuate everything proportionally.",
+   "estimand": "The ratio (sub-350 nm fraction at highest acceptor)/(sub-350 nm fraction at zero acceptor), with total-photon conservation reported alongside; <0.5 with total photons within 30% supports, >0.8 refutes.",
+   "causal_level": "L2",
+   "rationale": [
+    {
+     "step": "Energy transfer from the primary excited species to a secondary chromophore is the corpus's own stated mechanism: when chromophores are proximate to triplet excited carbonyls, triplet-singlet and triplet-triplet transfer produce excited chromophores, so the emitting species need not be the excited species.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2954526477"
+     ]
+    },
+    {
+     "step": "The acceptor is demonstrably able to overwrite the spectrum. Histidine and tryptophan give strikingly different individual UPE spectra of comparable strength, yet their mixture yields a spectrum congruent with pure tryptophan - the acceptor's spectrum, not a sum of the generators'.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2159034785"
+     ]
+    },
+    {
+     "step": "The same overwrite is documented across matrices. In vitro lipid oxidation luminesces across 450-850 nm, but the in-planta signal appears only above 640 nm, peaking at 700-750 nm; wound emission from two plant species is reported above 650 nm with chlorophyll named as the likely emitter; and in skin, triplet carbonyls transfer their excitation to melanin by either radiative or electron-exchange routes, forming melanin-based secondary excited states.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W4283824773",
+      "W2808116502",
+      "W3037707140",
+      "W4415217027"
+     ]
+    },
+    {
+     "step": "Melanin chemiexcitation is established beyond UPE work: chemically generated triplet states on melanin fragments carry the energy of a UV photon and transfer it to DNA to produce cyclobutane pyrimidine dimers hours after irradiation ends, and the same mechanism is invoked for retinal melanin. So melanin is a competent, well-characterised acceptor operating at exactly the energies in dispute.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2093971029",
+      "W4401751348",
+      "W4406917498"
+     ]
+    },
+    {
+     "step": "The energy bookkeeping predicts the asymmetry that makes this testable. Acceptor capture is a downhill transfer, so it moves quanta from short to long wavelength while approximately conserving photon number; a pure inner-filter loss would instead destroy photons. Measuring the sub-350 nm fraction and the total integrated photon count together therefore separates spectral redistribution from attenuation, and only redistribution supports the claim.",
+     "justification_type": "computation"
+    },
+    {
+     "step": "The minimal chemical model needed already exists in this corpus: a lipid-melanin-water mixture reproduces essential features of real skin's autoluminescence response to oxidative stress, so acceptor titration can be done at genuinely fixed chemistry.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W4387077320",
+      "W2062177539"
+     ]
+    },
+    {
+     "step": "If confirmed, the corollary is that the sub-350 nm band is not weak because it is rarely generated but because almost every biological matrix is acceptor-rich - which reframes the seed question and predicts the largest UV fractions in the most acceptor-poor preparations (aliphatic lipid systems, albino or amelanotic tissue) rather than in the most metabolically active ones.",
+     "justification_type": "computation"
+    }
+   ],
+   "cited_work_ids": [
+    "W2954526477",
+    "W2159034785",
+    "W4283824773",
+    "W2808116502",
+    "W3037707140",
+    "W4415217027",
+    "W2093971029",
+    "W4401751348",
+    "W4406917498",
+    "W4387077320",
+    "W2062177539",
+    "W2886211841"
+   ],
+   "proposed_experiment": "Run the lipid-plus-water minimal skin model at a single fixed oxidative trigger, in fused-silica cuvettes, with four titrated levels each of synthetic melanin, chlorophyll a, and BSA, plus an acceptor-free arm. At every arm, acquire the full 260-900 nm emission with an imaging spectrograph coupled to a cooled EMCCD in binary photon-counting mode, absolutely calibrated for spectral response so photon numbers, not counts, are compared; supplement below 350 nm with a solar-blind PMT channel where spectrograph throughput is marginal. Hold the primary chemistry constant and prove it: measure peroxide value and HPLC malondialdehyde in every arm and reject any arm whose turnover deviates by more than 15%. Measure each acceptor's own absorbance spectrum in situ so that a pure inner-filter prediction can be computed and subtracted, isolating genuine transfer-driven redistribution. Cross-check in tissue by comparing amelanotic and pigmented skin, and chlorophyll-containing versus etiolated plant tissue, at matched wounding. Decision: sub-350 nm fraction falling by >50% while total 260-900 nm photons stay within 30% supports; either invariance of the fraction, or proportional loss of total photons, refutes.",
+   "required_instrument": "UV-Vis imaging spectrograph (250-900 nm, quartz/fused-silica throughout) coupled to a cooled EMCCD in binary photon-counting mode with absolute spectral-response calibration, plus a solar-blind PMT channel for the 260-340 nm sub-band; companion UV-Vis spectrophotometer for in-situ acceptor absorbance.",
+   "engine_native_score": 0.6,
+   "novelty_self_claim": "H11 holds that the UPE spectral distribution carries state-specific information beyond total intensity. This proposes the rival that would have to be excluded first: the spectrum is a readout of the acceptor-chromophore inventory, so a spectral shift can be produced by pigment content at completely fixed oxidative chemistry. It also converts the seed's rival mechanisms - primary carbonyl emission versus melanin secondary emission from the porcine-skin work - into a titration with a numeric decision rule, and separates spectral redistribution from inner-filter attenuation by requiring total photon number to be conserved, a control the acceptor literature in this corpus does not report."
+  }
+ ]
+}

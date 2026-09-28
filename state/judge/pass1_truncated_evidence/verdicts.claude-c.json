@@ -1,0 +1,272 @@
+[
+  {
+    "candidate_id": "C049",
+    "verdict": "pedantic",
+    "failing_step": 3,
+    "grounded": true,
+    "testable": true,
+    "novel": true,
+    "reason": "The cyclic-peroxide review's abstract describes triplet/singlet product-state preferences but never states quantum yields well below unity nor luminol as a PMT calibration standard, while the load-bearing yeast Fenton dose-response and the Chlamydomonas UPE/TBARS pairing are quoted exactly."
+  },
+  {
+    "candidate_id": "C050",
+    "verdict": "declined",
+    "failing_step": 1,
+    "grounded": false,
+    "testable": true,
+    "novel": true,
+    "reason": "Step 1 cites the Arabidopsis bandpass study for emission 'through 400-870 nm with a dominant 700-750 nm contribution', but that abstract states its filters covered only 400-750 nm and reports no band dominance, leaving the 400-870 nm outcome band unsupported."
+  },
+  {
+    "candidate_id": "C051",
+    "verdict": "declined",
+    "failing_step": 0,
+    "grounded": false,
+    "testable": true,
+    "novel": false,
+    "reason": "Steps 0-1 assert 750-870 nm emission and a plant lipid-peroxidation peak near 680 nm, but the Arabidopsis abstract covers only 400-750 nm and the Chlamydomonas abstract reports no spectrum at all, leaving only the truism that a scalar QE misestimates a non-uniform spectrum."
+  },
+  {
+    "candidate_id": "C052",
+    "verdict": "pedantic",
+    "failing_step": 1,
+    "grounded": true,
+    "testable": true,
+    "novel": true,
+    "reason": "The Spathiphyllum wound abstract says nothing about Poisson-distributed photocounts, and the UPE review invoked at step 2 never mentions dark counts or an SNR-of-one requirement, but the load-bearing dark-count result (ordinary DEA scaling with no seeds present) is cited exactly."
+  },
+  {
+    "candidate_id": "C053",
+    "verdict": "pedantic",
+    "failing_step": 1,
+    "grounded": true,
+    "testable": true,
+    "novel": true,
+    "reason": "The astrocyte/glioblastoma abstract does report clear separation of cellular signal from dark noise, but it never mentions optical integration or detector cooling as optimizations, and step 2's 'rarely reported LOD' claim is not asserted by the Ulbricht-cavity paper either."
+  },
+  {
+    "candidate_id": "C054",
+    "verdict": "pedantic",
+    "failing_step": 1,
+    "grounded": true,
+    "testable": true,
+    "novel": true,
+    "reason": "Step 1 attributes a standardization-blocks-biomarkers claim to a photoencephalography paper whose abstract is empty, but the load-bearing 13-cell-line result (increased tumour emission, 90% SPD discriminant accuracy from 100 s recordings) is quoted exactly."
+  },
+  {
+    "candidate_id": "C055",
+    "verdict": "pedantic",
+    "failing_step": 2,
+    "grounded": true,
+    "testable": true,
+    "novel": true,
+    "reason": "The 'tens to hundreds of photons per second per square centimetre' figure appears in none of the three cited abstracts (one is empty), though the load-bearing EPP dissociation - normal spontaneous UPE alongside a disease-correlated post-exposure burst - is cited exactly."
+  },
+  {
+    "candidate_id": "C056",
+    "verdict": "declined",
+    "failing_step": 2,
+    "grounded": false,
+    "testable": true,
+    "novel": true,
+    "reason": "The ~1e2 photons/s/cm2 skin flux that forms the denominator of the otherwise correct 1.2e11 reflectance ratio is in neither cited abstract (one is empty), and no cited work supports the headline prediction that genuine dark-chamber UPE adds at most 0.05 AUC to a CTS classifier."
+  },
+  {
+    "candidate_id": "C057",
+    "verdict": "pedantic",
+    "failing_step": 3,
+    "grounded": true,
+    "testable": true,
+    "novel": true,
+    "reason": "Step 3 cites a Reiki/Healing-Touch biomarker review that never mentions UPE, thermal confounds or clinical protocols, and step 0's r>0.4 and r>0.5 values are absent from the meditation study's abstract, but the temperature-as-critical-parameter and uncontrolled anger-induction citations hold exactly."
+  },
+  {
+    "candidate_id": "C058",
+    "verdict": "certified",
+    "failing_step": null,
+    "grounded": true,
+    "testable": true,
+    "novel": true,
+    "reason": "Both spectral-ratio results (550/495 nm cold discrimination and the 610-630/395-455 nm ratio versus log tumour volume at R2=0.947 and 0.892) are quoted exactly, the biological-variability citations match their abstracts, and the log-ratio variance argument is correct whenever cross-band correlation exceeds 0.5."
+  },
+  {
+    "candidate_id": "C059",
+    "verdict": "certified",
+    "failing_step": null,
+    "grounded": true,
+    "testable": true,
+    "novel": true,
+    "reason": "Nose/glabella dominance plus the porphyrin-score correlation with no colour correlation are quoted exactly, the squalene-rich microbially oxidized surface-lipid compartment is exactly as described, and the split-face degreasing design cleanly separates it from the epidermis-plus-dermis account the same corpus asserts."
+  },
+  {
+    "candidate_id": "C060",
+    "verdict": "pedantic",
+    "failing_step": 4,
+    "grounded": true,
+    "testable": true,
+    "novel": true,
+    "reason": "Step 4 attributes thermal/optical confounds and missing clinical protocols to a biofield-therapies review that never mentions UPE, and step 2's CV-proxy claim cites a paper whose abstract is a single period, but the attenuation arithmetic (AUC = Phi(1.5*sqrt(0.6)/sqrt(2)) = 0.794) is exactly right."
+  },
+  {
+    "candidate_id": "C061",
+    "verdict": "pedantic",
+    "failing_step": 2,
+    "grounded": true,
+    "testable": true,
+    "novel": true,
+    "reason": "Step 2's thermal/optical-confound claim is attributed to a Reiki/Healing-Touch biomarker review that never mentions UPE, but the 1-3 minute post-UV window correlating with 24-hour redness and the skin-lightness dependence of UVA-induced UPE are both quoted exactly."
+  },
+  {
+    "candidate_id": "C062",
+    "verdict": "declined",
+    "failing_step": 0,
+    "grounded": false,
+    "testable": true,
+    "novel": true,
+    "reason": "The entire hypothesis rests on the 495-550/550-610 nm ratio being negatively correlated with syndrome scores, but the cited TCM/T2DM abstract stops at methods and reports no band ratio or correlation, and the two supporting diabetes papers have empty abstracts."
+  },
+  {
+    "candidate_id": "C063",
+    "verdict": "certified",
+    "failing_step": null,
+    "grounded": true,
+    "testable": true,
+    "novel": true,
+    "reason": "The EPP abstract states exactly that the post-solar-simulated-light initial burst correlated with plasma iron and erythrocyte PPIX in fourteen patients, the 1-3 minute UPE / 24-hour erythema link and the L* dependence are quoted exactly, and incremental AUC beyond PPIX, iron, dose and lightness is reported by no cited work."
+  },
+  {
+    "candidate_id": "C064",
+    "verdict": "pedantic",
+    "failing_step": 2,
+    "grounded": true,
+    "testable": true,
+    "novel": true,
+    "reason": "Step 2 credits the 2018 analytical review with reporting palmar measurements as less variable, which its abstract does not say - the palm-versus-dorsum standard deviations actually sit in the 2004 hand paper cited at step 0 - while the preserved-versus-severe left-right imbalance claim is quoted accurately."
+  },
+  {
+    "candidate_id": "C065",
+    "verdict": "certified",
+    "failing_step": null,
+    "grounded": true,
+    "testable": true,
+    "novel": true,
+    "reason": "The 982+/-513 versus 625+/-419 counts/min/cm2 tissue values with their n=14/n=6 imbalance and frozen provenance, the 13-cell-line 90% discriminant accuracy, and the EM-CCD SNR-3 limit below 30 photons/s/cm2 are all quoted exactly, and region-level classification against co-registered whole-mount histology is new."
+  },
+  {
+    "candidate_id": "C066",
+    "verdict": "declined",
+    "failing_step": 3,
+    "grounded": false,
+    "testable": true,
+    "novel": false,
+    "reason": "Step 3 asserts the cited TCM/T2DM work supplies 'a defined two-band diabetes UPE feature and a later HbA1c endpoint' when its abstract mentions neither a band ratio nor HbA1c, step 0 again misattributes UPE barriers to a biofield-therapies review, and what remains is the metrology truism that calibration beats raw counts."
+  },
+  {
+    "candidate_id": "C067",
+    "verdict": "certified",
+    "failing_step": null,
+    "grounded": true,
+    "testable": true,
+    "novel": true,
+    "reason": "The ~865 nm species-ordered redshift, the dementia blueshift, the 450-850 nm in vitro versus >640 nm in planta lipid-peroxidation spectra and the 500 nm human-hand peak are all quoted exactly, and exp(1 mm^-1 x 0.4 mm) = 1.49 is arithmetically right and conservative for brain tissue."
+  },
+  {
+    "candidate_id": "C068",
+    "verdict": "pedantic",
+    "failing_step": 1,
+    "grounded": true,
+    "testable": true,
+    "novel": true,
+    "reason": "Step 1's claim that the rat-brain work 'explicitly asserts that photons crossing the skull are the chief contributors' rests on a paper whose abstract is empty, but the half-maximum derivation rho = d*sqrt(2^(2/3)-1) = 0.766d giving FWHM = 1.53d is correct and the escape-fraction argument holds."
+  },
+  {
+    "candidate_id": "C069",
+    "verdict": "certified",
+    "failing_step": null,
+    "grounded": true,
+    "testable": true,
+    "novel": true,
+    "reason": "The photon-budget arithmetic checks exactly (A*t = [3/(0.015*85)]^2 = 5.54 cm2 s, with the Phi=30 consistency check giving 44.4 cm2 s), the seven cited imaging works do read regional structure without reporting any spatial reproducibility statistic, and the shot-noise-matched surrogate comparison is decisive."
+  },
+  {
+    "candidate_id": "C070",
+    "verdict": "pedantic",
+    "failing_step": 1,
+    "grounded": true,
+    "testable": true,
+    "novel": true,
+    "reason": "None of the three imaging abstracts cited at step 1 mentions corpus callosum, thalamus or axonal origin, but the myelin-waveguide modelling citations are exact, sqrt(3.52/1.57) = 1.50 is correct, and the same-slice grey-matter control makes the test independent of those absolute optical values."
+  },
+  {
+    "candidate_id": "C071",
+    "verdict": "pedantic",
+    "failing_step": 2,
+    "grounded": true,
+    "testable": true,
+    "novel": true,
+    "reason": "The SPAD self-emission crosstalk warning is attributed to a general UPE review whose abstract never mentions it, but the coherence-time bound (5 fs / 1 ns = 5e-6), the accidental rate (1e-5 s^-1, 0.29 counts in 8 h) and the pair yield (3.6 counts at f = 1e-3) are all arithmetically correct."
+  },
+  {
+    "candidate_id": "C072",
+    "verdict": "pedantic",
+    "failing_step": 3,
+    "grounded": true,
+    "testable": true,
+    "novel": true,
+    "reason": "The EM-CCD paper is cited for 'non-negligible sensitivity to blackbody radiation above ~50 C', which its abstract never states and which is irrelevant at skin temperature, but the exponential 4-38 C dependence, the heat-shock result and the Q10 arithmetic (2^0.1 = 1.072, so 7-23% over 1-3 C) all hold."
+  },
+  {
+    "candidate_id": "C073",
+    "verdict": "pedantic",
+    "failing_step": 2,
+    "grounded": true,
+    "testable": true,
+    "novel": false,
+    "reason": "Step 2 infers that the proposed 640-800 nm partition is detector-accessible from a study that measured only 400-700 nm, and the prediction that red/far-red localizes better through 2 mm of skin largely restates what the cited works already conclude about sub-600 nm tissue attenuation."
+  },
+  {
+    "candidate_id": "C074",
+    "verdict": "declined",
+    "failing_step": 3,
+    "grounded": true,
+    "testable": false,
+    "novel": true,
+    "reason": "Step 3's identification argument is false: a static point-spread function over a source whose amplitude rises in time does produce threshold-crossing onset times that increase with radius, so the primary distance-onset slope cannot separate a moving biological source from a brightening stationary one."
+  },
+  {
+    "candidate_id": "C075",
+    "verdict": "pedantic",
+    "failing_step": 0,
+    "grounded": true,
+    "testable": true,
+    "novel": true,
+    "reason": "The cited skin abstract reports a marked Fenton-induced UPE difference but does not specify porcine skin or that the Fenton measurement was two-dimensional, though the design's key move - summing the same camera frames to build the counter arm - correctly isolates the information carried by photon coordinates."
+  },
+  {
+    "candidate_id": "C076",
+    "verdict": "certified",
+    "failing_step": null,
+    "grounded": true,
+    "testable": true,
+    "novel": true,
+    "reason": "The extracranial-detection critique states exactly that sub-600 nm photons are strongly attenuated by scalp and skull and that head UPE is likely scalp-dominated, and the randomized-coordinate, blinded, intact-versus-skull-removed design with a superficial positive control converts that critique into a decisive localization bound."
+  },
+  {
+    "candidate_id": "C077",
+    "verdict": "pedantic",
+    "failing_step": 0,
+    "grounded": true,
+    "testable": true,
+    "novel": true,
+    "reason": "The Papilio metamorphosis abstract reports cooled-CCD moving-picture spatiotemporal biophoton dynamics but says nothing about anterior-localized emission, the specific feature the statement is built around, though the incremental-MAE design with animal-level nested cross-validation is sound."
+  },
+  {
+    "candidate_id": "C078",
+    "verdict": "certified",
+    "failing_step": null,
+    "grounded": true,
+    "testable": true,
+    "novel": true,
+    "reason": "The 2004 murine tumour study is quoted exactly - AH109A/TE4/TE9, weeks 1 to 3, biophoton distribution compared with histological findings, intensity reflecting tumour viability, r = 0.73 against tumour size - and quantifying what spatial heterogeneity adds beyond counts and volume goes beyond that qualitative correspondence."
+  }
+]

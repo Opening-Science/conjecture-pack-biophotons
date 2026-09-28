@@ -1,0 +1,116 @@
+# Conjecture domain pack: biophotons / ultra-weak photon emission (UPE).
+#
+# Everything the hypothesis hub (Opening-Science/conjecture) needs to know
+# about one field lives here; the hub reads this file and nothing else
+# domain-specific. Paths are relative to this file. Hydrate the hub with
+# this pack: CONJECTURE_PACK=/path/to/pack.yaml.
+
+pack_version: 1
+name: biophotons
+title: Biophotons / ultra-weak photon emission (UPE)
+
+corpus:
+  # read-only SQLite, fetched by corpus/fetch.py (see corpus/README.md):
+  # metadata, abstracts, claim register, statements; no full-text bodies
+  knowledgebase: corpus/knowledgebase.sqlite
+  # citation edges, for the neighbours call; optional
+  fieldmap: corpus/fieldmap.sqlite
+  # size of the mapped universe, as stated to engines in the prompt
+  n_works: 18355
+
+questions:
+  # the field's open questions, one "## Qn. Title" section each
+  source: questions/open_research_questions.md
+  # corpus entry-point queries per question, so every engine starts from
+  # the same retrieval surface rather than inventing its own
+  entry_queries:
+    Q1:
+      - ultraweak photon emission mechanism reactive oxygen species
+      - triplet carbonyl singlet oxygen emission spectrum
+      - ultraviolet biophoton emission origin
+    Q2:
+      - photocount statistics biophoton coherence
+      - second order correlation g2 biological photon
+      - squeezed state photon count distribution biology
+    Q3:
+      - cell to cell optical communication ultraweak photon
+      - mitogenetic radiation replication experiment
+      - non chemical distant cellular interaction
+    Q4:
+      - brain biophoton neural activity emission
+      - extracranial photon detection skull transmission
+      - neuronal ultraweak photon emission slice
+    Q5:
+      - absolute calibration photon counting radiometric
+      - detector characterisation dark count spectral responsivity
+      - inter-laboratory comparison photon measurement
+    Q6:
+      - ultraweak photon emission human oxidative stress biomarker
+      - skin photon emission clinical diagnostic
+      - biophoton measurement reproducibility human subject
+    Q7:
+      - biophoton imaging EMCCD camera
+      - photon counting imaging spatial distribution tissue
+      - single photon avalanche diode array imaging
+
+prompts:
+  # completes "You are a research hypothesis generator working on ..."
+  domain: ultraweak photon emission (UPE, "biophotons") from living systems
+  # the causal hierarchy engines assign each hypothesis to (L1..L6),
+  # printed in the prompt line by line
+  causal_levels: |-
+    L1 generation mechanism | L2 emitted optical state and spectrum |
+    L3 propagation and transport | L4 receiver effects and photon-mediated causality | L5 correlational state measurement | L6 out-of-sample prediction and diagnostics
+  # short labels for the same levels, used on the scoreboard page
+  causal_level_labels:
+    L1: generation mechanism
+    L2: emitted optical state
+    L3: propagation
+    L4: receiver effects
+    L5: correlational measurement
+    L6: prediction and diagnostics
+  # the setting the arithmetic verifier (theoria) is told about
+  verifier_setting: >-
+    physics/biophysics experiment on ultraweak photon emission
+    (spontaneous light emission from living tissue, of order 1 to
+    1000 photons per second per square centimetre)
+
+# instrument vocabulary -> the measurement area whose procedure applies;
+# a certified hypothesis becomes an experiment card naming up to three
+measurement_areas:
+  - pattern: '\bSPAD|single.photon avalanche|SiPM\b'
+    area: Imaging detectors, SPAD arrays and photon transfer calibration
+  - pattern: '\bEMCCD|CCD|ICCD|camera|imaging\b'
+    area: Imaging detectors, SPAD arrays and photon transfer calibration
+  - pattern: '\bPMT|photomultiplier|photon.counting tube\b'
+    area: Photomultiplier photon counting and delayed luminescence
+  - pattern: '\bdelayed luminescence|gated acquisition\b'
+    area: Photomultiplier photon counting and delayed luminescence
+  - pattern: '\b1270 ?nm|singlet oxygen|InGaAs|near.infrared|NIR\b'
+    area: Detection outside the visible band
+  - pattern: '\bUV|ultraviolet|solar.blind|190|280 ?nm\b'
+    area: Detection outside the visible band
+  - pattern: '\bcalibrat|traceab|radiometric|uncertainty budget|transfer standard|absolute\b'
+    area: Calibration, spectral responsivity, traceability and uncertainty
+  - pattern: '\bFano|Mandel|photocount|g2|estimator|Poisson\b'
+    area: Photocount statistics, estimator choice and non-stationarity
+  - pattern: '\bhuman|subject|skin|volunteer|clinical|patient\b'
+    area: Human-subject measurement and clinical-claim requirements
+  - pattern: '\binter.?laborator|ring study|comparison|reporting checklist\b'
+    area: Reporting standards and inter-laboratory comparison
+  - pattern: '\bdark count|background|artefact|artifact|light.tight\b'
+    area: Sample environment, background and artefact control
+  - pattern: '\bROS|oxidative|lipid peroxidation|triplet carbonyl\b'
+    area: Oxidative stress chemistry and its spectral bands
+
+outputs:
+  # rendered engine page, experiment cards; the published inventory the
+  # verifier bench excludes quotes from
+  dir: outputs
+  inventory: outputs/hypothesis_inventory.md
+  # per-candidate ledger for a run panel
+  ledger: outputs/ledger.json
+
+# run state: seeds, engine runs, merge, judge verdicts, audit.db, the
+# verifier bench. Written by the hub, owned by the pack.
+state: state

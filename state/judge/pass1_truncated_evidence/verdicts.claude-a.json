@@ -1,0 +1,218 @@
+[
+  {
+    "candidate_id": "C001",
+    "verdict": "pedantic",
+    "failing_step": 0,
+    "grounded": true,
+    "testable": true,
+    "novel": true,
+    "reason": "Step 0 misattributes a '~350-1300 nm UPE band' to W2752165143, whose abstract actually says cells emit 'in the UV to visible/near-infrared range', and steps 4-6 cite eight works whose abstracts are not shown at all; the load-bearing chain (W2258231078's five bands with 420-450 nm as the shortest, the 28591/lambda kcal/mol arithmetic, and the second-order pooling kinetics) is correct and carries the slope-2 prediction."
+  },
+  {
+    "candidate_id": "C002",
+    "verdict": "declined",
+    "failing_step": 0,
+    "grounded": false,
+    "testable": true,
+    "novel": true,
+    "reason": "The '20-40% UV fraction' and '10-1000 photons/cm2/s at 190-250 nm' targets that the whole statement is built to refute appear in neither cited abstract (W4389669809 is a two-sentence book blurb; W2979283984 says only 'weak UV-chemiluminescence'), and step 4 then miscounts its own power, since the predicted low end of 2 photons/cm2/s sits 15x below the 30 photons/cm2/s SNR-3 floor it calls 'comfortably above'."
+  },
+  {
+    "candidate_id": "C003",
+    "verdict": "pedantic",
+    "failing_step": 5,
+    "grounded": true,
+    "testable": true,
+    "novel": true,
+    "reason": "Step 5 attributes 'a photon-diffusion treatment of human surface emission' to W3170639556, whose abstract proposes an unrelated 'vivo-nergy' construct with no diffusion model, and step 0 attributes a reabsorption/optical-density statement to a book whose shown abstract asserts nothing; the load-bearing Beer-Lambert arithmetic (eps_Trp 5.5e3, A = 0.017 / 16.5 / 0.033, ~16 orders of transmission spread) checks out and W2748679677 exactly supports the 280 nm tryptophan/tyrosine absorption band."
+  },
+  {
+    "candidate_id": "C004",
+    "verdict": "pedantic",
+    "failing_step": 3,
+    "grounded": true,
+    "testable": true,
+    "novel": true,
+    "reason": "Step 3 cites a two-sentence book blurb (W4389669809) for 'triboluminescence as a biological phenomenon' and a gold-nanoparticle droplet-impact study (W7140171627) for 'free-radical recombination reactions tabulated with their enthalpies', neither of which those abstracts assert, and step 5's 'two distinct exponential decay events' is absent from W2808116502; the load-bearing anoxia result, the obligatory O2 dependence of the dioxetane/tetroxide route, and the Arabidopsis superoxide/singlet-oxygen imaging are all exactly supported."
+  },
+  {
+    "candidate_id": "C005",
+    "verdict": "declined",
+    "failing_step": 2,
+    "grounded": true,
+    "testable": false,
+    "novel": true,
+    "reason": "Step 2 asserts that deuteration 'raises the yield of every channel fed by singlet oxygen' by a shared factor, but dimol emission at 634/703 nm is second order in [1O2] while a tryptophan-hydroperoxide UV channel is first order, so a true singlet-oxygen-downstream UV band would give rho = E_UV/E_dimol near 0.33 and trip the pre-registered 'rho < 0.5 refutes' rule; the estimand therefore cannot discriminate the claim from its null."
+  },
+  {
+    "candidate_id": "C006",
+    "verdict": "declined",
+    "failing_step": 4,
+    "grounded": true,
+    "testable": false,
+    "novel": true,
+    "reason": "Step 4's premise that acceptor capture 'approximately conserv[es] photon number' fails for the two acceptors actually named in the statement, since melanin has a fluorescence quantum yield near 1e-3 and in vivo chlorophyll only a few percent, so the decision rule requiring total 260-900 nm photons to stay within 30% while the sub-350 nm fraction halves would refute the hypothesis even when the acceptor mechanism is exactly right; step 1's His/Trp mixture-congruence result is also absent from W2159034785's shown abstract."
+  },
+  {
+    "candidate_id": "C007",
+    "verdict": "pedantic",
+    "failing_step": 1,
+    "grounded": true,
+    "testable": true,
+    "novel": true,
+    "reason": "Step 1's claim that 'tryptophan can receive excitation energy from other oxidized amino acids and act as the final emitter' is not in W2159034785's shown abstract, which supports only that Phe, Trp, His and Cys oxidation generate strong UPE; that direct-emission reading alone sustains the Trp-to-Phe prediction, and W2954526477 exactly supports triplet-carbonyl transfer to nearby chromophores."
+  },
+  {
+    "candidate_id": "C008",
+    "verdict": "declined",
+    "failing_step": 1,
+    "grounded": false,
+    "testable": true,
+    "novel": true,
+    "reason": "W4399353285 demonstrates plasmalogen-derived triplet carbonyls only by visible-region emission (with a dibromoanthracene enhancer) and 1270 nm, and W2954526477 names no UV-emitting acceptor, so nothing shown supports the leap to a 300-349 nm band that lies at 82-95 kcal/mol, above the ~72-80 kcal/mol triplet energies of the formaldehyde/acetaldehyde-class carbonyls the mechanism produces."
+  },
+  {
+    "candidate_id": "C009",
+    "verdict": "declined",
+    "failing_step": 1,
+    "grounded": false,
+    "testable": true,
+    "novel": true,
+    "reason": "Step 1's '340-540 nm triplet-carbonyl emission' figure is nowhere in W2886211841's shown abstract, and even taken at face value that band excludes almost all of the candidate's own 300-349 nm target window, which is above the triplet energies of the formaldehyde and acetaldehyde that step 0 (correctly, from W4415217027) identifies as the trapped species."
+  },
+  {
+    "candidate_id": "C010",
+    "verdict": "declined",
+    "failing_step": 1,
+    "grounded": false,
+    "testable": true,
+    "novel": true,
+    "reason": "The load-bearing premise that 'rotenone increased spontaneous photon emission from rat brain' rests on W2160984073, whose abstract is empty in the record shown, and it is contradicted elsewhere in this same batch by W4415884611 ('rotenone had a far more limited impact'); nothing shown connects mitochondrial ROS chemistry to the 300-349 nm band the claim is about."
+  },
+  {
+    "candidate_id": "C011",
+    "verdict": "pedantic",
+    "failing_step": 0,
+    "grounded": true,
+    "testable": true,
+    "novel": true,
+    "reason": "Step 0 attributes 'photocount statistics cannot discriminate a coherent from a thermal state when many modes are collected' to W3217353367, a brain-computer-interface feasibility review that says no such thing, and pairs it with W2141663490's empty abstract, while step 7's integrating-cavity claim is likewise unsupported; the load-bearing arithmetic is right (Delta_nu 3.3e14 Hz, delta 1.7e-21, tau 4e28 s, M_spatial cancellation) and W4404240787, W4415884611, W2337122567, W43326842 and W2084070982 all say exactly what is claimed."
+  },
+  {
+    "candidate_id": "C012",
+    "verdict": "pedantic",
+    "failing_step": 2,
+    "grounded": true,
+    "testable": true,
+    "novel": true,
+    "reason": "Step 2's organism-scale figure is wrong by a factor of 1000 (lambda^2/l_c at 600 nm over 10 cm is 3.6e-3 nm, not 3.6e-6 nm), but the load-bearing numbers it feeds the claim (1 nm to 0.36 mm to 1.2 ps, 36 nm for single-cell coherence) are correct, and W146728166 exactly states the 'mode coupling over the entire spectrum... fully coherent and sometimes even squeezed states' target while W4414929333, W2049213668 and W4283824773 exactly document the 50 nm / cut-off-filter resolution ceiling."
+  },
+  {
+    "candidate_id": "C013",
+    "verdict": "pedantic",
+    "failing_step": 3,
+    "grounded": true,
+    "testable": true,
+    "novel": true,
+    "reason": "Step 3 attributes mannitol, catechol and oxygen-removal suppression to W2034044028, whose shown abstract reports only that linoleic acid increased UPE in step with TBARS, and its yeast-BAL/pO2 claim rests on W4308366428's empty abstract; the antioxidant and anoxia suppression the claim actually needs is exactly supported by W2132454423 and W2808116502, and the Neyman type-A derivation (F = 1 + mu, 34.01/27.25 = 1.25, mu = 0.25, mu/eta = 2.5) is correct."
+  },
+  {
+    "candidate_id": "C014",
+    "verdict": "pedantic",
+    "failing_step": 5,
+    "grounded": true,
+    "testable": true,
+    "novel": true,
+    "reason": "Step 5 states 'Q = 0.02, i.e. F = 1.004', inconsistent with the F = 1 + Q relation it uses correctly two sentences later (Q = 0.02 gives F = 1.02), and steps 0 and 4 lean on the empty abstracts of W2412356141 and W2594646273; the load-bearing case is exactly supported by W7168813583, W2964505745, W1552722045 and W2059277266, and the decisive <n> = 27 with 10% RMS drift giving F = 1.27 is arithmetically right."
+  },
+  {
+    "candidate_id": "C015",
+    "verdict": "pedantic",
+    "failing_step": 0,
+    "grounded": true,
+    "testable": true,
+    "novel": true,
+    "reason": "Step 0 says DEA separated astrocytes from glioblastoma, but W7124764611's abstract reports only 'a clear separation between cellular signals and dark noise', and the kurtosis item rests on W2594646273's empty abstract; the intensity-confound argument that carries the claim survives, with W3157775700, W4386752905, W3016463384, W4415884611 and W2132454423 all supporting exactly what is attributed to them and the Q = <n>*sigma_I^2 / Hurst-toward-0.5 reasoning correct."
+  },
+  {
+    "candidate_id": "C016",
+    "verdict": "pedantic",
+    "failing_step": 0,
+    "grounded": true,
+    "testable": true,
+    "novel": true,
+    "reason": "Step 0 attributes 'site-wise profiles of nine properties across 12 anatomical sites' to W2188393532, whose abstract is a mind/brain biophoton framework naming neither, and step 2 again miscredits W3170639556 with a photon-diffusion model it does not contain; the r = 0.06 / theta = 2.76 / phi = 0.64 anchor (W43326842), the geometry-dependent coherence reversal (W2337122567), the squeezed-state skin response (W1559651179) and the tissue-attenuation point (W7168813583) are all exactly supported."
+  },
+  {
+    "candidate_id": "C017",
+    "verdict": "pedantic",
+    "failing_step": 1,
+    "grounded": true,
+    "testable": true,
+    "novel": false,
+    "reason": "Steps 0 and 1 rest on the empty abstracts of W2412356141 and W2141663490, so neither the bin-size dependence nor the 'detectors closer to ideal may resolve' framing can be verified as shown, and the claim itself restates a theorem rather than a biological proposition, since kappa_r(eta) = eta^r kappa_r(1) holds for any source state under binomial thinning; the step-3 derivation is nonetheless correct and W3126489816 exactly supports the 30 photons/s/cm2 SNR-3 figure."
+  },
+  {
+    "candidate_id": "C018",
+    "verdict": "declined",
+    "failing_step": 3,
+    "grounded": false,
+    "testable": false,
+    "novel": true,
+    "reason": "g2(0) = 1 + 1/M is correct, but a delta-g2 of at least 0.10 demands M below about 10 collected modes from a spatially extended leaf whose flux drops roughly 700-fold behind the 0.10 nm etalon, and the predicted 15 ps bunching envelope is one to two orders below any PMT or SPAD jitter, so the proposed HBT cannot reach the stated threshold; step 1 also credits W4400038049 with a many-mode-thermal-approaches-Poisson statement its abstract does not make."
+  },
+  {
+    "candidate_id": "C019",
+    "verdict": "declined",
+    "failing_step": 2,
+    "grounded": true,
+    "testable": false,
+    "novel": true,
+    "reason": "The e^(-2r) = 0.887 arithmetic is right, but r = 0.06 was fitted to background-subtracted photocount histograms from a broadband 300-800 nm many-mode acquisition, so it designates no single accessible optical mode; mode-matching a local oscillator to spatially incoherent lichen emission at counts-per-second gives an overlap so small that the null result is guaranteed for instrumental reasons and cannot discriminate the claim."
+  },
+  {
+    "candidate_id": "C020",
+    "verdict": "declined",
+    "failing_step": 3,
+    "grounded": false,
+    "testable": false,
+    "novel": true,
+    "reason": "No rationale step argues for the claim's direction at all: steps 0-2 establish only the preparation, the controversy and detector sensitivity, and step 3 supplies the visibility identity V = [2*sqrt(I1*I2)/(I1+I2)]*|g1| without any ground for expecting a source-plane excess |g1| of 0.10 at 100 um shear, which van Cittert-Zernike puts at essentially zero for independent chemiluminescent emitters."
+  },
+  {
+    "candidate_id": "C021",
+    "verdict": "pedantic",
+    "failing_step": 2,
+    "grounded": true,
+    "testable": true,
+    "novel": true,
+    "reason": "Step 2 credits W4404871602 with '10 to 10^4 photons s^-1 cm^-2 quoted specifically for the UV from active cells' though its abstract gives no intensity figures at all; the 10^4 photons cm^-2 s^-1 ceiling the arithmetic actually uses is exact in W2618829643, the Paramecium and mitochondrial effects are exact in W2092319343 and W4386957427, and the fluence chain (8.64e8 photons cm^-2, 4.41e-19 J, 3.81e-10 J cm^-2, ratio 2.6e9) is arithmetically correct."
+  },
+  {
+    "candidate_id": "C022",
+    "verdict": "pedantic",
+    "failing_step": 0,
+    "grounded": true,
+    "testable": true,
+    "novel": true,
+    "reason": "Step 0's specifics - the 19-30 percent C. elegans lifespan extension and the review's own flags about blinding, sample size and replication - are absent from W7142519026's abstract, which is truncated before its results, and step 1's '44 percent' and mirror-UPE details are likewise cut off in W2999575750; the etendue bound G <= 1 + R_m and the 10^9-below-threshold dose arithmetic that carry the claim are correct, and W2135147563 exactly supports the biphasic Arndt-Schulz dose-response."
+  },
+  {
+    "candidate_id": "C023",
+    "verdict": "certified",
+    "failing_step": null,
+    "grounded": true,
+    "testable": true,
+    "novel": true,
+    "reason": "Every citation step is asserted verbatim by its abstracts - W3041755811 on UPE as a ROS assay for mitochondrial dysfunction, W2048493057 on dioxetane-derived triplet carbonyls and tetramethyl-1,2-dioxetane as a calibration source, W2343307968 on mitochondrial and peroxisomal substrates giving no emission increase while superoxide conditions do, W2326730546 on tocopherol quenching and the 585/635 nm singlet-oxygen-like peaks - and the branch-ratio argument honestly frames Phi-invariance as a substantive null that the matched-oxidative-flux design with an absolute photons-per-event calibration would decisively test."
+  },
+  {
+    "candidate_id": "C024",
+    "verdict": "pedantic",
+    "failing_step": 3,
+    "grounded": true,
+    "testable": true,
+    "novel": true,
+    "reason": "Step 3 credits W2172375368, a conceptual 'biofield physiology' framework paper about ECG/MEG/EEG fields, with reporting UPE co-variation with cerebral blood flow and energy metabolism, a result that belongs to a rat-brain study not cited here, and step 4 rests on W2056591841's empty abstract; the metabolic-rate coupling the design needs is supported by W3041755811, the mutual donor-receiver effects by W2092319343 and W4386957427, and the receiver-contingency test itself is cleanly specified with turbidity-matched back-scatter controls."
+  }
+]

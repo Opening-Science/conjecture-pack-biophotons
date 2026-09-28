@@ -1,0 +1,282 @@
+{
+ "seed_id": "Q2",
+ "title": "Is UPE coherent — and can photocount statistics ever decide?",
+ "quotes": [
+  {
+   "quote": "While there is some consensus about intensity and spectrum of UPE, claims about statistical properties of UPE are very controversial",
+   "source": "Cifra 2015, p.1, `W2141663490`"
+  },
+  {
+   "quote": "his interpretations [of] experimental results on UPE photocount statistics in terms of coherent states are controversial and [...] not generally accepted",
+   "source": "Cifra 2015, p.14 (on Popp)"
+  },
+  {
+   "quote": "biophoton emissions [...] are speculated to be coherent and highly-structured [...] this speculation has been subject to much debate and remains to be determined",
+   "source": "Hoh Kam 2025, `W4415884611`"
+  },
+  {
+   "quote": "the idea that UPE is coherent is under debate",
+   "source": "Berke 2023, `W4386752905`"
+  }
+ ],
+ "what_would_settle_it": "photon-number-resolving detection with characterised quantum efficiency and dead-time, on standard biological references, analysed with pre-registered statistical models — a detector-metrology problem before it is a biology problem.",
+ "claims_mentioned": [
+  "H10",
+  "H2"
+ ],
+ "entry_queries": [
+  "photocount statistics biophoton coherence",
+  "second order correlation g2 biological photon",
+  "squeezed state photon count distribution biology"
+ ],
+ "entry_points": [
+  {
+   "work_id": "W2141663490",
+   "title": "Biophotons, coherence and photocount statistics: A critical review",
+   "year": 2015,
+   "type": "article",
+   "text": "arXiv:1502.07316v1  [physics.bio-ph]  25 Feb 2015\nBiophotons, coherence and photocount statistics: a critical\nreview\nMichal Cifraa,∗, Christian Brouderb, Michaela Nerudov´aa … "
+  },
+  {
+   "work_id": "W43326842",
+   "title": "Quantum nature of photon signal emitted by Xanthoria parietina and its implications to biology.",
+   "year": 2008,
+   "type": "article",
+   "text": " … The \nreproduction of photo count distributions is a credible evidence of spontaneous emission of photon signal in a quantum \nsqueezed state for macroscopic time … "
+  },
+  {
+   "work_id": "W69129819",
+   "title": "Quantum squeezed state analysis of spontaneous ultra weak light photon emission of practitioners of meditation and control subjects.",
+   "year": 2008,
+   "type": "article",
+   "text": " … Biophotonics, Human, Meditation, Oxidative stress, Photo count distribution, Squeezed state, Ultra-weak \nphoton emission \nMeditation refers to a family of techniques that share \na … "
+  },
+  {
+   "work_id": "W2412356141",
+   "title": "Photocount statistics of ultra-weak photon emission from germinating mung bean",
+   "year": 2016,
+   "type": "article",
+   "text": " … Kučera, Biophotons, coherence and photocount\nstatistics: a critical review, J. Lumin. 164 (2015) 38–51.\n[11] R. Bajpai, Biophoton emission in a squeezed state … "
+  },
+  {
+   "work_id": "W2594646273",
+   "title": "Ultra-weak photon emission in healthy subjects and patients with type 2 diabetes: evidence for a non-invasive diagnostic tool",
+   "year": 2017,
+   "type": "article",
+   "text": " … photon signals in type 2\ndiabetes and healthy subjects\nSqueezed state parameters (|α|, r, θ, and φ) were determined\nfrom the photon count distribution … "
+  },
+  {
+   "work_id": "W2188393532",
+   "title": "Biophotonic Route for Understanding Mind, Brain and the World",
+   "year": 2015,
+   "type": "article",
+   "text": " … BAJPAI \n193 \nsqueezed state index (SSI) and sum of the squares of residuals (SSR) in estimation with \n50ms time series. Photon count distribution could … "
+  },
+  {
+   "work_id": "W2808116502",
+   "title": "Leaf wound induced ultraweak photon emission is suppressed under anoxic stress: Observations of Spathiphyllum under aerobic and anaerobic conditions using novel in vivo methodology",
+   "year": 2018,
+   "type": "article",
+   "text": " … point out, the existence of a Poissonian photocount distribution is a necessary\nbut insufficient condition for coherence [45]. Distinguishing between coherent and chaotic\nbiological … "
+  },
+  {
+   "work_id": "W4411628859",
+   "title": "Application of quantum imaging in biology",
+   "year": 2025,
+   "type": "article",
+   "text": " … The\noutput state was approximated as a tensor product of independent two-mode squeezed vacuum\nstates where the momentum and wavelength of interacting photons … "
+  },
+  {
+   "work_id": "W2100288142",
+   "title": "Studies and Discussion of Properties of Biophotons and Their Functions",
+   "year": 2008,
+   "type": "article",
+   "text": "Biophotons (BPHs) are weak photons within or emitted from living organisms. BPH emission originates from a de-localized coherent electromagnetic field within living organisms and is regulated by the field. Based on experimental results concerning Poisson and sub-Poisson distributions of photocount statistics, the coherent properties of BPHs and their functions in cell communication are described in this paper. We discuss functions of BPH roles in some important processes, including DNA replication, transcription, protein synthesis, and cell signalling, and in the processes of oxidative phosphorylation and photosynthesis."
+  },
+  {
+   "work_id": "W2318603369",
+   "title": "Physical properties of biophotons and their biological functions.",
+   "year": 2008,
+   "type": "article",
+   "text": "Biophotons (BPHs) are weak photons within or emitted from living organisms. The intensities of BPHs range from a few to several hundred photons s(-1) x cm(-2). BPH emission originates from a de-localized coherent electromagnetic field within the living organisms and is regulated by the field. In this paper based on the experimental results of Poisson and sub-Poisson distributions of photocount statistics, the coherent properties of BPHs and their functions in cell communication are described. Discussions are made on functions which BPHs may play in DNA and proteins functioning including the process of DNA replication, protein synthesis and cell signalling and in oxidative phosporylation and photosynthesis."
+  },
+  {
+   "work_id": "W2199084276",
+   "title": "Biophotons — Background, Experimental Results, Theoretical Approach and Applications",
+   "year": 2003,
+   "type": "book-chapter",
+   "text": " … result that biophotons are \neither coherent or chaotic. How is it possible that two opposite physical \nproperties display the same photocount statistics? \n\n\f\n416 \nFritz … "
+  },
+  {
+   "work_id": "W146728166",
+   "title": "Properties of biophotons and their theoretical implications.",
+   "year": 2003,
+   "type": "article",
+   "text": " … result that biophotons are \neither coherent or chaotic. How is it possible that two opposite physical \nproperties display the same photocount statistics? \n\n\f\n416 \nFritz … "
+  },
+  {
+   "work_id": "W2337122567",
+   "title": "Biophoton Emission from the Hands",
+   "year": 2002,
+   "type": "article",
+   "text": " … Photo-counting statistics\nwere analyzed to study the coherence of biophotons, and the measured biophotons from the hands\nlacked the usual coherence because of … "
+  },
+  {
+   "work_id": "W2030876425",
+   "title": "Hints at Quantum Characteristics of Light Signals Measured from a Human Subject",
+   "year": 2013,
+   "type": "article",
+   "text": " … Our \nanalysis requires photon count distribution, P, which is \nthe set of probabilities of detecting different numbers of \nphotons n = 0,1,2… for … "
+  },
+  {
+   "work_id": "W4399038431",
+   "title": "Vibration assisted electron tunnelling in COVID-19 infection using quantum state diffusion",
+   "year": 2024,
+   "type": "article",
+   "text": " … of the environmental correlation time τ . Furthermore, g0 is \nof the order one, while g1 and g2 are of the order of τ . In … "
+  },
+  {
+   "work_id": "W264590876",
+   "title": "Inverse relationship between photon flux densities and nanotesla magnetic fields over cell aggregates: Quantitative evidence for energetic conservation",
+   "year": 2015,
+   "type": "article",
+   "text": " … To ensure there were no obvious artifacts of the measurement\nprocedure correlations between the second-to-second magnetic\nﬁeld strength and photon counts were … "
+  },
+  {
+   "work_id": "W2945897374",
+   "title": "Propagation of Cylindrical Vector Laser Beams in Turbid Tissue-Like Scattering Media",
+   "year": 2019,
+   "type": "article",
+   "text": " … A new scattering direction of the photon packet is chosen using Henyey–Greenstein\nphase function [42]:\nFHG(θ) = 1\n2\n1 −g2\n(1 + g2 … "
+  },
+  {
+   "work_id": "W2060912121",
+   "title": "The Carbonate Radical Is a Site-selective Oxidizing Agent of Guanine in Double-stranded Oligonucleotides",
+   "year": 2001,
+   "type": "article",
+   "text": " … Pseudo-first order rate constants (kn9) of the radical (Rz) 1 substrate\n(S) reactions and the second order rate constants of the radical recom … "
+  },
+  {
+   "work_id": "W2606135676",
+   "title": "Ultra-weak photon emission as a dynamic tool for monitoring oxidative stress metabolism",
+   "year": 2017,
+   "type": "article",
+   "text": " … Ultra-weak photons are emitted spontaneously by many biological systems21, 22. UPE is characterised as \nnon-thermal radiation in the near-ultraviolet to visible … "
+  },
+  {
+   "work_id": "W4401819387",
+   "title": "Self-Induced Light Emission in Solid-State Memristors Replicates Neuronal Biophotons",
+   "year": 2024,
+   "type": "article",
+   "text": " … centers by analysing the second-order auto-correlation function g(2)(τ) of the fluctuating\nquantities. For the photon emission, the function is defined … "
+  }
+ ],
+ "registry_claims_at_stake": [
+  {
+   "id": "H2",
+   "level": "L2",
+   "claim": "UPE from at least one biological system carries a non-classical or partially coherent optical signature (umbrella claim; see operational sub-claims H2.g2, H2.sq)",
+   "null": null,
+   "estimand": "Per sub-claim; umbrella retained only as evidence pool"
+  },
+  {
+   "id": "H2.g2",
+   "level": "L2",
+   "claim": "Second-order coherence g2(0) of UPE from a defined preparation deviates from 1 beyond detector artifacts",
+   "null": null,
+   "estimand": "g2(0) with characterized dead-time/afterpulse correction and stated integration time at 10–100 cps"
+  },
+  {
+   "id": "H2.sq",
+   "level": "L2",
+   "claim": "UPE photocount distributions from defined preparations are better fit by squeezed-state models than by classical mixtures, with model-comparison statistics",
+   "null": null,
+   "estimand": "Pre-registered model comparison (AIC/Bayes) on raw photocount time series with detector model included"
+  },
+  {
+   "id": "H10",
+   "level": "L1",
+   "claim": "Interfacial/structured water in cells materially alters UPE generation or storage relative to bulk-water chemistry (scoped to UPE-relevant observables)",
+   "null": null,
+   "estimand": "A named UPE observable that differs between bulk and interfacial preparations under matched chemistry"
+  }
+ ],
+ "registry_all_claim_statements": [
+  {
+   "id": "H4a",
+   "level": "L1",
+   "claim": "Known oxidative pathways (ROS-driven lipid/protein oxidation producing triplet carbonyls and singlet oxygen) account for the dominant fraction of spontaneous UPE intensity in aerobic, non-photosynthetic cells (380–700 nm)"
+  },
+  {
+   "id": "H4b",
+   "level": "L4",
+   "claim": "(Null family) Under optical-only coupling, emitted UPE produces no receiver-side biological response above chance in any validated preparation"
+  },
+  {
+   "id": "H1",
+   "level": "L4",
+   "claim": "UV-band emission from dividing cells increases mitosis rate in optically coupled detector cell populations (mitogenetic radiation), in at least one reproducible preparation"
+  },
+  {
+   "id": "H5",
+   "level": "L4",
+   "claim": "At least one non-chemical, non-electrical cell-to-cell influence is mediated by emitted photons, demonstrable under optical-only coupling in a defined preparation"
+  },
+  {
+   "id": "H2",
+   "level": "L2",
+   "claim": "UPE from at least one biological system carries a non-classical or partially coherent optical signature (umbrella claim; see operational sub-claims H2.g2, H2.sq)"
+  },
+  {
+   "id": "H2.g2",
+   "level": "L2",
+   "claim": "Second-order coherence g2(0) of UPE from a defined preparation deviates from 1 beyond detector artifacts"
+  },
+  {
+   "id": "H2.sq",
+   "level": "L2",
+   "claim": "UPE photocount distributions from defined preparations are better fit by squeezed-state models than by classical mixtures, with model-comparison statistics"
+  },
+  {
+   "id": "H3",
+   "level": "L6",
+   "claim": "Delayed-luminescence decay parameters predict an external quality/physiology criterion out-of-sample in at least one matrix (defined instrument + excitation protocol)"
+  },
+  {
+   "id": "H6",
+   "level": "L5",
+   "claim": "Intracranial UPE intensity co-varies with neural activity beyond global metabolic rate in at least one preparation (slice or in vivo, invasive measurement)"
+  },
+  {
+   "id": "H7",
+   "level": "L3",
+   "claim": "Cytoskeletal or myelinated structures guide biological photons with transport efficiency materially above unguided tissue propagation (mechanism claim serving H5/H6, not their rival)"
+  },
+  {
+   "id": "H8",
+   "level": "L6",
+   "claim": "Surface UPE adds incremental predictive power for a defined systemic state (oxidative-stress criterion) beyond skin temperature, perfusion and environment, in humans"
+  },
+  {
+   "id": "H9",
+   "level": "L6",
+   "claim": "Seed/plant autoluminescence predicts vigour, stress state or product quality out-of-sample beyond standard assays in at least one crop/matrix"
+  },
+  {
+   "id": "H10",
+   "level": "L1",
+   "claim": "Interfacial/structured water in cells materially alters UPE generation or storage relative to bulk-water chemistry (scoped to UPE-relevant observables)"
+  },
+  {
+   "id": "H11",
+   "level": "L2",
+   "claim": "UPE spectral distribution carries state-specific information beyond total intensity (measurement-feature claim feeding H3/H8/H9)"
+  },
+  {
+   "id": "H12",
+   "level": "L5",
+   "claim": "Mental states or directed intention modulate human surface UPE beyond the physiological covariates they engage (overlaps H6 conceptually; kept for the anomalous-claims record)"
+  }
+ ],
+ "instructions_to_engine": "Propose falsifiable hypotheses that ADVANCE this question. A hypothesis that merely restates a registry claim scores zero for novelty; a hypothesis that cannot be measured with a named instrument scores zero for usefulness. Ground every claim in works retrieved through the corpus API, cite them by work_id, and state the measurement that would settle it."
+}

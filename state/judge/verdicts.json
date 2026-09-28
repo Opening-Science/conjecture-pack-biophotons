@@ -1,0 +1,1562 @@
+[
+ {
+  "candidate_id": "C001",
+  "verdict": "pedantic",
+  "failing_step": 0,
+  "grounded": true,
+  "testable": true,
+  "novel": true,
+  "reason": "No cited abstract states a '~350-1300 nm' UPE band (W2752165143 in fact says 'UV to visible/near-infrared'), and step 6's '20-40% UV during active growth' figure appears in neither W2979283984 nor W1920668343, but both are framing/corollary steps while the load-bearing chain (carbonyl band from W2954526477/W2258231078, the 28591/lambda energy arithmetic, the second-order pooling slope of 2, and the linoleic-acid preparation in W2034044028) all check out.",
+  "judge": "claude-a"
+ },
+ {
+  "candidate_id": "C002",
+  "verdict": "pedantic",
+  "failing_step": 1,
+  "grounded": true,
+  "testable": true,
+  "novel": true,
+  "reason": "Step 1 attributes to W2095038636 a conclusion that there is 'little modern evidence even for the longer UV interval 280-390 nm' when that abstract is a cell-to-cell signalling feasibility analysis that never mentions the interval, and step 0's mitogenetic '10-1000 photons/cm2/s at 190-250 nm' figures are absent from both the book blurb and the historical review; the load-bearing detector-versus-band catch (W4404240787/W4409735377 stating 200-1000 nm while using cameras 'to capture single visible-wavelength photons', W2797018767 sampling only 400-700 nm) and the borosilicate 300-400 nm control (W7117718612) are verbatim-supported.",
+  "judge": "claude-a"
+ },
+ {
+  "candidate_id": "C003",
+  "verdict": "declined",
+  "failing_step": 3,
+  "grounded": false,
+  "testable": true,
+  "novel": true,
+  "reason": "The load-bearing Beer-Lambert step computes the transmittance of external light through the sample (3e-17 at A=16.5) and then calls it 'the escaping UV fraction', but for light generated throughout the volume the escape probability goes as (1-e^-A)/A, i.e. about 6% not 3e-17, so the claimed sixteen orders of magnitude is wrong and the estimand's exponential fit against 2.303*eps*c is the wrong functional form; W4283824773 also attributes the missing in-planta blue-green to secondary chemistry not occurring in planta, not to reabsorption, and states the spectrum was chlorophyll-independent.",
+  "judge": "claude-a"
+ },
+ {
+  "candidate_id": "C004",
+  "verdict": "pedantic",
+  "failing_step": 3,
+  "grounded": true,
+  "testable": true,
+  "novel": true,
+  "reason": "Step 3 offers W3095923286 and W7140171627 as 'candidate oxygen-independent UV sources' when both abstracts report luminescence that is explicitly oxygen- and ROS-dependent (shaking luminescence in gas-saturated water; droplet luminescence rising with dissolved O2), and cites the one-line W4389669809 blurb for biological triboluminescence it never mentions; steps 0, 1, 4 and 5 are verbatim-supported and the anoxia contrast itself is sound.",
+  "judge": "claude-a"
+ },
+ {
+  "candidate_id": "C005",
+  "verdict": "declined",
+  "failing_step": 2,
+  "grounded": false,
+  "testable": false,
+  "novel": true,
+  "reason": "The load-bearing computation asserts that all channels fed by singlet oxygen share one deuteration enhancement factor, but dimol emission is second order in [1O2] while the proposed 1O2-to-tryptophan-hydroperoxide route is first order, so the hypothesis actually predicts E_dimol ~ E_UV^2 and hence rho well below 0.5 - exactly the value the pre-registered rule scores as refutation, inverting the decision rule.",
+  "judge": "claude-a"
+ },
+ {
+  "candidate_id": "C006",
+  "verdict": "declined",
+  "failing_step": 4,
+  "grounded": false,
+  "testable": false,
+  "novel": true,
+  "reason": "Step 4's dichotomy of 'downhill transfer conserves photon number' versus 'inner-filter loss destroys photons' omits transfer to a dark acceptor, and melanin - the acceptor named in the claim - is a near-quantitative non-radiative dissipator, so the pre-registered 'total photons within 30%' condition would score a true positive as refutation; step 1 also reads W2159034785's intensity-synergism result as a spectrum 'congruent with pure tryptophan' that the abstract never reports, and W4283824773 states the plant spectrum was chlorophyll-independent.",
+  "judge": "claude-a"
+ },
+ {
+  "candidate_id": "C007",
+  "verdict": "pedantic",
+  "failing_step": 1,
+  "grounded": true,
+  "testable": true,
+  "novel": true,
+  "reason": "W2159034785 reports non-additive Trp/His synergism in signal intensity but never asserts that tryptophan receives excitation energy and acts as the final emitter, and the same abstract's statement that Phe and Trp give UPE 'of similar strength' undercuts Phe as the substitution control; the wild-type versus Trp-to-Phe band-ratio contrast at matched carbonyl burden nevertheless discriminates cleanly in single-Trp albumin.",
+  "judge": "claude-a"
+ },
+ {
+  "candidate_id": "C008",
+  "verdict": "declined",
+  "failing_step": 1,
+  "grounded": false,
+  "testable": true,
+  "novel": true,
+  "reason": "No rationale step bridges the cited chemistry to the claimed 300-349 nm band: W4399353285 confirms plasmalogen dioxetane triplet carbonyls only by 'light emission measurements in the visible region' plus 1,270 nm, and step 1's generic 'transfer energy to cellular chromophores' names no sub-350 nm emitter, while a single triplet carbonyl (~78-80 kcal/mol) cannot deliver the ~95 kcal/mol a 300 nm quantum requires.",
+  "judge": "claude-a"
+ },
+ {
+  "candidate_id": "C009",
+  "verdict": "declined",
+  "failing_step": 1,
+  "grounded": false,
+  "testable": true,
+  "novel": true,
+  "reason": "Step 1 attributes a '340-540 nm triplet-carbonyl emission' band to W2886211841, whose abstract states no such band, and even that band excludes almost all of the 300-349 nm window the claim targets - formaldehyde and acetaldehyde triplets emit near 370-400 nm and cannot produce sub-350 nm quanta, so trapping them cannot preferentially suppress that band.",
+  "judge": "claude-a"
+ },
+ {
+  "candidate_id": "C010",
+  "verdict": "declined",
+  "failing_step": 2,
+  "grounded": false,
+  "testable": true,
+  "novel": true,
+  "reason": "Step 2 is the only bridge to an emitter and W2954526477 places the products at triplet carbonyls, singlet oxygen and unnamed excited chromophores with nothing below 350 nm, so the prediction of a selective 300-349 nm rotenone increment has no support from any shown abstract; the rotenone precedent (W2160984073) is additionally unverifiable because the corpus holds no abstract for it.",
+  "judge": "claude-a"
+ },
+ {
+  "candidate_id": "C011",
+  "verdict": "declined",
+  "failing_step": 5,
+  "grounded": false,
+  "testable": true,
+  "novel": true,
+  "reason": "Step 5 invokes W2084070982's strong-overlap limit to bound any UPE source model, but at the candidate's own delta of 1.7e-21 the source is emphatically in the seldom-overlap limit, where that same abstract states photocounts follow Neyman type-A versus generalized Polya-Aeppli distributions for coherent versus chaotic sub-emissions with the discriminating noise 'largest when the counting time is long' - directly contradicting the universal claim that no photocount statistic can discriminate them at any integration time (the delta and HBT arithmetic in steps 2 and 3 are correct).",
+  "judge": "claude-a"
+ },
+ {
+  "candidate_id": "C012",
+  "verdict": "pedantic",
+  "failing_step": 2,
+  "grounded": true,
+  "testable": true,
+  "novel": true,
+  "reason": "The organism-scale illustration is off by 1000x - coherence over 10 cm at 600 nm requires dlambda <= 3.6e-3 nm, not the stated 3.6e-6 nm - but every load-bearing figure in that step is right (0.9 um/3 fs at 400 nm bandwidth, 0.36 mm/1.2 ps at 1 nm, 36 nm for a 10 um cell) and steps 0, 3 and 4 are verbatim-supported, including the 50 nm bandpass increments in W4414929333 and the 550/495 nm cut-off ratios in W2049213668.",
+  "judge": "claude-a"
+ },
+ {
+  "candidate_id": "C013",
+  "verdict": "certified",
+  "failing_step": null,
+  "grounded": true,
+  "testable": true,
+  "novel": true,
+  "reason": "Every citation step is verbatim-supported (W2084070982's seldom-overlap Neyman type-A result used in the correct limit, W1501307750's photon bursts attributed to chain reactions, W1972690031's Fano-rises-with-window-but-not-in-shuffled-surrogates, the mannitol/catechol/anoxia suppressions in W2034044028, and W43326842's r=0.06/theta=2.76/phi=0.64 over 20000 bins), the Fano derivation F=1+mu with mu=0.25 from 34.01/27.25 is correct, and the head-to-head held-out delta-BIC plus the antioxidant and pO2 dose-response of mu is a genuinely decisive test no cited work has run.",
+  "judge": "claude-a"
+ },
+ {
+  "candidate_id": "C014",
+  "verdict": "pedantic",
+  "failing_step": 4,
+  "grounded": true,
+  "testable": true,
+  "novel": true,
+  "reason": "Step 4 attributes 'F = 1.25 from germinating seeds' to W4400038049 whose abstract contains no Fano value, and the '50 ms bins' and 'kurtosis' specifics are absent from W2030876425 and the abstract-less W2594646273; step 5 also states F=1.004 where its own Q=0.02 implies F=1.02, but the decisive arithmetic (10% RMS drift giving F=1.27 at <n>=27 via Q=<n>*sigma_I^2) is correct and step 1's W7168813583 contamination result is verbatim.",
+  "judge": "claude-a"
+ },
+ {
+  "candidate_id": "C015",
+  "verdict": "certified",
+  "failing_step": null,
+  "grounded": true,
+  "testable": true,
+  "novel": true,
+  "reason": "Five of six claims in step 0 are verbatim (DEA separating astrocytes from glioblastoma, ordinary dark-count versus anomalous seed scaling, fractional-Brownian negative memory, entropy-weighted spectral fractal dimension for embryos, 90% SPD discriminant accuracy) with the sixth merely lacking an abstract, and step 3's confound derivation is correct and incisive - Q=<n>*sigma_I^2 plus Hurst bias toward 0.5 as shot noise grows explains W3157775700's own dark-versus-seed scaling contrast as a rate artifact.",
+  "judge": "claude-a"
+ },
+ {
+  "candidate_id": "C016",
+  "verdict": "pedantic",
+  "failing_step": 3,
+  "grounded": true,
+  "testable": true,
+  "novel": true,
+  "reason": "Step 3 asserts rather than derives that the fitted squeezed parameter r 'enters the photocount distribution only through the same second-moment excess', which is false for a genuine squeezed state whose distribution depends on r, theta and phi jointly, and the comparator anchors the human decision rule on r=0.06 values that W43326842 measured in a lichen; the phantom-versus-fresh-human comparison is empirical and stands regardless, and steps 1 and 2 are verbatim-supported.",
+  "judge": "claude-a"
+ },
+ {
+  "candidate_id": "C017",
+  "verdict": "pedantic",
+  "failing_step": 0,
+  "grounded": true,
+  "testable": true,
+  "novel": true,
+  "reason": "Step 0's claim that the mung-bean photocount distribution's 'form changes with bin size' cannot be checked (W2412356141 has no abstract) and is not needed, and no power argument is offered for estimating a third-order factorial cumulant at eta=0.10 where the signal scales as 1e-3; the load-bearing binomial-thinning identity kappa_r(eta)=eta^r*kappa_r(1) is exactly correct and W3126489816's sub-30 photons/s/cm2 detectivity is verbatim.",
+  "judge": "claude-a"
+ },
+ {
+  "candidate_id": "C018",
+  "verdict": "declined",
+  "failing_step": 3,
+  "grounded": false,
+  "testable": false,
+  "novel": true,
+  "reason": "Step 3 states g2(0)=1+1/M correctly but never applies it to the actual geometry: with collection etendue deliberately held fixed, spectral narrowing changes only the temporal mode count, so delta-g2 >= 0.10 requires M_spatial of order 1, i.e. single-spatial-mode collection from an extended leaf that would cut the already ultraweak rate by roughly 1e5 and make HBT coincidence detection hopeless; step 1 additionally attributes a many-mode-thermal-approaches-Poisson statement to W4400038049, whose abstract says nothing of the kind.",
+  "judge": "claude-a"
+ },
+ {
+  "candidate_id": "C019",
+  "verdict": "declined",
+  "failing_step": 2,
+  "grounded": true,
+  "testable": false,
+  "novel": true,
+  "reason": "The e^(-2r)=0.887 arithmetic is right, but the 0.92 threshold treats mode mismatch as 'limited calibrated loss' when it requires roughly 71% total efficiency, and a single-mode local oscillator cannot be matched to a broadband, spatially and temporally incoherent 300-800 nm field - the overlap efficiency is orders of magnitude too small, so the null is confirmed by construction and the loss-corrected estimand is not estimable.",
+  "judge": "claude-a"
+ },
+ {
+  "candidate_id": "C020",
+  "verdict": "pedantic",
+  "failing_step": 2,
+  "grounded": true,
+  "testable": true,
+  "novel": true,
+  "reason": "W3126489816's sub-30 photons/s/cm2 result is a total-flux detectivity finding and does not support 'long-exposure interferometric imaging', which needs far more photons and nanometre-scale phase stability that neither the citation nor any step addresses, and no photon budget or integration time is given anywhere; the matched-incoherent-source subtraction and the V=[2*sqrt(I1*I2)/(I1+I2)]*|g1| relation make the estimand itself well-posed.",
+  "judge": "claude-a"
+ },
+ {
+  "candidate_id": "C021",
+  "verdict": "pedantic",
+  "failing_step": 2,
+  "grounded": true,
+  "testable": true,
+  "novel": true,
+  "reason": "Step 2 attributes '10 to 1e4 photons/s/cm2 quoted specifically for the UV from active cells' to W4404871602, whose abstract contains no flux figures at all, and step 4's 'peak proliferative benefit near 2 J/cm2' is absent from W2135147563; the load-bearing numbers are verbatim (1e4 photons/cm2/s from W2618829643, 4-10 J/cm2 at target from W2904905977, blue/green inhibition at 3 J/cm2 from W2744285886) and both computations check exactly (3.81e-10 J/cm2 over 24 h, ratio 2.6e9).",
+  "judge": "claude-a"
+ },
+ {
+  "candidate_id": "C022",
+  "verdict": "pedantic",
+  "failing_step": 0,
+  "grounded": true,
+  "testable": true,
+  "novel": true,
+  "reason": "W7142519026's abstract reports only 'organism survivability in model systems' and a GRADE-based quality assessment, not the '19-30 percent' C. elegans lifespan extension or the four specific flags (absent blinding, small samples, inconsistent methods, no independent replication) the step attributes to it; the decisive step 1 catch is fully verified - W2999575750 states 'neither mirror nor AgNPs affect on the neurosphere number' and credits the 44% differentiation gain to AgNPs, contradicting the review's summary - and the G <= 1+R_m etendue bound is correct and made empirically falsifiable.",
+  "judge": "claude-a"
+ },
+ {
+  "candidate_id": "C023",
+  "verdict": "pedantic",
+  "failing_step": 3,
+  "grounded": true,
+  "testable": true,
+  "novel": true,
+  "reason": "Step 3 claims the radiative branch is manipulable 'independently of the oxidative flux' but W2326730546 reports alpha-tocopherol suppressing chemiluminescence and TBA reactants together, which is coupled rather than independent manipulation; steps 0, 1 and 2 hold (W4414929333's 'UPE intensity directly correlates with the rate and extent of ROS formation', W2343307968's finding that mitochondrial and peroxisomal substrates gave no emission increase, and the correct three-branch-ratio decomposition of Phi).",
+  "judge": "claude-a"
+ },
+ {
+  "candidate_id": "C024",
+  "verdict": "pedantic",
+  "failing_step": 4,
+  "grounded": true,
+  "testable": true,
+  "novel": true,
+  "reason": "W4391831883 is a general UPE review that says nothing about the field demanding separation of the metabolic covariate in neural UPE claims, and W2056591841 has no abstract, so this closing framing step is unsupported; the load-bearing signal-versus-cue operationalisation, W2092319343's mutual exposure and growth correlation, and W2172375368's UPE/cerebral-blood-flow covariation all hold, and the heat-killed-at-matched-turbidity arm properly controls back-scatter into the donor PMT.",
+  "judge": "claude-a"
+ },
+ {
+  "candidate_id": "C025",
+  "verdict": "declined",
+  "failing_step": 3,
+  "grounded": false,
+  "testable": true,
+  "novel": true,
+  "reason": "Step 3's premise that 'no absorber can be bypassed' is false under chromophore redundancy - a panel of single knockouts (cry1cry2, phot1phot2, OPN3, TRPV1, flavin) each yielding f>=0.8 is exactly what a photochemical effect running through two parallel absorbers would produce - so the conclusion 'not photochemical' does not follow from the proposed result.",
+  "judge": "claude-b"
+ },
+ {
+  "candidate_id": "C026",
+  "verdict": "pedantic",
+  "failing_step": 1,
+  "grounded": true,
+  "testable": true,
+  "novel": true,
+  "reason": "Step 1 attributes to Cifra's signal-to-noise paper statements about the Gurwitsch 190-250 nm claim and the 280-390 nm evidence that its abstract never makes (and step 0's '10 to 1e4 photons s-1 cm-2' model input is absent from the open-quantum-systems abstract), but the absolute, band-resolved deep-UV measurement stands on its own.",
+  "judge": "claude-b"
+ },
+ {
+  "candidate_id": "C027",
+  "verdict": "pedantic",
+  "failing_step": 2,
+  "grounded": true,
+  "testable": true,
+  "novel": true,
+  "reason": "Step 2's second clause - that the Ulbricht-cavity paper 'identifies missing absolute photon reporting as a major measurement gap' - appears nowhere in its abstract, though its detection of growth-onset yeast UPE does supply the feasibility the step actually needs.",
+  "judge": "claude-b"
+ },
+ {
+  "candidate_id": "C028",
+  "verdict": "pedantic",
+  "failing_step": 1,
+  "grounded": true,
+  "testable": true,
+  "novel": true,
+  "reason": "Step 1 assigns the 'mitogenetic emission is ultraviolet / limited modern evidence for 280-390 nm' judgement to Cifra's feasibility paper, whose abstract addresses only emission intensity and ambient signal-to-noise and never mentions Gurwitsch or any UV band.",
+  "judge": "claude-b"
+ },
+ {
+  "candidate_id": "C029",
+  "verdict": "certified",
+  "failing_step": null,
+  "grounded": true,
+  "testable": true,
+  "novel": true,
+  "reason": "Every citation is exact - the DEA anomalous-diffusion and long-range-memory result, postulate I of the light-interaction framework, and the 300 Hz pulse-frequency dependence at 810 nm / 38 mJ cm-2 - and within-block permutation provably conserves photon count per wavelength channel and per 10-minute block, isolating sub-block ordering.",
+  "judge": "claude-b"
+ },
+ {
+  "candidate_id": "C030",
+  "verdict": "certified",
+  "failing_step": null,
+  "grounded": true,
+  "testable": true,
+  "novel": true,
+  "reason": "All three citations state precisely what the steps claim (Fels' 5-versus-50/100/200/300 cells/mL suppression and its abolition by graphite shielding, the weak-emission/SNR obstacle, the 50%-efficiency cavity detecting yeast at growth onset), and crossing emitter density with neutral-density attenuation to produce overlapping doses genuinely separates photon-dose sufficiency from density-linked confounding.",
+  "judge": "claude-b"
+ },
+ {
+  "candidate_id": "C031",
+  "verdict": "certified",
+  "failing_step": null,
+  "grounded": true,
+  "testable": true,
+  "novel": true,
+  "reason": "Each cited claim is verbatim in its abstract (density-graded indicator suppression; effects positive or negative depending on cuvette material and cell number; long-memory UPE dynamics; emitter modulation as postulate I), and normalising the 50- and 300-cells/mL templates to equal integrated counts makes any residual difference a clean test of spectral-temporal structure.",
+  "judge": "claude-b"
+ },
+ {
+  "candidate_id": "C032",
+  "verdict": "pedantic",
+  "failing_step": 2,
+  "grounded": true,
+  "testable": true,
+  "novel": true,
+  "reason": "Both citations are exact, but the SBR computation and the ratio estimand presuppose a dark-condition photon-matched replay effect that no cited work establishes, leaving the estimand's denominator an assumption the protocol must first manufacture in its own stage one.",
+  "judge": "claude-b"
+ },
+ {
+  "candidate_id": "C033",
+  "verdict": "pedantic",
+  "failing_step": 3,
+  "grounded": true,
+  "testable": true,
+  "novel": true,
+  "reason": "Step 3's assertion that the 500-600 nm skin region is 'attributed in part to melanin' is in neither cited abstract (both attribute UPE to oxidation and ROS), although the EMCCD-plus-LCTF hand measurement does establish skin as the competing source that the two-band ratio and phantom ground truth are designed to exclude.",
+  "judge": "claude-b"
+ },
+ {
+  "candidate_id": "C034",
+  "verdict": "certified",
+  "failing_step": null,
+  "grounded": true,
+  "testable": true,
+  "novel": true,
+  "reason": "Tang and Dai's partial TTX block against full OGD-plus-azide block, the 1995 hippocampal-slice TTX decrease, and the ketamine-up / thiopental-down UPE-versus-thiol dissociation are each asserted verbatim in their abstracts, and the four-arm design with paired field-potential verification and per-slice TBARS/thiol assays genuinely discriminates spike-borne from redox-borne emission.",
+  "judge": "claude-b"
+ },
+ {
+  "candidate_id": "C035",
+  "verdict": "pedantic",
+  "failing_step": 4,
+  "grounded": true,
+  "testable": true,
+  "novel": true,
+  "reason": "The plant chemiluminescence paper attributes its red-only in planta spectrum to the blue-green secondary emitters failing to form, not to filtering by tissue, so it is not the 'worked precedent' for a measurement confound - the M = E x T x Q argument and the embedded known-spectrum transfer standard carry the hypothesis without it.",
+  "judge": "claude-b"
+ },
+ {
+  "candidate_id": "C036",
+  "verdict": "pedantic",
+  "failing_step": 4,
+  "grounded": true,
+  "testable": true,
+  "novel": true,
+  "reason": "Step 4 treats lysolecithin demyelination as removing the waveguide 'while leaving the geometry', but myelin is also the dominant scatterer, so the secondary DOP_intact/DOP_demyelinated > 2 estimand is confounded unless the diffusive baseline is recomputed from the post-lesion mu_s' the protocol does collect; the primary DOP(5 mm) > 0.3 test against the index-matched phantom is unaffected.",
+  "judge": "claude-b"
+ },
+ {
+  "candidate_id": "C037",
+  "verdict": "pedantic",
+  "failing_step": 0,
+  "grounded": true,
+  "testable": true,
+  "novel": true,
+  "reason": "Step 0's claim that the photoencephalography authors 'themselves list larger samples, distinct tasks and higher-density sensor arrays as required future work' is absent from the abstract, which mentions only 'new measurement parameters'; the subject-held-out Delta AUC design with phantom arm and permutation null is otherwise the cleanest falsifier in the batch.",
+  "judge": "claude-b"
+ },
+ {
+  "candidate_id": "C038",
+  "verdict": "pedantic",
+  "failing_step": 5,
+  "grounded": true,
+  "testable": true,
+  "novel": true,
+  "reason": "Step 5's task-by-adaptation-time interaction is confounded by the 24 h of continuous darkness itself, since fatigue and circadian decline in task engagement predict the same shrinkage in effect size, though the primary N(24 h)/N(0.5 h) decay estimand is protected by the hair-swatch and empty-chamber arms that have no physiology.",
+  "judge": "claude-b"
+ },
+ {
+  "candidate_id": "C039",
+  "verdict": "pedantic",
+  "failing_step": 2,
+  "grounded": true,
+  "testable": true,
+  "novel": true,
+  "reason": "The photonic-chip paper proposes a skull-interior implant on technological grounds and never states that transcranial readout may be inadequate, so step 2's 'precisely because' is invented motivation; the paired epidural/external architecture with a per-animal 650-900 nm transfer matrix is otherwise sound.",
+  "judge": "claude-b"
+ },
+ {
+  "candidate_id": "C040",
+  "verdict": "pedantic",
+  "failing_step": 3,
+  "grounded": false,
+  "testable": true,
+  "novel": false,
+  "reason": "Nothing in the design validates the self-absorption term A_b - there is no in-situ known-spectrum emitter as in the sibling correction study - so a redshift that survives correction cannot be separated from residual uncorrected tissue optics, and the claim's direction merely restates the contested source paper's own conclusion.",
+  "judge": "claude-b"
+ },
+ {
+  "candidate_id": "C041",
+  "verdict": "pedantic",
+  "failing_step": 2,
+  "grounded": true,
+  "testable": true,
+  "novel": true,
+  "reason": "Step 2's 'explicitly calling for larger samples and distinct tasks' is not in the cited abstract, and step 1 stretches an acutely, slightly anesthetized whole-brain imaging result into support for the feasibility of a chronic awake head-fixed preparation.",
+  "judge": "claude-b"
+ },
+ {
+  "candidate_id": "C042",
+  "verdict": "certified",
+  "failing_step": null,
+  "grounded": true,
+  "testable": true,
+  "novel": true,
+  "reason": "All three citations assert exactly what the steps claim (reduced, blueshifted glutamate-induced UPE in AD and VaD models partially reversed by ifenprodil; OGD-plus-azide block versus partial TTX block; anesthetic UPE tracking oxidative and thiol markers), and matching the antioxidant arm on both ROS and broadband photon output makes receptor-specific spectral recovery separable from generic oxidative emission.",
+  "judge": "claude-b"
+ },
+ {
+  "candidate_id": "C043",
+  "verdict": "pedantic",
+  "failing_step": 0,
+  "grounded": true,
+  "testable": true,
+  "novel": true,
+  "reason": "The same unsupported 'calls for larger samples and distinct task designs' attribution recurs in step 0, and step 1 assigns a specific stimulus-light-traverses-skull rationale to a protocol paper for which the corpus holds no abstract, which is unverifiable rather than false.",
+  "judge": "claude-b"
+ },
+ {
+  "candidate_id": "C044",
+  "verdict": "pedantic",
+  "failing_step": 2,
+  "grounded": true,
+  "testable": true,
+  "novel": true,
+  "reason": "Step 2's Fano numbers (mean 27.25, variance 34.01, F ~ 1.25) appear in none of the cited abstracts and W3217353367 - a skull-implant brain-computer-interface proposal - is cited for the claim that departure from Poisson is treated as an indication of non-classical light; the F_s = 1 + (F_meas - 1)(S+D)/(eta*S) derivation and its factor-of-8 numerical spread are both exactly correct.",
+  "judge": "claude-b"
+ },
+ {
+  "candidate_id": "C045",
+  "verdict": "pedantic",
+  "failing_step": 1,
+  "grounded": true,
+  "testable": true,
+  "novel": true,
+  "reason": "Neither the cyclic-peroxide review nor the 1978 humic-acid photooxidation paper mentions luminol as a way to calibrate a photon-counting PMT, so step 1 is a clean misattribution, whereas the radiometry-review percentages, the Fenton/yeast dose-response and the 3x3x3 = 27x (1.4-decade) arithmetic are all exact.",
+  "judge": "claude-b"
+ },
+ {
+  "candidate_id": "C046",
+  "verdict": "declined",
+  "failing_step": 1,
+  "grounded": false,
+  "testable": false,
+  "novel": true,
+  "reason": "The correction is defined as a single constant factor C = eta_bar(A)/eta_bar(B) applied to both groups' ratios computed from identical raw counts on one instrument, and a standardised between-group difference is invariant under multiplication by a constant, so Delta_corrected - Delta_uncorrected is zero by construction and the experiment cannot discriminate the claim from its null.",
+  "judge": "claude-b"
+ },
+ {
+  "candidate_id": "C047",
+  "verdict": "pedantic",
+  "failing_step": 1,
+  "grounded": true,
+  "testable": true,
+  "novel": true,
+  "reason": "The whole of step 1 - quantum efficiency 0.23 applied and 22 counts/s of dark rate subtracted - appears nowhere in the cited abstract, and step 5 offers explicitly visible-band EMCCD demonstrations as evidence for the 600-1000 nm reach that step 4 argues the design requires.",
+  "judge": "claude-b"
+ },
+ {
+  "candidate_id": "C048",
+  "verdict": "pedantic",
+  "failing_step": 4,
+  "grounded": true,
+  "testable": true,
+  "novel": true,
+  "reason": "AUC is invariant to a common multiplicative rescaling of a linear score, so only the wavelength-differential shear and not the '2-4x multiplicative shift' can damage cross-site AUC; the two-site locked-classifier recovery-fraction design and the systematic-review study counts (56 studies, 1 RCT, 27 CCT, 28 observational) are otherwise exact.",
+  "judge": "claude-b"
+ },
+ {
+  "candidate_id": "C049",
+  "verdict": "pedantic",
+  "failing_step": 3,
+  "grounded": true,
+  "testable": true,
+  "novel": true,
+  "reason": "Steps 0-2 are verified verbatim by the yeast-Fenton dose-response, Ulbricht-cavity H2O2-disproportionation and Chlamydomonas/TBARS abstracts, but step 3's claim that luminol serves as the calibration standard for the detecting PMT appears nowhere in the cyclic-peroxide review, which asserts only the triplet/singlet excited-product-state preferences.",
+  "judge": "claude-c"
+ },
+ {
+  "candidate_id": "C050",
+  "verdict": "pedantic",
+  "failing_step": 1,
+  "grounded": true,
+  "testable": true,
+  "novel": true,
+  "reason": "Step 1 asserts that standardized Arabidopsis incision produces UPE 'extending through 400-870 nm', but the cited bandpass study covers only 400-750 nm in 50 nm increments; its genuine 700-750 nm dominance still supports the detector-equivalence test, so the over-read band edge is not load-bearing.",
+  "judge": "claude-c"
+ },
+ {
+  "candidate_id": "C051",
+  "verdict": "pedantic",
+  "failing_step": 0,
+  "grounded": true,
+  "testable": true,
+  "novel": true,
+  "reason": "Step 0's 'additional emission reported from 750-870 nm' is absent from the cited abstract, which measured 400-750 nm only; the 700-750 nm dominance it does report is by itself enough to make the scalar-QE-at-500-nm bias claim testable.",
+  "judge": "claude-c"
+ },
+ {
+  "candidate_id": "C052",
+  "verdict": "pedantic",
+  "failing_step": 2,
+  "grounded": true,
+  "testable": true,
+  "novel": true,
+  "reason": "Step 2 credits the brief UPE review with stating that dark counts are central to instrument choice and that SNR of at least one is commonly required, neither of which its abstract says, while the load-bearing citations (dark count yields ordinary scaling; basal and wound photocount states approximate Poisson) are verbatim exact.",
+  "judge": "claude-c"
+ },
+ {
+  "candidate_id": "C053",
+  "verdict": "pedantic",
+  "failing_step": 1,
+  "grounded": true,
+  "testable": true,
+  "novel": true,
+  "reason": "The astrocyte/glioblastoma abstract supports step 0's 'clear separation between cellular signals and dark noise' verbatim but never mentions the further optical integration and detector cooling that step 1 attributes to it, and step 2 turns a paper that does report a detection limit into evidence that such limits are rarely reported.",
+  "judge": "claude-c"
+ },
+ {
+  "candidate_id": "C054",
+  "verdict": "pedantic",
+  "failing_step": 2,
+  "grounded": true,
+  "testable": true,
+  "novel": true,
+  "reason": "The 13-cell-line, 100 s, 90%-discriminant-accuracy anchor is verbatim accurate and step 1 is merely unverifiable (no abstract in the corpus), but step 2 attributes a field-wide 'absolute LODs are rarely reported' claim to a paper that itself reports a detection limit.",
+  "judge": "claude-c"
+ },
+ {
+  "candidate_id": "C055",
+  "verdict": "pedantic",
+  "failing_step": 2,
+  "grounded": true,
+  "testable": true,
+  "novel": true,
+  "reason": "The EPP spontaneous-versus-provoked dissociation and the two 20-volunteer UVA antioxidant trials are verbatim supported, and the shot-noise arithmetic checks out (22.4 to 95.3, a 4.3x gain), but step 2's 'tens to hundreds of photons per second per square centimetre' baseline that feeds that calculation is in neither cited abstract - the 1997 skin paper reports no quantities and the other has no abstract.",
+  "judge": "claude-c"
+ },
+ {
+  "candidate_id": "C056",
+  "verdict": "declined",
+  "failing_step": 3,
+  "grounded": false,
+  "testable": false,
+  "novel": true,
+  "reason": "Step 3's reflectance-dominance arithmetic is correct (100 lux -> 4.1e13 photons/s/cm2 incident, ~1.2e11 over endogenous UPE) but establishes only that a room-lit RGB image cannot contain UPE; it does not entail that adding genuine dark-chamber UPE contributes Delta-AUC <= 0.05, and the stated null ('the instrument-class objection fails') is logically independent of the ROC endpoint the experiment actually measures.",
+  "judge": "claude-c"
+ },
+ {
+  "candidate_id": "C057",
+  "verdict": "pedantic",
+  "failing_step": 3,
+  "grounded": true,
+  "testable": true,
+  "novel": true,
+  "reason": "Step 3 attributes 'thermal and optical confounds plus absence of standardized clinical measurement protocols' to a narrative review of Reiki and Healing-Touch biomarkers whose abstract concerns HPA-axis, NK-cell and telomere endpoints, while the load-bearing step 1 (skin temperature a critical parameter; UVA-induced UPE decreasing with increasing temperature) is verbatim exact.",
+  "judge": "claude-c"
+ },
+ {
+  "candidate_id": "C058",
+  "verdict": "certified",
+  "failing_step": null,
+  "grounded": true,
+  "testable": true,
+  "novel": true,
+  "reason": "Every citation is verbatim accurate - the 550/495 nm cut-off ratio separating cold patients, the 610-630/395-455 nm ratio versus log tumour volume at R2 = 0.947 and 0.892, the biomolecule-specific skin UPE spectra, and all four intensity-instability findings - and the log-ratio variance derivation is correct, since 2V(1-rho) < V exactly when rho > 0.5.",
+  "judge": "claude-c"
+ },
+ {
+  "candidate_id": "C059",
+  "verdict": "certified",
+  "failing_step": null,
+  "grounded": true,
+  "testable": true,
+  "novel": true,
+  "reason": "The nose/glabella UPE maximum with porphyrin-score correlation and no skin-colour correlation, the squalene-rich microbially oxidised surface-lipid film, triplet carbonyl and singlet oxygen as final emitters, and the competing epidermis-plus-dermis account are each asserted verbatim in the cited abstracts, and the split-face degreasing wipe against a sham hemiface is a clean single-intervention discriminator.",
+  "judge": "claude-c"
+ },
+ {
+  "candidate_id": "C060",
+  "verdict": "pedantic",
+  "failing_step": 4,
+  "grounded": true,
+  "testable": true,
+  "novel": true,
+  "reason": "The attenuation ceiling is arithmetically exact (sqrt(0.6)*1.5 = 1.162 giving Phi(0.8216) = 0.794; Phi(0.548) = 0.708; Phi(0.447) = 0.673) and the 24 h and multi-month rhythm citations are verbatim, but step 4 again credits the Biofield-Therapies biomarker review with naming thermal/optical confounds and missing clinical protocols, which its abstract never mentions.",
+  "judge": "claude-c"
+ },
+ {
+  "candidate_id": "C061",
+  "verdict": "pedantic",
+  "failing_step": 2,
+  "grounded": true,
+  "testable": true,
+  "novel": true,
+  "reason": "Step 0 (1-3 min post-UV UPE increasing dose-dependently and highly correlated with cutaneous redness at 24 h, with a Trolox-suppressible LPO link) and step 1 (L* positively correlated with UVA-induced UPE, detectable to 2 h) are verbatim exact, but step 2 attributes 'thermal and optical confounds and lacks standardized protocols' to the Reiki/Healing-Touch biomarker review, which asserts nothing of the kind.",
+  "judge": "claude-c"
+ },
+ {
+  "candidate_id": "C062",
+  "verdict": "declined",
+  "failing_step": 0,
+  "grounded": false,
+  "testable": true,
+  "novel": true,
+  "reason": "The load-bearing anchor's abstract breaks off at 'The ratio of photon counts between the wavelength ranges of', so neither the 495-550/550-610 nm bands nor their correlation is actually shown, and even as claimed that study relates UPE only to subjective TCM syndrome scores under TCM treatment - no cited work links any UPE measure to HbA1c or any objective glycaemic outcome.",
+  "judge": "claude-c"
+ },
+ {
+  "candidate_id": "C063",
+  "verdict": "certified",
+  "failing_step": null,
+  "grounded": true,
+  "testable": true,
+  "novel": true,
+  "reason": "All three citations are verbatim supported - 14 EPP patients whose post-solar-simulated initial burst correlated with plasma iron and erythrocyte PPIX and inversely with plasma zinc, early post-UV UPE correlated with 24 h erythema through lipid peroxidation, and L*-dependence of UVA-induced UPE - and the pre-registered held-out Delta-AUC against a PPIX/iron/dose/L* model at a second EPP centre would genuinely discriminate the claim.",
+  "judge": "claude-c"
+ },
+ {
+  "candidate_id": "C064",
+  "verdict": "declined",
+  "failing_step": 0,
+  "grounded": false,
+  "testable": true,
+  "novel": true,
+  "reason": "The sole anchor is a 2004 three-healthy-subject Yin-Yang meridian paper whose stroke content is one unquantified aside ('severe imbalance for some stroke patients') with no stroke data described, and nothing cited links hand UPE asymmetry to motor recovery, so a >= 0.10 incremental R2 over baseline Fugl-Meyer and lesion burden has no support; step 2 additionally misattributes 'palmar measurements less variable' to the analytical review, which never says it.",
+  "judge": "claude-c"
+ },
+ {
+  "candidate_id": "C065",
+  "verdict": "certified",
+  "failing_step": null,
+  "grounded": true,
+  "testable": true,
+  "novel": true,
+  "reason": "All three citations are verbatim accurate and honestly qualified - 982 +/- 513 versus 625 +/- 419 counts/min/cm2 with the frozen-sample and n = 14 / n = 6 limitations stated in the step itself, 90% cell-line discrimination explicitly flagged as not established on fresh human specimens, and EMCCD SNR-3 detection below 30 photons/s/cm2 - and patient-clustered validation against co-registered whole-mount histology at a second hospital is decisive.",
+  "judge": "claude-c"
+ },
+ {
+  "candidate_id": "C066",
+  "verdict": "declined",
+  "failing_step": 3,
+  "grounded": false,
+  "testable": false,
+  "novel": true,
+  "reason": "Step 3 claims the TCM diabetes study supplies 'a defined two-band diabetes UPE feature and a later HbA1c endpoint', but that work has no HbA1c endpoint at all, so the frozen diabetes-response model whose transfer is the primary estimand does not exist and the 'R2 loss <= 0.05' criterion is satisfied trivially by a model carrying no predictive signal.",
+  "judge": "claude-c"
+ },
+ {
+  "candidate_id": "C067",
+  "verdict": "pedantic",
+  "failing_step": 2,
+  "grounded": true,
+  "testable": true,
+  "novel": true,
+  "reason": "The ~865 nm species-ordered redshift, the in-vitro-450-850 nm versus in-planta->640 nm contrast and the 500 nm human-skin peak are all verbatim, and the transport arithmetic checks out (exp(0.4) = 1.49, giving a ~28 nm centroid shift for a 400-900 nm emitter), but step 2's 'roughly an order of magnitude' mu_eff difference between 450-600 and 700-850 nm is stated in neither cited abstract - true tissue optics, just not from these sources.",
+  "judge": "claude-c"
+ },
+ {
+  "candidate_id": "C068",
+  "verdict": "pedantic",
+  "failing_step": 4,
+  "grounded": true,
+  "testable": true,
+  "novel": true,
+  "reason": "The half-maximum derivation is exact (rho = d*sqrt(2^(2/3)-1) = 0.766d, so FWHM = 1.53d, with absorption narrowing it further so a narrow hotspot cannot certify a shallow source) and the homogeneous-sphere extrapolated-zero-boundary characterisation of the corpus's only propagation model is verbatim, but step 4's 'several-fold' mu_eff difference between the two bands is asserted by neither cited optics abstract.",
+  "judge": "claude-c"
+ },
+ {
+  "candidate_id": "C069",
+  "verdict": "pedantic",
+  "failing_step": 4,
+  "grounded": true,
+  "testable": true,
+  "novel": true,
+  "reason": "The detectivity arithmetic is exact throughout ((3/1.275)^2 = 5.54 cm2 s giving 5.5 s, 554 s and 15.4 h, plus the 44.4 cm2 s cross-check) and the 85 photons/s/cm2 skin flux is stated verbatim in two cited abstracts, but step 4 cites a photosystem-II protein-hydroperoxide singlet-oxygen paper for the '30 min dark adaptation eliminates delayed-luminescence interference' practice, which that abstract never mentions.",
+  "judge": "claude-c"
+ },
+ {
+  "candidate_id": "C070",
+  "verdict": "pedantic",
+  "failing_step": null,
+  "grounded": true,
+  "testable": true,
+  "novel": true,
+  "reason": "Every rationale step survives - the myelin-waveguide models with multiplicative Ranvier-node loss and preserved polarisation, the corpus-callosum axonal-origin assertion, and mu_s' of 1.57 +/- 0.03 along versus 3.52 +/- 0.1 mm^-1 across with no grey-matter anisotropy are all verbatim, and sqrt(3.52/1.57) = 1.50 is exact - but the stated null ('A <= 1.65 ... no guided component is detectable') restates the hypothesis instead of negating it, so as written the claim and its null name the same outcome.",
+  "judge": "claude-c"
+ },
+ {
+  "candidate_id": "C071",
+  "verdict": "pedantic",
+  "failing_step": 2,
+  "grounded": true,
+  "testable": true,
+  "novel": true,
+  "reason": "The coherence-time and coincidence arithmetic is exact (tau_c = 5.0e-15 s so g2(0)-1 ~ 5e-6 at 1 ns; 0.29 accidental versus 3.6 signal counts in 8 h; eta^-2 scaling to f = 4e-5) and the ICE 25x stray-light figure, COSPLI, dual-SPAD 1 us system and 50%-efficiency Ulbricht cavity are verbatim, but step 2 attributes SPAD breakdown-flash crosstalk - real physics - to a general UPE review whose abstract never mentions it.",
+  "judge": "claude-c"
+ },
+ {
+  "candidate_id": "C072",
+  "verdict": "pedantic",
+  "failing_step": 3,
+  "grounded": true,
+  "testable": true,
+  "novel": true,
+  "reason": "The state-contrast and temperature citations are verbatim (exponential UWL variation over 4-38 C with a hysteresis loop, heat-shock induction, raised temperature increasing plant UPE) and 2^0.1 = 1.072 is correct, but step 3's claim that the EM-CCD has non-negligible blackbody sensitivity above ~50 C appears nowhere in the detectivity paper's abstract and is physically implausible for silicon in the visible band.",
+  "judge": "claude-c"
+ },
+ {
+  "candidate_id": "C073",
+  "verdict": "pedantic",
+  "failing_step": 0,
+  "grounded": true,
+  "testable": true,
+  "novel": true,
+  "reason": "Steps 1-3 hold - the <600 nm scalp/skull attenuation and PMT red-insensitivity are verbatim, and the depth-by-band difference-in-differences correctly subtracts band-dependent camera and lens bias - but step 0 attributes 'tissue scattering and absorption lower in vivo SNR' to a bioluminescence-engineering review whose abstract asserts only that red/NIR emission is needed for in vivo imaging.",
+  "judge": "claude-c"
+ },
+ {
+  "candidate_id": "C074",
+  "verdict": "certified",
+  "failing_step": null,
+  "grounded": true,
+  "testable": true,
+  "novel": true,
+  "reason": "All three citations are verbatim (wound-induced superoxide and singlet oxygen producing electronically excited species, enhanced and spectrally altered UPE from wounded Arabidopsis via cryogenic CCD plus PMT spectroscopy, in planta emission confined above 640 nm peaking at 700-750 nm), and step 3's argument that a static point-spread function cannot generate onset times increasing with radial distance is the correct discriminator between a moving source and a scattering halo.",
+  "judge": "claude-c"
+ },
+ {
+  "candidate_id": "C075",
+  "verdict": "pedantic",
+  "failing_step": 0,
+  "grounded": true,
+  "testable": true,
+  "novel": true,
+  "reason": "Step 2's use of the same raw frames for both detectors is exactly the right control for isolating the information carried by photon coordinates, but step 0's 'porcine skin' and 'two-dimensional' attributions are absent from the cited abstract, which reports only a marked UPE difference under exogenous Fenton reagent in unspecified skin.",
+  "judge": "claude-c"
+ },
+ {
+  "candidate_id": "C076",
+  "verdict": "certified",
+  "failing_step": null,
+  "grounded": true,
+  "testable": true,
+  "novel": true,
+  "reason": "Step 1 is verbatim (photons below 600 nm strongly attenuated by scalp and skull; detected head UPE likely scalp-dominated with PMTs), step 0's two rat-brain works carry no abstract but their titles state precisely what the step claims, and randomized cortical coordinates with blinded recovery plus exposed-cortex and superficial-source positive controls make the localization test decisive.",
+  "judge": "claude-c"
+ },
+ {
+  "candidate_id": "C077",
+  "verdict": "pedantic",
+  "failing_step": 0,
+  "grounded": true,
+  "testable": true,
+  "novel": true,
+  "reason": "The cooled-CCD moving-picture imaging of spatiotemporal biophoton dynamics through Papilio protenor larval-pupal ecdysis is verbatim, but the 'anterior-localized emission whose source remains uncertain' that motivates the anterior/posterior feature appears nowhere in that abstract; the broader centroid and hotspot-motion feature set leaves the prediction test intact.",
+  "judge": "claude-c"
+ },
+ {
+  "candidate_id": "C078",
+  "verdict": "certified",
+  "failing_step": null,
+  "grounded": true,
+  "testable": true,
+  "novel": true,
+  "reason": "The anchor abstract supplies the population, timepoints and outcome verbatim (AH109A/TE4/TE9, weeks 1-3, biophoton distribution compared with histological findings, intensity reflecting tumour viability, r = 0.73 against size), the >90% quantum-efficiency imaging citation is exact, and keeping integrated counts and tumour volume in both models makes Delta-R2 a clean estimate of the information in the spatial distribution.",
+  "judge": "claude-c"
+ },
+ {
+  "candidate_id": "C001",
+  "verdict": "declined",
+  "failing_step": 2,
+  "grounded": false,
+  "testable": false,
+  "novel": true,
+  "reason": "Step 2 does not establish a 350 nm single-quantum ceiling, and a slope of two would not uniquely identify pairwise carbonyl-excitation pooling.",
+  "judge": "codex"
+ },
+ {
+  "candidate_id": "C002",
+  "verdict": "declined",
+  "failing_step": 1,
+  "grounded": false,
+  "testable": true,
+  "novel": true,
+  "reason": "Step 1 misattributes the specific 190–250 nm and 10–1000 photons/cm²/s historical targets, which neither supplied abstract states.",
+  "judge": "codex"
+ },
+ {
+  "candidate_id": "C003",
+  "verdict": "declined",
+  "failing_step": 2,
+  "grounded": false,
+  "testable": true,
+  "novel": true,
+  "reason": "Step 2 shows oxidation-induced tryptophan emission and synergism but not that tryptophan dominates sub-350 nm self-absorption or acts as the asserted energy acceptor.",
+  "judge": "codex"
+ },
+ {
+  "candidate_id": "C004",
+  "verdict": "declined",
+  "failing_step": 2,
+  "grounded": false,
+  "testable": false,
+  "novel": true,
+  "reason": "Step 2 overreads the ROS scheme because oxygen removal need not suppress stored peroxide-derived carbonyl emission and singlet-oxygen emission by equal factors.",
+  "judge": "codex"
+ },
+ {
+  "candidate_id": "C005",
+  "verdict": "declined",
+  "failing_step": 3,
+  "grounded": false,
+  "testable": false,
+  "novel": true,
+  "reason": "Step 3 is invalid because D2O-dependent singlet-oxygen lifetime changes do not impose an equal enhancement on every downstream reaction, nor do matching isotope effects establish a shared precursor.",
+  "judge": "codex"
+ },
+ {
+  "candidate_id": "C006",
+  "verdict": "declined",
+  "failing_step": 5,
+  "grounded": false,
+  "testable": false,
+  "novel": true,
+  "reason": "Step 5 incorrectly assumes near-conservation of emitted photon number during acceptor transfer, although nonradiative transfer and acceptor-specific quantum yields can strongly alter total emission.",
+  "judge": "codex"
+ },
+ {
+  "candidate_id": "C007",
+  "verdict": "declined",
+  "failing_step": 2,
+  "grounded": false,
+  "testable": true,
+  "novel": true,
+  "reason": "Step 2 supports tryptophan-associated UPE and amino-acid interactions but does not show that tryptophan receives transferred excitation and is the final UV emitter.",
+  "judge": "codex"
+ },
+ {
+  "candidate_id": "C008",
+  "verdict": "declined",
+  "failing_step": 2,
+  "grounded": false,
+  "testable": true,
+  "novel": true,
+  "reason": "Step 2 supplies only a generic carbonyl-to-chromophore mechanism and no evidence connecting plasmalogen products specifically to 300–349 nm emission.",
+  "judge": "codex"
+ },
+ {
+  "candidate_id": "C009",
+  "verdict": "declined",
+  "failing_step": 2,
+  "grounded": false,
+  "testable": true,
+  "novel": true,
+  "reason": "Step 2's abstract supports visible/near-infrared singlet-oxygen contributions but does not report the claimed 340–540 nm triplet-carbonyl emission or connect carbonyls specifically to the 300–349 nm band.",
+  "judge": "codex"
+ },
+ {
+  "candidate_id": "C010",
+  "verdict": "declined",
+  "failing_step": 2,
+  "grounded": false,
+  "testable": true,
+  "novel": true,
+  "reason": "Step 2 is unverifiable because the cited work has no usable abstract and its title alone does not assert that rotenone increased rat-brain photon emission.",
+  "judge": "codex"
+ },
+ {
+  "candidate_id": "C011",
+  "verdict": "declined",
+  "failing_step": 7,
+  "grounded": false,
+  "testable": false,
+  "novel": true,
+  "reason": "Step 7 is false because coherent states can have arbitrarily low mean occupation, so absolute radiometry and delta cannot distinguish coherent from chaotic light or test the claimed universal coherence conclusion.",
+  "judge": "codex"
+ },
+ {
+  "candidate_id": "C012",
+  "verdict": "declined",
+  "failing_step": 3,
+  "grounded": false,
+  "testable": false,
+  "novel": true,
+  "reason": "Step 3 wrongly treats every field-coherence claim as a narrow-linewidth claim and also understates the linewidth needed for 10 cm coherence by a factor of 1000, while the experiment could only bound sufficiently bright narrow components rather than prove none exist.",
+  "judge": "codex"
+ },
+ {
+  "candidate_id": "C013",
+  "verdict": "declined",
+  "failing_step": 6,
+  "grounded": false,
+  "testable": false,
+  "novel": true,
+  "reason": "Step 6 is internally invalid because a two-parameter Neyman type-A model contains no cluster-duration parameter and therefore cannot predict the asserted sigmoidal F(T) knee or uniquely attribute excess variance to radical-chain clusters.",
+  "judge": "codex"
+ },
+ {
+  "candidate_id": "C014",
+  "verdict": "declined",
+  "failing_step": 1,
+  "grounded": false,
+  "testable": true,
+  "novel": true,
+  "reason": "Step 1 is load-bearing but unverifiable because the cited work has no usable abstract and its title does not establish either the asserted convolution rule or the claimed inadequacy of dark references.",
+  "judge": "codex"
+ },
+ {
+  "candidate_id": "C015",
+  "verdict": "declined",
+  "failing_step": 4,
+  "grounded": false,
+  "testable": true,
+  "novel": true,
+  "reason": "Step 4 overgeneralizes the Cox-process formula for Q to claim that kurtosis, Hurst, DEA and spectral-fractal features are all monotonically biased by mean rate, which is neither derived nor generally true.",
+  "judge": "codex"
+ },
+ {
+  "candidate_id": "C016",
+  "verdict": "declined",
+  "failing_step": 4,
+  "grounded": false,
+  "testable": false,
+  "novel": true,
+  "reason": "Step 4 is false because passive scattering does not generally manufacture squeezed-state photocount statistics, squeezed-model parameters are not determined solely by g2 and mode count, and matching a phantom fit would not establish propagation as the cause of the human parameters.",
+  "judge": "codex"
+ },
+ {
+  "candidate_id": "C017",
+  "verdict": "pedantic",
+  "failing_step": 1,
+  "grounded": true,
+  "testable": true,
+  "novel": true,
+  "reason": "The thinning computation and experiment are sound, but the title-only mung-bean citation cannot verify the claimed bin-size dependence, and the review citation is similarly unverifiable.",
+  "judge": "codex"
+ },
+ {
+  "candidate_id": "C018",
+  "verdict": "declined",
+  "failing_step": 2,
+  "grounded": false,
+  "testable": true,
+  "novel": true,
+  "reason": "Neither cited abstract asserts the many-mode thermal argument, and no surviving step derives the predicted 0.10 increase or an anoxia-specific disappearance of bunching.",
+  "judge": "codex"
+ },
+ {
+  "candidate_id": "C019",
+  "verdict": "pedantic",
+  "failing_step": 2,
+  "grounded": true,
+  "testable": true,
+  "novel": true,
+  "reason": "The reported r=0.06 and calculation e^(-2r)=0.887 support the homodyne prediction, but the title-only critical-review citation cannot verify that the interpretation remains controversial.",
+  "judge": "codex"
+ },
+ {
+  "candidate_id": "C020",
+  "verdict": "declined",
+  "failing_step": 3,
+  "grounded": false,
+  "testable": true,
+  "novel": true,
+  "reason": "Demonstrated EMCCD intensity detectivity does not establish feasible interferometric coherence recovery at UPE fluxes, and no cited evidence supports intrinsic excess coherence of at least 0.10.",
+  "judge": "codex"
+ },
+ {
+  "candidate_id": "C021",
+  "verdict": "declined",
+  "failing_step": 1,
+  "grounded": false,
+  "testable": false,
+  "novel": true,
+  "reason": "The studies report separated-population effects but do not establish optical-only causation, and rebuilding only one preparation cannot test the universal claim covering every published preparation.",
+  "judge": "codex"
+ },
+ {
+  "candidate_id": "C022",
+  "verdict": "declined",
+  "failing_step": 4,
+  "grounded": false,
+  "testable": true,
+  "novel": true,
+  "reason": "Brightness conservation limits absolute radiance but not gain relative to a bare receiver subtending a small solid angle, so the asserted universal G≤2 bound does not follow.",
+  "judge": "codex"
+ },
+ {
+  "candidate_id": "C023",
+  "verdict": "declined",
+  "failing_step": 4,
+  "grounded": false,
+  "testable": false,
+  "novel": true,
+  "reason": "The scavenger study did not hold oxidative flux fixed while changing emission, and H2O2, oxygen consumption, and TBARS are not measurements of the oxidation-event denominator required to test photon yield per event.",
+  "judge": "codex"
+ },
+ {
+  "candidate_id": "C024",
+  "verdict": "declined",
+  "failing_step": 2,
+  "grounded": false,
+  "testable": false,
+  "novel": true,
+  "reason": "Signals need not be produced contingently on a receiver's immediate presence, and the coupled donor PMT could count receiver-emitted photons, preventing the experiment from isolating sender-side modulation.",
+  "judge": "codex"
+ },
+ {
+  "candidate_id": "C025",
+  "verdict": "declined",
+  "failing_step": 4,
+  "grounded": false,
+  "testable": false,
+  "novel": true,
+  "reason": "Failure of individual candidate-photoacceptor interventions cannot exclude redundant or untested absorbers, so the experiment cannot establish the load-bearing conclusion that a surviving effect is nonphotochemical.",
+  "judge": "codex"
+ },
+ {
+  "candidate_id": "C026",
+  "verdict": "declined",
+  "failing_step": 1,
+  "grounded": false,
+  "testable": true,
+  "novel": true,
+  "reason": "Neither cited abstract asserts a required 190–250 nm mechanism or the claimed 10–10^4 photons s^-1 cm^-2 input, and the tubulin work instead discusses responses near 280 nm.",
+  "judge": "codex"
+ },
+ {
+  "candidate_id": "C027",
+  "verdict": "pedantic",
+  "failing_step": 3,
+  "grounded": true,
+  "testable": true,
+  "novel": true,
+  "reason": "The cited cavity study supports sensitive detection of growth-associated yeast emission but its abstract does not identify missing absolute photon reporting as a major measurement gap.",
+  "judge": "codex"
+ },
+ {
+  "candidate_id": "C028",
+  "verdict": "pedantic",
+  "failing_step": 2,
+  "grounded": true,
+  "testable": true,
+  "novel": true,
+  "reason": "The cited feasibility-analysis abstract discusses weak emission and poor signal-to-noise but does not state the claimed historical 190–250 nm range or limited evidence for 280–390 nm emission.",
+  "judge": "codex"
+ },
+ {
+  "candidate_id": "C029",
+  "verdict": "certified",
+  "failing_step": null,
+  "grounded": true,
+  "testable": true,
+  "novel": true,
+  "reason": "The abstracts support measurable UPE temporal structure, emitter modulation, and frequency-dependent cellular responses, while count-preserving permutation provides a direct test of sub-block temporal ordering.",
+  "judge": "codex"
+ },
+ {
+  "candidate_id": "C030",
+  "verdict": "certified",
+  "failing_step": null,
+  "grounded": true,
+  "testable": true,
+  "novel": true,
+  "reason": "The reported density-dependent suppression and graphite control support the premise, and crossed density–attenuation conditions can test whether measured photon fluence fully predicts growth.",
+  "judge": "codex"
+ },
+ {
+  "candidate_id": "C031",
+  "verdict": "certified",
+  "failing_step": null,
+  "grounded": true,
+  "testable": true,
+  "novel": true,
+  "reason": "The cited density-dependent effects and evidence for structured biological emission ground the prediction, and photon-normalized template replay directly tests spectral-temporal information beyond integrated intensity.",
+  "judge": "codex"
+ },
+ {
+  "candidate_id": "C032",
+  "verdict": "certified",
+  "failing_step": null,
+  "grounded": true,
+  "testable": true,
+  "novel": true,
+  "reason": "The literature establishes darkness-dependent coupling claims and ambient signal-to-noise as the relevant obstacle, while controlled matched backgrounds directly measure the receiver's noise-tolerance curve.",
+  "judge": "codex"
+ },
+ {
+  "candidate_id": "C033",
+  "verdict": "declined",
+  "failing_step": 5,
+  "grounded": false,
+  "testable": false,
+  "novel": true,
+  "reason": "Step 5 provides no numerical spectra or transmission and response values from which orders-of-magnitude suppression or a universal beta below 0.05 follows, while two bands cannot identify two source fractions without specified component spectra.",
+  "judge": "codex"
+ },
+ {
+  "candidate_id": "C034",
+  "verdict": "declined",
+  "failing_step": 5,
+  "grounded": false,
+  "testable": false,
+  "novel": true,
+  "reason": "Step 5 treats suppression by combined azide and oxygen-glucose deprivation as specific electron-transport evidence and TTX survival as proof of redox causality, although these interventions cannot exclude generalized tissue failure or non-spiking glutamate chemistry.",
+  "judge": "codex"
+ },
+ {
+  "candidate_id": "C035",
+  "verdict": "declined",
+  "failing_step": 6,
+  "grounded": false,
+  "testable": false,
+  "novel": true,
+  "reason": "Step 6 incorrectly assumes that one through-slice transmission spectrum can be divided out of spatially distributed emission, and neither the citations nor a single mid-depth standard justify the predicted corrected difference below 30 nm.",
+  "judge": "codex"
+ },
+ {
+  "candidate_id": "C036",
+  "verdict": "declined",
+  "failing_step": 5,
+  "grounded": false,
+  "testable": true,
+  "novel": true,
+  "reason": "Step 5's DOP-below-0.1 prediction does not follow from eight transport mean free paths because depolarization also depends on phase function, birefringence, and collection geometry, leaving the proposed 0.3 threshold unsupported.",
+  "judge": "codex"
+ },
+ {
+  "candidate_id": "C037",
+  "verdict": "declined",
+  "failing_step": 6,
+  "grounded": false,
+  "testable": true,
+  "novel": true,
+  "reason": "Step 6 overclaims that subject-held-out cross-validation removes shared drift, since transferable residual or omitted nuisance effects can still increase AUC, and the literature supplies no basis for the 0.02 ceiling.",
+  "judge": "codex"
+ },
+ {
+  "candidate_id": "C038",
+  "verdict": "declined",
+  "failing_step": 6,
+  "grounded": false,
+  "testable": false,
+  "novel": true,
+  "reason": "Step 6 falsely assumes metabolic emission is stationary over 24 hours and that a task-by-time interaction uniquely identifies delayed luminescence, while circadian physiology remains confounded and proportional task-effect shrinkage is not operationalized.",
+  "judge": "codex"
+ },
+ {
+  "candidate_id": "C039",
+  "verdict": "declined",
+  "failing_step": 4,
+  "grounded": false,
+  "testable": true,
+  "novel": true,
+  "reason": "Step 4 maps epidural detector counts to external counts without correcting the epidural detector's efficiency, collection geometry, and spatial sampling, so the proposed photon budget cannot uniquely attribute an external component to cortex.",
+  "judge": "codex"
+ },
+ {
+  "candidate_id": "C040",
+  "verdict": "certified",
+  "failing_step": null,
+  "grounded": true,
+  "testable": true,
+  "novel": true,
+  "reason": "The cited works support the reported species redshift, glutamate induction, and calibrated spectral measurement, while the donor-level corrected replication directly tests whether that ordering survives controls absent from the cited conclusion.",
+  "judge": "codex"
+ },
+ {
+  "candidate_id": "C041",
+  "verdict": "declined",
+  "failing_step": 2,
+  "grounded": false,
+  "testable": true,
+  "novel": true,
+  "reason": "Step 2 overreads imaging in slightly anesthetized mice as evidence that chronic, awake, optically shielded cranial-window UPE recording is feasible.",
+  "judge": "codex"
+ },
+ {
+  "candidate_id": "C042",
+  "verdict": "certified",
+  "failing_step": null,
+  "grounded": true,
+  "testable": true,
+  "novel": true,
+  "reason": "The cited studies support disease-associated spectral changes, partial ifenprodil reversal, and oxidative-metabolic confounding, while the ROS- and intensity-matched intervention directly tests the novel comparison.",
+  "judge": "codex"
+ },
+ {
+  "candidate_id": "C043",
+  "verdict": "pedantic",
+  "failing_step": 2,
+  "grounded": true,
+  "testable": true,
+  "novel": true,
+  "reason": "Step 2 is unverifiable because the title-only protocol record does not assert the claimed visual-stimulus light-transmission confound, but the remaining evidence and controls support the experiment.",
+  "judge": "codex"
+ },
+ {
+  "candidate_id": "C044",
+  "verdict": "declined",
+  "failing_step": 4,
+  "grounded": false,
+  "testable": false,
+  "novel": true,
+  "reason": "Step 4's correct derivation shows that inefficiency and Poisson dark counts dilute a source-level Fano excess, so inversion magnifies rather than removes a measured excess and cannot support a corrected F_s near 1.",
+  "judge": "codex"
+ },
+ {
+  "candidate_id": "C045",
+  "verdict": "declined",
+  "failing_step": 7,
+  "grounded": false,
+  "testable": false,
+  "novel": true,
+  "reason": "Step 7 converts an uncertainty range into an unsupported variance prediction, and greater dispersion for site-prepared biological samples under the same calibration chains would implicate added biological or preparation variance rather than calibration dominance.",
+  "judge": "codex"
+ },
+ {
+  "candidate_id": "C046",
+  "verdict": "declined",
+  "failing_step": 2,
+  "grounded": false,
+  "testable": true,
+  "novel": true,
+  "reason": "Step 2 is invalid because a common positive spectral-response correction rescales both groups and cannot by itself change a standardized group difference or rank-based discrimination, while cutoff-filter measurements also cannot be represented by the stated simple QE ratios.",
+  "judge": "codex"
+ },
+ {
+  "candidate_id": "C047",
+  "verdict": "pedantic",
+  "failing_step": 2,
+  "grounded": true,
+  "testable": true,
+  "novel": true,
+  "reason": "Step 2's exact quantum-efficiency and dark-count conversion is absent from the supplied abstract, but the abstract directly supports the central contamination hypothesis and the controlled phantom comparison remains discriminating.",
+  "judge": "codex"
+ },
+ {
+  "candidate_id": "C048",
+  "verdict": "declined",
+  "failing_step": 5,
+  "grounded": false,
+  "testable": true,
+  "novel": true,
+  "reason": "Step 5 cannot infer major AUC loss or recovery from detector scale factors alone because AUC is invariant to common monotone rescaling and no feature distributions are supplied to quantify the effect of differential spectral scaling.",
+  "judge": "codex"
+ },
+ {
+  "candidate_id": "C049",
+  "verdict": "declined",
+  "failing_step": 5,
+  "grounded": false,
+  "testable": false,
+  "novel": true,
+  "reason": "Step 5 is invalid because bulk peroxide consumption includes variable non-emissive sinks and cannot define a chemistry-only yield transferable to an unspecified cellular ROS flux.",
+  "judge": "codex"
+ },
+ {
+  "candidate_id": "C050",
+  "verdict": "declined",
+  "failing_step": 4,
+  "grounded": false,
+  "testable": false,
+  "novel": true,
+  "reason": "Step 4 assumes wavelength-binned counts, but the proposed broadband beam-splitter acquisition supplies none, so differing spectral responses cannot be converted uniquely to a 400–870 nm integral.",
+  "judge": "codex"
+ },
+ {
+  "candidate_id": "C051",
+  "verdict": "declined",
+  "failing_step": 4,
+  "grounded": false,
+  "testable": true,
+  "novel": true,
+  "reason": "Step 4 defines how to measure spectral-mismatch bias but provides no detector response or calculation establishing the claimed 25% lower bound, which is detector-dependent.",
+  "judge": "codex"
+ },
+ {
+  "candidate_id": "C052",
+  "verdict": "pedantic",
+  "failing_step": 3,
+  "grounded": true,
+  "testable": true,
+  "novel": true,
+  "reason": "Step 3 is non-load-bearing but unsupported because the supplied review abstract does not mention detector dark counts or an SNR threshold of one.",
+  "judge": "codex"
+ },
+ {
+  "candidate_id": "C053",
+  "verdict": "declined",
+  "failing_step": 1,
+  "grounded": false,
+  "testable": true,
+  "novel": true,
+  "reason": "Step 1 reports aggregate separation from dark noise but does not establish that 90% of individual wells have lower confidence bounds above a calibrated empirical LOD.",
+  "judge": "codex"
+ },
+ {
+  "candidate_id": "C054",
+  "verdict": "declined",
+  "failing_step": 2,
+  "grounded": false,
+  "testable": true,
+  "novel": true,
+  "reason": "Step 2 is unverifiable from the title-only record and is load-bearing because the cited within-laboratory 90% accuracy provides no evidence for frozen-model portability across detector classes.",
+  "judge": "codex"
+ },
+ {
+  "candidate_id": "C055",
+  "verdict": "declined",
+  "failing_step": 1,
+  "grounded": false,
+  "testable": true,
+  "novel": true,
+  "reason": "Step 1 overreads within-patient exposure correlations and zinc effects as patient-control discrimination, which the EPP abstract does not report.",
+  "judge": "codex"
+ },
+ {
+  "candidate_id": "C056",
+  "verdict": "declined",
+  "failing_step": 4,
+  "grounded": false,
+  "testable": true,
+  "novel": true,
+  "reason": "Step 4 incorrectly treats all diffusely reflected photons as reaching the camera and, more importantly, reflectance dominance cannot imply that a separate dark-chamber UPE measurement adds no clinical information.",
+  "judge": "codex"
+ },
+ {
+  "candidate_id": "C057",
+  "verdict": "declined",
+  "failing_step": 1,
+  "grounded": false,
+  "testable": true,
+  "novel": true,
+  "reason": "The supplied abstract does not contain the claimed nose-temperature correlation or its coefficient, leaving the central evidence that temperature covaries with state-dependent UPE unverifiable.",
+  "judge": "codex"
+ },
+ {
+  "candidate_id": "C058",
+  "verdict": "declined",
+  "failing_step": 4,
+  "grounded": false,
+  "testable": true,
+  "novel": true,
+  "reason": "The variance derivation is invalid because correlation above 0.5 with merely comparable unequal band variances does not guarantee that the ratio variance is below either individual-band variance.",
+  "judge": "codex"
+ },
+ {
+  "candidate_id": "C059",
+  "verdict": "declined",
+  "failing_step": 4,
+  "grounded": false,
+  "testable": false,
+  "novel": true,
+  "reason": "Evidence that dermis contributes to UV-induced UPE does not predict that a surface manipulation must preserve spontaneous regional contrast, while degreasing cannot distinguish emitter removal from altered optics or tissue perturbation.",
+  "judge": "codex"
+ },
+ {
+  "candidate_id": "C060",
+  "verdict": "declined",
+  "failing_step": 4,
+  "grounded": false,
+  "testable": false,
+  "novel": true,
+  "reason": "An ICC measured only among healthy adults does not universally cap clinical-classifier AUC without equal-variance, nondifferential-error and population-transport assumptions, and the proposed study contains no clinical contrast to test that cap.",
+  "judge": "codex"
+ },
+ {
+  "candidate_id": "C061",
+  "verdict": "pedantic",
+  "failing_step": 3,
+  "grounded": true,
+  "testable": true,
+  "novel": true,
+  "reason": "The thermal-confound and protocol-standardization claim is absent from the supplied biofield-therapy review abstract, but it is ancillary to the directly supported UPE–erythema prediction experiment.",
+  "judge": "codex"
+ },
+ {
+  "candidate_id": "C062",
+  "verdict": "declined",
+  "failing_step": 1,
+  "grounded": false,
+  "testable": true,
+  "novel": true,
+  "reason": "The truncated treatment-study abstract confirms changing total UPE but does not show the claimed 495–550/550–610 nm ratio or its negative correlation with syndrome scores, which is the proposed predictor's load-bearing premise.",
+  "judge": "codex"
+ },
+ {
+  "candidate_id": "C063",
+  "verdict": "certified",
+  "failing_step": null,
+  "grounded": true,
+  "testable": true,
+  "novel": true,
+  "reason": "The abstracts support EPP initial-burst associations, early UPE prediction of later erythema and pigmentation adjustment, and the externally validated incremental-AUC experiment directly tests the novel prognostic claim.",
+  "judge": "codex"
+ },
+ {
+  "candidate_id": "C064",
+  "verdict": "pedantic",
+  "failing_step": 3,
+  "grounded": true,
+  "testable": true,
+  "novel": true,
+  "reason": "The cited review abstract does not state that palmar measurements are less variable, although the separate bilateral-hand study supports the site choice and the simultaneous-ratio prognostic experiment remains coherent.",
+  "judge": "codex"
+ },
+ {
+  "candidate_id": "C065",
+  "verdict": "certified",
+  "failing_step": null,
+  "grounded": true,
+  "testable": true,
+  "novel": true,
+  "reason": "The cited studies support detectable tumor-associated UPE and adequate detector sensitivity, while the locked, patient-held-out, second-hospital validation directly tests the novel performance thresholds.",
+  "judge": "codex"
+ },
+ {
+  "candidate_id": "C066",
+  "verdict": "declined",
+  "failing_step": 1,
+  "grounded": false,
+  "testable": false,
+  "novel": true,
+  "reason": "Step 1 misattributes UPE measurement barriers to a biofield-therapy biomarker review, and the supposedly locked two-band HbA1c model and spectral bands are not actually specified.",
+  "judge": "codex"
+ },
+ {
+  "candidate_id": "C067",
+  "verdict": "declined",
+  "failing_step": 2,
+  "grounded": false,
+  "testable": false,
+  "novel": true,
+  "reason": "Step 2 wrongly treats spectra from different organisms and chemistries as mutually inconsistent evidence for transport, while dividing distributed emission by bulk transmittance would not uniquely separate transport from emitter changes.",
+  "judge": "codex"
+ },
+ {
+  "candidate_id": "C068",
+  "verdict": "declined",
+  "failing_step": 2,
+  "grounded": false,
+  "testable": true,
+  "novel": true,
+  "reason": "Step 2's bundled claims about acquisition settings, anatomical interpretation, and skull-transmitted photons are not established by the shown abstracts, including the explicitly unverifiable rat studies.",
+  "judge": "codex"
+ },
+ {
+  "candidate_id": "C069",
+  "verdict": "pedantic",
+  "failing_step": 5,
+  "grounded": true,
+  "testable": true,
+  "novel": true,
+  "reason": "The spatial split-half test is sound, but step 5 misattributes a 30-minute dark-adaptation requirement to a photosystem-II singlet-oxygen paper that says nothing about dark adaptation.",
+  "judge": "codex"
+ },
+ {
+  "candidate_id": "C070",
+  "verdict": "declined",
+  "failing_step": 5,
+  "grounded": false,
+  "testable": false,
+  "novel": true,
+  "reason": "Step 5 cannot infer that a 10% guided component necessarily raises anisotropy above 2 without its loss and fit range, and focal glutamate activation does not isolate photon propagation from anisotropic biological or chemical spread.",
+  "judge": "codex"
+ },
+ {
+  "candidate_id": "C071",
+  "verdict": "declined",
+  "failing_step": 5,
+  "grounded": false,
+  "testable": false,
+  "novel": true,
+  "reason": "Step 5 predicts only 0.29 accidental coincidences in eight hours, which is orders of magnitude too few to estimate g2(0) to ±0.001 even though several perfectly detected pairs might reject a zero-pair null.",
+  "judge": "codex"
+ },
+ {
+  "candidate_id": "C072",
+  "verdict": "declined",
+  "failing_step": 3,
+  "grounded": false,
+  "testable": true,
+  "novel": true,
+  "reason": "Step 3 imports an uncited Q10 of 2, uncited 1–3 °C human skin shifts, and an unsupported claim that these reproduce the magnitude and spatial pattern of the reported UPE effects.",
+  "judge": "codex"
+ },
+ {
+  "candidate_id": "C073",
+  "verdict": "declined",
+  "failing_step": 1,
+  "grounded": false,
+  "testable": true,
+  "novel": true,
+  "reason": "Step 1 attributes a tissue-scattering and absorption result to an abstract that only advocates bright red-shifted bioluminescence, while the remaining citations do not establish the claimed porcine-skin localization interaction.",
+  "judge": "codex"
+ },
+ {
+  "candidate_id": "C074",
+  "verdict": "declined",
+  "failing_step": 4,
+  "grounded": false,
+  "testable": false,
+  "novel": true,
+  "reason": "A fixed point-spread function illuminated by a wound source whose intensity rises over time can produce progressively later threshold crossings at greater distances, so the proposed onset slope does not distinguish propagation from a static halo.",
+  "judge": "codex"
+ },
+ {
+  "candidate_id": "C075",
+  "verdict": "pedantic",
+  "failing_step": 1,
+  "grounded": true,
+  "testable": true,
+  "novel": true,
+  "reason": "Step 1 is non-load-bearingly overstated because the abstract neither identifies the skin as porcine nor clearly attributes its protein-modification findings to Fenton treatment rather than hydrogen peroxide.",
+  "judge": "codex"
+ },
+ {
+  "candidate_id": "C076",
+  "verdict": "declined",
+  "failing_step": 1,
+  "grounded": false,
+  "testable": true,
+  "novel": true,
+  "reason": "Step 1 is unverifiable from title-only records, and the surviving human-PMT evidence does not support failure of rat cortical localization specifically in the 640–850 nm band or at a 5 mm threshold.",
+  "judge": "codex"
+ },
+ {
+  "candidate_id": "C077",
+  "verdict": "declined",
+  "failing_step": 1,
+  "grounded": false,
+  "testable": true,
+  "novel": true,
+  "reason": "Step 1 over-reads the abstract, which reports general spatiotemporal UPE dynamics during metamorphosis but does not assert anterior-localized emission or uncertainty about its source.",
+  "judge": "codex"
+ },
+ {
+  "candidate_id": "C078",
+  "verdict": "certified",
+  "failing_step": null,
+  "grounded": true,
+  "testable": true,
+  "novel": true,
+  "reason": "The cited tumor study directly relates murine tumor UPE to size and histologic viability, and the held-out nested comparison validly tests whether spatial features add predictive information beyond brightness and volume.",
+  "judge": "codex"
+ }
+]

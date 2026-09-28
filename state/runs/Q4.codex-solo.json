@@ -1,0 +1,278 @@
+{
+ "hof_version": "1.0",
+ "run": {
+  "engine": "codex-solo",
+  "seed_id": "Q4",
+  "backend": "codex-cli",
+  "config_hash": "2cff14018319",
+  "corpus_calls": 18,
+  "elapsed_s": 285.5
+ },
+ "hypotheses": [
+  {
+   "id": "Q4-1",
+   "statement": "In anesthetized adult pigs, somatosensory-evoked cortical UPE in the 650–900 nm band produces a nonzero brain-originated component at an external scalp detector after accounting for simultaneously measured epidural emission, subject-specific scalp–skull transmission, scalp emission, and detector background.",
+   "scope": {
+    "population": "Twenty anesthetized adult pigs with a light-sealed epidural photon-counting fiber placed over somatosensory cortex and an external detector over the same intact scalp–skull path.",
+    "condition": "Randomized blocks of peripheral somatosensory stimulation and sham stimulation, with simultaneous ECoG, epidural photon counts, external photon counts, scalp temperature, perfusion, and oxygenation.",
+    "comparator": "Sham blocks, a scalp-only control site, an opaque detector channel, and a shuttered matched detector.",
+    "outcome": "The estimated fraction of task-evoked external 650–900 nm counts attributable to the epidurally measured cortical source."
+   },
+   "null_hypothesis": "The lower confidence bound for the brain-originated external fraction is not above zero, or the external modulation is explained by scalp and detector controls.",
+   "estimand": "f_brain, the coefficient linking external task-evoked counts to epidural task-evoked counts after applying the measured wavelength-dependent transfer matrix and adjusting for scalp and background channels.",
+   "causal_level": "L3",
+   "rationale": [
+    {
+     "step": "Spontaneous rat-brain UPE has been imaged in vivo and associated with cerebral energy metabolism and oxidative stress, while whole-brain emission has also been imaged in living mice.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2160984073",
+      "W2086348119",
+      "W3200731706"
+     ]
+    },
+    {
+     "step": "Extracranial human-head claims face a specific optical mismatch: wavelengths below 600 nm are strongly attenuated by scalp and skull, whereas longer wavelengths are poorly covered by the PMTs used in the disputed measurements.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W7168813583"
+     ]
+    },
+    {
+     "step": "An intracranial photonic detector has been proposed precisely because transcranial readout may be inadequate, providing a technically relevant paired-reference architecture.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W3217353367"
+     ]
+    },
+    {
+     "step": "For spectral bin b, the preregistered photon budget is E[C_external,b]=C_epidural,b×T_b×η_b×G_b, where T_b is measured scalp–skull transmission, η_b is detector efficiency, and G_b is collection geometry; a measured excess incompatible with this budget is classified as artifact rather than brain transmission.",
+     "justification_type": "computation"
+    },
+    {
+     "step": "Tissue-optics-informed bands, photon-budget modelling before collection, and explicit artifact controls are stipulated as the evidence needed to settle extracranial detectability.",
+     "justification_type": "given"
+    }
+   ],
+   "cited_work_ids": [
+    "W2160984073",
+    "W2086348119",
+    "W3200731706",
+    "W7168813583",
+    "W3217353367"
+   ],
+   "proposed_experiment": "Use a sealed lateral tunnel for the epidural fiber so that the external detector views only intact scalp and skull; measure each animal's 650–900 nm transfer matrix with a calibrated ultraweak source before biological blocks, then fit a preregistered hierarchical count model to blinded stimulation and sham trials.",
+   "required_instrument": "Two synchronized fiber-coupled superconducting nanowire or equivalently low-dark-count single-photon detectors covering 650–900 nm, plus ECoG, diffuse optical perfusion/oxygenation sensors, and temperature probes.",
+   "engine_native_score": 0.42,
+   "novelty_self_claim": "Unlike H7, this tests end-to-end escape through scalp and skull rather than axonal guidance, and it estimates an anatomically anchored brain-source fraction instead of treating all head photons as cerebral."
+  },
+  {
+   "id": "Q4-2",
+   "statement": "After equalizing slice thickness, glutamate exposure, collection geometry, and detector response, the reported cross-species redshift of brain UPE will remain monotonic from bullfrog through nonhuman mammals to humans, with human emission extending into the approximately 865 nm region.",
+   "scope": {
+    "population": "Standardized acute cortical slices from bullfrog, mouse, chicken, pig, macaque, and discarded viable human neurosurgical tissue, with at least ten independent biological donors or animals per species.",
+    "condition": "Identical oxygenated incubation and glutamate stimulation, randomized measurement order, fixed optical path length, and radiometric calibration over 400–950 nm.",
+    "comparator": "Unstimulated slices, calibration lamps reduced to UPE intensity, and the same spectra analyzed before versus after correction for detector efficiency and tissue self-absorption.",
+    "outcome": "Corrected photon-energy centroid, 650–950/400–650 nm count ratio, and rank ordering of these measures across species."
+   },
+   "null_hypothesis": "The corrected species-rank correlation is nonpositive, human tissue is not redder than macaque tissue, or the ordering appears only before radiometric and self-absorption correction.",
+   "estimand": "Spearman rho between the preregistered species order and corrected spectral centroid, jointly requiring a positive human-minus-macaque centroid contrast.",
+   "causal_level": "L2",
+   "rationale": [
+    {
+     "step": "A prior UBIS/BSAD experiment reported a species-associated redshift of glutamate-induced brain-slice emission, reaching approximately 865 nm in human tissue.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2483916403"
+     ]
+    },
+    {
+     "step": "Glutamate produces long-lasting UPE changes in mouse brain slices whose maintenance depends strongly on oxygen, glucose, and cytochrome-c oxidase activity, establishing a reproducible induction paradigm but also identifying metabolic variables that must be standardized.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W1977345460"
+     ]
+    },
+    {
+     "step": "EMCCD plus wavelength selection has resolved human UPE spectra under controlled dark conditions, while also demonstrating the need to subtract dark signal and reject spurious sensor events.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2797018767"
+     ]
+    },
+    {
+     "step": "For each sample, corrected spectral counts are S_b=(C_b-D_b)/(R_b×A_b×t), where D_b is dark count, R_b is calibrated system response, A_b is self-absorption correction, and t is integration time; species ranking is computed only from S_b.",
+     "justification_type": "computation"
+    }
+   ],
+   "cited_work_ids": [
+    "W2483916403",
+    "W1977345460",
+    "W2797018767"
+   ],
+   "proposed_experiment": "Measure every slice on the same blinded spectrometer with alternating stimulated and unstimulated blocks, independently measure each slice's transmission spectrum, and test the preregistered rank trend on donor-level summaries rather than repeated frames.",
+   "required_instrument": "Radiometrically calibrated photon-counting spectrograph combining a cooled EMCCD and near-infrared single-photon array over 400–950 nm.",
+   "engine_native_score": 0.38,
+   "novelty_self_claim": "This advances beyond H11 by testing whether the intelligence-linked redshift is an emitted-source property or a consequence of filters, detector response, slice thickness, and tissue self-absorption."
+  },
+  {
+   "id": "Q4-3",
+   "statement": "In awake mice, cortical UPE spectral-temporal features will increase held-out-animal classification of rest, whisker stimulation, and locomotion by more than 0.05 macro-AUC beyond total UPE intensity, ECoG, oxygen consumption, hemodynamics, temperature, and motion.",
+   "scope": {
+    "population": "Sixty awake head-fixed mice with chronic optically shielded cranial windows and simultaneous cortical electrophysiology and metabolic monitoring.",
+    "condition": "Randomized ten-minute blocks of quiet wakefulness, controlled whisker stimulation, and voluntary locomotion, with no optical stimulus entering the detector path.",
+    "comparator": "A nested prediction model containing ECoG, oxygen consumption, blood-volume/oxygenation, cortical temperature, motion, and broadband UPE intensity but no UPE spectral-temporal features.",
+    "outcome": "Held-out-animal macro-AUC for three-state classification and its increment after adding band-resolved count dynamics and photon-count entropy."
+   },
+   "null_hypothesis": "The cross-validated macro-AUC increment is 0.05 or less, or it fails to replicate in a locked independent cohort.",
+   "estimand": "Delta AUC = macro-AUC(full model) minus macro-AUC(covariate-plus-total-intensity model), evaluated with animals rather than frames as the held-out unit.",
+   "causal_level": "L6",
+   "rationale": [
+    {
+     "step": "In vivo brain UPE is correlated with cerebral energy metabolism and oxidative stress, making those measurements necessary competing predictors rather than evidence of neural specificity by themselves.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2160984073"
+     ]
+    },
+    {
+     "step": "Whole-brain UPE has been imaged in living mice, supporting the feasibility of a chronic in vivo preparation.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W3200731706"
+     ]
+    },
+    {
+     "step": "Human recordings have reported task-sensitive spectral and entropic UPE properties and moderate relationships with brain rhythms, while explicitly calling for larger samples and distinct tasks.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W4407397928"
+     ]
+    },
+    {
+     "step": "Delta AUC is computed under nested cross-validation with all frames from an animal confined to one fold; permutation labels are shuffled only at the animal-block level to preserve autocorrelation.",
+     "justification_type": "computation"
+    }
+   ],
+   "cited_work_ids": [
+    "W2160984073",
+    "W3200731706",
+    "W4407397928"
+   ],
+   "proposed_experiment": "Acquire synchronized spectral photon counts and physiological channels, lock all preprocessing on forty mice, and test the full versus nested models once on twenty untouched mice; report calibration and confusion matrices in addition to AUC.",
+   "required_instrument": "Light-tight cranial-window photon-counting EMCCD or SPAD array with 450–900 nm spectral splitting, synchronized ECoG, oxygen-consumption, hemodynamic, temperature, and motion sensors.",
+   "engine_native_score": 0.57,
+   "novelty_self_claim": "This converts H6 and H11 from covariance claims into a predeclared out-of-animal information test asking whether UPE contains usable brain-state information beyond both metabolism and total brightness."
+  },
+  {
+   "id": "Q4-4",
+   "statement": "In Alzheimer and vascular-dementia model brain preparations, GluN2B blockade will restore the UPE spectral centroid toward wild type more than a mitochondria-targeted antioxidant that is titrated to produce the same reduction in total ROS and total photon counts.",
+   "scope": {
+    "population": "Acute brain slices and matched synaptosomes from Alzheimer-model, vascular-dementia-model, and wild-type mice.",
+    "condition": "Glutamate challenge followed by vehicle, ifenprodil, or a titrated mitochondria-targeted antioxidant, with doses matched within each preparation for ROS reduction and broadband photon-count reduction.",
+    "comparator": "Wild-type vehicle, disease-model vehicle, and disease-model antioxidant arms matched to the ifenprodil arm on ROS and total UPE intensity.",
+    "outcome": "Recovery of corrected spectral centroid and the 650–900/400–650 nm photon ratio toward the wild-type distribution."
+   },
+   "null_hypothesis": "At matched ROS and total photon output, ifenprodil produces no greater spectral recovery than the antioxidant, making the disease-associated spectrum compatible with generic oxidative emission.",
+   "estimand": "D = centroid recovery under ifenprodil minus centroid recovery under the ROS-matched antioxidant, with D greater than zero required in both disease models.",
+   "causal_level": "L1",
+   "rationale": [
+    {
+     "step": "Alzheimer and vascular-dementia models show reduced, blueshifted glutamate-induced UPE in synaptosomes and slices, and ifenprodil partially reverses these changes.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W4386377286"
+     ]
+    },
+    {
+     "step": "Glutamate-induced slice UPE depends strongly on oxygen, glucose, and cytochrome-c oxidase but is only partly blocked by TTX, indicating that metabolic oxidation and electrical spiking are separable contributors.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W1977345460"
+     ]
+    },
+    {
+     "step": "Contrasting anesthetics alter isolated-rat-brain UPE in parallel with oxidative and nitrosative stress markers, reinforcing total oxidative load as a competing explanation for brain UPE changes.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W4408688794"
+     ]
+    },
+    {
+     "step": "Antioxidant dose is selected by blinded interpolation so that absolute differences from the ifenprodil arm in ROS and broadband counts are below preregistered equivalence margins; D then measures spectral recovery not attributable to those matched quantities.",
+     "justification_type": "computation"
+    }
+   ],
+   "cited_work_ids": [
+    "W4386377286",
+    "W1977345460",
+    "W4408688794"
+   ],
+   "proposed_experiment": "Run the three-arm intervention in randomized wells from each animal, quantify mitochondrial ROS, lipid peroxidation, oxygen consumption, and UPE spectra simultaneously, and estimate donor-stratified difference-in-differences for both disease models.",
+   "required_instrument": "Calibrated 400–900 nm photon-counting spectrograph with cooled EMCCD/SPAD detection, plus plate-compatible ROS, lipid-peroxidation, and oxygen-consumption assays.",
+   "engine_native_score": 0.49,
+   "novelty_self_claim": "This discriminates a GluN2B-linked generation signature from H4a's generic oxidative-by-product account by matching both oxidative load and photon quantity before comparing spectrum."
+  },
+  {
+   "id": "Q4-5",
+   "statement": "In dark-adapted healthy adults performing light-free auditory tasks, the forehead-specific coupling between UPE and EEG will show a positive 650–900 nm excess over 400–600 nm after subtracting cheek-skin emission, shuttered-detector events, ambient leakage, temperature, and perfusion effects.",
+   "scope": {
+    "population": "One hundred healthy adults measured after at least sixty minutes of monitored dark adaptation.",
+    "condition": "Eyes-closed auditory oddball and mental-arithmetic blocks delivered without displays or indicator lights, interleaved with matched rest blocks.",
+    "comparator": "A cheek-facing skin channel, an optically shuttered matched detector, empty-chair runs, randomized sham task markers, and the 400–600 nm band.",
+    "outcome": "Task-locked partial coupling of forehead photon counts with preregistered EEG-band power after subtraction of skin, common-mode, and physiological covariates."
+   },
+   "null_hypothesis": "The corrected 650–900 nm forehead coupling is not above zero, is no larger than corrected 400–600 nm coupling, or appears equally in cheek, shuttered, empty-chair, or sham-marker analyses.",
+   "estimand": "Delta coupling = partial coupling(forehead EEG,UPE minus cheek and shutter controls) in 650–900 nm minus the corresponding corrected coupling in 400–600 nm.",
+   "causal_level": "L5",
+   "rationale": [
+    {
+     "step": "Human photoencephalography work reports task-sensitive UPE spectra and entropy and moderate UPE–EEG correlations, but calls for larger samples and distinct task designs.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W4407397928"
+     ]
+    },
+    {
+     "step": "The associated measurement protocol identifies externally illuminated visual tasks as a confound because stimulus light may traverse brain and skull.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W4417010158"
+     ]
+    },
+    {
+     "step": "A critical replication found that reported human-head signals can be explained by background contamination, that sub-600 nm photons are strongly attenuated, and that properly measured head UPE is likely scalp-dominated with conventional PMTs.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W7168813583"
+     ]
+    },
+    {
+     "step": "Glutamate-stimulated human brain tissue has been reported to emit into the near-infrared near 865 nm, providing a corpus-grounded band in which a transmitted cerebral component could be sought.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2483916403"
+     ]
+    },
+    {
+     "step": "For each block, corrected forehead counts are F*=F-open−a×cheek−b×shutter−c×ambient−d×temperature−e×perfusion; Delta coupling is computed from residualized block-level series, with coefficients learned only from rest and control runs.",
+     "justification_type": "computation"
+    },
+    {
+     "step": "The seed brief requires transmitting wavelength bands, prospective photon budgets, and Salari-style artifact controls for an extracranial claim to be credible.",
+     "justification_type": "given"
+    }
+   ],
+   "cited_work_ids": [
+    "W4407397928",
+    "W4417010158",
+    "W7168813583",
+    "W2483916403"
+   ],
+   "proposed_experiment": "Use a preregistered two-stage design: estimate detector and physiological nuisance coefficients from rest, empty-chair, shutter, and skin-control runs, freeze them, then test the corrected NIR-versus-visible coupling in blinded auditory-task blocks and an untouched replication cohort.",
+   "required_instrument": "Synchronized multichannel low-dark-count single-photon detectors covering 400–900 nm with dichroic 400–600 and 650–900 nm channels, plus EEG, scalp thermography, perfusion monitoring, and calibrated ambient-light sensors.",
+   "engine_native_score": 0.24,
+   "novelty_self_claim": "This sharpens H12 by requiring the mental-state association to have the wavelength dependence expected for brain-to-scalp transmission and to survive anatomical skin controls, common-mode detector controls, and light-free task delivery."
+  }
+ ]
+}

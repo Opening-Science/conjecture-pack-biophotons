@@ -1,0 +1,467 @@
+{
+ "hof_version": "1.0",
+ "run": {
+  "engine": "baseline-claude",
+  "seed_id": "Q5",
+  "backend": "claude-subagent",
+  "config_hash": "821a0241f524",
+  "corpus_calls": 30
+ },
+ "hypotheses": [
+  {
+   "id": "Q5-1",
+   "statement": "Every published UPE Fano-factor excess is quantitatively recoverable from detection efficiency and dark-count fraction alone, so that after the correction F_s - 1 = (F_meas - 1)(S+D)/(eta*S) the source-level Fano factor of one fixed reference preparation (germinating mung bean or Saccharomyces cerevisiae under Fenton-driven oxidation) is statistically indistinguishable from 1 and agrees within its stated uncertainty across cooled-PMT, SiPM and EMCCD detector classes measuring the same sample.",
+   "scope": {
+    "population": "One shared reference preparation measured in parallel by three detector classes: (a) germinating mung bean seeds (Vigna radiata, 500 seeds, 24 h imbibed), (b) S. cerevisiae culture with defined Fe(II)/H2O2 Fenton challenge",
+    "condition": "Same sealed sample chamber and geometry, 300-650 nm, each laboratory independently measuring and reporting eta(lambda), dark count rate D, dead time and collection solid angle",
+    "comparator": "Sealed non-emitting blank of matched geometry and temperature measured in the same session; and the same measured F reported without eta/D correction",
+    "outcome": "Corrected source Fano factor F_s with 95% CI, per detector class, plus the between-detector-class variance component"
+   },
+   "null_hypothesis": "Corrected F_s departs from 1 in the same direction and by a consistent magnitude across all three detector classes (super- or sub-Poissonian source statistics survive the correction), or corrected F_s disagrees between detector classes beyond stated uncertainty (the two-parameter correction model is itself wrong and a residual instrument-specific non-Poissonian artifact exists).",
+   "estimand": "F_s = 1 + (F_meas - 1)*(S+D)/(eta*S) with 95% CI per detector class; and the intraclass correlation of F_s across detector classes (metrological comparability index).",
+   "causal_level": "L2",
+   "rationale": [
+    {
+     "step": "The field's own critical review of UPE photocount statistics states that claims about the statistical properties of UPE are highly controversial (in contrast to intensity and spectrum, where there is some consensus) and closes by saying detectors with properties closer to ideal detectors may bring at least partial answers to open questions about UPE statistics; this locates the controversy in the detector, not the source.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2141663490"
+     ]
+    },
+    {
+     "step": "Empirically, the measured Fano factor of UPE from germinating mung bean is reported to approach the Poisson value as the signal-to-dark-count ratio increases, which is a direct observation that the reported excess is a function of dark-count fraction rather than of the source.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2412356141"
+     ]
+    },
+    {
+     "step": "Fano factors near but above 1 (e.g. mean count 27.25, variance 34.01, F ~ 1.25) are reported from germinating-seed measurements and are read in the field as indicating photocount statistics departing from Poisson, and departure from Poisson is explicitly treated as an indication of non-classical light.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W4400038049",
+      "W4387501461",
+      "W3217353367"
+     ]
+    },
+    {
+     "step": "Derivation. For a source with mean photon number n and Fano factor F_s, Bernoulli detection with efficiency eta gives detected counts m with mean S = eta*n and Var(m) = eta^2*Var(n) + eta*(1-eta)*n, hence F_d = 1 + eta*(F_s - 1). Adding independent Poissonian dark counts of mean D gives total mean S+D and total variance S*F_d + D, so F_meas = 1 + [S/(S+D)]*eta*(F_s - 1). Inverting: F_s - 1 = (F_meas - 1)*(S+D)/(eta*S).",
+     "justification_type": "computation"
+    },
+    {
+     "step": "Numerical consequence. A single reported F_meas = 1.25 maps to F_s = 3.5 for eta = 0.20 and S/(S+D) = 0.5, but to F_s = 1.31 for eta = 0.90 and S/(S+D) = 0.9 - a factor-of-8 spread in the inferred source excess (2.5 vs 0.31) driven entirely by two instrument parameters. Those two parameters differ by exactly this much across the detectors actually in use: quantum efficiency 0.23 with 22 dark counts/s for a head-UPE PMT, 0.70 with <25 cps for a SPAD module, and >0.90 with ~1e-4 dark current for a back-illuminated EMCCD.",
+     "justification_type": "computation"
+    },
+    {
+     "step": "The three detector classes named in the scope are all in current use on exactly these preparations, so the parallel measurement is buildable today: cooled PMT photon counters, SiPM/SPAD photon-counting modules, and EMCCD/CCD cameras with >90% visible QE.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W7168813583",
+      "W3114612921",
+      "W4409735377",
+      "W4303614346",
+      "W2747722102",
+      "W3126489816"
+     ]
+    },
+    {
+     "step": "Poissonian dark counts and non-stationary trends are already known to contaminate variance-based statistics of these signals, and a dedicated pre-processing method exists because trend information survives in the variance of Poisson-like photonic signals; so the correction must be applied to detrended series, not raw ones.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2775301342",
+      "W2964505745"
+     ]
+    }
+   ],
+   "cited_work_ids": [
+    "W2141663490",
+    "W2412356141",
+    "W4400038049",
+    "W4387501461",
+    "W3217353367",
+    "W7168813583",
+    "W3114612921",
+    "W4409735377",
+    "W4303614346",
+    "W2747722102",
+    "W3126489816",
+    "W2775301342",
+    "W2964505745"
+   ],
+   "proposed_experiment": "Split one physical sample chamber (mung bean germination vessel and, separately, a Fenton-challenged yeast culture) between a cooled PMT photon counter, a SiPM/SPAD module and a back-illuminated EMCCD run as a binary photon-counter array, measuring simultaneously or in immediately consecutive randomised blocks under identical geometry. Each detector's eta(lambda), dark count rate, dead time and collection solid angle are measured in-house (Klyshko/SPDC absolute calibration or a calibrated attenuated source), not taken from datasheets. Compute F_meas on Poisson-pre-processed count series in matched integration bins (0.1, 1, 10 s), then invert to F_s. Pre-register the tolerance: comparability holds if the three F_s estimates overlap at 95% and the pooled F_s CI contains 1.",
+   "required_instrument": "Cooled multialkali PMT photon counter (300-650 nm, dark rate <25 cps), Si-SPAD/SiPM photon-counting module (400-900 nm), and back-illuminated EMCCD operated as a binary photon counter (400-900 nm, QE >90%); plus an SPDC correlated-photon-pair source or calibrated attenuated lamp for absolute eta determination.",
+   "engine_native_score": 0.72,
+   "novelty_self_claim": "The register carries H2.g2 and H2.sq as bare claims that g2(0) or the photocount distribution deviates from the classical expectation 'beyond detector artifacts'. This hypothesis supplies the missing operational content of that phrase: an explicit two-parameter inversion that makes 'beyond detector artifacts' a computable number, and shows that a single published F value is compatible with source excesses differing by ~8x. It thereby exposes the hidden assumption both sub-claims rest on and specifies the measurement that would decide between them."
+  },
+  {
+   "id": "Q5-2",
+   "statement": "A sealed, chemically defined luminescent transfer standard circulated among independent UPE laboratories will be reported in absolute units (photons s-1 into 4 pi, 400-650 nm) with a between-laboratory log10 standard deviation at least three times smaller than the between-laboratory log10 standard deviation obtained by the same laboratories on a common biological sample, demonstrating that the field's non-comparability is dominated by the calibration chain rather than by biological variance.",
+   "scope": {
+    "population": "At least five independent laboratories that routinely publish UPE measurements, each using its own detector and its own current calibration practice",
+    "condition": "Two artefacts circulated in a round-robin: (a) a sealed chemical reference emitter - luminol at defined concentration/pH, and a Fe(II)/H2O2 Fenton cell in defined buffer - in a standardised cuvette and holder; (b) a standardised biological sample - a defined mass of Vigna radiata seeds imbibed under a fixed protocol",
+    "comparator": "The same laboratories' raw instrument-native reports (counts/s or relative light units) for both artefacts, and a light-tight blank of identical geometry",
+    "outcome": "Absolute emission rate in photons s-1 (4 pi, 400-650 nm) reported by each laboratory for each artefact, with each laboratory's declared uncertainty budget"
+   },
+   "null_hypothesis": "Between-laboratory agreement on the chemical transfer standard is no better than on the biological sample (log10 SD ratio < 3), meaning radiometric calibration is not the dominant source of the field's disagreement and standardisation of the detection chain alone will not deliver comparability.",
+   "estimand": "Ratio R = SD_log10(absolute rate, biological sample) / SD_log10(absolute rate, chemical standard), across laboratories; secondary estimand: the fraction of participating laboratories able to report an absolute rate at all.",
+   "causal_level": "L2",
+   "rationale": [
+    {
+     "step": "Given by the seed brief: the field states that luminescence-detection papers rarely report light signals in absolute photon numbers and never report detection limits in units of photon emission rate density, precluding any direct sensitivity comparison; and that UPE remains a technical curiosity rather than a reliable biomarker in the absence of standardization.",
+     "justification_type": "given"
+    },
+    {
+     "step": "Chemical luminescence standards are already the accepted way to calibrate a photon-counting detector in this literature: the luminol standard is described as the easiest way to calibrate the PMT of a light-detection device, and absolute chemiluminescence intensities have been estimated by comparison against the luminol standard.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2790280419",
+      "W1964855530"
+     ]
+    },
+    {
+     "step": "A precedent exists in this corpus for converting a biological UPE measurement to absolute units via a calibrated light source, and that conversion was decisive: absolute bio-emission intensity from frog and sterlet retinas was found to be at least 100x lower than required to produce discrete rod dark noise, which rejected a standing hypothesis. Absolute units, not counts, carried the inferential weight.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2939950252"
+     ]
+    },
+    {
+     "step": "Candidate chemical emitters at the right intensity scale are demonstrated in the corpus: non-catalytic disproportionation of hydrogen peroxide in pure water produces detectable ultraweak luminescence, and Fenton-reagent-initiated oxidation produces a dose-dependent autoluminescence signal in yeast culture, so a chemically defined cell can be tuned to the UPE flux regime rather than the bright-chemiluminescence regime.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W3161989600",
+      "W3121005468",
+      "W4308366428"
+     ]
+    },
+    {
+     "step": "The failure mode the round-robin targets is documented in the neighbouring low-light field: a systematic review of 74 photobiomodulation papers found 73% reported no information on how light was measured and relied on manufacturer-stated values, with power missing in 41%, beam area in 40%, irradiance in 43% and radiant energy in 74% - and the authors' remedy is a mandatory ten-parameter reporting list. The same remedy is testable in UPE by round-robin.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2295473497"
+     ]
+    },
+    {
+     "step": "That UPE laboratories currently publish in non-convertible instrument-native units is directly observable in the corpus: recent measurement papers report emission solely as relative light units from a commercial luminometer, with the RLU asserted to indicate photons per second per square centimetre but no conversion factor, QE curve or collection geometry given.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W7117718612",
+      "W7128597566"
+     ]
+    },
+    {
+     "step": "Computation of the expected effect size. The detected rate is C = Phi * A_eff * g * eta_bar * T, where g is the geometric collection factor, eta_bar the band-averaged quantum efficiency, T the optical transmission and A_eff the emitting area. Reported human-surface UPE spans 1-1000 photons s-1 cm-2 in one source and 10-10^3 in another, i.e. three decades. If g, eta_bar and T each carry an unreported factor-of-3 uncertainty, their product spans 27x (1.4 decades) - about half the observed literature spread - so the round-robin has the dynamic range to separate the metrological from the biological component.",
+     "justification_type": "computation"
+    }
+   ],
+   "cited_work_ids": [
+    "W2790280419",
+    "W1964855530",
+    "W2939950252",
+    "W3161989600",
+    "W3121005468",
+    "W4308366428",
+    "W2295473497",
+    "W7117718612",
+    "W7128597566",
+    "W2797018767",
+    "W4404240787"
+   ],
+   "proposed_experiment": "Build two sealed transfer artefacts (a luminol cell and a Fe(II)/H2O2 Fenton cell, both in an identical quartz cuvette and light-tight holder, with a certified stable output over the circulation window) plus a matched dark blank, and ship them sequentially to >=5 UPE laboratories with a fixed measurement protocol but no prescribed calibration method. Each laboratory returns raw counts, its stated conversion to photons s-1 (4 pi, 400-650 nm), and its uncertainty budget. Repeat with a standardised mung-bean germination sample prepared identically at each site. Compute the two between-laboratory log10 SDs and their ratio. Pre-register R >= 3 as support and R < 3 as refutation. Anchor the chain to an SI-traceable absolute detector efficiency at one node using SPDC correlated-pair (Klyshko) calibration.",
+   "required_instrument": "Participating laboratories' own detectors (cooled PMT 300-650 nm, EMCCD/CCD 400-900 nm, SiPM/SPAD 400-900 nm) plus, at the anchor node, an SPDC twin-beam source for absolute, source-independent detector-efficiency calibration in the 400-800 nm band.",
+   "engine_native_score": 0.68,
+   "novelty_self_claim": "The register contains no metrology claim at all; the seed brief's proposal for an inter-laboratory comparison is stated as an agenda item, not as a hypothesis. This converts it into a falsifiable claim with a pre-registered decision threshold and, critically, makes the alternative live: if R < 3, the field's disagreement is not a calibration problem and the whole standardisation agenda is misdirected. That negative outcome is currently unstated anywhere on the register."
+  },
+  {
+   "id": "Q5-3",
+   "statement": "The wavelength-band ratios that the human-UPE literature uses to discriminate clinical groups are artefacts of the detector's spectral response: recomputing the published 495 nm / 550 nm cut-off-filter ratio after correcting for the measured (not nominal) filter transmission and the detector's per-band quantum efficiency changes the ratio by more than the reported between-group difference, and the healthy-versus-patient discrimination does not survive the correction.",
+   "scope": {
+    "population": "Adult humans, fingertip and dorsal-hand surface UPE, healthy controls versus a defined clinical group (common cold, or type-2 diabetes)",
+    "condition": "Cut-off-filter or bandpass photon counting over 400-700 nm with per-band QE and per-filter transmission measured on the actual instrument",
+    "comparator": "The same raw photocount data analysed without spectral-response correction, i.e. the published analysis",
+    "outcome": "Corrected band ratio and its between-group difference with 95% CI, versus the uncorrected band ratio and its between-group difference"
+   },
+   "null_hypothesis": "The spectral-response correction shifts the band ratios by less than the between-group difference and the group discrimination survives with its effect size substantially intact, in which case the spectral-information claim is robust to the metrology gap and H11 is strengthened rather than undermined.",
+   "estimand": "Delta_corrected - Delta_uncorrected, where Delta is the standardised between-group difference in the band ratio; and the correction factor C = eta_bar(band A)/eta_bar(band B) applied to each ratio.",
+   "causal_level": "L2",
+   "rationale": [
+    {
+     "step": "The discriminating study itself publishes its instrument's per-band quantum efficiencies: 27% (290-395 nm), 23% (395-455 nm), 15% (455-495 nm), 6% (495-550 nm), 3% (550 nm and above), and reports its discrimination as a photon-emission ratio between the 550 nm and 495 nm filters.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2049213668"
+     ]
+    },
+    {
+     "step": "Computation. An uncorrected count ratio between two bands is the true photon-number ratio multiplied by eta_bar(A)/eta_bar(B). For the 455-495 nm versus 495-550 nm pair that factor is 15/6 = 2.5; for the 395-455 nm versus >550 nm pair it is 23/3 = 7.7. The published between-group differences in such ratios are far smaller than 2.5x, so any inter-instrument difference in QE roll-off - or any error in the assumed effective band edges - is large enough to create or destroy the reported discrimination.",
+     "justification_type": "computation"
+    },
+    {
+     "step": "Correcting only with manufacturer-stated transmission values is current practice and is insufficient: a plant-UPE study explicitly normalised measured photon counts by each filter's manufacturer-provided average transmission, and the same study reports that PMT photocathode radiant-sensitivity limits prevented accurate analysis over 700-720 nm.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2808116502"
+     ]
+    },
+    {
+     "step": "Independent confirmation that instrument spectral response, not source spectrum, dominates the reported band content: a 2026 re-analysis of head UPE shows photons below 600 nm are strongly attenuated by scalp and skull while longer wavelengths fall largely outside the effective spectral sensitivity of the PMTs used, so the recovered 'spectrum' is a product of two steep and opposite roll-offs.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W7168813583"
+     ]
+    },
+    {
+     "step": "The measurement is buildable now with better spectral control than cut-off filters: an EMCCD behind a liquid-crystal tunable filter has already been used to record human-hand UPE at 400, 450, 500, 550, 600, 650 and 700 nm, and the authors themselves note that non-uniform spectral transmittance of the spectrograph is the limiting factor to be fixed.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2797018767"
+     ]
+    },
+    {
+     "step": "The clinical stakes are concrete because band-ratio and spectral features feed published diagnostic claims for type-2 diabetes and for traditional-medicine subtyping.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2594646273",
+      "W2554446151",
+      "W2950162936",
+      "W4321242749"
+     ]
+    }
+   ],
+   "cited_work_ids": [
+    "W2049213668",
+    "W2808116502",
+    "W7168813583",
+    "W2797018767",
+    "W2594646273",
+    "W2554446151",
+    "W2950162936",
+    "W4321242749"
+   ],
+   "proposed_experiment": "Re-run the two-hand cut-off-filter protocol on matched healthy and clinical cohorts (n >= 20 per group), but measure on the actual instrument: (i) eta(lambda) at 10 nm resolution against an SPDC- or calibrated-source-referenced standard, (ii) each filter's transmission spectrum on the same optical path, (iii) the dark spectrum. Compute band ratios twice from identical raw counts - once as published, once fully corrected - and compare the two between-group effect sizes with a paired bootstrap on the same subjects. Independently repeat the spectral measurement with an EMCCD behind a liquid-crystal tunable filter to obtain a correction-independent spectrum on the same hands in the same session.",
+   "required_instrument": "Cooled PMT photon counter with measured per-wavelength QE plus a characterised cut-off/bandpass filter set (300-700 nm); cross-check arm: EMCCD (QE >90%) behind a liquid-crystal tunable filter, 400-700 nm.",
+   "engine_native_score": 0.75,
+   "novelty_self_claim": "H11 asserts that UPE spectral distribution carries state-specific information beyond total intensity, and H8/H3/H9 are fed by it. This hypothesis attacks H11 at the only point where it is currently decidable: it shows that the published spectral feature is multiplied by a known instrument factor of up to 7.7 that no paper divides out, and specifies the paired re-analysis on identical raw data that separates the source spectrum from the QE curve. That test does not exist on the register."
+  },
+  {
+   "id": "Q5-4",
+   "statement": "Under properly light-tight conditions with absolute-unit reporting, the excess surface photon flux measured from a human head is reproduced within a factor of two by a thermally and optically matched inanimate phantom, establishing that reported extracranial 'brain UPE' magnitudes are set by the measurement environment rather than by the brain.",
+   "scope": {
+    "population": "Healthy adult volunteers (n >= 15), occipital and temporal scalp; plus a head phantom matched for surface reflectance, emissivity and surface temperature 35-37 C, plus an empty light-tight chamber",
+    "condition": "Photon counting in a fully dark-adapted, verified light-tight enclosure, 400-700 nm on a PMT arm and 600-1000 nm on a silicon SPAD/EMCCD arm, with dark count rate, QE and collection geometry declared and the result reported in photons s-1 cm-2",
+    "comparator": "Matched phantom in the identical chamber and session; empty-chamber blank; and the same protocol run with a deliberately imperfect seal to quantify the contamination channel",
+    "outcome": "Absolute surface photon flux density (photons s-1 cm-2, per band) for head, phantom and blank, with 95% CI"
+   },
+   "null_hypothesis": "Head excess flux exceeds phantom excess flux by more than a factor of two, in a band where scalp and skull transmit and the detector responds, and this persists across sessions and seal conditions - i.e. a genuine biological head signal survives the phantom control and the contamination explanation fails.",
+   "estimand": "Ratio Phi_head / Phi_phantom in absolute photons s-1 cm-2 per spectral band, with 95% CI; plus the fraction of previously published head-UPE magnitudes reproduced by the phantom arm.",
+   "causal_level": "L5",
+   "rationale": [
+    {
+     "step": "A 2026 analysis reports that under properly dark conditions the UPE from the head is much weaker than values published in the brain-UPE literature, that the large reported signals can be explained by background light contamination, and that even a genuine background-free head signal would be dominated by scalp rather than brain as long as PMTs are used.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W7168813583"
+     ]
+    },
+    {
+     "step": "That analysis performs exactly the absolute conversion the rest of the field omits - quantum efficiency 0.23 applied and an average dark count rate of 22 counts/s subtracted before computing flux - which is what makes its refutation quantitative rather than rhetorical.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W7168813583"
+     ]
+    },
+    {
+     "step": "The claims at issue are live and are being built upon: head/brain UPE is proposed as a non-electrical modality for investigating brain function, as the read-out for a skull-implant photonic brain-computer interface, and as an emotional-state and imagined-light correlate in human head measurements.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W4417459026",
+      "W3217353367",
+      "W3174216096",
+      "W2138303176"
+     ]
+    },
+    {
+     "step": "Computation of the phantom's required match. A blackbody at 37 C contributes negligibly in the visible: the characterisation of an EM-CCD as a binary photon counter finds non-negligible sensitivity to blackbody radiation only above T = 50 C. Therefore a phantom matched to 35-37 C isolates the non-thermal contamination channel (stray light leakage, chamber-material afterglow, detector-window luminescence) rather than confounding it with thermal emission, and any residual difference between head and phantom in the 400-700 nm band cannot be attributed to temperature.",
+     "justification_type": "computation"
+    },
+    {
+     "step": "Computation of the spectral trap. The head measurement is squeezed between two roll-offs: tissue attenuation removes the short-wavelength half of the band while PMT cathode sensitivity removes the long-wavelength half. A detector arm extending to 1000 nm (silicon SPAD or back-illuminated EMCCD with >90% QE across the visible) is therefore required to test whether any surviving head signal sits in the window where tissue transmits but a PMT does not respond - a band no published head-UPE study has covered.",
+     "justification_type": "computation"
+    },
+    {
+     "step": "Detectors with the needed long-wavelength reach and absolute characterisability are demonstrated in this corpus on whole-animal and whole-plant samples: EMCCD/CCD systems with QE >90-95% across the visible and dark current on the order of 1e-4 have already imaged UPE contrast between live and dead mice.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W4409735377",
+      "W4404240787",
+      "W3126489816"
+     ]
+    }
+   ],
+   "cited_work_ids": [
+    "W7168813583",
+    "W4417459026",
+    "W3217353367",
+    "W3174216096",
+    "W2138303176",
+    "W4409735377",
+    "W4404240787",
+    "W3126489816"
+   ],
+   "proposed_experiment": "In one light-tight, verified-sealed chamber, alternate within a single session between (i) a dark-adapted volunteer's scalp, (ii) a temperature-controlled head phantom at 36 C with matched surface reflectance, and (iii) an empty chamber, randomising order across >=15 volunteers. Run two detector arms simultaneously on the same surface patch: a cooled PMT (400-700 nm) and a silicon SPAD or EMCCD (600-1000 nm). Report every result as photons s-1 cm-2 with declared eta(lambda), D, dead time and collection solid angle. Add a deliberate calibrated leak condition to measure the contamination transfer function. Decision rule: contamination explanation is supported if Phi_head / Phi_phantom <= 2 in every band; refuted if the ratio exceeds 2 in a transmitting, detector-responsive band and replicates across sessions.",
+   "required_instrument": "Cooled PMT photon counter 400-700 nm with measured QE and dark rate <25 cps, plus a silicon SPAD module or back-illuminated EMCCD covering 600-1000 nm at QE >90%; verified light-tight enclosure with a calibrated leak port; temperature-controlled head phantom.",
+   "engine_native_score": 0.78,
+   "novelty_self_claim": "H6 asserts intracranial UPE co-varies with neural activity and H12 records the intention/mental-state claims; the register has no claim about whether the extracranial signal those literatures rest on exists in absolute units at all. This supplies the phantom control and the two-arm spectral design that would settle it, and it converts a published refutation from a rebuttal into a pre-registered, quantitatively decidable experiment with an explicit failure condition for the contamination explanation."
+  },
+  {
+   "id": "Q5-5",
+   "statement": "A UPE-based diagnostic classifier trained at one site loses more than half its AUC when applied to a second site using a different detector class, and re-expressing the same features in absolute, spectrally-corrected units (photons s-1 cm-2 per band) recovers at least half of the lost AUC - showing that the field's diagnostic non-transfer is dominated by the missing calibration chain rather than by the biology.",
+   "scope": {
+    "population": "Adults with early-stage type-2 diabetes and matched healthy controls (n >= 60 per site), fingertip and dorsal-hand surface UPE",
+    "condition": "Two independent sites, deliberately different detector classes (cooled PMT photon counter at site A, EMCCD at site B), identical sampling protocol, dark adaptation and anatomical landmarks",
+    "comparator": "Same classifier evaluated (i) within-site out-of-sample, (ii) cross-site on raw instrument-native counts, (iii) cross-site on absolute spectrally-corrected features",
+    "outcome": "Out-of-sample AUC in each of the three settings, with 95% CI by site-level bootstrap"
+   },
+   "null_hypothesis": "Absolute-unit re-expression recovers less than half the lost cross-site AUC (recovery fraction < 0.5), meaning the non-transfer is driven by biological, protocol or population differences and calibration is not the binding constraint - which would remove the metrology explanation for the field's diagnostic irreproducibility.",
+   "estimand": "Recovery fraction R = (AUC_cross_absolute - AUC_cross_raw) / (AUC_within - AUC_cross_raw), with 95% CI.",
+   "causal_level": "L6",
+   "rationale": [
+    {
+     "step": "Given by the seed brief: the field lists the absence of standardized protocols for clinical measurement among its key experimental constraints, and states that UPE remains a technical curiosity rather than a reliable biomarker without standardization.",
+     "justification_type": "given"
+    },
+    {
+     "step": "Single-site UPE diagnostic claims for type-2 diabetes exist and are the natural training set: UPE has been reported to distinguish healthy subjects from type-2 diabetes patients, proposed as a non-invasive tool for detecting early-stage type-2 diabetes, and combined with plasma metabolomics for subtyping pre-diabetes.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2594646273",
+      "W2554446151",
+      "W2950162936"
+     ]
+    },
+    {
+     "step": "The field has never had an evaluation instrument for this kind of claim: a systematic review of 56 included human-UPE studies (1 RCT, 27 CCT, 28 observational) concluded that a tool for systematically evaluating this bio-evaluation methodology is not currently available and would be worth developing - i.e. no site-transfer criterion exists.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2109151393"
+     ]
+    },
+    {
+     "step": "The two detector classes named differ in exactly the parameters that would break raw-count transfer: PMT arms in this literature run at QE ~0.23 with tens of dark counts per second, while EMCCD arms run at QE >0.90 with dark current four orders of magnitude lower, and each has a different spectral weighting.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W7168813583",
+      "W4409735377",
+      "W3126489816",
+      "W2049213668"
+     ]
+    },
+    {
+     "step": "Computation of the expected AUC damage. A classifier boundary on raw counts is a threshold on C = Phi * A_eff * g * eta_bar * T. Moving to a detector with a different eta_bar rescales C multiplicatively and, because eta_bar is wavelength-dependent, differentially across features - so a linear boundary in raw-count feature space is both translated and sheared. A 2-4x multiplicative shift with a differential band weighting of up to 2.5x (from published per-band QE of 15% versus 6%) is more than enough to push a boundary tuned to a within-site separation of well under one decade to chance. Absolute-unit re-expression removes the multiplicative term exactly and the shear to the accuracy of the measured eta(lambda), which is why R is the informative quantity.",
+     "justification_type": "computation"
+    },
+    {
+     "step": "Absolute-unit reporting is achievable at both sites with existing hardware and existing precedent: absolute bio-emission intensity has been obtained by referencing a photon-counting system to a calibrated light source, and national metrology institutes provide traceable or absolute calibration of single-photon detectors and sources.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2939950252",
+      "W4378377796",
+      "W2560940965"
+     ]
+    }
+   ],
+   "cited_work_ids": [
+    "W2594646273",
+    "W2554446151",
+    "W2950162936",
+    "W2109151393",
+    "W7168813583",
+    "W4409735377",
+    "W3126489816",
+    "W2049213668",
+    "W2939950252",
+    "W4378377796",
+    "W2560940965"
+   ],
+   "proposed_experiment": "Prospective two-site study with deliberately mismatched detector classes. Site A (cooled PMT, 300-650 nm) and Site B (EMCCD, 400-900 nm) each recruit >=60 early-stage T2D and >=60 matched controls under one shared clinical and dark-adaptation protocol. Both sites measure eta(lambda), dark rate, dead time, filter transmission and collection geometry in-house against a common transfer standard, and archive raw counts. Train a locked classifier at Site A; evaluate within-site out-of-sample, then cross-site twice - once on raw counts, once after converting both sites' archived raw counts to photons s-1 cm-2 per band. Report R with a site-level bootstrap CI. Pre-register R >= 0.5 as support.",
+   "required_instrument": "Site A: cooled PMT photon counter, 300-650 nm, characterised per-band QE and dark rate. Site B: back-illuminated EMCCD, 400-900 nm, QE >90%, characterised dark current and clock-induced-charge. Shared: a circulated chemical transfer standard and, at one node, SPDC-based absolute detector calibration.",
+   "engine_native_score": 0.6,
+   "novelty_self_claim": "H8 asks whether surface UPE adds incremental predictive power for oxidative-stress state beyond skin temperature, perfusion and environment. It assumes the measurement transfers between instruments; nothing on the register tests that. This hypothesis makes cross-instrument transfer itself the estimand and, by pre-registering the recovery fraction R, distinguishes a metrological failure from a biological one - the discrimination H8 cannot currently make, and the one that decides whether H8's nulls to date mean anything."
+  },
+  {
+   "id": "Q5-6",
+   "statement": "Spontaneous UPE has a conserved absolute photon yield per unit oxidative turnover: in a chemically defined preparation the ratio of emitted photons (4 pi, 350-700 nm) to moles of oxidant consumed is reproducible within a factor of three across laboratories and detector classes, and this yield, multiplied by an independently measured cellular ROS flux, accounts for the observed spontaneous emission of the same culture within a factor of ten.",
+   "scope": {
+    "population": "Saccharomyces cerevisiae culture at defined density in defined medium, with a Fe(II)/H2O2 Fenton oxidative challenge across a dose series; secondary preparation: Chlamydomonas reinhardtii with exogenous linoleic acid driving lipid peroxidation",
+    "condition": "Absolute photon counting, 350-700 nm, with declared eta(lambda), dark rate and collection solid angle, run in parallel with an independent chemical assay of oxidant consumption or peroxidation product accumulation on aliquots of the same culture",
+    "comparator": "Cell-free medium with the identical Fenton challenge (the non-biological chemiexcitation baseline), and unchallenged culture",
+    "outcome": "Photon yield Phi_UPE = photons s-1 (4 pi, 350-700 nm) per mol s-1 of oxidant consumed, with 95% CI, per laboratory and detector class"
+   },
+   "null_hypothesis": "Phi_UPE varies by more than one order of magnitude between laboratories, or between chemically identical preparations measured on different detector classes, or the yield fails to predict spontaneous emission of the same culture within a factor of ten - in which case absolute units do not buy mechanistic comparability and the oxidative-origin account cannot be closed as a photon budget.",
+   "estimand": "Phi_UPE (dimensionless photons per oxidant molecule) with 95% CI; and the ratio of predicted to observed spontaneous emission rate for the same culture.",
+   "causal_level": "L1",
+   "rationale": [
+    {
+     "step": "The dose-response arm already exists: biological autoluminescence intensity in a S. cerevisiae culture changes with hydrogen peroxide concentration in a dose-dependent manner under Fenton-reagent-initiated oxidation, and the same platform has been developed as a label-free, perturbance-free oxidation monitor.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W3121005468",
+      "W4308366428"
+     ]
+    },
+    {
+     "step": "The chemistry-only baseline for the same denominator is documented: the non-catalytic disproportionation of hydrogen peroxide in pure water produces luminescence detectable with a detectivity-optimised photon counter coupled to a high-albedo Ulbricht cavity, giving a cell-free control that fixes how much of the yield is chemiexcitation rather than biology.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W3161989600",
+      "W3126489816"
+     ]
+    },
+    {
+     "step": "A paired photon/chemistry measurement of the required kind has already been performed in a second organism: linoleic-acid-induced UPE from Chlamydomonas reinhardtii was shown to correlate with lipid peroxidation product accumulation measured by thiobarbituric acid assay, with hydroxyl-radical scavenging, lipoxygenase inhibition and oxygen removal each suppressing emission - so the numerator and denominator can be measured on the same culture.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2034044028"
+     ]
+    },
+    {
+     "step": "The chemiexcitation physics that sets the yield is characterised in the corpus: cyclic-peroxide (1,2-dioxetane and 1,2-dioxetanone) fragmentation preferentially populates triplet or singlet excited product states with quantum yields well below unity, and luminol serves as the calibration standard for the detecting PMT - meaning the yield is a defined chemical quantity, not a free parameter.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2790280419"
+     ]
+    },
+    {
+     "step": "Computation of why the yield, not the intensity, is the comparable quantity. Measured count rate C depends on Phi_UPE, the oxidative flux J, and the instrument factor (A_eff * g * eta_bar * T). Two laboratories reporting C differ by both biology (J) and instrument. Dividing the absolute emission rate by an independently assayed J cancels the biological driver and leaves Phi_UPE, which is a property of the chemistry alone; therefore any residual between-laboratory spread in Phi_UPE beyond the stated assay uncertainty is, by construction, instrumental. A factor-of-three tolerance is the right threshold because it is smaller than the ~1.4-decade spread that unreported g, eta_bar and T can generate but larger than the assay's own reproducibility.",
+     "justification_type": "computation"
+    },
+    {
+     "step": "The claim is currently untestable in the literature because emission is not reported in absolute units: reported spontaneous UPE spans 1-1000 and 10-10^3 photons s-1 cm-2 across sources with no shared conversion, and some current measurement reports give only relative light units.",
+     "justification_type": "citation",
+     "work_ids": [
+      "W2797018767",
+      "W4404240787",
+      "W3170639556",
+      "W7128597566"
+     ]
+    }
+   ],
+   "cited_work_ids": [
+    "W3121005468",
+    "W4308366428",
+    "W3161989600",
+    "W3126489816",
+    "W2034044028",
+    "W2790280419",
+    "W2797018767",
+    "W4404240787",
+    "W3170639556",
+    "W7128597566"
+   ],
+   "proposed_experiment": "In each of >=3 laboratories with different detector classes, run a Fenton dose series on a common S. cerevisiae strain at fixed OD in defined medium, measuring absolute photon emission (350-700 nm, converted to photons s-1 into 4 pi using measured eta(lambda), collection solid angle and transmission) while assaying H2O2 consumption on parallel aliquots by a standard peroxide assay, plus the cell-free medium control at each dose. Compute the regression slope in absolute units - that slope is Phi_UPE. Independently, measure the same culture's spontaneous emission and its baseline ROS flux, and test whether Phi_UPE * J predicts the observed spontaneous rate within 10x. Repeat the numerator/denominator pairing in Chlamydomonas with linoleic acid and TBARS. Refutation: between-laboratory spread of Phi_UPE > 1 decade, or prediction error > 10x.",
+   "required_instrument": "Cooled PMT photon counter (350-700 nm) with in-house measured eta(lambda) and dark rate, optionally coupled to a high-albedo Ulbricht cavity for 4 pi collection; cross-check arm: EMCCD operated as a binary photon-counter array (400-900 nm); plus a standard spectrophotometric/fluorimetric peroxide and TBARS assay.",
+   "engine_native_score": 0.62,
+   "novelty_self_claim": "H4a claims that known oxidative pathways account for the dominant fraction of spontaneous UPE intensity, but 'dominant fraction' has never been given a number because emission is not reported in absolute units. This sharpens H4a into a closed photon budget with an explicit quantity (photons per oxidant molecule), an explicit cell-free chemiexcitation baseline, and a factor-of-ten prediction test - the decisive measurable form the register does not contain, and one whose failure would be informative in the opposite direction from H4a's current framing."
+  }
+ ]
+}
