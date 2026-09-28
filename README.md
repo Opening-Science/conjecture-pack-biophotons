@@ -82,6 +82,22 @@ different entry-point snippets than the committed seeds, which were
 built against the full-text corpus. The committed seeds are what run 1
 was asked, so they stay as they are.
 
+## Maintainers
+
+The maintainers' workspace holds this pack and the hub as submodules and
+runs the pack against the full-text corpus through a two-line overlay
+(`extends: pack/pack.yaml` plus a `corpus:` override; see the hub README).
+Runs made there land in this repository's `state/`. A new corpus
+release is built there with
+
+```bash
+python pack/corpus/build_release.py --kb literature/knowledgebase.sqlite \
+    --fieldmap biophoton-fieldmap/data/db/fieldmap.sqlite --out pack/corpus/release
+```
+
+and published as the assets of a new `corpus-vN` release, with the tag
+bumped in `corpus/fetch.py`.
+
 ## Licence
 
 The pack's own content (questions, claim register and curation, runs,

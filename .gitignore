@@ -10,3 +10,5 @@ state/judge/pass1_phantom_sandbox/runs/
 state/verifier_bench/taskA_KEY_local.json
 __pycache__/
 .DS_Store
+# stance-audit answer keys: local only, the audit sheet is blinded
+outputs/stance_audit/audit_KEY*

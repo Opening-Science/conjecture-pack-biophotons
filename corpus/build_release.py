@@ -1,8 +1,8 @@
 """Build the pack's distributable corpus from the full local knowledgebase.
 
-Maintainers only: this runs in the private workspace that holds the full
-knowledgebase (its default paths are that workspace's). Everyone else
-gets its output with corpus/fetch.py.
+Maintainers only: it needs the full knowledgebase and field map, which
+live in the maintainers' workspace. Everyone else gets its output with
+corpus/fetch.py.
 
 The local knowledgebase holds full-text bodies of 4,533 works, much of
 it publisher text that cannot be redistributed. The release keeps the
@@ -16,8 +16,8 @@ instead of titles, abstracts and bodies, so snippets come from abstracts.
 Every work stays in the corpus, so every citation in the pack's runs
 still resolves.
 
-    python corpus/build_release.py            # -> corpus/release/
-    python corpus/build_release.py --kb PATH --fieldmap PATH --out DIR
+    python corpus/build_release.py --kb FULL_KB --fieldmap FULL_FIELDMAP
+                                               # -> corpus/release/
 
 Writes knowledgebase.sqlite, fieldmap.sqlite (citation edges only) and
 SHA256SUMS; publish them as assets of a GitHub release of the pack repo,
@@ -31,9 +31,6 @@ import sqlite3
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
-ROOT = HERE.parent
-KB = ROOT / "literature" / "knowledgebase.sqlite"
-FIELDMAP = ROOT / "biophoton-fieldmap" / "data" / "db" / "fieldmap.sqlite"
 
 # works columns that describe the local full-text holding, not the work
 LOCAL_ONLY = {"fulltext_file", "n_pages", "n_chars", "fulltext_quality",
@@ -107,8 +104,10 @@ def check(out: Path) -> None:
 
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument("--kb", type=Path, default=KB)
-    ap.add_argument("--fieldmap", type=Path, default=FIELDMAP)
+    ap.add_argument("--kb", type=Path, required=True,
+                    help="the full knowledgebase.sqlite")
+    ap.add_argument("--fieldmap", type=Path, required=True,
+                    help="the full fieldmap.sqlite")
     ap.add_argument("--out", type=Path, default=HERE / "release")
     a = ap.parse_args()
     a.out.mkdir(parents=True, exist_ok=True)
