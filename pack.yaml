@@ -114,3 +114,39 @@ outputs:
 # run state: seeds, engine runs, merge, judge verdicts, audit.db, the
 # verifier bench. Written by the hub, owned by the pack.
 state: state
+
+# how the corpus is built (the hub's builder/, see its config.py). The
+# seed bibliography and the working directories are the maintainers'
+# workspace's, set in its overlay; what is here is the field's vocabulary
+# and curation, i.e. what makes a rebuild this field's corpus.
+build:
+  # report whether seed matching reaches this many resolved works
+  min_resolved: 240
+  # topic-name substrings that mark the core (fills works.core_topic)
+  core_topic_hints: [photon, luminescence, chemiluminescence, bioluminescence,
+                     reactive oxygen, oxidative, free radical, biophoton]
+  # instrument terms that make a problem sentence a measurement gap
+  gap_terms: ['dark[- ]count', 'absolute (?:photon flux|radiometr)']
+  # surname-initial keys verified safe to merge across split author records
+  author_merge_whitelist: [wijk e, popp f]
+  # curated works outside the mapped universe, made searchable for engines
+  # (files under the build's literature/curated/)
+  references:
+    - work_id: REF_LOPEZ_2020
+      doi: 10.1140/epjqt/s40507-020-00089-1
+      title: A study to develop a robust method for measuring the detection
+        efficiency of free-running InGaAs/InP single-photon detectors
+      authors: López M, Meda A, Porrovecchio G, Starkwood RA, Genovese M,
+        Brida G, Šmíd M, Chunnilall CJ, Degiovanni IP, Kück S
+      year: 2020
+      type: article
+      file: 2020_Lopez_Detection-efficiency-of-free-running-InGaAs-InP-single-photon-detectors.pdf
+    - work_id: REF_PORROVECCHIO_2016
+      doi: 10.1088/0026-1394/53/4/1115
+      title: Comparison at the sub-100 fW optical power level of calibrating
+        a single-photon detector using a high-sensitive, low-noise silicon
+        photodiode and the double attenuator technique
+      authors: Porrovecchio G, Šmíd M, López M, Hofer H, Rodiek B, Kück S
+      year: 2016
+      type: article
+      file: 2016_Porrovecchio_Sub-100-fW-single-photon-detector-calibration-comparison.pdf
