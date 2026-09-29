@@ -12,8 +12,8 @@ scores badly. Sentences quoted publicly are excluded, so nobody can answer from 
 <p>Inter-verifier agreement: 54 of 60 items (90%).</p>
 <div class="note good"><strong>The labels are not one model family's idiosyncrasy.</strong> They
 were produced by Claude judges; an independent family reproduces them at 97.5% on support and
-refutation and catches 19 of 20 refutations. The circularity objection is not dissolved — both are
-language models — but it is now a measurement rather than a worry. All substantial disagreement
+refutation and catches 19 of 20 refutations. The circularity objection is not dissolved (both are
+language models), but it is now a measurement rather than a worry. All substantial disagreement
 sits in the hedge class.</div>
 
 <p class="label">Headline</p>
@@ -22,7 +22,7 @@ sits in the hedge class.</div>
 Results page.</strong> The quality explanation rules itself out: if one engine simply wrote better
 hypotheses, <em>both</em> judges would rank it higher. Instead each ranks its own higher.
 <br><br><strong>It generalises past this project.</strong> Every engine in the landscape verifies
-with the model that generated — reflection loops, simulated debate, self-scoring, data-driven
+with the model that generated: reflection loops, simulated debate, self-scoring, data-driven
 reward. If a judge favours its own family by up to 40 points, a self-verified certification rate is
 not a measurement of quality. Cross-family verification is the minimum valid design, which is why
 it is wired into the harness rather than offered as an option.</div>
@@ -30,7 +30,7 @@ it is wired into the harness rather than offered as an option.</div>
 <p class="label">Findings</p>
 <h2>What the audit caught</h2>
 <div class="note bad"><strong>Fabricated attributions to real papers.</strong> Every citation
-existed — the mechanical stage passed 78/78 — but three judges independently found the same
+existed (the mechanical stage passed 78/78), but three judges independently found the same
 pattern: specific technical claims credited to works whose abstracts say nothing of the kind. An
 instrument specification was attributed four separate times to a paper containing no numbers at
 all. <em>Existence is not support.</em></div>
@@ -39,14 +39,14 @@ photocount statistic can discriminate coherent from chaotic light, citing a pape
 the applicable regime they <em>are</em> distinguishable. Its derivations were correct; it invoked
 the wrong limit of its own source.</div>
 <div class="note bad"><strong>Checkable physics errors.</strong> Three hypotheses predicted
-300–349 nm emission (82–95 kcal/mol) from triplet carbonyls reaching only 72–80 kcal/mol. Another
+300 to 349 nm emission (82 to 95 kcal/mol) from triplet carbonyls reaching only 72 to 80 kcal/mol. Another
 proposed an estimand that is zero by construction.</div>
 
 <p class="label">Control</p>
 <h2>Evidence completeness changes verdicts, in both directions</h2>
 <p>A judge caught a defect in the harness itself: only the first eight cited abstracts were shown,
 while the prompt promised all of them, and 28% of hypotheses cite more. Re-running with complete
-evidence turned the accident into a controlled comparison — same candidates, same prompt, same
+evidence turned the accident into a controlled comparison: same candidates, same prompt, same
 judges, only the evidence differs.</p>
 <div class="grid">
 <div class="card"><b>83%</b><span>verdict stability across the two passes</span></div>
@@ -54,7 +54,7 @@ judges, only the evidence differs.</p>
 <div class="card"><b>4</b><span>rescued from false declines</span></div>
 <div class="card"><b>1</b><span>false certification caught</span></div>
 </div>
-<div class="note">Incomplete evidence does not simply make auditors harsher — it makes them wrong in
+<div class="note">Incomplete evidence does not simply make auditors harsher; it makes them wrong in
 whichever direction the missing text pointed.</div>
 
 <p class="label">Corpus quality</p>
