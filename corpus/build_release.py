@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
 """Build the pack's distributable corpus from the full local knowledgebase.
 
 Maintainers only: it needs the full knowledgebase and field map, which

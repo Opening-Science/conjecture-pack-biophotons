@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
 """Download the pack's corpus from its GitHub release and verify it.
 
 The corpus is too large for git and is published as release assets
