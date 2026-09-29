@@ -115,11 +115,14 @@ outputs:
 # verifier bench. Written by the hub, owned by the pack.
 state: state
 
-# how the corpus is built (the hub's builder/, see its config.py). The
-# seed bibliography and the working directories are the maintainers'
-# workspace's, set in its overlay; what is here is the field's vocabulary
-# and curation, i.e. what makes a rebuild this field's corpus.
+# how the corpus is built (the hub's builder/, see its config.py): the
+# seed bibliography, the field's vocabulary and its curation. Working
+# directories default to build/ next to this file; the maintainers'
+# workspace maps them onto its own layout in its overlay.
 build:
+  # the 263-entry seed bibliography the field map was expanded from
+  # (a July 2026 snapshot of Michal Cifra's Zotero library)
+  seeds: corpus/seeds.csv
   # report whether seed matching reaches this many resolved works
   min_resolved: 240
   # topic-name substrings that mark the core (fills works.core_topic)
