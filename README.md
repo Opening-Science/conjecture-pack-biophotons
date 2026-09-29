@@ -84,8 +84,9 @@ python run_engine.py --list
 python corpus_api.py search "delayed luminescence" --limit 5
 ```
 
-`fetch.py` needs the GitHub CLI (`gh`), logged in with access to this
-repository.
+`fetch.py` needs the GitHub CLI (`gh`), logged in to any GitHub account.
+It checks each file against the SHA-256 pinned in the script itself, so
+a release asset that was ever replaced is refused.
 
 Rerunning `build_seeds.py` against the release corpus gives slightly
 different entry-point snippets than the committed seeds, which were
@@ -106,7 +107,10 @@ python pack/corpus/build_release.py --kb literature/knowledgebase.sqlite \
 ```
 
 and published as the assets of a new `corpus-vN` release, with the tag
-bumped in `corpus/fetch.py`.
+and the two SHA-256 lines that `build_release.py` prints bumped in
+`corpus/fetch.py`. Releases are immutable once published and release
+tags cannot be moved or deleted, so a corpus is corrected by a new
+`corpus-vN`, never by replacing one.
 
 ## Licence
 
