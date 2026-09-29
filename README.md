@@ -110,9 +110,23 @@ bumped in `corpus/fetch.py`.
 
 ## Licence
 
-The pack's own content (questions, claim register and curation, runs,
-verdicts, outputs, code) is dedicated to the public domain under CC0
-1.0; see `LICENSE`. Abstracts and metadata come from OpenAlex (CC0).
-Statements and evidence sentences are short verbatim excerpts, quoted
-with attribution to the work and page they come from; their copyright
-stays with the original publishers.
+**Data: CC BY-SA 4.0** (`LICENSE`). The pack's own content (the open
+questions, the claim register and its curation, the seed bibliography as
+compiled here, engine runs, judge verdicts, the audit database and the
+outputs) is licensed under Creative Commons Attribution-ShareAlike 4.0
+International. Reuse it freely; credit it and share what you derive from
+it under the same terms. Attribute as:
+
+> Open Science Foundation, *Conjecture pack: biophotons*,
+> github.com/Opening-Science/conjecture-pack-biophotons, CC BY-SA 4.0.
+
+**Code: AGPL-3.0-or-later** (`LICENSE-CODE`), as for the hub: the scripts
+under `corpus/`.
+
+Not the pack's to license, and not covered by either: work metadata and
+abstracts come from OpenAlex, which releases them under CC0; statements
+and evidence sentences are short verbatim excerpts, quoted with
+attribution to the work and page they come from, and their copyright
+stays with the original publishers. Material published earlier under
+CC0, such as the field-map data release on Zenodo
+(doi:10.5281/zenodo.21466492), keeps that licence.
