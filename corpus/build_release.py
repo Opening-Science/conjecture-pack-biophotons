@@ -123,6 +123,10 @@ def main() -> None:
         print(f"  {f}: {size / 1e6:.1f} MB  sha256 {h[:16]}")
     (a.out / "SHA256SUMS").write_text("\n".join(sums) + "\n",
                                       encoding="utf-8")
+    print("pin these in corpus/fetch.py (SHA256), with the new TAG:")
+    for line in sums:
+        h, f = line.split()
+        print(f'    "{f}":\n        "{h}",')
 
 
 if __name__ == "__main__":
