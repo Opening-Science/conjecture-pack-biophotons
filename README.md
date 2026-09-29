@@ -16,7 +16,7 @@ history of every run so far.
 |---|---|
 | `pack.yaml` | The pack manifest the hub reads: corpus paths, questions and entry queries, prompt framing, causal levels, measurement areas, where outputs and state go. |
 | `questions/open_research_questions.md` | The seven questions the field says it cannot answer, each stated in the literature's own words with sources. |
-| `corpus/` | `fetch.py` downloads the corpus from this repository's release; `build_release.py` is how maintainers build it. |
+| `corpus/` | `seeds.csv`, the seed bibliography the corpus grows from; `fetch.py` downloads the built corpus from this repository's release; `build_release.py` is how maintainers cut that release. |
 | `state/` | Run state: seeds, engine runs, merge clusters, judge chunks and verdicts, `audit.db`, `scoreboard.json`, the verifier bench, and `RUN_1_REPORT.md`. |
 | `outputs/` | Rendered results: the engine page, experiment cards, the claim inventory, open-question statements, the blinded stance audit. |
 
@@ -42,6 +42,16 @@ It does **not** contain full-text bodies. They were mined in the
 maintainers' workspace from papers that cannot be redistributed. Engines
 therefore search titles and abstracts here, not full text. Every work
 cited in the pack's runs is present, so every citation still resolves.
+
+### Rebuilding it
+
+`corpus/seeds.csv` holds the 263 seed references (Michal Cifra's Zotero
+library, key, type, year, first author, title, venue and DOI) that the
+corpus was expanded from. With the hub's corpus builder and an OpenAlex
+key, `python builder/run.py` rebuilds the field map and knowledgebase from
+it, open-access full text included. OpenAlex changes over time, so a
+rebuild today resolves 244 of the seeds where the original run resolved
+245, and the universe differs at the margin accordingly.
 
 ### Run 1
 
